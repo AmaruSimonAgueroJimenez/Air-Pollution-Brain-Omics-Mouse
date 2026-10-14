@@ -1,5 +1,7 @@
 data/
 logs/
+papers/pdf/
+papers/context_nonbrain/
 __pycache__/
 *.pyc
 .DS_Store

@@ -65,6 +65,14 @@ docs/                            Diseño experimental y límites de interpretaci
 
 Los datos voluminosos y registros de descarga permanecen en el almacenamiento local; Git conserva el código, los metadatos y la documentación. El repositorio local no implica una publicación en GitHub.
 
+## Publicaciones y biblioteca de artículos
+
+La biblioteca principal se limita a **cerebro**, conforme a la selección solicitada. Las cuatro publicaciones originales y dos candidatos cerebrales de NO₂ están en [docs/publications.md](docs/publications.md). La búsqueda distingue el uso explícito de las matrices de una cita al artículo. No se identificó una publicación posterior que reutilice específicamente las muestras de hipotálamo de GSE145840 en las fuentes revisadas al 14 de octubre de 2026; el artículo original ya analizó ese tejido.
+
+Los seis artículos cerebrales obtenidos se guardan en `papers/pdf/`, incluida una copia de lectura de Li et al., 2026 exportada desde el PDF editorial completo mediante acceso UC. El inventario y las comprobaciones de cada copia están en `metadata/papers/paper_manifest.json`; las referencias para importar a un gestor bibliográfico están en [papers/bibliography.bib](papers/bibliography.bib) y [papers/bibliography.ris](papers/bibliography.ris). El inventario diferencia un PDF obtenido de un depósito de datos abierto confirmado. Los PDF permanecen en la biblioteca local y no se incluyen en Git. Los metadatos bibliográficos se contrastaron con PubMed, los depósitos de datos y las páginas editoriales. Los antecedentes de reutilización de tejidos periféricos están separados de la selección cerebral en [docs/peripheral_reuse_audit.md](docs/peripheral_reuse_audit.md).
+
+Los suplementos cerebrales abiertos de Yan et al., 2020 se guardan en `data/NO2_Yan_2020/supplements/`. Son resultados derivados de NO₂: tablas de enriquecimiento y asociaciones lncRNA–mRNA, junto con genes seleccionados y figuras. No incluyen FASTQ ni una matriz completa de expresión por muestra y no se cuentan entre los cuatro depósitos, las 64 muestras o los 110 FASTQ del manifiesto principal.
+
 ## Integridad y uso analítico
 
 El descargador comprueba tamaño y MD5 publicados cuando están disponibles, identifica respuestas HTML inesperadas y comprueba la firma de los archivos gzip. También registra el MD5 calculado de cada archivo descargado. Un MD5 local sin una suma publicada permite seguir la integridad del archivo guardado, pero no constituye una comprobación independiente contra la fuente.

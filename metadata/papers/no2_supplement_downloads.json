@@ -1,0 +1,26 @@
+[
+  {
+    "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0160412019338279-mmc2.docx",
+    "success": false,
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0160412019338279-mmc3.xlsx",
+    "success": false,
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0160412019338279-mmc2.doc",
+    "local_file": "data/NO2_Yan_2020/supplements/Yan2020_mmc2.doc",
+    "bytes": 342016,
+    "sha256": "75314c156abf01e4fb8c0df461cef7dde749d3de32b9a7a915250d3ab6a72f26",
+    "success": true
+  },
+  {
+    "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0160412019338279-mmc3.xls",
+    "local_file": "data/NO2_Yan_2020/supplements/Yan2020_mmc3.xls",
+    "bytes": 335360,
+    "sha256": "2f654ade4ff90d6c0afff2971c05c5db881978d10f24136a2aeee9d32eb36d00",
+    "success": true
+  }
+]

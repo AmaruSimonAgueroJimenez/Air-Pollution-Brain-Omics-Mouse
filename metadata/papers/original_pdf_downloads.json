@@ -1,0 +1,49 @@
+[
+  {
+    "file": "GSE297423_Zhang_2025_Science.pdf",
+    "success": true,
+    "initial_attempt": {
+      "error": "Response is not a PDF",
+      "bytes": 1817
+    },
+    "local_path": "papers/pdf/GSE297423_Zhang_2025_Science.pdf",
+    "bytes": 2442779,
+    "pages": 17,
+    "source": "https://www.science.org/doi/pdf/10.1126/science.adu4132",
+    "access_route": "biblioteca UC; navegador autenticado",
+    "sha256": "84535d5fd5df311f1d189d6116677525036c92e3eb27f576c0da489015bad55d"
+  },
+  {
+    "file": "GSE145840_Rajagopalan_2020_JCI.pdf",
+    "success": true,
+    "bytes": 3440191,
+    "pages": 7,
+    "source": "https://dm5migu4zj3pb.cloudfront.net/manuscripts/137000/137315/JCI137315.v3.pdf",
+    "sha256": "e7b4d5c496eab973f6f8e452075cb42c69b2527d2a53f7c3223499ea36b704c0",
+    "first_page": "The Journal of Clinical Investigation    \nCONCISE COMMUNICATION\n6034 jci.org   Volume 130   Number 11   November 2020\nIntroduction\nAir pollution is the leading environmental cause of premature \nreversible death and disability in the world today (1). A large \nbody of evidence implicates the component of air pollution \ncontaining particulate matter smaller than 2.5 μ m (PM 2.5 ) in \nsize in the development of cardiovascular disease risk factors \nsuch as hypertension, insulin resistance (IR), and t",
+    "local_path": "papers/pdf/GSE145840_Rajagopalan_2020_JCI.pdf",
+    "access_route": "editorial; acceso abierto"
+  },
+  {
+    "file": "GSE93967_Ku_2017_Particle_Fibre_Toxicology.pdf",
+    "success": true,
+    "bytes": 3568436,
+    "pages": 19,
+    "source": "https://link.springer.com/content/pdf/10.1186/s12989-017-0215-3.pdf",
+    "sha256": "731cdb2c33ffdb9a41efc0e968638835a129f171f1dee662bbf219bf336663d7",
+    "first_page": "R E S E A R C H Open Access\nNF-κB-regulated microRNA-574-5p\nunderlies synaptic and cognitive\nimpairment in response to atmospheric\nPM2.5 aspiration\nTingting Ku, Ben Li, Rui Gao, Yingying Zhang, Wei Yan, Xiaotong Ji, Guangke Li and Nan Sang *\nAbstract\nBackground: PM2.5 (particulate matter ≤ 2.5 μm) is one of the leading environmental risk factors for the global\nburden of disease. Whereas increasing evidence has linked the adverse roles of PM 2.5 with cardiovascular and\nrespiratory diseases, limit",
+    "local_path": "papers/pdf/GSE93967_Ku_2017_Particle_Fibre_Toxicology.pdf",
+    "access_route": "editorial; acceso abierto"
+  },
+  {
+    "file": "E-MTAB-14917_Nakamya_2025_IJMS.pdf",
+    "success": true,
+    "bytes": 5167768,
+    "pages": 19,
+    "source": "https://mdpi-res.com/d_attachment/ijms/ijms-26-02407/article_deploy/ijms-26-02407.pdf",
+    "sha256": "9646a7d85ece70ecd573b1fd21fb0fa9d7cd1f809252d22b4f6c126e0e868595",
+    "first_page": "Academic Editor: Anne Vejux\nReceived: 16 January 2025\nRevised: 25 February 2025\nAccepted: 4 March 2025\nPublished: 7 March 2025\nCitation: Nakamya, M.F.; Hu, K.;\nJiang, C.; Chong, Z.; Liu, R.-M. Age-\nand ApoE Genotype-Dependent\nTranscriptomic Responses to O3 in the\nHippocampus of Mice. Int. J. Mol. Sci.\n2025, 26, 2407. https://doi.org/\n10.3390/ijms26062407\nCopyright: © 2025 by the authors.\nLicensee MDPI, Basel, Switzerland.\nThis article is an open access article\ndistributed under the terms and\ncon",
+    "local_path": "papers/pdf/E-MTAB-14917_Nakamya_2025_IJMS.pdf",
+    "access_route": "editorial; acceso abierto"
+  }
+]
