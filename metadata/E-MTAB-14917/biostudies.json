@@ -1,0 +1,661 @@
+{
+  "accno" : "E-MTAB-14917",
+  "attributes" : [ {
+    "name" : "Title",
+    "value" : "Age- and ApoE genotype-dependent transcriptomic responses to O3 in the hippocampus of mice"
+  }, {
+    "name" : "ReleaseDate",
+    "value" : "2025-03-20"
+  }, {
+    "name" : "RootPath",
+    "value" : "E-MTAB-14917"
+  }, {
+    "name" : "AttachTo",
+    "value" : "ArrayExpress"
+  } ],
+  "section" : {
+    "accno" : "s-E-MTAB-14917",
+    "type" : "Study",
+    "attributes" : [ {
+      "name" : "Title",
+      "value" : "Age- and ApoE genotype-dependent transcriptomic responses to O3 in the hippocampus of mice"
+    }, {
+      "name" : "Study type",
+      "value" : "RNA-seq of coding RNA",
+      "valqual" : [ {
+        "name" : "Ontology",
+        "value" : "EFO"
+      }, {
+        "name" : "TermId",
+        "value" : "EFO_0003738"
+      } ]
+    }, {
+      "name" : "Organism",
+      "value" : "Mus musculus"
+    }, {
+      "name" : "Description",
+      "value" : "We earlier demonstrated that ozone an urban pollutant, accelerates AD-like neuropathology in aging male ApoE3 mice. In this study, we investigate hippocampal transcriptomic alterations in young and aged E3 and E4 mice following O₃ exposure to elucidate the molecular mechanisms underlying O₃-induced AD pathology specifically in old E3 male mice."
+    } ],
+    "links" : [ [ {
+      "url" : "ERP170080",
+      "attributes" : [ {
+        "name" : "Type",
+        "value" : "ENA"
+      } ]
+    } ] ],
+    "subsections" : [ [ {
+      "accno" : "P-MTAB-151812",
+      "type" : "Protocols",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "P-MTAB-151812"
+      }, {
+        "name" : "Type",
+        "value" : "sample collection protocol",
+        "valqual" : [ {
+          "name" : "Ontology",
+          "value" : "EFO"
+        }, {
+          "name" : "TermId",
+          "value" : "EFO_0005518"
+        } ]
+      }, {
+        "name" : "Description",
+        "value" : "Mice were euthanized by isoflurane overdose followed by bilateral thoracotomy. Brains were dissected sagittally into right and left hemispheres. The right hemisphere was fixed in 10% phosphate-buffered formalin, while the left hemisphere was dissected to isolate the hippocampus and cerebral cortex, which were snap-frozen in liquid nitrogen."
+      }, {
+        "name" : "Hardware"
+      } ]
+    }, {
+      "accno" : "P-MTAB-151813",
+      "type" : "Protocols",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "P-MTAB-151813"
+      }, {
+        "name" : "Type",
+        "value" : "nucleic acid extraction protocol",
+        "valqual" : [ {
+          "name" : "Ontology",
+          "value" : "EFO"
+        }, {
+          "name" : "TermId",
+          "value" : "EFO_0002944"
+        } ]
+      }, {
+        "name" : "Description",
+        "value" : "Total RNA was extracted from the hippocampus using TRIzol reagent (Invitrogen; Ther-mo Fisher Scientific, Inc.) [59]. RNA concentration and purity were measured using a NanoDrop ND-1000 spectrophotometer (NanoDrop Technologies, Wilmington, DE, USA), and RNA integrity was evaluated using the RNA Nano 6000 Assay Kit on the Agilent Bi-oanalyzer 2100 system (Agilent Technologies, CA, USA)."
+      }, {
+        "name" : "Hardware"
+      } ]
+    }, {
+      "accno" : "P-MTAB-151814",
+      "type" : "Protocols",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "P-MTAB-151814"
+      }, {
+        "name" : "Type",
+        "value" : "nucleic acid library construction protocol",
+        "valqual" : [ {
+          "name" : "Ontology",
+          "value" : "EFO"
+        }, {
+          "name" : "TermId",
+          "value" : "EFO_0004184"
+        } ]
+      }, {
+        "name" : "Description",
+        "value" : "A total of 1 µg RNA per sample was used for library preparation using the NEB-Next® Ultra™ RNA Library Prep Kit for Illumina® (NEB, USA) according to the manu-facturer’s protocol. mRNA was purified using poly-T oligo-attached magnetic beads, fragmented under elevated temperature, and reverse transcribed into cDNA using random hexamer primers. The second-strand cDNA was synthesized using DNA polymerase I and RNase H, followed by end repair, adaptor ligation, and size selection (150–200 bp). Amplified libraries were purified and quality-checked using the Agilent Bioanalyzer 2100."
+      }, {
+        "name" : "Hardware",
+        "value" : "Illumina® (NEB, USA)"
+      } ]
+    }, {
+      "accno" : "P-MTAB-151815",
+      "type" : "Protocols",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "P-MTAB-151815"
+      }, {
+        "name" : "Type",
+        "value" : "nucleic acid sequencing protocol",
+        "valqual" : [ {
+          "name" : "Ontology",
+          "value" : "EFO"
+        }, {
+          "name" : "TermId",
+          "value" : "EFO_0004170"
+        } ]
+      }, {
+        "name" : "Description",
+        "value" : "The sequencing libraries were clustered on the Illumina NovaSeq platform using paired-end sequencing to generate high-quality reads for each sample"
+      }, {
+        "name" : "Hardware",
+        "value" : "Illumina NovaSeq X"
+      } ]
+    }, {
+      "accno" : "P-MTAB-151816",
+      "type" : "Protocols",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "P-MTAB-151816"
+      }, {
+        "name" : "Type",
+        "value" : "growth protocol",
+        "valqual" : [ {
+          "name" : "Ontology",
+          "value" : "EFO"
+        }, {
+          "name" : "TermId",
+          "value" : "EFO_0003789"
+        } ]
+      }, {
+        "name" : "Description",
+        "value" : "Three-month-old (3M) and seventeen-month-old (17M) male human E4 and E3 gene targeted replacement (TR) mice were obtained from Taconic and housed at the University of Alabama at Birmingham (UAB)."
+      }, {
+        "name" : "Hardware"
+      } ]
+    }, {
+      "accno" : "P-MTAB-151817",
+      "type" : "Protocols",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "P-MTAB-151817"
+      }, {
+        "name" : "Type",
+        "value" : "treatment protocol",
+        "valqual" : [ {
+          "name" : "Ontology",
+          "value" : "EFO"
+        }, {
+          "name" : "TermId",
+          "value" : "EFO_0003969"
+        } ]
+      }, {
+        "name" : "Description",
+        "value" : "Mice were subjected to either eight cycles of O₃ exposure or filtered air (FA) at the UAB environmental exposure facility. Each cycle consisted of 5 days of FA/O₃ exposure (0.8 ppm), for 7 hours per day followed by 9 days of FA. A total of 14 to 16 mice were used per genotype, age, and treatment group."
+      }, {
+        "name" : "Hardware"
+      } ]
+    }, {
+      "accno" : "P-MTAB-151818",
+      "type" : "Protocols",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "P-MTAB-151818"
+      }, {
+        "name" : "Type",
+        "value" : "normalization data transformation protocol",
+        "valqual" : [ {
+          "name" : "Ontology",
+          "value" : "EFO"
+        }, {
+          "name" : "TermId",
+          "value" : "EFO_0003816"
+        } ]
+      }, {
+        "name" : "Description",
+        "value" : "Sequencing data underwent quality control using fastQC and adapter trimming with Trimmomatic. Clean reads were aligned to the mouse reference genome (GRCm38) using HISAT2."
+      }, {
+        "name" : "Hardware"
+      } ]
+    }, {
+      "accno" : "P-MTAB-151819",
+      "type" : "Protocols",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "P-MTAB-151819"
+      }, {
+        "name" : "Type",
+        "value" : "dissection protocol",
+        "valqual" : [ {
+          "name" : "Ontology",
+          "value" : "EFO"
+        }, {
+          "name" : "TermId",
+          "value" : "EFO_0005519"
+        } ]
+      }, {
+        "name" : "Description",
+        "value" : "mice were euthanized by isoflurane overdose followed by bilateral thoracotomy. Brains were dissected sagittally into right and left hemispheres."
+      }, {
+        "name" : "Hardware"
+      } ]
+    }, {
+      "accno" : "P-MTAB-151820",
+      "type" : "Protocols",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "P-MTAB-151820"
+      }, {
+        "name" : "Type",
+        "value" : "high throughput sequence alignment protocol",
+        "valqual" : [ {
+          "name" : "Ontology",
+          "value" : "EFO"
+        }, {
+          "name" : "TermId",
+          "value" : "EFO_0004917"
+        } ]
+      }, {
+        "name" : "Description",
+        "value" : "Amplified libraries were purified and quality-checked using the Agilent Bioanalyzer 2100. The sequencing libraries were clustered on the Illumina NovaSeq platform using paired-end sequencing to generate high-quality reads for each sample."
+      }, {
+        "name" : "Hardware"
+      } ]
+    } ], {
+      "type" : "Author",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Mary Frances Nakamya"
+      }, {
+        "name" : "Email",
+        "value" : "mfnakamya@uabmc.edu"
+      }, {
+        "name" : "Phone",
+        "value" : "9196963714"
+      }, {
+        "name" : "Role",
+        "value" : "submitter"
+      }, {
+        "name" : "affiliation",
+        "value" : "o1",
+        "reference" : true
+      } ]
+    }, {
+      "accno" : "o1",
+      "type" : "Organization",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "University of Alabama at Birmingham"
+      }, {
+        "name" : "Address",
+        "value" : "701 20th StSouth Birmingham, AL 35233 United States"
+      } ]
+    }, {
+      "accno" : "s-samples-factors-E-MTAB-14917",
+      "type" : "Samples",
+      "attributes" : [ {
+        "name" : "Sample count",
+        "value" : "24"
+      }, {
+        "name" : "Experimental Designs",
+        "value" : "disease state design",
+        "valqual" : [ {
+          "name" : "Ontology",
+          "value" : "EFO"
+        }, {
+          "name" : "TermId",
+          "value" : "EFO:0001756"
+        } ]
+      }, {
+        "name" : "Experimental Factors",
+        "value" : "strain",
+        "valqual" : [ {
+          "name" : "TermName",
+          "value" : "strain"
+        } ]
+      } ],
+      "subsections" : [ {
+        "accno" : "exp_factor-E-MTAB-14917",
+        "type" : "Experimental Factors",
+        "attributes" : [ {
+          "name" : "Strain",
+          "value" : "Mus musculus musculus x M. m. domesticus"
+        }, {
+          "name" : "Strain",
+          "value" : "Mus musculus domesticus"
+        } ],
+        "subsections" : [ [ {
+          "accno" : "factors_0",
+          "type" : "Factors Table",
+          "attributes" : [ {
+            "name" : "strain",
+            "value" : "Mus musculus domesticus"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "1",
+            "valqual" : [ {
+              "name" : "url",
+              "value" : "https://www.ebi.ac.uk/ena/browser/view/ERS23783973"
+            } ]
+          } ]
+        }, {
+          "accno" : "factors_1",
+          "type" : "Factors Table",
+          "attributes" : [ {
+            "name" : "strain",
+            "value" : "Mus musculus musculus x M. m. domesticus"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "23",
+            "valqual" : [ {
+              "name" : "url",
+              "value" : "https://www.ebi.ac.uk/ena/browser/view/ERS23783974-ERS23783996"
+            } ]
+          } ]
+        } ] ]
+      }, {
+        "accno" : "source_chars-E-MTAB-14917",
+        "type" : "Source Characteristics",
+        "attributes" : [ {
+          "name" : "Organism",
+          "value" : "Mus musculus"
+        }, {
+          "name" : "Organism part",
+          "value" : "hippocampus"
+        }, {
+          "name" : "Strain",
+          "value" : "Mus musculus musculus x M. m. domesticus"
+        }, {
+          "name" : "Strain",
+          "value" : "Mus musculus domesticus"
+        }, {
+          "name" : "Age",
+          "value" : "3 month"
+        }, {
+          "name" : "Age",
+          "value" : "17 month"
+        }, {
+          "name" : "Genotype",
+          "value" : "ApoE4"
+        }, {
+          "name" : "Genotype",
+          "value" : "ApoE3"
+        }, {
+          "name" : "Environmental stress",
+          "value" : "Ozone"
+        }, {
+          "name" : "Environmental stress",
+          "value" : "Filtered Air"
+        } ],
+        "subsections" : [ [ {
+          "accno" : "source_0",
+          "type" : "Characteristics Table",
+          "attributes" : [ {
+            "name" : "strain",
+            "value" : "Mus musculus domesticus"
+          }, {
+            "name" : "age",
+            "value" : "3 month"
+          }, {
+            "name" : "genotype",
+            "value" : "ApoE3"
+          }, {
+            "name" : "environmental stress",
+            "value" : "Filtered Air"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "1",
+            "valqual" : [ {
+              "name" : "url",
+              "value" : "https://www.ebi.ac.uk/ena/browser/view/ERS23783973"
+            } ]
+          } ]
+        }, {
+          "accno" : "source_1",
+          "type" : "Characteristics Table",
+          "attributes" : [ {
+            "name" : "strain",
+            "value" : "Mus musculus musculus x M. m. domesticus"
+          }, {
+            "name" : "age",
+            "value" : "3 month"
+          }, {
+            "name" : "genotype",
+            "value" : "ApoE4"
+          }, {
+            "name" : "environmental stress",
+            "value" : "Ozone"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "3",
+            "valqual" : [ {
+              "name" : "url",
+              "value" : "https://www.ebi.ac.uk/ena/browser/view/ERS23783974-ERS23783976"
+            } ]
+          } ]
+        }, {
+          "accno" : "source_2",
+          "type" : "Characteristics Table",
+          "attributes" : [ {
+            "name" : "strain",
+            "value" : "Mus musculus musculus x M. m. domesticus"
+          }, {
+            "name" : "age",
+            "value" : "17 month"
+          }, {
+            "name" : "genotype",
+            "value" : "ApoE3"
+          }, {
+            "name" : "environmental stress",
+            "value" : "Filtered Air"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "3",
+            "valqual" : [ {
+              "name" : "url",
+              "value" : "https://www.ebi.ac.uk/ena/browser/view/ERS23783977-ERS23783979"
+            } ]
+          } ]
+        }, {
+          "accno" : "source_3",
+          "type" : "Characteristics Table",
+          "attributes" : [ {
+            "name" : "strain",
+            "value" : "Mus musculus musculus x M. m. domesticus"
+          }, {
+            "name" : "age",
+            "value" : "17 month"
+          }, {
+            "name" : "genotype",
+            "value" : "ApoE3"
+          }, {
+            "name" : "environmental stress",
+            "value" : "Ozone"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "3",
+            "valqual" : [ {
+              "name" : "url",
+              "value" : "https://www.ebi.ac.uk/ena/browser/view/ERS23783980-ERS23783982"
+            } ]
+          } ]
+        }, {
+          "accno" : "source_4",
+          "type" : "Characteristics Table",
+          "attributes" : [ {
+            "name" : "strain",
+            "value" : "Mus musculus musculus x M. m. domesticus"
+          }, {
+            "name" : "age",
+            "value" : "17 month"
+          }, {
+            "name" : "genotype",
+            "value" : "ApoE4"
+          }, {
+            "name" : "environmental stress",
+            "value" : "Filtered Air"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "3",
+            "valqual" : [ {
+              "name" : "url",
+              "value" : "https://www.ebi.ac.uk/ena/browser/view/ERS23783983,ERS23783985,ERS23783986"
+            } ]
+          } ]
+        }, {
+          "accno" : "source_5",
+          "type" : "Characteristics Table",
+          "attributes" : [ {
+            "name" : "strain",
+            "value" : "Mus musculus musculus x M. m. domesticus"
+          }, {
+            "name" : "age",
+            "value" : "3 month"
+          }, {
+            "name" : "genotype",
+            "value" : "ApoE3"
+          }, {
+            "name" : "environmental stress",
+            "value" : "Filtered Air"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "2",
+            "valqual" : [ {
+              "name" : "url",
+              "value" : "https://www.ebi.ac.uk/ena/browser/view/ERS23783984,ERS23783990"
+            } ]
+          } ]
+        }, {
+          "accno" : "source_6",
+          "type" : "Characteristics Table",
+          "attributes" : [ {
+            "name" : "strain",
+            "value" : "Mus musculus musculus x M. m. domesticus"
+          }, {
+            "name" : "age",
+            "value" : "17 month"
+          }, {
+            "name" : "genotype",
+            "value" : "ApoE4"
+          }, {
+            "name" : "environmental stress",
+            "value" : "Ozone"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "3",
+            "valqual" : [ {
+              "name" : "url",
+              "value" : "https://www.ebi.ac.uk/ena/browser/view/ERS23783987-ERS23783989"
+            } ]
+          } ]
+        }, {
+          "accno" : "source_7",
+          "type" : "Characteristics Table",
+          "attributes" : [ {
+            "name" : "strain",
+            "value" : "Mus musculus musculus x M. m. domesticus"
+          }, {
+            "name" : "age",
+            "value" : "3 month"
+          }, {
+            "name" : "genotype",
+            "value" : "ApoE3"
+          }, {
+            "name" : "environmental stress",
+            "value" : "Ozone"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "3",
+            "valqual" : [ {
+              "name" : "url",
+              "value" : "https://www.ebi.ac.uk/ena/browser/view/ERS23783991-ERS23783993"
+            } ]
+          } ]
+        }, {
+          "accno" : "source_8",
+          "type" : "Characteristics Table",
+          "attributes" : [ {
+            "name" : "strain",
+            "value" : "Mus musculus musculus x M. m. domesticus"
+          }, {
+            "name" : "age",
+            "value" : "3 month"
+          }, {
+            "name" : "genotype",
+            "value" : "ApoE4"
+          }, {
+            "name" : "environmental stress",
+            "value" : "Filtered Air"
+          }, {
+            "name" : "No. of Samples",
+            "value" : "3",
+            "valqual" : [ {
+              "name" : "url",
+              "value" : "https://www.ebi.ac.uk/ena/browser/view/ERS23783994-ERS23783996"
+            } ]
+          } ]
+        } ] ]
+      } ]
+    }, {
+      "accno" : "s-assays-data-E-MTAB-14917",
+      "type" : "Assays and Data",
+      "attributes" : [ {
+        "name" : "Assay count",
+        "value" : "24"
+      }, {
+        "name" : "Technology",
+        "value" : "Sequencing assay"
+      }, {
+        "name" : "Assay by Molecule",
+        "value" : "RNA assay"
+      } ],
+      "subsections" : [ {
+        "accno" : "processed-data",
+        "type" : "Processed Data",
+        "files" : [ [ {
+          "path" : "E4_vs_E3_005_total.csv",
+          "size" : 2451811,
+          "attributes" : [ {
+            "name" : "Description",
+            "value" : "Processed Data"
+          } ],
+          "type" : "file"
+        } ] ]
+      }, {
+        "accno" : "mt-E-MTAB-14917",
+        "type" : "MAGE-TAB Files",
+        "files" : [ [ {
+          "path" : "E-MTAB-14917.idf.txt",
+          "size" : 6491,
+          "attributes" : [ {
+            "name" : "Type",
+            "value" : "IDF File"
+          }, {
+            "name" : "Format",
+            "value" : "tab-delimited text"
+          }, {
+            "name" : "Description",
+            "value" : "Investigation Design Format (IDF)"
+          } ],
+          "type" : "file"
+        }, {
+          "path" : "E-MTAB-14917.sdrf.txt",
+          "size" : 32014,
+          "attributes" : [ {
+            "name" : "Type",
+            "value" : "SDRF File"
+          }, {
+            "name" : "Format",
+            "value" : "tab-delimited text"
+          }, {
+            "name" : "Description",
+            "value" : "Sample and Data Relationship Format (SDRF)"
+          } ],
+          "type" : "file"
+        } ] ]
+      } ]
+    }, {
+      "accno" : "score-E-MTAB-14917",
+      "type" : "MINSEQE Score",
+      "attributes" : [ {
+        "name" : "Exp. Design",
+        "value" : "*"
+      }, {
+        "name" : "Protocols",
+        "value" : "*"
+      }, {
+        "name" : "Variables",
+        "value" : "*"
+      }, {
+        "name" : "Processed",
+        "value" : "*"
+      }, {
+        "name" : "Raw",
+        "value" : "*"
+      } ]
+    } ]
+  },
+  "type" : "submission"
+}

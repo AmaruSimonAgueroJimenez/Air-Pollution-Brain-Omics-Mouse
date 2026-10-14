@@ -1,0 +1,76 @@
+# Air Pollution Brain Omics — Mouse
+
+Repositorio local de datos ómicos abiertos de cerebro de ratón (*Mus musculus*) relacionados con PM2.5 y ozono (O₃). Reúne los archivos originales disponibles, datos procesados, metadatos de muestras y un manifiesto reproducible de descarga. La selección comprende **4 estudios, 64 muestras cerebrales y 55 bibliotecas de RNA-seq**.
+
+## Estudios incluidos
+
+| Estudio | Contaminante | Tejido | Técnica | Muestras seleccionadas | Archivos FASTQ | FASTQ comprimidos |
+|---|---|---|---|---:|---:|---:|
+| [GSE297423](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE297423) | PM2.5 | Corteza cingulada anterior | RNA-seq | 20 | 40 | 121,016 GB |
+| [GSE145840](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145840) | PM2.5 | Hipotálamo | RNA-seq | 11 | 22 | 66,797 GB |
+| [GSE93967](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE93967) | PM2.5 | Hipocampo | Microarray de miRNA | 9 | 0 | No corresponde |
+| [E-MTAB-14917](https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-14917) | O₃ | Hipocampo | RNA-seq | 24 | 48 | 74,098 GB |
+
+Los **110 FASTQ ocupan 261,911 GB**, usando GB decimales (10⁹ bytes). Se añaden matrices procesadas, archivos originales del microarray —aproximadamente 74,864 MB—, metadatos y suplementos. El espacio requerido para descomprimir y analizar las secuencias será adicional.
+
+La selección conserva todos los grupos experimentales cerebrales de estos estudios, incluidos controles y comparadores. GSE145840 contiene otros tejidos y ATAC-seq de hígado; la descarga se limita a sus 11 muestras de hipotálamo. Los cuatro estudios seleccionados son transcriptómica convencional o microarrays y no contienen transcriptómica espacial. Los candidatos de NO₂ están documentados en [docs/no2_access.md](docs/no2_access.md); no se ha confirmado una descarga pública de sus datos.
+
+## Estado de descarga
+
+La descarga completa se inició el **14 de octubre de 2026**. Este documento describe el contenido previsto y no certifica por sí mismo que todos los archivos hayan terminado. El estado actualizado se consulta desde la carpeta del repositorio:
+
+```bash
+python3 scripts/status.py
+```
+
+`logs/download_status.json` registra el estado de cada archivo, y `logs/completion.json` registra el resultado final. La descarga está completa cuando el resultado final indica `complete: true`, sin archivos fallidos y con todos los archivos del manifiesto verificados. Los archivos con sufijo `.part` todavía están en descarga y no deben usarse como datos completos.
+
+## Descargar o reanudar
+
+Requisitos: Python 3 y `curl`, conexión a internet y espacio disponible para los datos. Desde la carpeta del repositorio:
+
+```bash
+python3 scripts/prepare_manifest.py
+python3 scripts/start_download.py --workers 8
+python3 scripts/status.py
+```
+
+El primer paso consulta las fuentes originales, selecciona las muestras cerebrales y prepara el manifiesto. El segundo inicia una descarga independiente del chat, escribe el progreso en `logs/download.log` y descarga primero los archivos pequeños y luego los FASTQ. Repetirlo después de que el proceso termine o se interrumpa permite reanudar los archivos parciales. El repositorio bloquea una segunda instancia simultánea. Una suspensión del equipo o un reinicio puede interrumpir la transferencia; el comando permite reanudarla.
+
+Para ejecutarla en primer plano, usar `python3 scripts/download_data.py --workers 8`. La verificación de los archivos procesados se ejecuta con `python3 scripts/verify_repository.py`; al completar toda la descarga, el proceso ejecuta automáticamente `python3 scripts/verify_repository.py --all` y genera `metadata/download_receipts.csv` con las comprobaciones de integridad.
+
+Para descargar únicamente datos procesados y archivos originales de microarray:
+
+```bash
+python3 scripts/download_data.py --workers 8 --kind processed --kind raw_array
+```
+
+## Organización
+
+```text
+metadata/
+  datasets.json                  Inventario de estudios
+  download_manifest.csv          URL, destino, tamaño y MD5 esperado
+  download_manifest.json         El mismo manifiesto para el descargador
+  <estudio>/                     Metadatos originales y muestras seleccionadas
+data/
+  <estudio>/fastq/                Lecturas de RNA-seq comprimidas
+  <estudio>/processed/            Matrices o resultados publicados
+  <estudio>/raw_array/            Archivos originales de microarray
+  <estudio>/supplements/          Suplementos de la publicación
+scripts/                         Preparación, descarga y estado
+logs/                            Eventos, errores y resultado de descarga
+docs/                            Diseño experimental y límites de interpretación
+```
+
+Los datos voluminosos y registros de descarga permanecen en el almacenamiento local; Git conserva el código, los metadatos y la documentación. El repositorio local no implica una publicación en GitHub.
+
+## Integridad y uso analítico
+
+El descargador comprueba tamaño y MD5 publicados cuando están disponibles, identifica respuestas HTML inesperadas y comprueba la firma de los archivos gzip. También registra el MD5 calculado de cada archivo descargado. Un MD5 local sin una suma publicada permite seguir la integridad del archivo guardado, pero no constituye una comprobación independiente contra la fuente.
+
+Antes de analizar las matrices, revisar [docs/datasets.md](docs/datasets.md): el orden de las columnas de GSE297423 necesita una correspondencia por nombre de biblioteca, GSE93967 contiene valores normalizados que pueden ser negativos y el CSV de E-MTAB-14917 es un resultado de expresión diferencial entre genotipos, **no una matriz de conteos por muestra**. Para rehacer el análisis de O₃ se necesitan los FASTQ y los metadatos experimentales.
+
+## Procedencia y condiciones de uso
+
+Datos obtenidos de NCBI GEO/SRA y EMBL-EBI ENA/BioStudies/ArrayExpress. Las URL originales están en el manifiesto y las descripciones depositadas se conservan en `metadata/`. Citar los accession y las publicaciones correspondientes al reutilizar los datos. Este repositorio no asigna una licencia nueva a datos de terceros ni presupone una licencia común para todos los estudios; aplicar las condiciones de cada fuente.
