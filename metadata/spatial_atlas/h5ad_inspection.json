@@ -26,9 +26,22 @@
       "sample_nonnegative": true,
       "source_expression": "measured_MERFISH_panel",
       "sample_integer_counts": true
+    },
+    {
+      "file": "data/reference_atlases/Zhuang_2023/expression_matrices/Zhuang-ABCA-2/20230830/Zhuang-ABCA-2-raw.h5ad",
+      "cells": 1915594,
+      "genes": 1122,
+      "dtype": "float32",
+      "obs_index": "cell_label",
+      "var_index": "gene_identifier",
+      "sample_rows": 1000,
+      "sample_finite": true,
+      "sample_nonnegative": true,
+      "source_expression": "measured_MERFISH_panel",
+      "sample_integer_counts": true
     }
   ],
-  "inspected_matrices": 2,
+  "inspected_matrices": 3,
   "expected_matrices": 8,
   "all_eight_inspected": false
 }

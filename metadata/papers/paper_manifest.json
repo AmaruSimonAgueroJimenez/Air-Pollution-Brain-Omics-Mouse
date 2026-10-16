@@ -1,6 +1,6 @@
 {
   "reviewed_at": "2026-10-14T21:28:51.449714+00:00",
-  "scope": "mouse brain only",
+  "scope": "mouse brain only; exposure studies, spatial reference atlas and confirmed atlas reuse",
   "papers": [
     {
       "pmid": "40906862",
@@ -39,7 +39,7 @@
         "Kezia Irene",
         "Liuhua Shi",
         "Rahel Feleke",
-        "Sonia García-Ruiz",
+        "Sonia Garc\u00eda-Ruiz",
         "Mina Ryten",
         "Valina L Dawson",
         "Francesca Dominici",
@@ -94,7 +94,7 @@
       "dataset_accession": "GSE145840",
       "role": "original",
       "pollutant": "PM2.5",
-      "brain_tissue": "hipotálamo",
+      "brain_tissue": "hipot\u00e1lamo",
       "data_access_status": "public_deposit_confirmed",
       "local_pdf": "papers/pdf/GSE145840_Rajagopalan_2020_JCI.pdf",
       "pdf_source": "https://dm5migu4zj3pb.cloudfront.net/manuscripts/137000/137315/JCI137315.v3.pdf",
@@ -108,7 +108,7 @@
     },
     {
       "pmid": "28851397",
-      "title": "NF-κB-regulated microRNA-574-5p underlies synaptic and cognitive impairment in response to atmospheric PM2.5 aspiration.",
+      "title": "NF-\u03baB-regulated microRNA-574-5p underlies synaptic and cognitive impairment in response to atmospheric PM2.5 aspiration.",
       "authors": [
         "Tingting Ku",
         "Ben Li",
@@ -183,9 +183,9 @@
       "pmcid": null,
       "pii": "S0160-4120(19)33827-9",
       "dataset_accession": null,
-      "role": "candidato cerebral; depósito público no confirmado",
+      "role": "candidato cerebral; dep\u00f3sito p\u00fablico no confirmado",
       "pollutant": "NO2",
-      "brain_tissue": "corteza de crías",
+      "brain_tissue": "corteza de cr\u00edas",
       "data_access_status": "public_deposit_unconfirmed",
       "local_pdf": "papers/pdf/NO2_Yan_2020_Environment_International.pdf",
       "pdf_source": "https://www.sciencedirect.com/science/article/pii/S0160412019338279/pdfft",
@@ -206,7 +206,7 @@
     },
     {
       "pmid": "42526541",
-      "title": "Gestational NO₂ exposure induces anxiety- and depression-like behaviors in mice via hippocampal PTGDS-PGD2 activation and tryptophan metabolism reprogramming.",
+      "title": "Gestational NO\u2082 exposure induces anxiety- and depression-like behaviors in mice via hippocampal PTGDS-PGD2 activation and tryptophan metabolism reprogramming.",
       "authors": [
         "Wei Li",
         "Xinying Wang",
@@ -225,13 +225,13 @@
       "pmcid": null,
       "pii": "S0161-813X(26)00148-8",
       "dataset_accession": null,
-      "role": "candidato cerebral; depósito público no confirmado",
+      "role": "candidato cerebral; dep\u00f3sito p\u00fablico no confirmado",
       "pollutant": "NO2",
-      "brain_tissue": "hipocampo de crías",
+      "brain_tissue": "hipocampo de cr\u00edas",
       "data_access_status": "available_on_request; public_accession_unconfirmed",
       "local_pdf": "papers/pdf/NO2_Li_2026_Neurotoxicology_reading_copy.pdf",
       "pdf_source": "https://www.sciencedirect.com/science/article/pii/S0161813X26001488",
-      "access_route": "biblioteca UC; copia de lectura exportada del PDF editorial mediante impresión PDF en Chrome",
+      "access_route": "biblioteca UC; copia de lectura exportada del PDF editorial mediante impresi\u00f3n PDF en Chrome",
       "pdf_status": "downloaded_verified",
       "pdf_version": "reading_copy_exported_from_complete_publisher_pdf",
       "original_pdf_save_attempt": "save button remained disabled; original byte-for-byte PDF not obtained",
@@ -245,6 +245,154 @@
         "section": "Data availability",
         "statement": "Data will be made available on request."
       }
+    },
+    {
+      "pmid": "38092912",
+      "title": "Molecularly defined and spatially resolved cell atlas of the whole mouse brain",
+      "authors": [
+        "Zhang, Meng",
+        "Pan, Xingjie",
+        "Jung, Won",
+        "Halpern, Aaron R.",
+        "Eichhorn, Stephen W.",
+        "Lei, Zhiyun",
+        "Cohen, Limor",
+        "Smith, Kimberly A.",
+        "Tasic, Bosiljka",
+        "Yao, Zizhen",
+        "Zeng, Hongkui",
+        "Zhuang, Xiaowei"
+      ],
+      "journal": "Nature",
+      "year": "2023",
+      "doi": "10.1038/s41586-023-06808-9",
+      "pmcid": "PMC10719103",
+      "role": "spatial_atlas_original",
+      "pollutant": null,
+      "brain_tissue": "cerebro adulto de rat\u00f3n; atlas espacial de referencia",
+      "experimental_pollutant_exposure": false,
+      "data_access_status": "public_spatial_atlas_confirmed",
+      "atlas_datasets": [
+        "Zhuang-ABCA-1",
+        "Zhuang-ABCA-2",
+        "Zhuang-ABCA-3",
+        "Zhuang-ABCA-4"
+      ],
+      "local_pdf": "papers/pdf/Zhang_2023_whole_mouse_brain_MERFISH.pdf",
+      "pdf_source": "https://dash.harvard.edu/server/api/core/bitstreams/240fddba-3d2b-47eb-a6d4-649f77a59077/content",
+      "access_route": "Harvard University DASH",
+      "pdf_status": "downloaded_verified",
+      "bytes": 26221342,
+      "pages": 36,
+      "sha256": "5c66f0c6075893398bca32628f3bfbe6b5aaa42ea29e097d7eb71fe5ff7a5e07",
+      "doi_found_in_pdf": true
+    },
+    {
+      "pmid": "39569210",
+      "title": "Transcriptomic mapping of the 5-HT receptor landscape",
+      "authors": [
+        "Roberto De Filippo",
+        "Dietmar Schmitz"
+      ],
+      "journal": "Patterns",
+      "year": "2024",
+      "doi": "10.1016/j.patter.2024.101048",
+      "pmcid": "PMC11574285",
+      "role": "spatial_atlas_reuse",
+      "pollutant": null,
+      "brain_tissue": "cerebro adulto de rat\u00f3n; atlas espacial de referencia",
+      "experimental_pollutant_exposure": false,
+      "data_access_status": "public_spatial_atlas_confirmed",
+      "atlas_datasets": [
+        "Zhuang-ABCA-1",
+        "Zhuang-ABCA-2",
+        "Zhuang-ABCA-3",
+        "Zhuang-ABCA-4"
+      ],
+      "local_pdf": "papers/pdf/Spatial_reuse_DeFilippo_2024_Patterns.pdf",
+      "pdf_source": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11574285.1/PMC11574285.1.pdf",
+      "access_route": "NCBI PubMed Central Open Access on AWS",
+      "pdf_status": "downloaded_verified",
+      "bytes": 9405903,
+      "pages": 21,
+      "sha256": "55cc9076db0f0187c9fc9252551809bdc071dff590403c433195989f0b829abf",
+      "doi_found_in_pdf": true,
+      "reuse_evidence": {
+        "status": "confirmed_direct_data_reuse",
+        "original_atlas_doi": "10.1038/s41586-023-06808-9",
+        "datasets": [
+          "Zhuang-ABCA-1",
+          "Zhuang-ABCA-2",
+          "Zhuang-ABCA-3",
+          "Zhuang-ABCA-4"
+        ],
+        "dataset_urls": [
+          "https://alleninstitute.github.io/abc_atlas_access/descriptions/Zhuang-ABCA-1.html",
+          "https://alleninstitute.github.io/abc_atlas_access/descriptions/Zhuang-ABCA-2.html",
+          "https://alleninstitute.github.io/abc_atlas_access/descriptions/Zhuang-ABCA-3.html",
+          "https://alleninstitute.github.io/abc_atlas_access/descriptions/Zhuang-ABCA-4.html"
+        ],
+        "evidence_section": "Experimental procedures > Data preparation; Data visualizer",
+        "evidence_pdf_pages": [
+          14,
+          18
+        ],
+        "evidence_summary": "Los autores cargaron y concatenaron los cuatro conjuntos MERFISH de Zhuang. Usaron las coordenadas y anotaciones CCF para mapear la expresi\u00f3n y coexpresi\u00f3n de receptores serotonin\u00e9rgicos 5-HT en el cerebro de rat\u00f3n.",
+        "short_verbatim_evidence": "We concatenated the four dataframes in one data structure",
+        "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11574285/",
+        "code_url": "https://github.com/RobertoDF/Transcriptomics-5-HT"
+      }
+    },
+    {
+      "pmid": "40859021",
+      "title": "Reconstruction of a connectome of single neurons in mouse brains by cross-validating multi-scale multi-modality data",
+      "authors": [
+        "Feng Xiong",
+        "Lijuan Liu",
+        "Hanchuan Peng"
+      ],
+      "journal": "Nature Methods",
+      "year": "2025",
+      "doi": "10.1038/s41592-025-02784-2",
+      "pmcid": "PMC12695645",
+      "role": "spatial_atlas_reuse",
+      "pollutant": null,
+      "brain_tissue": "cerebro adulto de rat\u00f3n; atlas espacial de referencia",
+      "experimental_pollutant_exposure": false,
+      "data_access_status": "public_spatial_atlas_confirmed",
+      "atlas_datasets": [
+        "Zhuang-ABCA-3"
+      ],
+      "local_pdf": "papers/pdf/Spatial_reuse_Xiong_2025_Nature_Methods.pdf",
+      "pdf_source": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12695645.1/PMC12695645.1.pdf",
+      "access_route": "NCBI PubMed Central Open Access on AWS",
+      "pdf_status": "downloaded_verified",
+      "bytes": 12298576,
+      "pages": 31,
+      "sha256": "a60acc1e71f976ae20b64ce04d35ad8e90f598eb90349fd71611a8d29214b52f",
+      "doi_found_in_pdf": true,
+      "reuse_evidence": {
+        "status": "confirmed_direct_data_reuse",
+        "original_atlas_doi": "10.1038/s41586-023-06808-9",
+        "datasets": [
+          "Zhuang-ABCA-3"
+        ],
+        "dataset_urls": [
+          "https://alleninstitute.github.io/abc_atlas_access/descriptions/Zhuang-ABCA-3.html"
+        ],
+        "matrix": "log2-transformed counts",
+        "selected_genes": 1122,
+        "selected_cells": 606170,
+        "selected_brain_regions": 76,
+        "evidence_section": "Methods > Whole-brain connectivity and gene correlation",
+        "evidence_pdf_pages": [
+          16
+        ],
+        "evidence_summary": "Los autores seleccionaron la matriz transformada log2 de Zhuang-ABCA-3: 1122 genes y 606170 c\u00e9lulas tras restringir a 76 regiones comunes. Promediaron la expresi\u00f3n por regi\u00f3n para comparar coexpresi\u00f3n g\u00e9nica y conectividad SEU-net/Allen-net.",
+        "short_verbatim_evidence": "of 1,122 genes and 606,170 cells",
+        "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12695645/"
+      }
     }
-  ]
+  ],
+  "updated_at": "2026-10-16T18:49:51.057269+00:00"
 }

@@ -1,0 +1,118 @@
+{
+  "reviewed_at": "2026-10-16T18:46:52.899443+00:00",
+  "scope": "Confirmed reuse of the Zhang et al. 2023 whole-mouse-brain MERFISH atlas; two selected studies, not an exhaustive citation review.",
+  "records": [
+    {
+      "doi": "10.1016/j.patter.2024.101048",
+      "title": "Transcriptomic mapping of the 5-HT receptor landscape",
+      "authors": [
+        "Roberto De Filippo",
+        "Dietmar Schmitz"
+      ],
+      "year": 2024,
+      "journal": "Patterns",
+      "volume": "5",
+      "issue": "10",
+      "article_number": "101048",
+      "published_online": "2024-08-29",
+      "issue_date": "2024-10-11",
+      "pmid": "39569210",
+      "pmcid": "PMC11574285",
+      "file": "papers/pdf/Spatial_reuse_DeFilippo_2024_Patterns.pdf",
+      "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC11574285.1/PMC11574285.1.pdf",
+      "source_institution": "NCBI PubMed Central Open Access on AWS",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11574285/",
+      "doi_url": "https://doi.org/10.1016/j.patter.2024.101048",
+      "reuse": {
+        "status": "confirmed_direct_data_reuse",
+        "original_atlas_doi": "10.1038/s41586-023-06808-9",
+        "datasets": [
+          "Zhuang-ABCA-1",
+          "Zhuang-ABCA-2",
+          "Zhuang-ABCA-3",
+          "Zhuang-ABCA-4"
+        ],
+        "dataset_urls": [
+          "https://alleninstitute.github.io/abc_atlas_access/descriptions/Zhuang-ABCA-1.html",
+          "https://alleninstitute.github.io/abc_atlas_access/descriptions/Zhuang-ABCA-2.html",
+          "https://alleninstitute.github.io/abc_atlas_access/descriptions/Zhuang-ABCA-3.html",
+          "https://alleninstitute.github.io/abc_atlas_access/descriptions/Zhuang-ABCA-4.html"
+        ],
+        "evidence_section": "Experimental procedures > Data preparation; Data visualizer",
+        "evidence_pdf_pages": [
+          14,
+          18
+        ],
+        "evidence_summary": "Los autores cargaron y concatenaron los cuatro conjuntos MERFISH de Zhuang. Usaron las coordenadas y anotaciones CCF para mapear la expresión y coexpresión de receptores serotoninérgicos 5-HT en el cerebro de ratón.",
+        "short_verbatim_evidence": "We concatenated the four dataframes in one data structure",
+        "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11574285/",
+        "code_url": "https://github.com/RobertoDF/Transcriptomics-5-HT"
+      },
+      "bytes": 9405903,
+      "sha256": "55cc9076db0f0187c9fc9252551809bdc071dff590403c433195989f0b829abf",
+      "retrieved_at": "2026-10-16T18:46:52.175070+00:00",
+      "license": "CC BY 4.0",
+      "validation": {
+        "pdf_header": "%PDF-1.7",
+        "page_count": 21,
+        "title_and_doi_confirmed_in_text": true,
+        "reuse_statement_confirmed_in_full_text_and_pdf": true,
+        "first_page_visually_checked": true
+      }
+    },
+    {
+      "doi": "10.1038/s41592-025-02784-2",
+      "title": "Reconstruction of a connectome of single neurons in mouse brains by cross-validating multi-scale multi-modality data",
+      "authors": [
+        "Feng Xiong",
+        "Lijuan Liu",
+        "Hanchuan Peng"
+      ],
+      "year": 2025,
+      "journal": "Nature Methods",
+      "volume": "22",
+      "issue": "12",
+      "pages": "2670-2683",
+      "published_online": "2025-08-26",
+      "pmid": "40859021",
+      "pmcid": "PMC12695645",
+      "file": "papers/pdf/Spatial_reuse_Xiong_2025_Nature_Methods.pdf",
+      "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12695645.1/PMC12695645.1.pdf",
+      "source_institution": "NCBI PubMed Central Open Access on AWS",
+      "article_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12695645/",
+      "doi_url": "https://doi.org/10.1038/s41592-025-02784-2",
+      "reuse": {
+        "status": "confirmed_direct_data_reuse",
+        "original_atlas_doi": "10.1038/s41586-023-06808-9",
+        "datasets": [
+          "Zhuang-ABCA-3"
+        ],
+        "dataset_urls": [
+          "https://alleninstitute.github.io/abc_atlas_access/descriptions/Zhuang-ABCA-3.html"
+        ],
+        "matrix": "log2-transformed counts",
+        "selected_genes": 1122,
+        "selected_cells": 606170,
+        "selected_brain_regions": 76,
+        "evidence_section": "Methods > Whole-brain connectivity and gene correlation",
+        "evidence_pdf_pages": [
+          16
+        ],
+        "evidence_summary": "Los autores seleccionaron la matriz transformada log2 de Zhuang-ABCA-3: 1122 genes y 606170 células tras restringir a 76 regiones comunes. Promediaron la expresión por región para comparar coexpresión génica y conectividad SEU-net/Allen-net.",
+        "short_verbatim_evidence": "of 1,122 genes and 606,170 cells",
+        "evidence_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12695645/"
+      },
+      "bytes": 12298576,
+      "sha256": "a60acc1e71f976ae20b64ce04d35ad8e90f598eb90349fd71611a8d29214b52f",
+      "retrieved_at": "2026-10-16T18:46:52.899386+00:00",
+      "license": "CC BY 4.0",
+      "validation": {
+        "pdf_header": "%PDF-1.4",
+        "page_count": 31,
+        "title_and_doi_confirmed_in_text": true,
+        "reuse_statement_confirmed_in_full_text_and_pdf": true,
+        "first_page_visually_checked": true
+      }
+    }
+  ]
+}

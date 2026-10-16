@@ -166,3 +166,32 @@ UR  - https://doi.org/10.1038/s41586-023-06808-9
 N1  - MERFISH spatial reference atlas; no experimental pollutant exposure
 L1  - papers/pdf/Zhang_2023_whole_mouse_brain_MERFISH.pdf
 ER  -
+
+TY  - JOUR
+TI  - Transcriptomic mapping of the 5-HT receptor landscape
+AU  - De Filippo, Roberto
+AU  - Schmitz, Dietmar
+JO  - Patterns
+PY  - 2024
+VL  - 5
+IS  - 10
+DO  - 10.1016/j.patter.2024.101048
+UR  - https://doi.org/10.1016/j.patter.2024.101048
+N1  - Confirmed reuse of the Zhang 2023 spatial reference atlas
+L1  - papers/pdf/Spatial_reuse_DeFilippo_2024_Patterns.pdf
+ER  -
+
+TY  - JOUR
+TI  - Reconstruction of a connectome of single neurons in mouse brains by cross-validating multi-scale multi-modality data
+AU  - Xiong, Feng
+AU  - Liu, Lijuan
+AU  - Peng, Hanchuan
+JO  - Nature Methods
+PY  - 2025
+VL  - 22
+IS  - 12
+DO  - 10.1038/s41592-025-02784-2
+UR  - https://doi.org/10.1038/s41592-025-02784-2
+N1  - Confirmed reuse of the Zhang 2023 spatial reference atlas
+L1  - papers/pdf/Spatial_reuse_Xiong_2025_Nature_Methods.pdf
+ER  -

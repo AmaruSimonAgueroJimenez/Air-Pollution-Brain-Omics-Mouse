@@ -1,6 +1,8 @@
 # Publicaciones de datos ómicos de cerebro de ratón
 
-Revisión al **14 de octubre de 2026**, limitada a **cerebro**. La biblioteca contiene seis artículos: cuatro publicaciones originales vinculadas a los conjuntos descargables y dos estudios cerebrales de NO₂ cuyos datos completos por muestra aún no están disponibles de forma pública confirmada. Se verificaron las seis copias PDF, sus DOI y sus páginas. La copia de Li et al., 2026 se exportó para lectura desde el PDF editorial completo: el guardado directo del original permanecía deshabilitado. La descarga de matrices y secuencias tiene su propio estado y no se considera completada por obtener un artículo.
+Revisión de los estudios de exposición al **14 de octubre de 2026**, limitada a **cerebro**. Esa biblioteca contiene seis artículos: cuatro publicaciones originales vinculadas a los conjuntos descargables y dos estudios cerebrales de NO₂ cuyos datos completos por muestra aún no están disponibles de forma pública confirmada. Se verificaron las seis copias PDF, sus DOI y sus páginas. La copia de Li et al., 2026 se exportó para lectura desde el PDF editorial completo: el guardado directo del original permanecía deshabilitado. La descarga de matrices y secuencias tiene su propio estado y no se considera completada por obtener un artículo.
+
+**Actualización del 16 de octubre de 2026:** se incorpora el artículo del atlas espacial MERFISH de referencia sin exposición, con su PDF, y dos reutilizaciones verificadas de ese atlas, descritas más abajo.
 
 | Conjunto | Contaminante | Región seleccionada | Publicación original | Artículo obtenido |
 |---|---|---|---|---|
@@ -38,6 +40,23 @@ Primera autora **Tingting Ku**; último autor y correspondencia **Nan Sang**, Sh
 ## Quién ha publicado después usando datos cerebrales
 
 El original de Rajagopalan **ya analizó el hipotálamo**. No se verificó una publicación posterior que reanalice las muestras cerebrales de ninguno de estos cuatro conjuntos en la búsqueda por accession, alias y texto completo realizada hasta la fecha indicada. El uso posterior de tejidos periféricos de GSE145840 no equivale a un análisis cerebral; su evidencia queda en [auditoría periférica](peripheral_reuse_audit.md), fuera de la selección. Esta búsqueda no demuestra ausencia universal de reutilizaciones.
+
+## Atlas espacial celular sin exposición: publicación original y reutilizaciones
+
+**Meng Zhang et al. Molecularly defined and spatially resolved cell atlas of the whole mouse brain.** *Nature*. 2023;624:343–354. DOI: [10.1038/s41586-023-06808-9](https://doi.org/10.1038/s41586-023-06808-9). Autora de correspondencia **Xiaowei Zhuang**. El estudio genera MERFISH espacial con un panel común de **1.122 genes**, disponible como **Zhuang-ABCA-1 a Zhuang-ABCA-4** en Allen Brain Cell Atlas. [PDF descargado](../papers/pdf/Zhang_2023_whole_mouse_brain_MERFISH.pdf), obtenido desde Harvard DASH; [procedencia y SHA256](../metadata/papers/spatial_atlas_paper.json). Su descarga de matrices y coordenadas se controla mediante `python3 scripts/download_spatial_atlas.py --status`.
+
+Este atlas describe cerebros adultos de ratón sin exposición experimental a contaminantes. No mide por sí mismo una respuesta a PM2.5, NO₂ u O₃. Es una referencia espacial celular complementaria a los cuatro estudios de exposición.
+
+Se verificaron estas reutilizaciones explícitas al **16 de octubre de 2026**:
+
+| Publicación posterior | Datos reutilizados | Evidencia en la fuente primaria |
+|---|---|---|
+| **Roberto De Filippo y Dietmar Schmitz**, *Transcriptomic mapping of the 5-HT receptor landscape*. *Patterns*. 2024;5(10):101048. [Artículo](https://doi.org/10.1016/j.patter.2024.101048) | **Zhuang-ABCA-1, 2, 3 y 4**, con coordenadas CCF | «Experimental procedures → Data preparation» identifica los cuatro conjuntos y su concatenación. Reanaliza receptores serotoninérgicos por tipo celular y región. [Código de los autores](https://github.com/RobertoDF/Transcriptomics-5-HT); [resultados en Figshare](https://doi.org/10.6084/m9.figshare.26325505). |
+| **Feng Xiong, Lijuan Liu y Hanchuan Peng**, *Reconstruction of a connectome of single neurons in mouse brains by cross-validating multi-scale multi-modality data*. *Nature Methods*. 2025;22:2670–2683. [Artículo](https://doi.org/10.1038/s41592-025-02784-2) | **Zhuang-ABCA-3**, matriz `log2` de 1.122 genes | «Methods → Whole-brain connectivity and gene correlation» selecciona **606.170 células de 76 regiones** para relacionar coexpresión y conectividad, y enlaza el conjunto ABCA-3. |
+
+Ambos son artículos publicados y analizan las matrices del atlas; su clasificación como reutilización no se basa únicamente en citar el artículo original. No estudian exposición a contaminantes.
+
+También se descargaron los [PDF de De Filippo y Schmitz](../papers/pdf/Spatial_reuse_DeFilippo_2024_Patterns.pdf) y de [Xiong et al.](../papers/pdf/Spatial_reuse_Xiong_2025_Nature_Methods.pdf), desde el depósito abierto de PubMed Central. El [registro de reutilizaciones](../metadata/papers/spatial_atlas_reuse.json) conserva las URL originales, tamaños, SHA256 y las páginas que prueban el uso de las matrices. Con estos tres artículos del atlas y sus reutilizaciones, la biblioteca cerebral reúne **nueve PDF**.
 
 ## NO₂: artículos cerebrales y acceso a datos primarios
 
