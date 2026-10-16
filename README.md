@@ -1,6 +1,6 @@
 # Air Pollution Brain Omics — Mouse
 
-Repositorio local de datos ómicos abiertos de cerebro de ratón (*Mus musculus*) relacionados con PM2.5 y ozono (O₃). Reúne los archivos originales disponibles, datos procesados, metadatos de muestras y un manifiesto reproducible de descarga. La selección comprende **4 estudios, 64 muestras cerebrales y 55 bibliotecas de RNA-seq**.
+Repositorio local de datos ómicos abiertos de cerebro de ratón (*Mus musculus*) relacionados con PM2.5 y ozono (O₃). Reúne los archivos originales disponibles, datos procesados, metadatos de muestras y un manifiesto reproducible de descarga. La selección de exposición comprende **4 estudios, 64 muestras cerebrales y 55 bibliotecas de RNA-seq**. Se añade un atlas espacial celular de referencia de cuatro ratones sin exposición experimental a contaminantes, descrito más abajo.
 
 ## Estudios incluidos
 
@@ -17,7 +17,7 @@ La selección conserva todos los grupos experimentales cerebrales de estos estud
 
 ## Estado de descarga
 
-La descarga completa se inició el **14 de octubre de 2026**. Este documento describe el contenido previsto y no certifica por sí mismo que todos los archivos hayan terminado. El estado actualizado se consulta desde la carpeta del repositorio:
+La descarga de los cuatro estudios de exposición se inició el **14 de octubre de 2026** y terminó el **16 de octubre de 2026**: **136/136 archivos verificados, aproximadamente 261,996 GB en total**, sin fallidos. El estado actualizado se consulta desde la carpeta del repositorio:
 
 ```bash
 python3 scripts/status.py
@@ -72,6 +72,27 @@ La biblioteca principal se limita a **cerebro**, conforme a la selección solici
 Los seis artículos cerebrales obtenidos se guardan en `papers/pdf/`, incluida una copia de lectura de Li et al., 2026 exportada desde el PDF editorial completo mediante acceso UC. El inventario y las comprobaciones de cada copia están en `metadata/papers/paper_manifest.json`; las referencias para importar a un gestor bibliográfico están en [papers/bibliography.bib](papers/bibliography.bib) y [papers/bibliography.ris](papers/bibliography.ris). El inventario diferencia un PDF obtenido de un depósito de datos abierto confirmado. Los PDF permanecen en la biblioteca local y no se incluyen en Git. Los metadatos bibliográficos se contrastaron con PubMed, los depósitos de datos y las páginas editoriales. Los antecedentes de reutilización de tejidos periféricos están separados de la selección cerebral en [docs/peripheral_reuse_audit.md](docs/peripheral_reuse_audit.md).
 
 Los suplementos cerebrales abiertos de Yan et al., 2020 se guardan en `data/NO2_Yan_2020/supplements/`. Son resultados derivados de NO₂: tablas de enriquecimiento y asociaciones lncRNA–mRNA, junto con genes seleccionados y figuras. No incluyen FASTQ ni una matriz completa de expresión por muestra y no se cuentan entre los cuatro depósitos, las 64 muestras o los 110 FASTQ del manifiesto principal.
+
+## Atlas espacial celular de referencia sin exposición
+
+El **16 de octubre de 2026** se inició la descarga de los cuatro conjuntos **Zhuang-ABCA-1 a Zhuang-ABCA-4** del estudio de [Zhang et al., Nature 2023](https://doi.org/10.1038/s41586-023-06808-9), desde el [Allen Brain Cell Atlas](https://alleninstitute.github.io/abc_atlas_access/notebooks/zhuang_merfish_tutorial.html). Es un atlas MERFISH de cerebro adulto de ratón sin intervención experimental de PM2.5, NO₂ u O₃. Las matrices medidas corresponden a un panel de **1.122 genes**. Los valores `raw` son conteos de moléculas detectadas por imagen, no lecturas FASTQ.
+
+El paquete descargable comprende **49 archivos, 10,744 GB**: ocho matrices H5AD (conteos y valores `log2` para cada animal), metadatos celulares y de genes, etiquetas celulares, coordenadas registradas al marco anatómico CCF, taxonomía celular y volúmenes anatómicos NIfTI. Se conserva la estructura de versiones original bajo `data/reference_atlases/Zhuang_2023/`. Los datos medidos no incluyen las imágenes microscópicas originales ni una ampliación del transcriptoma mediante imputación.
+
+El tutorial de Allen distingue aproximadamente 8,4 millones de células en matrices, 5,8 millones con las anotaciones celulares filtradas y 5,4 millones con coordenadas CCF registradas. Estos conjuntos no tienen exactamente las mismas filas: deben cruzarse por `cell_label`, conservando los filtros de confianza. Las coordenadas `x/y` proceden de los cortes alineados; la posición del corte en la tercera dimensión se estima durante el registro. El atlas permite estudiar la expresión y localización de firmas génicas; un efecto espacial de contaminación proyectado sobre él es una inferencia y no una exposición medida en estos ratones.
+
+El manifiesto seleccionado está en [metadata/spatial_atlas/download_manifest.json](metadata/spatial_atlas/download_manifest.json), junto con una copia del manifiesto público de Allen. Se fijó el manifiesto `releases/20261031`, disponible al consultarlo el 16 de octubre de 2026. Las matrices conservan su versión `20230830` y los metadatos celulares su versión `20241115`. Los datos Zhuang se distribuyen bajo **CC BY 4.0**, según las fichas de Allen; aplicar las condiciones de cada recurso anatómico complementario.
+
+El [artículo completo en PDF](papers/pdf/Zhang_2023_whole_mouse_brain_MERFISH.pdf) está descargado desde el depósito institucional Harvard DASH. Su procedencia, tamaño y SHA256 se documentan en [metadata/papers/spatial_atlas_paper.json](metadata/papers/spatial_atlas_paper.json), y la referencia se añadió a las bibliografías BibTeX y RIS.
+
+Este atlas utiliza su propio registro de progreso. Para consultar o reanudar la descarga:
+
+```bash
+python3 scripts/download_spatial_atlas.py --status
+python3 scripts/download_spatial_atlas.py --background --workers 4
+```
+
+`logs/spatial_atlas/completion.json` registra el resultado final y `metadata/spatial_atlas/download_receipts.json` guarda las comprobaciones de integridad al terminar. Cada archivo se comprueba por tamaño y MD5 contra el manifiesto publicado. `--verify-only` permite repetir la comprobación completa sin descargar archivos nuevos. Las matrices y los metadatos se mantienen separados de los estudios de exposición y no se suman a sus 64 muestras ni a sus 110 FASTQ.
 
 ## Integridad y uso analítico
 

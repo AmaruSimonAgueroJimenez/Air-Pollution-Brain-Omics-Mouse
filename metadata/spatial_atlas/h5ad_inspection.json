@@ -1,0 +1,34 @@
+{
+  "inspected_at": "2026-10-16T18:44:31.870265+00:00",
+  "scope": "Structural inspection of files already complete; count values checked on the first 1000 rows only. Source MD5 verification is recorded by the downloader.",
+  "matrices": [
+    {
+      "file": "data/reference_atlases/Zhuang_2023/expression_matrices/Zhuang-ABCA-4/20230830/Zhuang-ABCA-4-log2.h5ad",
+      "cells": 215278,
+      "genes": 1122,
+      "dtype": "float32",
+      "obs_index": "cell_label",
+      "var_index": "gene_identifier",
+      "sample_rows": 1000,
+      "sample_finite": true,
+      "sample_nonnegative": true,
+      "source_expression": "measured_MERFISH_panel"
+    },
+    {
+      "file": "data/reference_atlases/Zhuang_2023/expression_matrices/Zhuang-ABCA-4/20230830/Zhuang-ABCA-4-raw.h5ad",
+      "cells": 215278,
+      "genes": 1122,
+      "dtype": "float32",
+      "obs_index": "cell_label",
+      "var_index": "gene_identifier",
+      "sample_rows": 1000,
+      "sample_finite": true,
+      "sample_nonnegative": true,
+      "source_expression": "measured_MERFISH_panel",
+      "sample_integer_counts": true
+    }
+  ],
+  "inspected_matrices": 2,
+  "expected_matrices": 8,
+  "all_eight_inspected": false
+}

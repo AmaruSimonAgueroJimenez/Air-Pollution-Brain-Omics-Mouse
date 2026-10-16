@@ -1,0 +1,41 @@
+{
+  "doi": "10.1038/s41586-023-06808-9",
+  "title": "Molecularly defined and spatially resolved cell atlas of the whole mouse brain",
+  "authors": "Meng Zhang et al.",
+  "year": 2023,
+  "journal": "Nature",
+  "volume": "624",
+  "pages": "343-354",
+  "pmid": "38092912",
+  "pmcid": "PMC10719103",
+  "source_url": "https://dash.harvard.edu/server/api/core/bitstreams/240fddba-3d2b-47eb-a6d4-649f77a59077/content",
+  "landing_page": "https://dash.harvard.edu/entities/publication/e1d006e7-ff1d-4227-be59-8acff2e0f88c",
+  "source_institution": "Harvard University DASH",
+  "license": "CC BY 4.0",
+  "file": "papers/pdf/Zhang_2023_whole_mouse_brain_MERFISH.pdf",
+  "bytes": 26221342,
+  "sha256": "5c66f0c6075893398bca32628f3bfbe6b5aaa42ea29e097d7eb71fe5ff7a5e07",
+  "retrieved_at": "2026-10-16T18:42:21.291396+00:00",
+  "validation": {
+    "pdf_header": "%PDF-1.6",
+    "page_count": 36,
+    "title_and_doi_confirmed_in_extracted_text": true,
+    "article_first_page_visually_checked": true
+  },
+  "note": "Openly deposited journal article with Harvard DASH cover sheet. Original downloaded PDF preserved.",
+  "author_list": [
+    "Zhang, Meng",
+    "Pan, Xingjie",
+    "Jung, Won",
+    "Halpern, Aaron R.",
+    "Eichhorn, Stephen W.",
+    "Lei, Zhiyun",
+    "Cohen, Limor",
+    "Smith, Kimberly A.",
+    "Tasic, Bosiljka",
+    "Yao, Zizhen",
+    "Zeng, Hongkui",
+    "Zhuang, Xiaowei"
+  ],
+  "bibliography_source": "https://api.crossref.org/works/10.1038/s41586-023-06808-9"
+}

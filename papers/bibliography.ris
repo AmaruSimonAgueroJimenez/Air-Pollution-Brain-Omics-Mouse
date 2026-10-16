@@ -141,3 +141,28 @@ UR  - https://doi.org/10.1016/j.neuro.2026.103527
 N1  - candidato cerebral; depósito público no confirmado
 L1  - papers/pdf/NO2_Li_2026_Neurotoxicology_reading_copy.pdf
 ER  -
+
+TY  - JOUR
+TI  - Molecularly defined and spatially resolved cell atlas of the whole mouse brain
+AU  - Zhang, Meng
+AU  - Pan, Xingjie
+AU  - Jung, Won
+AU  - Halpern, Aaron R.
+AU  - Eichhorn, Stephen W.
+AU  - Lei, Zhiyun
+AU  - Cohen, Limor
+AU  - Smith, Kimberly A.
+AU  - Tasic, Bosiljka
+AU  - Yao, Zizhen
+AU  - Zeng, Hongkui
+AU  - Zhuang, Xiaowei
+JO  - Nature
+PY  - 2023
+VL  - 624
+SP  - 343
+EP  - 354
+DO  - 10.1038/s41586-023-06808-9
+UR  - https://doi.org/10.1038/s41586-023-06808-9
+N1  - MERFISH spatial reference atlas; no experimental pollutant exposure
+L1  - papers/pdf/Zhang_2023_whole_mouse_brain_MERFISH.pdf
+ER  -
