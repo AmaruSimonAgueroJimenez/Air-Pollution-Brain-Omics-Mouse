@@ -75,7 +75,7 @@ Los suplementos cerebrales abiertos de Yan et al., 2020 se guardan en `data/NO2_
 
 ## Atlas espacial celular de referencia sin exposición
 
-El **16 de octubre de 2026** se inició la descarga de los cuatro conjuntos **Zhuang-ABCA-1 a Zhuang-ABCA-4** del estudio de [Zhang et al., Nature 2023](https://doi.org/10.1038/s41586-023-06808-9), desde el [Allen Brain Cell Atlas](https://alleninstitute.github.io/abc_atlas_access/notebooks/zhuang_merfish_tutorial.html). Es un atlas MERFISH de cerebro adulto de ratón sin intervención experimental de PM2.5, NO₂ u O₃. Las matrices medidas corresponden a un panel de **1.122 genes**. Los valores `raw` son conteos de moléculas detectadas por imagen, no lecturas FASTQ.
+El **16 de octubre de 2026** se completó la descarga de los cuatro conjuntos **Zhuang-ABCA-1 a Zhuang-ABCA-4** del estudio de [Zhang et al., Nature 2023](https://doi.org/10.1038/s41586-023-06808-9), desde el [Allen Brain Cell Atlas](https://alleninstitute.github.io/abc_atlas_access/notebooks/zhuang_merfish_tutorial.html): **49/49 archivos verificados, sin fallidos**. Es un atlas MERFISH de cerebro adulto de ratón sin intervención experimental de PM2.5, NO₂ u O₃. Las matrices medidas corresponden a un panel de **1.122 genes**. Los valores `raw` son conteos de moléculas detectadas por imagen, no lecturas FASTQ.
 
 El paquete descargable comprende **49 archivos, 10,744 GB**: ocho matrices H5AD (conteos y valores `log2` para cada animal), metadatos celulares y de genes, etiquetas celulares, coordenadas registradas al marco anatómico CCF, taxonomía celular y volúmenes anatómicos NIfTI. Se conserva la estructura de versiones original bajo `data/reference_atlases/Zhuang_2023/`. Los datos medidos no incluyen las imágenes microscópicas originales ni una ampliación del transcriptoma mediante imputación.
 
@@ -94,7 +94,7 @@ python3 scripts/download_spatial_atlas.py --status
 python3 scripts/download_spatial_atlas.py --background --workers 4
 ```
 
-`logs/spatial_atlas/completion.json` registra el resultado final y `metadata/spatial_atlas/download_receipts.json` guarda las comprobaciones de integridad al terminar. Cada archivo se comprueba por tamaño y MD5 contra el manifiesto publicado. `--verify-only` permite repetir la comprobación completa sin descargar archivos nuevos. Las matrices y los metadatos se mantienen separados de los estudios de exposición y no se suman a sus 64 muestras ni a sus 110 FASTQ.
+`logs/spatial_atlas/completion.json` registra el resultado final y [metadata/spatial_atlas/download_receipts.json](metadata/spatial_atlas/download_receipts.json) guarda las comprobaciones de integridad. Los 49 archivos coincidieron en tamaño y MD5 con el manifiesto publicado. Se revisaron además las dimensiones e identificadores de las ocho matrices y los valores de sus primeras 1.000 células; el alcance de esa inspección está en [metadata/spatial_atlas/h5ad_inspection.json](metadata/spatial_atlas/h5ad_inspection.json). `--verify-only` permite repetir la comprobación completa sin descargar archivos nuevos. Las matrices y los metadatos se mantienen separados de los estudios de exposición y no se suman a sus 64 muestras ni a sus 110 FASTQ.
 
 ## Integridad y uso analítico
 

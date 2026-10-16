@@ -1,0 +1,502 @@
+{
+  "source_manifest": "https://allen-brain-cell-atlas.s3.us-west-2.amazonaws.com/releases/20261031/manifest.json",
+  "files": [
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Allen-CCF-2020/20230630/parcellation_term_set.csv",
+      "dataset": "Allen-CCF-2020",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:40:54.431510+00:00",
+      "bytes": 628,
+      "md5": "155d483d300976e9791803bfa8b48354",
+      "source_md5_match": true,
+      "mtime_ns": 1792176054427354268
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_blue.csv",
+      "dataset": "Allen-CCF-2020",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:40:54.493617+00:00",
+      "bytes": 16353,
+      "md5": "ca86c6177e165cf439e00b467a17141a",
+      "source_md5_match": true,
+      "mtime_ns": 1792176054491507619
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/WMB-taxonomy/20231215/cluster_annotation_term_set.csv",
+      "dataset": "WMB-taxonomy",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:40:54.432255+00:00",
+      "bytes": 1107,
+      "md5": "6da16f35aad825efeb7230322fbf6cfd",
+      "source_md5_match": true,
+      "mtime_ns": 1792176054428948719
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_red.csv",
+      "dataset": "Allen-CCF-2020",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:40:54.448143+00:00",
+      "bytes": 15987,
+      "md5": "9cce8370a9a2a6eacf71d2f98e1e8396",
+      "source_md5_match": true,
+      "mtime_ns": 1792176054445638070
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_green.csv",
+      "dataset": "Allen-CCF-2020",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:40:55.078097+00:00",
+      "bytes": 16545,
+      "md5": "14dc8287630eeae3347b0d9636dbd65e",
+      "source_md5_match": true,
+      "mtime_ns": 1792176055075055739
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_acronym.csv",
+      "dataset": "Allen-CCF-2020",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:40:55.083141+00:00",
+      "bytes": 22261,
+      "md5": "3e415e67f7089192bbce62bf9aac7bd1",
+      "source_md5_match": true,
+      "mtime_ns": 1792176055080610773
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_color.csv",
+      "dataset": "Allen-CCF-2020",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:40:55.313016+00:00",
+      "bytes": 30465,
+      "md5": "2b143fe11b8ac05c2503fd24a4928a01",
+      "source_md5_match": true,
+      "mtime_ns": 1792176055309364880
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Allen-CCF-2020/20230630/parcellation.csv",
+      "dataset": "Allen-CCF-2020",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:40:55.328376+00:00",
+      "bytes": 41197,
+      "md5": "aea6f6925d7c84f4e5a2d022cbc9c7bb",
+      "source_md5_match": true,
+      "mtime_ns": 1792176055325230964
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Allen-CCF-2020/20230630/views/parcellation_to_parcellation_term_membership_name.csv",
+      "dataset": "Allen-CCF-2020",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:40:55.917010+00:00",
+      "bytes": 75830,
+      "md5": "6e05ccc3308fbb9bf567c5a3dd8b1402",
+      "source_md5_match": true,
+      "mtime_ns": 1792176055912154114
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Zhuang-ABCA-1/20241115/gene.csv",
+      "dataset": "Zhuang-ABCA-1",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:40:56.107585+00:00",
+      "bytes": 84677,
+      "md5": "44b16a70c9cd2188d30900c29c2d8ba1",
+      "source_md5_match": true,
+      "mtime_ns": 1792176056104555206
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Zhuang-ABCA-2/20241115/gene.csv",
+      "dataset": "Zhuang-ABCA-2",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:40:56.370036+00:00",
+      "bytes": 84677,
+      "md5": "44b16a70c9cd2188d30900c29c2d8ba1",
+      "source_md5_match": true,
+      "mtime_ns": 1792176056368157548
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Zhuang-ABCA-3/20241115/gene.csv",
+      "dataset": "Zhuang-ABCA-3",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:40:56.363672+00:00",
+      "bytes": 84677,
+      "md5": "44b16a70c9cd2188d30900c29c2d8ba1",
+      "source_md5_match": true,
+      "mtime_ns": 1792176056361342696
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Zhuang-ABCA-4/20241115/gene.csv",
+      "dataset": "Zhuang-ABCA-4",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:40:57.013013+00:00",
+      "bytes": 84677,
+      "md5": "44b16a70c9cd2188d30900c29c2d8ba1",
+      "source_md5_match": true,
+      "mtime_ns": 1792176057009626095
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Allen-CCF-2020/20230630/parcellation_term_set_membership.csv",
+      "dataset": "Allen-CCF-2020",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:40:57.200726+00:00",
+      "bytes": 114469,
+      "md5": "d9752891d750d87243346bb5c7388458",
+      "source_md5_match": true,
+      "mtime_ns": 1792176057198004603
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/WMB-taxonomy/20231215/cluster.csv",
+      "dataset": "WMB-taxonomy",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:40:57.402474+00:00",
+      "bytes": 130749,
+      "md5": "8a980695605a3d3e105c3e82d2614264",
+      "source_md5_match": true,
+      "mtime_ns": 1792176057400180527
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Allen-CCF-2020/20230630/views/parcellation_term_with_counts.csv",
+      "dataset": "Allen-CCF-2020",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:40:57.443666+00:00",
+      "bytes": 136866,
+      "md5": "33a0966f198e1f694ecefd62a9e4ef43",
+      "source_md5_match": true,
+      "mtime_ns": 1792176057441566315
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Allen-CCF-2020/20230630/parcellation_term.csv",
+      "dataset": "Allen-CCF-2020",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:40:58.109561+00:00",
+      "bytes": 176626,
+      "md5": "2d91c7f148dc5149cb51cafcfdbabdf0",
+      "source_md5_match": true,
+      "mtime_ns": 1792176058106747945
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_color.csv",
+      "dataset": "WMB-taxonomy",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:40:58.482390+00:00",
+      "bytes": 238744,
+      "md5": "06cfcb594b290f8961a7ab5f24ca830f",
+      "source_md5_match": true,
+      "mtime_ns": 1792176058478985740
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/WMB-taxonomy/20231215/views/cluster_to_cluster_annotation_membership_pivoted.csv",
+      "dataset": "WMB-taxonomy",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:40:58.870519+00:00",
+      "bytes": 530641,
+      "md5": "06a0f8cd2b2181fed0fc6e3597af5c20",
+      "source_md5_match": true,
+      "mtime_ns": 1792176058865874344
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Allen-CCF-2020/20230630/parcellation_to_parcellation_term_membership.csv",
+      "dataset": "Allen-CCF-2020",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:40:59.304152+00:00",
+      "bytes": 679969,
+      "md5": "957b7da082cc94b9307d4e225e401f5a",
+      "source_md5_match": true,
+      "mtime_ns": 1792176059299039131
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/WMB-taxonomy/20231215/cluster_annotation_term.csv",
+      "dataset": "WMB-taxonomy",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:40:59.760871+00:00",
+      "bytes": 861405,
+      "md5": "bf307de084140187706b8efd3378f015",
+      "source_md5_match": true,
+      "mtime_ns": 1792176059757216028
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/WMB-taxonomy/20231215/views/cluster_annotation_term_with_counts.csv",
+      "dataset": "WMB-taxonomy",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:41:00.178126+00:00",
+      "bytes": 902272,
+      "md5": "379607af48e7960b94d3a94687d84f6f",
+      "source_md5_match": true,
+      "mtime_ns": 1792176060169333038
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/WMB-taxonomy/20231215/cluster_to_cluster_annotation_membership.csv",
+      "dataset": "WMB-taxonomy",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:41:00.759273+00:00",
+      "bytes": 2208190,
+      "md5": "9257eef8bc89e05467eaeeb0dad5d625",
+      "source_md5_match": true,
+      "mtime_ns": 1792176060752538109
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_25.nii.gz",
+      "dataset": "Allen-CCF-2020",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:41:01.382096+00:00",
+      "bytes": 3126516,
+      "md5": "45253f468fb1505ac0e0a51c41ebd110",
+      "source_md5_match": true,
+      "mtime_ns": 1792176061375484725
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/image_volumes/Allen-CCF-2020/20250331/annotation_25.nii.gz",
+      "dataset": "Allen-CCF-2020",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:41:01.836489+00:00",
+      "bytes": 3629676,
+      "md5": "fa13b99f75a1beacdc4b2df6cc123cb4",
+      "source_md5_match": true,
+      "mtime_ns": 1792176061826685100
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Zhuang-ABCA-4-CCF/20230830/ccf_coordinates.csv",
+      "dataset": "Zhuang-ABCA-4-CCF",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:41:03.390172+00:00",
+      "bytes": 13750526,
+      "md5": "bc5e785cd5f49ba8b6d233dd8842f368",
+      "source_md5_match": true,
+      "mtime_ns": 1792176063359938506
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/image_volumes/Allen-CCF-2020/20250331/annotation_boundary_10.nii.gz",
+      "dataset": "Allen-CCF-2020",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:41:28.588344+00:00",
+      "bytes": 27420666,
+      "md5": "6664e16e500bd44f849e7cf385c53bed",
+      "source_md5_match": true,
+      "mtime_ns": 1792176088524685921
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/image_volumes/Allen-CCF-2020/20250331/annotation_10.nii.gz",
+      "dataset": "Allen-CCF-2020",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:41:32.353185+00:00",
+      "bytes": 27539347,
+      "md5": "84735b65980bd862cde8c2cb4e8560a7",
+      "source_md5_match": true,
+      "mtime_ns": 1792176092291250349
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/image_volumes/Allen-CCF-2020/20250331/average_template_25.nii.gz",
+      "dataset": "Allen-CCF-2020",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:41:06.990014+00:00",
+      "bytes": 32998848,
+      "md5": "8a3229aa42bd8c48ae0c140f2f7fdf02",
+      "source_md5_match": true,
+      "mtime_ns": 1792176066920844688
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Zhuang-ABCA-4/20241115/cell_metadata.csv",
+      "dataset": "Zhuang-ABCA-4",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:42:08.107057+00:00",
+      "bytes": 37955304,
+      "md5": "509e71913aa3a1f4fe12704cc87674dc",
+      "source_md5_match": true,
+      "mtime_ns": 1792176128052645495
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Zhuang-ABCA-4/20241115/views/cell_metadata_with_cluster_annotation.csv",
+      "dataset": "Zhuang-ABCA-4",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:41:49.145550+00:00",
+      "bytes": 50545200,
+      "md5": "4e36257662374c673f4f37405ff0edbd",
+      "source_md5_match": true,
+      "mtime_ns": 1792176109079114392
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/expression_matrices/Zhuang-ABCA-4/20230830/Zhuang-ABCA-4-raw.h5ad",
+      "dataset": "Zhuang-ABCA-4",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:41:39.739414+00:00",
+      "bytes": 64247492,
+      "md5": "4c635f86a9ec7cebf164ace93c7a6017",
+      "source_md5_match": true,
+      "mtime_ns": 1792176099637647815
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Zhuang-ABCA-2-CCF/20230830/ccf_coordinates.csv",
+      "dataset": "Zhuang-ABCA-2-CCF",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:41:42.579709+00:00",
+      "bytes": 89087322,
+      "md5": "43ac7bdd125c068d63f44444b2713b9a",
+      "source_md5_match": true,
+      "mtime_ns": 1792176102453789608
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/expression_matrices/Zhuang-ABCA-4/20230830/Zhuang-ABCA-4-log2.h5ad",
+      "dataset": "Zhuang-ABCA-4",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:42:07.747053+00:00",
+      "bytes": 106739752,
+      "md5": "d4e27da0482c2a1b46750fcc1c07ab31",
+      "source_md5_match": true,
+      "mtime_ns": 1792176127604501851
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Zhuang-ABCA-3-CCF/20230830/ccf_coordinates.csv",
+      "dataset": "Zhuang-ABCA-3-CCF",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:42:19.714313+00:00",
+      "bytes": 132290292,
+      "md5": "84193b80d49ec9a2fa32f0aee74b9ca5",
+      "source_md5_match": true,
+      "mtime_ns": 1792176139534753745
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Zhuang-ABCA-1-CCF/20230830/ccf_coordinates.csv",
+      "dataset": "Zhuang-ABCA-1-CCF",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:42:42.643150+00:00",
+      "bytes": 220766326,
+      "md5": "ac72abb78ecd1a03edd2118ec011ea83",
+      "source_md5_match": true,
+      "mtime_ns": 1792176162344319323
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Zhuang-ABCA-2/20241115/cell_metadata.csv",
+      "dataset": "Zhuang-ABCA-2",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:42:52.452113+00:00",
+      "bytes": 285532200,
+      "md5": "bb7c5daafd2478e7240b3058b1935ed7",
+      "source_md5_match": true,
+      "mtime_ns": 1792176172085006241
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/image_volumes/Allen-CCF-2020/20250331/average_template_10.nii.gz",
+      "dataset": "Allen-CCF-2020",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:45:31.300925+00:00",
+      "bytes": 342560682,
+      "md5": "9487f754fd396bab59f37955ef6c6437",
+      "source_md5_match": true,
+      "mtime_ns": 1792176330724324914
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Zhuang-ABCA-3/20241115/cell_metadata.csv",
+      "dataset": "Zhuang-ABCA-3",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:43:04.302012+00:00",
+      "bytes": 369078900,
+      "md5": "448902e78b9b90316dc334524b50d07f",
+      "source_md5_match": true,
+      "mtime_ns": 1792176183829794273
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Zhuang-ABCA-2/20241115/views/cell_metadata_with_cluster_annotation.csv",
+      "dataset": "Zhuang-ABCA-2",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:45:34.172319+00:00",
+      "bytes": 376180083,
+      "md5": "f2c9e2e6a9b279827d9b3c06f068be85",
+      "source_md5_match": true,
+      "mtime_ns": 1792176333706445410
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Zhuang-ABCA-3/20241115/views/cell_metadata_with_cluster_annotation.csv",
+      "dataset": "Zhuang-ABCA-3",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:45:11.605050+00:00",
+      "bytes": 489287971,
+      "md5": "52c620d60a40e04005531a51f9f17559",
+      "source_md5_match": true,
+      "mtime_ns": 1792176310975462567
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/expression_matrices/Zhuang-ABCA-2/20230830/Zhuang-ABCA-2-raw.h5ad",
+      "dataset": "Zhuang-ABCA-2",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:45:47.987852+00:00",
+      "bytes": 520384543,
+      "md5": "478cafd72589351da22861862cef2760",
+      "source_md5_match": true,
+      "mtime_ns": 1792176347340218297
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/expression_matrices/Zhuang-ABCA-3/20230830/Zhuang-ABCA-3-raw.h5ad",
+      "dataset": "Zhuang-ABCA-3",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:48:29.886473+00:00",
+      "bytes": 658305677,
+      "md5": "89f3f8009329c342d65c0e930c3f9e60",
+      "source_md5_match": true,
+      "mtime_ns": 1792176508997004042
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Zhuang-ABCA-1/20241115/cell_metadata.csv",
+      "dataset": "Zhuang-ABCA-1",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:48:57.939637+00:00",
+      "bytes": 661035596,
+      "md5": "5f05c97b15c58bcc05421aff1e4b5bd4",
+      "source_md5_match": true,
+      "mtime_ns": 1792176537151523200
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/metadata/Zhuang-ABCA-1/20241115/views/cell_metadata_with_cluster_annotation.csv",
+      "dataset": "Zhuang-ABCA-1",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:49:56.376114+00:00",
+      "bytes": 871047338,
+      "md5": "c0b18b3c7f9df5ab7ed074c2425a911f",
+      "source_md5_match": true,
+      "mtime_ns": 1792176595255297234
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/expression_matrices/Zhuang-ABCA-2/20230830/Zhuang-ABCA-2-log2.h5ad",
+      "dataset": "Zhuang-ABCA-2",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:48:57.223276+00:00",
+      "bytes": 871420938,
+      "md5": "e8dc53358c1f5d6abaaf7f7c7a88ef2a",
+      "source_md5_match": true,
+      "mtime_ns": 1792176536143077592
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/expression_matrices/Zhuang-ABCA-3/20230830/Zhuang-ABCA-3-log2.h5ad",
+      "dataset": "Zhuang-ABCA-3",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:53:10.392825+00:00",
+      "bytes": 1160586154,
+      "md5": "d5634f872c6e5accb7bfda455edd7366",
+      "source_md5_match": true,
+      "mtime_ns": 1792176788978933303
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/expression_matrices/Zhuang-ABCA-1/20230830/Zhuang-ABCA-1-raw.h5ad",
+      "dataset": "Zhuang-ABCA-1",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:54:12.895033+00:00",
+      "bytes": 1193452436,
+      "md5": "aad71557caecfcf174f3c9884b2e2789",
+      "source_md5_match": true,
+      "mtime_ns": 1792176851454007407
+    },
+    {
+      "path": "data/reference_atlases/Zhuang_2023/expression_matrices/Zhuang-ABCA-1/20230830/Zhuang-ABCA-1-log2.h5ad",
+      "dataset": "Zhuang-ABCA-1",
+      "state": "verified",
+      "updated_at": "2026-10-16T18:55:29.969654+00:00",
+      "bytes": 2128478610,
+      "md5": "1fa58179fadc9bb8b7fb2e3449da9df1",
+      "source_md5_match": true,
+      "mtime_ns": 1792176927287279932
+    }
+  ],
+  "complete": true,
+  "running": false,
+  "finished_at": "2026-10-16T18:55:29.970236+00:00",
+  "verified_files": 49,
+  "total_files": 49,
+  "failed": 0,
+  "total_bytes": 10743987407
+}
