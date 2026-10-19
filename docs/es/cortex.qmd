@@ -1,0 +1,144 @@
+---
+title: "Corteza cingulada anterior: PM frente a PBS"
+---
+
+```{python}
+#| label: cortex-setup
+#| include: false
+import numpy as np
+import pandas as pd
+from IPython.display import display, Markdown
+from _report_utils import summary, read_table, show_table, figure, fmt_p
+
+s = summary("cortex")
+de = read_table("cortex", "DE_PM_vs_PBS.tsv")
+qc = read_table("cortex", "sample_qc.tsv")
+meta = read_table("cortex", "sample_metadata.tsv")
+```
+
+## Pregunta del estudio
+
+Este análisis secundario compara la expresión de la corteza cingulada anterior entre los grupos de **exposición nasal a PM** y **control con PBS** de GSE297423. Solo se incluyen muestras sin inyección de fibrillas preformadas de alfa-sinucleína. Los animales pertenecen al modelo humanizado de alfa-sinucleína del estudio original; los resultados deben interpretarse en ese contexto experimental. Los demás grupos del estudio depositado se conservan entre los archivos originales, pero quedan fuera de este contraste. [@Zhang2025_40906862]
+
+## Materiales y métodos
+
+### Datos de entrada y selección de muestras
+
+El análisis parte de la tabla de conteos por gen proporcionada por los autores, sin repetir el alineamiento de los archivos FASTQ. Los identificadores Ensembl son las claves del análisis; los símbolos génicos, biotipos y cromosomas de esa tabla se conservan como anotaciones. Los conteos deben ser enteros, finitos y no negativos. Los identificadores génicos duplicados provocan un error explícito en lugar de una agregación implícita.
+
+Las ocho bibliotecas seleccionadas son `Control5`, `Control6`, `Control7`, `Control8`, `PMA2775`, `PMA2776`, `PMA2778` y `PMA2779`. La correspondencia entre las muestras GEO y los nombres de biblioteca determina la asignación de grupos. Se conservan todas las muestras biológicas seleccionadas. No se añade al modelo ninguna variable de lote, sexo o emparejamiento que no esté verificada.
+
+```{python}
+#| label: cortex-samples
+show_table(meta[["sample", "gsm", "title", "condition", "PFF_injection"]], n=8)
+```
+
+### Expresión diferencial y tamaños de efecto
+
+Los genes deben tener al menos 10 conteos en al menos cuatro de las ocho muestras seleccionadas. PyDESeq2 ajusta un modelo lineal generalizado binomial negativo con diseño `~condition`, factores de tamaño basados en la mediana de cocientes y un contraste de Wald bilateral de PM respecto de PBS. Los valores p ajustados mediante Benjamini–Hochberg buscan controlar la FDR en 0.05 dentro de este contraste, con filtrado independiente y filtrado de Cook habilitados. [@Love2014_DESeq2; @Muzellec2023_PyDESeq2; @Benjamini1995_FDR]
+
+Los coeficientes de máxima verosimilitud sin regularizar, errores estándar, estadísticos de Wald, valores p y valores p ajustados se guardan **antes** de la regularización de los tamaños de efecto. Las columnas adicionales del coeficiente regularizado y su incertidumbre utilizan la regularización de colas pesadas de tipo apeGLM implementada por PyDESeq2. La regularización estabiliza la presentación de los tamaños de efecto; no reemplaza los resultados conservados de las pruebas de Wald. [@Zhu2019_apeglm]
+
+Con cuatro réplicas biológicas por grupo, no se cumple el requisito predeterminado de al menos siete réplicas para reemplazar conteos mediante el diagnóstico de Cook. Por tanto, el filtrado de Cook por gen puede dejar valores p no disponibles aunque no se elimine ninguna muestra biológica. Los valores p ajustados ausentes por filtrado independiente se distinguen de estas pruebas nominales no disponibles.
+
+### Evaluación de calidad y visualizaciones
+
+Los resúmenes por muestra incluyen los conteos génicos asignados totales, los genes detectados, los factores de tamaño y las fracciones de conteos de ARN mitocondrial y ribosomal. Estas fracciones resumen la matriz de conteos suministrada y no sustituyen una evaluación de calidad de las lecturas. El PCA utiliza una transformación estabilizadora de la varianza ciega al diseño y los 500 genes retenidos más variables, centrados sin escalar su varianza. Las filas del mapa de calor se estandarizan únicamente para visualizar. Ni el PCA ni el mapa de calor de genes mejor clasificados constituyen un conjunto de validación independiente.
+
+## Resultados
+
+### Calidad y estructura de las muestras
+
+```{python}
+#| label: cortex-qc-text
+#| output: asis
+display(Markdown(
+    f"La tabla suministrada contiene **{s['genes_input']:,} genes**. Después del filtro "
+    f"de conteos preespecificado, permanecen **{s['genes_retained']:,} genes**. Las bibliotecas "
+    f"seleccionadas contienen {qc.library_size.min()/1e6:.1f}–{qc.library_size.max()/1e6:.1f} "
+    f"millones de conteos génicos asignados. PC1 y PC2 explican, respectivamente, "
+    f"**{s['PCA_PC1_percent']:.1f}%** y **{s['PCA_PC2_percent']:.1f}%** de la varianza de los "
+    "datos de entrada del PCA. En estos ejes, las muestras PM están más dispersas que las "
+    "muestras PBS. Se informa esta heterogeneidad sin utilizarla para eliminar muestras."
+))
+```
+
+```{python}
+#| label: cortex-qc-table
+quality = qc[["sample", "condition", "library_size", "detected_genes_count_gt_0", "size_factor", "mitochondrial_count_fraction", "rRNA_count_fraction"]].copy()
+quality["size_factor"] = quality.size_factor.round(3)
+quality["mitochondrial_count_fraction"] = quality.mitochondrial_count_fraction.round(4)
+quality["rRNA_count_fraction"] = quality.rRNA_count_fraction.round(4)
+show_table(quality, n=8)
+```
+
+```{python}
+#| label: cortex-pca-figure
+figure("cortex", "pca", "PCA de conteos con estabilización de la varianza ciega al diseño para los 500 genes retenidos más variables. Círculos: PBS; triángulos: PM. Cada punto es una muestra biológica; no se excluye ninguna muestra.", alt="PCA de ocho muestras de corteza, con un grupo PBS compacto y un grupo PM más disperso.")
+```
+
+```{python}
+#| label: cortex-quality-figure
+figure("cortex", "sample_qc", "Distribuciones de valores con varianza estabilizada y conteos asignados totales de las ocho bibliotecas de corteza. Las observaciones extremas de los diagramas de caja se omiten solo en la visualización.", alt="Diagramas de caja de las distribuciones de expresión cortical y barras de conteos génicos asignados por muestra.")
+```
+
+### Expresión diferencial
+
+```{python}
+#| label: cortex-de-text
+#| output: asis
+n_missing_p = int(de.pvalue.isna().sum())
+n_missing_adj = int(de.padj.isna().sum())
+n_independent_only = int((de.pvalue.notna() & de.padj.isna()).sum())
+display(Markdown(
+    f"Hay **{s['FDR05_genes']:,} genes con FDR < 0.05**: "
+    f"**{s['FDR05_higher_in_PM']:,} con mayor expresión** y **{s['FDR05_lower_in_PM']:,} con menor expresión** en PM. "
+    f"De ellos, **{s['FDR05_abs_shrunken_log2FC_ge_1']:,}** presentan además un cambio log2 "
+    "regularizado de valor absoluto al menos 1. Esta selección adicional por tamaño de efecto "
+    "es descriptiva y no constituye una prueba separada de un efecto mínimo.\n\n"
+    f"Hay valores p nominales de Wald disponibles para **{s['genes_with_Wald_pvalue']:,} genes** "
+    f"y valores p ajustados para **{s['genes_with_adjusted_pvalue']:,} genes**. Los **{n_missing_adj:,}** "
+    f"valores p ajustados no disponibles incluyen **{n_missing_p:,}** pruebas nominales filtradas "
+    f"por Cook y **{n_independent_only:,}** genes con una prueba nominal que el filtrado independiente "
+    "no retuvo para el ajuste por pruebas múltiples. No se debe denominar genes atípicos a todas estas categorías."
+))
+```
+
+```{python}
+#| label: cortex-de-table
+top = de[["gene_id", "gene", "baseMean", "log2FoldChange", "lfcSE", "log2FoldChange_shrunk", "pvalue", "padj"]].head(20).copy()
+for c in ["baseMean", "log2FoldChange", "lfcSE", "log2FoldChange_shrunk"]:
+    top[c] = top[c].round(3)
+for c in ["pvalue", "padj"]:
+    top[c] = top[c].map(fmt_p)
+show_table(top, n=20)
+```
+
+Entre los genes mejor clasificados se encuentran **Hspa5, Pdia4 y Xbp1**. Su presencia entre las señales más fuertes motiva el estudio posterior de programas de expresión coordinados. Una afirmación mecanística sobre una vía requiere el análisis separado de conjuntos de genes y sus propias comprobaciones del universo de fondo, la ordenación y la multiplicidad; estas filas individuales no demuestran activación de una vía.
+
+```{python}
+#| label: cortex-volcano-figure
+figure("cortex", "volcano", "Coeficientes log2 PM/PBS sin regularizar frente a valores p nominales de Wald. Los triángulos naranjas identifican FDR < 0.05; los círculos grises representan las restantes pruebas finitas. Se etiquetan los tres primeros genes ordenados por valor p ajustado.", alt="Gráfico de volcán de corteza con genes significativos en ambas direcciones y etiquetas para Hspa5, Pdia4 y Xbp1.")
+```
+
+```{python}
+#| label: cortex-ma-figure
+figure("cortex", "ma", "Conteos normalizados medios frente a efectos log2 PM/PBS regularizados. Los triángulos naranjas identifican FDR < 0.05 según las pruebas de Wald originales conservadas; los círculos grises incluyen genes no significativos y genes sin valores p ajustados.", alt="Gráfico MA de corteza con tamaños de efecto estabilizados a lo largo de los conteos normalizados medios.")
+```
+
+```{python}
+#| label: cortex-heatmap-figure
+figure("cortex", "top30_heatmap", "Los 30 primeros genes ordenados por valor p ajustado de Wald, representados mediante puntuaciones z dentro de cada gen sobre los conteos con varianza estabilizada. Esta visualización seleccionada resume la comparación ajustada y no es una validación independiente.", alt="Mapa de calor de los 30 genes de corteza mejor clasificados en cuatro muestras PBS y cuatro PM.")
+```
+
+### Interpretación y limitaciones
+
+La comparación respalda una diferencia de expresión a nivel tisular en este modelo específico de exposición a PM. No identifica qué poblaciones celulares cambiaron su expresión, no distingue cambios de estado celular de cambios en composición celular ni demuestra un mecanismo de enfermedad humana. La heterogeneidad de las muestras y las covariables no medidas siguen siendo relevantes pese a las altas correlaciones entre muestras. El análisis tampoco reproduce el alineamiento de lecturas, la cuantificación de transcritos ni los demás grupos experimentales del estudio original.
+
+## Resultados descargables
+
+- [Tabla completa de expresión diferencial](../downloads/cortex/DE_PM_vs_PBS.tsv)
+- [Estadísticos originales de máxima verosimilitud de Wald antes de la regularización](../downloads/cortex/DE_PM_vs_PBS_MLE.tsv)
+- [Metadatos de las muestras](../downloads/cortex/sample_metadata.tsv), [resúmenes de calidad](../downloads/cortex/sample_qc.tsv) y [correlaciones entre muestras](../downloads/cortex/sample_correlation.tsv)
+- [Decisiones del filtro de genes](../downloads/cortex/gene_filter.tsv)
+- [Métodos y procedencia del software](../downloads/cortex/methods.json) y [registro de validación](../downloads/cortex/validation.json)

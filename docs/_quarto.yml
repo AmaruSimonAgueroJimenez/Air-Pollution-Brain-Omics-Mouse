@@ -52,6 +52,9 @@ website:
         text: 3D Viewer
       - href: reproducibility.qmd
         text: Data & code
+    right:
+      - href: es/index.html
+        text: Español
   page-footer:
     left: "Public-data reanalysis · Mus musculus"
     right: "Measured reference and simulated exposure are distinguished."

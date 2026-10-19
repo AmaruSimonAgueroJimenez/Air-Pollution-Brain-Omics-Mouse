@@ -1,0 +1,32 @@
+---
+title: "Introducción y alcance del estudio"
+---
+
+## Fundamento
+
+La corteza cerebral, el hipotálamo y el hipocampo contienen mezclas diferentes de neuronas, glía, células vasculares y otras poblaciones celulares. Por ello, una firma de expresión medida en una región responde a una pregunta biológica distinta de una firma medida en otra. Las mediciones de tejido completo también combinan cambios dentro de las células con diferencias en las proporciones o los estados de las células que aportan ARN. Estas distinciones son relevantes al interpretar estudios de contaminantes atmosféricos: una firma tisular observada puede motivar una hipótesis mecanística, pero por sí sola no identifica la población celular afectada ni su posición anatómica.
+
+Los estudios experimentales disponibles abarcan varios contextos complementarios. Zhang y colaboradores investigaron contaminantes atmosféricos en un modelo murino humanizado para alfa-sinucleína y depositaron datos de RNA-seq de corteza cingulada anterior. Rajagopalan y colaboradores examinaron respuestas metabólicas a la contaminación atmosférica y su reversibilidad, con el hipotálamo entre varios tejidos muestreados. Ku y colaboradores estudiaron la expresión de miRNA hipocampales tras aspiraciones repetidas de PM2.5. Nakamya y colaboradores investigaron respuestas transcriptómicas hipocampales al ozono en grupos de edad y genotipo APOE. Estos estudios aportan puntos de partida regionales para análisis secundarios y no réplicas técnicas de un único experimento. [@Zhang2025_40906862; @Rajagopalan2020_32780721; @Ku2017_28851397; @Nakamya2025_40141051]
+
+## Cuatro estudios con cantidades objetivo distintas
+
+Este proyecto conserva cuatro estudios de contaminantes como unidades analíticas separadas. El análisis del hipotálamo distingue la exposición a PM de la comparación con dieta rica en grasas; el análisis de corteza selecciona muestras PM y PBS sin inyección de fibrillas preformadas de alfa-sinucleína; el análisis de miRNA compara cada dosis administrada de PM con solución salina. El flujo de ozono comienza con las 24 bibliotecas originales de lecturas pareadas y conserva el diseño de edad por genotipo. La tabla depositada que solo compara genotipos no se trata como una matriz de conteos por muestra ni como un contraste de exposición a ozono.
+
+| Conjunto de datos | Tejido | Ensayo depositado | Alcance utilizado en este informe |
+|---|---|---|---|
+| GSE145840 | Hipotálamo | RNA-seq de tejido completo | Solo muestras cerebrales; se distinguen los grupos PM, aire filtrado y dieta rica en grasas |
+| GSE297423 | Corteza cingulada anterior | RNA-seq de tejido completo | PM frente a PBS sin inyección de fibrillas preformadas |
+| GSE93967 | Hipocampo | Microarreglo de miRNA | Solución salina, PM a 1 mg/kg y PM a 5 mg/kg; análisis por sonda |
+| E-MTAB-14917 | Hipocampo | RNA-seq de tejido completo | Reanálisis de lecturas originales; cuatro contrastes de ozono dentro de cada edad/genotipo y una prueba global de exposición |
+
+El material particulado y el ozono son clases de exposición diferentes. Las preparaciones de PM, las vías de administración, los esquemas de dosis, las edades de los animales, los genotipos y la recolección de tejidos difieren entre estudios. En consecuencia, los tamaños de efecto se interpretan dentro de cada experimento. Un gen o una vía compartidos constituyen un posible punto de convergencia y no evidencia de que las exposiciones o sus dosis sean intercambiables. Las publicaciones cerebrales sobre NO2 siguen formando parte del inventario bibliográfico, pero una matriz de expresión completa no disponible no puede sustituirse por listas suplementarias de genes al estimar un efecto de exposición por muestra. [@Yan2020_32203807; @Li2026_42526541]
+
+## Adecuar el análisis al ensayo
+
+Los modelos de conteos de RNA-seq y los modelos de señales de microarreglos responden a preguntas relacionadas en escalas de medición diferentes. Los análisis de RNA-seq de tejido completo utilizan inferencia basada en conteos, conservan los identificadores originales y distinguen las pruebas estadísticas de las estimaciones estabilizadas del tamaño del efecto. El análisis de miRNA conserva las señales normalizadas depositadas y comunica diferencias en esas unidades, porque la descripción del preprocesamiento depositada no establece explícitamente una escala log₂. La incertidumbre, las pruebas múltiples, la calidad de las muestras y las características con poca información se presentan junto a los resultados ordenados. [@Love2014_DESeq2; @Muzellec2023_PyDESeq2; @Ritchie2015_limma]
+
+## Qué aporta el atlas espacial
+
+El atlas MERFISH de cerebro completo de ratón de Zhang de 2023 proporciona una referencia espacial medida en animales sin una exposición experimental a contaminantes. Su panel dirigido mide 1,122 genes y vincula células segmentadas individuales con coordenadas anatómicas y anotaciones transcriptómicas transferidas. Esto permite examinar dónde se detecta normalmente un gen y qué poblaciones anotadas lo expresan. No mide una respuesta a contaminantes en los animales del atlas. Por tanto, una firma de tejido completo proyectada constituye una correspondencia inferida entre experimentos y tejido de referencia; no puede establecer cambios de expresión inducidos por la exposición en células individuales del atlas. Los genes fuera del panel medido requieren una estrategia de inferencia identificada por separado. [@Zhang2023_38092912]
+
+El objetivo es entregar análisis ómicos clásicos reproducibles y una referencia espacial transparente para el seguimiento. Cada resultado se vincula con su matriz de origen, selección de muestras, modelo, comprobaciones de calidad y tabla descargable. El informe distingue las comparaciones completas de los datos que siguen siendo insuficientes para un nuevo contraste de exposición y mantiene un límite claro entre medición directa, estimación estadística e interpretación biológica.

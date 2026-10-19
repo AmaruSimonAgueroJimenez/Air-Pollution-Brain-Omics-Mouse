@@ -1,0 +1,65 @@
+---
+title: "Visor 3D · hipotálamo"
+subtitle: "Referencia MERFISH medida junto a un escenario regional de PM2.5"
+page-layout: full
+toc: false
+---
+
+```{python}
+from pathlib import Path
+from IPython.display import display, Markdown
+from _report_utils import summary, metric_cards, figure
+v = summary("spatial_viewer")
+metric_cards([
+    ("Donante de referencia", "ABCA-2", "Macho adulto; hemisferio registrado"),
+    ("Células hipotalámicas", f"{v['hypothalamus_cells']:,}", "Todas las células registradas; sin submuestreo"),
+    ("Genes medidos", f"{v['measured_genes']:,}", "Se carga un gen cada vez; archivos locales"),
+    ("Evidencia regional", "4 FA / 3 PM", "Siete animales independientes")
+])
+```
+
+La vista izquierda muestra la expresión medida en el atlas de referencia. La derecha multiplica esos mismos valores celulares por un efecto regional específico del gen, obtenido del estudio de RNA-seq regional del hipotálamo. Lleva permanentemente la etiqueta **SIMULADO**. Ambas vistas utilizan las mismas posiciones celulares, cámaras vinculadas y una escala de color común.
+
+::: {.model-note}
+**Comience con Tll1.** Es el único hallazgo hipotalámico primario con FDR significativa que está medido en este panel. El multiplicador central es aproximadamente 0.428×, pero su significación es sensible a animales individuales. Los demás genes medidos siguen disponibles: se identifican como exploratorias las estimaciones de exposición no significativas, y las estimaciones no fiables se muestran solo como referencia.
+:::
+
+<iframe id="atlas-frame" class="viewer-frame" src="../assets/viewer/index-es.html" title="Vistas tridimensionales vinculadas del hipotálamo: referencia medida y PM2.5 simulado" loading="lazy"></iframe>
+
+<script>
+window.addEventListener("message", function(event) {
+  const frame = document.getElementById("atlas-frame");
+  if (frame && event.source === frame.contentWindow && (event.origin === window.location.origin || event.origin === "null") && event.data && event.data.type === "omics-atlas-height") {
+    frame.style.height = Math.min(4200, Math.max(1350, Number(event.data.height) + 30)) + "px";
+  }
+});
+</script>
+
+[Abrir el visor independiente](../assets/viewer/index-es.html){.btn .btn-outline-primary target="_blank"}
+
+## Uso del visor
+
+1. Escriba el símbolo de un gen y seleccione **Aplicar**. Están disponibles los 1,122 genes medidos del panel.
+2. Gire cualquiera de las escenas; la otra cámara seguirá el movimiento. Seleccione **Contexto del cerebro completo** para ver la superficie anatómica que rodea al hipotálamo.
+3. Filtre por clase celular o subestructura hipotalámica. El filtrado cambia las células mostradas, no sus valores de expresión.
+4. Compare el efecto central regularizado con los escenarios inferior o superior del efecto grupal puntual. Estos límites no son intervalos de confianza para células individuales.
+5. Examine los valores de los siete animales del análisis regional, situados debajo de las escenas. Las células del atlas no aumentan el tamaño muestral experimental.
+
+El límite de color común opcional utiliza el percentil 99 de los valores positivos de la referencia y del escenario. Los colores saturados no eliminan valores: los valores reales siguen disponibles al pasar el cursor y en los archivos de origen. Los ceros medidos se muestran de forma predeterminada y pueden ocultarse explícitamente.
+
+Tll1 tiene un conteo de imagen medido positivo en **667 de 37,811 células (1.76%)** de esta referencia. Los restantes ceros medidos dominan la vista de todas las células; un conteo de imagen cero no demuestra ausencia biológica. El visor informa cuántas de las células actualmente mostradas tienen conteos medidos positivos. Ocultar ceros es un filtro explícito de visualización y no crea observaciones adicionales.
+
+## Alternativas estáticas y datos
+
+```{python}
+figure("spatial_viewer", "reference_vs_simulation",
+       "Referencia MERFISH medida de Tll1 y simulación regional uniforme de PM2.5. Se muestran las mismas 37,811 células registradas, con ceros medidos tenues y conteos medidos positivos destacados en ambas vistas. El multiplicador deriva del contraste regional regularizado de siete animales, no de un efecto de exposición medido en esas células.")
+```
+
+- [Células registradas e identificadores originales](../downloads/spatial_viewer/registered_hypothalamus_cells.tsv.gz)
+- [Panel medido y efectos regionales válidos](../downloads/spatial_viewer/gene_panel_coverage.tsv)
+- [Modelo espacial y procedencia](../downloads/spatial_viewer/summary.json)
+- [Comprobaciones de los datos espaciales](../downloads/spatial_viewer/validation_checks.json)
+- [Generador reproducible del visor](../downloads/code/build_spatial_viewer.py)
+
+La superficie del cerebro completo es contexto anatómico. No se refleja la expresión en el otro hemisferio, y no se asigna ningún efecto de PM2.5 fuera del hipotálamo. El modelo conserva la abundancia y geometría celulares y no puede identificar pérdida celular, migración ni vulnerabilidad específica de cada célula. Consulte los [Métodos estadísticos y espaciales](methods.qmd) y el [análisis de sensibilidad hipotalámica](results.qmd#sensibilidad-a-las-muestras-individuales).

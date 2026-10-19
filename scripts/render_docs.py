@@ -72,9 +72,10 @@ def prepare_assets():
         f"{name}=={version}" for name, version in versions.items() if version is not None) + "\n"
     (ROOT / "requirements-analysis.txt").write_text(requirements)
     shutil.copy2(ROOT / "requirements-analysis.txt", DOCS / "downloads/requirements-analysis.txt")
-    sources = list(DOCS.glob("*.qmd")) + [DOCS / name for name in (
+    sources = list(DOCS.glob("*.qmd")) + list((DOCS / "es").glob("*.qmd")) + [DOCS / name for name in (
         "_quarto.yml", "_report_utils.py", "references.bib", "assets/report.css",
-        "assets/viewer/index.html", "assets/viewer/viewer.css", "assets/viewer/viewer.js")]
+        "assets/viewer/index.html", "assets/viewer/index-es.html", "assets/viewer/viewer.css", "assets/viewer/viewer.js",
+        "es/_quarto.yml", "es/_report_utils.py")]
     with zipfile.ZipFile(DOCS / "downloads/report-source.zip", "w", zipfile.ZIP_DEFLATED) as archive:
         for source in sources:
             if source.exists():
@@ -85,6 +86,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--prepare-only", action="store_true")
     parser.add_argument("--page")
+    parser.add_argument("--language", choices=("both", "en", "es"), default="both",
+                        help="Render both language versions by default, or select one")
     args = parser.parse_args()
     prepare_assets()
     if args.prepare_only:
@@ -96,7 +99,10 @@ def main():
     environment["QUARTO_PYTHON"] = sys.executable
     environment["JUPYTER_PATH"] = str(prefix / "share/jupyter") + os.pathsep + environment.get("JUPYTER_PATH", "")
     command = ["quarto", "render"] + ([args.page] if args.page else [])
-    subprocess.run(command, cwd=DOCS, env=environment, check=True)
+    languages = ("en", "es") if args.language == "both" else (args.language,)
+    for language in languages:
+        source_dir = DOCS if language == "en" else DOCS / "es"
+        subprocess.run(command, cwd=source_dir, env=environment, check=True)
 
 
 if __name__ == "__main__":

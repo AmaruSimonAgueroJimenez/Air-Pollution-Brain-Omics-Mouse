@@ -1,0 +1,111 @@
+---
+title: "Referencia espacial: composición y Tll1 medido"
+subtitle: "Resúmenes descriptivos de MERFISH de un único donante macho del atlas"
+---
+
+```{python}
+#| label: spatial-reference-setup
+#| include: false
+import pandas as pd
+from IPython.display import display, Markdown
+from _report_utils import summary, read_table, show_table, figure, metric_cards
+s = summary("spatial_reference")
+composition = read_table("spatial_reference", "composition_by_class.tsv")
+classes = read_table("spatial_reference", "Tll1_by_class.tsv")
+areas = read_table("spatial_reference", "Tll1_by_substructure.tsv")
+```
+
+## Introducción
+
+El atlas MERFISH aporta conteos génicos medidos y posiciones anatómicas de un donante de referencia sin la exposición experimental a PM2.5 del estudio. Describir esa referencia responde una pregunta distinta de la del análisis regional de exposición: **¿qué células y áreas anotadas contienen señal medida de Tll1 en esta referencia seleccionada?** No determina qué células responden a PM2.5. Los datos proceden del atlas de cerebro completo de ratón de Zhang et al. [@Zhang2023_38092912]
+
+```{python}
+#| label: spatial-reference-population
+metric_cards([
+    ("Donantes de referencia", str(s["reference_donors"]), "ABCA-2 · macho · un hemisferio registrado"),
+    ("Células HY registradas", f"{s['cells']:,}", "Todas las células de la selección HY existente"),
+    ("Genes medidos", f"{s['measured_genes']:,}", "Conteos de imagen lineales; sin genes imputados"),
+    ("Clases / áreas del atlas", f"{s['cell_classes']} / {s['substructures']}", "Se conservan las etiquetas depositadas")
+])
+```
+
+## Métodos
+
+El análisis reutiliza la matriz de conteos medidos y las anotaciones de células hipotalámicas registradas que sustentan el [visor 3D vinculado](viewer.qmd). Los identificadores celulares exactos, tratados como cadenas de texto, vinculan las anotaciones con las filas de la matriz; los identificadores génicos de Ensembl determinan el orden de columnas. Los identificadores duplicados o ausentes provocan un fallo explícito. Los resúmenes incluyen todas las células seleccionadas y todos los genes medidos. Las clases originales del atlas y las etiquetas de subestructuras CCF se mantienen sin cambios.
+
+Para cada clase y subestructura, su composición es el número de células dividido por todas las células de referencia seleccionadas. Para cada gen medido, la media es la media aritmética de los **conteos de imagen lineales de todas las células del grupo, incluidos los ceros medidos**. Una célula positiva tiene un conteo medido estrictamente mayor que cero; la fracción de detección es el número de células positivas dividido por el número de células de ese grupo. Estos resúmenes no aplican normalización a unidades de RNA-seq regional, transformación logarítmica ni imputación de expresión.
+
+El gráfico de Tll1 por clase incluye todas las clases. La visualización anatómica muestra las 15 mayores fracciones de detección entre las subestructuras con al menos 100 células seleccionadas; esta regla limita la visualización, no el análisis exportado. Las tablas completas conservan todas las subestructuras, incluidos los grupos pequeños y las etiquetas sin asignación. Las subestructuras incluyen núcleos y otras áreas anatómicas, por lo que no todas representan núcleos distintos.
+
+Son **mediciones descriptivas de un solo donante**. No se ajustan pruebas de expresión diferencial a nivel celular, agrupamientos, valores p, intervalos de confianza ni modelos de exposición. El número de células no aporta replicación animal independiente. El hemisferio registrado seleccionado tampoco establece una composición celular sin sesgo de todo el órgano. Los nombres de clase son etiquetas taxonómicas heredadas del atlas; un nombre regional dentro de una clase no sustituye la ubicación HY depositada de una célula.
+
+## Resultados
+
+### Composición celular de la referencia seleccionada
+
+```{python}
+#| label: spatial-reference-composition-text
+largest = composition.iloc[0]
+display(Markdown(
+    f"La selección contiene **{s['cells']:,} células**, asignadas a **{s['cell_classes']} clases del atlas** "
+    f"y **{s['substructures']} subestructuras depositadas**. La clase más abundante es "
+    f"**{largest['class']}**, con **{int(largest.n_cells):,} células "
+    f"({largest.percent_of_reference:.2f}%)**. "
+    f"Las etiquetas anatómicas incluyen **{s['HY_unassigned_cells']:,} células HY-unassigned** y "
+    f"**{s['ZI_unassigned_cells']:,} ZI-unassigned**; se conservan sin reasignarlas a un núcleo con nombre."
+))
+figure("spatial_reference", "cell_class_composition",
+       "Todas las clases depositadas del atlas en la referencia seleccionada, ordenadas por número de células. Las etiquetas muestran conteos exactos y porcentajes de todas las células seleccionadas. Son proporciones de la selección de referencia, no estimaciones a nivel animal ni poblacional.",
+       alt="Gráfico de barras horizontales de las 26 clases del atlas, con sus conteos celulares seleccionados y porcentajes.")
+```
+
+### Detección de Tll1 entre las clases del atlas
+
+```{python}
+#| label: spatial-reference-tll1-text
+t = s["Tll1"]
+display(Markdown(
+    f"**Tll1** presenta un conteo de imagen medido positivo en **{t['positive_cells']:,} de "
+    f"{s['cells']:,} células ({100*t['detection_fraction']:.2f}%)**. Su media aritmética en todas las "
+    f"células seleccionadas es **{t['mean_imaging_count']:.4f} conteos de imagen por célula**. "
+    "Las fracciones siguientes usan los denominadores exactos de cada clase. Una fracción elevada en una clase pequeña "
+    "puede proceder de unas pocas células positivas y debe interpretarse junto con esos denominadores."
+))
+figure("spatial_reference", "Tll1_detection_by_class",
+       "Conteos medidos positivos de Tll1 como porcentaje de todas las células de cada una de las 26 clases del atlas. Se muestran los conteos exactos de positivas/totales; el orden sigue el tamaño de clase. No se calculan pruebas ni intervalos inferenciales.",
+       alt="Fracciones de detección de Tll1 en cada clase del atlas, con los denominadores exactos de células positivas y totales.")
+tab = classes.sort_values(["positive_cells", "n_cells"], ascending=False)[
+    ["class", "n_cells", "positive_cells", "detection_fraction", "mean_imaging_count"]].head(12).copy()
+tab["detection_percent"] = 100 * tab.pop("detection_fraction")
+show_table(tab, n=12)
+```
+
+La tabla enumera las clases con mayor **número de células positivas**, algo distinto de ordenar por fracción de detección. Ningún orden identifica un efecto de exposición específico de una clase celular. Un cero medido no establece ausencia biológica; la detección también depende del ensayo dirigido, la segmentación y otras propiedades de medición.
+
+### Detección de Tll1 entre subestructuras anatómicas
+
+```{python}
+#| label: spatial-reference-area-text
+display(Markdown(
+    f"**{s['substructures_with_at_least_100_cells']} de {s['substructures']} subestructuras** contienen "
+    f"al menos 100 células seleccionadas. La figura muestra las **{s['substructures_displayed']} mayores "
+    "fracciones de detección de Tll1** dentro del conjunto elegible para la visualización. La tabla completa incluye todas "
+    "las subestructuras y los grupos con todos sus conteos medidos iguales a cero. Es un ordenamiento descriptivo dentro de la referencia."
+))
+figure("spatial_reference", "Tll1_detection_by_substructure",
+       "Las 15 mayores fracciones de detección medida de Tll1 entre subestructuras HY depositadas con al menos 100 células seleccionadas. Las etiquetas muestran conteos exactos de positivas/totales. Las 49 subestructuras permanecen en la tabla completa descargable; la selección del gráfico no implica significación.",
+       alt="Fracciones de detección de Tll1 ordenadas entre 15 áreas hipotalámicas con un mínimo de 100 células de referencia seleccionadas.")
+```
+
+### Relación con la simulación regional
+
+Estos resúmenes describen dónde se **mide Tll1 en este donante de referencia** en condiciones basales. El escenario separado de PM2.5 multiplica cada conteo de referencia por el mismo factor regional derivado del análisis de tejido. Esa operación conserva el patrón de detección de referencia y no permite establecer sensibilidad específica de clase, abundancia alterada ni pérdida celular. Los resúmenes aportan contexto anatómico sin añadir células expuestas ni animales experimentales adicionales.
+
+## Resultados descargables
+
+- [Composición de todas las clases](../downloads/spatial_reference/composition_by_class.tsv) y [de todas las subestructuras](../downloads/spatial_reference/composition_by_substructure.tsv)
+- [Todos los genes medidos por clase](../downloads/spatial_reference/all_genes_by_class.tsv.gz) y [por subestructura](../downloads/spatial_reference/all_genes_by_substructure.tsv.gz)
+- [Todos los genes medidos en la referencia completa](../downloads/spatial_reference/all_genes_reference_summary.tsv)
+- [Tll1 en cada clase](../downloads/spatial_reference/Tll1_by_class.tsv) y [en cada subestructura](../downloads/spatial_reference/Tll1_by_substructure.tsv)
+- [Subestructuras exactas mostradas en el gráfico ordenado](../downloads/spatial_reference/Tll1_displayed_substructures.tsv)
+- [Resumen](../downloads/spatial_reference/summary.json), [métodos y sumas de verificación](../downloads/spatial_reference/methods.json) y [validación aritmética](../downloads/spatial_reference/validation_checks.json)

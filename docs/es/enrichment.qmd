@@ -1,0 +1,219 @@
+---
+title: "Enriquecimiento funcional: procesos biológicos de GO"
+---
+
+```{python}
+#| label: enrichment-setup
+#| include: false
+from pathlib import Path
+import json
+import pandas as pd
+from IPython.display import display, Markdown
+from _report_utils import ROOT, summary, read_table, show_table, figure, fmt_p
+
+enrichment_dir = ROOT / "results/enrichment"
+es = summary("enrichment")
+em = json.loads((enrichment_dir / "methods.json").read_text())
+available_datasets = es.get("datasets", {})
+dataset_labels = {
+    "hypothalamus": "Hipotálamo · PM frente a aire filtrado",
+    "cortex": "Corteza cingulada anterior · PM frente a PBS",
+    "ozone_M3_E3": "Hipocampo · O3 frente a aire filtrado · edad inicial de 3 meses · APOE3",
+    "ozone_M3_E4": "Hipocampo · O3 frente a aire filtrado · edad inicial de 3 meses · APOE4",
+    "ozone_M17_E3": "Hipocampo · O3 frente a aire filtrado · edad inicial de 17 meses · APOE3",
+    "ozone_M17_E4": "Hipocampo · O3 frente a aire filtrado · edad inicial de 17 meses · APOE4",
+}
+selected_keys = [key for key in dataset_labels if key in available_datasets]
+
+def permutation_value(value):
+    if pd.isna(value):
+        return "no estimado"
+    return "0 estimado; permutaciones finitas" if value == 0 else fmt_p(value)
+
+def enrichment_figure(key, stem, caption, alt):
+    if (enrichment_dir / key / "figures" / f"{stem}.png").exists():
+        figure("enrichment/" + key, stem, caption, alt=alt)
+```
+
+## Preguntas y alcance analítico
+
+Dos enfoques clásicos de conjuntos de genes resumen los contrastes completos de RNA-seq a nivel génico. El **análisis de sobrerrepresentación (ORA)** pregunta si una anotación aparece entre los genes seleccionados por FDR con mayor frecuencia que la esperada en el universo de genes mapeados y evaluables. El **análisis de enriquecimiento de conjuntos de genes preordenados (GSEA)** pregunta si los genes de un conjunto tienden a acumularse hacia alguno de los extremos de la clasificación completa de estadísticos de Wald con signo y elegibles por calidad. Los enfoques utilizan datos de entrada y procedimientos de multiplicidad distintos, por lo que su concordancia es informativa pero no obligatoria. [@Ashburner2000_GO; @Subramanian2005_GSEA; @Fang2023_GSEApy]
+
+Se mantienen separadas las comparaciones de PM en hipotálamo y corteza. Los cuatro contrastes de ozono por edad y genotipo solo se incorporan cuando están completas sus correspondientes tablas de Wald. Son **seis entradas de contraste posibles**, no seis cohortes intercambiables. No se agrupan listas de genes, animales, valores p ni afirmaciones causales entre regiones cerebrales, agentes de exposición o protocolos experimentales. La LRT global de ozono sin signo y las características del microarreglo de miRNA no se introducen como clasificaciones de mRNA con signo.
+
+> **Interpretación:** los términos GO se superponen y comparten ancestros. Un número elevado de términos significativos no representa el mismo número de mecanismos independientes. Las permutaciones de conjuntos de genes de GSEA no capturan la incertidumbre de las réplicas biológicas ni conservan las correlaciones entre genes. El enriquecimiento es evidencia exploratoria sobre conjuntos de genes ordenados o seleccionados, no una prueba de activación o supresión de vías ni de un mecanismo del contaminante específico por célula.
+
+## Materiales y métodos
+
+### Anotación de ratón, correspondencia de genes y reproducibilidad
+
+Los conjuntos de genes se construyen a partir del archivo GAF de MGI de ratón y la ontología GO Basic descargados, conservando las URL originales, fechas de cabecera de las versiones, sumas de comprobación y procedencia del GMT derivado. Se mantienen las fechas individuales de cada fuente; no deben tratarse como una nueva versión conjunta de anotaciones generada de forma coordinada. Solo se utilizan anotaciones positivas de procesos biológicos de ratón. Se excluyen las anotaciones `NOT`, mientras que se conservan los códigos de evidencia de anotaciones positivas, incluida la evidencia electrónica. Los nombres de los términos GO se mantienen en su forma original para conservar su correspondencia con la ontología.
+
+La pertenencia a términos se propaga por ancestros activos de procesos biológicos mediante **`is_a` y `part_of`**. No se utilizan para la propagación las aristas regulatorias ni las relaciones entre aspectos. Los identificadores alternativos y los términos obsoletos se resuelven solo cuando existe un reemplazo activo inequívoco. [@Ashburner2000_GO]
+
+La correspondencia utiliza símbolos canónicos de ratón sensibles a mayúsculas o sinónimos GAF que se resuelven de forma única. No convierte genes a mayúsculas, no infiere ortólogos humanos ni relaciona descripciones génicas de texto libre. Cuando varias características de expresión diferencial corresponden a un símbolo, se elige como representante la de mayor `baseMean`, con desempate lexicográfico por identificador de característica, **independientemente de la dirección del efecto y de su significación**. Los símbolos ambiguos y sin correspondencia permanecen visibles en el registro de correspondencias.
+
+### Universo de fondo, genes seleccionados y FDR de ORA
+
+El universo de ORA comprende genes representantes mapeados únicos con un valor p ajustado de expresión diferencial finito. Los genes mapeados sin anotación específica GO-BP permanecen en el universo. Los conjuntos seleccionados de expresión mayor y menor utilizan FDR génica < 0.05 y el signo del coeficiente original sin regularizar, sin un umbral adicional de tamaño de efecto.
+
+Los términos GO elegibles tienen **15–500 miembros después de intersectarlos con el universo específico de cada contraste**. Una probabilidad de supervivencia hipergeométrica unilateral evalúa el solapamiento observado o uno mayor. Los términos con solapamiento cero permanecen en la familia de pruebas con p = 1. La corrección BH se aplica a toda la familia de términos elegibles, por separado para cada contraste y dirección. Por tanto, `padj_BH` de ORA es diferente del valor p ajustado de expresión diferencial a nivel génico. [@Benjamini1995_FDR]
+
+### GSEA preordenado y calidad de las pruebas génicas
+
+La clasificación incluye representantes mapeados únicos con **un estadístico de Wald sin regularizar finito y un valor p de la prueba sin regularizar finito después de las comprobaciones de validez del análisis original**. Un estadístico finito no basta: las pruebas filtradas por Cook o no fiables por otros motivos pueden conservar un estadístico numérico y tener un valor p no disponible. Estas filas se excluyen de GSEA y las exclusiones se exportan. En ozono, el análisis original también retira pruebas de ajustes sin convergencia y de genes con conteos cero en los seis animales del estrato correspondiente. Los valores p previos al filtrado conservados para auditoría no sustituyen esos valores p de pruebas válidas no disponibles. Es una decisión de calidad de la prueba génica, no una exclusión de animales.
+
+Los genes con valor p finito de la prueba sin regularizar, pero sin valor p ajustado por el filtrado independiente, siguen siendo elegibles para la clasificación. Esto se aplica a los análisis de PM donde ese filtrado estaba habilitado; ozono utiliza un prefiltro fijo de conteos sin filtrado independiente adaptativo. Ningún umbral de FDR génica o cambio de expresión selecciona los genes clasificados. Los genes se ordenan por estadístico con signo descendente, con desempate por símbolo génico. La pertenencia de términos se restringe además a 15–500 genes en la clasificación resultante. [@Subramanian2005_GSEA; @Fang2023_GSEApy]
+
+```{python}
+#| label: enrichment-permutation-method
+#| output: asis
+gsea_method = em["GSEA"]
+display(Markdown(
+    f"GSEApy utiliza **{gsea_method['permutations']:,} permutaciones de conjuntos/etiquetas de genes**, "
+    f"peso **{gsea_method['weight']}** y semilla **{gsea_method['seed']}**. "
+    "No son permutaciones de etiquetas fenotípicas. El `fdr_qvalue` informado es la estimación "
+    "algorítmica de FDR de GSEA basada en puntuaciones de enriquecimiento normalizadas, "
+    "**no una corrección BH**. Un valor p nominal por permutación o un valor q estimado igual "
+    "a cero es un resultado de un número finito de permutaciones y no significa probabilidad de error cero."
+))
+```
+
+## Resultados y cobertura
+
+```{python}
+#| label: enrichment-completed-contrasts
+#| output: asis
+display(Markdown(f"Hay resultados completos de enriquecimiento para **{len(selected_keys)} de los seis contrastes planificados** en esta generación del informe."))
+if (enrichment_dir / "summary_counts.tsv").exists():
+    counts = read_table("enrichment", "summary_counts.tsv")
+    counts = counts[counts.dataset.isin(selected_keys)].copy()
+    show_table(counts, n=6)
+ozone_keys = [key for key in dataset_labels if key.startswith("ozone_")]
+if all(key in available_datasets for key in ozone_keys) and all(
+    available_datasets[key]["ORA"]["significant_up_terms_BH_FDR_0_05"] == 0 and
+    available_datasets[key]["ORA"]["significant_down_terms_BH_FDR_0_05"] == 0
+    for key in ozone_keys
+):
+    display(Markdown("**Ningún término ORA cumple BH FDR < 0.05 dentro de cada dirección en ninguno de los cuatro estratos de ozono.** Los resultados de GSEA con clasificación de signo que se presentan a continuación utilizan datos de entrada y un modelo de error distintos; su presencia no revierte este resultado nulo de ORA."))
+missing = [dataset_labels[k] for k in dataset_labels if k not in available_datasets]
+if missing:
+    display(Markdown("**En espera de contrastes originales o resultados de enriquecimiento completos:** " + "; ".join(missing) + ". No se asignan hallazgos de vías a esas entradas."))
+```
+
+### Por qué importan las correspondencias y las familias de pruebas
+
+La tabla de expresión diferencial, los genes representantes mapeados, el universo de ORA y la clasificación GSEA pueden tener tamaños distintos. Las pérdidas de correspondencia y la elección entre símbolos duplicados explican algunas diferencias. En los análisis de PM donde se utiliza, el filtrado independiente cambia la elegibilidad para ORA, mientras que GSEA conserva genes de calidad elegible con p finito aunque su valor p ajustado no esté disponible. Los conteos de exclusiones por validez de la expresión diferencial original también pueden diferir de las exclusiones mapeadas de GSEA, porque una característica original puede no tener correspondencia o eliminarse según la regla declarada para símbolos duplicados. Los conjuntos seleccionados de ORA de ozono utilizan los valores BH génicos **dentro de cada estrato**, no la columna suplementaria entre los cuatro estratos.
+
+```{python}
+#| label: enrichment-coverage-table
+coverage = []
+for key in selected_keys:
+    a = available_datasets[key]["annotation_mapping"]
+    coverage.append({"contrast": key, "source_features": a["input_features"],
+                    "mapped_representatives": a["unique_mapped_gene_representatives"],
+                    "ORA_universe": a["ORA_universe_genes"],
+                    "GSEA_rank": a["GSEA_rank_genes"],
+                    "mapped_nonfinite_p_excluded": a["GSEA_genes_removed_for_nonfinite_original_pvalue"],
+                    "finite_p_missing_padj_retained": a["GSEA_genes_retained_with_missing_adjusted_pvalue"],
+                    "DE_FDR_selected_features": a["source_significant_features"],
+                    "ORA_mapped_foreground": a["ORA_significant_mapped_gene_representatives"]})
+if coverage:
+    show_table(pd.DataFrame(coverage), n=6)
+```
+
+### Resultados específicos de cada contraste
+
+```{python}
+#| label: enrichment-contrast-results
+#| output: asis
+for key in selected_keys:
+    entry = available_datasets[key]
+    ora = entry["ORA"]
+    gsea = entry["GSEA"]
+    display(Markdown("#### " + dataset_labels[key]))
+    display(Markdown(
+        f"ORA utiliza **{ora['universe_size']:,} genes mapeados evaluables**, con "
+        f"**{ora['up_foreground_size']:,} genes seleccionados de mayor expresión** y "
+        f"**{ora['down_foreground_size']:,} de menor expresión**. Con BH FDR < 0.05 dentro "
+        f"de cada familia, cumplen el criterio **{ora['significant_up_terms_BH_FDR_0_05']:,} términos GO "
+        f"de la dirección mayor** y **{ora['significant_down_terms_BH_FDR_0_05']:,} de la dirección menor**.\n\n"
+        f"GSEA clasifica **{gsea['ranking_size']:,} genes** y evalúa **{gsea['tested_terms']:,} términos**. "
+        f"Su FDR algorítmica < 0.05 identifica **{gsea['significant_terms_algorithmic_FDR_0_05']:,} "
+        f"etiquetas de términos**, incluidos **{gsea['positive_NES_significant_terms']:,} términos con "
+        f"NES positivo** y **{gsea['negative_NES_significant_terms']:,} con NES negativo**. "
+        "Estos conteos se refieren a anotaciones superpuestas, no a descubrimientos biológicos independientes."
+    ))
+    if key == "hypothalamus":
+        no_specific = ora.get("foreground_genes_without_specific_BP_annotation", {})
+        display(Markdown(
+            "La ausencia de significación de ORA debe interpretarse junto con sus conjuntos "
+            "seleccionados pequeños. Dentro de ellos, "
+            f"**{len(no_specific.get('up', []))} genes de mayor expresión** y "
+            f"**{len(no_specific.get('down', []))} de menor expresión** carecen de una anotación "
+            "específica GO-BP en esta versión, aunque permanecen en el universo mapeado. El número "
+            "mucho mayor de términos GSEA refleja otra pregunta basada en clasificación y otro "
+            "modelo de permutación; no demuestra cientos de mecanismos hipotalámicos separados. "
+            "La superposición de los genes que impulsan el enriquecimiento, la incertidumbre "
+            "original de siete animales y la sensibilidad a animales individuales siguen siendo relevantes."
+        ))
+    if key == "cortex":
+        display(Markdown(
+            "Entre los principales resultados corticales aparecen anotaciones de plegamiento "
+            "de proteínas y de respuestas relacionadas del retículo endoplásmico. Sus genes "
+            "compartidos y relaciones ontológicas constituyen un patrón coordinado de anotaciones "
+            "para estudiar posteriormente, no confirmaciones independientes de múltiples vías activadas."
+        ))
+    if key == "ozone_M3_E3":
+        display(Markdown(
+            "Las anotaciones de fototransducción y detección de luz aparecen entre las asociaciones "
+            "GO ordenadas de este contraste del hipocampo, pese a no haber hallazgos génicos con "
+            "FDR significativa dentro del estrato. Estas asociaciones de ontología/clasificación "
+            "no demuestran función visual ni una respuesta celular localizada al ozono. Se deben "
+            "evaluar la especificidad tisular y el contexto de disección original antes de utilizar "
+            "estos términos para proponer mecanismos."
+        ))
+    ora_tables = []
+    for direction in ["up", "down"]:
+        tab = read_table("enrichment", f"{key}/ORA_{direction}_all_terms.tsv")
+        tab = tab.loc[tab.padj_BH.lt(.05)].sort_values(["padj_BH", "pvalue"]).head(6).copy()
+        if len(tab):
+            ora_tables.append(tab)
+    if ora_tables:
+        tab = pd.concat(ora_tables, ignore_index=True)[["GO_ID", "term_name", "direction", "overlap", "foreground_genes", "fold_enrichment", "padj_BH"]]
+        tab["padj_BH"] = tab.padj_BH.map(fmt_p)
+        show_table(tab, n=12)
+    else:
+        display(Markdown("Ningún término ORA cumple el umbral BH declarado en ninguna dirección; los términos ordenados nominalmente permanecen disponibles en las tablas completas."))
+    enrichment_figure(key, "ORA_significant_terms", "Términos GO-BP de ORA que cumplen BH FDR < 0.05 dentro de cada dirección. Los paneles vacíos informan explícitamente que no hay términos significativos. Los conteos de solapamiento se refieren a genes seleccionados, no a animales ni a células del atlas.", f"Resumen de ORA específico del contraste para {dataset_labels[key]}.")
+    tab = read_table("enrichment", f"{key}/GSEA_all_terms.tsv").sort_values(["fdr_qvalue", "nominal_pvalue"], na_position="last")
+    preview = tab[["GO_ID", "term_name", "NES", "rank_member_genes", "nominal_pvalue", "fdr_qvalue"]].head(12).copy()
+    for c in ["nominal_pvalue", "fdr_qvalue"]:
+        preview[c] = preview[c].map(permutation_value)
+    show_table(preview, n=12)
+    enrichment_figure(key, "GSEA_terms", "Hasta doce términos GO-BP con menor q del análisis preordenado elegible por calidad. NES indica asociación con el extremo positivo o negativo de la clasificación de este contraste. Los valores q de GSEA son estimaciones por permutación, no valores BH de ORA.", f"Puntuaciones de enriquecimiento normalizadas de los principales términos GO en {dataset_labels[key]}.")
+    curves = sorted((enrichment_dir / key / "figures").glob("GSEA_curve_*.png"))[:2]
+    for curve in curves:
+        enrichment_figure(key, curve.stem, "Curva ilustrativa de enriquecimiento ponderado acumulado y posiciones de los genes del conjunto en la clasificación completa elegible por calidad. La selección de un término principal es exploratoria; su q estimado conserva las limitaciones por permutaciones finitas y tamaño muestral.", f"Curva de enriquecimiento acumulado de un término seleccionado en {dataset_labels[key]}.")
+    display(Markdown(
+        f"[Tabla completa ORA de la dirección mayor](../downloads/enrichment/{key}/ORA_up_all_terms.tsv) · "
+        f"[Tabla completa ORA de la dirección menor](../downloads/enrichment/{key}/ORA_down_all_terms.tsv) · "
+        f"[Tabla completa GSEA y genes que impulsan el enriquecimiento](../downloads/enrichment/{key}/GSEA_all_terms.tsv) · "
+        f"[Genes ordenados](../downloads/enrichment/{key}/GSEA_ranked_genes.tsv) · "
+        f"[Decisiones de correspondencia](../downloads/enrichment/{key}/gene_mapping.tsv.gz) · "
+        f"[Pruebas originales no fiables excluidas](../downloads/enrichment/{key}/GSEA_excluded_for_nonfinite_original_pvalue.tsv)"
+    ))
+```
+
+## Interpretación biológica
+
+Un NES positivo indica asociación hacia el extremo de mayor expresión del contraste de exposición específico; un NES negativo indica asociación hacia el extremo de menor expresión. Ningún signo establece actividad bioquímica de una vía ni la población celular responsable. Los mismos genes pueden contribuir a muchos términos GO relacionados y la cobertura de anotaciones es desigual entre genes. El ORA clásico no modela explícitamente los sesgos de longitud génica o detectabilidad; el universo de fondo evaluable limita estas preocupaciones, pero no las elimina.
+
+Los modelos moleculares y tamaños muestrales siguen siendo los de los experimentos regionales originales. Un término aparentemente compartido entre corteza, hipotálamo o un estrato de ozono es una hipótesis para una comparación específica posterior, no una estimación causal conjunta. La composición celular, el muestreo, la edad, el genotipo, la administración de la exposición y las diferencias técnicas pueden contribuir a una aparente convergencia. No se proporciona un mapa de blancos validado para el microarreglo de miRNA, por lo que no se infiere un análisis GO de mRNA a partir de identificadores de miRNA.
+
+## Procedencia descargable
+
+- [Conteos resumidos por contraste](../downloads/enrichment/summary_counts.tsv)
+- [Métodos, políticas de anotación y versiones originales](../downloads/enrichment/methods.json)
+- [Resumen completo legible por máquina](../downloads/enrichment/summary.json)
+- [Comprobaciones de validación](../downloads/enrichment/validation_checks.json)

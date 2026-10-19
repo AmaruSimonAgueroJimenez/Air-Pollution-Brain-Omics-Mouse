@@ -1,0 +1,196 @@
+---
+title: "miRNA del hipocampo: dos dosis de PM"
+---
+
+```{python}
+#| label: mirna-setup
+#| include: false
+import pandas as pd
+from IPython.display import display, Markdown
+from _report_utils import summary, read_table, show_table, figure, fmt_p
+
+s = summary("mirna")
+meta = read_table("mirna", "sample_metadata.tsv")
+qc = read_table("mirna", "sample_qc.tsv")
+low = read_table("mirna", "DE_PM1_vs_Control.tsv")
+high = read_table("mirna", "DE_PM5_vs_Control.tsv")
+omnibus = read_table("mirna", "DE_omnibus.tsv")
+```
+
+## Pregunta del estudio
+
+GSE93967 mide señales de miRNA del hipocampo después de administrar solución salina o PM2.5 por aspiración orofaríngea a 1 o 5 mg/kg, en días alternos durante cuatro semanas. El experimento de microarreglos depositado contiene **nueve muestras biológicas: tres por grupo**. El artículo original se centró en miR-574-5p y en experimentos funcionales adicionales; este informe vuelve a analizar la matriz depositada de microarreglos y no reproduce esos experimentos adicionales. [@Ku2017_28851397]
+
+## Materiales y métodos
+
+### Datos de entrada, anotación y escala de medición
+
+La matriz de la serie GEO contiene 1,268 filas de características. La tabla de la plataforma GPL17912 vincula las sondas biológicas de miRNA de ratón con las etiquetas `miRNA_ID` proporcionadas. Se conservan los identificadores históricos de la plataforma sin una actualización o agregación silenciosa de miRBase. Veintiuna filas de control o sin anotación se conservan en la exportación original, pero se excluyen del análisis diferencial. Dos filas biológicas de miRNA, **mmu-miR-3963 y mmu-miR-6366**, tienen varianza cero entre las nueve muestras y también se excluyen.
+
+GEO describe una normalización por cuantiles con GeneSpring, pero no establece explícitamente que la matriz depositada esté medida en escala log2. Los datos suministrados incluyen valores negativos y una gran acumulación en el límite inferior. **El análisis no aplica una segunda transformación logarítmica ni un modelo para datos de conteo.** Los efectos se expresan como **diferencias de medias en unidades de señal normalizada publicada**; los valores positivos indican mayor señal en el grupo PM. No se interpretan como cambios log2 de expresión ni se convierten en cambios multiplicativos.
+
+```{python}
+#| label: mirna-samples
+show_table(meta[["sample", "title", "condition", "dose_mg_per_kg"]], n=9)
+```
+
+### Modelo estadístico e indicadores de detección
+
+Limma ajusta un modelo lineal de tres grupos con un coeficiente de media de grupo para solución salina, PM a 1 mg/kg y PM a 5 mg/kg. Los dos contrastes planificados comparan cada grupo PM con solución salina. La moderación bayesiana empírica utiliza `trend=True` y `robust=False`; la prueba ómnibus opcional es una prueba F moderada de dos coeficientes para los dos contrastes PM menos solución salina. [@Ritchie2015_limma]
+
+El ajuste de Benjamini–Hochberg se aplica a las filas de miRNA retenidas **dentro de cada contraste por pares**, y de forma separada en la prueba ómnibus. Estos ajustes no garantizan una única FDR conjunta para las tres familias de pruebas. Los errores estándar exportados y los intervalos t moderados puntuales del 95% se refieren a las diferencias de señal informadas; los intervalos no son simultáneos ni están ajustados por multiplicidad. [@Benjamini1995_FDR]
+
+Se conservan las clasificaciones originales de detección de Agilent. Un indicador de baja detección identifica las filas con menos de tres clasificaciones Present en cada grupo. Estas filas permanecen en la familia principal de pruebas y su indicador queda disponible para la interpretación. No se elimina ninguna muestra biológica por el PCA. El PCA utiliza las 500 características retenidas más variables, centradas sin escalar su varianza, en la escala de señal depositada.
+
+## Resultados
+
+### Calidad y limitaciones de la señal
+
+```{python}
+#| label: mirna-qc-text
+#| output: asis
+display(Markdown(
+    f"El modelo incluye **{s['miRNA_features_tested']:,} características biológicas de miRNA**. "
+    f"De ellas, **{s['low_detection_features_flagged_not_removed']:,}** reciben el indicador de baja "
+    f"detección. Entre las características retenidas y las nueve muestras se conservan "
+    f"**{s['negative_signal_values_retained']:,}** valores negativos de señal. El límite inferior "
+    "específico de cada muestra, próximo a −3.3, domina la parte baja de la distribución de señal "
+    "y limita la información disponible para muchas características.\n\n"
+    f"PC1 y PC2 explican **{s['PCA_PC1_percent']:.1f}%** y **{s['PCA_PC2_percent']:.1f}%** "
+    "de la varianza de los datos de entrada del PCA. Los tres grupos de exposición no se separan "
+    "claramente en esta visualización. La falta de separación clara en el PCA no demuestra "
+    "equivalencia; las nueve muestras se mantienen en todos los modelos."
+))
+```
+
+```{python}
+#| label: mirna-qc-table
+quality = qc[["sample", "condition", "signal_min", "signal_median", "present_miRNA_features", "absent_miRNA_features", "features_equal_to_sample_minimum"]].copy()
+quality[["signal_min", "signal_median"]] = quality[["signal_min", "signal_median"]].round(4)
+show_table(quality, n=9)
+```
+
+```{python}
+#| label: mirna-pca-figure
+figure("mirna", "pca", "PCA de las 500 características de miRNA retenidas más variables, en la escala de señal publicada. Círculos: solución salina; cuadrados: PM a 1 mg/kg; triángulos: PM a 5 mg/kg. Cada punto representa una muestra biológica.", alt="PCA de nueve muestras de miRNA del hipocampo con grupos de exposición superpuestos y muestras individuales heterogéneas.")
+```
+
+```{python}
+#| label: mirna-quality-figure
+figure("mirna", "sample_qc", "Distribuciones de señal publicada y número de características de miRNA clasificadas como Present por el procesamiento original del microarreglo. Los extremos de los diagramas de caja se omiten solo en la visualización; todos los valores de señal retenidos entran al análisis.", alt="Los diagramas de caja de señal de miRNA muestran una gran acumulación próxima a menos 3.3, con unas cuatrocientas características Present por muestra.")
+```
+
+### Contrastes de exposición
+
+```{python}
+#| label: mirna-de-summary
+#| output: asis
+rows = {row["contrast"]: row for row in s["contrasts"]}
+display(Markdown(
+    f"A **1 mg/kg**, **{rows['PM1_vs_Control']['FDR05_features']} característica** cumple FDR < 0.05. "
+    f"A **5 mg/kg**, **{rows['PM5_vs_Control']['FDR05_features']} características** cumplen ese umbral. "
+    f"La prueba F moderada ómnibus, ajustada por separado, identifica "
+    f"**{s['omnibus_FDR05_features']} característica**. La ausencia de un hallazgo con FDR "
+    "significativa a la dosis mayor no demuestra ausencia de efecto ni una dosis de exposición segura."
+))
+```
+
+```{python}
+#| label: mirna-summary-table
+show_table(read_table("mirna", "de_summary.tsv"), n=2)
+```
+
+```{python}
+#| label: mirna-leading-feature
+#| output: asis
+hit = low.loc[low.padj.lt(.05)]
+if len(hit):
+    text = []
+    for _, row in hit.iterrows():
+        text.append(f"**{row.miRNA}**: diferencia de medias **{row.effect_mean_difference:.3f}** "
+                    f"unidades de señal publicada, intervalo puntual del 95% "
+                    f"**{row.CI95_lower:.3f} a {row.CI95_upper:.3f}**, "
+                    f"p ajustado = **{fmt_p(row.padj)}**")
+    display(Markdown("El resultado con FDR significativa de la dosis menor es " + "; ".join(text) +
+                     ". Esta característica no está marcada por baja detección. Su señal a la "
+                     "dosis menor no demuestra por sí sola una respuesta monótona a la dosis."))
+```
+
+::: {.panel-tabset}
+
+### 1 mg/kg frente a solución salina
+
+```{python}
+#| label: mirna-low-dose-table
+cols = ["miRNA", "effect_mean_difference", "SE_moderated", "CI95_lower", "CI95_upper", "pvalue", "padj", "low_detection_flag"]
+tab = low[cols].head(10).copy()
+for c in ["effect_mean_difference", "SE_moderated", "CI95_lower", "CI95_upper"]:
+    tab[c] = tab[c].round(3)
+for c in ["pvalue", "padj"]:
+    tab[c] = tab[c].map(fmt_p)
+show_table(tab, n=10)
+```
+
+```{python}
+#| label: mirna-low-volcano-figure
+figure("mirna", "volcano_PM1_vs_Control", "Diferencias de medias de limma en señal normalizada publicada frente a valores p nominales de la prueba t moderada para PM a 1 mg/kg menos solución salina. Los triángulos naranjas indican FDR < 0.05; los círculos grises representan las características restantes.", alt="Gráfico de volcán de miRNA a dosis baja con mmu-miR-5119 como única característica significativa según FDR.")
+```
+
+```{python}
+#| label: mirna-low-heatmap-figure
+figure("mirna", "top30_heatmap_PM1_vs_Control", "Treinta características ordenadas por el valor p ajustado del contraste de 1 mg/kg, representadas mediante puntuaciones z dentro de cada característica sobre las señales depositadas. La ordenación no implica que todas las filas mostradas sean significativas.", alt="Mapa de calor de las 30 características de miRNA mejor clasificadas para la dosis menor, en las nueve muestras.")
+```
+
+### 5 mg/kg frente a solución salina
+
+```{python}
+#| label: mirna-high-dose-table
+tab = high[cols].head(10).copy()
+for c in ["effect_mean_difference", "SE_moderated", "CI95_lower", "CI95_upper"]:
+    tab[c] = tab[c].round(3)
+for c in ["pvalue", "padj"]:
+    tab[c] = tab[c].map(fmt_p)
+show_table(tab, n=10)
+```
+
+```{python}
+#| label: mirna-high-volcano-figure
+figure("mirna", "volcano_PM5_vs_Control", "Diferencias de medias de limma en señal normalizada publicada frente a valores p nominales de la prueba t moderada para PM a 5 mg/kg menos solución salina. Ninguna característica cumple FDR < 0.05 en este contraste.", alt="Gráfico de volcán de miRNA a dosis alta sin características significativas según FDR y con mmu-miR-709 etiquetada como primera característica de la clasificación.")
+```
+
+```{python}
+#| label: mirna-high-heatmap-figure
+figure("mirna", "top30_heatmap_PM5_vs_Control", "Treinta características ordenadas por el valor p ajustado del contraste de 5 mg/kg, representadas mediante puntuaciones z dentro de cada característica sobre las señales depositadas. Son características ordenadas, no un conjunto de genes significativo según FDR.", alt="Mapa de calor de las 30 características de miRNA mejor clasificadas para la dosis mayor, en las nueve muestras.")
+```
+
+:::
+
+### Relación con el artículo original sobre miR-574-5p
+
+La publicación original investigó miR-574-5p mediante el descubrimiento en microarreglos y experimentos biológicos adicionales. El presente análisis secundario del microarreglo **no** identifica miR-574-5p con FDR < 0.05 en ninguno de los dos contrastes por pares preespecificados. Esta diferencia no debe describirse como una replicación del mecanismo central original ni como una refutación de experimentos que no se volvieron a analizar aquí. [@Ku2017_28851397]
+
+```{python}
+#| label: mirna-original-candidate
+candidate_rows = []
+for name, frame in [("1 mg/kg menos solución salina", low), ("5 mg/kg menos solución salina", high)]:
+    row = frame.loc[frame.miRNA.eq("mmu-miR-574-5p"), ["miRNA", "effect_mean_difference", "pvalue", "padj", "low_detection_flag"]].copy()
+    row.insert(0, "contrast", name)
+    candidate_rows.append(row)
+candidate = pd.concat(candidate_rows, ignore_index=True)
+candidate["effect_mean_difference"] = candidate.effect_mean_difference.round(4)
+for c in ["pvalue", "padj"]:
+    candidate[c] = candidate[c].map(fmt_p)
+show_table(candidate, n=2)
+```
+
+### Interpretación y limitaciones
+
+El tamaño pequeño de los grupos, la gran cantidad de características con baja detección, la ambigüedad de la escala de normalización y la heterogeneidad dentro de los grupos limitan la interpretación mecanística. Un coeficiente positivo del microarreglo indica una diferencia de señal en la escala depositada. No establece la dirección ni la magnitud de un blanco de mRNA no medido, una interacción miRNA–blanco validada ni un cambio en una población celular específica del hipocampo. Por ello, este análisis no aplica directamente enriquecimiento de Gene Ontology para mRNA a los nombres de miRNA.
+
+## Resultados descargables
+
+- [Resultados diferenciales de 1 mg/kg](../downloads/mirna/DE_PM1_vs_Control.tsv), [resultados diferenciales de 5 mg/kg](../downloads/mirna/DE_PM5_vs_Control.tsv) y [resultados ómnibus](../downloads/mirna/DE_omnibus.tsv)
+- [Matriz de señal normalizada publicada](../downloads/mirna/published_normalized_signal.tsv) y [matriz retenida para el análisis](../downloads/mirna/analysis_signal.tsv)
+- [Anotaciones y exclusiones de sondas](../downloads/mirna/probe_annotation.tsv), [clasificaciones de detección](../downloads/mirna/detection_calls.tsv) y [resúmenes de detección por característica](../downloads/mirna/miRNA_feature_summary.tsv)
+- [Metadatos de las muestras](../downloads/mirna/sample_metadata.tsv), [calidad de las muestras](../downloads/mirna/sample_qc.tsv) y [correlaciones entre muestras](../downloads/mirna/sample_correlation.tsv)
+- [Métodos y procedencia](../downloads/mirna/methods.json), [información de la sesión R](../downloads/mirna/R_session_info.txt) y [registro de validación](../downloads/mirna/validation.json)

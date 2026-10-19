@@ -37,15 +37,15 @@ def main():
     parser.add_argument("--allow-incomplete-ozone", action="store_true")
     args = parser.parse_args()
     errors, checks = [], {}
-    pages = sorted((ROOT / "docs").glob("*.qmd"))
+    pages = sorted((ROOT / "docs").glob("*.qmd")) + sorted((ROOT / "docs/es").glob("*.qmd"))
     for page in pages:
         for index, chunk in enumerate(page.read_text().split("```{python}")[1:], 1):
             try:
                 ast.parse(chunk.split("```")[0], filename=f"{page.name}:chunk{index}")
             except SyntaxError as error:
                 errors.append(str(error))
-        if not (SITE / page.with_suffix(".html").name).exists():
-            errors.append("Missing rendered page: " + page.name)
+        if not (SITE / page.relative_to(ROOT / "docs").with_suffix(".html")).exists():
+            errors.append("Missing rendered page: " + str(page.relative_to(ROOT / "docs")))
     checks["qmd_pages"] = len(pages)
     documents = {}
     widget_dependencies = []

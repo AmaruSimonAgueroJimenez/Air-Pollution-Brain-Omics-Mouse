@@ -124,6 +124,12 @@ To rebuild the report from existing results without refitting the analyses:
 
 Open `http://127.0.0.1:8819/`. The viewer uses local data assets. Execution details, source manifests, software versions, statistical limits and all downloadable tables are described in [`docs/reproducibility.qmd`](docs/reproducibility.qmd). The original study data, reference atlas, literature library and analysis outputs remain in this repository; creating this local report does not publish it online.
 
+### Versión en español
+
+El informe completo en español está en [`docs/es/index.qmd`](docs/es/index.qmd), con introducción, métodos, resultados de los cuatro estudios, enriquecimiento, referencia espacial y un visor 3D con controles y mensajes en español. Reutiliza exactamente los mismos datos y resultados. Las figuras científicas originales y los identificadores de fuentes se conservan; las leyendas y los encabezados de presentación se traducen.
+
+El generador compila ambos idiomas por defecto. Para compilar solo uno, usar `--language en` o `--language es`; la opción `--page` permite elegir la página correspondiente de ese idioma. La versión española se genera en `docs/_site/es/` y se abre en `/es/` dentro del mismo servidor local. La navegación permite cambiar entre Español y English.
+
 ## Integridad y uso analítico
 
 El descargador comprueba tamaño y MD5 publicados cuando están disponibles, identifica respuestas HTML inesperadas y comprueba la firma de los archivos gzip. También registra el MD5 calculado de cada archivo descargado. Un MD5 local sin una suma publicada permite seguir la integridad del archivo guardado, pero no constituye una comprobación independiente contra la fuente.

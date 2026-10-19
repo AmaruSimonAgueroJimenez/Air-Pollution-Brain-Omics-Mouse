@@ -11,6 +11,8 @@ tools/ozone/
 docs/_site/
 docs/.quarto/
 docs/_freeze/
+docs/es/.quarto/
+docs/es/_freeze/
 docs/assets/viewer/genes/
 docs/assets/viewer/data.js
 docs/assets/viewer/plotly.min.js

@@ -1,0 +1,92 @@
+project:
+  type: website
+  output-dir: ../_site/es
+  execute-dir: project
+  render:
+  - index.qmd
+  - introduction.qmd
+  - methods.qmd
+  - results.qmd
+  - cortex.qmd
+  - mirna.qmd
+  - ozone.qmd
+  - enrichment.qmd
+  - spatial_reference.qmd
+  - viewer.qmd
+  - reproducibility.qmd
+website:
+  title: Contaminación del aire · ómica cerebral
+  description: Reanálisis reproducible de datos públicos de ómica cerebral de ratón,
+    con una referencia espacial medida y una simulación explícita de PM2.5.
+  reader-mode: true
+  navbar:
+    background: '#123d46'
+    foreground: '#ffffff'
+    pinned: true
+    search: true
+    left:
+    - href: index.qmd
+      text: Resumen
+    - href: introduction.qmd
+      text: Introducción
+    - href: methods.qmd
+      text: Métodos
+    - text: Resultados
+      menu:
+      - href: results.qmd
+        text: Hipotálamo · PM2.5
+      - href: cortex.qmd
+        text: Corteza cingulada · PM2.5
+      - href: mirna.qmd
+        text: miRNA del hipocampo · PM2.5
+      - href: ozone.qmd
+        text: Hipocampo · ozono
+      - href: enrichment.qmd
+        text: Enriquecimiento funcional
+      - href: spatial_reference.qmd
+        text: Referencia espacial medida
+    - href: viewer.qmd
+      text: Visor 3D
+    - href: reproducibility.qmd
+      text: Datos y código
+    right:
+    - href: ../index.html
+      text: English
+  page-footer:
+    left: Reanálisis de datos públicos · Mus musculus
+    right: Se distingue la referencia medida de la exposición simulada.
+    border: true
+format:
+  html:
+    theme: cosmo
+    css: ../assets/report.css
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    code-fold: true
+    code-tools: true
+    code-copy: true
+    link-external-newwindow: true
+    fig-format: png
+    fig-dpi: 180
+    smooth-scroll: true
+    mainfont: system-ui
+    fontsize: 1rem
+    grid:
+      body-width: 1020px
+      margin-width: 230px
+lang: es
+language:
+  title-block-published: Fecha del análisis
+date: 2026-10-18
+date-format: D MMMM YYYY
+bibliography: ../references.bib
+link-citations: true
+jupyter: omics-analysis
+execute:
+  echo: false
+  warning: false
+  message: false
+  error: false
+  cache: false
+  freeze: false

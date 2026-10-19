@@ -1,0 +1,135 @@
+---
+title: "Metodología"
+subtitle: "Unidades experimentales, modelos estadísticos y supuestos espaciales"
+---
+
+```{python}
+from pathlib import Path
+import json
+import pandas as pd
+from IPython.display import display, Markdown
+from _report_utils import ROOT, summary, show_table, read_table
+h = summary("hypothalamus")
+v = summary("spatial_viewer")
+```
+
+## Alcance del estudio y unidades experimentales
+
+La colección de origen comprende cuatro estudios públicos de exposición en cerebro de ratón y un atlas de referencia MERFISH independiente. Se conservan los archivos originales y sus metadatos. Los análisis principales utilizan siete bibliotecas de RNA-seq de hipotálamo, ocho de corteza cingulada, nueve microarreglos de miRNA hipocampales y 24 bibliotecas de RNA-seq del estudio de ozono. Cada biblioteca o microarreglo representa una muestra del estudio; las células del atlas no son réplicas independientes de exposición. Los estudios no se agrupan porque difieren la región, el modelo animal, la vía de exposición y el ensayo.
+
+| Conjunto de datos | Contraste principal | Excluido de ese contraste |
+|---|---|---|
+| GSE145840 | PM2.5 frente a aire filtrado, con dieta estándar; 3 frente a 4 | Cuatro muestras con dieta rica en grasas |
+| GSE297423 | PM2.5 intranasal frente a PBS; 4 frente a 4 | Doce muestras de los brazos PFF/PM-PFF |
+| GSE93967 | 1 mg/kg o 5 mg/kg frente a solución salina; 3 por grupo | Controles de plataforma y características biológicas constantes |
+| E-MTAB-14917 | Ozono frente a aire filtrado dentro de estratos de edad × APOE; 3 por grupo | No se infiere un contraste de exposición de la tabla depositada de resultados E4 frente a E3 |
+
+Los diseños experimentales originales se describen en Rajagopalan et al., Zhang et al., Ku et al. y Nakamya et al. @Rajagopalan2020_32780721 @Zhang2025_40906862 @Ku2017_28851397 @Nakamya2025_40141051
+
+### Regímenes experimentales de exposición
+
+La tabla registra los brazos seleccionados de los estudios cerebrales según las publicaciones originales. Las unidades de dosis y las vías de exposición se conservan tal como fueron comunicadas; no se convierten en una dosis común equivalente por inhalación.
+
+::: {.table-scroll}
+
+| Fuente | Modelo animal y sexo | Edad al inicio de la exposición | Exposición y esquema |
+|---|---|---|---|
+| GSE145840 [@Rajagopalan2020_32780721] | Machos C57BL/6J, dieta estándar | 3 semanas | PM2.5 ambiental concentrado por inhalación, aproximadamente 60–120 µg/m³ (media comunicada cercana a 80); 6 h/día, 5 días/semana, 14 semanas. |
+| GSE297423 [@Zhang2025_40906862] | α-sinucleína hWT humanizada, JAX 010710, fondo FVB;129S6; sexo no especificado | 2 meses | Administración intranasal de 2 µL a 5 mg/mL cada dos días durante dos meses; comparador PBS. |
+| GSE93967 [@Ku2017_28851397] | Machos C57BL/6 | Aproximadamente 8 semanas | Aspiración orofaríngea de 1 o 5 mg/kg en días alternos durante cuatro semanas; tejido recogido 18 h después de la última dosis. |
+| E-MTAB-14917 [@Nakamya2025_40141051] | Machos con reemplazo dirigido por APOE3/APOE4 humano | 3 o 17 meses | Ozono gaseoso a 0.8 ppm, 7 h/día durante cinco días, seguido de nueve días de aire filtrado; ocho ciclos. |
+
+:::
+
+El brazo de RNA-seq de corteza utiliza animales jóvenes hWT humanizados; la misma publicación incluye además un experimento distinto en ratones convencionales de mayor edad. Estos diseños no se intercambian. Las edades terminales exactas y los intervalos hasta la recolección de tejido no están depositados explícitamente para hipotálamo, corteza u ozono, por lo que no se inventan sumando intervalos del calendario. La [revisión del diseño de exposición](../downloads/report_validation/experimental_design_review.json) registra las páginas de los PDF, los metadatos de origen, las sumas de comprobación y las incertidumbres restantes de cada fila.
+
+## Comprobaciones de las fuentes y preprocesamiento
+
+Los archivos de exposición descargados se contrastaron con los tamaños y las sumas MD5 del proveedor cuando estaban disponibles. Los 49 archivos de referencia espacial coincidieron con el manifiesto de Allen tanto en tamaño como en MD5. Antes de modelar se comprobaron los conteos enteros y no negativos, los identificadores únicos de características, el orden de las muestras, las asignaciones de grupo y la concordancia de las listas de genes. Los siete archivos hipotalámicos utilizan un formato sin encabezado separado por espacios y comparten los mismos 50,417 símbolos génicos en el mismo orden. Se conservaron los valores negativos de la matriz de señales de miRNA depositada porque esos valores ya son señales continuas normalizadas.
+
+La matriz de corteza cingulada se vinculó con las muestras mediante los **nombres de biblioteca** depositados, no por el orden de las muestras GEO. El alias ambiguo de una muestra PM-PFF-más-PM queda fuera del contraste principal de ocho muestras y no se corrige de forma implícita. No se inventaron covariables de lote, RIN ni edad individual para los estudios de RNA-seq de PM2.5.
+
+## Análisis clásico de RNA-seq
+
+### Hipotálamo y corteza cingulada
+
+Los conteos se analizaron en Python mediante PyDESeq2, una implementación en Python del marco DESeq2. @Muzellec2023_PyDESeq2 @Love2014_DESeq2 El filtro hipotalámico exigió al menos 10 conteos en al menos tres de siete muestras y conservó 19,611 genes. El filtro de corteza exigió al menos 10 conteos en al menos cuatro de ocho muestras y conservó 19,235 genes. Los filtros se aplicaron antes de la normalización y del modelado inferencial.
+
+Cada estudio se modeló por separado con **la condición como único factor del diseño** y un contraste explícito de PM frente a control. Se utilizaron factores de tamaño basados en la mediana de cocientes, estimación de dispersión por gen y mediante tendencia, modelos lineales generalizados binomiales negativos y pruebas de Wald bilaterales. El ajuste por pruebas múltiples siguió el procedimiento de Benjamini–Hochberg de la implementación, con **FDR < 0.05** como umbral principal. @Benjamini1995_FDR Se distinguen el filtrado de Cook y el filtrado independiente: no todos los valores p ajustados ausentes se atribuyen a valores atípicos.
+
+Los cambios de expresión log₂ originales de máxima verosimilitud, sus errores, estadísticos de Wald, valores p y valores p ajustados se guardaron **antes** de aplicar la regularización de apeglm. Los cambios log₂ regularizados se conservaron por separado para visualizar efectos y construir escenarios espaciales; no sustituyen los resultados originales de las pruebas de hipótesis. @Zhu2019_apeglm Se presenta descriptivamente un umbral secundario de |log₂FC regularizado| ≥ 1 además de la FDR, sin redefinir el conjunto principal de hallazgos.
+
+### Calidad de las muestras y relaciones entre ellas
+
+El informe incluye profundidad de biblioteca asignada a genes, genes detectados, distribuciones normalizadas, correlaciones/distancias entre muestras y PCA. El PCA utiliza los 500 genes de mayor variabilidad tras estabilizar la varianza, centrados entre muestras sin escalar por la varianza de cada gen. Los animales se identifican individualmente. No se eliminó ninguna muestra para mejorar la separación visual, no se infirió un lote a partir de un componente principal y no se aplicó una corrección de lote no documentada.
+
+La transformación estabilizadora de varianza del hipotálamo utiliza el diseño de condición para estimar la tendencia de dispersión; las transformaciones exploratorias de corteza y ozono son ciegas al diseño. Esta distinción se conserva en el registro de procedencia del análisis. Modifica la transformación utilizada para visualizar, no el contraste de expresión diferencial por gen.
+
+### Análisis de sensibilidad del hipotálamo
+
+Como el PCA hipotalámico muestra una marcada heterogeneidad de los controles, se volvió a ajustar el análisis completo omitiendo sucesivamente cada una de las siete muestras. Se conservó el universo génico original del análisis principal. Se presentan dirección, magnitud del efecto y estabilidad de la FDR para los once hallazgos principales, junto con el número de hallazgos de cada omisión. Estos ajustes evalúan sensibilidad; no seleccionan una eliminación preferida ni reemplazan el resultado principal de siete animales.
+
+Un ajuste independiente de DESeq2 en R comprueba la concordancia entre implementaciones con las mismas muestras, filtro génico, normalización, contraste de condición, tendencia paramétrica de dispersión, configuración de Cook y familia de hipótesis con valores p finitos. Los efectos originales de máxima verosimilitud y sus errores estándar se comparan antes de la regularización. Se documentan los cruces del umbral sin cambiar el análisis principal preespecificado en Python. Esto evalúa sensibilidad numérica y no replicación biológica.
+
+## Análisis de miRNA hipocampales
+
+GSE93967 se analizó en su **escala de señal normalizada por cuantiles depositada**, sin una segunda transformación logarítmica. Las anotaciones de sondas de GPL17912 identifican las características biológicas de miRNA y los controles de plataforma. Se excluyeron los controles y las filas biológicas constantes; las características de baja detección se marcaron y conservaron. Los efectos son diferencias de medias en unidades de la señal publicada porque el depósito no estableció una escala log₂.
+
+Se ajustó un modelo lineal de tres grupos mediante los estadísticos moderados de Bayes empírico de limma. @Ritchie2015_limma Los contrastes de 1 mg/kg frente a control y 5 mg/kg frente a control se probaron por separado, con corrección de Benjamini–Hochberg dentro de cada familia de contrastes. Una prueba F moderada global describe las diferencias entre los tres grupos. Se conservan los intervalos puntuales basados en t y los valores de las nueve muestras. No se aplicó análisis de Gene Ontology de mRNA a nombres de miRNA sin un mapeo validado de sus genes diana.
+
+## Análisis de ozono desde las lecturas originales
+
+```{python}
+ozone_done = (ROOT / "results/ozone/summary.json").exists()
+if not ozone_done:
+    display(Markdown("> **Nota sobre el estado del procesamiento:** esta sección registra el flujo fijado para las lecturas originales. "
+                     "El control de calidad final por muestra y las tablas de resultados se añaden cuando terminan las 24 bibliotecas."))
+```
+
+Las 24 bibliotecas de lecturas pareadas se resuelven a partir del SDRF de origen y mantienen unidos los archivos pareados según la ejecución ENA. La calidad inicial y el contenido de adaptadores se evalúan en los **primeros 200,000 pares de lecturas por biblioteca**, explícitamente un subconjunto diagnóstico y no una auditoría de calidad de todas las lecturas. Se conservan los informes de eliminación de adaptadores de las ejecuciones completas. El recorte de adaptadores se aplica de manera consistente cuando se cumple el criterio documentado; no se eliminan duplicados ni se aplica un recorte arbitrario por calidad.
+
+La cuantificación con Salmon utiliza un transcriptoma fijo **GENCODE M25/GRCm38** junto con el genoma primario completo como señuelo, inferencia automática del tipo de biblioteca y corrección de sesgos de secuencia y GC. Las sumas de comprobación del proveedor, los pasos de construcción de la referencia, las versiones de software y los informes por biblioteca se almacenan con el flujo. @Patro2017_Salmon Las cuantificaciones se importan por gen con tximport y conservan la información de longitud efectiva para DESeq2. @Soneson2015_tximport La cuantificación contra la referencia de ratón no establece la expresión específica de alelos de APOE humano.
+
+El diseño de ocho grupos cruza edad, genotipo APOE y exposición, con tres bibliotecas por grupo. El modelo completo incluye las interacciones correspondientes de dos y tres factores. Cuatro contrastes de ozono frente a aire filtrado describen los estratos de edad/genotipo. Una prueba de razón de verosimilitudes compara el modelo completo con un modelo de edad por genotipo y evalúa conjuntamente los términos asociados con la exposición. Los valores p ajustados se conservan tanto dentro de cada estrato como en la familia de los cuatro contrastes por estrato. Las descripciones inconsistentes de la cepa en los metadatos originales se documentan en lugar de convertirse en un ajuste sin respaldo.
+
+## Enriquecimiento funcional
+
+Las asociaciones de procesos biológicos de Gene Ontology de ratón proceden de una copia oficial fijada de **MGI GAF** y **go-basic OBO**. Se excluyen las anotaciones NOT, se restringe el taxón a ratón y se propagan los ancestros elegibles is-a/part-of. Se distinguen los símbolos actuales exactos de los sinónimos no ambiguos de la fuente; los alias ambiguos quedan sin mapear. Se exportan las versiones de anotación, los hashes, las decisiones de mapeo y la cobertura. @Ashburner2000_GO
+
+El análisis de sobrerrepresentación utiliza una prueba hipergeométrica unilateral, por separado para listas de genes con mayor y menor expresión. El fondo comprende genes mapeados y únicos elegibles para la prueba original de expresión diferencial. Se evalúan los términos con 15–500 genes del fondo. Todos los términos elegibles, incluidos aquellos sin solapamiento, entran en la corrección de Benjamini–Hochberg dentro de cada familia específica por dirección. La ausencia de sobrerrepresentación significativa se comunica directamente.
+
+El GSEA con ordenamiento previo utiliza estadísticos de Wald finitos y con signo **con valores p originales finitos**; excluye resultados con p no finito filtrados por Cook y conserva genes con p finito eliminados por filtrado independiente de la presentación de valores p ajustados. Utiliza 1,000 permutaciones de conjuntos génicos, una semilla fija y conjuntos de 15–500 genes. @Subramanian2005_GSEA @Fang2023_GSEApy Su FDR algorítmica es distinta del ajuste BH de ORA. Aquí, el GSEA es exploratorio: los términos solapados y los genes correlacionados no constituyen hallazgos mecanísticos independientes, y estos análisis no eliminan las limitaciones por tamaño muestral pequeño y heterogeneidad de los controles.
+
+## Referencia 3D medida y escenario modelado de PM2.5
+
+La referencia espacial utiliza **Zhuang-ABCA-2**, un donante macho adulto. Las células se seleccionan según las asignaciones de parcelación CCF depositadas para la división hipotalámica, se vinculan mediante identificadores celulares exactos de tipo texto con la matriz H5AD medida y se anotan mediante la taxonomía del atlas. @Zhang2023_38092912
+
+```{python}
+display(Markdown(f"Esta selección contiene **{v['hypothalamus_cells']:,} células**, **{v['cell_classes']} clases celulares** "
+                 f"y **{v['anatomical_substructures']} subestructuras hipotalámicas**. Se puede acceder a los **{v['measured_genes']:,} genes medidos**; "
+                 f"**{v['genes_with_estimable_bulk_effect']:,}** tienen estimaciones fiables del efecto en tejido completo. "
+                 "Las células no se submuestrean, reflejan ni interpolan."))
+```
+
+El visor representa las distancias CCF en milímetros como ML, AP y −DV. No aplica la transformación afín RAS centrada del NIfTI a las distancias de coordenadas CCF positivas. Una comprobación de concordancia con las etiquetas de los vóxeles verifica el marco; se conservan las diferencias en los límites. Las superficies anatómicas se simplifican a 0.15 mm para el contexto de cerebro completo y a 0.075 mm para el hipotálamo; las coordenadas moleculares permanecen sin cambios.
+
+El escenario central se define en la **escala lineal de conteos de imagen**:
+
+```text
+Valor simulado(célula, gen) = conteo medido de referencia(célula, gen)
+                             × 2^(cambio log2 regularizado de PM frente a FA en tejido completo)
+```
+
+El multiplicador se aplica uniformemente dentro del hipotálamo. Otras regiones aportan únicamente contexto anatómico y no reciben un efecto de exposición. Los escenarios alternativos inferior y superior utilizan el coeficiente grupal sin regularizar ±1.96 errores estándar; son escenarios de sensibilidad del efecto grupal y no intervalos de confianza por célula.
+
+Las dos vistas utilizan posiciones celulares idénticas, cámaras enlazadas y una escala de color común de **log₂(1 + valor)**. Se informa de un límite opcional común del percentil 99 de valores positivos; los valores que exceden el límite cromático se conservan en la información al pasar el cursor y en las exportaciones de origen. Los genes sin inferencia fiable en tejido completo se mantienen solo como referencia; los genes modelados no significativos llevan una etiqueta exploratoria.
+
+La referencia no es un control emparejado del estudio de tejido completo. La transferencia uniforme conserva los gradientes basales y los ceros, y no identifica respuestas específicas por célula, cambios de abundancia, migración, morfología ni expresión de células individuales expuestas.
+
+### Resúmenes descriptivos del atlas
+
+La referencia medida también se resume para cada una de sus 26 clases y 49 subestructuras. Para cada gen medido se conservan la media aritmética del conteo lineal de imagen, el número de células con conteo positivo y la fracción de detección dentro de cada grupo, con los ceros incluidos en el denominador. La composición por clase y los gráficos de detección de Tll1 son mediciones descriptivas de un donante. No incluyen pruebas por célula, intervalos de confianza ni inferencia de células expuestas. El gráfico anatómico de Tll1 muestra las 15 mayores fracciones de detección entre las subestructuras con al menos 100 células seleccionadas; las exportaciones completas conservan las 49 subestructuras. [Resultados de la referencia medida](spatial_reference.qmd).
+
+## Reproducibilidad
+
+Se conservan en el repositorio los scripts de Python, los cuadernos QMD, los registros de versiones, las anotaciones originales de las muestras, las tablas diferenciales, las matrices normalizadas, los ajustes de sensibilidad y las figuras exportadas en SVG/PDF/PNG. El motor estadístico de miRNA utiliza R/limma y el de ozono por gen utiliza R/tximport/DESeq2, llamados desde el flujo en Python. No se fabrican resultados para completar las mediciones espaciales de exposición no disponibles. [Datos e instrucciones de ejecución](reproducibility.qmd).
