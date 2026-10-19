@@ -96,6 +96,16 @@ python3 scripts/download_spatial_atlas.py --background --workers 4
 
 `logs/spatial_atlas/completion.json` registra el resultado final y [metadata/spatial_atlas/download_receipts.json](metadata/spatial_atlas/download_receipts.json) guarda las comprobaciones de integridad. Los 49 archivos coincidieron en tamaño y MD5 con el manifiesto publicado. Se revisaron además las dimensiones e identificadores de las ocho matrices y los valores de sus primeras 1.000 células; el alcance de esa inspección está en [metadata/spatial_atlas/h5ad_inspection.json](metadata/spatial_atlas/h5ad_inspection.json). `--verify-only` permite repetir la comprobación completa sin descargar archivos nuevos. Las matrices y los metadatos se mantienen separados de los estudios de exposición y no se suman a sus 64 muestras ni a sus 110 FASTQ.
 
+## Reconstrucción 3D y comparación con PM2.5
+
+Evaluación de factibilidad al **18 de octubre de 2026**. Los datos descargados permiten construir un visor 3D de referencia con las coordenadas CCF, las anotaciones anatómicas y la expresión MERFISH medida de los 1.122 genes del panel. El modelo representa células de cortes registrados a un marco anatómico común; una superficie o un volumen continuo interpolado debe identificarse como tal. El visor todavía no está implementado.
+
+Una comparación con PM2.5 requiere distinguir la expresión de referencia medida y una proyección de la respuesta regional. Los estudios de PM2.5 descargados son bulk, sin coordenadas por célula, y el atlas no es su grupo control experimental. Una vista de genes aumentados o disminuidos puede mostrar dónde se expresan esos genes en el atlas; no demuestra que cada célula localizada haya cambiado por exposición. Una simulación que modifique la expresión basal debe declarar sus supuestos y no presentarse como expresión espacial medida bajo PM2.5.
+
+Como primera comparación se prioriza **GSE145840, hipotálamo: PM2.5 frente a aire filtrado, 3 frente a 4 muestras**, ambas con dieta estándar. El grupo HFD queda como comparador separado. Para corteza cingulada, **GSE297423: PM2.5 intranasal frente a PBS, 4 frente a 4 muestras**; los brazos PFF no se mezclan con este contraste. Ese estudio utiliza ratones humanizados para alfa-sinucleína y no equivale al fondo genético del atlas. Los detalles y metadatos están en [docs/datasets.md](docs/datasets.md).
+
+Antes de proyectar una firma, se debe comprobar qué genes coinciden con el panel espacial, estimar el contraste entre animales del mismo estudio y conservar la incertidumbre. No se extrapolará una respuesta regional medida al resto del cerebro como un efecto demostrado. El bulk no identifica por sí solo qué parte de un cambio procede de regulación dentro de células y qué parte de diferencias en su abundancia.
+
 ## Integridad y uso analítico
 
 El descargador comprueba tamaño y MD5 publicados cuando están disponibles, identifica respuestas HTML inesperadas y comprueba la firma de los archivos gzip. También registra el MD5 calculado de cada archivo descargado. Un MD5 local sin una suma publicada permite seguir la integridad del archivo guardado, pero no constituye una comprobación independiente contra la fuente.
