@@ -1,0 +1,142 @@
+{
+  "study": "E-MTAB-14917",
+  "complete": true,
+  "n_samples": 24,
+  "n_input_genes": 54347,
+  "n_retained_genes": 18537,
+  "design_rank": 8,
+  "contrasts": {
+    "M3_E3_O3_vs_FA": {
+      "genes": 18537,
+      "tested": 18490,
+      "nonconverged": 0,
+      "shrinkage_nonconverged": 0,
+      "all_zero_in_stratum": 23,
+      "fdr_005": 0,
+      "up_fdr_005": 0,
+      "down_fdr_005": 0,
+      "across_four_fdr_005": 1,
+      "n_FA": 3,
+      "n_O3": 3,
+      "top_genes": [
+        "Pisd-ps1",
+        "Lpo",
+        "Yy2",
+        "Gm13304",
+        "Gm26920",
+        "Col3a1",
+        "Ccl25",
+        "Gm6789",
+        "Pisd-ps2",
+        "Gm43863"
+      ]
+    },
+    "M3_E4_O3_vs_FA": {
+      "genes": 18537,
+      "tested": 18498,
+      "nonconverged": 0,
+      "shrinkage_nonconverged": 0,
+      "all_zero_in_stratum": 15,
+      "fdr_005": 399,
+      "up_fdr_005": 86,
+      "down_fdr_005": 313,
+      "across_four_fdr_005": 43,
+      "n_FA": 3,
+      "n_O3": 3,
+      "top_genes": [
+        "Gm45191",
+        "Gm38372",
+        "Nfasc",
+        "Gm42748",
+        "Oxsr1",
+        "Gm44846",
+        "Braf",
+        "Ryr3",
+        "Ccdc88b",
+        "Gm37899"
+      ]
+    },
+    "M17_E3_O3_vs_FA": {
+      "genes": 18537,
+      "tested": 18498,
+      "nonconverged": 0,
+      "shrinkage_nonconverged": 0,
+      "all_zero_in_stratum": 15,
+      "fdr_005": 2,
+      "up_fdr_005": 2,
+      "down_fdr_005": 0,
+      "across_four_fdr_005": 4,
+      "n_FA": 3,
+      "n_O3": 3,
+      "top_genes": [
+        "Gm7336",
+        "Gm6565",
+        "Cryba2",
+        "Pex11g",
+        "Cryaa",
+        "Crygs",
+        "Cryba1",
+        "Mip",
+        "Cryba4",
+        "Gm13835"
+      ]
+    },
+    "M17_E4_O3_vs_FA": {
+      "genes": 18537,
+      "tested": 18499,
+      "nonconverged": 0,
+      "shrinkage_nonconverged": 0,
+      "all_zero_in_stratum": 13,
+      "fdr_005": 3,
+      "up_fdr_005": 0,
+      "down_fdr_005": 3,
+      "across_four_fdr_005": 6,
+      "n_FA": 3,
+      "n_O3": 3,
+      "top_genes": [
+        "Fos",
+        "Mme",
+        "Cenpk",
+        "Mindy4",
+        "Omp",
+        "Gm6565",
+        "mt-Rnr1",
+        "Nfil3",
+        "Gpr88",
+        "Rgs16"
+      ]
+    }
+  },
+  "global_LRT": {
+    "df": 4,
+    "tested": 18511,
+    "fdr_005": 24,
+    "full_nonconverged": 0,
+    "reduced_nonconverged": 0
+  },
+  "pca": {
+    "top_variable_genes": 500,
+    "PC1_variance": 0.4896,
+    "PC2_variance": 0.1237
+  },
+  "no_spatial_response_measurement": true,
+  "raw_qc": {
+    "sampled_pairs_per_library": 200000,
+    "q30_range": [
+      0.923744,
+      0.964874
+    ],
+    "adapter_fraction_range": [
+      0.0251525,
+      0.0730675
+    ]
+  },
+  "quantification": {
+    "libraries": 24,
+    "processed_pairs_total": 532781354,
+    "percent_mapped_range": [
+      72.3057862426767,
+      88.33282436739083
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+gsm,title,organism,source,description,characteristics,relations
+GSM4337093,HYPO-HFD1,Mus musculus,Hypothalamus,,tissue: Hypothalamus | treatment: High-fat diet,BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN14175086 | SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX7795046
+GSM4337094,HYPO-HFD2,Mus musculus,Hypothalamus,,tissue: Hypothalamus | treatment: High-fat diet,BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN14175118 | SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX7795047
+GSM4337095,HYPO-HFD3,Mus musculus,Hypothalamus,,tissue: Hypothalamus | treatment: High-fat diet,BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN14175117 | SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX7795048
+GSM4337096,HYPO-HFD4,Mus musculus,Hypothalamus,,tissue: Hypothalamus | treatment: High-fat diet,BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN14175115 | SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX7795049
+GSM4337097,HYPO-FA1,Mus musculus,Hypothalamus,,tissue: Hypothalamus | treatment: Chow diet,BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN14175114 | SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX7795050
+GSM4337098,HYPO-FA2,Mus musculus,Hypothalamus,,tissue: Hypothalamus | treatment: Chow diet,BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN14175113 | SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX7795051
+GSM4337099,HYPO-FA3,Mus musculus,Hypothalamus,,tissue: Hypothalamus | treatment: Chow diet,BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN14175112 | SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX7795052
+GSM4337100,HYPO-FA4,Mus musculus,Hypothalamus,,tissue: Hypothalamus | treatment: Chow diet,BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN14175051 | SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX7795053
+GSM4337101,HYPO-PM1,Mus musculus,Hypothalamus,,"tissue: Hypothalamus | treatment: Chow diet, PM exposure",BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN14175050 | SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX7795054
+GSM4337102,HYPO-PM2,Mus musculus,Hypothalamus,,"tissue: Hypothalamus | treatment: Chow diet, PM exposure",BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN14175048 | SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX7795055
+GSM4337103,HYPO-PM3,Mus musculus,Hypothalamus,,"tissue: Hypothalamus | treatment: Chow diet, PM exposure",BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN14175047 | SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX7795056

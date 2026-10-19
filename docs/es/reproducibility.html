@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Datos, código y reproducibilidad – Contaminación del aire · ómica cerebral</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5dd942ac47374bdb5320a9bbd29a7aa4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../assets/report.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Contaminación del aire · ómica cerebral</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Resumen</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./introduction.html"> 
+<span class="menu-text">Introducción</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./methods.html"> 
+<span class="menu-text">Métodos</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resultados" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Resultados</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-resultados">    
+        <li>
+    <a class="dropdown-item" href="./results.html">
+ <span class="dropdown-text">Hipotálamo · PM2.5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cortex.html">
+ <span class="dropdown-text">Corteza cingulada · PM2.5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./mirna.html">
+ <span class="dropdown-text">miRNA del hipocampo · PM2.5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ozone.html">
+ <span class="dropdown-text">Hipocampo · ozono</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./enrichment.html">
+ <span class="dropdown-text">Enriquecimiento funcional</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./advanced_results.html">
+ <span class="dropdown-text">Interacciones y paneles moleculares</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./replication.html">
+ <span class="dropdown-text">Reproducción de los artículos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./spatial_reference.html">
+ <span class="dropdown-text">Referencia espacial medida</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./viewer.html"> 
+<span class="menu-text">Visor 3D</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./reproducibility.html" aria-current="page"> 
+<span class="menu-text">Datos y código</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./../index.html"> 
+<span class="menu-text">English</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Alternar modo lector">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#alcance-e-inventario-de-fuentes" id="toc-alcance-e-inventario-de-fuentes" class="nav-link active" data-scroll-target="#alcance-e-inventario-de-fuentes">Alcance e inventario de fuentes</a>
+  <ul class="collapse">
+  <li><a href="#registros-de-descarga-y-procedencia" id="toc-registros-de-descarga-y-procedencia" class="nav-link" data-scroll-target="#registros-de-descarga-y-procedencia">Registros de descarga y procedencia</a></li>
+  </ul></li>
+  <li><a href="#software-y-separación-de-motores-de-análisis" id="toc-software-y-separación-de-motores-de-análisis" class="nav-link" data-scroll-target="#software-y-separación-de-motores-de-análisis">Software y separación de motores de análisis</a></li>
+  <li><a href="#regenerar-los-análisis-de-los-estudios" id="toc-regenerar-los-análisis-de-los-estudios" class="nav-link" data-scroll-target="#regenerar-los-análisis-de-los-estudios">Regenerar los análisis de los estudios</a>
+  <ul class="collapse">
+  <li><a href="#comprobación-independiente-de-la-implementación" id="toc-comprobación-independiente-de-la-implementación" class="nav-link" data-scroll-target="#comprobación-independiente-de-la-implementación">Comprobación independiente de la implementación</a></li>
+  </ul></li>
+  <li><a href="#ozono-etapas-y-reanudación" id="toc-ozono-etapas-y-reanudación" class="nav-link" data-scroll-target="#ozono-etapas-y-reanudación">Ozono: etapas y reanudación</a></li>
+  <li><a href="#regenerar-el-visor-de-la-referencia-medida" id="toc-regenerar-el-visor-de-la-referencia-medida" class="nav-link" data-scroll-target="#regenerar-el-visor-de-la-referencia-medida">Regenerar el visor de la referencia medida</a></li>
+  <li><a href="#generar-el-informe-sin-volver-a-ajustar-los-modelos" id="toc-generar-el-informe-sin-volver-a-ajustar-los-modelos" class="nav-link" data-scroll-target="#generar-el-informe-sin-volver-a-ajustar-los-modelos">Generar el informe sin volver a ajustar los modelos</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Datos, código y reproducibilidad</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+<p class="subtitle lead">Archivos de origen, motores estadísticos y comandos para una reconstrucción local</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha del análisis</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">19 octubre 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="alcance-e-inventario-de-fuentes" class="level2">
+<h2 class="anchored" data-anchor-id="alcance-e-inventario-de-fuentes">Alcance e inventario de fuentes</h2>
+<p>Los cuatro estudios de exposición son análisis independientes. No se combinan en una única matriz de expresión, y el donante MERFISH sin exposición no es un animal de control de un estudio de exposición. La colección de origen contiene 64 muestras de cerebro de ratón; los contrastes primarios utilizan los subconjuntos indicados a continuación.</p>
+<p>Esta versión española conserva el punto decimal y la coma como separador de miles utilizados en los archivos de origen. También mantiene las unidades originales, los identificadores, los nombres de columnas de los archivos descargables y el contenido gráfico científico original. Se traducen los textos, las leyendas y la interfaz del visor; la traducción no modifica ni vuelve a calcular los resultados. Se conserva la fecha del análisis original: <strong>18 de octubre de 2026</strong>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Fuente</th>
+<th>Material de origen conservado</th>
+<th>Análisis primario</th>
+<th>Punto de partida</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145840">GSE145840</a></td>
+<td>Once archivos de conteos hipotalámicos y sus lecturas pareadas de RNA-seq</td>
+<td>Cuatro muestras con dieta estándar/aire filtrado y tres con dieta estándar/PM2.5; se excluyen cuatro muestras con dieta alta en grasas</td>
+<td>Conteos génicos depositados; no se repite el alineamiento de lecturas</td>
+</tr>
+<tr class="even">
+<td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE297423">GSE297423</a></td>
+<td>Veinte bibliotecas de corteza cingulada y la matriz de conteos depositada</td>
+<td>Cuatro muestras PBS y cuatro con PM intranasal; se excluyen doce muestras de otros grupos de tratamiento</td>
+<td>Conteos génicos depositados, vinculados mediante los nombres de biblioteca originales</td>
+</tr>
+<tr class="odd">
+<td><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE93967">GSE93967</a></td>
+<td>Nueve microarreglos de miRNA hipocampal, archivos originales de los microarreglos, matriz normalizada y anotación <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL17912">GPL17912</a></td>
+<td>Solución salina, 1 mg/kg de PM2.5 y 5 mg/kg de PM2.5; tres muestras por grupo</td>
+<td>Señales continuas publicadas, normalizadas por cuantiles</td>
+</tr>
+<tr class="even">
+<td><a href="https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-14917">E-MTAB-14917</a></td>
+<td>Veinticuatro bibliotecas hipocampales de lecturas pareadas, metadatos SDRF y tabla depositada de resultados entre genotipos</td>
+<td>Ozono frente a aire filtrado dentro de cada estrato de edad × APOE; tres muestras en cada una de ocho combinaciones</td>
+<td>Todos los pares FASTQ originales, seguidos de cuantificación de transcritos e inferencia a nivel génico</td>
+</tr>
+<tr class="odd">
+<td><a href="https://doi.org/10.1038/s41586-023-06808-9">Atlas MERFISH del cerebro completo de Zhang et al.</a></td>
+<td>Matrices medidas Zhuang-ABCA-1–4, metadatos, taxonomía, coordenadas CCF y volúmenes anatómicos</td>
+<td>El visor fija como referencia al donante macho adulto <strong>Zhuang-ABCA-2</strong></td>
+<td>Conteos brutos de imagen medidos y coordenadas celulares registradas; sin observaciones de exposición a contaminantes</td>
+</tr>
+</tbody>
+</table>
+<p>La colección de exposición incluye <strong>110 archivos FASTQ, aproximadamente 261.9 GB comprimidos</strong>, antes de incorporar genomas de referencia, índices y archivos derivados. El manifiesto de la referencia espacial describe aproximadamente <strong>10.74 GB</strong> distribuidos en 49 archivos. Los FASTQ originales, las matrices H5AD, los genomas de referencia, los entornos de software y los directorios de trabajo de cuantificación son insumos locales del proyecto; no están incorporados en el informe HTML.</p>
+<p>El CSV depositado de E-MTAB-14917 es un resultado de expresión diferencial entre genotipos, no una matriz de conteos por muestra. Se conserva como material de origen, pero no sustituye al análisis de ozono basado en lecturas. En ese estudio, las <strong>etiquetas de 3 y 17 meses describen la edad al inicio de la exposición</strong>. La referencia de ratón no establece la expresión específica de cada alelo en el locus de reemplazo APOE humanizado. El genotipo es una etiqueta experimental de origen, no una medición inferida de expresión de los alelos de APOE.</p>
+<section id="registros-de-descarga-y-procedencia" class="level3">
+<h3 class="anchored" data-anchor-id="registros-de-descarga-y-procedencia">Registros de descarga y procedencia</h3>
+<p>Los manifiestos conservan las URL originales, las muestras seleccionadas, los destinos de los archivos, los tamaños esperados y los valores MD5 de origen cuando se proporcionan. Los comprobantes locales registran los archivos verificados. Un hash local sin una suma de comprobación publicada documenta la copia guardada, pero no constituye una comprobación independiente de integridad frente al proveedor.</p>
+<ul>
+<li>Colección de exposición: <a href="../downloads/provenance/download_manifest.json">manifiesto de descarga</a>, <a href="../downloads/provenance/download_receipts.csv">comprobantes de archivos</a> y <a href="../downloads/provenance/validation_report.json">validación de los datos de origen</a>.</li>
+<li>Referencia MERFISH: <a href="../downloads/provenance/spatial_atlas/download_manifest.json">manifiesto y versiones por archivo</a> y <a href="../downloads/provenance/spatial_atlas/download_receipts.json">comprobantes verificados</a>. El manifiesto de origen de Allen utiliza la etiqueta literal de versión <code>20261031</code>; las versiones individuales de matrices y metadatos se registran por separado.</li>
+<li>Ozono: <a href="../downloads/provenance/ozone_analysis/samples.csv">asignaciones de muestras y corridas</a>, <a href="../downloads/provenance/ozone_analysis/reference_sources.json">fuentes y hashes de los transcritos y el genoma GENCODE</a> y <a href="../downloads/provenance/ozone_analysis/gene_annotation_source.json">fuente de anotación génica</a>.</li>
+<li>Anotación funcional: <a href="../downloads/provenance/functional_annotation/source_manifest.json">manifiesto de fuentes GO fijadas</a>, <a href="../downloads/provenance/functional_annotation/annotation_audit.json">auditoría de lectura y propagación de anotaciones</a> y <a href="../downloads/enrichment/methods.json">métodos de enriquecimiento</a>.</li>
+<li>Inventario bibliográfico: <a href="../downloads/papers/bibliography.bib">BibTeX</a> y <a href="../downloads/papers/bibliography.ris">RIS</a>. Los PDF descargados y su procedencia se conservan en el repositorio local, en <code>papers/pdf/</code> y <code>metadata/papers/</code>.</li>
+</ul>
+<p>Los archivos GO se obtuvieron de la distribución oficial vigente y después se fijaron mediante SHA256: el encabezado GAF está fechado el <strong>21 de mayo de 2026</strong>, y <code>go-basic.obo</code> declara la <strong>versión 2026-07-26</strong>. Son las fechas de los archivos efectivamente recibidos. La reproducción requiere esas copias registradas, no su sustitución sin revisión por una versión vigente futura. El script de enriquecimiento rechaza una referencia local cuyo hash difiera del manifiesto guardado.</p>
+</section>
+</section>
+<section id="software-y-separación-de-motores-de-análisis" class="level2">
+<h2 class="anchored" data-anchor-id="software-y-separación-de-motores-de-análisis">Software y separación de motores de análisis</h2>
+<p>El entorno Python registrado utiliza <strong>Python 3.14.3</strong> en macOS arm64. El informe incluye el <a href="../downloads/requirements-analysis.txt">inventario de paquetes Python</a> y el <a href="../downloads/analysis_environment.json">registro del entorno</a>. Documentan el entorno utilizado aquí; la lista de paquetes por sí sola no es un archivo de bloqueo completo del sistema operativo, los binarios ni las dependencias transitivas.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Componente</th>
+<th>Motor utilizado</th>
+<th>Código principal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>RNA-seq hipotalámico</td>
+<td>Python, PyDESeq2 0.5.4</td>
+<td><a href="../downloads/code/analyze_hypothalamus.py">analyze_hypothalamus.py</a></td>
+</tr>
+<tr class="even">
+<td>RNA-seq de corteza cingulada</td>
+<td>Python, PyDESeq2 0.5.4</td>
+<td><a href="../downloads/code/analyze_cortex.py">analyze_cortex.py</a></td>
+</tr>
+<tr class="odd">
+<td>miRNA hipocampal</td>
+<td>Preparación y figuras en Python; <strong>R limma 3.66.0</strong> para inferencia moderada</td>
+<td><a href="../downloads/code/analyze_mirna.py">Interfaz Python</a>, <a href="../downloads/code/analyze_mirna.R">modelo R</a></td>
+</tr>
+<tr class="even">
+<td>RNA-seq de ozono</td>
+<td>fastp 1.3.6, Salmon 2.5.1; <strong>R tximport 1.38.2, DESeq2 1.50.2 y apeglm 1.32.0</strong></td>
+<td><a href="../downloads/code/ozone_pipeline.py">Flujo de procesamiento</a>, <a href="../downloads/code/ozone_reference_annotation.py">anotación génica</a>, <a href="../downloads/code/analyze_ozone.R">modelo R</a>, <a href="../downloads/code/ozone_figures.py">figuras</a></td>
+</tr>
+<tr class="odd">
+<td>Gene Ontology: procesos biológicos</td>
+<td>ORA hipergeométrico/BH en Python; GSEA preordenado con GSEApy 1.3.1</td>
+<td><a href="../downloads/code/analyze_enrichment.py">analyze_enrichment.py</a></td>
+</tr>
+<tr class="even">
+<td>Visor MERFISH</td>
+<td>Extracción H5AD/CCF y construcción de superficies en Python; Plotly JavaScript incluido localmente</td>
+<td><a href="../downloads/code/build_spatial_viewer.py">build_spatial_viewer.py</a></td>
+</tr>
+<tr class="odd">
+<td>Sitio web</td>
+<td>Quarto con el kernel Python/Jupyter <code>omics-analysis</code></td>
+<td><a href="../downloads/code/render_docs.py">render_docs.py</a></td>
+</tr>
+</tbody>
+</table>
+<p>R <strong>4.5.2</strong> está disponible por separado de Python. Los scripts anteponen la biblioteca local del proyecto <code>.r-library</code> a la ruta de búsqueda de bibliotecas de R. Los paquetes R requeridos directamente son <code>limma</code>, <code>tximport</code>, <code>DESeq2</code>, <code>apeglm</code>, <code>jsonlite</code> y, para la comprobación independiente, <code>BiocParallel</code>. También deben instalarse sus dependencias de Bioconductor. Los registros de sesión R conservan el contexto completo de paquetes cargados; consulte la <a href="../downloads/mirna/R_session_info.txt">sesión de miRNA</a> y la <a href="../downloads/hypothalamus/independent_deseq2_check/R_session_info.txt">sesión independiente de DESeq2</a>.</p>
+<p>El procesamiento de ozono requiere además <code>salmon</code>, <code>fastp</code>, <code>aria2c</code> y <code>Rscript</code> disponibles en <code>PATH</code>. El descargador de anotaciones utiliza <code>aria2c</code>, aunque el descargador de transcritos y genoma dispone de una alternativa con curl. Las descargas de exposición utilizan <code>curl</code>. La generación del informe requiere la interfaz de línea de comandos de Quarto e <code>ipykernel</code>. El visor local requiere un navegador compatible con WebGL y gzip <code>DecompressionStream</code>; su biblioteca Plotly y sus archivos de expresión se sirven localmente, sin depender de una CDN durante el uso.</p>
+<p>En un entorno Python nuevo, el inventario de paquetes registrado puede instalarse así. Este paso solo prepara el software; los datos originales, los paquetes R, las herramientas externas y las referencias siguen siendo requisitos separados.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3.14</span> <span class="at">-m</span> venv .venv-analysis</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> <span class="at">-m</span> pip install <span class="at">-r</span> requirements-analysis.txt</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Los comandos siguientes suponen que la terminal está situada en la raíz del repositorio y utilizan el intérprete existente <code>.venv-analysis</code>. Los scripts resuelven las rutas de datos a partir de la ubicación del proyecto. Una copia HTML generada por sí sola no sustituye al repositorio completo, los datos de origen y los entornos necesarios para reconstruir el análisis.</p>
+</section>
+<section id="regenerar-los-análisis-de-los-estudios" class="level2">
+<h2 class="anchored" data-anchor-id="regenerar-los-análisis-de-los-estudios">Regenerar los análisis de los estudios</h2>
+<p>El <a href="../downloads/code/run_analysis.py">ejecutor de análisis</a> ofrece un plan legible antes de ejecutar:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/run_analysis.py <span class="at">--stage</span> all <span class="at">--cpus</span> 4 <span class="at">--dry-run</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/run_analysis.py <span class="at">--stage</span> all <span class="at">--cpus</span> 4</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>El ejecutor completo sigue este orden: hipotálamo, corteza, miRNA, ozono, enriquecimiento, visor espacial, resúmenes descriptivos de la referencia espacial y, por último, informe. No instala herramientas ni descarga la colección original de los estudios. Vuelve a ajustar los análisis basados en datos procesados; no debe utilizarse solo para actualizar el HTML. Ejecute una única instancia del flujo de ozono dentro del espacio de trabajo del proyecto, para evitar que procesos concurrentes escriban en los mismos directorios de cuantificación.</p>
+<p>Los comandos individuales explicitan cada motor de análisis y sus dependencias:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Análisis hipotalámico de siete muestras, incluidos los siete ajustes omitiendo un animal.</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/analyze_hypothalamus.py <span class="at">--cpus</span> 4</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Análisis de PM frente a PBS en ocho muestras de corteza cingulada.</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/analyze_cortex.py <span class="at">--workers</span> 4</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Nueve microarreglos de miRNA; este comando invoca el motor R/limma.</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/analyze_mirna.py</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Análisis GO-BP para los contrastes génicos completos de hipotálamo y corteza.</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/analyze_enrichment.py <span class="at">--threads</span> 4</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>El hipotálamo utiliza como máximo seis procesos de inferencia en Python; la corteza acepta de uno a seis procesos. GSEA utiliza como máximo cuatro hilos. La opción hipotalámica <code>--skip-sensitivity</code> omite deliberadamente los ajustes que excluyen un animal cada vez; la reconstrucción estándar del visor espera su tabla guardada de estabilidad de los hallazgos primarios, por lo que la ejecución predeterminada completa es la vía de reproducción documentada aquí.</p>
+<p>Cada estudio escribe en su propio directorio <code>results/</code>. Los filtros de conteos, la selección de muestras, los efectos MLE frente a los regularizados, el tratamiento de valores p ausentes, las matrices normalizadas y las leyendas de figuras se registran en los archivos de métodos correspondientes de <a href="../downloads/hypothalamus/methods.json">hipotálamo</a>, <a href="../downloads/cortex/methods.json">corteza</a> y <a href="../downloads/mirna/methods.json">miRNA</a>. El PCA es descriptivo: el hipotálamo utiliza una transformación estabilizadora de la varianza (VST) informada por el diseño, mientras que la corteza utiliza una VST ciega al diseño. Ambos emplean variables génicas centradas en su media y sin escalado; ninguno de los PCA determina la retirada de muestras.</p>
+<p>El comando de enriquecimiento utiliza símbolos exactos de ratón y sinónimos GAF no ambiguos. Su universo ORA exige valores p ajustados de expresión diferencial finitos; su clasificación GSEA exige valores p originales finitos y estadísticos de Wald con signo, y conserva los genes con valores p finitos pero valores p ajustados ausentes por filtrado independiente. Las <a href="./enrichment.html">exclusiones de la clasificación y las decisiones de correspondencia</a> forman parte del registro de reproducibilidad. Los identificadores de miRNA no se envían como genes de mRNA para enriquecimiento GO.</p>
+<section id="comprobación-independiente-de-la-implementación" class="level3">
+<h3 class="anchored" data-anchor-id="comprobación-independiente-de-la-implementación">Comprobación independiente de la implementación</h3>
+<p>La <a href="../downloads/hypothalamus/independent_deseq2_check/summary.json">comprobación opcional con DESeq2 en R</a> es independiente del flujo primario PyDESeq2:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/validate_hypothalamus_deseq2.py</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Regenerar solo las tablas de comparación a partir del ajuste R existente.</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/validate_hypothalamus_deseq2.py <span class="at">--reuse-R-fit</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La comprobación guardada utiliza las mismas siete muestras, el mismo filtro de conteos y las mismas 19,452 hipótesis con valores p finitos, con un filtrado de Cook idéntico de 159 genes. La concordancia numérica es estrecha. R encuentra doce hallazgos por FDR, frente a los once primarios; el cruce adicional del umbral corresponde a <strong>Tnrc6c</strong> (p ajustado en R = 0.0399; en Python = 0.0521). <strong>Tll1</strong> sigue siendo significativo en ambas implementaciones (aproximadamente 0.00330 y 0.00350). Es una comparación de implementaciones, no una replicación biológica independiente, y no sustituye al resultado primario ni a su limitación de sensibilidad a las muestras. Están disponibles el <a href="../downloads/code/validate_hypothalamus_deseq2.R">código R</a>, el <a href="../downloads/code/validate_hypothalamus_deseq2.py">código de comparación</a> y las <a href="../downloads/hypothalamus/independent_deseq2_check/discordant_FDR_genes.tsv">diferencias a nivel génico</a>.</p>
+</section>
+</section>
+<section id="ozono-etapas-y-reanudación" class="level2">
+<h2 class="anchored" data-anchor-id="ozono-etapas-y-reanudación">Ozono: etapas y reanudación</h2>
+<p>El flujo de ozono parte de las lecturas pareadas originales. <code>prepare</code> obtiene y verifica las referencias GENCODE M25/GRCm38, crea correspondencias de transcritos a genes y secuencias señuelo del genoma completo, y obtiene las anotaciones reales de tipo de gen a partir del GTF. <code>index</code> construye el índice Salmon. <code>qc</code> examina los primeros 200,000 pares de cada biblioteca y registra la regla de recorte de adaptadores. <code>quant</code> procesa bibliotecas completas y recorta adaptadores cuando corresponde. <code>de</code> importa las 24 cuantificaciones con términos de compensación por longitud efectiva y ejecuta el modelo factorial R fijado. <code>figures</code> y <code>enrichment</code> utilizan los resultados estadísticos completos.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Flujo completo desde las lecturas originales; use recursos adecuados al equipo local.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/ozone_pipeline.py <span class="at">--stage</span> all <span class="at">--cpus</span> 12</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Reanudar la cuantificación después de que el proceso interrumpido se haya detenido.</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/ozone_pipeline.py <span class="at">--stage</span> quant <span class="at">--cpus</span> 12</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Estas etapas requieren las 24 cuantificaciones o los resultados estadísticos completos.</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/ozone_pipeline.py <span class="at">--stage</span> de</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/ozone_pipeline.py <span class="at">--stage</span> figures</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/ozone_pipeline.py <span class="at">--stage</span> enrichment</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>El presupuesto <code>--cpus</code> controla la construcción del índice y la cuantificación. Con ocho CPU o más, la cuantificación utiliza dos procesos concurrentes, cada uno con la mitad entera del presupuesto; en caso contrario utiliza un proceso. El control de calidad de lecturas originales con fastp utiliza dos hilos, y la etapa de enriquecimiento utiliza cuatro. Los archivos FASTQ originales nunca se modifican. Las lecturas recortadas derivadas se eliminan después de una cuantificación satisfactoria, mientras se conservan los informes de recorte.</p>
+<p>El índice y los marcadores <code>ozone_quant_complete.json</code> de cada biblioteca permiten reutilizar el trabajo completado. Son puntos de control locales, no un mecanismo para cambiar referencias o parámetros analíticos sobre la misma ejecución. Conserve los archivos de cuantificación asociados y los hashes de origen; los cambios de entradas o de configuración requieren una reconstrucción revisada por separado. No debe iniciarse una reanudación junto a otra instancia activa del flujo.</p>
+<p>La información de la etapa actual está en <a href="../downloads/provenance/ozone_analysis/pipeline_status.json">pipeline_status.json</a>. Su campo <code>complete</code> se refiere a la etapa seleccionada; finalizar <code>quant</code> no implica que la expresión diferencial o el enriquecimiento hayan terminado. Los registros y las cuantificaciones por biblioteca permanecen en <code>results/ozone/</code>. La <a href="./ozone.html">página de resultados de ozono</a> distingue el control de calidad disponible de la inferencia completa y no rellena etapas ausentes con resultados simulados.</p>
+<p>El modelo estadístico completo cruza edad, genotipo y exposición. Un prefiltro fijo de conteos define los genes candidatos; el filtrado independiente adaptativo está desactivado en este análisis. Los indicadores de convergencia numérica se comprueban antes del ajuste BH final, y se omiten las estimaciones regularizadas que fallan. Las pruebas de Wald dentro de cada estrato, una familia BH suplementaria conjunta de los cuatro contrastes y el LRT global separado de cuatro grados de libertad responden a preguntas diferentes. La referencia no puede validar la cuantificación específica de cada alelo de APOE humano. Una anotación de cepa de origen que difiere para una biblioteca se conserva como limitación de los metadatos, sin convertirla en un ajuste por genotipo totalmente confundido.</p>
+</section>
+<section id="regenerar-el-visor-de-la-referencia-medida" class="level2">
+<h2 class="anchored" data-anchor-id="regenerar-el-visor-de-la-referencia-medida">Regenerar el visor de la referencia medida</h2>
+<p>El generador del visor requiere los datos de referencia Zhuang descargados y los archivos hipotalámicos completos de conteos, efectos y ajustes omitiendo un animal cada vez. El donante de referencia se fija en ABCA-2; cambiar de donante requiere un análisis con nombre separado, en lugar de sobrescribir esta versión.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/build_spatial_viewer.py <span class="at">--dataset</span> Zhuang-ABCA-2</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Este comando escribe los archivos locales de expresión, coordenadas, geometría y biblioteca Plotly en <code>docs/assets/viewer/</code>, y las comprobaciones de datos y figuras estáticas en <code>results/spatial_viewer/</code>. Los archivos de interfaz versionados <code>index.html</code>, <code>index-es.html</code>, <code>viewer.js</code> y <code>viewer.css</code> siguen formando parte del repositorio. La caché de extracción solo se reutiliza cuando sus identificadores registrados de células y genes coinciden con la selección actual.</p>
+<p>La vista generada contiene las 37,811 células hipotalámicas de referencia seleccionadas y 1,122 genes medidos. Un multiplicador regional uniforme transfiere cada efecto regional válido a las mismas posiciones de referencia. No estima la expresión de células individuales expuestas, no modifica la abundancia celular ni crea una respuesta de exposición medida espacialmente. Los archivos incluyen las <a href="../downloads/spatial_viewer/summary.json">comprobaciones del modelo y las coordenadas</a>, el <a href="../downloads/spatial_viewer/validation_checks.json">registro de validación</a> y las <a href="./viewer.html">instrucciones del visor</a>.</p>
+<p>Los resúmenes descriptivos de referencia reutilizan la caché validada del visor y conservan todos los genes medidos, las clases y las subestructuras:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/analyze_spatial_reference.py</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Los <a href="./spatial_reference.html">resúmenes de composición y expresión de la referencia medida</a> no contienen pruebas de exposición a nivel celular ni afirmaciones de replicación a nivel de animales.</p>
+</section>
+<section id="generar-el-informe-sin-volver-a-ajustar-los-modelos" class="level2">
+<h2 class="anchored" data-anchor-id="generar-el-informe-sin-volver-a-ajustar-los-modelos">Generar el informe sin volver a ajustar los modelos</h2>
+<p>Quarto genera las tablas y figuras completas y el visor local. El script de generación copia los resultados pertinentes en <code>docs/downloads/</code> y <code>docs/assets/figures/</code>, reúne los scripts y la procedencia, y registra el entorno Python. No llama a los scripts de análisis estadístico.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Copiar los resultados y archivos de código existentes sin generar HTML.</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/render_docs.py <span class="at">--prepare-only</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generar ambos idiomas (comportamiento predeterminado).</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/render_docs.py</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/render_docs.py <span class="at">--language</span> both</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Generar únicamente la versión inglesa o la española.</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/render_docs.py <span class="at">--language</span> en</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/render_docs.py <span class="at">--language</span> es</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Generar solo esta página de la versión española.</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/render_docs.py <span class="at">--language</span> es <span class="at">--page</span> reproducibility.qmd</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Examinar el sitio generado en este equipo.</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> <span class="at">-m</span> http.server 8000 <span class="at">--bind</span> 127.0.0.1 <span class="at">--directory</span> docs/_site</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>El sitio inglés queda disponible en <code>http://127.0.0.1:8000/</code> y la versión española en <code>http://127.0.0.1:8000/es/</code>. La opción <code>--language</code> acepta <code>both</code>, <code>en</code> y <code>es</code>; su valor predeterminado es <code>both</code>. El script registra el kernel local <code>omics-analysis</code> y proporciona a Quarto sus rutas de Python y Jupyter. El directorio de salida general es <code>docs/_site/</code>, y la versión española se genera en <code>docs/_site/es/</code>. Generar el informe no requiere repetir la cuantificación RNA-seq, ajustar modelos, reconstruir el atlas espacial ni descargar los archivos de origen.</p>
+<p>Los archivos originales de los estudios pueden restaurarse o reanudarse con el <a href="../downloads/code/download_data.py">descargador de exposición</a> y el <a href="../downloads/code/download_spatial_atlas.py">descargador del atlas espacial</a>, utilizando sus manifiestos guardados. <code>scripts/status.py</code> informa del estado de descarga de exposición; <code>scripts/download_spatial_atlas.py --status</code> informa del estado de descarga del atlas. La <a href="../downloads/code/verify_repository.py">validación completa de entradas</a> y los registros de validación por análisis describen las comprobaciones realizadas, manteniendo la distinción entre comprobación informática y validación biológica.</p>
+<p>El <a href="../downloads/report-source.zip">archivo de código QMD e interfaz</a> contiene los archivos de autoría del informe. Para editarlo, restaure su árbol <code>docs/</code> dentro del repositorio completo; el archivo no incluye datos ómicos originales ni los archivos generados de expresión.</p>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/amarusimonaguerojimenez\.github\.io\/Air-Pollution-Brain-Omics-Mouse\/es\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Datos, código y reproducibilidad"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Archivos de origen, motores estadísticos y comandos para una reconstrucción local"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## Alcance e inventario de fuentes</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>Los cuatro estudios de exposición son análisis independientes. No se combinan en una única matriz de expresión, y el donante MERFISH sin exposición no es un animal de control de un estudio de exposición. La colección de origen contiene 64 muestras de cerebro de ratón; los contrastes primarios utilizan los subconjuntos indicados a continuación.</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>Esta versión española conserva el punto decimal y la coma como separador de miles utilizados en los archivos de origen. También mantiene las unidades originales, los identificadores, los nombres de columnas de los archivos descargables y el contenido gráfico científico original. Se traducen los textos, las leyendas y la interfaz del visor; la traducción no modifica ni vuelve a calcular los resultados. Se conserva la fecha del análisis original: **18 de octubre de 2026**.</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Fuente <span class="pp">|</span> Material de origen conservado <span class="pp">|</span> Análisis primario <span class="pp">|</span> Punto de partida <span class="pp">|</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|---|</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">GSE145840</span><span class="co">](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145840)</span> <span class="pp">|</span> Once archivos de conteos hipotalámicos y sus lecturas pareadas de RNA-seq <span class="pp">|</span> Cuatro muestras con dieta estándar/aire filtrado y tres con dieta estándar/PM2.5; se excluyen cuatro muestras con dieta alta en grasas <span class="pp">|</span> Conteos génicos depositados; no se repite el alineamiento de lecturas <span class="pp">|</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">GSE297423</span><span class="co">](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE297423)</span> <span class="pp">|</span> Veinte bibliotecas de corteza cingulada y la matriz de conteos depositada <span class="pp">|</span> Cuatro muestras PBS y cuatro con PM intranasal; se excluyen doce muestras de otros grupos de tratamiento <span class="pp">|</span> Conteos génicos depositados, vinculados mediante los nombres de biblioteca originales <span class="pp">|</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">GSE93967</span><span class="co">](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE93967)</span> <span class="pp">|</span> Nueve microarreglos de miRNA hipocampal, archivos originales de los microarreglos, matriz normalizada y anotación <span class="co">[</span><span class="ot">GPL17912</span><span class="co">](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL17912)</span> <span class="pp">|</span> Solución salina, 1 mg/kg de PM2.5 y 5 mg/kg de PM2.5; tres muestras por grupo <span class="pp">|</span> Señales continuas publicadas, normalizadas por cuantiles <span class="pp">|</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">E-MTAB-14917</span><span class="co">](https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-14917)</span> <span class="pp">|</span> Veinticuatro bibliotecas hipocampales de lecturas pareadas, metadatos SDRF y tabla depositada de resultados entre genotipos <span class="pp">|</span> Ozono frente a aire filtrado dentro de cada estrato de edad × APOE; tres muestras en cada una de ocho combinaciones <span class="pp">|</span> Todos los pares FASTQ originales, seguidos de cuantificación de transcritos e inferencia a nivel génico <span class="pp">|</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">Atlas MERFISH del cerebro completo de Zhang et al.</span><span class="co">](https://doi.org/10.1038/s41586-023-06808-9)</span> <span class="pp">|</span> Matrices medidas Zhuang-ABCA-1–4, metadatos, taxonomía, coordenadas CCF y volúmenes anatómicos <span class="pp">|</span> El visor fija como referencia al donante macho adulto **Zhuang-ABCA-2** <span class="pp">|</span> Conteos brutos de imagen medidos y coordenadas celulares registradas; sin observaciones de exposición a contaminantes <span class="pp">|</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>La colección de exposición incluye **110 archivos FASTQ, aproximadamente 261.9 GB comprimidos**, antes de incorporar genomas de referencia, índices y archivos derivados. El manifiesto de la referencia espacial describe aproximadamente **10.74 GB** distribuidos en 49 archivos. Los FASTQ originales, las matrices H5AD, los genomas de referencia, los entornos de software y los directorios de trabajo de cuantificación son insumos locales del proyecto; no están incorporados en el informe HTML.</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>El CSV depositado de E-MTAB-14917 es un resultado de expresión diferencial entre genotipos, no una matriz de conteos por muestra. Se conserva como material de origen, pero no sustituye al análisis de ozono basado en lecturas. En ese estudio, las **etiquetas de 3 y 17 meses describen la edad al inicio de la exposición**. La referencia de ratón no establece la expresión específica de cada alelo en el locus de reemplazo APOE humanizado. El genotipo es una etiqueta experimental de origen, no una medición inferida de expresión de los alelos de APOE.</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="fu">### Registros de descarga y procedencia</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>Los manifiestos conservan las URL originales, las muestras seleccionadas, los destinos de los archivos, los tamaños esperados y los valores MD5 de origen cuando se proporcionan. Los comprobantes locales registran los archivos verificados. Un hash local sin una suma de comprobación publicada documenta la copia guardada, pero no constituye una comprobación independiente de integridad frente al proveedor.</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Colección de exposición: <span class="co">[</span><span class="ot">manifiesto de descarga</span><span class="co">](../downloads/provenance/download_manifest.json)</span>, <span class="co">[</span><span class="ot">comprobantes de archivos</span><span class="co">](../downloads/provenance/download_receipts.csv)</span> y <span class="co">[</span><span class="ot">validación de los datos de origen</span><span class="co">](../downloads/provenance/validation_report.json)</span>.</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Referencia MERFISH: <span class="co">[</span><span class="ot">manifiesto y versiones por archivo</span><span class="co">](../downloads/provenance/spatial_atlas/download_manifest.json)</span> y <span class="co">[</span><span class="ot">comprobantes verificados</span><span class="co">](../downloads/provenance/spatial_atlas/download_receipts.json)</span>. El manifiesto de origen de Allen utiliza la etiqueta literal de versión <span class="in">`20261031`</span>; las versiones individuales de matrices y metadatos se registran por separado.</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ozono: <span class="co">[</span><span class="ot">asignaciones de muestras y corridas</span><span class="co">](../downloads/provenance/ozone_analysis/samples.csv)</span>, <span class="co">[</span><span class="ot">fuentes y hashes de los transcritos y el genoma GENCODE</span><span class="co">](../downloads/provenance/ozone_analysis/reference_sources.json)</span> y <span class="co">[</span><span class="ot">fuente de anotación génica</span><span class="co">](../downloads/provenance/ozone_analysis/gene_annotation_source.json)</span>.</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Anotación funcional: <span class="co">[</span><span class="ot">manifiesto de fuentes GO fijadas</span><span class="co">](../downloads/provenance/functional_annotation/source_manifest.json)</span>, <span class="co">[</span><span class="ot">auditoría de lectura y propagación de anotaciones</span><span class="co">](../downloads/provenance/functional_annotation/annotation_audit.json)</span> y <span class="co">[</span><span class="ot">métodos de enriquecimiento</span><span class="co">](../downloads/enrichment/methods.json)</span>.</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Inventario bibliográfico: <span class="co">[</span><span class="ot">BibTeX</span><span class="co">](../downloads/papers/bibliography.bib)</span> y <span class="co">[</span><span class="ot">RIS</span><span class="co">](../downloads/papers/bibliography.ris)</span>. Los PDF descargados y su procedencia se conservan en el repositorio local, en <span class="in">`papers/pdf/`</span> y <span class="in">`metadata/papers/`</span>.</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>Los archivos GO se obtuvieron de la distribución oficial vigente y después se fijaron mediante SHA256: el encabezado GAF está fechado el **21 de mayo de 2026**, y `go-basic.obo` declara la **versión 2026-07-26**. Son las fechas de los archivos efectivamente recibidos. La reproducción requiere esas copias registradas, no su sustitución sin revisión por una versión vigente futura. El script de enriquecimiento rechaza una referencia local cuyo hash difiera del manifiesto guardado.</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Software y separación de motores de análisis</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>El entorno Python registrado utiliza **Python 3.14.3** en macOS arm64. El informe incluye el <span class="co">[</span><span class="ot">inventario de paquetes Python</span><span class="co">](../downloads/requirements-analysis.txt)</span> y el <span class="co">[</span><span class="ot">registro del entorno</span><span class="co">](../downloads/analysis_environment.json)</span>. Documentan el entorno utilizado aquí; la lista de paquetes por sí sola no es un archivo de bloqueo completo del sistema operativo, los binarios ni las dependencias transitivas.</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Componente <span class="pp">|</span> Motor utilizado <span class="pp">|</span> Código principal <span class="pp">|</span></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> RNA-seq hipotalámico <span class="pp">|</span> Python, PyDESeq2 0.5.4 <span class="pp">|</span> <span class="co">[</span><span class="ot">analyze_hypothalamus.py</span><span class="co">](../downloads/code/analyze_hypothalamus.py)</span> <span class="pp">|</span></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> RNA-seq de corteza cingulada <span class="pp">|</span> Python, PyDESeq2 0.5.4 <span class="pp">|</span> <span class="co">[</span><span class="ot">analyze_cortex.py</span><span class="co">](../downloads/code/analyze_cortex.py)</span> <span class="pp">|</span></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> miRNA hipocampal <span class="pp">|</span> Preparación y figuras en Python; **R limma 3.66.0** para inferencia moderada <span class="pp">|</span> <span class="co">[</span><span class="ot">Interfaz Python</span><span class="co">](../downloads/code/analyze_mirna.py)</span>, <span class="co">[</span><span class="ot">modelo R</span><span class="co">](../downloads/code/analyze_mirna.R)</span> <span class="pp">|</span></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> RNA-seq de ozono <span class="pp">|</span> fastp 1.3.6, Salmon 2.5.1; **R tximport 1.38.2, DESeq2 1.50.2 y apeglm 1.32.0** <span class="pp">|</span> <span class="co">[</span><span class="ot">Flujo de procesamiento</span><span class="co">](../downloads/code/ozone_pipeline.py)</span>, <span class="co">[</span><span class="ot">anotación génica</span><span class="co">](../downloads/code/ozone_reference_annotation.py)</span>, <span class="co">[</span><span class="ot">modelo R</span><span class="co">](../downloads/code/analyze_ozone.R)</span>, <span class="co">[</span><span class="ot">figuras</span><span class="co">](../downloads/code/ozone_figures.py)</span> <span class="pp">|</span></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Gene Ontology: procesos biológicos <span class="pp">|</span> ORA hipergeométrico/BH en Python; GSEA preordenado con GSEApy 1.3.1 <span class="pp">|</span> <span class="co">[</span><span class="ot">analyze_enrichment.py</span><span class="co">](../downloads/code/analyze_enrichment.py)</span> <span class="pp">|</span></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Visor MERFISH <span class="pp">|</span> Extracción H5AD/CCF y construcción de superficies en Python; Plotly JavaScript incluido localmente <span class="pp">|</span> <span class="co">[</span><span class="ot">build_spatial_viewer.py</span><span class="co">](../downloads/code/build_spatial_viewer.py)</span> <span class="pp">|</span></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Sitio web <span class="pp">|</span> Quarto con el kernel Python/Jupyter <span class="in">`omics-analysis`</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">render_docs.py</span><span class="co">](../downloads/code/render_docs.py)</span> <span class="pp">|</span></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>R **4.5.2** está disponible por separado de Python. Los scripts anteponen la biblioteca local del proyecto <span class="in">`.r-library`</span> a la ruta de búsqueda de bibliotecas de R. Los paquetes R requeridos directamente son <span class="in">`limma`</span>, <span class="in">`tximport`</span>, <span class="in">`DESeq2`</span>, <span class="in">`apeglm`</span>, <span class="in">`jsonlite`</span> y, para la comprobación independiente, <span class="in">`BiocParallel`</span>. También deben instalarse sus dependencias de Bioconductor. Los registros de sesión R conservan el contexto completo de paquetes cargados; consulte la <span class="co">[</span><span class="ot">sesión de miRNA</span><span class="co">](../downloads/mirna/R_session_info.txt)</span> y la <span class="co">[</span><span class="ot">sesión independiente de DESeq2</span><span class="co">](../downloads/hypothalamus/independent_deseq2_check/R_session_info.txt)</span>.</span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>El procesamiento de ozono requiere además <span class="in">`salmon`</span>, <span class="in">`fastp`</span>, <span class="in">`aria2c`</span> y <span class="in">`Rscript`</span> disponibles en <span class="in">`PATH`</span>. El descargador de anotaciones utiliza <span class="in">`aria2c`</span>, aunque el descargador de transcritos y genoma dispone de una alternativa con curl. Las descargas de exposición utilizan <span class="in">`curl`</span>. La generación del informe requiere la interfaz de línea de comandos de Quarto e <span class="in">`ipykernel`</span>. El visor local requiere un navegador compatible con WebGL y gzip <span class="in">`DecompressionStream`</span>; su biblioteca Plotly y sus archivos de expresión se sirven localmente, sin depender de una CDN durante el uso.</span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>En un entorno Python nuevo, el inventario de paquetes registrado puede instalarse así. Este paso solo prepara el software; los datos originales, los paquetes R, las herramientas externas y las referencias siguen siendo requisitos separados.</span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a><span class="ex">python3.14</span> <span class="at">-m</span> venv .venv-analysis</span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> <span class="at">-m</span> pip install <span class="at">-r</span> requirements-analysis.txt</span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>Los comandos siguientes suponen que la terminal está situada en la raíz del repositorio y utilizan el intérprete existente <span class="in">`.venv-analysis`</span>. Los scripts resuelven las rutas de datos a partir de la ubicación del proyecto. Una copia HTML generada por sí sola no sustituye al repositorio completo, los datos de origen y los entornos necesarios para reconstruir el análisis.</span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a><span class="fu">## Regenerar los análisis de los estudios</span></span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>El <span class="co">[</span><span class="ot">ejecutor de análisis</span><span class="co">](../downloads/code/run_analysis.py)</span> ofrece un plan legible antes de ejecutar:</span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/run_analysis.py <span class="at">--stage</span> all <span class="at">--cpus</span> 4 <span class="at">--dry-run</span></span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/run_analysis.py <span class="at">--stage</span> all <span class="at">--cpus</span> 4</span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>El ejecutor completo sigue este orden: hipotálamo, corteza, miRNA, ozono, enriquecimiento, visor espacial, resúmenes descriptivos de la referencia espacial y, por último, informe. No instala herramientas ni descarga la colección original de los estudios. Vuelve a ajustar los análisis basados en datos procesados; no debe utilizarse solo para actualizar el HTML. Ejecute una única instancia del flujo de ozono dentro del espacio de trabajo del proyecto, para evitar que procesos concurrentes escriban en los mismos directorios de cuantificación.</span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a>Los comandos individuales explicitan cada motor de análisis y sus dependencias:</span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a><span class="co"># Análisis hipotalámico de siete muestras, incluidos los siete ajustes omitiendo un animal.</span></span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/analyze_hypothalamus.py <span class="at">--cpus</span> 4</span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a><span class="co"># Análisis de PM frente a PBS en ocho muestras de corteza cingulada.</span></span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/analyze_cortex.py <span class="at">--workers</span> 4</span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a><span class="co"># Nueve microarreglos de miRNA; este comando invoca el motor R/limma.</span></span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/analyze_mirna.py</span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a><span class="co"># Análisis GO-BP para los contrastes génicos completos de hipotálamo y corteza.</span></span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/analyze_enrichment.py <span class="at">--threads</span> 4</span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a>El hipotálamo utiliza como máximo seis procesos de inferencia en Python; la corteza acepta de uno a seis procesos. GSEA utiliza como máximo cuatro hilos. La opción hipotalámica <span class="in">`--skip-sensitivity`</span> omite deliberadamente los ajustes que excluyen un animal cada vez; la reconstrucción estándar del visor espera su tabla guardada de estabilidad de los hallazgos primarios, por lo que la ejecución predeterminada completa es la vía de reproducción documentada aquí.</span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a>Cada estudio escribe en su propio directorio <span class="in">`results/`</span>. Los filtros de conteos, la selección de muestras, los efectos MLE frente a los regularizados, el tratamiento de valores p ausentes, las matrices normalizadas y las leyendas de figuras se registran en los archivos de métodos correspondientes de <span class="co">[</span><span class="ot">hipotálamo</span><span class="co">](../downloads/hypothalamus/methods.json)</span>, <span class="co">[</span><span class="ot">corteza</span><span class="co">](../downloads/cortex/methods.json)</span> y <span class="co">[</span><span class="ot">miRNA</span><span class="co">](../downloads/mirna/methods.json)</span>. El PCA es descriptivo: el hipotálamo utiliza una transformación estabilizadora de la varianza (VST) informada por el diseño, mientras que la corteza utiliza una VST ciega al diseño. Ambos emplean variables génicas centradas en su media y sin escalado; ninguno de los PCA determina la retirada de muestras.</span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a>El comando de enriquecimiento utiliza símbolos exactos de ratón y sinónimos GAF no ambiguos. Su universo ORA exige valores p ajustados de expresión diferencial finitos; su clasificación GSEA exige valores p originales finitos y estadísticos de Wald con signo, y conserva los genes con valores p finitos pero valores p ajustados ausentes por filtrado independiente. Las <span class="co">[</span><span class="ot">exclusiones de la clasificación y las decisiones de correspondencia</span><span class="co">](enrichment.qmd)</span> forman parte del registro de reproducibilidad. Los identificadores de miRNA no se envían como genes de mRNA para enriquecimiento GO.</span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### Comprobación independiente de la implementación</span></span>
+<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a>La <span class="co">[</span><span class="ot">comprobación opcional con DESeq2 en R</span><span class="co">](../downloads/hypothalamus/independent_deseq2_check/summary.json)</span> es independiente del flujo primario PyDESeq2:</span>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/validate_hypothalamus_deseq2.py</span>
+<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a><span class="co"># Regenerar solo las tablas de comparación a partir del ajuste R existente.</span></span>
+<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/validate_hypothalamus_deseq2.py <span class="at">--reuse-R-fit</span></span>
+<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a>La comprobación guardada utiliza las mismas siete muestras, el mismo filtro de conteos y las mismas 19,452 hipótesis con valores p finitos, con un filtrado de Cook idéntico de 159 genes. La concordancia numérica es estrecha. R encuentra doce hallazgos por FDR, frente a los once primarios; el cruce adicional del umbral corresponde a **Tnrc6c** (p ajustado en R = 0.0399; en Python = 0.0521). **Tll1** sigue siendo significativo en ambas implementaciones (aproximadamente 0.00330 y 0.00350). Es una comparación de implementaciones, no una replicación biológica independiente, y no sustituye al resultado primario ni a su limitación de sensibilidad a las muestras. Están disponibles el <span class="co">[</span><span class="ot">código R</span><span class="co">](../downloads/code/validate_hypothalamus_deseq2.R)</span>, el <span class="co">[</span><span class="ot">código de comparación</span><span class="co">](../downloads/code/validate_hypothalamus_deseq2.py)</span> y las <span class="co">[</span><span class="ot">diferencias a nivel génico</span><span class="co">](../downloads/hypothalamus/independent_deseq2_check/discordant_FDR_genes.tsv)</span>.</span>
+<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-109"><a href="#cb9-109" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ozono: etapas y reanudación</span></span>
+<span id="cb9-110"><a href="#cb9-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a>El flujo de ozono parte de las lecturas pareadas originales. <span class="in">`prepare`</span> obtiene y verifica las referencias GENCODE M25/GRCm38, crea correspondencias de transcritos a genes y secuencias señuelo del genoma completo, y obtiene las anotaciones reales de tipo de gen a partir del GTF. <span class="in">`index`</span> construye el índice Salmon. <span class="in">`qc`</span> examina los primeros 200,000 pares de cada biblioteca y registra la regla de recorte de adaptadores. <span class="in">`quant`</span> procesa bibliotecas completas y recorta adaptadores cuando corresponde. <span class="in">`de`</span> importa las 24 cuantificaciones con términos de compensación por longitud efectiva y ejecuta el modelo factorial R fijado. <span class="in">`figures`</span> y <span class="in">`enrichment`</span> utilizan los resultados estadísticos completos.</span>
+<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-113"><a href="#cb9-113" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb9-114"><a href="#cb9-114" aria-hidden="true" tabindex="-1"></a><span class="co"># Flujo completo desde las lecturas originales; use recursos adecuados al equipo local.</span></span>
+<span id="cb9-115"><a href="#cb9-115" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/ozone_pipeline.py <span class="at">--stage</span> all <span class="at">--cpus</span> 12</span>
+<span id="cb9-116"><a href="#cb9-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a><span class="co"># Reanudar la cuantificación después de que el proceso interrumpido se haya detenido.</span></span>
+<span id="cb9-118"><a href="#cb9-118" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/ozone_pipeline.py <span class="at">--stage</span> quant <span class="at">--cpus</span> 12</span>
+<span id="cb9-119"><a href="#cb9-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-120"><a href="#cb9-120" aria-hidden="true" tabindex="-1"></a><span class="co"># Estas etapas requieren las 24 cuantificaciones o los resultados estadísticos completos.</span></span>
+<span id="cb9-121"><a href="#cb9-121" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/ozone_pipeline.py <span class="at">--stage</span> de</span>
+<span id="cb9-122"><a href="#cb9-122" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/ozone_pipeline.py <span class="at">--stage</span> figures</span>
+<span id="cb9-123"><a href="#cb9-123" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/ozone_pipeline.py <span class="at">--stage</span> enrichment</span>
+<span id="cb9-124"><a href="#cb9-124" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-125"><a href="#cb9-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-126"><a href="#cb9-126" aria-hidden="true" tabindex="-1"></a>El presupuesto <span class="in">`--cpus`</span> controla la construcción del índice y la cuantificación. Con ocho CPU o más, la cuantificación utiliza dos procesos concurrentes, cada uno con la mitad entera del presupuesto; en caso contrario utiliza un proceso. El control de calidad de lecturas originales con fastp utiliza dos hilos, y la etapa de enriquecimiento utiliza cuatro. Los archivos FASTQ originales nunca se modifican. Las lecturas recortadas derivadas se eliminan después de una cuantificación satisfactoria, mientras se conservan los informes de recorte.</span>
+<span id="cb9-127"><a href="#cb9-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-128"><a href="#cb9-128" aria-hidden="true" tabindex="-1"></a>El índice y los marcadores <span class="in">`ozone_quant_complete.json`</span> de cada biblioteca permiten reutilizar el trabajo completado. Son puntos de control locales, no un mecanismo para cambiar referencias o parámetros analíticos sobre la misma ejecución. Conserve los archivos de cuantificación asociados y los hashes de origen; los cambios de entradas o de configuración requieren una reconstrucción revisada por separado. No debe iniciarse una reanudación junto a otra instancia activa del flujo.</span>
+<span id="cb9-129"><a href="#cb9-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-130"><a href="#cb9-130" aria-hidden="true" tabindex="-1"></a>La información de la etapa actual está en <span class="co">[</span><span class="ot">pipeline_status.json</span><span class="co">](../downloads/provenance/ozone_analysis/pipeline_status.json)</span>. Su campo <span class="in">`complete`</span> se refiere a la etapa seleccionada; finalizar <span class="in">`quant`</span> no implica que la expresión diferencial o el enriquecimiento hayan terminado. Los registros y las cuantificaciones por biblioteca permanecen en <span class="in">`results/ozone/`</span>. La <span class="co">[</span><span class="ot">página de resultados de ozono</span><span class="co">](ozone.qmd)</span> distingue el control de calidad disponible de la inferencia completa y no rellena etapas ausentes con resultados simulados.</span>
+<span id="cb9-131"><a href="#cb9-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-132"><a href="#cb9-132" aria-hidden="true" tabindex="-1"></a>El modelo estadístico completo cruza edad, genotipo y exposición. Un prefiltro fijo de conteos define los genes candidatos; el filtrado independiente adaptativo está desactivado en este análisis. Los indicadores de convergencia numérica se comprueban antes del ajuste BH final, y se omiten las estimaciones regularizadas que fallan. Las pruebas de Wald dentro de cada estrato, una familia BH suplementaria conjunta de los cuatro contrastes y el LRT global separado de cuatro grados de libertad responden a preguntas diferentes. La referencia no puede validar la cuantificación específica de cada alelo de APOE humano. Una anotación de cepa de origen que difiere para una biblioteca se conserva como limitación de los metadatos, sin convertirla en un ajuste por genotipo totalmente confundido.</span>
+<span id="cb9-133"><a href="#cb9-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-134"><a href="#cb9-134" aria-hidden="true" tabindex="-1"></a><span class="fu">## Regenerar el visor de la referencia medida</span></span>
+<span id="cb9-135"><a href="#cb9-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-136"><a href="#cb9-136" aria-hidden="true" tabindex="-1"></a>El generador del visor requiere los datos de referencia Zhuang descargados y los archivos hipotalámicos completos de conteos, efectos y ajustes omitiendo un animal cada vez. El donante de referencia se fija en ABCA-2; cambiar de donante requiere un análisis con nombre separado, en lugar de sobrescribir esta versión.</span>
+<span id="cb9-137"><a href="#cb9-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-138"><a href="#cb9-138" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb9-139"><a href="#cb9-139" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/build_spatial_viewer.py <span class="at">--dataset</span> Zhuang-ABCA-2</span>
+<span id="cb9-140"><a href="#cb9-140" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-141"><a href="#cb9-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-142"><a href="#cb9-142" aria-hidden="true" tabindex="-1"></a>Este comando escribe los archivos locales de expresión, coordenadas, geometría y biblioteca Plotly en <span class="in">`docs/assets/viewer/`</span>, y las comprobaciones de datos y figuras estáticas en <span class="in">`results/spatial_viewer/`</span>. Los archivos de interfaz versionados <span class="in">`index.html`</span>, <span class="in">`index-es.html`</span>, <span class="in">`viewer.js`</span> y <span class="in">`viewer.css`</span> siguen formando parte del repositorio. La caché de extracción solo se reutiliza cuando sus identificadores registrados de células y genes coinciden con la selección actual.</span>
+<span id="cb9-143"><a href="#cb9-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-144"><a href="#cb9-144" aria-hidden="true" tabindex="-1"></a>La vista generada contiene las 37,811 células hipotalámicas de referencia seleccionadas y 1,122 genes medidos. Un multiplicador regional uniforme transfiere cada efecto regional válido a las mismas posiciones de referencia. No estima la expresión de células individuales expuestas, no modifica la abundancia celular ni crea una respuesta de exposición medida espacialmente. Los archivos incluyen las <span class="co">[</span><span class="ot">comprobaciones del modelo y las coordenadas</span><span class="co">](../downloads/spatial_viewer/summary.json)</span>, el <span class="co">[</span><span class="ot">registro de validación</span><span class="co">](../downloads/spatial_viewer/validation_checks.json)</span> y las <span class="co">[</span><span class="ot">instrucciones del visor</span><span class="co">](viewer.qmd)</span>.</span>
+<span id="cb9-145"><a href="#cb9-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-146"><a href="#cb9-146" aria-hidden="true" tabindex="-1"></a>Los resúmenes descriptivos de referencia reutilizan la caché validada del visor y conservan todos los genes medidos, las clases y las subestructuras:</span>
+<span id="cb9-147"><a href="#cb9-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-148"><a href="#cb9-148" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb9-149"><a href="#cb9-149" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/analyze_spatial_reference.py</span>
+<span id="cb9-150"><a href="#cb9-150" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-151"><a href="#cb9-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-152"><a href="#cb9-152" aria-hidden="true" tabindex="-1"></a>Los <span class="co">[</span><span class="ot">resúmenes de composición y expresión de la referencia medida</span><span class="co">](spatial_reference.qmd)</span> no contienen pruebas de exposición a nivel celular ni afirmaciones de replicación a nivel de animales.</span>
+<span id="cb9-153"><a href="#cb9-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-154"><a href="#cb9-154" aria-hidden="true" tabindex="-1"></a><span class="fu">## Generar el informe sin volver a ajustar los modelos</span></span>
+<span id="cb9-155"><a href="#cb9-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-156"><a href="#cb9-156" aria-hidden="true" tabindex="-1"></a>Quarto genera las tablas y figuras completas y el visor local. El script de generación copia los resultados pertinentes en <span class="in">`docs/downloads/`</span> y <span class="in">`docs/assets/figures/`</span>, reúne los scripts y la procedencia, y registra el entorno Python. No llama a los scripts de análisis estadístico.</span>
+<span id="cb9-157"><a href="#cb9-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-158"><a href="#cb9-158" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb9-159"><a href="#cb9-159" aria-hidden="true" tabindex="-1"></a><span class="co"># Copiar los resultados y archivos de código existentes sin generar HTML.</span></span>
+<span id="cb9-160"><a href="#cb9-160" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/render_docs.py <span class="at">--prepare-only</span></span>
+<span id="cb9-161"><a href="#cb9-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-162"><a href="#cb9-162" aria-hidden="true" tabindex="-1"></a><span class="co"># Generar ambos idiomas (comportamiento predeterminado).</span></span>
+<span id="cb9-163"><a href="#cb9-163" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/render_docs.py</span>
+<span id="cb9-164"><a href="#cb9-164" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/render_docs.py <span class="at">--language</span> both</span>
+<span id="cb9-165"><a href="#cb9-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-166"><a href="#cb9-166" aria-hidden="true" tabindex="-1"></a><span class="co"># Generar únicamente la versión inglesa o la española.</span></span>
+<span id="cb9-167"><a href="#cb9-167" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/render_docs.py <span class="at">--language</span> en</span>
+<span id="cb9-168"><a href="#cb9-168" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/render_docs.py <span class="at">--language</span> es</span>
+<span id="cb9-169"><a href="#cb9-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-170"><a href="#cb9-170" aria-hidden="true" tabindex="-1"></a><span class="co"># Generar solo esta página de la versión española.</span></span>
+<span id="cb9-171"><a href="#cb9-171" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> scripts/render_docs.py <span class="at">--language</span> es <span class="at">--page</span> reproducibility.qmd</span>
+<span id="cb9-172"><a href="#cb9-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-173"><a href="#cb9-173" aria-hidden="true" tabindex="-1"></a><span class="co"># Examinar el sitio generado en este equipo.</span></span>
+<span id="cb9-174"><a href="#cb9-174" aria-hidden="true" tabindex="-1"></a><span class="ex">.venv-analysis/bin/python</span> <span class="at">-m</span> http.server 8000 <span class="at">--bind</span> 127.0.0.1 <span class="at">--directory</span> docs/_site</span>
+<span id="cb9-175"><a href="#cb9-175" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-176"><a href="#cb9-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-177"><a href="#cb9-177" aria-hidden="true" tabindex="-1"></a>El sitio inglés queda disponible en <span class="in">`http://127.0.0.1:8000/`</span> y la versión española en <span class="in">`http://127.0.0.1:8000/es/`</span>. La opción <span class="in">`--language`</span> acepta <span class="in">`both`</span>, <span class="in">`en`</span> y <span class="in">`es`</span>; su valor predeterminado es <span class="in">`both`</span>. El script registra el kernel local <span class="in">`omics-analysis`</span> y proporciona a Quarto sus rutas de Python y Jupyter. El directorio de salida general es <span class="in">`docs/_site/`</span>, y la versión española se genera en <span class="in">`docs/_site/es/`</span>. Generar el informe no requiere repetir la cuantificación RNA-seq, ajustar modelos, reconstruir el atlas espacial ni descargar los archivos de origen.</span>
+<span id="cb9-178"><a href="#cb9-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-179"><a href="#cb9-179" aria-hidden="true" tabindex="-1"></a>Los archivos originales de los estudios pueden restaurarse o reanudarse con el <span class="co">[</span><span class="ot">descargador de exposición</span><span class="co">](../downloads/code/download_data.py)</span> y el <span class="co">[</span><span class="ot">descargador del atlas espacial</span><span class="co">](../downloads/code/download_spatial_atlas.py)</span>, utilizando sus manifiestos guardados. <span class="in">`scripts/status.py`</span> informa del estado de descarga de exposición; <span class="in">`scripts/download_spatial_atlas.py --status`</span> informa del estado de descarga del atlas. La <span class="co">[</span><span class="ot">validación completa de entradas</span><span class="co">](../downloads/code/verify_repository.py)</span> y los registros de validación por análisis describen las comprobaciones realizadas, manteniendo la distinción entre comprobación informática y validación biológica.</span>
+<span id="cb9-180"><a href="#cb9-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-181"><a href="#cb9-181" aria-hidden="true" tabindex="-1"></a>El <span class="co">[</span><span class="ot">archivo de código QMD e interfaz</span><span class="co">](../downloads/report-source.zip)</span> contiene los archivos de autoría del informe. Para editarlo, restaure su árbol <span class="in">`docs/`</span> dentro del repositorio completo; el archivo no incluye datos ómicos originales ni los archivos generados de expresión.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Reanálisis de datos públicos · Mus musculus</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Se distingue la referencia medida de la exposición simulada.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

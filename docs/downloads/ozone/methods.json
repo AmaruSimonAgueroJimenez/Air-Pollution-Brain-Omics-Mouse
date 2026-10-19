@@ -1,0 +1,26 @@
+{
+  "study": "E-MTAB-14917",
+  "region": "hippocampus",
+  "samples": 24,
+  "sex": "male, as reported by the primary study",
+  "biological_replicates": "three sequenced animals in each of eight age/genotype/exposure strata",
+  "age": "3 or 17 months at exposure onset, not necessarily at tissue collection",
+  "read_processing": "Initial fastp inspection used the first 200,000 pairs per library and justified consistent paired-end adapter trimming. All reads were then processed with fastp; quality, length, poly-G and duplicate filtering were disabled, while detected adapter dimers were removed by fastp. Full before/after QC is retained per library.",
+  "quantification": "Salmon 2.5.1 selective alignment against GENCODE M25 with whole GRCm38 primary-genome decoys; automatic library type; sequence and GC bias models",
+  "gene_summarization": "tximport: estimated fragments and sample-specific abundance-weighted effective gene lengths; countsFromAbundance=no; DESeqDataSetFromTximport includes length offsets",
+  "model": "negative-binomial GLM, full age * genotype * exposure; group reparameterizations for equivalent stratified coefficients",
+  "primary_contrasts": "O3 versus filtered air within each age x genotype stratum",
+  "global_test": "LRT full age * genotype * exposure versus reduced age * genotype, 4 df",
+  "filtering": "at least ten rounded estimated fragments in at least three of all 24 animals; within-stratum all-zero genes are flagged and their exposure effect/p-values withheld before BH; original coefficient statistics retained in audit columns",
+  "multiplicity": "Fixed count prefilter; adaptive independent filtering disabled. Nonconverged fits are removed before BH within each prespecified contrast and the global LRT separately; supplementary BH across all four valid Wald p-value families",
+  "shrinkage": "apeglm posterior mode and posterior SD for visualization, original Wald p-values preserved",
+  "sample_handling": "All 24 deposited libraries were retained; each sequenced animal is the experimental unit",
+  "metadata_limits": "No library batch or sample RIN covariates deposited; one strain entry differs from all others; human APOE targeted replacement is not allele-specifically quantified by the mouse reference",
+  "software": {
+    "R": "R version 4.5.2 (2025-10-31)",
+    "tximport": "1.38.2",
+    "DESeq2": "1.50.2",
+    "apeglm": "1.32.0"
+  },
+  "sources": ["https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-14917", "https://doi.org/10.3390/ijms26062407", "https://www.gencodegenes.org/mouse/release_M25.html", "https://doi.org/10.1038/nmeth.4197", "https://doi.org/10.12688/f1000research.7563.2", "https://doi.org/10.1186/s13059-014-0550-8", "https://doi.org/10.1093/bioinformatics/bty895"]
+}

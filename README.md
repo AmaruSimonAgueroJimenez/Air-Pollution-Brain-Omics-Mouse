@@ -98,7 +98,7 @@ python3 scripts/download_spatial_atlas.py --background --workers 4
 
 ## Analysis report and 3D hypothalamus viewer
 
-The English Quarto report is authored in Python QMD files under [`docs/`](docs/index.qmd), with **Introduction, Methods, Results, functional enrichment, a 3D viewer, and reproducibility instructions**. The website is built locally in `docs/_site/`; generated figure and download copies remain local and can be regenerated.
+The English Quarto report is authored in Python QMD files under [`docs/`](docs/index.qmd), with **Introduction, Methods, Results, functional enrichment, a 3D viewer, and reproducibility instructions**. The staging build is `docs/_site/`. The renderer also places the compiled bilingual website directly in **`docs/`**, including `index.html` and `.nojekyll`, for GitHub Pages on **main → /docs**. QMD sources remain alongside the compiled pages. Public figures and result downloads are versioned; original reads, atlas matrices, fitted R objects, and publisher reading copies remain local.
 
 The analysis population comprises **48 independent animal samples across four separate studies**: seven chow-fed hypothalamus samples, eight cingulate-cortex samples without PFF, nine hippocampal miRNA arrays, and 24 hippocampal ozone libraries. These samples are a subset of the 64 downloaded study samples. Studies are not pooled. The completed ozone analysis starts from the original paired-end reads, using adapter QC, a fixed GENCODE M25/GRCm38 decoy-aware Salmon reference, tximport, and a factorial DESeq2 model.
 
@@ -122,7 +122,7 @@ To rebuild the report from existing results without refitting the analyses:
 .venv-analysis/bin/python -m http.server 8819 --bind 127.0.0.1 --directory docs/_site
 ```
 
-Open `http://127.0.0.1:8819/`. The viewer uses local data assets. Execution details, source manifests, software versions, statistical limits and all downloadable tables are described in [`docs/reproducibility.qmd`](docs/reproducibility.qmd). The original study data, reference atlas, literature library and analysis outputs remain in this repository; creating this local report does not publish it online.
+Open `http://127.0.0.1:8819/`. The viewer uses local data assets. Execution details, source manifests, software versions, statistical limits and all downloadable tables are described in [`docs/reproducibility.qmd`](docs/reproducibility.qmd). The original study data, reference atlas, literature library and analysis outputs remain in this repository; the published site includes only the curated report, derived tables, figures and provenance. Large original data and local article reading copies are excluded from Git.
 
 ### Versión en español
 
@@ -139,3 +139,27 @@ Antes de analizar las matrices, revisar [docs/datasets.md](docs/datasets.md): el
 ## Procedencia y condiciones de uso
 
 Datos obtenidos de NCBI GEO/SRA y EMBL-EBI ENA/BioStudies/ArrayExpress. Las URL originales están en el manifiesto y las descripciones depositadas se conservan en `metadata/`. Citar los accession y las publicaciones correspondientes al reutilizar los datos. Este repositorio no asigna una licencia nueva a datos de terceros ni presupone una licencia común para todos los estudios; aplicar las condiciones de cada fuente.
+
+## GitHub Pages and expanded scientific results
+
+Repository: [Air-Pollution-Brain-Omics-Mouse](https://github.com/AmaruSimonAgueroJimenez/Air-Pollution-Brain-Omics-Mouse).
+Website: [English](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/) · [Español](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/).
+
+The publication source is **Deploy from a branch → main → /docs**, as described in the [official Pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site). `docs/pages-manifest.json` records every compiled asset and SHA256. The renderer executes both Python Quarto projects, then promotes the staging build to `/docs`; no local analysis environment is deployed.
+
+The new [author reproduction chapter](docs/replication.qmd) recovers all four deposited cortex FDR gene sets exactly (109/1,205/1,222/639). This 20-sample model is separate from the primary eight-sample result. Y-linked top hits raise an unresolved sample-composition question. The other three studies have explicit partial-reproduction boundaries, including unavailable hypothalamic RUVg controls, miRNA nominal versus FDR evidence, and ozone quantifier/design differences.
+
+The [advanced chapter](docs/advanced_results.qmd) adds formal ozone response interactions, animal-level panels, covariance-aware effect intervals, a six-contrast GO matrix and a gene-set overlap network. Eight age-response genes pass within-family BH; only Ryr3 remains under joint correction across the three LRT families. These are secondary analyses of the same animals, not independent biological replication. All figures include vector exports and inspectable source tables.
+
+To refit the expanded analyses from locally downloaded source data:
+
+```bash
+.venv-analysis/bin/python scripts/analyze_advanced_omics.py --refit
+.venv-analysis/bin/python scripts/replicate_pm_papers.py --fetch-sources --refit
+.venv-analysis/bin/python scripts/replicate_mirna_ozone.py
+.venv-analysis/bin/python scripts/render_docs.py
+.venv-analysis/bin/python scripts/validate_report.py
+.venv-analysis/bin/python scripts/validate_report.py --published
+```
+
+Reanalysis requires the local source datasets and recorded dependencies. Rebuilding the website alone uses the committed result tables. Public hosting does not redistribute restricted article copies or the hundreds of gigabytes of downloaded source reads.

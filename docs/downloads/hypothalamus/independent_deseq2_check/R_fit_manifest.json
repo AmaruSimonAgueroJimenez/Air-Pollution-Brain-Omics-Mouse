@@ -1,0 +1,35 @@
+{
+  "purpose": "Independent DESeq2 implementation cross-check, not biological replication or a replacement primary analysis",
+  "software": {
+    "R": "R version 4.5.2 (2025-10-31)",
+    "DESeq2": "1.50.2"
+  },
+  "condition_reference": "FA",
+  "contrast": ["condition", "PM", "FA"],
+  "design": "~condition",
+  "samples": 7,
+  "groups": {
+    "FA": 4,
+    "PM": 3
+  },
+  "prefilter": "count >=10 in at least 3 of 7 samples before size-factor estimation",
+  "input_genes": 50417,
+  "fitted_genes": 19611,
+  "size_factor_method": "ratio",
+  "fit_type": "parametric",
+  "test": "two-sided Wald",
+  "beta_prior": false,
+  "minimum_replicates_for_count_replacement": 7,
+  "replacement_assay_present": false,
+  "parallel": false,
+  "CPU_limit": 1,
+  "default_Cooks_filter_enabled": true,
+  "Cooks_cutoff": 13.2739,
+  "finite_pvalues_no_independent_filter": 19452,
+  "Cooks_filtered_genes": 159,
+  "FDR_hits_no_independent_filter": 12,
+  "FDR_hits_default_independent_filter": 12,
+  "independent_filter_threshold": 4.855,
+  "fitted_dispersion_trend_type": "parametric",
+  "completed_at": "2026-10-19T00:29:35Z"
+}

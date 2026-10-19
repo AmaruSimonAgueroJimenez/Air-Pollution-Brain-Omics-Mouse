@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "source_S3_959_unique_rows_565up394down": true,
+  "source_S2_full_factor_counts_reconciled": true,
+  "source_genotype_CSV_labels_and_S2_gene_sets_exact": true,
+  "nine_candidate_Wald_BH_criteria_recomputed": true,
+  "source_sample_mapping_verified": true,
+  "miRNA_ANOVA_independent_scipy_f_oneway_match": true,
+  "no_primary_outputs_modified": true,
+  "all_nine_candidate_models_converged": true,
+  "scope": "Arithmetic/source-matching and convergence checks, not independent biological replication",
+  "figure_review": "Passed manual image inspection of all six English/Spanish PNG figures",
+  "figure_review_record": "results/replication_mirna_ozone/figure_review.json"
+}

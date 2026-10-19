@@ -106,6 +106,6 @@ def show_table(frame, n=20):
 def figure(dataset, stem, caption, alt=''):
     root = f'../assets/figures/{dataset}/{stem}'
     display(Markdown('<figure class="research-figure"><a href="' + html.escape(root + '.svg') + '">'
-        '<img loading="lazy" src="' + html.escape(root + '.png') + '" alt="' + html.escape(alt or caption) + '"></a>'
+        '<img loading="lazy"' + _shared.image_dimensions(DOCS / (root + '.png')) + ' src="' + html.escape(root + '.png') + '" alt="' + html.escape(alt or caption) + '"></a>'
         '<figcaption>' + html.escape(caption) + ' <span class="figure-links"><a href="' + html.escape(root + '.svg') +
         '">SVG</a> · <a href="' + html.escape(root + '.pdf') + '">PDF</a></span></figcaption></figure>'))

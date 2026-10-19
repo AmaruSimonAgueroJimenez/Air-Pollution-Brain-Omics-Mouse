@@ -1,11 +1,12 @@
 {
-  "checked_at": "2026-10-19T13:19:56.483716+00:00",
+  "checked_at": "2026-10-19T14:44:41.751779+00:00",
   "scope": "Compiled local targets, source syntax and required artifacts; visual review is separate",
+  "site_root": "docs/_site",
   "allows_incomplete_ozone": false,
   "checks": {
-    "qmd_pages": 22,
-    "html_documents": 24,
-    "local_links_checked": 5165,
+    "qmd_pages": 26,
+    "html_documents": 28,
+    "local_links_checked": 6012,
     "unexpected_static_widget_dependencies": [],
     "ozone_inference_complete": true,
     "ozone_quantification_checkpoints": 24

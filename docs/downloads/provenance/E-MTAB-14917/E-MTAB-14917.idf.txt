@@ -1,0 +1,45 @@
+MAGE-TAB Version	1.1
+Investigation Title	Age- and ApoE genotype-dependent transcriptomic responses to O3 in the hippocampus of mice
+Experiment Description	We earlier demonstrated that ozone an urban pollutant, accelerates AD-like neuropathology in aging male ApoE3 mice. In this study, we investigate hippocampal transcriptomic alterations in young and aged E3 and E4 mice following O₃ exposure to elucidate the molecular mechanisms underlying O₃-induced AD pathology specifically in old E3 male mice.
+Experimental Design	disease state design
+Experimental Design Term Source REF	EFO
+Experimental Design Term Accession Number	EFO:0001756
+Experimental Factor Name	strain
+Experimental Factor Type	strain
+Experimental Factor Term Source REF
+Experimental Factor Term Accession Number
+Person Last Name	Nakamya
+Person First Name	Mary Frances
+Person Mid Initials	F
+Person Email	mfnakamya@uabmc.edu
+Person Phone	9196963714
+Person Fax
+Person Address	701 20th StSouth Birmingham, AL 35233 United States
+Person Affiliation	University of Alabama at Birmingham
+Person Roles	submitter
+Date of Experiment	2018-12-07
+Public Release Date	2025-03-20
+PubMed ID
+Publication DOI
+Publication Author List
+Publication Title
+Publication Status
+Publication Status Term Source REF
+Publication Status Term Accession Number
+Protocol Name	P-MTAB-151812	P-MTAB-151813	P-MTAB-151814	P-MTAB-151815	P-MTAB-151816	P-MTAB-151817	P-MTAB-151818	P-MTAB-151819	P-MTAB-151820
+Protocol Type	sample collection protocol	nucleic acid extraction protocol	nucleic acid library construction protocol	nucleic acid sequencing protocol	growth protocol	treatment protocol	normalization data transformation protocol	dissection protocol	high throughput sequence alignment protocol
+Protocol Term Source REF	EFO	EFO	EFO	EFO	EFO	EFO	EFO	EFO	EFO
+Protocol Term Accession Number	EFO_0005518	EFO_0002944	EFO_0004184	EFO_0004170	EFO_0003789	EFO_0003969	EFO_0003816	EFO_0005519	EFO_0004917
+Protocol Description	Mice were euthanized by isoflurane overdose followed by bilateral thoracotomy. Brains were dissected sagittally into right and left hemispheres. The right hemisphere was fixed in 10% phosphate-buffered formalin, while the left hemisphere was dissected to isolate the hippocampus and cerebral cortex, which were snap-frozen in liquid nitrogen.	Total RNA was extracted from the hippocampus using TRIzol reagent (Invitrogen; Ther-mo Fisher Scientific, Inc.) [59]. RNA concentration and purity were measured using a NanoDrop ND-1000 spectrophotometer (NanoDrop Technologies, Wilmington, DE, USA), and RNA integrity was evaluated using the RNA Nano 6000 Assay Kit on the Agilent Bi-oanalyzer 2100 system (Agilent Technologies, CA, USA).	A total of 1 µg RNA per sample was used for library preparation using the NEB-Next® Ultra™ RNA Library Prep Kit for Illumina® (NEB, USA) according to the manu-facturer’s protocol. mRNA was purified using poly-T oligo-attached magnetic beads, fragmented under elevated temperature, and reverse transcribed into cDNA using random hexamer primers. The second-strand cDNA was synthesized using DNA polymerase I and RNase H, followed by end repair, adaptor ligation, and size selection (150–200 bp). Amplified libraries were purified and quality-checked using the Agilent Bioanalyzer 2100. 	The sequencing libraries were clustered on the Illumina NovaSeq platform using paired-end sequencing to generate high-quality reads for each sample	Three-month-old (3M) and seventeen-month-old (17M) male human E4 and E3 gene targeted replacement (TR) mice were obtained from Taconic and housed at the University of Alabama at Birmingham (UAB). 	Mice were subjected to either eight cycles of O₃ exposure or filtered air (FA) at the UAB environmental exposure facility. Each cycle consisted of 5 days of FA/O₃ exposure (0.8 ppm), for 7 hours per day followed by 9 days of FA. A total of 14 to 16 mice were used per genotype, age, and treatment group.	Sequencing data underwent quality control using fastQC and adapter trimming with Trimmomatic. Clean reads were aligned to the mouse reference genome (GRCm38) using HISAT2.	mice were euthanized by isoflurane overdose followed by bilateral thoracotomy. Brains were dissected sagittally into right and left hemispheres. 	Amplified libraries were purified and quality-checked using the Agilent Bioanalyzer 2100. The sequencing libraries were clustered on the Illumina NovaSeq platform using paired-end sequencing to generate high-quality reads for each sample.
+Protocol Hardware			Illumina® (NEB, USA)	Illumina NovaSeq X					
+Protocol Software									
+Term Source Name	EFO
+Term Source File	http://www.ebi.ac.uk/efo/
+Term Source Version
+SDRF File	E-MTAB-14917.sdrf.txt
+Comment[AEExperimentType]	RNA-seq of coding RNA
+Comment[TemplateType]	High-throughput sequencing
+Comment[SecondaryAccession]	ERP170080
+Comment[SequenceDataURI]	http://www.ebi.ac.uk/ena/data/view/ERR14708304-ERR14708304	http://www.ebi.ac.uk/ena/data/view/ERR14708304-ERR14708305	http://www.ebi.ac.uk/ena/data/view/ERR14708305-ERR14708306	http://www.ebi.ac.uk/ena/data/view/ERR14708306-ERR14708307	http://www.ebi.ac.uk/ena/data/view/ERR14708307-ERR14708308	http://www.ebi.ac.uk/ena/data/view/ERR14708308-ERR14708309	http://www.ebi.ac.uk/ena/data/view/ERR14708309-ERR14708310	http://www.ebi.ac.uk/ena/data/view/ERR14708310-ERR14708311	http://www.ebi.ac.uk/ena/data/view/ERR14708311-ERR14708312	http://www.ebi.ac.uk/ena/data/view/ERR14708312-ERR14708313	http://www.ebi.ac.uk/ena/data/view/ERR14708313-ERR14708314	http://www.ebi.ac.uk/ena/data/view/ERR14708314-ERR14708315	http://www.ebi.ac.uk/ena/data/view/ERR14708315-ERR14708316	http://www.ebi.ac.uk/ena/data/view/ERR14708316-ERR14708317	http://www.ebi.ac.uk/ena/data/view/ERR14708317-ERR14708318	http://www.ebi.ac.uk/ena/data/view/ERR14708318-ERR14708319	http://www.ebi.ac.uk/ena/data/view/ERR14708319-ERR14708320	http://www.ebi.ac.uk/ena/data/view/ERR14708320-ERR14708321	http://www.ebi.ac.uk/ena/data/view/ERR14708321-ERR14708322	http://www.ebi.ac.uk/ena/data/view/ERR14708322-ERR14708323	http://www.ebi.ac.uk/ena/data/view/ERR14708323-ERR14708324	http://www.ebi.ac.uk/ena/data/view/ERR14708324-ERR14708325	http://www.ebi.ac.uk/ena/data/view/ERR14708325-ERR14708326	http://www.ebi.ac.uk/ena/data/view/ERR14708326-ERR14708327	http://www.ebi.ac.uk/ena/data/view/ERR14708327-ERR14708327
+Comment[Submitted Name]	Age- and ApoE genotype-dependent transcriptomic responses to O3 in the hippocampus of mice
+Comment[ArrayExpressAccession]	E-MTAB-14917

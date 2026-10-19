@@ -1,0 +1,3 @@
+GO_ID	term_name	direction	universe_genes	term_genes_in_universe	foreground_genes	overlap	overlap_genes	expected_overlap	fold_enrichment	pvalue	padj_BH
+GO:0045005	DNA-templated DNA replication maintenance of fidelity	down	14587	59	379	11	Atm;Blm;Brca2;Exo1;Fancm;Pole;Rad50;Rtel1;Tipin;Wrn;Zranb3	1.532940289	7.175752426	2.881163471e-07	0.001260509019
+GO:0031297	replication fork processing	down	14587	54	379	10	Atm;Blm;Brca2;Exo1;Fancm;Rad50;Rtel1;Tipin;Wrn;Zranb3	1.403030095	7.127430861	1.075306344e-06	0.002352232627

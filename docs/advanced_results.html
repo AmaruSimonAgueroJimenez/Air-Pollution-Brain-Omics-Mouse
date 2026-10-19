@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-10-19">
+
+<title>Response heterogeneity and pathway architecture – Air pollution · brain omics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5dd942ac47374bdb5320a9bbd29a7aa4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="assets/report.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Air pollution · brain omics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Overview</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./introduction.html"> 
+<span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./methods.html"> 
+<span class="menu-text">Methods</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-results" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Results</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-results">    
+        <li>
+    <a class="dropdown-item" href="./results.html">
+ <span class="dropdown-text">Hypothalamus · PM2.5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cortex.html">
+ <span class="dropdown-text">Cingulate cortex · PM2.5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./mirna.html">
+ <span class="dropdown-text">Hippocampal miRNA · PM2.5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ozone.html">
+ <span class="dropdown-text">Hippocampus · ozone</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./enrichment.html">
+ <span class="dropdown-text">Functional enrichment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./advanced_results.html">
+ <span class="dropdown-text">Interactions &amp; molecular panels</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./replication.html">
+ <span class="dropdown-text">Original-study reproduction</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./spatial_reference.html">
+ <span class="dropdown-text">Measured spatial reference</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./viewer.html"> 
+<span class="menu-text">3D Viewer</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./reproducibility.html"> 
+<span class="menu-text">Data &amp; code</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./es/index.html"> 
+<span class="menu-text">Español</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#scientific-question-and-analysis-status" id="toc-scientific-question-and-analysis-status" class="nav-link active" data-scroll-target="#scientific-question-and-analysis-status">Scientific question and analysis status</a></li>
+  <li><a href="#methods-compare-responses-directly" id="toc-methods-compare-responses-directly" class="nav-link" data-scroll-target="#methods-compare-responses-directly">Methods: compare responses directly</a></li>
+  <li><a href="#results-age-associated-response-heterogeneity" id="toc-results-age-associated-response-heterogeneity" class="nav-link" data-scroll-target="#results-age-associated-response-heterogeneity">Results: age-associated response heterogeneity</a>
+  <ul class="collapse">
+  <li><a href="#effect-size-uncertainty-and-individual-animals" id="toc-effect-size-uncertainty-and-individual-animals" class="nav-link" data-scroll-target="#effect-size-uncertainty-and-individual-animals">Effect size, uncertainty, and individual animals</a></li>
+  </ul></li>
+  <li><a href="#pathway-architecture-across-six-contrasts" id="toc-pathway-architecture-across-six-contrasts" class="nav-link" data-scroll-target="#pathway-architecture-across-six-contrasts">Pathway architecture across six contrasts</a>
+  <ul class="collapse">
+  <li><a href="#resolve-redundancy-through-gene-set-overlap" id="toc-resolve-redundancy-through-gene-set-overlap" class="nav-link" data-scroll-target="#resolve-redundancy-through-gene-set-overlap">Resolve redundancy through gene-set overlap</a></li>
+  </ul></li>
+  <li><a href="#interpretation-and-downloadable-evidence" id="toc-interpretation-and-downloadable-evidence" class="nav-link" data-scroll-target="#interpretation-and-downloadable-evidence">Interpretation and downloadable evidence</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Response heterogeneity and pathway architecture</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead">Secondary analyses with formal interaction tests and linked molecular panels</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Analysis date</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">19 October 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="scientific-question-and-analysis-status" class="level2">
+<h2 class="anchored" data-anchor-id="scientific-question-and-analysis-status">Scientific question and analysis status</h2>
+<p>The primary ozone contrasts quantify exposure-associated differences within each age/APOE stratum. <strong>A significant result in one stratum and a nonsignificant result in another does not establish different responses.</strong> This secondary analysis directly tests whether the O₃-versus-filtered-air effect differs by age or genotype. It uses the same 24 animals and 18,537 retained genes, without adding independent biological observations. These are new exploratory analyses of Nakamya et al.’s deposit, distinct from <a href="./replication.html">reproduction of the authors’ results</a>. <span class="citation" data-cites="Nakamya2025_40141051">Nakamya et al. (<a href="#ref-Nakamya2025_40141051" role="doc-biblioref">2025</a>)</span></p>
+<p>Bulk tissue effects can reflect expression regulation, cell composition, or vascular material. Neither an interaction coefficient nor a GO label identifies a responding cell type. The <a href="./spatial_reference.html">measured MERFISH reference</a> provides anatomical context for hypothalamic PM2.5; it does not validate the hippocampal ozone effects.</p>
+</section>
+<section id="methods-compare-responses-directly" class="level2">
+<h2 class="anchored" data-anchor-id="methods-compare-responses-directly">Methods: compare responses directly</h2>
+<p>The negative-binomial model is <code>~age * genotype * exposure</code>. The full design has rank eight. Effective-length normalization offsets and fitted dispersions are preserved from the primary all-animal model. Nested likelihood-ratio tests remove the specified exposure interactions while retaining the relevant main effects. <span class="citation" data-cites="Love2014_DESeq2">Love et al. (<a href="#ref-Love2014_DESeq2" role="doc-biblioref">2014</a>)</span></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 30%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Question</th>
+<th>Reduced model</th>
+<th style="text-align: right;">Degrees of freedom</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Does response depend on genotype across ages?</td>
+<td><code>~age * genotype + exposure + age:exposure</code></td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td>Does response depend on age across genotypes?</td>
+<td><code>~age * genotype + exposure + genotype:exposure</code></td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td>Is there an additional age × genotype × exposure term?</td>
+<td><code>~(age + genotype + exposure)^2</code></td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+<p>Each test has its own BH family across genes. Supplementary columns apply BH jointly across the three LRT families. Cook’s filtering remains active; adaptive independent filtering is disabled. Nonconverged fits have p-values withheld before adjustment. All full and reduced coefficient fits converged; 18,511 genes have valid LRT p-values.</p>
+<p>Signed conditional Wald contrasts complement these omnibus tests. They estimate differences between <strong>log₂ exposure responses</strong>, using covariance-aware combinations of model coefficients. Genes with all-zero counts in a required six-animal stratum have estimates withheld. Intervals are pointwise MLE ± 1.95996 SE; they are neither simultaneous intervals nor cellular uncertainty.</p>
+</section>
+<section id="results-age-associated-response-heterogeneity" class="level2">
+<h2 class="anchored" data-anchor-id="results-age-associated-response-heterogeneity">Results: age-associated response heterogeneity</h2>
+<div id="100a717e" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display cell-output-markdown">
+<div class="table-scroll">
+<table class="dataframe table table-sm table-striped evidence-table small">
+<thead>
+<tr>
+<th>
+Test
+</th>
+<th>
+df
+</th>
+<th>
+Valid tests
+</th>
+<th>
+BH &lt; 0.05 within family
+</th>
+<th>
+BH &lt; 0.05 across three families
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Genotype-dependent response
+</td>
+<td>
+2
+</td>
+<td>
+18511
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+</tr>
+<tr>
+<td>
+Age-dependent response
+</td>
+<td>
+2
+</td>
+<td>
+18511
+</td>
+<td>
+8
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+Age × genotype × exposure
+</td>
+<td>
+1
+</td>
+<td>
+18511
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The age-dependent exposure test identifies <strong>eight genes</strong> under its within-family BH threshold: <strong>Ryr3, Rps24, Pkig, Rpl26, Inpp5d, Stk11, Rpl34, and Gm21586</strong>. Only <strong>Ryr3</strong> (joint q ≈ 0.0386) remains below 0.05 when all three LRT families are adjusted jointly. The genotype-dependent omnibus and three-way tests identify no genes at their respective within-family thresholds. These null results leave limited power with three animals per group; they do not establish equivalent responses.</p>
+<div id="87c02656" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display cell-output-markdown">
+<div class="table-scroll">
+<table class="dataframe table table-sm table-striped evidence-table small">
+<thead>
+<tr>
+<th>
+Gene
+</th>
+<th>
+Mean normalized count
+</th>
+<th>
+Test statistic
+</th>
+<th>
+Nominal p
+</th>
+<th>
+BH FDR
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Ryr3
+</td>
+<td>
+1.15e+03
+</td>
+<td>
+28.4
+</td>
+<td>
+6.96e-07
+</td>
+<td>
+0.013
+</td>
+</tr>
+<tr>
+<td>
+Rps24
+</td>
+<td>
+4.66e+03
+</td>
+<td>
+24.7
+</td>
+<td>
+4.32e-06
+</td>
+<td>
+0.040
+</td>
+</tr>
+<tr>
+<td>
+Pkig
+</td>
+<td>
+985
+</td>
+<td>
+23.9
+</td>
+<td>
+6.62e-06
+</td>
+<td>
+0.040
+</td>
+</tr>
+<tr>
+<td>
+Rpl26
+</td>
+<td>
+3.35e+03
+</td>
+<td>
+23.3
+</td>
+<td>
+8.55e-06
+</td>
+<td>
+0.040
+</td>
+</tr>
+<tr>
+<td>
+Inpp5d
+</td>
+<td>
+271
+</td>
+<td>
+22.7
+</td>
+<td>
+1.18e-05
+</td>
+<td>
+0.041
+</td>
+</tr>
+<tr>
+<td>
+Stk11
+</td>
+<td>
+1.48e+03
+</td>
+<td>
+22.3
+</td>
+<td>
+1.45e-05
+</td>
+<td>
+0.041
+</td>
+</tr>
+<tr>
+<td>
+Rpl34
+</td>
+<td>
+2.75e+03
+</td>
+<td>
+22
+</td>
+<td>
+1.71e-05
+</td>
+<td>
+0.041
+</td>
+</tr>
+<tr>
+<td>
+Gm21586
+</td>
+<td>
+18.4
+</td>
+<td>
+21.9
+</td>
+<td>
+1.78e-05
+</td>
+<td>
+0.041
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<figure class="research-figure figure">
+<a href="assets/figures/advanced_omics/ozone_interaction_evidence.svg"><img loading="lazy" width="4398" height="3052" src="assets/figures/advanced_omics/ozone_interaction_evidence.png" alt="Three interaction evidence plots, discovery counts and a signed response-difference heatmap." class="figure-img"></a>
+<figcaption>
+A: Fixed-universe nested-model likelihood-ratio tests;each gene is one point. A separate BH family is used for each test. All24 animals and effective-length offsets are retained;the full/reduced ranks are8/6,8/6,and8/7. B: Eight age-dependent-response genes, zero genotype-omnibus and zero three-way genes meet BH FDR&lt;0.05. A null test is not equivalence. C: Unshrunken differences of ozone log2 fold changes for all eight age-LRT discoveries;black dots indicate the corresponding conditional Wald-family FDR&lt;0.05. These one-df conditional tests and omnibus tests answer different hypotheses;their discovery sets need not agree. All analyses are secondary and exploratory. <span class="figure-links"><a href="assets/figures/advanced_omics/ozone_interaction_evidence.svg">SVG</a> · <a href="assets/figures/advanced_omics/ozone_interaction_evidence.pdf">PDF</a></span>
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Separate conditional Wald families identify 6 and 4 genotype-response differences at M3 and M17, and 2 and 4 age-response differences in APOE3 and APOE4. The three-way signed contrast identifies none. Their one-degree-of-freedom hypotheses and correction families differ from the omnibus tests; the counts are not interchangeable confirmations.</p>
+<section id="effect-size-uncertainty-and-individual-animals" class="level3">
+<h3 class="anchored" data-anchor-id="effect-size-uncertainty-and-individual-animals">Effect size, uncertainty, and individual animals</h3>
+<div id="3ec857f9" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display cell-output-markdown">
+<figure class="research-figure figure">
+<a href="assets/figures/advanced_omics/ozone_effect_uncertainty.svg"><img loading="lazy" width="4642" height="2386" src="assets/figures/advanced_omics/ozone_effect_uncertainty.png" alt="Four forest plots and a regularized-effect heatmap for ten selected ozone-study genes." class="figure-img"></a>
+<figcaption>
+A: Unshrunken ozone-versus-air log2 fold changes and pointwise95% Wald intervals;3 animals per exposure in each stratum, with dispersion estimation shared across24 animals. Filled symbols mark within-stratum BH FDR&lt;0.05; intervals are not simultaneous. B: apeglm-regularized effects on the same genes. Gray/missing marks mean unavailable estimates, not zero. Six genes were selected by the global ozone LRT among protein-coding genes with mean normalized count&gt;=20; Fos,Gfap,Aif1,Trem2 are named secondary display targets. Selection is post hoc and does not establish gene-specific replication. Regularization is estimated separately for each contrast and can contract a mode almost to zero despite a significant unshrunken Wald result;for example,Fos in M17/APOE4 has MLE=-2.271,q=0.0212,but mode≈0. The matrix is a regularization diagnostic,not evidence that the original exposure effect is absent. <span class="figure-links"><a href="assets/figures/advanced_omics/ozone_effect_uncertainty.svg">SVG</a> · <a href="assets/figures/advanced_omics/ozone_effect_uncertainty.pdf">PDF</a></span>
+</figcaption>
+</figure>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<figure class="research-figure figure">
+<a href="assets/figures/advanced_omics/ozone_interaction_animals.svg"><img loading="lazy" width="4402" height="2602" src="assets/figures/advanced_omics/ozone_interaction_animals.png" alt="Six panels showing all24 individual animal values for selected age-response genes." class="figure-img"></a>
+<figcaption>
+All24 independent animals per gene are shown,3 per exposure/age/genotype cell. Counts use the original DESeq2 gene-length normalization factors, then log2(1+count) for display. Point-position plots use gene-specific nonzero y-ranges,identical across groups within a panel. Connected bars represent arithmetic means of displayed transformed values;they do not connect paired animals and are not inferential intervals. Six lowest-q age-dependent-exposure LRT genes are displayed, preserving secondary selection. Count-model tests were not fitted on these log-transformed values. Gene names and grouping do not establish cell-specific expression. <span class="figure-links"><a href="assets/figures/advanced_omics/ozone_interaction_animals.svg">SVG</a> · <a href="assets/figures/advanced_omics/ozone_interaction_animals.pdf">PDF</a></span>
+</figcaption>
+</figure>
+</div>
+</div>
+<p>The animal panels show all 24 normalized observations for selected genes. Selection of the strongest age-response genes is secondary and documented, so the visual separation is not an independent validation. The count model is fitted to counts with offsets, rather than the plotted logarithmic values.</p>
+<p><strong>Shrinkage needs a separate reading.</strong> Some contrast-specific apeglm estimates contract almost completely to zero despite a nonzero MLE and finite Wald evidence. For example, the stored M17/APOE4 result for <em>Fos</em> has MLE approximately −2.27, SE 0.47 and BH q ≈ 0.021, while its shrunken mode is near zero. Convergence alone does not make those two quantities interchangeable. Effect comparisons here use the unshrunken MLE and pointwise interval; the posterior mode remains a separately labeled regularized estimate. The original prior hyperparameters were not retained, so a verified prior scale or computational cause cannot be assigned. The <a href="downloads/advanced_omics/ozone_shrinkage_diagnostics.tsv">diagnostic table</a> exposes these cases.</p>
+</section>
+</section>
+<section id="pathway-architecture-across-six-contrasts" class="level2">
+<h2 class="anchored" data-anchor-id="pathway-architecture-across-six-contrasts">Pathway architecture across six contrasts</h2>
+<p>The following matrix compares signed GSEA normalized enrichment scores for hypothalamus, cortex, and the four ozone strata. It uses the existing frozen MGI/GO analysis; it does not refit or pool the experiments. Up to two significant terms per direction and contrast are selected deterministically, with a Jaccard redundancy filter. The union contains 22 terms. Missing eligibility is shown explicitly rather than treated as zero enrichment. <span class="citation" data-cites="Subramanian2005_GSEA">Subramanian et al. (<a href="#ref-Subramanian2005_GSEA" role="doc-biblioref">2005</a>)</span> <span class="citation" data-cites="Ashburner2000_GO"><span class="nocase">Ashburner et al.</span> (<a href="#ref-Ashburner2000_GO" role="doc-biblioref">2000</a>)</span></p>
+<div id="421ba2cf" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display cell-output-markdown">
+<figure class="research-figure figure">
+<a href="assets/figures/advanced_omics/GO_multi_contrast_heatmap.svg"><img loading="lazy" width="4185" height="2692" src="assets/figures/advanced_omics/GO_multi_contrast_heatmap.png" alt="A signed NES matrix across six contrasts with explicit missing eligibility and algorithmic FDR markers." class="figure-img"></a>
+<figcaption>
+Signed NES values are displayed for a deterministic, redundancy-reduced selection:up to2 FDR&lt;0.05 terms per direction per contrast, ordered by estimated q then absolute NES;new terms require Jaccard&lt;0.75 with already selected terms using the union of rank-eligible GO members. Outlined circles mark that cell's GSEA algorithmic FDR&lt;0.05;these are not BH p-values. Gray× means the term was not eligible/tested, never zero enrichment. Gene-set permutations do not preserve gene-gene correlation or sample uncertainty. Contrasts have distinct tissues/models/assays and are not pooled;differences in NES or q do not constitute a formal between-study test. Source GO names are retained. <span class="figure-links"><a href="assets/figures/advanced_omics/GO_multi_contrast_heatmap.svg">SVG</a> · <a href="assets/figures/advanced_omics/GO_multi_contrast_heatmap.pdf">PDF</a></span>
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Outlined circles denote <strong>algorithmic GSEA FDR &lt; 0.05</strong>, not BH-adjusted gene-level p-values. These gene-set permutations do not preserve gene correlation or sample uncertainty. Tissue, mouse model, exposure route, and assay differ across studies; a difference in NES is not a statistical test of a difference between pollutants. Related GO terms share genes and should not be counted as independent mechanisms.</p>
+<p>Oxidative phosphorylation has positive NES in hypothalamic PM2.5 (1.847; estimated FDR 0.0326) and M3/APOE4 ozone (3.205), but negative NES in M17/APOE3 ozone (−3.054). Translation-at-synapse annotations also change ranking direction between younger and older ozone strata. These descriptive patterns motivate hypotheses about energy and translational programs, without measuring pathway activation or proving differences between studies. An estimated GSEA FDR of zero reflects finite permutations, not zero probability.</p>
+<section id="resolve-redundancy-through-gene-set-overlap" class="level3">
+<h3 class="anchored" data-anchor-id="resolve-redundancy-through-gene-set-overlap">Resolve redundancy through gene-set overlap</h3>
+<div id="43296804" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display cell-output-markdown">
+<figure class="research-figure figure">
+<a href="assets/figures/advanced_omics/GO_overlap_network.svg"><img loading="lazy" width="4702" height="2992" src="assets/figures/advanced_omics/GO_overlap_network.png" alt="A membership-overlap network of twenty selected GO terms with a numbered term table." class="figure-img"></a>
+<figcaption>
+Ten lowest-q positive and ten lowest-q negative GO-BP terms for ozone M3/APOE4, with |NES| tie-breaks. Nodes encode gene-set size in the eligible rank and NES, not cell abundance. Edges join sets with Jaccard membership overlap&gt;=0.25;they do not represent coexpression, protein interaction, causal regulation or independent pathway discoveries. Connected components use a deterministic grid and circular positions; visual distances are graphical, not anatomical or molecular. Selection is exploratory and restricted to one contrast;the original algorithmic GSEA FDR estimates are retained. Zero q values reflect finite permutations. Full names, memberships, node and edge tables are available. <span class="figure-links"><a href="assets/figures/advanced_omics/GO_overlap_network.svg">SVG</a> · <a href="assets/figures/advanced_omics/GO_overlap_network.pdf">PDF</a></span>
+</figcaption>
+</figure>
+</div>
+</div>
+<p>The network contains the ten strongest positive and ten strongest negative selected terms for the M3/APOE4 ozone contrast. Fifteen edges join pairs with membership Jaccard ≥ 0.25. Node size represents eligible gene-set size and node color represents NES. Edges express shared annotation members; they do not establish coexpression, protein binding, causal regulation, or anatomical connectivity. The numbered term table and node/edge downloads allow every grouping to be inspected.</p>
+</section>
+</section>
+<section id="interpretation-and-downloadable-evidence" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation-and-downloadable-evidence">Interpretation and downloadable evidence</h2>
+<p>The formal tests support a small, threshold-sensitive set of age-associated ozone response differences. The GO panels summarize coordinated rank patterns and annotation redundancy. Neither layer determines whether individual neurons or glia change their expression, and the absence of an omnibus genotype discovery does not negate the within-stratum exposure contrasts.</p>
+<p><a href="downloads/advanced_omics/interaction_LRT_all_tests.csv">All LRT results</a> · <a href="downloads/advanced_omics/interaction_Wald_all_tests.csv">All conditional Wald results</a> · <a href="downloads/advanced_omics/full_design_matrix.csv">Design matrix</a> · <a href="downloads/advanced_omics/Wald_contrast_vectors.csv">Contrast vectors</a> · <a href="downloads/advanced_omics/ozone_interaction_animal_profiles.tsv">Animal profiles</a> · <a href="downloads/advanced_omics/GO_multi_contrast_NES_source.tsv">GO matrix source</a> · <a href="downloads/advanced_omics/GO_overlap_network_nodes.tsv">Network nodes</a> · <a href="downloads/advanced_omics/GO_overlap_network_edges.tsv">Network edges</a> · <a href="downloads/advanced_omics/validation.json">Numerical validation</a></p>
+<p>The figure source tables, exact selection rules, full result families, and 300-dpi PNG plus vector SVG/PDF exports accompany the report. <a href="./ozone.html">Return to the primary study results</a> or <a href="./replication.html">inspect author-result reproduction</a>.</p>
+
+
+<!-- -->
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Ashburner2000_GO" class="csl-entry" role="listitem">
+<span class="nocase">Ashburner, Michael, Catherine A. Ball, Judith A. Blake, et al.</span> 2000. <span>“<span>Gene Ontology</span>: Tool for the Unification of Biology.”</span> <em>Nature Genetics</em> 25 (1): 25–29. <a href="https://doi.org/10.1038/75556">https://doi.org/10.1038/75556</a>.
+</div>
+<div id="ref-Love2014_DESeq2" class="csl-entry" role="listitem">
+Love, Michael I., Wolfgang Huber, and Simon Anders. 2014. <span>“Moderated Estimation of Fold Change and Dispersion for <span class="nocase">RNA-seq</span> Data with <span>DESeq2</span>.”</span> <em>Genome Biology</em> 15: 550. <a href="https://doi.org/10.1186/s13059-014-0550-8">https://doi.org/10.1186/s13059-014-0550-8</a>.
+</div>
+<div id="ref-Nakamya2025_40141051" class="csl-entry" role="listitem">
+Nakamya, Mary F, Kaili Hu, Chunsun Jiang, Zechen Chong, and Rui-Ming Liu. 2025. <span>“Age- and ApoE Genotype-Dependent Transcriptomic Responses to O3 in the Hippocampus of Mice.”</span> <em>International Journal of Molecular Sciences</em> 26 (6). <a href="https://doi.org/10.3390/ijms26062407">https://doi.org/10.3390/ijms26062407</a>.
+</div>
+<div id="ref-Subramanian2005_GSEA" class="csl-entry" role="listitem">
+Subramanian, Aravind, Pablo Tamayo, Vamsi K. Mootha, et al. 2005. <span>“Gene Set Enrichment Analysis: A Knowledge-Based Approach for Interpreting Genome-Wide Expression Profiles.”</span> <em>Proceedings of the National Academy of Sciences</em> 102 (43): 15545–50. <a href="https://doi.org/10.1073/pnas.0506580102">https://doi.org/10.1073/pnas.0506580102</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/amarusimonaguerojimenez\.github\.io\/Air-Pollution-Brain-Omics-Mouse\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Response heterogeneity and pathway architecture"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Secondary analyses with formal interaction tests and linked molecular panels"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Markdown, display</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> _report_utils <span class="im">import</span> ROOT, summary, read_table, show_table, figure</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> summary(<span class="st">"advanced_omics"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>captions <span class="op">=</span> json.loads((ROOT <span class="op">/</span> <span class="st">"results/advanced_omics/figure_manifest.json"</span>).read_text())</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> panel(stem):</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    figure(<span class="st">"advanced_omics"</span>, stem, captions[stem][<span class="st">"caption"</span>], captions[stem][<span class="st">"alt"</span>])</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Scientific question and analysis status</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>The primary ozone contrasts quantify exposure-associated differences within each age/APOE stratum. **A significant result in one stratum and a nonsignificant result in another does not establish different responses.** This secondary analysis directly tests whether the O₃-versus-filtered-air effect differs by age or genotype. It uses the same 24 animals and 18,537 retained genes, without adding independent biological observations. These are new exploratory analyses of Nakamya et al.'s deposit, distinct from <span class="co">[</span><span class="ot">reproduction of the authors' results</span><span class="co">](replication.qmd)</span>. @Nakamya2025_40141051</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Bulk tissue effects can reflect expression regulation, cell composition, or vascular material. Neither an interaction coefficient nor a GO label identifies a responding cell type. The <span class="co">[</span><span class="ot">measured MERFISH reference</span><span class="co">](spatial_reference.qmd)</span> provides anatomical context for hypothalamic PM2.5; it does not validate the hippocampal ozone effects.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Methods: compare responses directly</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>The negative-binomial model is <span class="in">`~age * genotype * exposure`</span>. The full design has rank eight. Effective-length normalization offsets and fitted dispersions are preserved from the primary all-animal model. Nested likelihood-ratio tests remove the specified exposure interactions while retaining the relevant main effects. @Love2014_DESeq2</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Question <span class="pp">|</span> Reduced model <span class="pp">|</span> Degrees of freedom <span class="pp">|</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---:|</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Does response depend on genotype across ages? <span class="pp">|</span> <span class="in">`~age * genotype + exposure + age:exposure`</span> <span class="pp">|</span> 2 <span class="pp">|</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Does response depend on age across genotypes? <span class="pp">|</span> <span class="in">`~age * genotype + exposure + genotype:exposure`</span> <span class="pp">|</span> 2 <span class="pp">|</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Is there an additional age × genotype × exposure term? <span class="pp">|</span> <span class="in">`~(age + genotype + exposure)^2`</span> <span class="pp">|</span> 1 <span class="pp">|</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>Each test has its own BH family across genes. Supplementary columns apply BH jointly across the three LRT families. Cook's filtering remains active; adaptive independent filtering is disabled. Nonconverged fits have p-values withheld before adjustment. All full and reduced coefficient fits converged; 18,511 genes have valid LRT p-values.</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Signed conditional Wald contrasts complement these omnibus tests. They estimate differences between **log₂ exposure responses**, using covariance-aware combinations of model coefficients. Genes with all-zero counts in a required six-animal stratum have estimates withheld. Intervals are pointwise MLE ± 1.95996 SE; they are neither simultaneous intervals nor cellular uncertainty.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## Results: age-associated response heterogeneity</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> {</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="st">"genotype_dependent_exposure"</span>: <span class="st">"Genotype-dependent response"</span>,</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    <span class="st">"age_dependent_exposure"</span>: <span class="st">"Age-dependent response"</span>,</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    <span class="st">"three_way_interaction"</span>: <span class="st">"Age × genotype × exposure"</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>show_table(pd.DataFrame([</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"Test"</span>: names[k], <span class="st">"df"</span>: v[<span class="st">"df"</span>], <span class="st">"Valid tests"</span>: v[<span class="st">"tested"</span>],</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>     <span class="st">"BH &lt; 0.05 within family"</span>: v[<span class="st">"FDR_005"</span>],</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>     <span class="st">"BH &lt; 0.05 across three families"</span>: v[<span class="st">"FDR_005_across_three_LRTs"</span>]}</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> k, v <span class="kw">in</span> a[<span class="st">"LRT"</span>].items()</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>]))</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>The age-dependent exposure test identifies **eight genes** under its within-family BH threshold: **Ryr3, Rps24, Pkig, Rpl26, Inpp5d, Stk11, Rpl34, and Gm21586**. Only **Ryr3** (joint q ≈ 0.0386) remains below 0.05 when all three LRT families are adjusted jointly. The genotype-dependent omnibus and three-way tests identify no genes at their respective within-family thresholds. These null results leave limited power with three animals per group; they do not establish equivalent responses.</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>hits <span class="op">=</span> read_table(<span class="st">"advanced_omics"</span>, <span class="st">"age_response_FDR_genes.tsv"</span>)</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>show_table(hits[[<span class="st">"gene_symbol"</span>, <span class="st">"baseMean"</span>, <span class="st">"stat"</span>, <span class="st">"pvalue"</span>, <span class="st">"padj"</span>]], n<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>panel(<span class="st">"ozone_interaction_evidence"</span>)</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>Separate conditional Wald families identify 6 and 4 genotype-response differences at M3 and M17, and 2 and 4 age-response differences in APOE3 and APOE4. The three-way signed contrast identifies none. Their one-degree-of-freedom hypotheses and correction families differ from the omnibus tests; the counts are not interchangeable confirmations.</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="fu">### Effect size, uncertainty, and individual animals</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>panel(<span class="st">"ozone_effect_uncertainty"</span>)</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>panel(<span class="st">"ozone_interaction_animals"</span>)</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>The animal panels show all 24 normalized observations for selected genes. Selection of the strongest age-response genes is secondary and documented, so the visual separation is not an independent validation. The count model is fitted to counts with offsets, rather than the plotted logarithmic values.</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>**Shrinkage needs a separate reading.** Some contrast-specific apeglm estimates contract almost completely to zero despite a nonzero MLE and finite Wald evidence. For example, the stored M17/APOE4 result for *Fos* has MLE approximately −2.27, SE 0.47 and BH q ≈ 0.021, while its shrunken mode is near zero. Convergence alone does not make those two quantities interchangeable. Effect comparisons here use the unshrunken MLE and pointwise interval; the posterior mode remains a separately labeled regularized estimate. The original prior hyperparameters were not retained, so a verified prior scale or computational cause cannot be assigned. The <span class="co">[</span><span class="ot">diagnostic table</span><span class="co">](downloads/advanced_omics/ozone_shrinkage_diagnostics.tsv)</span> exposes these cases.</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="fu">## Pathway architecture across six contrasts</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>The following matrix compares signed GSEA normalized enrichment scores for hypothalamus, cortex, and the four ozone strata. It uses the existing frozen MGI/GO analysis; it does not refit or pool the experiments. Up to two significant terms per direction and contrast are selected deterministically, with a Jaccard redundancy filter. The union contains 22 terms. Missing eligibility is shown explicitly rather than treated as zero enrichment. @Subramanian2005_GSEA @Ashburner2000_GO</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>panel(<span class="st">"GO_multi_contrast_heatmap"</span>)</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>Outlined circles denote **algorithmic GSEA FDR &lt; 0.05**, not BH-adjusted gene-level p-values. These gene-set permutations do not preserve gene correlation or sample uncertainty. Tissue, mouse model, exposure route, and assay differ across studies; a difference in NES is not a statistical test of a difference between pollutants. Related GO terms share genes and should not be counted as independent mechanisms.</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>Oxidative phosphorylation has positive NES in hypothalamic PM2.5 (1.847; estimated FDR 0.0326) and M3/APOE4 ozone (3.205), but negative NES in M17/APOE3 ozone (−3.054). Translation-at-synapse annotations also change ranking direction between younger and older ozone strata. These descriptive patterns motivate hypotheses about energy and translational programs, without measuring pathway activation or proving differences between studies. An estimated GSEA FDR of zero reflects finite permutations, not zero probability.</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### Resolve redundancy through gene-set overlap</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>panel(<span class="st">"GO_overlap_network"</span>)</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>The network contains the ten strongest positive and ten strongest negative selected terms for the M3/APOE4 ozone contrast. Fifteen edges join pairs with membership Jaccard ≥ 0.25. Node size represents eligible gene-set size and node color represents NES. Edges express shared annotation members; they do not establish coexpression, protein binding, causal regulation, or anatomical connectivity. The numbered term table and node/edge downloads allow every grouping to be inspected.</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interpretation and downloadable evidence</span></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>The formal tests support a small, threshold-sensitive set of age-associated ozone response differences. The GO panels summarize coordinated rank patterns and annotation redundancy. Neither layer determines whether individual neurons or glia change their expression, and the absence of an omnibus genotype discovery does not negate the within-stratum exposure contrasts.</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">All LRT results</span><span class="co">](downloads/advanced_omics/interaction_LRT_all_tests.csv)</span> ·</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">All conditional Wald results</span><span class="co">](downloads/advanced_omics/interaction_Wald_all_tests.csv)</span> ·</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Design matrix</span><span class="co">](downloads/advanced_omics/full_design_matrix.csv)</span> ·</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Contrast vectors</span><span class="co">](downloads/advanced_omics/Wald_contrast_vectors.csv)</span> ·</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Animal profiles</span><span class="co">](downloads/advanced_omics/ozone_interaction_animal_profiles.tsv)</span> ·</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">GO matrix source</span><span class="co">](downloads/advanced_omics/GO_multi_contrast_NES_source.tsv)</span> ·</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Network nodes</span><span class="co">](downloads/advanced_omics/GO_overlap_network_nodes.tsv)</span> ·</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Network edges</span><span class="co">](downloads/advanced_omics/GO_overlap_network_edges.tsv)</span> ·</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Numerical validation</span><span class="co">](downloads/advanced_omics/validation.json)</span></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>The figure source tables, exact selection rules, full result families, and 300-dpi PNG plus vector SVG/PDF exports accompany the report. <span class="co">[</span><span class="ot">Return to the primary study results</span><span class="co">](ozone.qmd)</span> or <span class="co">[</span><span class="ot">inspect author-result reproduction</span><span class="co">](replication.qmd)</span>.</span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Public-data reanalysis · Mus musculus</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Measured reference and simulated exposure are distinguished.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

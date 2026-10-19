@@ -1,0 +1,143 @@
+{
+  "inspected_at": "2026-10-16T18:56:26.545409+00:00",
+  "scope": "All eight completed H5AD files: dimensions, gene identifiers and index lengths checked; finite nonnegative values checked on the first 1000 rows of each matrix. Raw-count integrality is sampled. Full source MD5 checks are in download_receipts.json.",
+  "matrices": [
+    {
+      "file": "data/reference_atlases/Zhuang_2023/expression_matrices/Zhuang-ABCA-1/20230830/Zhuang-ABCA-1-log2.h5ad",
+      "cells": 4167870,
+      "genes": 1122,
+      "dtype": "float32",
+      "obs_index": "cell_label",
+      "var_index": "gene_identifier",
+      "sample_rows": 1000,
+      "sample_finite": true,
+      "sample_nonnegative": true,
+      "unique_gene_identifiers": 1122,
+      "source_expression": "measured_MERFISH_panel"
+    },
+    {
+      "file": "data/reference_atlases/Zhuang_2023/expression_matrices/Zhuang-ABCA-1/20230830/Zhuang-ABCA-1-raw.h5ad",
+      "cells": 4167870,
+      "genes": 1122,
+      "dtype": "float32",
+      "obs_index": "cell_label",
+      "var_index": "gene_identifier",
+      "sample_rows": 1000,
+      "sample_finite": true,
+      "sample_nonnegative": true,
+      "unique_gene_identifiers": 1122,
+      "source_expression": "measured_MERFISH_panel",
+      "sample_integer_counts": true
+    },
+    {
+      "file": "data/reference_atlases/Zhuang_2023/expression_matrices/Zhuang-ABCA-2/20230830/Zhuang-ABCA-2-log2.h5ad",
+      "cells": 1915594,
+      "genes": 1122,
+      "dtype": "float32",
+      "obs_index": "cell_label",
+      "var_index": "gene_identifier",
+      "sample_rows": 1000,
+      "sample_finite": true,
+      "sample_nonnegative": true,
+      "unique_gene_identifiers": 1122,
+      "source_expression": "measured_MERFISH_panel"
+    },
+    {
+      "file": "data/reference_atlases/Zhuang_2023/expression_matrices/Zhuang-ABCA-2/20230830/Zhuang-ABCA-2-raw.h5ad",
+      "cells": 1915594,
+      "genes": 1122,
+      "dtype": "float32",
+      "obs_index": "cell_label",
+      "var_index": "gene_identifier",
+      "sample_rows": 1000,
+      "sample_finite": true,
+      "sample_nonnegative": true,
+      "unique_gene_identifiers": 1122,
+      "source_expression": "measured_MERFISH_panel",
+      "sample_integer_counts": true
+    },
+    {
+      "file": "data/reference_atlases/Zhuang_2023/expression_matrices/Zhuang-ABCA-3/20230830/Zhuang-ABCA-3-log2.h5ad",
+      "cells": 2081549,
+      "genes": 1122,
+      "dtype": "float32",
+      "obs_index": "cell_label",
+      "var_index": "gene_identifier",
+      "sample_rows": 1000,
+      "sample_finite": true,
+      "sample_nonnegative": true,
+      "unique_gene_identifiers": 1122,
+      "source_expression": "measured_MERFISH_panel"
+    },
+    {
+      "file": "data/reference_atlases/Zhuang_2023/expression_matrices/Zhuang-ABCA-3/20230830/Zhuang-ABCA-3-raw.h5ad",
+      "cells": 2081549,
+      "genes": 1122,
+      "dtype": "float32",
+      "obs_index": "cell_label",
+      "var_index": "gene_identifier",
+      "sample_rows": 1000,
+      "sample_finite": true,
+      "sample_nonnegative": true,
+      "unique_gene_identifiers": 1122,
+      "source_expression": "measured_MERFISH_panel",
+      "sample_integer_counts": true
+    },
+    {
+      "file": "data/reference_atlases/Zhuang_2023/expression_matrices/Zhuang-ABCA-4/20230830/Zhuang-ABCA-4-log2.h5ad",
+      "cells": 215278,
+      "genes": 1122,
+      "dtype": "float32",
+      "obs_index": "cell_label",
+      "var_index": "gene_identifier",
+      "sample_rows": 1000,
+      "sample_finite": true,
+      "sample_nonnegative": true,
+      "unique_gene_identifiers": 1122,
+      "source_expression": "measured_MERFISH_panel"
+    },
+    {
+      "file": "data/reference_atlases/Zhuang_2023/expression_matrices/Zhuang-ABCA-4/20230830/Zhuang-ABCA-4-raw.h5ad",
+      "cells": 215278,
+      "genes": 1122,
+      "dtype": "float32",
+      "obs_index": "cell_label",
+      "var_index": "gene_identifier",
+      "sample_rows": 1000,
+      "sample_finite": true,
+      "sample_nonnegative": true,
+      "unique_gene_identifiers": 1122,
+      "source_expression": "measured_MERFISH_panel",
+      "sample_integer_counts": true
+    }
+  ],
+  "pairs": [
+    {
+      "dataset": "Zhuang-ABCA-1",
+      "same_raw_and_log2_shape": true,
+      "same_all_gene_identifiers": true,
+      "same_first_1000_cell_identifiers": true
+    },
+    {
+      "dataset": "Zhuang-ABCA-2",
+      "same_raw_and_log2_shape": true,
+      "same_all_gene_identifiers": true,
+      "same_first_1000_cell_identifiers": true
+    },
+    {
+      "dataset": "Zhuang-ABCA-3",
+      "same_raw_and_log2_shape": true,
+      "same_all_gene_identifiers": true,
+      "same_first_1000_cell_identifiers": true
+    },
+    {
+      "dataset": "Zhuang-ABCA-4",
+      "same_raw_and_log2_shape": true,
+      "same_all_gene_identifiers": true,
+      "same_first_1000_cell_identifiers": true
+    }
+  ],
+  "inspected_matrices": 8,
+  "expected_matrices": 8,
+  "all_eight_inspected": true
+}

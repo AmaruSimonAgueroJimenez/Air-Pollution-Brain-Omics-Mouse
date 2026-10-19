@@ -1,0 +1,10 @@
+gsm,title,organism,source,description,characteristics,relations
+GSM2465786,Hippocampus_control_rep1,Mus musculus,"Hippocampus,control,replicate1",miRNA expression after saline exposure,tissue: Hippocampus | gender: male | treatment: saline exposure,
+GSM2465787,Hippocampus_control_rep2,Mus musculus,"Hippocampus,control,replicate2",miRNA expression after saline exposure,tissue: Hippocampus | gender: male | treatment: saline exposure,
+GSM2465788,Hippocampus_control_rep3,Mus musculus,"Hippocampus,control,replicate3",miRNA expression after saline exposure,tissue: Hippocampus | gender: male | treatment: saline exposure,
+GSM2465789,Hippocampus_PM2.5_1 mg/kg_rep1,Mus musculus,"Hippocampus,PM2.5, 1 mg/kg,replicate1",miRNA expression after PM2.5 at 1 mg/kg exposure,tissue: Hippocampus | gender: male | treatment: PM2.5 at 1 mg/kg exposure,
+GSM2465790,Hippocampus_PM2.5_1 mg/kg_rep2,Mus musculus,"Hippocampus,PM2.5, 1 mg/kg,replicate2",miRNA expression after PM2.5 at 1 mg/kg exposure,tissue: Hippocampus | gender: male | treatment: PM2.5 at 1 mg/kg exposure,
+GSM2465791,Hippocampus-PM2.5_1 mg/kg_rep3,Mus musculus,"Hippocampus,PM2.5, 1 mg/kg,replicate3",miRNA expression after PM2.5 at 1 mg/kg exposure,tissue: Hippocampus | gender: male | treatment: PM2.5 at 1 mg/kg exposure,
+GSM2465792,Hippocampus-PM2.5_5 mg/kg_rep1,Mus musculus,"Hippocampus,PM2.5, 5 mg/kg,replicate1",miRNA expression after PM2.5 at 5 mg/kg exposure,tissue: Hippocampus | gender: male | treatment: PM2.5 at 5 mg/kg exposure,
+GSM2465793,Hippocampus-PM2.5_5 mg/kg_rep2,Mus musculus,"Hippocampus,PM2.5, 5 mg/kg,replicate2",miRNA expression after PM2.5 at 5 mg/kg exposure,tissue: Hippocampus | gender: male | treatment: PM2.5 at 5 mg/kg exposure,
+GSM2465794,Hippocampus-PM2.5_5 mg/kg_rep3,Mus musculus,"Hippocampus,PM2.5, 5 mg/kg,replicate3",miRNA expression after PM2.5 at 5 mg/kg exposure,tissue: Hippocampus | gender: male | treatment: PM2.5 at 5 mg/kg exposure,

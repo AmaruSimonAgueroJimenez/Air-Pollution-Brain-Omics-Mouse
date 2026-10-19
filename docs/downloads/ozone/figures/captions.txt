@@ -1,0 +1,14 @@
+quality_control
+Quality of the first 200,000 pairs per library and quantification of all pairs. Colors denote starting age/genotype; each bar is one animal. raw_qc_summary.csv and quantification_qc.csv contain all values. No animals were excluded.
+
+pca
+PCA of the 500 highest-variance genes after a variance-stabilizing transformation estimated without using labels. Each point is one animal; color denotes starting age/genotype and shape exposure. PCA is descriptive and does not determine sample exclusions.
+
+volcano
+Wald tests of O₃ versus filtered air, three animals per group within each stratum. The full factorial model provides MLE log fold changes and FDR. Orange/up and blue/down indicate FDR<0.05; other genes are gray. Missing-FDR genes are omitted from plots but retained in tables. These plots do not establish spatial localization of the exposure effect.
+
+ma
+MA plots use apeglm-shrunken effects for visualization. Blue indicates Wald FDR<0.05. Shrinkage stabilizes weakly informed estimates and does not replace contrast evidence or the original p-values.
+
+top_genes_heatmap
+Heatmap of up to 24 genes with the lowest FDR from the global four-degree-of-freedom LRT, standardized per gene after VST. If no genes meet FDR<0.05, it is explicitly exploratory. Columns are 24 animals, not cells. gene_filter.csv and de_global_ozone_LRT.csv document selection and complete results.

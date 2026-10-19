@@ -1,0 +1,41 @@
+{
+  "complete": true,
+  "LRT": {
+    "genotype_dependent_exposure": {
+      "df": 2,
+      "genes": 18537,
+      "tested": 18511,
+      "FDR_005": 0,
+      "full_nonconverged": 0,
+      "reduced_nonconverged": 0,
+      "FDR_005_across_three_LRTs": 0
+    },
+    "age_dependent_exposure": {
+      "df": 2,
+      "genes": 18537,
+      "tested": 18511,
+      "FDR_005": 8,
+      "full_nonconverged": 0,
+      "reduced_nonconverged": 0,
+      "FDR_005_across_three_LRTs": 1
+    },
+    "three_way_interaction": {
+      "df": 1,
+      "genes": 18537,
+      "tested": 18511,
+      "FDR_005": 0,
+      "full_nonconverged": 0,
+      "reduced_nonconverged": 0,
+      "FDR_005_across_three_LRTs": 0
+    }
+  },
+  "GO_terms": 22,
+  "network": {
+    "contrast": "ozone_M3_E4",
+    "nodes": 20,
+    "edges": 15,
+    "Jaccard_threshold": 0.25,
+    "layout": "Deterministic connected-component grid with circular within-component positions"
+  },
+  "figure_exports": 30
+}

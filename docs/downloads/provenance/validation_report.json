@@ -1,0 +1,44 @@
+{
+  "processed_data_valid": true,
+  "datasets": {
+    "GSE297423": {
+      "genes": 56748,
+      "sample_columns": 20,
+      "mapping_inferred_aliases": 1
+    },
+    "GSE145840": {
+      "gene_rows_per_file": {
+        "GSM4337093_Hypothalamus_HFD1.txt.gz": 50508,
+        "GSM4337094_Hypothalamus_HFD2.txt.gz": 50508,
+        "GSM4337095_Hypothalamus_HFD3.txt.gz": 50508,
+        "GSM4337096_Hypothalamus_HFD4.txt.gz": 50508,
+        "GSM4337097_Hypothalamus_FA1.txt.gz": 50417,
+        "GSM4337098_Hypothalamus_FA2.txt.gz": 50417,
+        "GSM4337099_Hypothalamus_FA3.txt.gz": 50417,
+        "GSM4337100_Hypothalamus_FA4.txt.gz": 50417,
+        "GSM4337101_Hypothalamus_PM1.txt.gz": 50417,
+        "GSM4337102_Hypothalamus_PM2.txt.gz": 50417,
+        "GSM4337103_Hypothalamus_PM3.txt.gz": 50417
+      },
+      "common_genes": 50417,
+      "union_genes": 50508,
+      "gene_sets_identical": false,
+      "hypothalamus_samples": 11,
+      "fastq_runs": 11,
+      "note": "Source files have different gene lists. Preserve missing entries; do not assume missing genes have zero counts."
+    },
+    "GSE93967": {
+      "probe_rows": 1268,
+      "samples": 9,
+      "raw_array_files": 9
+    },
+    "E-MTAB-14917": {
+      "genes_in_genotype_result_table": 35275,
+      "runs": 24,
+      "processed_table_is_counts": false
+    }
+  },
+  "verified_files": 136,
+  "manifest_files": 136,
+  "all_downloads_complete": true
+}

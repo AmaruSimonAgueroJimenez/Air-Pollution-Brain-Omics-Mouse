@@ -1,0 +1,32 @@
+{
+  "purpose": "Attempt method/target/result reproduction, not independent biological replication",
+  "miRNA": {
+    "input": "Deposited quantile-normalized continuous signal; same 1245 features as the primary analysis; 9 arrays, 3 per group",
+    "candidate": "One-way three-group ANOVA with residual df = 6; pairwise LSD uses pooled within-group MSE; the protected gate is reported separately",
+    "multiplicity": "Raw pairwise p and BH within 1245 features per contrast exported separately; separate ANOVA family",
+    "scale": "Signal-unit mean differences; no invented log2 scale or fold-change ratios",
+    "zero_within_group_variance": "Nonpositive or numerically zero residual MSE produces withheld tests",
+    "heatmap": "20 largest-variance features among six control/high-dose arrays plus prespecified miR-574-5p if absent; row z scores (ddof = 1), average linkage and Euclidean distance, fixed columns C1–C3/H1–H3; original Figure 6a selection unreported"
+  },
+  "ozone": {
+    "candidate_designs": "All nine candidates are prespecified in replicate_mirna_ozone.R; marginal genotype/age/exposure, additive genotype sensitivity, six-animal old O3 genotype and four 6-animal within-stratum exposures",
+    "normalization": "Existing effective-length/size factors retained from full 24-library tximport dataset; refit dispersions per model/subset; inheritance differs from unknown original preprocessing",
+    "filter": "Fixed primary 18537-gene filter: ≥10 rounded fragments in ≥3 of 24 libraries; original author filter unknown",
+    "outliers": "DESeq2 default minReplicatesForReplace = 7 for author-style candidates; flagged gene counts recorded; no sample removals",
+    "inference": "Convergence checked, Cook filter enabled, independent filtering disabled for complete BH families; source-specific nominal .3/.1 effect criteria applied to unshrunken MLEs",
+    "gene_matching": "Exact symbols only; duplicated candidate symbols represented by highest baseMean (then gene ID), independently of p/effect; nonmatches retained in coverage accounting",
+    "figure1_style": "UpSet counts use one exact-symbol shared universe testable in all 3 candidate factor models and present in the author full genotype gene index; not pooled causal or interaction inference",
+    "limitations": [
+      "Quantifier/annotation and DESeq2 versions differ",
+      "Original exact design/filter/GeneSpring project not deposited",
+      "Author S3 is a selected list; agreement conditional on selection",
+      "Same-source reanalysis is not independent biological replication",
+      "No inferred BBB function, cognition or cell-specific response from bulk expression"
+    ]
+  },
+  "reproduce": [
+    "Rscript scripts/replicate_mirna_ozone.R",
+    ".venv-analysis/bin/python scripts/replicate_mirna_ozone.py --reuse-models"
+  ],
+  "figures": "All individual miRNA animals shown; pointwise 95% intervals distinguished from FDR; full scatter ranges and exact-match denominators; all 7 nonempty UpSet factor patterns, including zeros"
+}

@@ -1,0 +1,498 @@
+[
+  {
+    "file": "results/replication_mirna_ozone/author_ozone_S2_factor_gene_lists.csv.gz",
+    "rows": 4192,
+    "columns": [
+      "factor",
+      "direction",
+      "gene_symbol",
+      "source_table"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/author_ozone_S3_numeric.csv",
+    "rows": 959,
+    "columns": [
+      "source_row",
+      "gene_symbol",
+      "author_log2FC",
+      "author_nominal_p_rounded",
+      "direction",
+      "source_pdf_page",
+      "source_line"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/author_ozone_genotype_table.csv.gz",
+    "rows": 35275,
+    "columns": [
+      "gene_symbol",
+      "baseMean",
+      "log2FoldChange",
+      "lfcSE",
+      "stat",
+      "pvalue",
+      "padj",
+      "diffexpressed"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/mirna_author_statistics_candidates.csv.gz",
+    "rows": 1245,
+    "columns": [
+      "probe_id",
+      "miRNA",
+      "mean_Control",
+      "mean_PM1",
+      "mean_PM5",
+      "within_group_MSE",
+      "residual_df",
+      "valid_residual_variance",
+      "ANOVA_F",
+      "ANOVA_pvalue",
+      "ANOVA_BH_FDR",
+      "PM1_difference",
+      "PM1_LSD_SE",
+      "PM1_LSD_t",
+      "PM1_LSD_pvalue",
+      "PM1_LSD_BH_FDR",
+      "PM1_LSD_CI95_lower",
+      "PM1_LSD_CI95_upper",
+      "PM1_protected_LSD_nominal",
+      "PM5_difference",
+      "PM5_LSD_SE",
+      "PM5_LSD_t",
+      "PM5_LSD_pvalue",
+      "PM5_LSD_BH_FDR",
+      "PM5_LSD_CI95_lower",
+      "PM5_LSD_CI95_upper",
+      "PM5_protected_LSD_nominal"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/mirna_author_targets.csv",
+    "rows": 4,
+    "columns": [
+      "miRNA",
+      "contrast",
+      "mean_difference",
+      "ANOVA_pvalue",
+      "LSD_pvalue",
+      "LSD_BH_FDR",
+      "protected_LSD_nominal",
+      "LSD_CI95_lower",
+      "LSD_CI95_upper",
+      "limma_pvalue",
+      "limma_BH_FDR",
+      "limma_CI95_lower",
+      "limma_CI95_upper"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/mirna_paper_style_heatmap_zscores.tsv",
+    "rows": 21,
+    "columns": [
+      "probe_id",
+      "GSM2465786",
+      "GSM2465787",
+      "GSM2465788",
+      "GSM2465792",
+      "GSM2465793",
+      "GSM2465794"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/mirna_threshold_counts.csv",
+    "rows": 2,
+    "columns": [
+      "contrast",
+      "LSD_nominal_p005",
+      "protected_LSD_nominal",
+      "LSD_BH_FDR005",
+      "limma_BH_FDR005"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/ozone_author_target_effects.csv",
+    "rows": 13,
+    "columns": [
+      "source_row",
+      "gene_symbol",
+      "author_log2FC",
+      "author_nominal_p_rounded",
+      "direction",
+      "source_pdf_page",
+      "source_line",
+      "baseMean",
+      "log2FoldChange",
+      "lfcSE",
+      "stat",
+      "pvalue",
+      "padj",
+      "gene_id",
+      "beta_converged",
+      "all_zero",
+      "pvalue_before_convergence_check",
+      "CI95_lower",
+      "CI95_upper",
+      "author_criteria_selected",
+      "BH_FDR05",
+      "comparison"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/ozone_candidate_M17_E3_exposure_subset.csv.gz",
+    "rows": 18537,
+    "columns": [
+      "baseMean",
+      "log2FoldChange",
+      "lfcSE",
+      "stat",
+      "pvalue",
+      "padj",
+      "gene_id",
+      "gene_symbol",
+      "beta_converged",
+      "all_zero",
+      "pvalue_before_convergence_check",
+      "CI95_lower",
+      "CI95_upper",
+      "author_criteria_selected",
+      "BH_FDR05",
+      "comparison"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/ozone_candidate_M17_E4_exposure_subset.csv.gz",
+    "rows": 18537,
+    "columns": [
+      "baseMean",
+      "log2FoldChange",
+      "lfcSE",
+      "stat",
+      "pvalue",
+      "padj",
+      "gene_id",
+      "gene_symbol",
+      "beta_converged",
+      "all_zero",
+      "pvalue_before_convergence_check",
+      "CI95_lower",
+      "CI95_upper",
+      "author_criteria_selected",
+      "BH_FDR05",
+      "comparison"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/ozone_candidate_M3_E3_exposure_subset.csv.gz",
+    "rows": 18537,
+    "columns": [
+      "baseMean",
+      "log2FoldChange",
+      "lfcSE",
+      "stat",
+      "pvalue",
+      "padj",
+      "gene_id",
+      "gene_symbol",
+      "beta_converged",
+      "all_zero",
+      "pvalue_before_convergence_check",
+      "CI95_lower",
+      "CI95_upper",
+      "author_criteria_selected",
+      "BH_FDR05",
+      "comparison"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/ozone_candidate_M3_E4_exposure_subset.csv.gz",
+    "rows": 18537,
+    "columns": [
+      "baseMean",
+      "log2FoldChange",
+      "lfcSE",
+      "stat",
+      "pvalue",
+      "padj",
+      "gene_id",
+      "gene_symbol",
+      "beta_converged",
+      "all_zero",
+      "pvalue_before_convergence_check",
+      "CI95_lower",
+      "CI95_upper",
+      "author_criteria_selected",
+      "BH_FDR05",
+      "comparison"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/ozone_candidate_age_pooled.csv.gz",
+    "rows": 18537,
+    "columns": [
+      "baseMean",
+      "log2FoldChange",
+      "lfcSE",
+      "stat",
+      "pvalue",
+      "padj",
+      "gene_id",
+      "gene_symbol",
+      "beta_converged",
+      "all_zero",
+      "pvalue_before_convergence_check",
+      "CI95_lower",
+      "CI95_upper",
+      "author_criteria_selected",
+      "BH_FDR05",
+      "comparison"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/ozone_candidate_exposure_pooled.csv.gz",
+    "rows": 18537,
+    "columns": [
+      "baseMean",
+      "log2FoldChange",
+      "lfcSE",
+      "stat",
+      "pvalue",
+      "padj",
+      "gene_id",
+      "gene_symbol",
+      "beta_converged",
+      "all_zero",
+      "pvalue_before_convergence_check",
+      "CI95_lower",
+      "CI95_upper",
+      "author_criteria_selected",
+      "BH_FDR05",
+      "comparison"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/ozone_candidate_genotype_additive.csv.gz",
+    "rows": 18537,
+    "columns": [
+      "baseMean",
+      "log2FoldChange",
+      "lfcSE",
+      "stat",
+      "pvalue",
+      "padj",
+      "gene_id",
+      "gene_symbol",
+      "beta_converged",
+      "all_zero",
+      "pvalue_before_convergence_check",
+      "CI95_lower",
+      "CI95_upper",
+      "author_criteria_selected",
+      "BH_FDR05",
+      "comparison"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/ozone_candidate_genotype_pooled.csv.gz",
+    "rows": 18537,
+    "columns": [
+      "baseMean",
+      "log2FoldChange",
+      "lfcSE",
+      "stat",
+      "pvalue",
+      "padj",
+      "gene_id",
+      "gene_symbol",
+      "beta_converged",
+      "all_zero",
+      "pvalue_before_convergence_check",
+      "CI95_lower",
+      "CI95_upper",
+      "author_criteria_selected",
+      "BH_FDR05",
+      "comparison"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/ozone_candidate_old_ozone_genotype.csv.gz",
+    "rows": 18537,
+    "columns": [
+      "baseMean",
+      "log2FoldChange",
+      "lfcSE",
+      "stat",
+      "pvalue",
+      "padj",
+      "gene_id",
+      "gene_symbol",
+      "beta_converged",
+      "all_zero",
+      "pvalue_before_convergence_check",
+      "CI95_lower",
+      "CI95_upper",
+      "author_criteria_selected",
+      "BH_FDR05",
+      "comparison"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/ozone_concordance_genotype_additive.csv.gz",
+    "rows": 15663,
+    "columns": [
+      "gene_symbol",
+      "baseMean_author",
+      "log2FoldChange_author",
+      "lfcSE_author",
+      "stat_author",
+      "pvalue_author",
+      "padj_author",
+      "diffexpressed",
+      "baseMean_ours",
+      "log2FoldChange_ours",
+      "lfcSE_ours",
+      "stat_ours",
+      "pvalue_ours",
+      "padj_ours",
+      "gene_id",
+      "beta_converged",
+      "all_zero",
+      "pvalue_before_convergence_check",
+      "CI95_lower",
+      "CI95_upper",
+      "author_criteria_selected",
+      "BH_FDR05",
+      "comparison",
+      "author_selected",
+      "ours_selected"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/ozone_concordance_genotype_pooled.csv.gz",
+    "rows": 15663,
+    "columns": [
+      "gene_symbol",
+      "baseMean_author",
+      "log2FoldChange_author",
+      "lfcSE_author",
+      "stat_author",
+      "pvalue_author",
+      "padj_author",
+      "diffexpressed",
+      "baseMean_ours",
+      "log2FoldChange_ours",
+      "lfcSE_ours",
+      "stat_ours",
+      "pvalue_ours",
+      "padj_ours",
+      "gene_id",
+      "beta_converged",
+      "all_zero",
+      "pvalue_before_convergence_check",
+      "CI95_lower",
+      "CI95_upper",
+      "author_criteria_selected",
+      "BH_FDR05",
+      "comparison",
+      "author_selected",
+      "ours_selected"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/ozone_concordance_old_ozone_genotype.csv.gz",
+    "rows": 858,
+    "columns": [
+      "source_row",
+      "gene_symbol",
+      "author_log2FC",
+      "author_nominal_p_rounded",
+      "direction",
+      "source_pdf_page",
+      "source_line",
+      "baseMean",
+      "log2FoldChange",
+      "lfcSE",
+      "stat",
+      "pvalue",
+      "padj",
+      "gene_id",
+      "beta_converged",
+      "all_zero",
+      "pvalue_before_convergence_check",
+      "CI95_lower",
+      "CI95_upper",
+      "author_criteria_selected",
+      "BH_FDR05",
+      "comparison"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/ozone_factor_membership_common_universe.csv.gz",
+    "rows": 15661,
+    "columns": [
+      "gene_symbol",
+      "author_genotype_up",
+      "ours_genotype_up",
+      "author_age_up",
+      "ours_age_up",
+      "author_exposure_up",
+      "ours_exposure_up",
+      "author_genotype_down",
+      "ours_genotype_down",
+      "author_age_down",
+      "ours_age_down",
+      "author_exposure_down",
+      "ours_exposure_down"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/ozone_factor_upset_counts.csv",
+    "rows": 28,
+    "columns": [
+      "direction",
+      "source",
+      "pattern",
+      "genes",
+      "universe"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/ozone_sample_source_mapping.csv",
+    "rows": 24,
+    "columns": [
+      "sample_id",
+      "source_name",
+      "run",
+      "age",
+      "genotype",
+      "exposure",
+      "sex",
+      "tissue",
+      "strain",
+      "fastq1",
+      "fastq2",
+      "group",
+      "Source Name",
+      "Comment[ENA_RUN]",
+      "Characteristics[age]",
+      "Characteristics[genotype]",
+      "Characteristics[environmental stress]",
+      "Characteristics[organism part]"
+    ]
+  },
+  {
+    "file": "results/replication_mirna_ozone/paper_replication_audit.csv",
+    "rows": 5,
+    "columns": [
+      "study",
+      "source_claim",
+      "original_assay",
+      "attempt",
+      "observed",
+      "status",
+      "limitation"
+    ]
+  }
+]

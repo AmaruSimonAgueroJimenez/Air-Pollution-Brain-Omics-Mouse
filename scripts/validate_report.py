@@ -35,7 +35,11 @@ class Links(HTMLParser):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--allow-incomplete-ozone", action="store_true")
+    parser.add_argument("--published", action="store_true", help="Validate the public /docs tree")
     args = parser.parse_args()
+    global SITE
+    if args.published:
+        SITE = ROOT / "docs"
     errors, checks = [], {}
     pages = sorted((ROOT / "docs").glob("*.qmd")) + sorted((ROOT / "docs/es").glob("*.qmd"))
     for page in pages:
@@ -51,7 +55,7 @@ def main():
     widget_dependencies = []
     for path in SITE.rglob("*.html"):
         # Downloaded QC reports are provenance, not authored report pages.
-        if "downloads" in path.relative_to(SITE).parts:
+        if any(part in {"downloads", "_site", ".quarto", "_freeze"} for part in path.relative_to(SITE).parts):
             continue
         source = path.read_text()
         if "requirejs@" in source or "jquery@" in source or "define('jquery'" in source:
@@ -65,6 +69,8 @@ def main():
             parts = urlsplit(link)
             if parts.scheme or parts.netloc or link.startswith("data:"):
                 continue
+            if parts.path.startswith("/"):
+                errors.append(f"Root-absolute URL incompatible with a project Pages path in {path.relative_to(SITE)}: {link}")
             target = (SITE / unquote(parts.path).lstrip("/")) if parts.path.startswith("/") else path.parent / unquote(parts.path)
             if not parts.path:
                 target = path
@@ -85,6 +91,9 @@ def main():
         "results/hypothalamus/independent_deseq2_check/summary.json",
         "results/spatial_reference/validation_checks.json",
         "results/enrichment/validation_checks.json",
+        "results/advanced_omics/validation.json",
+        "results/replication_pm/validation.json",
+        "results/replication_mirna_ozone/validation.json",
     ]
     for relative in expected:
         if not (ROOT / relative).exists():
@@ -98,6 +107,16 @@ def main():
         if path.exists() and not json.loads(path.read_text()).get("all_checks_passed", False):
             errors.append("Analysis audit reports unsuccessful checks: " + relative)
     r_check = ROOT / "results/hypothalamus/independent_deseq2_check/summary.json"
+    for name in ("advanced_omics", "replication_pm", "replication_mirna_ozone"):
+        audit = ROOT / "results" / name / "validation.json"
+        if audit.exists() and not json.loads(audit.read_text()).get("passed", False):
+            errors.append("Expanded analysis validation has not passed: " + name)
+    if args.published:
+        if not (SITE / ".nojekyll").exists():
+            errors.append("Public /docs is missing .nojekyll")
+        manifest_path = SITE / "pages-manifest.json"
+        if not manifest_path.exists():
+            errors.append("Public /docs is missing its asset manifest")
     if r_check.exists():
         implementation_check = json.loads(r_check.read_text())
         if not all(implementation_check.get(k, False) for k in ("primary_analysis_unchanged", "same_gene_universe", "all_descriptive_tolerances_met")):
@@ -126,10 +145,11 @@ def main():
     result = {
         "checked_at": datetime.now(timezone.utc).isoformat(),
         "scope": "Compiled local targets, source syntax and required artifacts; visual review is separate",
+        "site_root": str(SITE.relative_to(ROOT)),
         "allows_incomplete_ozone": args.allow_incomplete_ozone,
         "checks": checks, "errors": errors, "passed_within_checked_scope": not errors,
     }
-    destination = ROOT / "results/report_validation/compiled_report_checks.json"
+    destination = ROOT / "results/report_validation" / ("published_report_checks.json" if args.published else "compiled_report_checks.json")
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))

@@ -1,0 +1,110 @@
+{
+  "analysis": "GSE145840 hypothalamus primary PM versus filtered-air contrast",
+  "input_sources": [
+    {
+      "sample": "GSM4337097",
+      "label": "FA1",
+      "path": "data/GSE145840/processed/GSM4337097_Hypothalamus_FA1.txt.gz",
+      "bytes": 244170,
+      "sha256": "f4598dfae1113800a73ff69dbcb01683a87cbd2795e4ef81adca721f17e4aaea",
+      "gene_rows": 50417
+    },
+    {
+      "sample": "GSM4337098",
+      "label": "FA2",
+      "path": "data/GSE145840/processed/GSM4337098_Hypothalamus_FA2.txt.gz",
+      "bytes": 241648,
+      "sha256": "4eb8d52881f3fec98195077e5835e8f68214a5b94e383014f2a25f53902990a2",
+      "gene_rows": 50417
+    },
+    {
+      "sample": "GSM4337099",
+      "label": "FA3",
+      "path": "data/GSE145840/processed/GSM4337099_Hypothalamus_FA3.txt.gz",
+      "bytes": 242355,
+      "sha256": "e380dc35dc0d520819e965aff8e20959223d6f62ee1d2192c009ba457e6c5c84",
+      "gene_rows": 50417
+    },
+    {
+      "sample": "GSM4337100",
+      "label": "FA4",
+      "path": "data/GSE145840/processed/GSM4337100_Hypothalamus_FA4.txt.gz",
+      "bytes": 244846,
+      "sha256": "bb094b3a9e3042f83b75ca051e4bb214c9774372f985a9d3d17655003d09a484",
+      "gene_rows": 50417
+    },
+    {
+      "sample": "GSM4337101",
+      "label": "PM1",
+      "path": "data/GSE145840/processed/GSM4337101_Hypothalamus_PM1.txt.gz",
+      "bytes": 244622,
+      "sha256": "09915e7e684574df5a43aba628c385e4816d15c651ba65794bf61964a7ea62a4",
+      "gene_rows": 50417
+    },
+    {
+      "sample": "GSM4337102",
+      "label": "PM2",
+      "path": "data/GSE145840/processed/GSM4337102_Hypothalamus_PM2.txt.gz",
+      "bytes": 243823,
+      "sha256": "3700eec8abd3000c47250bbfba72e0a4f8b6f5c692054d19c15deb50ad8a1e7f",
+      "gene_rows": 50417
+    },
+    {
+      "sample": "GSM4337103",
+      "label": "PM3",
+      "path": "data/GSE145840/processed/GSM4337103_Hypothalamus_PM3.txt.gz",
+      "bytes": 244535,
+      "sha256": "5d64772d0748816ae7ba458645896299a0df73a7a1be506d5b4a562679a0e00b",
+      "gene_rows": 50417
+    }
+  ],
+  "source_metadata": "metadata/GSE145840/samples.csv",
+  "sample_unit": "one deposited mouse hypothalamus RNA-seq library per biological replicate",
+  "count_validation": "50417 unique gene symbols per sample; identical gene sets across seven primary samples; integer nonnegative counts; no missing values",
+  "analysis_gene_universe": "19611 genes with count >=10 in >=3 primary samples",
+  "design": "~condition",
+  "reference_condition": "FA",
+  "contrast": [
+    "condition",
+    "PM",
+    "FA"
+  ],
+  "estimation": "PyDESeq2 negative-binomial generalized linear model with gene-wise dispersion estimation, dispersion trend and MAP shrinkage",
+  "size_factor_method": "DESeq2 median-of-ratios on prefiltered genes (ratio)",
+  "normalization_export": "All 50417 source genes divided by the size factors estimated from prefiltered genes",
+  "test": "Two-sided Wald test of log2 fold change = 0; default independent filtering; Benjamini-Hochberg FDR alpha=0.05",
+  "cooks_filter": true,
+  "refit_cooks": true,
+  "min_replicates_for_count_replacement": 7,
+  "manual_sample_or_gene_outlier_deletion": false,
+  "lfc_shrinkage": "PyDESeq2 apeGLM-style adaptive Cauchy prior; failed/nonconverged estimates are NA. Original MLE log2FC, SE, statistic, p-value and adjusted p-value are saved independently before shrinkage.",
+  "shrinkage_status": "completed",
+  "pca": "DESeq2 VST with use_design=True, top 500 genes by VST variance; mean-centered genes, no variance scaling; full singular value decomposition",
+  "sample_correlation": "Spearman correlation of normalized retained genes; correlation distance=1-rho; average-linkage ordering for figure only",
+  "sample_distance": "Euclidean distance across all variance-stabilized retained genes",
+  "heatmap": "Top 30 genes by adjusted p-value then raw p-value; within-gene VST mean centering and sample-SD scaling",
+  "selected_genes": [
+    "Gfap",
+    "Ahr"
+  ],
+  "cpu_process_limit": 6,
+  "blas_threads_per_process": 1,
+  "hfd_analysis": "Not performed; excluded from the prespecified primary contrast",
+  "leave_one_out_sensitivity": "completed",
+  "random_seed": "No stochastic method used (PCA full SVD, deterministic plotting offsets)",
+  "versions": {
+    "pydeseq2": "0.5.4",
+    "anndata": "0.13.4",
+    "numpy": "2.4.3",
+    "pandas": "2.3.3",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.8.0",
+    "matplotlib": "3.10.8"
+  },
+  "python": "3.14.3",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "script": "scripts/analyze_hypothalamus.py",
+  "script_sha256": "5b1aa57365c5a03d28cb5e39bc18e2741c20c8f4235e016a2f40d6200da89e69",
+  "publisher_target": "Unspecified; provisional general scientific figures, not certified for a journal",
+  "warnings": []
+}

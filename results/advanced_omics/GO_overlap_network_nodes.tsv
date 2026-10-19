@@ -1,0 +1,21 @@
+node	GO_ID	term_name	NES	algorithmic_FDR	rank_member_genes
+1	GO:0006119	oxidative phosphorylation	3.205243449	0	109
+2	GO:0032543	mitochondrial translation	3.133108853	0	107
+3	GO:0015986	proton motive force-driven ATP synthesis	3.089434621	0	67
+4	GO:0034242	negative regulation of syncytium formation by plasma membrane fusion	3.060512507	0	50
+5	GO:1901740	negative regulation of myoblast fusion	3.057176673	0	47
+6	GO:0042776	proton motive force-driven mitochondrial ATP synthesis	3.050006902	0	63
+7	GO:0140053	mitochondrial gene expression	3.037458501	0	144
+8	GO:0140236	translation at presynapse	2.998434379	0	47
+9	GO:0140241	translation at synapse	2.976603076	0	48
+10	GO:0140242	translation at postsynapse	2.976603076	0	48
+11	GO:2001222	regulation of neuron migration	-2.260369762	0.002134891598	55
+12	GO:0060323	head morphogenesis	-2.264343828	0.003202337397	45
+13	GO:0031114	regulation of microtubule depolymerization	-2.215896754	0.003202337397	42
+14	GO:0003300	cardiac muscle hypertrophy	-2.224469623	0.003330430893	37
+15	GO:1900452	regulation of long-term synaptic depression	-2.231056249	0.003522571136	26
+16	GO:0009791	post-embryonic development	-2.164941163	0.004757758418	116
+17	GO:0060998	regulation of dendritic spine development	-2.167544021	0.00482813946	89
+18	GO:0010171	body morphogenesis	-2.196162162	0.004940749126	56
+19	GO:0007416	synapse assembly	-2.158263789	0.004952948507	121
+20	GO:0048008	platelet-derived growth factor receptor signaling pathway	-2.278982914	0.005123739835	42

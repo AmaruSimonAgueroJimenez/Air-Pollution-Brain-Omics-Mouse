@@ -1,0 +1,901 @@
+{
+  "checked_at_UTC": "2026-10-19T01:30:26.759638+00:00",
+  "passed": true,
+  "scope": "Actual browser interaction and visual inspection, combined with source-to-site figure-copy checks; independent statistical audits are separate.",
+  "browsers": {
+    "Chrome": "1728 x 865 desktop viewport",
+    "in_app_browser": "Approximately 400 x 725 narrow viewport"
+  },
+  "completed_site_pages_checked_in_Chrome": [
+    "index.html",
+    "cortex.html",
+    "ozone.html",
+    "enrichment.html",
+    "viewer.html",
+    "assets/viewer/index.html"
+  ],
+  "final_completed_output_checks": [
+    "Overview shows all four studies, ozone 0 / 399 / 2 / 3 and global LRT 24",
+    "Ozone all-read QC, completed model and PCA figure render with readable captions/tables",
+    "Enrichment page shows six of six entries",
+    "Quarto-embedded viewer loads measured Tll1 cells and explicit simulated scenario"
+  ],
+  "viewer_interactions_verified": [
+    "Gene switching: Tll1, nonsignificant Gfap, reference-only Chat",
+    "Central/lower/upper group-effect scenario choices and scenario label",
+    "Reference-only panel suppresses unavailable scenario and its colorbar",
+    "Class filter: Astro-Epen 8012 cells",
+    "Empty class/substructure/positive-count filter yields explicit empty-state message",
+    "Restoring all classes/substructures and zero-count display restores 37811 cells",
+    "Native camera drag rotates both panels together; reset restores the camera",
+    "Whole-brain anatomical context retains only hypothalamic expression",
+    "Hide-zero display shows 667 Tll1-positive cells, same positions in both panels",
+    "Narrow viewport stacks panels and preserves controls; report navigation dropdown works"
+  ],
+  "console": {
+    "no_new_errors_after_fixed_fresh_navigations": true,
+    "fresh_navigation_window_begins_UTC": "2026-10-19T01:16:00Z",
+    "retained_historical_errors_excluded_UTC": [
+      "2026-10-19T00:41:00.894Z",
+      "2026-10-19T00:42:58.553Z",
+      "2026-10-19T00:47:51.277Z"
+    ]
+  },
+  "proof": {
+    "path": "results/report_validation/viewer_browser_proof.png",
+    "sha256": "1ac82ffd4720e9884dabb1a4d311f5ea38b3a38ce3dea4352db97a97b5a5df54",
+    "display": "Tll1 central scenario, measured-zero counts hidden, all 667 positive cells shown in each panel"
+  },
+  "figure_exports_checked": 168,
+  "figure_copy_checks": [
+    {
+      "source": "results/spatial_viewer/reference_vs_simulation.svg",
+      "site": "docs/_site/assets/figures/spatial_viewer/reference_vs_simulation.svg",
+      "matches": true
+    },
+    {
+      "source": "results/spatial_viewer/reference_vs_simulation.pdf",
+      "site": "docs/_site/assets/figures/spatial_viewer/reference_vs_simulation.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/spatial_viewer/reference_vs_simulation.png",
+      "site": "docs/_site/assets/figures/spatial_viewer/reference_vs_simulation.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/hypothalamus/figures/GSEA_curve_GO_0010770.pdf",
+      "site": "docs/_site/assets/figures/enrichment/hypothalamus/GSEA_curve_GO_0010770.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/hypothalamus/figures/GSEA_curve_GO_0010770.png",
+      "site": "docs/_site/assets/figures/enrichment/hypothalamus/GSEA_curve_GO_0010770.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/hypothalamus/figures/GSEA_curve_GO_0010770.svg",
+      "site": "docs/_site/assets/figures/enrichment/hypothalamus/GSEA_curve_GO_0010770.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/hypothalamus/figures/ORA_significant_terms.png",
+      "site": "docs/_site/assets/figures/enrichment/hypothalamus/ORA_significant_terms.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/hypothalamus/figures/GSEA_curve_GO_0001539.svg",
+      "site": "docs/_site/assets/figures/enrichment/hypothalamus/GSEA_curve_GO_0001539.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/hypothalamus/figures/GSEA_terms.svg",
+      "site": "docs/_site/assets/figures/enrichment/hypothalamus/GSEA_terms.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/hypothalamus/figures/ORA_significant_terms.pdf",
+      "site": "docs/_site/assets/figures/enrichment/hypothalamus/ORA_significant_terms.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/hypothalamus/figures/GSEA_terms.png",
+      "site": "docs/_site/assets/figures/enrichment/hypothalamus/GSEA_terms.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/hypothalamus/figures/GSEA_curve_GO_0001539.pdf",
+      "site": "docs/_site/assets/figures/enrichment/hypothalamus/GSEA_curve_GO_0001539.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/hypothalamus/figures/GSEA_terms.pdf",
+      "site": "docs/_site/assets/figures/enrichment/hypothalamus/GSEA_terms.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/hypothalamus/figures/GSEA_curve_GO_0001539.png",
+      "site": "docs/_site/assets/figures/enrichment/hypothalamus/GSEA_curve_GO_0001539.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/hypothalamus/figures/ORA_significant_terms.svg",
+      "site": "docs/_site/assets/figures/enrichment/hypothalamus/ORA_significant_terms.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E3/figures/GSEA_curve_GO_0046460.svg",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E3/GSEA_curve_GO_0046460.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E3/figures/GSEA_curve_GO_0007602.svg",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E3/GSEA_curve_GO_0007602.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E3/figures/ORA_significant_terms.png",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E3/ORA_significant_terms.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E3/figures/GSEA_terms.svg",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E3/GSEA_terms.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E3/figures/ORA_significant_terms.pdf",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E3/ORA_significant_terms.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E3/figures/GSEA_terms.png",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E3/GSEA_terms.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E3/figures/GSEA_terms.pdf",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E3/GSEA_terms.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E3/figures/ORA_significant_terms.svg",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E3/ORA_significant_terms.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E3/figures/GSEA_curve_GO_0046460.png",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E3/GSEA_curve_GO_0046460.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E3/figures/GSEA_curve_GO_0007602.png",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E3/GSEA_curve_GO_0007602.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E3/figures/GSEA_curve_GO_0046460.pdf",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E3/GSEA_curve_GO_0046460.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E3/figures/GSEA_curve_GO_0007602.pdf",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E3/GSEA_curve_GO_0007602.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E4/figures/GSEA_curve_GO_0002181.svg",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E4/GSEA_curve_GO_0002181.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E4/figures/ORA_significant_terms.png",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E4/ORA_significant_terms.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E4/figures/GSEA_curve_GO_2001222.svg",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E4/GSEA_curve_GO_2001222.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E4/figures/GSEA_terms.svg",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E4/GSEA_terms.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E4/figures/ORA_significant_terms.pdf",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E4/ORA_significant_terms.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E4/figures/GSEA_terms.png",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E4/GSEA_terms.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E4/figures/GSEA_curve_GO_2001222.png",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E4/GSEA_curve_GO_2001222.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E4/figures/GSEA_terms.pdf",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E4/GSEA_terms.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E4/figures/GSEA_curve_GO_2001222.pdf",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E4/GSEA_curve_GO_2001222.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E4/figures/ORA_significant_terms.svg",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E4/ORA_significant_terms.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E4/figures/GSEA_curve_GO_0002181.pdf",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E4/GSEA_curve_GO_0002181.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M3_E4/figures/GSEA_curve_GO_0002181.png",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M3_E4/GSEA_curve_GO_0002181.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/cortex/figures/GSEA_curve_GO_0070192.svg",
+      "site": "docs/_site/assets/figures/enrichment/cortex/GSEA_curve_GO_0070192.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/cortex/figures/GSEA_curve_GO_0070192.pdf",
+      "site": "docs/_site/assets/figures/enrichment/cortex/GSEA_curve_GO_0070192.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/cortex/figures/GSEA_curve_GO_0070192.png",
+      "site": "docs/_site/assets/figures/enrichment/cortex/GSEA_curve_GO_0070192.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/cortex/figures/GSEA_curve_GO_0006457.svg",
+      "site": "docs/_site/assets/figures/enrichment/cortex/GSEA_curve_GO_0006457.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/cortex/figures/ORA_significant_terms.png",
+      "site": "docs/_site/assets/figures/enrichment/cortex/ORA_significant_terms.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/cortex/figures/GSEA_terms.svg",
+      "site": "docs/_site/assets/figures/enrichment/cortex/GSEA_terms.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/cortex/figures/ORA_significant_terms.pdf",
+      "site": "docs/_site/assets/figures/enrichment/cortex/ORA_significant_terms.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/cortex/figures/GSEA_terms.png",
+      "site": "docs/_site/assets/figures/enrichment/cortex/GSEA_terms.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/cortex/figures/GSEA_terms.pdf",
+      "site": "docs/_site/assets/figures/enrichment/cortex/GSEA_terms.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/cortex/figures/ORA_significant_terms.svg",
+      "site": "docs/_site/assets/figures/enrichment/cortex/ORA_significant_terms.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/cortex/figures/GSEA_curve_GO_0006457.pdf",
+      "site": "docs/_site/assets/figures/enrichment/cortex/GSEA_curve_GO_0006457.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/cortex/figures/GSEA_curve_GO_0006457.png",
+      "site": "docs/_site/assets/figures/enrichment/cortex/GSEA_curve_GO_0006457.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E3/figures/GSEA_curve_GO_0002088.svg",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E3/GSEA_curve_GO_0002088.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E3/figures/GSEA_curve_GO_0002088.png",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E3/GSEA_curve_GO_0002088.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E3/figures/GSEA_curve_GO_0002088.pdf",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E3/GSEA_curve_GO_0002088.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E3/figures/GSEA_curve_GO_0002181.svg",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E3/GSEA_curve_GO_0002181.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E3/figures/ORA_significant_terms.png",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E3/ORA_significant_terms.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E3/figures/GSEA_terms.svg",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E3/GSEA_terms.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E3/figures/ORA_significant_terms.pdf",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E3/ORA_significant_terms.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E3/figures/GSEA_terms.png",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E3/GSEA_terms.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E3/figures/GSEA_terms.pdf",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E3/GSEA_terms.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E3/figures/ORA_significant_terms.svg",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E3/ORA_significant_terms.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E3/figures/GSEA_curve_GO_0002181.pdf",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E3/GSEA_curve_GO_0002181.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E3/figures/GSEA_curve_GO_0002181.png",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E3/GSEA_curve_GO_0002181.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E4/figures/GSEA_curve_GO_0140236.pdf",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E4/GSEA_curve_GO_0140236.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E4/figures/GSEA_curve_GO_0140236.png",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E4/GSEA_curve_GO_0140236.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E4/figures/GSEA_curve_GO_0001578.svg",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E4/GSEA_curve_GO_0001578.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E4/figures/GSEA_curve_GO_0001578.png",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E4/GSEA_curve_GO_0001578.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E4/figures/GSEA_curve_GO_0001578.pdf",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E4/GSEA_curve_GO_0001578.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E4/figures/GSEA_curve_GO_0140236.svg",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E4/GSEA_curve_GO_0140236.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E4/figures/ORA_significant_terms.png",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E4/ORA_significant_terms.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E4/figures/GSEA_terms.svg",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E4/GSEA_terms.svg",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E4/figures/ORA_significant_terms.pdf",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E4/ORA_significant_terms.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E4/figures/GSEA_terms.png",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E4/GSEA_terms.png",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E4/figures/GSEA_terms.pdf",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E4/GSEA_terms.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/enrichment/ozone_M17_E4/figures/ORA_significant_terms.svg",
+      "site": "docs/_site/assets/figures/enrichment/ozone_M17_E4/ORA_significant_terms.svg",
+      "matches": true
+    },
+    {
+      "source": "results/hypothalamus/figures/volcano.svg",
+      "site": "docs/_site/assets/figures/hypothalamus/volcano.svg",
+      "matches": true
+    },
+    {
+      "source": "results/hypothalamus/figures/ma.pdf",
+      "site": "docs/_site/assets/figures/hypothalamus/ma.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/hypothalamus/figures/selected_gene_counts.pdf",
+      "site": "docs/_site/assets/figures/hypothalamus/selected_gene_counts.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/hypothalamus/figures/ma.png",
+      "site": "docs/_site/assets/figures/hypothalamus/ma.png",
+      "matches": true
+    },
+    {
+      "source": "results/hypothalamus/figures/selected_gene_counts.png",
+      "site": "docs/_site/assets/figures/hypothalamus/selected_gene_counts.png",
+      "matches": true
+    },
+    {
+      "source": "results/hypothalamus/figures/ma.svg",
+      "site": "docs/_site/assets/figures/hypothalamus/ma.svg",
+      "matches": true
+    },
+    {
+      "source": "results/hypothalamus/figures/selected_gene_counts.svg",
+      "site": "docs/_site/assets/figures/hypothalamus/selected_gene_counts.svg",
+      "matches": true
+    },
+    {
+      "source": "results/hypothalamus/figures/volcano.png",
+      "site": "docs/_site/assets/figures/hypothalamus/volcano.png",
+      "matches": true
+    },
+    {
+      "source": "results/hypothalamus/figures/volcano.pdf",
+      "site": "docs/_site/assets/figures/hypothalamus/volcano.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/hypothalamus/figures/pca.png",
+      "site": "docs/_site/assets/figures/hypothalamus/pca.png",
+      "matches": true
+    },
+    {
+      "source": "results/hypothalamus/figures/sample_quality.png",
+      "site": "docs/_site/assets/figures/hypothalamus/sample_quality.png",
+      "matches": true
+    },
+    {
+      "source": "results/hypothalamus/figures/sample_quality.pdf",
+      "site": "docs/_site/assets/figures/hypothalamus/sample_quality.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/hypothalamus/figures/pca.pdf",
+      "site": "docs/_site/assets/figures/hypothalamus/pca.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/hypothalamus/figures/heatmap_top30.svg",
+      "site": "docs/_site/assets/figures/hypothalamus/heatmap_top30.svg",
+      "matches": true
+    },
+    {
+      "source": "results/hypothalamus/figures/sample_similarity.png",
+      "site": "docs/_site/assets/figures/hypothalamus/sample_similarity.png",
+      "matches": true
+    },
+    {
+      "source": "results/hypothalamus/figures/sample_similarity.pdf",
+      "site": "docs/_site/assets/figures/hypothalamus/sample_similarity.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/hypothalamus/figures/sample_similarity.svg",
+      "site": "docs/_site/assets/figures/hypothalamus/sample_similarity.svg",
+      "matches": true
+    },
+    {
+      "source": "results/hypothalamus/figures/heatmap_top30.png",
+      "site": "docs/_site/assets/figures/hypothalamus/heatmap_top30.png",
+      "matches": true
+    },
+    {
+      "source": "results/hypothalamus/figures/sample_quality.svg",
+      "site": "docs/_site/assets/figures/hypothalamus/sample_quality.svg",
+      "matches": true
+    },
+    {
+      "source": "results/hypothalamus/figures/pca.svg",
+      "site": "docs/_site/assets/figures/hypothalamus/pca.svg",
+      "matches": true
+    },
+    {
+      "source": "results/hypothalamus/figures/heatmap_top30.pdf",
+      "site": "docs/_site/assets/figures/hypothalamus/heatmap_top30.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/spatial_reference/figures/Tll1_detection_by_class.svg",
+      "site": "docs/_site/assets/figures/spatial_reference/Tll1_detection_by_class.svg",
+      "matches": true
+    },
+    {
+      "source": "results/spatial_reference/figures/cell_class_composition.svg",
+      "site": "docs/_site/assets/figures/spatial_reference/cell_class_composition.svg",
+      "matches": true
+    },
+    {
+      "source": "results/spatial_reference/figures/Tll1_detection_by_substructure.svg",
+      "site": "docs/_site/assets/figures/spatial_reference/Tll1_detection_by_substructure.svg",
+      "matches": true
+    },
+    {
+      "source": "results/spatial_reference/figures/Tll1_detection_by_substructure.png",
+      "site": "docs/_site/assets/figures/spatial_reference/Tll1_detection_by_substructure.png",
+      "matches": true
+    },
+    {
+      "source": "results/spatial_reference/figures/cell_class_composition.pdf",
+      "site": "docs/_site/assets/figures/spatial_reference/cell_class_composition.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/spatial_reference/figures/Tll1_detection_by_substructure.pdf",
+      "site": "docs/_site/assets/figures/spatial_reference/Tll1_detection_by_substructure.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/spatial_reference/figures/cell_class_composition.png",
+      "site": "docs/_site/assets/figures/spatial_reference/cell_class_composition.png",
+      "matches": true
+    },
+    {
+      "source": "results/spatial_reference/figures/Tll1_detection_by_class.pdf",
+      "site": "docs/_site/assets/figures/spatial_reference/Tll1_detection_by_class.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/spatial_reference/figures/Tll1_detection_by_class.png",
+      "site": "docs/_site/assets/figures/spatial_reference/Tll1_detection_by_class.png",
+      "matches": true
+    },
+    {
+      "source": "results/ozone/figures/quality_control.svg",
+      "site": "docs/_site/assets/figures/ozone/quality_control.svg",
+      "matches": true
+    },
+    {
+      "source": "results/ozone/figures/top_genes_heatmap.svg",
+      "site": "docs/_site/assets/figures/ozone/top_genes_heatmap.svg",
+      "matches": true
+    },
+    {
+      "source": "results/ozone/figures/volcano.svg",
+      "site": "docs/_site/assets/figures/ozone/volcano.svg",
+      "matches": true
+    },
+    {
+      "source": "results/ozone/figures/ma.pdf",
+      "site": "docs/_site/assets/figures/ozone/ma.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/ozone/figures/ma.png",
+      "site": "docs/_site/assets/figures/ozone/ma.png",
+      "matches": true
+    },
+    {
+      "source": "results/ozone/figures/ma.svg",
+      "site": "docs/_site/assets/figures/ozone/ma.svg",
+      "matches": true
+    },
+    {
+      "source": "results/ozone/figures/volcano.png",
+      "site": "docs/_site/assets/figures/ozone/volcano.png",
+      "matches": true
+    },
+    {
+      "source": "results/ozone/figures/top_genes_heatmap.pdf",
+      "site": "docs/_site/assets/figures/ozone/top_genes_heatmap.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/ozone/figures/quality_control.pdf",
+      "site": "docs/_site/assets/figures/ozone/quality_control.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/ozone/figures/volcano.pdf",
+      "site": "docs/_site/assets/figures/ozone/volcano.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/ozone/figures/top_genes_heatmap.png",
+      "site": "docs/_site/assets/figures/ozone/top_genes_heatmap.png",
+      "matches": true
+    },
+    {
+      "source": "results/ozone/figures/quality_control.png",
+      "site": "docs/_site/assets/figures/ozone/quality_control.png",
+      "matches": true
+    },
+    {
+      "source": "results/ozone/figures/pca.png",
+      "site": "docs/_site/assets/figures/ozone/pca.png",
+      "matches": true
+    },
+    {
+      "source": "results/ozone/figures/pca.pdf",
+      "site": "docs/_site/assets/figures/ozone/pca.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/ozone/figures/pca.svg",
+      "site": "docs/_site/assets/figures/ozone/pca.svg",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/volcano_PM5_vs_Control.png",
+      "site": "docs/_site/assets/figures/mirna/volcano_PM5_vs_Control.png",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/volcano_PM5_vs_Control.pdf",
+      "site": "docs/_site/assets/figures/mirna/volcano_PM5_vs_Control.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/volcano_PM1_vs_Control.svg",
+      "site": "docs/_site/assets/figures/mirna/volcano_PM1_vs_Control.svg",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/sample_correlation.svg",
+      "site": "docs/_site/assets/figures/mirna/sample_correlation.svg",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/volcano_PM1_vs_Control.pdf",
+      "site": "docs/_site/assets/figures/mirna/volcano_PM1_vs_Control.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/sample_correlation.pdf",
+      "site": "docs/_site/assets/figures/mirna/sample_correlation.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/sample_correlation.png",
+      "site": "docs/_site/assets/figures/mirna/sample_correlation.png",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/volcano_PM1_vs_Control.png",
+      "site": "docs/_site/assets/figures/mirna/volcano_PM1_vs_Control.png",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/volcano_PM5_vs_Control.svg",
+      "site": "docs/_site/assets/figures/mirna/volcano_PM5_vs_Control.svg",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/pca.png",
+      "site": "docs/_site/assets/figures/mirna/pca.png",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/top30_heatmap_PM5_vs_Control.pdf",
+      "site": "docs/_site/assets/figures/mirna/top30_heatmap_PM5_vs_Control.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/top30_heatmap_PM5_vs_Control.png",
+      "site": "docs/_site/assets/figures/mirna/top30_heatmap_PM5_vs_Control.png",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/mean_difference_PM1_vs_Control.svg",
+      "site": "docs/_site/assets/figures/mirna/mean_difference_PM1_vs_Control.svg",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/pca.pdf",
+      "site": "docs/_site/assets/figures/mirna/pca.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/mean_difference_PM5_vs_Control.pdf",
+      "site": "docs/_site/assets/figures/mirna/mean_difference_PM5_vs_Control.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/sample_qc.png",
+      "site": "docs/_site/assets/figures/mirna/sample_qc.png",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/top30_heatmap_PM1_vs_Control.svg",
+      "site": "docs/_site/assets/figures/mirna/top30_heatmap_PM1_vs_Control.svg",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/top30_heatmap_omnibus.svg",
+      "site": "docs/_site/assets/figures/mirna/top30_heatmap_omnibus.svg",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/sample_qc.pdf",
+      "site": "docs/_site/assets/figures/mirna/sample_qc.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/mean_difference_PM5_vs_Control.png",
+      "site": "docs/_site/assets/figures/mirna/mean_difference_PM5_vs_Control.png",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/mean_difference_PM5_vs_Control.svg",
+      "site": "docs/_site/assets/figures/mirna/mean_difference_PM5_vs_Control.svg",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/top30_heatmap_PM1_vs_Control.png",
+      "site": "docs/_site/assets/figures/mirna/top30_heatmap_PM1_vs_Control.png",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/top30_heatmap_omnibus.png",
+      "site": "docs/_site/assets/figures/mirna/top30_heatmap_omnibus.png",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/top30_heatmap_PM1_vs_Control.pdf",
+      "site": "docs/_site/assets/figures/mirna/top30_heatmap_PM1_vs_Control.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/top30_heatmap_omnibus.pdf",
+      "site": "docs/_site/assets/figures/mirna/top30_heatmap_omnibus.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/sample_qc.svg",
+      "site": "docs/_site/assets/figures/mirna/sample_qc.svg",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/mean_difference_PM1_vs_Control.png",
+      "site": "docs/_site/assets/figures/mirna/mean_difference_PM1_vs_Control.png",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/top30_heatmap_PM5_vs_Control.svg",
+      "site": "docs/_site/assets/figures/mirna/top30_heatmap_PM5_vs_Control.svg",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/pca.svg",
+      "site": "docs/_site/assets/figures/mirna/pca.svg",
+      "matches": true
+    },
+    {
+      "source": "results/mirna/figures/mean_difference_PM1_vs_Control.pdf",
+      "site": "docs/_site/assets/figures/mirna/mean_difference_PM1_vs_Control.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/cortex/figures/volcano.svg",
+      "site": "docs/_site/assets/figures/cortex/volcano.svg",
+      "matches": true
+    },
+    {
+      "source": "results/cortex/figures/ma.pdf",
+      "site": "docs/_site/assets/figures/cortex/ma.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/cortex/figures/sample_correlation.svg",
+      "site": "docs/_site/assets/figures/cortex/sample_correlation.svg",
+      "matches": true
+    },
+    {
+      "source": "results/cortex/figures/ma.png",
+      "site": "docs/_site/assets/figures/cortex/ma.png",
+      "matches": true
+    },
+    {
+      "source": "results/cortex/figures/ma.svg",
+      "site": "docs/_site/assets/figures/cortex/ma.svg",
+      "matches": true
+    },
+    {
+      "source": "results/cortex/figures/sample_correlation.pdf",
+      "site": "docs/_site/assets/figures/cortex/sample_correlation.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/cortex/figures/sample_correlation.png",
+      "site": "docs/_site/assets/figures/cortex/sample_correlation.png",
+      "matches": true
+    },
+    {
+      "source": "results/cortex/figures/volcano.png",
+      "site": "docs/_site/assets/figures/cortex/volcano.png",
+      "matches": true
+    },
+    {
+      "source": "results/cortex/figures/volcano.pdf",
+      "site": "docs/_site/assets/figures/cortex/volcano.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/cortex/figures/pca.png",
+      "site": "docs/_site/assets/figures/cortex/pca.png",
+      "matches": true
+    },
+    {
+      "source": "results/cortex/figures/pca.pdf",
+      "site": "docs/_site/assets/figures/cortex/pca.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/cortex/figures/top30_heatmap.svg",
+      "site": "docs/_site/assets/figures/cortex/top30_heatmap.svg",
+      "matches": true
+    },
+    {
+      "source": "results/cortex/figures/sample_qc.png",
+      "site": "docs/_site/assets/figures/cortex/sample_qc.png",
+      "matches": true
+    },
+    {
+      "source": "results/cortex/figures/sample_qc.pdf",
+      "site": "docs/_site/assets/figures/cortex/sample_qc.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/cortex/figures/top30_heatmap.pdf",
+      "site": "docs/_site/assets/figures/cortex/top30_heatmap.pdf",
+      "matches": true
+    },
+    {
+      "source": "results/cortex/figures/sample_qc.svg",
+      "site": "docs/_site/assets/figures/cortex/sample_qc.svg",
+      "matches": true
+    },
+    {
+      "source": "results/cortex/figures/top30_heatmap.png",
+      "site": "docs/_site/assets/figures/cortex/top30_heatmap.png",
+      "matches": true
+    },
+    {
+      "source": "results/cortex/figures/pca.svg",
+      "site": "docs/_site/assets/figures/cortex/pca.svg",
+      "matches": true
+    }
+  ],
+  "viewer_source_sha256": {
+    "docs/assets/viewer/index.html": "9610273f8fe4cea55dbf800673e0c897d3420acbfde8b37e9f7384dbf68a3445",
+    "docs/assets/viewer/viewer.js": "053e268db3bd5b89dd04b4eac7a1e79d83abe3a0aae8004a085236270b04d219",
+    "docs/assets/viewer/viewer.css": "6269f9fe4f86fc9217eb21d10d2ec71418be266290ab5ececf6f32667177dc7b"
+  },
+  "limits": [
+    "Browser interaction is usability verification, not biological validation.",
+    "Not every gene/filter combination was exhaustively tested."
+  ]
+}

@@ -1,0 +1,21 @@
+gsm,title,source_library_name,matrix_column,mapping_status
+GSM8990943,Control_PBS_rep1,Control5,Control5,explicit_source_match
+GSM8990944,Control_PBS_rep2,Control6,Control6,explicit_source_match
+GSM8990945,Control_PBS_rep3,Control7,Control7,explicit_source_match
+GSM8990946,Control_PBS_rep4,Control8,Control8,explicit_source_match
+GSM8990947,αSyn PFF injection_rep1,PFFA2726,PFFA2726,explicit_source_match
+GSM8990948,αSyn PFF injection_rep2,PFFA2746,PFFA2746,explicit_source_match
+GSM8990949,αSyn PFF injection_rep3,PFFA2748,PFFA2748,explicit_source_match
+GSM8990950,αSyn PFF injection_rep4,PFFA2749,PFFA2749,explicit_source_match
+GSM8990951,PM nasal_rep1,PMA2775,PMA2775,explicit_source_match
+GSM8990952,PM nasal_rep2,PMA2776,PMA2776,explicit_source_match
+GSM8990953,PM nasal_rep3,PMA2778,PMA2778,explicit_source_match
+GSM8990954,PM nasal_rep4,PMA2779,PMA2779,explicit_source_match
+GSM8990955,αSyn PM_PFF injection_rep1,PMPFFA2730,PMPFFA2730,explicit_source_match
+GSM8990956,αSyn PM_PFF injection_rep2,PMPFFA2731,PMPFFA2731,explicit_source_match
+GSM8990957,αSyn PM_PFF injection_rep3,PMPFFA2732,PMPFFA2732,explicit_source_match
+GSM8990958,αSyn PM_PFF injection_rep4,PMPFFA2734,PMPFFA2734,explicit_source_match
+GSM8990959,αSyn PM_PFF injection_PM nasal_rep1,PMPFFPMA2727,PMPFFPMA2727,explicit_source_match
+GSM8990960,αSyn PM_PFF injection_PM nasal_rep2,PMPFFPMA2729,PMPFFPMA2729,explicit_source_match
+GSM8990961,αSyn PM_PFF injection_PM nasal_rep3,PMPFFPMA2738,PMPFFPMA2738,explicit_source_match
+GSM8990962,αSyn PM_PFF injection_PM nasal_rep4,PMPFFPM2778,PMPFFPMA2778,inferred_typo_needs_confirmation

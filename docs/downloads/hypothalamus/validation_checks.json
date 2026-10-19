@@ -1,0 +1,98 @@
+{
+  "all_checks_passed": true,
+  "checks": {
+    "count_shape_and_nonnegative_integers": true,
+    "sample_order_and_group_sizes": true,
+    "gene_prefilter_recomputed": true,
+    "frozen_mle_statistics_preserved": true,
+    "normalization_matches_exported_size_factors": true,
+    "two_sided_wald_pvalues_recomputed": true,
+    "BH_adjusted_pvalues_recomputed": true,
+    "all_significant_counts_match_summary": true,
+    "no_source_files_changed": true,
+    "no_samples_excluded_or_count_replaced": true,
+    "figure_files_readable_nonblank": true,
+    "all_seven_leave_one_out_runs_available": true
+  },
+  "figure_metadata": {
+    "heatmap_top30": {
+      "png_pixels": [
+        2100,
+        2610
+      ],
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "nonblank": true
+    },
+    "ma": {
+      "png_pixels": [
+        2100,
+        1380
+      ],
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "nonblank": true
+    },
+    "pca": {
+      "png_pixels": [
+        1980,
+        1560
+      ],
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "nonblank": true
+    },
+    "sample_quality": {
+      "png_pixels": [
+        3000,
+        1140
+      ],
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "nonblank": true
+    },
+    "sample_similarity": {
+      "png_pixels": [
+        3300,
+        1410
+      ],
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "nonblank": true
+    },
+    "selected_gene_counts": {
+      "png_pixels": [
+        2340,
+        1260
+      ],
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "nonblank": true
+    },
+    "volcano": {
+      "png_pixels": [
+        2100,
+        1500
+      ],
+      "png_dpi": [
+        299.9994,
+        299.9994
+      ],
+      "nonblank": true
+    }
+  },
+  "visual_review": "All seven PNG figures inspected; PCA and volcano labels repaired. Original coordinates, data and statistical results unchanged.",
+  "scope": "Independent arithmetic and export checks for the hypothalamus primary analysis; not biological validation."
+}

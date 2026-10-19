@@ -1,0 +1,15 @@
+study,claim,reported,computed,status,source,qualification
+GSE297423,PFF vs PBS: DE genes,109,109,computationally_reproduced,Science main PDF page 8; Zenodo DEG_summary_counts.csv,Same deposited counts and design; not independent biological replication
+GSE297423,PM vs PBS: DE genes,1205,1205,computationally_reproduced,Science main PDF page 8; Zenodo DEG_summary_counts.csv,Same deposited counts and design; not independent biological replication
+GSE297423,PMPFF vs PBS: DE genes,1222,1222,computationally_reproduced,Science main PDF page 8; Zenodo DEG_summary_counts.csv,Same deposited counts and design; not independent biological replication
+GSE297423,PMPFFPM vs PBS: DE genes,639,639,computationally_reproduced,Science main PDF page 8; Zenodo DEG_summary_counts.csv,Same deposited counts and design; not independent biological replication
+GSE297423,PM_specific,582,582,computationally_reproduced,Science main PDF page 8; author four-contrast tables,Exact exclusive intersection after excluding unavailable FDR
+GSE297423,PM_PMPFF_exclusive_pair,323,323,computationally_reproduced,Science main PDF page 8; author four-contrast tables,Exact exclusive intersection after excluding unavailable FDR
+GSE297423,PCA_PC1_percent,29.2,29.2014,reproduced_at_published_rounding,Zenodo mouse/out/pca.pdf,Followed code TMM/scaled PCA; prose instead describes filterByExpr
+GSE297423,PCA_PC2_percent,9.8,9.7606,reproduced_at_published_rounding,Zenodo mouse/out/pca.pdf,Followed code TMM/scaled PCA; prose instead describes filterByExpr
+GSE297423,PFF: enriched GO terms,13,13,author_table_verified_not_independently_recomputed,Science main PDF page 8; Zenodo GSEA tables,Original OrgDb/clusterProfiler/fgsea versions and seed unavailable; enrichment not recomputed
+GSE297423,PM: enriched GO terms,365,365,author_table_verified_not_independently_recomputed,Science main PDF page 8; Zenodo GSEA tables,Original OrgDb/clusterProfiler/fgsea versions and seed unavailable; enrichment not recomputed
+GSE297423,PMPFF: enriched GO terms,266,266,author_table_verified_not_independently_recomputed,Science main PDF page 8; Zenodo GSEA tables,Original OrgDb/clusterProfiler/fgsea versions and seed unavailable; enrichment not recomputed
+GSE297423,PMPFFPM: enriched GO terms,271,271,author_table_verified_not_independently_recomputed,Science main PDF page 8; Zenodo GSEA tables,Original OrgDb/clusterProfiler/fgsea versions and seed unavailable; enrichment not recomputed
+GSE145840,PM_vs_FA: DE genes,17,0,partial_method_sensitivity_not_exact_replication,JCI supplement PDF page 10 panels C/D; methods pages 19–20,Negative-control IDs and RUVg k not recovered; declared abundance/FC reconstruction; 91 HFD-only features excluded without zero imputation
+GSE145840,HFD_vs_FA: DE genes,761,3600,partial_method_sensitivity_not_exact_replication,JCI supplement PDF page 10 panels C/D; methods pages 19–20,Negative-control IDs and RUVg k not recovered; declared abundance/FC reconstruction; 91 HFD-only features excluded without zero imputation

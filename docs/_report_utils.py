@@ -2,6 +2,7 @@
 from __future__ import annotations
 import html
 import json
+import struct
 from pathlib import Path
 import pandas as pd
 from IPython.display import Markdown, display
@@ -61,12 +62,20 @@ def show_table(frame, n=20):
                  classes="table table-sm table-striped evidence-table", escape=True) + '</div>'))
 
 
+def image_dimensions(path):
+    """Reserve the PNG aspect ratio so lazy images do not move section anchors."""
+    with Path(path).open("rb") as stream:
+        header = stream.read(24)
+    width, height = struct.unpack(">II", header[16:24])
+    return f' width="{width}" height="{height}"'
+
+
 def figure(dataset, stem, caption, alt=""):
     image = f"assets/figures/{dataset}/{stem}.png"
     svg = f"assets/figures/{dataset}/{stem}.svg"
     pdf = f"assets/figures/{dataset}/{stem}.pdf"
     display(Markdown('<figure class="research-figure"><a href="' + html.escape(svg) + '">'
-                 '<img loading="lazy" src="' + html.escape(image) + '" alt="' +
+                 '<img loading="lazy"' + image_dimensions(DOCS / image) + ' src="' + html.escape(image) + '" alt="' +
                  html.escape(alt or caption) + '"></a><figcaption>' + html.escape(caption) +
                  ' <span class="figure-links"><a href="' + html.escape(svg) + '">SVG</a> · '
                  '<a href="' + html.escape(pdf) + '">PDF</a></span></figcaption></figure>'))

@@ -1,0 +1,344 @@
+{
+  "reviewed_at_UTC": "2026-10-19T01:26:39.710425+00:00",
+  "reviewer": "Independent agent content and numerical audit",
+  "status": "Passed content and numerical reconciliation for all four completed exposure studies, spatial reference summaries and spatial model; final site rendering/browser QA is handled separately.",
+  "scope": "Read-only independent review of report claims, experimental units, primary arithmetic, sample/source joins and representative visual encoding. No differential models were refitted, no site was rendered, and no original data were modified.",
+  "report_sources_reviewed": [
+    "docs/index.qmd",
+    "docs/results.qmd",
+    "docs/methods.qmd",
+    "docs/viewer.qmd",
+    "docs/cortex.qmd",
+    "docs/mirna.qmd",
+    "docs/ozone.qmd",
+    "docs/enrichment.qmd",
+    "docs/spatial_reference.qmd"
+  ],
+  "prior_validation_records_reviewed": [
+    "results/cortex/validation.json",
+    "results/enrichment/validation_checks.json",
+    "results/hypothalamus/validation_checks.json",
+    "results/mirna/validation.json",
+    "results/ozone/validation.json",
+    "results/spatial_reference/validation_checks.json",
+    "results/spatial_viewer/validation_checks.json"
+  ],
+  "checks": {
+    "primary_sample_count": {
+      "passed": true,
+      "calculation": "7 hypothalamus + 8 cortex + 9 miRNA + 24 ozone = 48 study samples",
+      "qualification": "The ozone libraries are included in the study design total; ozone differential results remain in processing and were not validated here."
+    },
+    "hypothalamus_source_join": {
+      "passed": true,
+      "details": "Every count and gene ID in all seven original source files equals the 50,417-row exported count matrix; exported sample order equals metadata and QC order; count >=10 in >=3 samples independently retains 19,611 genes."
+    },
+    "hypothalamus_inference_arithmetic": {
+      "passed": true,
+      "tested_genes": 19611,
+      "finite_pvalue": 19452,
+      "finite_padj": 19452,
+      "Cook_filtered_nominal_tests": 159,
+      "finite_p_missing_padj": 0,
+      "FDR05_hits": 11,
+      "higher_PM": 2,
+      "lower_PM": 9
+    },
+    "hypothalamus_sensitivity": {
+      "passed": true,
+      "leave_one_out_runs": 7,
+      "discovery_count_range": [
+        0,
+        825
+      ],
+      "primary_hits_same_direction_all_7": 11,
+      "primary_hits_FDR_significant_all_7": 0,
+      "qualification": "The report explicitly describes influence sensitivity and does not select a favorable omission."
+    },
+    "independent_R_cross_check_claims": {
+      "passed": true,
+      "primary_Python_FDR_hits": 11,
+      "R_FDR_hits": 12,
+      "discordant_gene": "Tnrc6c",
+      "Tnrc6c_Python_padj": 0.0521128906608064,
+      "Tnrc6c_R_padj": 0.0399167979175937,
+      "Tll1_significant_in_both": true,
+      "qualification": "This is software agreement, not biological replication."
+    },
+    "cortex_source_join": {
+      "passed": true,
+      "details": "All eight exported sample-to-GEO library-name joins match original metadata; all original library sums, normalized counts and the >=10 counts in >=4 samples gene filter match. PFF arms are excluded."
+    },
+    "cortex_inference_arithmetic": {
+      "passed": true,
+      "tested_genes": 19235,
+      "finite_pvalue": 19225,
+      "finite_padj": 17360,
+      "Cook_filtered_nominal_tests": 10,
+      "finite_p_missing_padj_independent_filter": 1865,
+      "all_missing_padj": 1875,
+      "FDR05_hits": 1167,
+      "higher_PM": 658,
+      "lower_PM": 509,
+      "qualification": "The report correctly distinguishes 10 unavailable nominal tests from 1,865 additional independently filtered adjusted-p results."
+    },
+    "miRNA_source_join_and_scale": {
+      "passed": true,
+      "details": "All 1,268 rows and nine columns of the original GEO matrix match the published-signal export, in the same sample order. The report retains continuous normalized signal units without an additional log or a count model. Analysis feature arithmetic: 1,268 - 21 controls/unannotated - 2 constant biological features = 1,245."
+    },
+    "miRNA_inference_arithmetic": {
+      "passed": true,
+      "tested_features": 1245,
+      "group_sizes": {
+        "Control": 3,
+        "PM1": 3,
+        "PM5": 3
+      },
+      "negative_signal_values_retained": 7722,
+      "low_detection_flagged_not_removed": 823,
+      "FDR05_low_dose": 1,
+      "FDR05_high_dose": 0,
+      "FDR05_omnibus": 1,
+      "low_dose_hit": "mmu-miR-5119",
+      "qualification": "Separate contrast/omnibus BH families and lack of a confirmed log2 measurement scale are explicit; miR-574-5p is not claimed to replicate or refute unreanalyzed functional experiments."
+    },
+    "spatial_data_arithmetic": {
+      "passed": true,
+      "matrix_shape": [
+        37811,
+        1122
+      ],
+      "finite_nonnegative_counts": true,
+      "panel_gene_ids_unique": true,
+      "estimable_bulk_effect_genes": 1003,
+      "primary_FDR_hits_in_panel": [
+        "Tll1"
+      ],
+      "Tll1_reference_positive_cells": 667,
+      "Tll1_reference_positive_percent": 1.7640369204728783,
+      "details": "Current NPZ dimensions, count validity, panel eligibility and Tll1 nonzero count were independently recomputed. Previous direct HDF5 checks in this task matched 90 sampled source cell/gene values; the whole HDF5 collection was not reread or rehashed in this bounded review."
+    },
+    "spatial_effect_and_interval": {
+      "passed": true,
+      "gene": "Tll1",
+      "MLE_log2FC": -1.343708121,
+      "shrunken_log2FC": -1.224052614,
+      "primary_padj": 0.003497224024,
+      "central_linear_multiplier": 0.4280785302874267,
+      "MLE_Wald_interval_linear_multiplier": [
+        0.27260703795363694,
+        0.5694689329914888
+      ],
+      "details": "The central scenario exponentiates the shrunken bulk coefficient on the linear imaging-count scale. Sensitivity bounds exponentiate the original MLE +/-1.96 SE, and are labeled group-effect scenarios rather than per-cell intervals."
+    },
+    "spatial_geometry_and_color_encoding": {
+      "passed": true,
+      "details": "The model retains identical cells and geometry, selects deposited HY assignments by exact IDs, uses ML/AP/-DV millimeters, performs no mirroring, and shares log2(1+value) colors and the disclosed common positive-value percentile cap. Source frame agreement of 94.05% is reported as a boundary-level check, not perfect anatomical identity."
+    },
+    "experimental_units_and_claims": {
+      "passed": true,
+      "details": "Atlas cells are never counted as exposure replicates. The reference donor is explicitly not a matched control; cell-specific responses, altered cell abundance, migration, human effects and whole-brain pollution responses are not inferred. Regions, assays and exposures remain separate."
+    },
+    "existing_validation_records": {
+      "passed": true,
+      "details": "All original validation JSON files plus the completed ozone, six-entry enrichment and spatial-reference validation records were read. Recorded boolean checks pass. Technical and arithmetic validation is not biological replication."
+    },
+    "ozone_status": {
+      "passed": true,
+      "complete": true,
+      "libraries": 24,
+      "groups": 8,
+      "animals_per_group": 3,
+      "details": "All 24 quantification checkpoints, four final Wald tables, global LRT, QC tables, provenance and DE validation are present. All completed-result QMD chunks execute against these files, not a simulated ready flag. The fixed count prefilter and disabled adaptive independent filtering match the final R source."
+    },
+    "ozone_inference_arithmetic": {
+      "passed": true,
+      "imported_genes": 54347,
+      "retained_genes": 18537,
+      "full_model_rank": 8,
+      "contrast_order": [
+        "M3_E3_O3_vs_FA",
+        "M3_E4_O3_vs_FA",
+        "M17_E3_O3_vs_FA",
+        "M17_E4_O3_vs_FA"
+      ],
+      "finite_nominal_tests": [
+        18490,
+        18498,
+        18498,
+        18499
+      ],
+      "within_stratum_BH_FDR05": [
+        0,
+        399,
+        2,
+        3
+      ],
+      "supplementary_pooled_four_BH_FDR05": [
+        1,
+        43,
+        4,
+        6
+      ],
+      "all_zero_stratum_genes_withheld": [
+        23,
+        15,
+        15,
+        13
+      ],
+      "coefficient_nonconverged": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "apeglm_nonconverged": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "global_LRT": {
+        "df": 4,
+        "tested": 18511,
+        "fdr_005": 24,
+        "full_nonconverged": 0,
+        "reduced_nonconverged": 0
+      },
+      "qualification": "Numbers independently reconciled to the final tables, including positive/negative hits and NA effects/p-values for all-zero strata. Separate and pooled BH families are explicitly nonnested; for example Pisd-ps1 has within-stratum q0.054826 and pooled-four q0.017431 in M3/APOE3. No inference is pooled across animal strata."
+    },
+    "ozone_quality_and_experimental_units": {
+      "passed": true,
+      "source_samples_unique": 24,
+      "eight_groups_of_three": true,
+      "full_library_raw_pairs": 532785953,
+      "full_library_retained_pairs": 532781354,
+      "pairs_removed_after_adapter_processing": 4599,
+      "Salmon_processed_pair_total": 532781354,
+      "details": "All full-QC and quantification sample identifiers match metadata; raw minus retained pairs equals the reported removals, and retained pairs equal quantification inputs. Initial first-200,000-pair QC is distinguished from full-read QC. PCA heterogeneity (S9/S11/S24 displaced along PC1) does not justify exclusions or a clean age/genotype grouping claim."
+    },
+    "ozone_null_and_interaction_interpretation": {
+      "passed": true,
+      "details": "The M3/APOE3 within-stratum BH null is explicit, and lower-q-ranked rows are labeled descriptive. All four strata and global LRT retain correct separate multiplicity definitions. Unequal discovery counts and the omnibus four-df test do not establish age- or genotype-by-exposure interactions. Human APOE allele/locus expression and exposed spatial cells are not claimed."
+    },
+    "enrichment_final_six_contrasts": {
+      "passed": true,
+      "entries": [
+        "hypothalamus",
+        "cortex",
+        "ozone_M3_E3",
+        "ozone_M3_E4",
+        "ozone_M17_E3",
+        "ozone_M17_E4"
+      ],
+      "ozone_order": [
+        "ozone_M3_E3",
+        "ozone_M3_E4",
+        "ozone_M17_E3",
+        "ozone_M17_E4"
+      ],
+      "ozone_ORA_up_BH_FDR05": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "ozone_ORA_down_BH_FDR05": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "ozone_GSEA_algorithmic_FDR05": [
+        4,
+        368,
+        85,
+        23
+      ],
+      "peer_validation_record": "results/enrichment/validation_checks.json",
+      "all_peer_dataset_checks_pass": true,
+      "details": "The full six-entry report branch executes. Ozone ORA uses within-stratum BH foregrounds; GSEA uses valid masked unshrunken Wald p-values, not pre-filter audit columns. All-four-ozone ORA null is explicit. Light-detection/phototransduction rank associations in the hippocampal M3/APOE3 contrast are not interpreted as visual function or a localized response; tissue specificity/dissection context is identified as relevant before mechanistic use."
+    },
+    "QMD_completed_branch_execution": {
+      "passed": true,
+      "docs/ozone.qmd": {
+        "executed_python_chunks": 11,
+        "ozone_ready": true
+      },
+      "docs/enrichment.qmd": {
+        "executed_python_chunks": 5,
+        "completed_entries": 6
+      },
+      "scope": "Executed Python chunks with the actual shared display helper; no independent second Quarto site was rendered."
+    }
+  },
+  "visual_inspections": [
+    {
+      "path": "results/spatial_viewer/reference_vs_simulation.png",
+      "result": "Regenerated image inspected: both ML labels, AP/-DV millimeter axes, shared log2(1+count) colorbar and captions are fully legible. Both panels show all reference cells; measured zeros are explicitly faint and positive imaging counts are emphasized identically. Same geometry and 0.428 multiplier retained; VIS-01 resolved."
+    },
+    {
+      "path": "results/hypothalamus/figures/pca.png",
+      "result": "Seven biological samples shown with labeled FA/PM groups, distinct shapes and readable variance percentages. Heterogeneous FA1/FA2 and nearby FA3/FA4/PM samples support the cautious report text."
+    },
+    {
+      "path": "results/hypothalamus/figures/selected_gene_counts.png",
+      "result": "All individual animals shown on zero-baseline normalized-count axes. Gfap and Ahr FDR labels match the table and do not imply significance. Black group-mean lines are described in source figure metadata."
+    },
+    {
+      "path": "results/mirna/figures/volcano_PM1_vs_Control.png",
+      "result": "Mean difference in published normalized signal on x, nominal moderated-t p value on y, FDR-highlighted mmu-miR-5119. Units, direction and non-fold-change interpretation match the report."
+    }
+  ],
+  "findings": [
+    {
+      "id": "VIS-01",
+      "priority": "P2",
+      "status": "Resolved and independently visually verified",
+      "path": "results/spatial_viewer/reference_vs_simulation.png",
+      "description": "Both ML-axis labels are cropped at the lower image edge in the inspected static preview.",
+      "requested_action": "Increase the lower figure margin or use an export bounding box that retains all axis labels, then visually inspect the regenerated PNG. The parent has acknowledged this repair and is also reducing zero-count occlusion with an explicit caption.",
+      "resolution": "Parent regenerated the preview with full margins/tight export bounds and disclosed faint measured-zero points. Both ML labels and all remaining axes/colorbar are fully visible in the regenerated PNG. Identical positive/zero display rules apply to both panels, and data/model were unchanged."
+    }
+  ],
+  "pending_final_checks": [],
+  "limitations": [
+    "No browser interaction or second Quarto rendering was performed in the final content audit; parent owns final UI QA.",
+    "No differential-model fit, enrichment run, full HDF5 rehash or original-read reprocessing was repeated.",
+    "Ozone and enrichment final figures received separate owner/peer visual review; this final content pass did not repeat those complete figure sets."
+  ],
+  "reviewed_file_SHA256": {
+    "docs/index.qmd": "9ff574da54e1a149e6fdba68096fa448eec3717761e521257ce8eae625e5f6cb",
+    "docs/results.qmd": "c15c5a1b686f7db760107fbd4dcbc21565bda70f0c9997ac2bfb9d84b5c37e76",
+    "docs/methods.qmd": "11fa01834ec03baf275ff5d7e1093b6dacfaaf4244edf09d2e2ce56bed68e77e",
+    "docs/viewer.qmd": "19d8b44c41ae4f9001f263fe712fbeb7419901c061f4068822399f8dc9ef43ba",
+    "docs/cortex.qmd": "705f6dda40cc57c39ce0bfb3d926bf1165542a571935ea35f105c3682d02c0ec",
+    "docs/mirna.qmd": "b0e63662cb47fe1eef6d47e4dc09190d18aef2b328b4e1d8778569c3c0a8cfe9",
+    "results/cortex/validation.json": "5e4b1c54965f4899f0d06cc464cff7c90933a41a4d3b855d97c9aeef1048ac21",
+    "results/enrichment/validation_checks.json": "403784f663b78d1e4bfa5d6de62f8736b853637d88c12d04b245993e1f1dc497",
+    "results/hypothalamus/validation_checks.json": "ccfbe15d603a312d67dcb83e0619f85afed46075bb954401b4a653b924bc1870",
+    "results/mirna/validation.json": "ee6fe102f75ce7ac461a543c886cd48d1fd0468794ae84b0ba8e24f8af868eab",
+    "results/spatial_viewer/validation_checks.json": "22ac93e0c2eea33a27dfc7bd933517f1439842853ebec2a319629935fdb20a80",
+    "results/spatial_viewer/reference_vs_simulation.png": "7194de82dae8f68a1fa3f492268fdd9a0c967e80f6296b56d2d34c92f08fc378",
+    "results/hypothalamus/figures/pca.png": "b055c354b94d71047af7e0ec5efa6190f2a52c774f099be8ef5cf819de366ac1",
+    "results/hypothalamus/figures/selected_gene_counts.png": "237880ac179f1f77c476aa04bc7914671aef5361adc00166b388dc4bbac5dd64",
+    "results/mirna/figures/volcano_PM1_vs_Control.png": "bfd7cab70e04f2b069adb19820970ce7f379a1b4187e9e6a2f9fe48013405037",
+    "docs/ozone.qmd": "c5631d978814f832e01727679f9fa24c8e096e7a8969bafcb581c21b555ea19d",
+    "docs/enrichment.qmd": "6677f81b9c7cd7db5f32fac77df89b692712139da947a2c1d6003da87b9f94a3",
+    "docs/spatial_reference.qmd": "7fa321c4a306cecc3e8bba52ddcb8192b1240d57b85312b51556b484920d9922",
+    "results/ozone/validation.json": "5e6e2b994f66ea8f1820b474257259db6b79c41815285a1bfb475bd815badfc6",
+    "results/spatial_reference/validation_checks.json": "a9e84a38602c0961a7f8052bf05c8059682d6da0cc4f58942af05a60349c21d9",
+    "results/ozone/summary.json": "4c0892ce4327ab2dfa1fed43457454715549dbd38739a73f707cadbfd7812888",
+    "results/ozone/methods.json": "9342736da89229ce19bcfc06e58596066493e789be424b66df1b76afe246466a",
+    "results/enrichment/summary.json": "1e89f41ddb6ff1140d9a8effea587a2d1fc1437d266ed2e23a0f0a0f2aafb300",
+    "scripts/analyze_ozone.R": "86d606f2fdc983a73df9465d32a4795c774e7f455c8d12532818a1f88a63fb99",
+    "results/ozone/de_M3_E3_O3_vs_FA.csv": "919e87d5d56502dce9c844a29a4a58d550af4dc805c1cc5db4509cdf2d1cdb5a",
+    "results/ozone/de_M3_E4_O3_vs_FA.csv": "903b0afe260773492c050603d627396956b4b1552302b32bb6dad36ea9be591b",
+    "results/ozone/de_M17_E3_O3_vs_FA.csv": "aa8702919f49c643379b0fa149ef81f0e0abb099322bc7d853a93de0eeb639cc",
+    "results/ozone/de_M17_E4_O3_vs_FA.csv": "59f3c30a82eed64be5c977c93077e4cf475c6cf42e56129e62ad97f056ad0519",
+    "results/ozone/de_global_ozone_LRT.csv": "c8b4ba69f88a7a76e8e5b941ec932781f530e1dc6c51b3945e24007e717bd340"
+  },
+  "final_delivery_checks_outside_this_content_review": [
+    "Parent final full-site rendering and browser/console QA after the completed ozone/enrichment pages are built."
+  ]
+}

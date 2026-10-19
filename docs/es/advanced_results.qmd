@@ -1,0 +1,110 @@
+---
+title: "Heterogeneidad de la respuesta y organización funcional"
+subtitle: "Análisis secundarios con pruebas formales de interacción y paneles moleculares"
+---
+
+```{python}
+import json
+import pandas as pd
+from IPython.display import Markdown, display
+from _report_utils import ROOT, summary, read_table, show_table, figure
+a = summary("advanced_omics")
+captions = json.loads((ROOT / "results/advanced_omics/figure_manifest.json").read_text())
+def panel(stem):
+    key = stem + "_es"
+    figure("advanced_omics", key, captions[key]["caption"], captions[key]["alt"])
+```
+
+## Pregunta científica y alcance
+
+Los contrastes principales de ozono cuantifican diferencias asociadas a la exposición dentro de cada estrato de edad/APOE. **Un resultado significativo en un estrato y no significativo en otro no demuestra que las respuestas difieran.** Este análisis secundario prueba directamente si el efecto de O₃ frente a aire filtrado depende de la edad o el genotipo. Utiliza los mismos 24 animales y 18,537 genes retenidos; no incorpora observaciones biológicas independientes. Son análisis exploratorios nuevos del depósito de Nakamya et al., distintos de la [reproducción de los resultados originales](replication.qmd). @Nakamya2025_40141051
+
+Los efectos de tejido completo pueden reflejar regulación de expresión, composición celular o material vascular. Un coeficiente de interacción o una etiqueta GO no identifica qué tipo celular responde. La [referencia MERFISH medida](spatial_reference.qmd) aporta contexto anatómico al hipotálamo y PM2.5; no valida los efectos de ozono en hipocampo.
+
+## Metodología: comparar directamente las respuestas
+
+El modelo binomial negativo es `~age * genotype * exposure`, con un diseño de rango ocho. Se conservan los factores de normalización por longitud efectiva y las dispersiones del modelo principal con todos los animales. Las pruebas anidadas de razón de verosimilitudes eliminan las interacciones de exposición correspondientes y mantienen los efectos principales pertinentes. @Love2014_DESeq2
+
+| Pregunta | Modelo reducido | Grados de libertad |
+|---|---|---:|
+| ¿Depende la respuesta del genotipo entre edades? | `~age * genotype + exposure + age:exposure` | 2 |
+| ¿Depende la respuesta de la edad entre genotipos? | `~age * genotype + exposure + genotype:exposure` | 2 |
+| ¿Existe un término adicional edad × genotipo × exposición? | `~(age + genotype + exposure)^2` | 1 |
+
+Cada prueba tiene su propia familia de BH entre genes. Las columnas suplementarias aplican BH conjuntamente a las tres familias LRT. Se mantiene el filtrado de Cook y se desactiva el filtrado independiente adaptativo. Los ajustes sin convergencia no aportan valores p a la corrección. Todos los ajustes completos y reducidos convergieron; 18,511 genes tienen valores p LRT válidos.
+
+Los contrastes Wald condicionales estiman diferencias entre **respuestas de exposición en escala log₂**, mediante combinaciones de coeficientes que incorporan su covarianza. Se omiten las estimaciones de genes con conteos cero en todas las muestras de un estrato requerido de seis animales. Los intervalos son puntuales: MLE ± 1.95996 EE; no son intervalos simultáneos ni incertidumbre celular.
+
+## Resultados: heterogeneidad asociada con la edad
+
+```{python}
+names = {
+    "genotype_dependent_exposure": "Respuesta dependiente del genotipo",
+    "age_dependent_exposure": "Respuesta dependiente de la edad",
+    "three_way_interaction": "Edad × genotipo × exposición"
+}
+show_table(pd.DataFrame([
+    {"Prueba": names[k], "gl": v["df"], "Pruebas válidas": v["tested"],
+     "BH < 0.05 por familia": v["FDR_005"],
+     "BH < 0.05 entre tres familias": v["FDR_005_across_three_LRTs"]}
+    for k, v in a["LRT"].items()
+]))
+```
+
+La prueba de respuesta dependiente de la edad identifica **ocho genes** con el umbral de BH de su propia familia: **Ryr3, Rps24, Pkig, Rpl26, Inpp5d, Stk11, Rpl34 y Gm21586**. Solo **Ryr3** (q conjunta ≈ 0.0386) permanece por debajo de 0.05 al ajustar conjuntamente las tres familias LRT. Las pruebas globales dependiente del genotipo y de interacción triple no identifican genes con sus respectivos umbrales. Con tres animales por grupo, estos resultados nulos no establecen equivalencia entre respuestas.
+
+```{python}
+hits = read_table("advanced_omics", "age_response_FDR_genes.tsv")
+show_table(hits[["gene_symbol", "baseMean", "stat", "pvalue", "padj"]], n=8)
+panel("ozone_interaction_evidence")
+```
+
+Las familias Wald condicionales identifican 6 y 4 diferencias de respuesta por genotipo a M3 y M17, y 2 y 4 diferencias por edad en APOE3 y APOE4. El contraste triple con signo no identifica ninguna. Sus hipótesis de un grado de libertad y sus familias de corrección difieren de las pruebas globales; los conteos no son confirmaciones intercambiables.
+
+### Tamaño de efecto, incertidumbre y animales individuales
+
+```{python}
+panel("ozone_effect_uncertainty")
+panel("ozone_interaction_animals")
+```
+
+Los paneles muestran las 24 observaciones normalizadas de genes seleccionados. La selección de los genes con mayor evidencia de respuesta por edad es secundaria y está documentada: la separación visual no es una validación independiente. El modelo se ajusta a los conteos con sus factores de normalización, no a los valores logarítmicos representados.
+
+**La regularización requiere una lectura separada.** Algunas estimaciones de apeglm específicas del contraste se contraen casi a cero pese a una MLE distinta de cero y evidencia Wald finita. Por ejemplo, el resultado guardado de *Fos* en M17/APOE4 tiene MLE aproximada −2.27, EE 0.47 y q BH ≈ 0.021, mientras que su moda regularizada se aproxima a cero. La convergencia no vuelve intercambiables esas cantidades. Aquí se comparan MLE e intervalos puntuales; la moda posterior sigue identificada como estimación regularizada separada. No se conservaron los hiperparámetros originales de la distribución previa, por lo que no se atribuye una escala verificada ni una causa computacional. La [tabla diagnóstica](../downloads/advanced_omics/ozone_shrinkage_diagnostics.tsv) permite inspeccionar estos casos.
+
+## Organización funcional en seis contrastes
+
+La matriz compara NES con signo de GSEA para hipotálamo, corteza y los cuatro estratos de ozono. Utiliza el análisis MGI/GO congelado existente; no reajusta ni combina los experimentos. Se seleccionan de forma determinista hasta dos términos significativos por dirección y contraste, con reducción de redundancia mediante Jaccard. La unión contiene 22 términos. La falta de elegibilidad se representa explícitamente y no equivale a enriquecimiento cero. @Subramanian2005_GSEA @Ashburner2000_GO
+
+```{python}
+panel("GO_multi_contrast_heatmap")
+```
+
+Los círculos indican **FDR algorítmica de GSEA < 0.05**, no valores p génicos corregidos por BH. Las permutaciones de conjuntos no conservan la correlación entre genes ni la incertidumbre muestral. Entre estudios difieren tejido, modelo animal, vía y ensayo; una diferencia de NES no prueba una diferencia entre contaminantes. Los términos GO relacionados comparten genes y no deben contarse como mecanismos independientes.
+
+La fosforilación oxidativa tiene NES positivo en hipotálamo con PM2.5 (1.847; FDR estimada 0.0326) y ozono M3/APOE4 (3.205), pero negativo en ozono M17/APOE3 (−3.054). Las anotaciones de traducción en la sinapsis también cambian de dirección de rangos entre estratos jóvenes y mayores. Estos patrones descriptivos generan hipótesis sobre programas energéticos y de traducción; no miden activación de vías ni prueban diferencias entre estudios. Una FDR GSEA estimada en cero refleja permutaciones finitas, no probabilidad nula.
+
+### Inspección de la redundancia mediante solapamiento
+
+```{python}
+panel("GO_overlap_network")
+```
+
+La red contiene diez términos positivos y diez negativos seleccionados para ozono M3/APOE4. Quince aristas unen pares con Jaccard de miembros ≥ 0.25. El tamaño del nodo representa el tamaño del conjunto elegible y el color representa NES. Las aristas expresan miembros compartidos de anotación; no establecen coexpresión, unión de proteínas, regulación causal ni conectividad anatómica. La tabla numerada y las descargas permiten inspeccionar cada agrupación.
+
+## Interpretación y evidencia descargable
+
+Las pruebas formales respaldan un conjunto pequeño, sensible al umbral, de diferencias de respuesta al ozono asociadas con la edad. Los paneles GO resumen patrones coordinados de rangos y redundancia de anotaciones. Ninguna de estas capas determina qué neuronas o glía cambian su expresión; la ausencia de hallazgos globales por genotipo no invalida los contrastes de exposición dentro de cada estrato.
+
+[Resultados LRT completos](../downloads/advanced_omics/interaction_LRT_all_tests.csv) ·
+[Resultados Wald completos](../downloads/advanced_omics/interaction_Wald_all_tests.csv) ·
+[Matriz de diseño](../downloads/advanced_omics/full_design_matrix.csv) ·
+[Vectores de contraste](../downloads/advanced_omics/Wald_contrast_vectors.csv) ·
+[Perfiles por animal](../downloads/advanced_omics/ozone_interaction_animal_profiles.tsv) ·
+[Fuente de la matriz GO](../downloads/advanced_omics/GO_multi_contrast_NES_source.tsv) ·
+[Nodos de la red](../downloads/advanced_omics/GO_overlap_network_nodes.tsv) ·
+[Aristas de la red](../downloads/advanced_omics/GO_overlap_network_edges.tsv) ·
+[Validación numérica](../downloads/advanced_omics/validation.json)
+
+Se incluyen las tablas fuente, reglas de selección, familias completas y exportaciones PNG a 300 ppp y vectoriales SVG/PDF. [Volver a los resultados principales](ozone.qmd) o [consultar la reproducción de los autores](replication.qmd).
+

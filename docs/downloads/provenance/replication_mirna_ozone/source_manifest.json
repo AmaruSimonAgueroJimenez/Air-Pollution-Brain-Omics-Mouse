@@ -1,0 +1,266 @@
+{
+  "original_papers": [
+    {
+      "doi": "10.1186/s12989-017-0215-3",
+      "methods_local_pages": [
+        14,
+        16
+      ],
+      "figure6_local_page": 8,
+      "software": "Agilent Feature Extraction 10.7 / GeneSpring 11.0",
+      "general_statistics": "One-way ANOVA then LSD; omnibus protection and microarray-specific selection/multiplicity not specified"
+    },
+    {
+      "doi": "10.3390/ijms26062407",
+      "methods_local_page": 15,
+      "statistical_criteria": {
+        "global_genotype_and_age": "nominal p < .05 and |log2FC| > .3",
+        "global_exposure_and_individual_comparisons": "nominal p < .05 and |log2FC| > .1"
+      },
+      "software_reported": "HISAT2/featureCounts/GRCm38; DESeq2 1.440 as printed; R 4.4.1",
+      "software_used": "Salmon 2.5.1 / tximport 1.38.2 / GENCODE M25; DESeq2 1.50.2"
+    }
+  ],
+  "private_source_files": [
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/Ku2017.txt",
+      "bytes": 83035,
+      "sha256": "223a89c48eb821715716d3f716ed3d3840fa3f1f2962fbb9fd9fc6a33d136601"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/Nakamya2025.txt",
+      "bytes": 79135,
+      "sha256": "67d386b6e93369b7814e0c1a095889797a23f5bd6631a94a9c0a42e5be1dcb12"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/ijms-26-02407-g001.gif",
+      "bytes": 6919,
+      "sha256": "2fc5b486553eebcea81c67d200afb62ed00cb6dabef8ea985b3f38337931eecc"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/ijms-26-02407-g001.jpg",
+      "bytes": 116270,
+      "sha256": "e02539a5d4674fad18c147c1c998f742c19a90a6fada57f4eb0f6adca957b829"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/ijms-26-02407-g002.gif",
+      "bytes": 9833,
+      "sha256": "0c6223a4b214f59615bdfd74448b9b7b03bd93ae819a5b7e7a81fc6b045698e2"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/ijms-26-02407-g002.jpg",
+      "bytes": 232753,
+      "sha256": "9a22fab3c743b28b270c6a69c1106c9ae3f9fe849132cc5af6f94b998b16ff63"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/ijms-26-02407-g003.gif",
+      "bytes": 9574,
+      "sha256": "a58e35b389ffdff40060a6b1e270b92de2b8042fcb48f5cb260ad4dbb1fb124b"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/ijms-26-02407-g003.jpg",
+      "bytes": 189074,
+      "sha256": "47a8ae86b8181cf9a08e80f7faf752e61194e2c6960a637a9b0eb0bd32d7af2c"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/ijms-26-02407-g004.gif",
+      "bytes": 6641,
+      "sha256": "f32188f1450591cf8775f0ea37a8c0b0e136058f40cb53f18717d1d4037ca831"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/ijms-26-02407-g004.jpg",
+      "bytes": 112748,
+      "sha256": "7e078958a158766f29a8af558de38fb0623dc18b87515f0a462b4f0b9cff4c52"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/ijms-26-02407-g005.gif",
+      "bytes": 6773,
+      "sha256": "814a9b0be35d560525b16aa3298ea01c430504c0f343a2494f6ed5ce676ce53c"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/ijms-26-02407-g005.jpg",
+      "bytes": 122104,
+      "sha256": "44abab94f9d69bbbbd92278b4a48ba051b3f6703587a9bff16d1c72487d8d4d2"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/ijms-26-02407-g006.gif",
+      "bytes": 10498,
+      "sha256": "b733f2f64e0a58acbb308435041925608ea8af69da49e92fe3bf78be7fa9782b"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/ijms-26-02407-g006.jpg",
+      "bytes": 173808,
+      "sha256": "ef755fd5054611de704b6d79113d40d4c06bd813a06556d96ad2a56631880071"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/ijms-26-02407-g007.gif",
+      "bytes": 7406,
+      "sha256": "f1c01203f9ec588739ec8f1768db257debde5d10b409576921ea1dd7f3b34a1c"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/ijms-26-02407-g007.jpg",
+      "bytes": 68240,
+      "sha256": "f19e6daeb0c77947e85eee2efb52e134abff39985bf0c7cf6fad41c81d024e10"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/ijms-26-02407-s001.zip",
+      "bytes": 973992,
+      "sha256": "1f8e9edbbd3de37a5b844c6d10b4b515327287cc132c00151661041a059541eb"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/S2a_plain.txt",
+      "bytes": 23704,
+      "sha256": "fd4a0e1f88ae6c03f9534e76bbce4a46616bd14d8f009ed3f72f206b48f4f016"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/S2b_plain.txt",
+      "bytes": 14714,
+      "sha256": "7e724b1ec9019101818ed19af987e89d51e8339451a1b3690a025e915bfac6d0"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/S3_plain.txt",
+      "bytes": 23086,
+      "sha256": "c94d04aa545ab89502ccc749744b53d38a21a4231c3e3551ee66250690a6ab7c"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/Supplementary Table S1 qRT-PCR results of selected genes.pdf",
+      "bytes": 96554,
+      "sha256": "c545bb8b7113246c91c9268556c45700e085b50c3f5fd513ebfd6e280996a702"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/Supplementary Table S1 qRT-PCR results of selected genes.txt",
+      "bytes": 512,
+      "sha256": "7455755e31c1a743da95fd3a6d05da787057ff872c1c90d3f34027c65974f082"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/Supplementary Table S2a List of upregulated genes in the Venn diagram.pdf",
+      "bytes": 117078,
+      "sha256": "c52f453dbfce0a9601ec2c1545c2ef64be9d4bbafebea937d2947f1337e09f34"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/Supplementary Table S2a List of upregulated genes in the Venn diagram.txt",
+      "bytes": 23704,
+      "sha256": "fd4a0e1f88ae6c03f9534e76bbce4a46616bd14d8f009ed3f72f206b48f4f016"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/Supplementary Table S2b List downregulated genes in the Venn diagram.pdf",
+      "bytes": 97812,
+      "sha256": "c62811937dbc040f5b63fc50f06a61bafc57032a178ed97664425c0bbdc318d6"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/Supplementary Table S2b List downregulated genes in the Venn diagram.txt",
+      "bytes": 14714,
+      "sha256": "7e724b1ec9019101818ed19af987e89d51e8339451a1b3690a025e915bfac6d0"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/Supplementary Table S3 DEGs E4 vs. E3 17M O3.pdf",
+      "bytes": 176687,
+      "sha256": "3e0239f363eee7b1b751ab9edcf3354197219c3dd44bda8860ef2ea09222d911"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/Supplementary Table S3 DEGs E4 vs. E3 17M O3.txt",
+      "bytes": 23086,
+      "sha256": "c94d04aa545ab89502ccc749744b53d38a21a4231c3e3551ee66250690a6ab7c"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/Supplementary Table S4a E4_vs_E3 KEGG pathway.pdf",
+      "bytes": 89670,
+      "sha256": "4e7707532da9808d20961981fc68b4b219f72e756d42037cf87819d953334402"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/Supplementary Table S4a E4_vs_E3 KEGG pathway.txt",
+      "bytes": 1609,
+      "sha256": "5a6bda7b74858cf1a6315796b5782b767e7d7b917c32436ee1ac8cfadf885435"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/Supplementary Table S4b 17M_vs_3M KEGG pathway.pdf",
+      "bytes": 92588,
+      "sha256": "a5a24ccc09606621fe8ed4b83c0dc164201195e903068ecf514abfe23245fa1f"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/Supplementary Table S4b 17M_vs_3M KEGG pathway.txt",
+      "bytes": 2395,
+      "sha256": "afbeb61c910e3494357f0854e2f1c01bd5cb257df095011f399ae324e4b91c60"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/Supplementary Table S4c Ozone vs FA KEGG pathway.pdf",
+      "bytes": 87637,
+      "sha256": "9691337ae054a7f89d2393544a6e37b2dd82d4743c8c87ad636d0ce4cadbe904"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/Supplementary Table S4c Ozone vs FA KEGG pathway.txt",
+      "bytes": 767,
+      "sha256": "0121eebede009fcf0f7b9d075f2bc7f75702ddc6d3afc8eb6c16528e41aae639"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/Supplementary Table S5a 17M E4 vs E3 Ozone KEGG Pathway.pdf",
+      "bytes": 96263,
+      "sha256": "49e446b7d3369ee18073cb291546e2a93e71a000091ceff88ba2fdebe12f648d"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/Supplementary Table S5a 17M E4 vs E3 Ozone KEGG Pathway.txt",
+      "bytes": 2912,
+      "sha256": "26f008f21eeed44dfedf288ae2e6e856a1e1ff1e04ae11b1aed452b94dfef412"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/Supplementary Table S5b 17M E4 vs E3 Ozone Hallmark Pathway.pdf",
+      "bytes": 93351,
+      "sha256": "34ef67d55010dcd3ed3978d4f1b50cb5016115f8567937dcc6e0c55846943695"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/Supplementary Table S5b 17M E4 vs E3 Ozone Hallmark Pathway.txt",
+      "bytes": 2004,
+      "sha256": "26175536b2e0dfd384642c778cf94d3fde1de5eef7c50f975a582534fec69388"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/Supplementary Table S6 List of qRT-PCR primers.pdf",
+      "bytes": 89305,
+      "sha256": "856b29f0b79dc5a2b197d48a0a9081859074fc1429a71a5cc9305edc9bfd2d0a"
+    },
+    {
+      "path": "metadata/replication_mirna_ozone/private_inputs/ozone_supplements/tables/Supplementary Table S6 List of qRT-PCR primers.txt",
+      "bytes": 915,
+      "sha256": "6beaa73a1cb9135a86591f15d49f20c0d319ec9c195df7360cab383efc4fbd86"
+    }
+  ],
+  "private_source_inputs": "Full-text extracts, publisher artwork and unpacked supplementary PDFs/text are retained locally under metadata/replication_mirna_ozone/private_inputs and excluded from public publishing. Derived numeric comparison tables are public.",
+  "source_files": [
+    {
+      "path": "papers/pdf/GSE93967_Ku_2017_Particle_Fibre_Toxicology.pdf",
+      "bytes": 3568436,
+      "sha256": "731cdb2c33ffdb9a41efc0e968638835a129f171f1dee662bbf219bf336663d7"
+    },
+    {
+      "path": "papers/pdf/E-MTAB-14917_Nakamya_2025_IJMS.pdf",
+      "bytes": 5167768,
+      "sha256": "9646a7d85ece70ecd573b1fd21fb0fa9d7cd1f809252d22b4f6c126e0e868595"
+    },
+    {
+      "path": "data/E-MTAB-14917/processed/E4_vs_E3_005_total.csv",
+      "bytes": 2451811,
+      "sha256": "530c92167b70123b321f0f22e17bc41a5232b39d622921a3a3d6f29624d528f8"
+    },
+    {
+      "path": "data/E-MTAB-14917/supplements/PMC11942628_supplementary.zip",
+      "bytes": 1996686,
+      "sha256": "fead4fecd511858149e334ca0f053d4aa92624db0411ef35af45f014de992968"
+    },
+    {
+      "path": "results/mirna/analysis_signal.tsv",
+      "bytes": 136460,
+      "sha256": "a5b7e5258550d63b02eea6c177ff13b116a2b56a9befcc1d4cb87a93523d56f3"
+    },
+    {
+      "path": "results/ozone/dds_full_wald.rds",
+      "bytes": 24825981,
+      "sha256": "e9df95c750aa18da621a8056259c3db3d26cc3bc0b7c6bfb7a3fde8616aad38f"
+    }
+  ],
+  "source_urls": [
+    "https://doi.org/10.1186/s12989-017-0215-3",
+    "https://doi.org/10.3390/ijms26062407",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE93967",
+    "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-14917"
+  ],
+  "supplement_parsing": "Source nested s001.zip is already preserved; S3 PDF numeric rows require removing PDF-inserted whitespace within gene names; all 959 row indices (565 up / 394 down) verified. S2componentlists exactly1490/1011 genotype760/383 age341/207 exposure; globalgenotype sourceCSV selected sets match S2 exactly."
+}

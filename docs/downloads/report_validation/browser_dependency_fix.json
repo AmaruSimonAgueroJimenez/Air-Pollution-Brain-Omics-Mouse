@@ -1,0 +1,77 @@
+{
+  "scope": "Installed Quarto source investigation and generated-report dependency review; parent performs browser console/visual QA.",
+  "reported_error": "Mismatched anonymous define() module: [object Object]",
+  "Quarto_version": "1.10.18",
+  "cause": {
+    "source": "/Applications/quarto/bin/quarto.js",
+    "extract_dependencies_line": 31018,
+    "inject_dependencies_line": 31073,
+    "details": "extractJupyterWidgetDependencies classifies any display_data or execute_result containing text/html or application/javascript as jsWidgets. includesForJupyterWidgetDependencies consequently adds CDN RequireJS 2.3.6, CDN jQuery 3.5.1 and a named jquery define call even when the HTML consists only of static tables, metric cards and figure markup.",
+    "project_HTML_producers": [
+      "docs/_report_utils.py:show_table",
+      "docs/_report_utils.py:figure",
+      "docs/_report_utils.py:metric_cards"
+    ],
+    "actual_interactive_widgets": false,
+    "note": "The viewer uses a local Plotly script in a separate iframe and does not need a report-page AMD loader. The specific UMD library responsible for the reported anonymous definition was not independently identified; removing the unnecessary AMD environment eliminates this conflict path."
+  },
+  "resolution": {
+    "change": "Use IPython.display.Markdown for the same static HTML strings instead of IPython.display.HTML in the three shared helpers.",
+    "expected_effect": "Jupyter MIME output changes from text/html to text/markdown; Pandoc preserves the embedded static HTML, and Quarto no longer injects the widget dependencies.",
+    "MIME_check": {
+      "HTML": [
+        "text/html",
+        "text/plain"
+      ],
+      "Markdown": [
+        "text/markdown",
+        "text/plain"
+      ]
+    },
+    "runtime_shim_added": false,
+    "viewer_iframe_changed": false
+  },
+  "status": "Fixed and verified on rebuilt index; remaining pages await final full-site rebuild.",
+  "compiled_index_checks": {
+    "RequireJS_CDN_absent": true,
+    "jQuery_CDN_absent": true,
+    "named_jquery_AMD_define_absent": true,
+    "widget_state_absent": true,
+    "three_shared_helpers_emit_Markdown_instead_of_HTML": true,
+    "metric_card_DOM_tokens_identical_to_before": true,
+    "overview_image_src_alt_class_identical_to_before": true,
+    "results_table_tag_structure_headers_cell_text_identical_to_before": true,
+    "results_table_raw_DOM_tokens_identical_to_before": false,
+    "table_DOM_difference": "The Markdown MIME route retains the original table classes, hierarchy, headers and cells. Quarto no longer adds caption-top, header/odd/even row classes or data-quarto-table-cell-role attributes; those generated attributes do not change data or the observed Bootstrap-striped table layout.",
+    "compiled_pages_checked": [
+      "docs/_site/index.html"
+    ],
+    "qualification": "The index uses metric_cards and show_table, plus a Markdown overview image. The shared figure helper MIME change is present in source; figure-containing pages require the final full-site rebuild and QA."
+  },
+  "parent_browser_verification": {
+    "performed_by": "Parent agent using actual Chrome CUA; reported to this independent source-review agent",
+    "fresh_navigation_at_UTC_approximate": "2026-10-19T01:16:00Z",
+    "visual_result": "Overview cards and layout intact in actual screenshot",
+    "new_console_errors_after_fresh_navigation": false,
+    "historical_RequireJS_errors_UTC": [
+      "2026-10-19T00:41:00Z",
+      "2026-10-19T00:42:58Z",
+      "2026-10-19T00:47:51Z"
+    ],
+    "qualification": "Previously retained console errors predate the fix; other QMD pages await the final full-site rebuild."
+  },
+  "verified_at_UTC": "2026-10-19T01:17:53.243320+00:00",
+  "source_SHA256": {
+    "docs/_report_utils.py": "dc028ca4a0b34362a37cfe2919c0122dfc737ec57cf12b9630c1e9867a55b0cc",
+    "docs/_site/index.html": "a05f385941619c9ecfca28ac314db2c5e50abb02da6b43d0f62de845d50b77c8"
+  },
+  "final_full_site_verification": {
+    "checked_at_UTC": "2026-10-19T01:30:26.759638+00:00",
+    "all_11_QMD_pages_rebuilt": true,
+    "injected_RequireJS_jQuery_widget_dependencies": [],
+    "figure_helper_rendering_verified_in_actual_ozone_page": true,
+    "embedded_Plotly_viewer_loaded": true,
+    "no_new_console_errors": true,
+    "details": "Historical errors predate the fix. Full-site links/dependency checks are recorded in compiled_report_checks.json; actual browser scope and screenshot in browser_checks.json."
+  }
+}

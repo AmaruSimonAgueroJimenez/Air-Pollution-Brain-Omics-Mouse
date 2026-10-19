@@ -101,6 +101,16 @@ Las lecturas pareadas originales se cuantifican frente a una referencia fija de 
 :::
 :::
 
+## Reproducir los artículos y examinar la estructura de la respuesta
+
+[**Reproducción de los estudios originales →**](replication.qmd) compara el código depositado y las tablas de genes con ajustes nuevos. El modelo original de corteza con 20 muestras recupera **exactamente los cuatro conjuntos significativos** (109 / 1,205 / 1,222 / 639). En hipotálamo, miRNA y ozono se explicitan los límites de reproducción parcial. Las señales ligadas al cromosoma Y en corteza también plantean una cuestión de calidad que la coincidencia numérica no resuelve.
+
+[**Interacciones y paneles moleculares →**](advanced_results.qmd) agrega pruebas formales de respuesta por edad/genotipo, intervalos que incorporan covarianzas, paneles por animal, una matriz de enriquecimiento GO de seis contrastes y una red de solapamiento de conjuntos. Ocho genes de respuesta por edad superan el umbral de su familia en ozono; **uno** permanece al corregir conjuntamente las tres familias de interacción. Es evidencia secundaria de los mismos animales.
+
+[![Comparación de resultados originales y nuevos ajustes: coincidencia exacta en cuatro contrastes de corteza. Texto interno en inglés.](../assets/figures/replication_pm/cortex_replication_benchmark.png){.site-overview-image}](replication.qmd)
+
+Cada panel enlaza figuras vectoriales y tablas fuente. Se distingue la reproducción computacional, la interpretación biológica y la simulación espacial.
+
 ## Una referencia medida junto a una simulación explícita
 
 ```{python}

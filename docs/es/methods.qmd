@@ -133,3 +133,7 @@ La referencia medida también se resume para cada una de sus 26 clases y 49 sube
 ## Reproducibilidad
 
 Se conservan en el repositorio los scripts de Python, los cuadernos QMD, los registros de versiones, las anotaciones originales de las muestras, las tablas diferenciales, las matrices normalizadas, los ajustes de sensibilidad y las figuras exportadas en SVG/PDF/PNG. El motor estadístico de miRNA utiliza R/limma y el de ozono por gen utiliza R/tximport/DESeq2, llamados desde el flujo en Python. No se fabrican resultados para completar las mediciones espaciales de exposición no disponibles. [Datos e instrucciones de ejecución](reproducibility.qmd).
+
+## Análisis ampliados y recuperación de los métodos originales
+
+El [capítulo de análisis secundarios](advanced_results.qmd) define los modelos anidados de interacción, contrastes de coeficientes, familias de corrección, reglas de selección visual e intervalos que incorporan covarianzas. El [capítulo de reproducción](replication.qmd) reconstruye por separado el modelo original de cinco grupos de corteza, la sensibilidad metodológica de hipotálamo, candidatos ANOVA/LSD de miRNA y la selección y ajustes candidatos de ozono. No reemplazan los ajustes principales. Se exportan sesiones de R 4.5.2, DESeq2 1.50.2, limma 3.66.0 y edgeR 4.8.2 con sus resultados. Las descargas originales conservan hashes y URL; el texto y las imágenes editoriales de los artículos se excluyen de la página pública.

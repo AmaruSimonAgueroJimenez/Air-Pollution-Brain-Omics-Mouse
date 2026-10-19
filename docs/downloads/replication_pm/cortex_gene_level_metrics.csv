@@ -1,0 +1,5 @@
+contrast,genes,author_FDR05,refit_FDR05,intersection,symmetric_difference,Jaccard,MLE_Spearman,max_abs_MLE_difference,max_abs_nominal_p_difference,max_abs_shrunken_difference,shrunken_Spearman,same_pvalue_missingness,same_padj_missingness
+PM,21388,1205,1205,1205,0,1,1,7.92979608981e-05,1.49593798293e-06,0.00307004018416,0.999999999606,True,True
+PFF,21388,109,109,109,0,1,1,8.02654611007e-05,1.34239427296e-06,0.000570857300044,0.999998895384,True,True
+PMPFF,21388,1222,1222,1222,0,1,1,8.11456502987e-05,1.76602413099e-06,2.43061560495e-05,0.999999999964,True,True
+PMPFFPM,21388,639,639,639,0,1,1,8.10929984993e-05,1.93071628096e-06,0.000742343666517,0.999999918897,True,True

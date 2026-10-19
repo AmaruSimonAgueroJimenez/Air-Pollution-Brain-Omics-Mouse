@@ -1,0 +1,58 @@
+{
+  "created_at_UTC": "2026-10-19T00:16:09.348194+00:00",
+  "source": "data/GSE297423/processed/GSE297423_mouse_gene_count.txt.gz",
+  "source_sha256": "7cf5292127d1e6d01646da4f3065de75aaee8d279a7da54b8ba84f29eee9eecd",
+  "sample_metadata_sha256": "16a863297b27eab0fc5a987fefec9d9055831ff16908e1d0216e8c0f6c8bc2f0",
+  "samples": [
+    "Control5",
+    "Control6",
+    "Control7",
+    "Control8",
+    "PMA2775",
+    "PMA2776",
+    "PMA2778",
+    "PMA2779"
+  ],
+  "design": "~condition",
+  "contrast": [
+    "condition",
+    "PM",
+    "PBS"
+  ],
+  "gene_identifiers": "Unique supplied Ensembl IDs; supplied gene symbols retained as annotation; no collapse by symbol",
+  "prefilter": "At least 10 counts in at least 4 of 8 selected samples",
+  "normalization": "DESeq2 median-of-ratios size factors (ratio method)",
+  "differential_expression": "PyDESeq2 negative-binomial GLM, two-sided Wald test; Benjamini-Hochberg FDR; alpha=0.05; independent filtering and Cook's filtering enabled",
+  "outliers": "No manual sample exclusion. Default Cook's replacement needs >=7 replicates within a group; with n=4 per group replacement is unavailable and Cook's p-value filtering remains enabled.",
+  "effect_size_shrinkage": "PyDESeq2 lfc_shrink with adapt=True (apeGLM-style heavy-tailed prior); original MLE coefficients, SEs, Wald statistics and p values are preserved before mutation",
+  "LFC_coefficient": "condition[T.PM]",
+  "PCA": "Blind DESeq2 variance-stabilizing transform, top 500 variable genes, feature centered without variance scaling",
+  "heatmap": "Top 30 adjusted-p ranked retained genes; VST values standardized within gene; descriptive display, not validation",
+  "multiplicity": "BH correction across retained genes after independent filtering within the single prespecified contrast",
+  "units": {
+    "counts": "nonnegative integer assigned gene counts",
+    "log2FoldChange": "log2 PM/PBS ratio",
+    "normalized_counts": "size-factor normalized assigned gene counts"
+  },
+  "workers": 4,
+  "random_seed": 20261018,
+  "software": {
+    "pydeseq2": "0.5.4",
+    "numpy": "2.4.3",
+    "pandas": "2.3.3",
+    "scipy": "1.17.1",
+    "matplotlib": "3.10.8",
+    "scikit-learn": "1.8.0"
+  },
+  "references": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE297423",
+    "https://doi.org/10.1126/science.adu4132",
+    "https://doi.org/10.1186/s13059-014-0550-8",
+    "https://doi.org/10.1093/bioinformatics/btad547"
+  ],
+  "limitations": [
+    "Only supplied sample annotations enter the design; no verified sex, batch or other unprovided covariate is invented.",
+    "The analysis starts from the depositor's counts and does not rerun FASTQ alignment or read-level QC.",
+    "No cell composition or spatial effects can be directly estimated from bulk RNA-seq alone."
+  ]
+}

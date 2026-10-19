@@ -1,0 +1,84 @@
+{
+  "cortex_replication_benchmark": {
+    "caption": "Count-based reproduction of the original five-condition cortex model (20 animals; four per condition). A: TMM logCPM PCA of the 500 most variable genes, scaled to unit variance as in the deposited code. B–D: original and recomputed discovery counts and maximum-likelihood log2 fold changes. Orange lines indicate identity; hexbin color encodes log gene density. E–F: sensitivity to using only the eight PM/PBS animals. The contingency includes only genes with finite adjusted values in both fits; full source tables retain missing values. This is computational reproduction, not independent biological replication.",
+    "caption_es": "Reproducción basada en conteos del modelo cortical original de cinco condiciones (20 animales; cuatro por condición). A: PCA de TMM logCPM con los 500 genes más variables, escalados a varianza unitaria como en el código depositado. B–D: conteos de descubrimientos y efectos de máxima verosimilitud originales y recalculados. Las líneas naranjas indican identidad; el color hexagonal representa la densidad génica en escala logarítmica. E–F: sensibilidad al usar solo los ocho animales PM/PBS. La contingencia incluye genes con valores ajustados finitos en ambos modelos; las tablas completas conservan los valores ausentes. Es reproducción computacional, no replicación biológica independiente.",
+    "source_tables": [
+      "cortex_author_pca.csv",
+      "cortex_gene_level_metrics.csv",
+      "cortex_author_refit_PM.csv.gz",
+      "cortex_author_refit_PMPFF.csv.gz",
+      "cortex_primary8_vs_author20.csv.gz",
+      "cortex_subset_vs_author_contingency.csv"
+    ],
+    "size_inches": [
+      13.8,
+      8.6
+    ],
+    "PNG_dpi": 300,
+    "sha256": {
+      "png": "f38e287ed9aa02d4897b0ddd0fd756a26f4120333b017b0562dd7b4283fd6adc",
+      "svg": "79d547cc2d79e8e12ea94386b95ad1acbf3b0a75eb30d23a6c51fb3f8552baf4",
+      "pdf": "0b2b476670bbea299a93cec191b6954c57d402d4bf97da50afddb4786a0912f8"
+    }
+  },
+  "cortex_multicondition_signature": {
+    "caption": "A: union of the eight genes with smallest author FDR in each condition. Colors show recomputed apeglm-shrunken log2 effects; black dots mark the original Wald BH FDR <0.05. The top Y-linked genes have large MLEs but near-zero shrunken effects; see the separate marker QC diagnostic before interpreting mechanism. B: exact intersections of reproduced FDR sets, including 582 PM-specific genes and 323 exclusive to the PM/PM–PFF pair. C: the eight smallest-author-FDR genes in the deposited GO:0002443 leading edge (leukocyte-mediated immunity). Pointwise intervals are original-model MLE ±1.96 SE; they do not adjust for gene selection. All contrasts share the same four PBS animals. GO membership was verified from the author table; enrichment was not independently recomputed.",
+    "caption_es": "A: unión de los ocho genes con menor FDR de los autores en cada condición. Los colores muestran efectos log2 recalculados y regularizados con apeglm; los puntos negros indican FDR de BH de Wald original <0.05. Los genes ligados al cromosoma Y tienen MLE grandes y efectos regularizados próximos a cero; consulte el diagnóstico de marcadores antes de interpretar mecanismos. B: intersecciones exactas de los conjuntos reproducidos, con 582 genes exclusivos de PM y 323 exclusivos del par PM/PM–PFF. C: ocho genes de menor FDR de los autores en el núcleo de enriquecimiento depositado de GO:0002443 (inmunidad mediada por leucocitos). Los intervalos puntuales corresponden a MLE ±1.96 EE del modelo original y no ajustan por selección de genes. Todos los contrastes comparten cuatro animales PBS. La pertenencia a GO se verificó en la tabla de los autores; el enriquecimiento no se recalculó independientemente.",
+    "source_tables": [
+      "cortex_multicondition_effect_heatmap.csv",
+      "cortex_multicondition_effect_FDR.csv",
+      "cortex_four_condition_intersections.csv",
+      "cortex_author_immune_leading_edge_targets.csv"
+    ],
+    "size_inches": [
+      13.8,
+      9.0
+    ],
+    "PNG_dpi": 300,
+    "sha256": {
+      "png": "d738549d1659793945111317004cf8d91988d75ca5764a6b8ed771fa70c11cd0",
+      "svg": "26645c6dd1d7daeba65328d04c192cbb81dff74b841e33886c41ae595ce59919",
+      "pdf": "8081d1bcd730931b5e3da34d1eed3a5dd8ff51aea267c29bb16afed2c6a107cd"
+    }
+  },
+  "hypothalamus_method_sensitivity": {
+    "caption": "Explicit partial methodological reconstruction; the original RUVg controls and number of unwanted factors were not recovered. All 11 animals are included: FA=4, PM=3, HFD=4. Shared source features were restricted to GENCODE M13 protein-coding symbols; CPM >2 in at least three samples, TMM/voom and limma moderated tests were used. The declared reconstruction gate is BH FDR <0.05, |log2FC| >0.8 and AveExpr >1. A: PCA of 500 variable unadjusted logCPM genes, centered without scaling. B: diet and exposure remain separate contrasts; orange denotes passing either contrast gate. C: union of ten smallest-FDR genes per contrast; row z scores describe expression patterns. D: published 17 PM genes, primary PyDESeq2 11, independent R DESeq2 12, and unadjusted limma 0 use different models and gene universes. These differences cannot establish biological nonreplication or the validity of the unavailable original adjustment.",
+    "caption_es": "Reconstrucción metodológica parcial explícita; no se recuperaron los controles RUVg ni el número de factores no deseados originales. Incluye los 11 animales: FA=4, PM=3, HFD=4. Se restringieron los genes comunes a símbolos codificantes de GENCODE M13, con CPM >2 en al menos tres muestras, TMM/voom y pruebas moderadas de limma. El umbral declarado es FDR de BH <0.05, |log2FC| >0.8 y AveExpr >1. A: PCA de 500 genes logCPM variables sin ajuste, centrados sin escalar. B: dieta y exposición son contrastes separados; naranja indica superar los umbrales en cualquiera. C: unión de diez genes de menor FDR por contraste; los valores z por fila describen patrones. D: los 17 genes PM publicados, 11 de PyDESeq2 principal, 12 de DESeq2 en R y 0 de limma sin RUVg usan modelos y universos distintos. Estas diferencias no demuestran falta de replicación biológica ni validan el ajuste original no disponible.",
+    "source_tables": [
+      "hypothalamus_original_like_logCPM.csv",
+      "hypothalamus_unadjusted_pca.csv",
+      "hypothalamus_PM_HFD_effect_comparison.csv.gz",
+      "hypothalamus_method_sensitivity_heatmap.csv",
+      "hypothalamus_refit_summary.json"
+    ],
+    "size_inches": [
+      12.4,
+      9.6
+    ],
+    "PNG_dpi": 300,
+    "sha256": {
+      "png": "1bbbfb002cca30eadf40d5aa457de68a8e4f07a72beaad8ac8482f30802b5d46",
+      "svg": "5d9763494f47221b8c1e339a0d8d8162a6a9c9f4b099ca4be5159e2b8bf5b83c",
+      "pdf": "9d495dedb2e0994d4cc98e43736be89cbee8e70b8839dcea2381699daf8502ca"
+    }
+  },
+  "cortex_marker_qc": {
+    "caption": "Observed source counts for Ddx3y, Uty, Kdm5d and Xist in every cortex animal. A: normalized expression with condition labels; no animals are omitted. B: Xist versus the sum of three Y-linked markers, without classification or an exposure-effect test. All four PBS animals have zero raw counts for each Y marker, while other conditions contain heterogeneous values. These genes also rank at the top of the original Wald FDR tables but shrink toward zero with apeglm. This is a diagnostic flag for independently verifying sample sex, identity and other technical explanations. Sex cannot be assigned or a confounder established from this plot alone. The original group-only model is preserved.",
+    "caption_es": "Conteos originales observados de Ddx3y, Uty, Kdm5d y Xist en todos los animales de corteza. A: expresión normalizada con etiquetas de condición; no se omiten animales. B: Xist frente a la suma de tres marcadores ligados al cromosoma Y, sin clasificación ni prueba de efecto de exposición. Los cuatro animales PBS tienen cero conteos originales en cada marcador Y; las otras condiciones muestran heterogeneidad. Estos genes están entre los primeros de las tablas FDR de Wald originales, pero apeglm regulariza sus efectos hacia cero. Es una señal diagnóstica para verificar sexo, identidad y explicaciones técnicas con metadatos independientes. La figura por sí sola no permite asignar sexo ni demostrar confusión. Se conserva el modelo original ajustado solo por grupo.",
+    "source_tables": [
+      "cortex_marker_expression_by_animal.csv",
+      "cortex_marker_log2_normalized_counts.csv",
+      "cortex_author_design.csv"
+    ],
+    "size_inches": [
+      13.4,
+      5.0
+    ],
+    "PNG_dpi": 300,
+    "sha256": {
+      "png": "97bc92b3b6829cfc7f5e211ee4155f8b909ed1f192fd3ff2888ea757269b5587",
+      "svg": "325e20cf85b42e21da1501e356cded9fad535525f9b94e33344b597168668bb3",
+      "pdf": "ab8d7d052e4a74aef62038560df1a457751d7cead7ff07cdfc99e05d44642533"
+    }
+  }
+}

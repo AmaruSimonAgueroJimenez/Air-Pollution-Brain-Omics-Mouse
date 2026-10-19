@@ -1,0 +1,16 @@
+{
+  "transcripts": 142604,
+  "genes": 55401,
+  "decoy": "entire GRCm38 primary assembly",
+  "gentrome": {
+    "md5": "3425a41d7f19e710365b7b4bd31abcde",
+    "sha256": "0e82b5231443bd69d0dbedec40c284ccd61e9dd2e22d0a4b531d9827653a1794",
+    "bytes": 3026072351
+  },
+  "tx2gene": {
+    "md5": "26d14095bd4217dbd80b177614e8020f",
+    "sha256": "1f7fe248cb568c6c00c5e556d4338074d7cf58606010c6e0d9df05587dd82abc",
+    "bytes": 6072902
+  },
+  "note": "Mouse reference; human APOE alleles not quantified specifically."
+}

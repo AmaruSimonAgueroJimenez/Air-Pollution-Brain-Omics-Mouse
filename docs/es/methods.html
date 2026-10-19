@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Metodología – Contaminación del aire · ómica cerebral</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5dd942ac47374bdb5320a9bbd29a7aa4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../assets/report.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Contaminación del aire · ómica cerebral</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Resumen</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./introduction.html"> 
+<span class="menu-text">Introducción</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./methods.html" aria-current="page"> 
+<span class="menu-text">Métodos</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resultados" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Resultados</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-resultados">    
+        <li>
+    <a class="dropdown-item" href="./results.html">
+ <span class="dropdown-text">Hipotálamo · PM2.5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cortex.html">
+ <span class="dropdown-text">Corteza cingulada · PM2.5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./mirna.html">
+ <span class="dropdown-text">miRNA del hipocampo · PM2.5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ozone.html">
+ <span class="dropdown-text">Hipocampo · ozono</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./enrichment.html">
+ <span class="dropdown-text">Enriquecimiento funcional</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./advanced_results.html">
+ <span class="dropdown-text">Interacciones y paneles moleculares</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./replication.html">
+ <span class="dropdown-text">Reproducción de los artículos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./spatial_reference.html">
+ <span class="dropdown-text">Referencia espacial medida</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./viewer.html"> 
+<span class="menu-text">Visor 3D</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./reproducibility.html"> 
+<span class="menu-text">Datos y código</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./../index.html"> 
+<span class="menu-text">English</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Alternar modo lector">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#alcance-del-estudio-y-unidades-experimentales" id="toc-alcance-del-estudio-y-unidades-experimentales" class="nav-link active" data-scroll-target="#alcance-del-estudio-y-unidades-experimentales">Alcance del estudio y unidades experimentales</a>
+  <ul class="collapse">
+  <li><a href="#regímenes-experimentales-de-exposición" id="toc-regímenes-experimentales-de-exposición" class="nav-link" data-scroll-target="#regímenes-experimentales-de-exposición">Regímenes experimentales de exposición</a></li>
+  </ul></li>
+  <li><a href="#comprobaciones-de-las-fuentes-y-preprocesamiento" id="toc-comprobaciones-de-las-fuentes-y-preprocesamiento" class="nav-link" data-scroll-target="#comprobaciones-de-las-fuentes-y-preprocesamiento">Comprobaciones de las fuentes y preprocesamiento</a></li>
+  <li><a href="#análisis-clásico-de-rna-seq" id="toc-análisis-clásico-de-rna-seq" class="nav-link" data-scroll-target="#análisis-clásico-de-rna-seq">Análisis clásico de RNA-seq</a>
+  <ul class="collapse">
+  <li><a href="#hipotálamo-y-corteza-cingulada" id="toc-hipotálamo-y-corteza-cingulada" class="nav-link" data-scroll-target="#hipotálamo-y-corteza-cingulada">Hipotálamo y corteza cingulada</a></li>
+  <li><a href="#calidad-de-las-muestras-y-relaciones-entre-ellas" id="toc-calidad-de-las-muestras-y-relaciones-entre-ellas" class="nav-link" data-scroll-target="#calidad-de-las-muestras-y-relaciones-entre-ellas">Calidad de las muestras y relaciones entre ellas</a></li>
+  <li><a href="#análisis-de-sensibilidad-del-hipotálamo" id="toc-análisis-de-sensibilidad-del-hipotálamo" class="nav-link" data-scroll-target="#análisis-de-sensibilidad-del-hipotálamo">Análisis de sensibilidad del hipotálamo</a></li>
+  </ul></li>
+  <li><a href="#análisis-de-mirna-hipocampales" id="toc-análisis-de-mirna-hipocampales" class="nav-link" data-scroll-target="#análisis-de-mirna-hipocampales">Análisis de miRNA hipocampales</a></li>
+  <li><a href="#análisis-de-ozono-desde-las-lecturas-originales" id="toc-análisis-de-ozono-desde-las-lecturas-originales" class="nav-link" data-scroll-target="#análisis-de-ozono-desde-las-lecturas-originales">Análisis de ozono desde las lecturas originales</a></li>
+  <li><a href="#enriquecimiento-funcional" id="toc-enriquecimiento-funcional" class="nav-link" data-scroll-target="#enriquecimiento-funcional">Enriquecimiento funcional</a></li>
+  <li><a href="#referencia-3d-medida-y-escenario-modelado-de-pm2.5" id="toc-referencia-3d-medida-y-escenario-modelado-de-pm2.5" class="nav-link" data-scroll-target="#referencia-3d-medida-y-escenario-modelado-de-pm2.5">Referencia 3D medida y escenario modelado de PM2.5</a>
+  <ul class="collapse">
+  <li><a href="#resúmenes-descriptivos-del-atlas" id="toc-resúmenes-descriptivos-del-atlas" class="nav-link" data-scroll-target="#resúmenes-descriptivos-del-atlas">Resúmenes descriptivos del atlas</a></li>
+  </ul></li>
+  <li><a href="#reproducibilidad" id="toc-reproducibilidad" class="nav-link" data-scroll-target="#reproducibilidad">Reproducibilidad</a></li>
+  <li><a href="#análisis-ampliados-y-recuperación-de-los-métodos-originales" id="toc-análisis-ampliados-y-recuperación-de-los-métodos-originales" class="nav-link" data-scroll-target="#análisis-ampliados-y-recuperación-de-los-métodos-originales">Análisis ampliados y recuperación de los métodos originales</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Metodología</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+<p class="subtitle lead">Unidades experimentales, modelos estadísticos y supuestos espaciales</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha del análisis</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">19 octubre 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="alcance-del-estudio-y-unidades-experimentales" class="level2">
+<h2 class="anchored" data-anchor-id="alcance-del-estudio-y-unidades-experimentales">Alcance del estudio y unidades experimentales</h2>
+<p>La colección de origen comprende cuatro estudios públicos de exposición en cerebro de ratón y un atlas de referencia MERFISH independiente. Se conservan los archivos originales y sus metadatos. Los análisis principales utilizan siete bibliotecas de RNA-seq de hipotálamo, ocho de corteza cingulada, nueve microarreglos de miRNA hipocampales y 24 bibliotecas de RNA-seq del estudio de ozono. Cada biblioteca o microarreglo representa una muestra del estudio; las células del atlas no son réplicas independientes de exposición. Los estudios no se agrupan porque difieren la región, el modelo animal, la vía de exposición y el ensayo.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Conjunto de datos</th>
+<th>Contraste principal</th>
+<th>Excluido de ese contraste</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GSE145840</td>
+<td>PM2.5 frente a aire filtrado, con dieta estándar; 3 frente a 4</td>
+<td>Cuatro muestras con dieta rica en grasas</td>
+</tr>
+<tr class="even">
+<td>GSE297423</td>
+<td>PM2.5 intranasal frente a PBS; 4 frente a 4</td>
+<td>Doce muestras de los brazos PFF/PM-PFF</td>
+</tr>
+<tr class="odd">
+<td>GSE93967</td>
+<td>1 mg/kg o 5 mg/kg frente a solución salina; 3 por grupo</td>
+<td>Controles de plataforma y características biológicas constantes</td>
+</tr>
+<tr class="even">
+<td>E-MTAB-14917</td>
+<td>Ozono frente a aire filtrado dentro de estratos de edad × APOE; 3 por grupo</td>
+<td>No se infiere un contraste de exposición de la tabla depositada de resultados E4 frente a E3</td>
+</tr>
+</tbody>
+</table>
+<p>Los diseños experimentales originales se describen en Rajagopalan et al., Zhang et al., Ku et al.&nbsp;y Nakamya et al. <span class="citation" data-cites="Rajagopalan2020_32780721">Rajagopalan et&nbsp;al. (<a href="#ref-Rajagopalan2020_32780721" role="doc-biblioref">2020</a>)</span> <span class="citation" data-cites="Zhang2025_40906862">Zhang et&nbsp;al. (<a href="#ref-Zhang2025_40906862" role="doc-biblioref">2025</a>)</span> <span class="citation" data-cites="Ku2017_28851397">Ku et&nbsp;al. (<a href="#ref-Ku2017_28851397" role="doc-biblioref">2017</a>)</span> <span class="citation" data-cites="Nakamya2025_40141051">Nakamya et&nbsp;al. (<a href="#ref-Nakamya2025_40141051" role="doc-biblioref">2025</a>)</span></p>
+<section id="regímenes-experimentales-de-exposición" class="level3">
+<h3 class="anchored" data-anchor-id="regímenes-experimentales-de-exposición">Regímenes experimentales de exposición</h3>
+<p>La tabla registra los brazos seleccionados de los estudios cerebrales según las publicaciones originales. Las unidades de dosis y las vías de exposición se conservan tal como fueron comunicadas; no se convierten en una dosis común equivalente por inhalación.</p>
+<div class="table-scroll">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fuente</th>
+<th>Modelo animal y sexo</th>
+<th>Edad al inicio de la exposición</th>
+<th>Exposición y esquema</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GSE145840 <span class="citation" data-cites="Rajagopalan2020_32780721">(<a href="#ref-Rajagopalan2020_32780721" role="doc-biblioref">Rajagopalan et&nbsp;al. 2020</a>)</span></td>
+<td>Machos C57BL/6J, dieta estándar</td>
+<td>3 semanas</td>
+<td>PM2.5 ambiental concentrado por inhalación, aproximadamente 60–120 µg/m³ (media comunicada cercana a 80); 6 h/día, 5 días/semana, 14 semanas.</td>
+</tr>
+<tr class="even">
+<td>GSE297423 <span class="citation" data-cites="Zhang2025_40906862">(<a href="#ref-Zhang2025_40906862" role="doc-biblioref">Zhang et&nbsp;al. 2025</a>)</span></td>
+<td>α-sinucleína hWT humanizada, JAX 010710, fondo FVB;129S6; sexo no especificado</td>
+<td>2 meses</td>
+<td>Administración intranasal de 2 µL a 5 mg/mL cada dos días durante dos meses; comparador PBS.</td>
+</tr>
+<tr class="odd">
+<td>GSE93967 <span class="citation" data-cites="Ku2017_28851397">(<a href="#ref-Ku2017_28851397" role="doc-biblioref">Ku et&nbsp;al. 2017</a>)</span></td>
+<td>Machos C57BL/6</td>
+<td>Aproximadamente 8 semanas</td>
+<td>Aspiración orofaríngea de 1 o 5 mg/kg en días alternos durante cuatro semanas; tejido recogido 18 h después de la última dosis.</td>
+</tr>
+<tr class="even">
+<td>E-MTAB-14917 <span class="citation" data-cites="Nakamya2025_40141051">(<a href="#ref-Nakamya2025_40141051" role="doc-biblioref">Nakamya et&nbsp;al. 2025</a>)</span></td>
+<td>Machos con reemplazo dirigido por APOE3/APOE4 humano</td>
+<td>3 o 17 meses</td>
+<td>Ozono gaseoso a 0.8 ppm, 7 h/día durante cinco días, seguido de nueve días de aire filtrado; ocho ciclos.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>El brazo de RNA-seq de corteza utiliza animales jóvenes hWT humanizados; la misma publicación incluye además un experimento distinto en ratones convencionales de mayor edad. Estos diseños no se intercambian. Las edades terminales exactas y los intervalos hasta la recolección de tejido no están depositados explícitamente para hipotálamo, corteza u ozono, por lo que no se inventan sumando intervalos del calendario. La <a href="../downloads/report_validation/experimental_design_review.json">revisión del diseño de exposición</a> registra las páginas de los PDF, los metadatos de origen, las sumas de comprobación y las incertidumbres restantes de cada fila.</p>
+</section>
+</section>
+<section id="comprobaciones-de-las-fuentes-y-preprocesamiento" class="level2">
+<h2 class="anchored" data-anchor-id="comprobaciones-de-las-fuentes-y-preprocesamiento">Comprobaciones de las fuentes y preprocesamiento</h2>
+<p>Los archivos de exposición descargados se contrastaron con los tamaños y las sumas MD5 del proveedor cuando estaban disponibles. Los 49 archivos de referencia espacial coincidieron con el manifiesto de Allen tanto en tamaño como en MD5. Antes de modelar se comprobaron los conteos enteros y no negativos, los identificadores únicos de características, el orden de las muestras, las asignaciones de grupo y la concordancia de las listas de genes. Los siete archivos hipotalámicos utilizan un formato sin encabezado separado por espacios y comparten los mismos 50,417 símbolos génicos en el mismo orden. Se conservaron los valores negativos de la matriz de señales de miRNA depositada porque esos valores ya son señales continuas normalizadas.</p>
+<p>La matriz de corteza cingulada se vinculó con las muestras mediante los <strong>nombres de biblioteca</strong> depositados, no por el orden de las muestras GEO. El alias ambiguo de una muestra PM-PFF-más-PM queda fuera del contraste principal de ocho muestras y no se corrige de forma implícita. No se inventaron covariables de lote, RIN ni edad individual para los estudios de RNA-seq de PM2.5.</p>
+</section>
+<section id="análisis-clásico-de-rna-seq" class="level2">
+<h2 class="anchored" data-anchor-id="análisis-clásico-de-rna-seq">Análisis clásico de RNA-seq</h2>
+<section id="hipotálamo-y-corteza-cingulada" class="level3">
+<h3 class="anchored" data-anchor-id="hipotálamo-y-corteza-cingulada">Hipotálamo y corteza cingulada</h3>
+<p>Los conteos se analizaron en Python mediante PyDESeq2, una implementación en Python del marco DESeq2. <span class="citation" data-cites="Muzellec2023_PyDESeq2">Muzellec et&nbsp;al. (<a href="#ref-Muzellec2023_PyDESeq2" role="doc-biblioref">2023</a>)</span> <span class="citation" data-cites="Love2014_DESeq2">Love et&nbsp;al. (<a href="#ref-Love2014_DESeq2" role="doc-biblioref">2014</a>)</span> El filtro hipotalámico exigió al menos 10 conteos en al menos tres de siete muestras y conservó 19,611 genes. El filtro de corteza exigió al menos 10 conteos en al menos cuatro de ocho muestras y conservó 19,235 genes. Los filtros se aplicaron antes de la normalización y del modelado inferencial.</p>
+<p>Cada estudio se modeló por separado con <strong>la condición como único factor del diseño</strong> y un contraste explícito de PM frente a control. Se utilizaron factores de tamaño basados en la mediana de cocientes, estimación de dispersión por gen y mediante tendencia, modelos lineales generalizados binomiales negativos y pruebas de Wald bilaterales. El ajuste por pruebas múltiples siguió el procedimiento de Benjamini–Hochberg de la implementación, con <strong>FDR &lt; 0.05</strong> como umbral principal. <span class="citation" data-cites="Benjamini1995_FDR">Benjamini y Hochberg (<a href="#ref-Benjamini1995_FDR" role="doc-biblioref">1995</a>)</span> Se distinguen el filtrado de Cook y el filtrado independiente: no todos los valores p ajustados ausentes se atribuyen a valores atípicos.</p>
+<p>Los cambios de expresión log₂ originales de máxima verosimilitud, sus errores, estadísticos de Wald, valores p y valores p ajustados se guardaron <strong>antes</strong> de aplicar la regularización de apeglm. Los cambios log₂ regularizados se conservaron por separado para visualizar efectos y construir escenarios espaciales; no sustituyen los resultados originales de las pruebas de hipótesis. <span class="citation" data-cites="Zhu2019_apeglm">Zhu et&nbsp;al. (<a href="#ref-Zhu2019_apeglm" role="doc-biblioref">2019</a>)</span> Se presenta descriptivamente un umbral secundario de |log₂FC regularizado| ≥ 1 además de la FDR, sin redefinir el conjunto principal de hallazgos.</p>
+</section>
+<section id="calidad-de-las-muestras-y-relaciones-entre-ellas" class="level3">
+<h3 class="anchored" data-anchor-id="calidad-de-las-muestras-y-relaciones-entre-ellas">Calidad de las muestras y relaciones entre ellas</h3>
+<p>El informe incluye profundidad de biblioteca asignada a genes, genes detectados, distribuciones normalizadas, correlaciones/distancias entre muestras y PCA. El PCA utiliza los 500 genes de mayor variabilidad tras estabilizar la varianza, centrados entre muestras sin escalar por la varianza de cada gen. Los animales se identifican individualmente. No se eliminó ninguna muestra para mejorar la separación visual, no se infirió un lote a partir de un componente principal y no se aplicó una corrección de lote no documentada.</p>
+<p>La transformación estabilizadora de varianza del hipotálamo utiliza el diseño de condición para estimar la tendencia de dispersión; las transformaciones exploratorias de corteza y ozono son ciegas al diseño. Esta distinción se conserva en el registro de procedencia del análisis. Modifica la transformación utilizada para visualizar, no el contraste de expresión diferencial por gen.</p>
+</section>
+<section id="análisis-de-sensibilidad-del-hipotálamo" class="level3">
+<h3 class="anchored" data-anchor-id="análisis-de-sensibilidad-del-hipotálamo">Análisis de sensibilidad del hipotálamo</h3>
+<p>Como el PCA hipotalámico muestra una marcada heterogeneidad de los controles, se volvió a ajustar el análisis completo omitiendo sucesivamente cada una de las siete muestras. Se conservó el universo génico original del análisis principal. Se presentan dirección, magnitud del efecto y estabilidad de la FDR para los once hallazgos principales, junto con el número de hallazgos de cada omisión. Estos ajustes evalúan sensibilidad; no seleccionan una eliminación preferida ni reemplazan el resultado principal de siete animales.</p>
+<p>Un ajuste independiente de DESeq2 en R comprueba la concordancia entre implementaciones con las mismas muestras, filtro génico, normalización, contraste de condición, tendencia paramétrica de dispersión, configuración de Cook y familia de hipótesis con valores p finitos. Los efectos originales de máxima verosimilitud y sus errores estándar se comparan antes de la regularización. Se documentan los cruces del umbral sin cambiar el análisis principal preespecificado en Python. Esto evalúa sensibilidad numérica y no replicación biológica.</p>
+</section>
+</section>
+<section id="análisis-de-mirna-hipocampales" class="level2">
+<h2 class="anchored" data-anchor-id="análisis-de-mirna-hipocampales">Análisis de miRNA hipocampales</h2>
+<p>GSE93967 se analizó en su <strong>escala de señal normalizada por cuantiles depositada</strong>, sin una segunda transformación logarítmica. Las anotaciones de sondas de GPL17912 identifican las características biológicas de miRNA y los controles de plataforma. Se excluyeron los controles y las filas biológicas constantes; las características de baja detección se marcaron y conservaron. Los efectos son diferencias de medias en unidades de la señal publicada porque el depósito no estableció una escala log₂.</p>
+<p>Se ajustó un modelo lineal de tres grupos mediante los estadísticos moderados de Bayes empírico de limma. <span class="citation" data-cites="Ritchie2015_limma">Ritchie et&nbsp;al. (<a href="#ref-Ritchie2015_limma" role="doc-biblioref">2015</a>)</span> Los contrastes de 1 mg/kg frente a control y 5 mg/kg frente a control se probaron por separado, con corrección de Benjamini–Hochberg dentro de cada familia de contrastes. Una prueba F moderada global describe las diferencias entre los tres grupos. Se conservan los intervalos puntuales basados en t y los valores de las nueve muestras. No se aplicó análisis de Gene Ontology de mRNA a nombres de miRNA sin un mapeo validado de sus genes diana.</p>
+</section>
+<section id="análisis-de-ozono-desde-las-lecturas-originales" class="level2">
+<h2 class="anchored" data-anchor-id="análisis-de-ozono-desde-las-lecturas-originales">Análisis de ozono desde las lecturas originales</h2>
+<p>Las 24 bibliotecas de lecturas pareadas se resuelven a partir del SDRF de origen y mantienen unidos los archivos pareados según la ejecución ENA. La calidad inicial y el contenido de adaptadores se evalúan en los <strong>primeros 200,000 pares de lecturas por biblioteca</strong>, explícitamente un subconjunto diagnóstico y no una auditoría de calidad de todas las lecturas. Se conservan los informes de eliminación de adaptadores de las ejecuciones completas. El recorte de adaptadores se aplica de manera consistente cuando se cumple el criterio documentado; no se eliminan duplicados ni se aplica un recorte arbitrario por calidad.</p>
+<p>La cuantificación con Salmon utiliza un transcriptoma fijo <strong>GENCODE M25/GRCm38</strong> junto con el genoma primario completo como señuelo, inferencia automática del tipo de biblioteca y corrección de sesgos de secuencia y GC. Las sumas de comprobación del proveedor, los pasos de construcción de la referencia, las versiones de software y los informes por biblioteca se almacenan con el flujo. <span class="citation" data-cites="Patro2017_Salmon">Patro et&nbsp;al. (<a href="#ref-Patro2017_Salmon" role="doc-biblioref">2017</a>)</span> Las cuantificaciones se importan por gen con tximport y conservan la información de longitud efectiva para DESeq2. <span class="citation" data-cites="Soneson2015_tximport">Soneson et&nbsp;al. (<a href="#ref-Soneson2015_tximport" role="doc-biblioref">2015</a>)</span> La cuantificación contra la referencia de ratón no establece la expresión específica de alelos de APOE humano.</p>
+<p>El diseño de ocho grupos cruza edad, genotipo APOE y exposición, con tres bibliotecas por grupo. El modelo completo incluye las interacciones correspondientes de dos y tres factores. Cuatro contrastes de ozono frente a aire filtrado describen los estratos de edad/genotipo. Una prueba de razón de verosimilitudes compara el modelo completo con un modelo de edad por genotipo y evalúa conjuntamente los términos asociados con la exposición. Los valores p ajustados se conservan tanto dentro de cada estrato como en la familia de los cuatro contrastes por estrato. Las descripciones inconsistentes de la cepa en los metadatos originales se documentan en lugar de convertirse en un ajuste sin respaldo.</p>
+</section>
+<section id="enriquecimiento-funcional" class="level2">
+<h2 class="anchored" data-anchor-id="enriquecimiento-funcional">Enriquecimiento funcional</h2>
+<p>Las asociaciones de procesos biológicos de Gene Ontology de ratón proceden de una copia oficial fijada de <strong>MGI GAF</strong> y <strong>go-basic OBO</strong>. Se excluyen las anotaciones NOT, se restringe el taxón a ratón y se propagan los ancestros elegibles is-a/part-of. Se distinguen los símbolos actuales exactos de los sinónimos no ambiguos de la fuente; los alias ambiguos quedan sin mapear. Se exportan las versiones de anotación, los hashes, las decisiones de mapeo y la cobertura. <span class="citation" data-cites="Ashburner2000_GO"><span class="nocase">Ashburner et&nbsp;al.</span> (<a href="#ref-Ashburner2000_GO" role="doc-biblioref">2000</a>)</span></p>
+<p>El análisis de sobrerrepresentación utiliza una prueba hipergeométrica unilateral, por separado para listas de genes con mayor y menor expresión. El fondo comprende genes mapeados y únicos elegibles para la prueba original de expresión diferencial. Se evalúan los términos con 15–500 genes del fondo. Todos los términos elegibles, incluidos aquellos sin solapamiento, entran en la corrección de Benjamini–Hochberg dentro de cada familia específica por dirección. La ausencia de sobrerrepresentación significativa se comunica directamente.</p>
+<p>El GSEA con ordenamiento previo utiliza estadísticos de Wald finitos y con signo <strong>con valores p originales finitos</strong>; excluye resultados con p no finito filtrados por Cook y conserva genes con p finito eliminados por filtrado independiente de la presentación de valores p ajustados. Utiliza 1,000 permutaciones de conjuntos génicos, una semilla fija y conjuntos de 15–500 genes. <span class="citation" data-cites="Subramanian2005_GSEA">Subramanian et&nbsp;al. (<a href="#ref-Subramanian2005_GSEA" role="doc-biblioref">2005</a>)</span> <span class="citation" data-cites="Fang2023_GSEApy">Fang et&nbsp;al. (<a href="#ref-Fang2023_GSEApy" role="doc-biblioref">2023</a>)</span> Su FDR algorítmica es distinta del ajuste BH de ORA. Aquí, el GSEA es exploratorio: los términos solapados y los genes correlacionados no constituyen hallazgos mecanísticos independientes, y estos análisis no eliminan las limitaciones por tamaño muestral pequeño y heterogeneidad de los controles.</p>
+</section>
+<section id="referencia-3d-medida-y-escenario-modelado-de-pm2.5" class="level2">
+<h2 class="anchored" data-anchor-id="referencia-3d-medida-y-escenario-modelado-de-pm2.5">Referencia 3D medida y escenario modelado de PM2.5</h2>
+<p>La referencia espacial utiliza <strong>Zhuang-ABCA-2</strong>, un donante macho adulto. Las células se seleccionan según las asignaciones de parcelación CCF depositadas para la división hipotalámica, se vinculan mediante identificadores celulares exactos de tipo texto con la matriz H5AD medida y se anotan mediante la taxonomía del atlas. <span class="citation" data-cites="Zhang2023_38092912">Zhang et&nbsp;al. (<a href="#ref-Zhang2023_38092912" role="doc-biblioref">2023</a>)</span></p>
+<div id="884f98ca" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display cell-output-markdown">
+<p>Esta selección contiene <strong>37,811 células</strong>, <strong>26 clases celulares</strong> y <strong>49 subestructuras hipotalámicas</strong>. Se puede acceder a los <strong>1,122 genes medidos</strong>; <strong>1,003</strong> tienen estimaciones fiables del efecto en tejido completo. Las células no se submuestrean, reflejan ni interpolan.</p>
+</div>
+</div>
+<p>El visor representa las distancias CCF en milímetros como ML, AP y −DV. No aplica la transformación afín RAS centrada del NIfTI a las distancias de coordenadas CCF positivas. Una comprobación de concordancia con las etiquetas de los vóxeles verifica el marco; se conservan las diferencias en los límites. Las superficies anatómicas se simplifican a 0.15 mm para el contexto de cerebro completo y a 0.075 mm para el hipotálamo; las coordenadas moleculares permanecen sin cambios.</p>
+<p>El escenario central se define en la <strong>escala lineal de conteos de imagen</strong>:</p>
+<pre class="text"><code>Valor simulado(célula, gen) = conteo medido de referencia(célula, gen)
+                             × 2^(cambio log2 regularizado de PM frente a FA en tejido completo)</code></pre>
+<p>El multiplicador se aplica uniformemente dentro del hipotálamo. Otras regiones aportan únicamente contexto anatómico y no reciben un efecto de exposición. Los escenarios alternativos inferior y superior utilizan el coeficiente grupal sin regularizar ±1.96 errores estándar; son escenarios de sensibilidad del efecto grupal y no intervalos de confianza por célula.</p>
+<p>Las dos vistas utilizan posiciones celulares idénticas, cámaras enlazadas y una escala de color común de <strong>log₂(1 + valor)</strong>. Se informa de un límite opcional común del percentil 99 de valores positivos; los valores que exceden el límite cromático se conservan en la información al pasar el cursor y en las exportaciones de origen. Los genes sin inferencia fiable en tejido completo se mantienen solo como referencia; los genes modelados no significativos llevan una etiqueta exploratoria.</p>
+<p>La referencia no es un control emparejado del estudio de tejido completo. La transferencia uniforme conserva los gradientes basales y los ceros, y no identifica respuestas específicas por célula, cambios de abundancia, migración, morfología ni expresión de células individuales expuestas.</p>
+<section id="resúmenes-descriptivos-del-atlas" class="level3">
+<h3 class="anchored" data-anchor-id="resúmenes-descriptivos-del-atlas">Resúmenes descriptivos del atlas</h3>
+<p>La referencia medida también se resume para cada una de sus 26 clases y 49 subestructuras. Para cada gen medido se conservan la media aritmética del conteo lineal de imagen, el número de células con conteo positivo y la fracción de detección dentro de cada grupo, con los ceros incluidos en el denominador. La composición por clase y los gráficos de detección de Tll1 son mediciones descriptivas de un donante. No incluyen pruebas por célula, intervalos de confianza ni inferencia de células expuestas. El gráfico anatómico de Tll1 muestra las 15 mayores fracciones de detección entre las subestructuras con al menos 100 células seleccionadas; las exportaciones completas conservan las 49 subestructuras. <a href="./spatial_reference.html">Resultados de la referencia medida</a>.</p>
+</section>
+</section>
+<section id="reproducibilidad" class="level2">
+<h2 class="anchored" data-anchor-id="reproducibilidad">Reproducibilidad</h2>
+<p>Se conservan en el repositorio los scripts de Python, los cuadernos QMD, los registros de versiones, las anotaciones originales de las muestras, las tablas diferenciales, las matrices normalizadas, los ajustes de sensibilidad y las figuras exportadas en SVG/PDF/PNG. El motor estadístico de miRNA utiliza R/limma y el de ozono por gen utiliza R/tximport/DESeq2, llamados desde el flujo en Python. No se fabrican resultados para completar las mediciones espaciales de exposición no disponibles. <a href="./reproducibility.html">Datos e instrucciones de ejecución</a>.</p>
+</section>
+<section id="análisis-ampliados-y-recuperación-de-los-métodos-originales" class="level2">
+<h2 class="anchored" data-anchor-id="análisis-ampliados-y-recuperación-de-los-métodos-originales">Análisis ampliados y recuperación de los métodos originales</h2>
+<p>El <a href="./advanced_results.html">capítulo de análisis secundarios</a> define los modelos anidados de interacción, contrastes de coeficientes, familias de corrección, reglas de selección visual e intervalos que incorporan covarianzas. El <a href="./replication.html">capítulo de reproducción</a> reconstruye por separado el modelo original de cinco grupos de corteza, la sensibilidad metodológica de hipotálamo, candidatos ANOVA/LSD de miRNA y la selección y ajustes candidatos de ozono. No reemplazan los ajustes principales. Se exportan sesiones de R 4.5.2, DESeq2 1.50.2, limma 3.66.0 y edgeR 4.8.2 con sus resultados. Las descargas originales conservan hashes y URL; el texto y las imágenes editoriales de los artículos se excluyen de la página pública.</p>
+
+
+<!-- -->
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referencias</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Ashburner2000_GO" class="csl-entry" role="listitem">
+<span class="nocase">Ashburner, Michael, Catherine A. Ball, Judith A. Blake, et&nbsp;al.</span> 2000. <span>«<span>Gene Ontology</span>: tool for the unification of biology»</span>. <em>Nature Genetics</em> 25 (1): 25-29. <a href="https://doi.org/10.1038/75556">https://doi.org/10.1038/75556</a>.
+</div>
+<div id="ref-Benjamini1995_FDR" class="csl-entry" role="listitem">
+Benjamini, Yoav, y Yosef Hochberg. 1995. <span>«Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing»</span>. <em>Journal of the Royal Statistical Society Series B: Statistical Methodology</em> 57 (1): 289-300. <a href="https://doi.org/10.1111/j.2517-6161.1995.tb02031.x">https://doi.org/10.1111/j.2517-6161.1995.tb02031.x</a>.
+</div>
+<div id="ref-Fang2023_GSEApy" class="csl-entry" role="listitem">
+Fang, Zhuoqing, Xinyuan Liu, y Gary Peltz. 2023. <span>«<span>GSEApy</span>: a comprehensive package for performing gene set enrichment analysis in <span>Python</span>»</span>. <em>Bioinformatics</em> 39 (1): btac757. <a href="https://doi.org/10.1093/bioinformatics/btac757">https://doi.org/10.1093/bioinformatics/btac757</a>.
+</div>
+<div id="ref-Ku2017_28851397" class="csl-entry" role="listitem">
+Ku, Tingting, Ben Li, Rui Gao, et&nbsp;al. 2017. <span>«NF-κB-regulated microRNA-574-5p underlies synaptic and cognitive impairment in response to atmospheric PM2.5 aspiration»</span>. <em>Particle and fibre toxicology</em> 14 (1): 34. <a href="https://doi.org/10.1186/s12989-017-0215-3">https://doi.org/10.1186/s12989-017-0215-3</a>.
+</div>
+<div id="ref-Love2014_DESeq2" class="csl-entry" role="listitem">
+Love, Michael I., Wolfgang Huber, y Simon Anders. 2014. <span>«Moderated estimation of fold change and dispersion for <span>RNA-seq</span> data with <span>DESeq2</span>»</span>. <em>Genome Biology</em> 15: 550. <a href="https://doi.org/10.1186/s13059-014-0550-8">https://doi.org/10.1186/s13059-014-0550-8</a>.
+</div>
+<div id="ref-Muzellec2023_PyDESeq2" class="csl-entry" role="listitem">
+Muzellec, Boris, Maria Teleńczuk, Vincent Cabeli, y Mathieu Andreux. 2023. <span>«<span>PyDESeq2</span>: a python package for bulk <span>RNA-seq</span> differential expression analysis»</span>. <em>Bioinformatics</em> 39 (9): btad547. <a href="https://doi.org/10.1093/bioinformatics/btad547">https://doi.org/10.1093/bioinformatics/btad547</a>.
+</div>
+<div id="ref-Nakamya2025_40141051" class="csl-entry" role="listitem">
+Nakamya, Mary F, Kaili Hu, Chunsun Jiang, Zechen Chong, y Rui-Ming Liu. 2025. <span>«Age- and ApoE Genotype-Dependent Transcriptomic Responses to O3 in the Hippocampus of Mice»</span>. <em>International journal of molecular sciences</em> 26 (6). <a href="https://doi.org/10.3390/ijms26062407">https://doi.org/10.3390/ijms26062407</a>.
+</div>
+<div id="ref-Patro2017_Salmon" class="csl-entry" role="listitem">
+Patro, Rob, Geet Duggal, Michael I. Love, Rafael A. Irizarry, y Carl Kingsford. 2017. <span>«<span>Salmon</span> provides fast and bias-aware quantification of transcript expression»</span>. <em>Nature Methods</em> 14 (4): 417-19. <a href="https://doi.org/10.1038/nmeth.4197">https://doi.org/10.1038/nmeth.4197</a>.
+</div>
+<div id="ref-Rajagopalan2020_32780721" class="csl-entry" role="listitem">
+Rajagopalan, Sanjay, Bongsoo Park, Rengasamy Palanivel, et&nbsp;al. 2020. <span>«Metabolic effects of air pollution exposure and reversibility»</span>. <em>The Journal of clinical investigation</em> 130 (11): 6034-40. <a href="https://doi.org/10.1172/JCI137315">https://doi.org/10.1172/JCI137315</a>.
+</div>
+<div id="ref-Ritchie2015_limma" class="csl-entry" role="listitem">
+Ritchie, Matthew E., Belinda Phipson, Di Wu, et&nbsp;al. 2015. <span>«limma powers differential expression analyses for <span>RNA-sequencing</span> and microarray studies»</span>. <em>Nucleic Acids Research</em> 43 (7): e47. <a href="https://doi.org/10.1093/nar/gkv007">https://doi.org/10.1093/nar/gkv007</a>.
+</div>
+<div id="ref-Soneson2015_tximport" class="csl-entry" role="listitem">
+Soneson, Charlotte, Michael I. Love, y Mark D. Robinson. 2015. <span>«Differential analyses for <span>RNA-seq</span>: transcript-level estimates improve gene-level inferences»</span>. <em>F1000Research</em> 4: 1521. <a href="https://doi.org/10.12688/f1000research.7563.2">https://doi.org/10.12688/f1000research.7563.2</a>.
+</div>
+<div id="ref-Subramanian2005_GSEA" class="csl-entry" role="listitem">
+Subramanian, Aravind, Pablo Tamayo, Vamsi K. Mootha, et&nbsp;al. 2005. <span>«Gene set enrichment analysis: A knowledge-based approach for interpreting genome-wide expression profiles»</span>. <em>Proceedings of the National Academy of Sciences</em> 102 (43): 15545-50. <a href="https://doi.org/10.1073/pnas.0506580102">https://doi.org/10.1073/pnas.0506580102</a>.
+</div>
+<div id="ref-Zhang2023_38092912" class="csl-entry" role="listitem">
+Zhang, Meng, Xingjie Pan, Won Jung, et&nbsp;al. 2023. <span>«Molecularly defined and spatially resolved cell atlas of the whole mouse brain»</span>. <em>Nature</em> 624: 343-54. <a href="https://doi.org/10.1038/s41586-023-06808-9">https://doi.org/10.1038/s41586-023-06808-9</a>.
+</div>
+<div id="ref-Zhang2025_40906862" class="csl-entry" role="listitem">
+Zhang, Xiaodi, Haiqing Liu, Xiao Wu, et&nbsp;al. 2025. <span>«Lewy body dementia promotion by air pollutants»</span>. <em>Science (New York, N.Y.)</em> 389 (6764): eadu4132. <a href="https://doi.org/10.1126/science.adu4132">https://doi.org/10.1126/science.adu4132</a>.
+</div>
+<div id="ref-Zhu2019_apeglm" class="csl-entry" role="listitem">
+Zhu, Anqi, Joseph G. Ibrahim, y Michael I. Love. 2019. <span>«Heavy-tailed prior distributions for sequence count data: removing the noise and preserving large differences»</span>. <em>Bioinformatics</em> 35 (12): 2084-92. <a href="https://doi.org/10.1093/bioinformatics/bty895">https://doi.org/10.1093/bioinformatics/bty895</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/amarusimonaguerojimenez\.github\.io\/Air-Pollution-Brain-Omics-Mouse\/es\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Metodología"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Unidades experimentales, modelos estadísticos y supuestos espaciales"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display, Markdown</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> _report_utils <span class="im">import</span> ROOT, summary, show_table, read_table</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> summary(<span class="st">"hypothalamus"</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> summary(<span class="st">"spatial_viewer"</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Alcance del estudio y unidades experimentales</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>La colección de origen comprende cuatro estudios públicos de exposición en cerebro de ratón y un atlas de referencia MERFISH independiente. Se conservan los archivos originales y sus metadatos. Los análisis principales utilizan siete bibliotecas de RNA-seq de hipotálamo, ocho de corteza cingulada, nueve microarreglos de miRNA hipocampales y 24 bibliotecas de RNA-seq del estudio de ozono. Cada biblioteca o microarreglo representa una muestra del estudio; las células del atlas no son réplicas independientes de exposición. Los estudios no se agrupan porque difieren la región, el modelo animal, la vía de exposición y el ensayo.</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Conjunto de datos <span class="pp">|</span> Contraste principal <span class="pp">|</span> Excluido de ese contraste <span class="pp">|</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> GSE145840 <span class="pp">|</span> PM2.5 frente a aire filtrado, con dieta estándar; 3 frente a 4 <span class="pp">|</span> Cuatro muestras con dieta rica en grasas <span class="pp">|</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> GSE297423 <span class="pp">|</span> PM2.5 intranasal frente a PBS; 4 frente a 4 <span class="pp">|</span> Doce muestras de los brazos PFF/PM-PFF <span class="pp">|</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> GSE93967 <span class="pp">|</span> 1 mg/kg o 5 mg/kg frente a solución salina; 3 por grupo <span class="pp">|</span> Controles de plataforma y características biológicas constantes <span class="pp">|</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> E-MTAB-14917 <span class="pp">|</span> Ozono frente a aire filtrado dentro de estratos de edad × APOE; 3 por grupo <span class="pp">|</span> No se infiere un contraste de exposición de la tabla depositada de resultados E4 frente a E3 <span class="pp">|</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>Los diseños experimentales originales se describen en Rajagopalan et al., Zhang et al., Ku et al. y Nakamya et al. @Rajagopalan2020_32780721 @Zhang2025_40906862 @Ku2017_28851397 @Nakamya2025_40141051</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="fu">### Regímenes experimentales de exposición</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>La tabla registra los brazos seleccionados de los estudios cerebrales según las publicaciones originales. Las unidades de dosis y las vías de exposición se conservan tal como fueron comunicadas; no se convierten en una dosis común equivalente por inhalación.</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>::: {.table-scroll}</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Fuente <span class="pp">|</span> Modelo animal y sexo <span class="pp">|</span> Edad al inicio de la exposición <span class="pp">|</span> Exposición y esquema <span class="pp">|</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|---|</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> GSE145840 <span class="co">[</span><span class="ot">@Rajagopalan2020_32780721</span><span class="co">]</span> <span class="pp">|</span> Machos C57BL/6J, dieta estándar <span class="pp">|</span> 3 semanas <span class="pp">|</span> PM2.5 ambiental concentrado por inhalación, aproximadamente 60–120 µg/m³ (media comunicada cercana a 80); 6 h/día, 5 días/semana, 14 semanas. <span class="pp">|</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> GSE297423 <span class="co">[</span><span class="ot">@Zhang2025_40906862</span><span class="co">]</span> <span class="pp">|</span> α-sinucleína hWT humanizada, JAX 010710, fondo FVB;129S6; sexo no especificado <span class="pp">|</span> 2 meses <span class="pp">|</span> Administración intranasal de 2 µL a 5 mg/mL cada dos días durante dos meses; comparador PBS. <span class="pp">|</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> GSE93967 <span class="co">[</span><span class="ot">@Ku2017_28851397</span><span class="co">]</span> <span class="pp">|</span> Machos C57BL/6 <span class="pp">|</span> Aproximadamente 8 semanas <span class="pp">|</span> Aspiración orofaríngea de 1 o 5 mg/kg en días alternos durante cuatro semanas; tejido recogido 18 h después de la última dosis. <span class="pp">|</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> E-MTAB-14917 <span class="co">[</span><span class="ot">@Nakamya2025_40141051</span><span class="co">]</span> <span class="pp">|</span> Machos con reemplazo dirigido por APOE3/APOE4 humano <span class="pp">|</span> 3 o 17 meses <span class="pp">|</span> Ozono gaseoso a 0.8 ppm, 7 h/día durante cinco días, seguido de nueve días de aire filtrado; ocho ciclos. <span class="pp">|</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>El brazo de RNA-seq de corteza utiliza animales jóvenes hWT humanizados; la misma publicación incluye además un experimento distinto en ratones convencionales de mayor edad. Estos diseños no se intercambian. Las edades terminales exactas y los intervalos hasta la recolección de tejido no están depositados explícitamente para hipotálamo, corteza u ozono, por lo que no se inventan sumando intervalos del calendario. La <span class="co">[</span><span class="ot">revisión del diseño de exposición</span><span class="co">](../downloads/report_validation/experimental_design_review.json)</span> registra las páginas de los PDF, los metadatos de origen, las sumas de comprobación y las incertidumbres restantes de cada fila.</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comprobaciones de las fuentes y preprocesamiento</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>Los archivos de exposición descargados se contrastaron con los tamaños y las sumas MD5 del proveedor cuando estaban disponibles. Los 49 archivos de referencia espacial coincidieron con el manifiesto de Allen tanto en tamaño como en MD5. Antes de modelar se comprobaron los conteos enteros y no negativos, los identificadores únicos de características, el orden de las muestras, las asignaciones de grupo y la concordancia de las listas de genes. Los siete archivos hipotalámicos utilizan un formato sin encabezado separado por espacios y comparten los mismos 50,417 símbolos génicos en el mismo orden. Se conservaron los valores negativos de la matriz de señales de miRNA depositada porque esos valores ya son señales continuas normalizadas.</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>La matriz de corteza cingulada se vinculó con las muestras mediante los **nombres de biblioteca** depositados, no por el orden de las muestras GEO. El alias ambiguo de una muestra PM-PFF-más-PM queda fuera del contraste principal de ocho muestras y no se corrige de forma implícita. No se inventaron covariables de lote, RIN ni edad individual para los estudios de RNA-seq de PM2.5.</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="fu">## Análisis clásico de RNA-seq</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="fu">### Hipotálamo y corteza cingulada</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>Los conteos se analizaron en Python mediante PyDESeq2, una implementación en Python del marco DESeq2. @Muzellec2023_PyDESeq2 @Love2014_DESeq2 El filtro hipotalámico exigió al menos 10 conteos en al menos tres de siete muestras y conservó 19,611 genes. El filtro de corteza exigió al menos 10 conteos en al menos cuatro de ocho muestras y conservó 19,235 genes. Los filtros se aplicaron antes de la normalización y del modelado inferencial.</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>Cada estudio se modeló por separado con **la condición como único factor del diseño** y un contraste explícito de PM frente a control. Se utilizaron factores de tamaño basados en la mediana de cocientes, estimación de dispersión por gen y mediante tendencia, modelos lineales generalizados binomiales negativos y pruebas de Wald bilaterales. El ajuste por pruebas múltiples siguió el procedimiento de Benjamini–Hochberg de la implementación, con **FDR &lt; 0.05** como umbral principal. @Benjamini1995_FDR Se distinguen el filtrado de Cook y el filtrado independiente: no todos los valores p ajustados ausentes se atribuyen a valores atípicos.</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>Los cambios de expresión log₂ originales de máxima verosimilitud, sus errores, estadísticos de Wald, valores p y valores p ajustados se guardaron **antes** de aplicar la regularización de apeglm. Los cambios log₂ regularizados se conservaron por separado para visualizar efectos y construir escenarios espaciales; no sustituyen los resultados originales de las pruebas de hipótesis. @Zhu2019_apeglm Se presenta descriptivamente un umbral secundario de |log₂FC regularizado| ≥ 1 además de la FDR, sin redefinir el conjunto principal de hallazgos.</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="fu">### Calidad de las muestras y relaciones entre ellas</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>El informe incluye profundidad de biblioteca asignada a genes, genes detectados, distribuciones normalizadas, correlaciones/distancias entre muestras y PCA. El PCA utiliza los 500 genes de mayor variabilidad tras estabilizar la varianza, centrados entre muestras sin escalar por la varianza de cada gen. Los animales se identifican individualmente. No se eliminó ninguna muestra para mejorar la separación visual, no se infirió un lote a partir de un componente principal y no se aplicó una corrección de lote no documentada.</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>La transformación estabilizadora de varianza del hipotálamo utiliza el diseño de condición para estimar la tendencia de dispersión; las transformaciones exploratorias de corteza y ozono son ciegas al diseño. Esta distinción se conserva en el registro de procedencia del análisis. Modifica la transformación utilizada para visualizar, no el contraste de expresión diferencial por gen.</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="fu">### Análisis de sensibilidad del hipotálamo</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>Como el PCA hipotalámico muestra una marcada heterogeneidad de los controles, se volvió a ajustar el análisis completo omitiendo sucesivamente cada una de las siete muestras. Se conservó el universo génico original del análisis principal. Se presentan dirección, magnitud del efecto y estabilidad de la FDR para los once hallazgos principales, junto con el número de hallazgos de cada omisión. Estos ajustes evalúan sensibilidad; no seleccionan una eliminación preferida ni reemplazan el resultado principal de siete animales.</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>Un ajuste independiente de DESeq2 en R comprueba la concordancia entre implementaciones con las mismas muestras, filtro génico, normalización, contraste de condición, tendencia paramétrica de dispersión, configuración de Cook y familia de hipótesis con valores p finitos. Los efectos originales de máxima verosimilitud y sus errores estándar se comparan antes de la regularización. Se documentan los cruces del umbral sin cambiar el análisis principal preespecificado en Python. Esto evalúa sensibilidad numérica y no replicación biológica.</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="fu">## Análisis de miRNA hipocampales</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>GSE93967 se analizó en su **escala de señal normalizada por cuantiles depositada**, sin una segunda transformación logarítmica. Las anotaciones de sondas de GPL17912 identifican las características biológicas de miRNA y los controles de plataforma. Se excluyeron los controles y las filas biológicas constantes; las características de baja detección se marcaron y conservaron. Los efectos son diferencias de medias en unidades de la señal publicada porque el depósito no estableció una escala log₂.</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>Se ajustó un modelo lineal de tres grupos mediante los estadísticos moderados de Bayes empírico de limma. @Ritchie2015_limma Los contrastes de 1 mg/kg frente a control y 5 mg/kg frente a control se probaron por separado, con corrección de Benjamini–Hochberg dentro de cada familia de contrastes. Una prueba F moderada global describe las diferencias entre los tres grupos. Se conservan los intervalos puntuales basados en t y los valores de las nueve muestras. No se aplicó análisis de Gene Ontology de mRNA a nombres de miRNA sin un mapeo validado de sus genes diana.</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="fu">## Análisis de ozono desde las lecturas originales</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>ozone_done <span class="op">=</span> (ROOT <span class="op">/</span> <span class="st">"results/ozone/summary.json"</span>).exists()</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> ozone_done:</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>    display(Markdown(<span class="st">"&gt; **Nota sobre el estado del procesamiento:** esta sección registra el flujo fijado para las lecturas originales. "</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"El control de calidad final por muestra y las tablas de resultados se añaden cuando terminan las 24 bibliotecas."</span>))</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>Las 24 bibliotecas de lecturas pareadas se resuelven a partir del SDRF de origen y mantienen unidos los archivos pareados según la ejecución ENA. La calidad inicial y el contenido de adaptadores se evalúan en los **primeros 200,000 pares de lecturas por biblioteca**, explícitamente un subconjunto diagnóstico y no una auditoría de calidad de todas las lecturas. Se conservan los informes de eliminación de adaptadores de las ejecuciones completas. El recorte de adaptadores se aplica de manera consistente cuando se cumple el criterio documentado; no se eliminan duplicados ni se aplica un recorte arbitrario por calidad.</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>La cuantificación con Salmon utiliza un transcriptoma fijo **GENCODE M25/GRCm38** junto con el genoma primario completo como señuelo, inferencia automática del tipo de biblioteca y corrección de sesgos de secuencia y GC. Las sumas de comprobación del proveedor, los pasos de construcción de la referencia, las versiones de software y los informes por biblioteca se almacenan con el flujo. @Patro2017_Salmon Las cuantificaciones se importan por gen con tximport y conservan la información de longitud efectiva para DESeq2. @Soneson2015_tximport La cuantificación contra la referencia de ratón no establece la expresión específica de alelos de APOE humano.</span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>El diseño de ocho grupos cruza edad, genotipo APOE y exposición, con tres bibliotecas por grupo. El modelo completo incluye las interacciones correspondientes de dos y tres factores. Cuatro contrastes de ozono frente a aire filtrado describen los estratos de edad/genotipo. Una prueba de razón de verosimilitudes compara el modelo completo con un modelo de edad por genotipo y evalúa conjuntamente los términos asociados con la exposición. Los valores p ajustados se conservan tanto dentro de cada estrato como en la familia de los cuatro contrastes por estrato. Las descripciones inconsistentes de la cepa en los metadatos originales se documentan en lugar de convertirse en un ajuste sin respaldo.</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="fu">## Enriquecimiento funcional</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>Las asociaciones de procesos biológicos de Gene Ontology de ratón proceden de una copia oficial fijada de **MGI GAF** y **go-basic OBO**. Se excluyen las anotaciones NOT, se restringe el taxón a ratón y se propagan los ancestros elegibles is-a/part-of. Se distinguen los símbolos actuales exactos de los sinónimos no ambiguos de la fuente; los alias ambiguos quedan sin mapear. Se exportan las versiones de anotación, los hashes, las decisiones de mapeo y la cobertura. @Ashburner2000_GO</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>El análisis de sobrerrepresentación utiliza una prueba hipergeométrica unilateral, por separado para listas de genes con mayor y menor expresión. El fondo comprende genes mapeados y únicos elegibles para la prueba original de expresión diferencial. Se evalúan los términos con 15–500 genes del fondo. Todos los términos elegibles, incluidos aquellos sin solapamiento, entran en la corrección de Benjamini–Hochberg dentro de cada familia específica por dirección. La ausencia de sobrerrepresentación significativa se comunica directamente.</span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>El GSEA con ordenamiento previo utiliza estadísticos de Wald finitos y con signo **con valores p originales finitos**; excluye resultados con p no finito filtrados por Cook y conserva genes con p finito eliminados por filtrado independiente de la presentación de valores p ajustados. Utiliza 1,000 permutaciones de conjuntos génicos, una semilla fija y conjuntos de 15–500 genes. @Subramanian2005_GSEA @Fang2023_GSEApy Su FDR algorítmica es distinta del ajuste BH de ORA. Aquí, el GSEA es exploratorio: los términos solapados y los genes correlacionados no constituyen hallazgos mecanísticos independientes, y estos análisis no eliminan las limitaciones por tamaño muestral pequeño y heterogeneidad de los controles.</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="fu">## Referencia 3D medida y escenario modelado de PM2.5</span></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>La referencia espacial utiliza **Zhuang-ABCA-2**, un donante macho adulto. Las células se seleccionan según las asignaciones de parcelación CCF depositadas para la división hipotalámica, se vinculan mediante identificadores celulares exactos de tipo texto con la matriz H5AD medida y se anotan mediante la taxonomía del atlas. @Zhang2023_38092912</span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>display(Markdown(<span class="ss">f"Esta selección contiene **</span><span class="sc">{</span>v[<span class="st">'hypothalamus_cells'</span>]<span class="sc">:,}</span><span class="ss"> células**, **</span><span class="sc">{</span>v[<span class="st">'cell_classes'</span>]<span class="sc">}</span><span class="ss"> clases celulares** "</span></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>                 <span class="ss">f"y **</span><span class="sc">{</span>v[<span class="st">'anatomical_substructures'</span>]<span class="sc">}</span><span class="ss"> subestructuras hipotalámicas**. Se puede acceder a los **</span><span class="sc">{</span>v[<span class="st">'measured_genes'</span>]<span class="sc">:,}</span><span class="ss"> genes medidos**; "</span></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>                 <span class="ss">f"**</span><span class="sc">{</span>v[<span class="st">'genes_with_estimable_bulk_effect'</span>]<span class="sc">:,}</span><span class="ss">** tienen estimaciones fiables del efecto en tejido completo. "</span></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Las células no se submuestrean, reflejan ni interpolan."</span>))</span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>El visor representa las distancias CCF en milímetros como ML, AP y −DV. No aplica la transformación afín RAS centrada del NIfTI a las distancias de coordenadas CCF positivas. Una comprobación de concordancia con las etiquetas de los vóxeles verifica el marco; se conservan las diferencias en los límites. Las superficies anatómicas se simplifican a 0.15 mm para el contexto de cerebro completo y a 0.075 mm para el hipotálamo; las coordenadas moleculares permanecen sin cambios.</span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>El escenario central se define en la **escala lineal de conteos de imagen**:</span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a><span class="in">Valor simulado(célula, gen) = conteo medido de referencia(célula, gen)</span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a><span class="in">                             × 2^(cambio log2 regularizado de PM frente a FA en tejido completo)</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>El multiplicador se aplica uniformemente dentro del hipotálamo. Otras regiones aportan únicamente contexto anatómico y no reciben un efecto de exposición. Los escenarios alternativos inferior y superior utilizan el coeficiente grupal sin regularizar ±1.96 errores estándar; son escenarios de sensibilidad del efecto grupal y no intervalos de confianza por célula.</span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>Las dos vistas utilizan posiciones celulares idénticas, cámaras enlazadas y una escala de color común de **log₂(1 + valor)**. Se informa de un límite opcional común del percentil 99 de valores positivos; los valores que exceden el límite cromático se conservan en la información al pasar el cursor y en las exportaciones de origen. Los genes sin inferencia fiable en tejido completo se mantienen solo como referencia; los genes modelados no significativos llevan una etiqueta exploratoria.</span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>La referencia no es un control emparejado del estudio de tejido completo. La transferencia uniforme conserva los gradientes basales y los ceros, y no identifica respuestas específicas por célula, cambios de abundancia, migración, morfología ni expresión de células individuales expuestas.</span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a><span class="fu">### Resúmenes descriptivos del atlas</span></span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>La referencia medida también se resume para cada una de sus 26 clases y 49 subestructuras. Para cada gen medido se conservan la media aritmética del conteo lineal de imagen, el número de células con conteo positivo y la fracción de detección dentro de cada grupo, con los ceros incluidos en el denominador. La composición por clase y los gráficos de detección de Tll1 son mediciones descriptivas de un donante. No incluyen pruebas por célula, intervalos de confianza ni inferencia de células expuestas. El gráfico anatómico de Tll1 muestra las 15 mayores fracciones de detección entre las subestructuras con al menos 100 células seleccionadas; las exportaciones completas conservan las 49 subestructuras. <span class="co">[</span><span class="ot">Resultados de la referencia medida</span><span class="co">](spatial_reference.qmd)</span>.</span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reproducibilidad</span></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>Se conservan en el repositorio los scripts de Python, los cuadernos QMD, los registros de versiones, las anotaciones originales de las muestras, las tablas diferenciales, las matrices normalizadas, los ajustes de sensibilidad y las figuras exportadas en SVG/PDF/PNG. El motor estadístico de miRNA utiliza R/limma y el de ozono por gen utiliza R/tximport/DESeq2, llamados desde el flujo en Python. No se fabrican resultados para completar las mediciones espaciales de exposición no disponibles. <span class="co">[</span><span class="ot">Datos e instrucciones de ejecución</span><span class="co">](reproducibility.qmd)</span>.</span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a><span class="fu">## Análisis ampliados y recuperación de los métodos originales</span></span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>El <span class="co">[</span><span class="ot">capítulo de análisis secundarios</span><span class="co">](advanced_results.qmd)</span> define los modelos anidados de interacción, contrastes de coeficientes, familias de corrección, reglas de selección visual e intervalos que incorporan covarianzas. El <span class="co">[</span><span class="ot">capítulo de reproducción</span><span class="co">](replication.qmd)</span> reconstruye por separado el modelo original de cinco grupos de corteza, la sensibilidad metodológica de hipotálamo, candidatos ANOVA/LSD de miRNA y la selección y ajustes candidatos de ozono. No reemplazan los ajustes principales. Se exportan sesiones de R 4.5.2, DESeq2 1.50.2, limma 3.66.0 y edgeR 4.8.2 con sus resultados. Las descargas originales conservan hashes y URL; el texto y las imágenes editoriales de los artículos se excluyen de la página pública.</span>
+</code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Reanálisis de datos públicos · Mus musculus</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Se distingue la referencia medida de la exposición simulada.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

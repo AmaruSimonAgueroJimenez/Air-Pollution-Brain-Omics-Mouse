@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="756pt" height="561.6pt" viewBox="0 0 756 561.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-18T22:22:33.518896</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 561.6 
+L 756 561.6 
+L 756 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 234.57399 528.24351 
+L 752.99976 528.24351 
+L 752.99976 29.982053 
+L 234.57399 29.982053 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="C0_0_ca73ac8398" d="M 0 3.708099 
+C 0.983399 3.708099 1.926654 3.317391 2.622022 2.622022 
+C 3.317391 1.926654 3.708099 0.983399 3.708099 -0 
+C 3.708099 -0.983399 3.317391 -1.926654 2.622022 -2.622022 
+C 1.926654 -3.317391 0.983399 -3.708099 0 -3.708099 
+C -0.983399 -3.708099 -1.926654 -3.317391 -2.622022 -2.622022 
+C -3.317391 -1.926654 -3.708099 -0.983399 -3.708099 0 
+C -3.708099 0.983399 -3.317391 1.926654 -2.622022 2.622022 
+C -1.926654 3.317391 -0.983399 3.708099 0 3.708099 
+z
+"/>
+    </defs>
+    <g clip-path="url(#p0d5bf700c1)">
+     <use xlink:href="#C0_0_ca73ac8398" x="639.868926" y="505.595262" style="fill: #d86f12; stroke: #d86f12"/>
+    </g>
+    <g clip-path="url(#p0d5bf700c1)">
+     <use xlink:href="#C0_0_ca73ac8398" x="648.142887" y="464.416629" style="fill: #d86f12; stroke: #d86f12"/>
+    </g>
+    <g clip-path="url(#p0d5bf700c1)">
+     <use xlink:href="#C0_0_ca73ac8398" x="661.106382" y="423.237996" style="fill: #d86f12; stroke: #d86f12"/>
+    </g>
+    <g clip-path="url(#p0d5bf700c1)">
+     <use xlink:href="#C0_0_ca73ac8398" x="678.409089" y="382.059363" style="fill: #d86f12; stroke: #d86f12"/>
+    </g>
+    <g clip-path="url(#p0d5bf700c1)">
+     <use xlink:href="#C0_0_ca73ac8398" x="681.678345" y="340.880731" style="fill: #d86f12; stroke: #d86f12"/>
+    </g>
+    <g clip-path="url(#p0d5bf700c1)">
+     <use xlink:href="#C0_0_ca73ac8398" x="681.717602" y="299.702098" style="fill: #d86f12; stroke: #d86f12"/>
+    </g>
+    <g clip-path="url(#p0d5bf700c1)">
+     <use xlink:href="#C0_0_ca73ac8398" x="684.690072" y="258.523465" style="fill: #d86f12; stroke: #d86f12"/>
+    </g>
+    <g clip-path="url(#p0d5bf700c1)">
+     <use xlink:href="#C0_0_ca73ac8398" x="688.410665" y="217.344832" style="fill: #d86f12; stroke: #d86f12"/>
+    </g>
+    <g clip-path="url(#p0d5bf700c1)">
+     <use xlink:href="#C0_0_ca73ac8398" x="689.786722" y="176.166199" style="fill: #d86f12; stroke: #d86f12"/>
+    </g>
+    <g clip-path="url(#p0d5bf700c1)">
+     <use xlink:href="#C0_0_ca73ac8398" x="693.074112" y="134.987566" style="fill: #d86f12; stroke: #d86f12"/>
+    </g>
+    <g clip-path="url(#p0d5bf700c1)">
+     <use xlink:href="#C0_0_ca73ac8398" x="712.406525" y="93.808933" style="fill: #d86f12; stroke: #d86f12"/>
+    </g>
+    <g clip-path="url(#p0d5bf700c1)">
+     <use xlink:href="#C0_0_ca73ac8398" x="729.434952" y="52.630301" style="fill: #d86f12; stroke: #d86f12"/>
+    </g>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m83549d50ad" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m83549d50ad" x="258.138798" y="528.24351" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="258.138798" y="542.841948" transform="rotate(-0 258.138798 542.841948)">0.0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m83549d50ad" x="331.658354" y="528.24351" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="331.658354" y="542.841948" transform="rotate(-0 331.658354 542.841948)">0.5</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m83549d50ad" x="405.177911" y="528.24351" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="405.177911" y="542.841948" transform="rotate(-0 405.177911 542.841948)">1.0</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m83549d50ad" x="478.697468" y="528.24351" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="478.697468" y="542.841948" transform="rotate(-0 478.697468 542.841948)">1.5</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m83549d50ad" x="552.217024" y="528.24351" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="552.217024" y="542.841948" transform="rotate(-0 552.217024 542.841948)">2.0</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m83549d50ad" x="625.736581" y="528.24351" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="625.736581" y="542.841948" transform="rotate(-0 625.736581 542.841948)">2.5</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#m83549d50ad" x="699.256137" y="528.24351" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="699.256137" y="542.841948" transform="rotate(-0 699.256137 542.841948)">3.0</text>
+     </g>
+    </g>
+    <g id="text_8">
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="493.786875" y="556.520072" transform="rotate(-0 493.786875 556.520072)">Normalized enrichment score (positive: exposed-side rank)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_8">
+      <defs>
+       <path id="m70b433d56b" d="M 0 0 
+L -3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m70b433d56b" x="234.57399" y="505.595262" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: end" x="227.57399" y="508.634637" transform="rotate(-0 227.57399 508.634637)">NADH dehydrogenase complex assembly [GO:0010257]</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m70b433d56b" x="234.57399" y="464.416629" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: end" x="227.57399" y="467.456004" transform="rotate(-0 227.57399 467.456004)">cytoplasmic translation [GO:0002181]</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m70b433d56b" x="234.57399" y="423.237996" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: end" x="227.57399" y="426.277371" transform="rotate(-0 227.57399 426.277371)">translation [GO:0006412]</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#m70b433d56b" x="234.57399" y="382.059363" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(46.21399 381.227488)">nucleoside triphosphate biosynthetic process</text>
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(170.65024 390.185738)">[GO:0009142]</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m70b433d56b" x="234.57399" y="340.880731" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: end" x="227.57399" y="343.920106" transform="rotate(-0 227.57399 343.920106)">ATP biosynthetic process [GO:0006754]</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#m70b433d56b" x="234.57399" y="299.702098" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_14">
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(30.72899 298.870223)">ribonucleoside triphosphate biosynthetic process</text>
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(170.65024 307.828473)">[GO:0009201]</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m70b433d56b" x="234.57399" y="258.523465" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_15">
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: end" x="227.57399" y="261.56284" transform="rotate(-0 227.57399 261.56284)">aerobic respiration [GO:0009060]</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#m70b433d56b" x="234.57399" y="217.344832" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_16">
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: end" x="227.57399" y="220.384207" transform="rotate(-0 227.57399 220.384207)">aerobic electron transport chain [GO:0019646]</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m70b433d56b" x="234.57399" y="176.166199" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_17">
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(35.81524 175.334324)">purine ribonucleoside triphosphate biosynthetic</text>
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(137.36899 184.292574)">process [GO:0009206]</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_17">
+      <g>
+       <use xlink:href="#m70b433d56b" x="234.57399" y="134.987566" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_18">
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(18.01899 134.155691)">purine nucleoside triphosphate biosynthetic process</text>
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(170.65024 143.113941)">[GO:0009145]</text>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_18">
+      <g>
+       <use xlink:href="#m70b433d56b" x="234.57399" y="93.808933" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_19">
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: end" x="227.57399" y="96.848308" transform="rotate(-0 227.57399 96.848308)">proton motive force-driven ATP synthesis [GO:0015986]</text>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_19">
+      <g>
+       <use xlink:href="#m70b433d56b" x="234.57399" y="52.630301" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_20">
+      <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: end" x="227.57399" y="55.669676" transform="rotate(-0 227.57399 55.669676)">oxidative phosphorylation [GO:0006119]</text>
+     </g>
+    </g>
+   </g>
+   <g id="line2d_20">
+    <path d="M 258.138798 528.24351 
+L 258.138798 29.982053 
+" clip-path="url(#p0d5bf700c1)" style="fill: none; stroke: #555555; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 234.57399 528.24351 
+L 234.57399 29.982053 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 234.57399 528.24351 
+L 752.99976 528.24351 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(355.538359 11.358521)">ozone_M3_E4: exploratory preranked GO-BP GSEA</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(377.185156 23.982053)">368 terms at GSEA algorithmic FDR &lt;0.05</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p0d5bf700c1">
+   <rect x="234.57399" y="29.982053" width="518.42577" height="498.261457"/>
+  </clipPath>
+ </defs>
+</svg>

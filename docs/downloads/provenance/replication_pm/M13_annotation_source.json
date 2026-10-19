@@ -1,0 +1,8 @@
+{
+  "URL": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M13/gencode.vM13.annotation.gtf.gz",
+  "bytes": 24537985,
+  "sha256": "7d52b435e0b6b9e06cadc123ca61e9fd96529faf12702b7ede824b0056892648",
+  "protein_coding_gene_entries": 21968,
+  "unique_protein_coding_symbols": 21952,
+  "duplicate_gene_names": 16
+}

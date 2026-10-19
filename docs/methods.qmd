@@ -134,3 +134,7 @@ The measured reference is also summarized by each of its 26 classes and 49 subst
 ## Reproducibility
 
 Python source scripts, QMD notebooks, version records, original sample annotations, differential tables, normalized matrices, sensitivity fits, and SVG/PDF/PNG figure exports are retained in the repository. The miRNA backend uses R/limma and the ozone gene-level backend uses R/tximport/DESeq2, called from the Python workflow. No results are fabricated to fill unavailable spatial exposure measurements. [Data and execution instructions](reproducibility.qmd).
+
+## Expanded analyses and original-method recovery
+
+The [secondary-analysis chapter](advanced_results.qmd) defines the nested interaction models, coefficient contrasts, correction families, figure-selection rules, and covariance-aware intervals. The [reproduction chapter](replication.qmd) separately reconstructs the cortex five-group author model, hypothalamus method sensitivity, miRNA ANOVA/LSD candidates, and ozone author-table selection and candidate fits. These models do not replace the primary fits above. R 4.5.2, DESeq2 1.50.2, limma 3.66.0, and edgeR 4.8.2 sessions are exported with the corresponding results. Author-data downloads retain source hashes and URLs; publisher article text and artwork are excluded from the public site.

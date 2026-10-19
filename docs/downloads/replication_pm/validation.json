@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checks": {
+    "author_and_GEO_counts_identical": true,
+    "all_four_gene_universes_identical": true,
+    "all_four_missing_p_and_padj_masks_identical": true,
+    "all_four_significant_gene_sets_identical": true,
+    "all_four_count_benchmarks_reproduced": true,
+    "paper_exclusive_intersections_reproduced": true,
+    "hypothalamus_source_harmonization_no_zero_imputation": true,
+    "all_figures_exported_in_three_formats": true
+  },
+  "scope": "Independent numerical agreement and export audit. Figure visual review is recorded separately after inspection. No biological replication claim."
+}

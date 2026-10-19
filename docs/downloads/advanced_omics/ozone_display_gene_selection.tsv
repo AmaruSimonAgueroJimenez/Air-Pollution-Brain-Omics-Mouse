@@ -1,0 +1,11 @@
+gene_id	gene_symbol	baseMean	padj	selection
+ENSMUSG00000057378.15	Ryr3	1150.41340369	0.0166551910095	Six lowest global ozone LRT q-values among protein-coding genes with baseMean >=20
+ENSMUSG00000026442.14	Nfasc	5072.48537423	0.0241781377353	Six lowest global ozone LRT q-values among protein-coding genes with baseMean >=20
+ENSMUSG00000069633.12	Pex11g	52.0586818115	0.0241781377353	Six lowest global ozone LRT q-values among protein-coding genes with baseMean >=20
+ENSMUSG00000020591.11	Ntsr2	1898.42023631	0.0242597052609	Six lowest global ozone LRT q-values among protein-coding genes with baseMean >=20
+ENSMUSG00000021824.13	Ap3m1	934.712079258	0.0334420740111	Six lowest global ozone LRT q-values among protein-coding genes with baseMean >=20
+ENSMUSG00000025290.17	Rps24	4664.46667061	0.0334420740111	Six lowest global ozone LRT q-values among protein-coding genes with baseMean >=20
+ENSMUSG00000021250.13	Fos	349.59799006	0.0351276517171	Named interpretability display target; selected for secondary figure, not a primary confirmatory gene set
+ENSMUSG00000020932.14	Gfap	7522.97840849	0.988373568457	Named interpretability display target; selected for secondary figure, not a primary confirmatory gene set
+ENSMUSG00000024397.14	Aif1	92.3873959506	0.783995272413	Named interpretability display target; selected for secondary figure, not a primary confirmatory gene set
+ENSMUSG00000023992.14	Trem2	265.701588483	0.765439652797	Named interpretability display target; selected for secondary figure, not a primary confirmatory gene set

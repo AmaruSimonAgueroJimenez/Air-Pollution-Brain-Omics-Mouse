@@ -1,0 +1,36 @@
+[
+  {
+    "file": "GSE145840_Xu_2024_Frontiers_Nutrition.pdf",
+    "success": true,
+    "bytes": 5068435,
+    "pages": 16,
+    "source": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2024.1381779/pdf",
+    "sha256": "f3f82d3c744fed5bd4c48d4aa6d6cd1f4e9124b7017c50b261b90d8a80141df7",
+    "first_page": "Frontiers in Nutrition 01 frontiersin.org\nThe identification of a novel \nshared therapeutic target and \ndrug across all insulin-sensitive \ntissues under insulin resistance\nJinyuan Xu 1,2, Lilin Zhu 1,2, Jie Xu 1,2, Kailong Lin 1,2, Juan Wang 1,3, \nYan-long Bi 1, Guo-Tong Xu 1, Haibin Tian 1,4, Furon",
+    "selection_status": "excluded_from_brain_selection",
+    "local_path": "papers/context_nonbrain/GSE145840_Xu_2024_Frontiers_Nutrition.pdf"
+  },
+  {
+    "file": "GSE145840_Palanivel_2025_JCI_Insight.pdf",
+    "success": true,
+    "bytes": 67512092,
+    "pages": 23,
+    "source": "https://df6sxcketz7bb.cloudfront.net/manuscripts/187000/187023/cache/187023highres.1-20250908133026-covered-e0fd13ba177f913fd3156f593ead4cfd.pdf",
+    "sha256": "55d51c5058df48a3c428f44f06a115696f1153dde1c93084b27b90ea28c13a90",
+    "first_page": "Air pollution modulates brown adipose tissue function through\nepigenetic regulation by HDAC9 and KDM2B\nRengasamy Palanivel, Jean-Eudes Dazard, Bongsoo Park, Sarah Costantino, Skanda T. Moorthy, Armando Vergara-Martel, Elaine Ann Cara, Jonnelle Edwards-Glenn, Shyam\nBiswal, Lung Chi Chen, Mukesh K. Ja",
+    "selection_status": "excluded_from_brain_selection",
+    "local_path": "papers/context_nonbrain/GSE145840_Palanivel_2025_JCI_Insight.pdf"
+  },
+  {
+    "file": "GSE145840_Lobato_2024_Heliyon.pdf",
+    "success": true,
+    "selection_status": "excluded_from_brain_selection",
+    "local_path": "papers/context_nonbrain/GSE145840_Lobato_2024_Heliyon.pdf",
+    "bytes": 24980345,
+    "pages": 26,
+    "sha256": "3f8e4ea63700785294afc89b155f96f9c74742e38fee9674fe2a206a8fc05c9f",
+    "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11004224/pdf/main.pdf",
+    "access_route": "biblioteca UC; navegador autenticado",
+    "initial_attempt_error": "HTTP Error 403: Forbidden"
+  }
+]

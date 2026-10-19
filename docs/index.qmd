@@ -102,6 +102,16 @@ Original paired-end reads are quantified against a fixed mouse reference. Age-, 
 :::
 :::
 
+## Reproduce the papers, then examine the response structure
+
+[**Original-study reproduction →**](replication.qmd) compares the actual deposited code and gene tables with new fits. The original 20-sample cortex model recovers **all four significant-gene sets exactly** (109 / 1,205 / 1,222 / 639). Hypothalamus, miRNA, and ozone have explicit partial-reproduction boundaries. Cortex Y-linked signals also reveal a sample-quality question that numerical agreement cannot resolve.
+
+[**Interactions and molecular panels →**](advanced_results.qmd) adds formal age/genotype response tests, covariance-aware effect intervals, individual-animal panels, a six-contrast GO enrichment matrix, and a gene-set overlap network. Eight age-response genes pass the within-family ozone test; **one** remains after joint correction across all three interaction-test families. This is secondary evidence from the same animals.
+
+[![Original author results versus new computation, with exact four-contrast cortex agreement.](assets/figures/replication_pm/cortex_replication_benchmark.png){.site-overview-image}](replication.qmd)
+
+Each panel links to vector figures and source tables. Reproduction of a computation, biological interpretation, and the spatial simulation are identified separately throughout the report.
+
 ## A measured reference beside an explicit simulation
 
 ```{python}

@@ -1,0 +1,116 @@
+{
+  "figures": [
+    {
+      "figure": "sample_quality",
+      "caption": "Raw gene-assigned library counts and detected genes for all seven samples. Each bar is one biological sample; FA n=4, PM n=3. No sample was excluded.",
+      "source_tables": [
+        "qc_samples.tsv"
+      ],
+      "formats": [
+        "png",
+        "svg",
+        "pdf"
+      ],
+      "width_inches": 10.0,
+      "height_inches": 3.8,
+      "png_dpi": 300
+    },
+    {
+      "figure": "pca",
+      "caption": "PCA of the 500 highest-variance genes after DESeq2 variance stabilization; genes were mean-centered, without variance scaling. Each point is a biological sample. Sample separation is descriptive and does not establish a biological mechanism or batch effect.",
+      "source_tables": [
+        "pca.tsv",
+        "pca_gene_variances.tsv.gz",
+        "sample_metadata.tsv"
+      ],
+      "formats": [
+        "png",
+        "svg",
+        "pdf"
+      ],
+      "width_inches": 6.6,
+      "height_inches": 5.2,
+      "png_dpi": 300
+    },
+    {
+      "figure": "sample_similarity",
+      "caption": "Left: Spearman correlation of DESeq2-normalized counts across the retained genes. Right: Euclidean distances using all variance-stabilized retained genes. Both panels use the same sample order obtained by average-linkage clustering of 1-rho. Group colors supplement explicit FA/PM labels.",
+      "source_tables": [
+        "sample_spearman_correlation.tsv",
+        "sample_spearman_distance.tsv",
+        "sample_vst_euclidean_distance.tsv"
+      ],
+      "formats": [
+        "png",
+        "svg",
+        "pdf"
+      ],
+      "width_inches": 11.0,
+      "height_inches": 4.7,
+      "png_dpi": 300
+    },
+    {
+      "figure": "ma",
+      "caption": "Mean normalized abundance versus effect estimate. Orange/teal points are significant increases/decreases at BH FDR <0.05; grey genes do not meet this threshold. Dashed lines indicate an exploratory absolute log2 effect of one. Shrinkage does not alter Wald p-values or BH adjusted p-values.",
+      "source_tables": [
+        "differential_expression.tsv"
+      ],
+      "formats": [
+        "png",
+        "svg",
+        "pdf"
+      ],
+      "width_inches": 7.0,
+      "height_inches": 4.6,
+      "png_dpi": 300
+    },
+    {
+      "figure": "volcano",
+      "caption": "Volcano plot uses the selected effect estimate on the x-axis and the unmodified two-sided Wald BH-adjusted p-value on the y-axis. Genes with missing adjusted p-values are omitted from this panel and retained as NA in the full table. Six smallest adjusted p-values are labelled; labels do not imply replication.",
+      "source_tables": [
+        "differential_expression.tsv"
+      ],
+      "formats": [
+        "png",
+        "svg",
+        "pdf"
+      ],
+      "width_inches": 7.0,
+      "height_inches": 5.0,
+      "png_dpi": 300
+    },
+    {
+      "figure": "heatmap_top30",
+      "caption": "Thirty genes ranked by adjusted p-value, followed by raw p-value, shown after variance stabilization and within-gene mean centering / sample SD scaling. Fixed sample order FA1-FA4, PM1-PM3. This selection is outcome-dependent and descriptive; included genes are not necessarily all significant.",
+      "source_tables": [
+        "differential_expression.tsv",
+        "heatmap_top30_gene_zscores.tsv"
+      ],
+      "formats": [
+        "png",
+        "svg",
+        "pdf"
+      ],
+      "width_inches": 7.0,
+      "height_inches": 8.7,
+      "png_dpi": 300
+    },
+    {
+      "figure": "selected_gene_counts",
+      "caption": "Preselected genes Gfap and Ahr, when available. Each labelled point is one biological sample; black lines show group means. Counts are divided by DESeq2 size factors. The displayed FDR comes from the genome-wide comparison, not a separate gene-specific test.",
+      "source_tables": [
+        "normalized_counts.tsv.gz",
+        "sample_metadata.tsv",
+        "differential_expression.tsv"
+      ],
+      "formats": [
+        "png",
+        "svg",
+        "pdf"
+      ],
+      "width_inches": 7.8,
+      "height_inches": 4.2,
+      "png_dpi": 300
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "reviewed_at_utc": "2026-10-19T01:06:59.341609+00:00",
+  "language": "English",
+  "scope": "Selected primary brain arms only; independent read-only review of saved source papers and deposited metadata. No download, model fit or output regeneration performed.",
+  "evidence_rules": [
+    "Paper-wide protocols are identified separately from selected-sample deposited fields.",
+    "Reported atmospheric concentrations are not converted into instilled body-weight doses or vice versa.",
+    "Arithmetic age/duration implications are labeled and are not substituted for reported collection ages.",
+    "PDF page numbers are one-based local PDF pages; printed article pages are identified where different."
+  ],
+  "studies": [
+    {
+      "accession": "GSE145840",
+      "citation": "Rajagopalan et al., J Clin Invest (2020), Metabolic effects of air pollution exposure and reversibility.",
+      "selected_brain_arm": "Chow-fed hypothalamus: filtered-air GSM4337097–GSM4337100 (n=4) versus PM GSM4337101–GSM4337103 (n=3). The four hypothalamus HFD samples and other tissues/cessation arms are excluded.",
+      "strain_model_sex": "Male C57BL/6J mice on chow; conventional mice, not a humanized APOE or alpha-synuclein model.",
+      "brain_region": "Hypothalamus",
+      "pollutant_dose_or_concentration": "Concentrated ambient PM2.5, approximately 60–120 µg/m³ during exposure; the paper reports mean 80 µg/m³ (approximately ten times ambient). Comparator: filtered air.",
+      "route": "Inhalational delivery with a versatile aerosol concentrator and enrichment system. Whole-body versus nose-only chamber configuration is not specified in the reviewed main paper or selected GEO sample fields.",
+      "schedule_duration": "6 h/day, 5 days/week, for 14 weeks.",
+      "age_at_start": "Three weeks old (paper study-wide exposure design).",
+      "age_at_collection": "No per-sample collection age or final-exposure-to-harvest lag is given in the selected GEO fields. Approximately 17 weeks would follow arithmetically from 3 weeks plus 14 weeks; this is not a separately reported collection age.",
+      "evidence_scope": {
+        "sample_specific": "GEO sample titles and treatment/tissue fields identify the selected chow FA/PM hypothalamus samples.",
+        "study_wide": "Paper p1 and GEO Series_summary supply male C57BL/6J model and the 14-week exposure description; paper p2 states subsequent transcriptome analyses were restricted to males. The exact daily schedule and start age come from paper p1."
+      },
+      "unknowns_or_cautions": [
+        "The source concentration is an atmospheric exposure concentration, not an administered mg/kg dose.",
+        "The main paper refers further methods to supplemental material; that supplemental methods file is not in the saved library reviewed here.",
+        "Do not assign the cessation-arm additional eight weeks to these primary hypothalamus samples."
+      ],
+      "provenance": {
+        "citation_doi": "10.1172/JCI137315",
+        "citation_url": "https://doi.org/10.1172/JCI137315",
+        "local_pdf": "papers/pdf/GSE145840_Rajagopalan_2020_JCI.pdf",
+        "pdf_pages_one_based": [
+          1,
+          2,
+          6
+        ],
+        "sections": [
+          "Results and Discussion > Air pollution exposure (printed p6034)",
+          "Differential transcriptome and functional annotation (printed p6035)",
+          "Methods > Data availability (printed p6039)"
+        ],
+        "pdf_sha256": "e7b4d5c496eab973f6f8e452075cb42c69b2527d2a53f7c3223499ea36b704c0",
+        "deposited_metadata": [
+          {
+            "path": "metadata/GSE145840/GSE145840_family.soft",
+            "locators": [
+              "Series_summary, line 13",
+              "GSM4337097–GSM4337103: Sample_title, Sample_source_name_ch1, Sample_characteristics_ch1"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "accession": "GSE297423",
+      "citation": "Zhang et al., Science (2025), Lewy body dementia promotion by air pollutants.",
+      "selected_brain_arm": "Anterior cingulate cortex: intranasal PBS GSM8990943–GSM8990946 (n=4) versus PM nasal GSM8990951–GSM8990954 (n=4). PFF, PM-PFF and combined PM-PFF/PM arms are excluded.",
+      "strain_model_sex": "Humanized WT alpha-synuclein (hWT alphaSyn) mice: FVB;129S6-Sncatm1Nbm Tg(SNCA)1Nbm/J, JAX strain 010710. Sex is not stated for the RNA-seq animals in the reviewed main PDF or deposited selected-sample characteristics.",
+      "brain_region": "Anterior cingulate cortex (ACC)",
+      "pollutant_dose_or_concentration": "Intranasal 2 µL PM2.5 suspension at 5 mg/mL in PBS per administration, as reported. Comparator: intranasal PBS. No conversion to an inhaled concentration or body-weight dose is made here.",
+      "route": "Intranasal administration into the nostrils using a pipette, with the mouse held supine.",
+      "schedule_duration": "Once every two days for 2 months for the selected RNA-seq PM arm; PBS is the corresponding intranasal control arm.",
+      "age_at_start": "Two months old (paper Mouse RNA-seq section and GEO Series_overall_design / selected Sample_treatment_protocol_ch1).",
+      "age_at_collection": "The arm lasts 2 months after initiation at age 2 months; approximately 4 months is implied, but an individual collection age and interval from last nasal dose to collection are not explicitly reported.",
+      "evidence_scope": {
+        "sample_specific": "GEO samples identify ACC and humanized aSyn WT genotype; their treatment protocols specify the 2-month-old model and 2-month arm. Library names distinguish Control5–Control8 from PMA2775/PMA2776/PMA2778/PMA2779.",
+        "study_wide": "Paper Intranasal treatment with PM2.5 supplies dose and every-two-day schedule. Main Fig5 / RNA-seq text establish nasal PM for 2 months. The default PM2.5-1 material is described in the general sampling methods as the Baoji, China sample; this is not reannotated per individual GSM."
+      },
+      "unknowns_or_cautions": [
+        "Sex is unknown in the inspected sources; do not infer male from another mouse experiment in the paper.",
+        "The paper also contains a 10-month C57BL/6 wildtype brain-atrophy experiment; that is a different arm and does not describe these RNA-seq samples.",
+        "Do not substitute the PFF stereotaxic injection route/dose or the combined-arm 7-week schedule for this PM-only comparison.",
+        "The paper discusses an inhalation-equivalent atmospheric concentration; the actual RNA-seq intervention is nasal instillation and that equivalence is not treated as a measured chamber concentration.",
+        "The reported 2 µL is not relabeled as 2 µL per nostril."
+      ],
+      "provenance": {
+        "citation_doi": "10.1126/science.adu4132",
+        "citation_url": "https://doi.org/10.1126/science.adu4132",
+        "local_pdf": "papers/pdf/GSE297423_Zhang_2025_Science.pdf",
+        "pdf_pages_one_based": [
+          7,
+          8,
+          11,
+          13,
+          14
+        ],
+        "sections": [
+          "Transcriptomic responses to PM2.5 exposure and PM-PFF inoculation (PDF p7; printed p6 of15)",
+          "Fig5 caption (PDF p8; printed p7 of15)",
+          "Materials and Methods > PM2.5 sampling; Animal procedures; Intranasal treatment with PM2.5 (PDF p11; printed p10 of15)",
+          "Mouse RNA-seq (begins PDF p13; continues PDF p14, printed p13 of15)"
+        ],
+        "pdf_sha256": "84535d5fd5df311f1d189d6116677525036c92e3eb27f576c0da489015bad55d",
+        "deposited_metadata": [
+          {
+            "path": "metadata/GSE297423/GSE297423_family.soft",
+            "locators": [
+              "Series_overall_design, line14",
+              "GSM8990943: Sample_treatment_protocol_ch1, line119",
+              "GSM8990951: Sample_treatment_protocol_ch1, line439",
+              "Selected GSM Sample_characteristics_ch1: tissue and genotype; no sex field"
+            ]
+          },
+          {
+            "path": "metadata/GSE297423/samples.csv",
+            "locators": [
+              "Rows GSM8990943–GSM8990946 and GSM8990951–GSM8990954"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "accession": "GSE93967",
+      "citation": "Ku et al., Particle and Fibre Toxicology (2017), NF-kappaB-regulated microRNA-574-5p underlies synaptic and cognitive impairment in response to atmospheric PM2.5 aspiration.",
+      "selected_brain_arm": "Nine hippocampal miRNA arrays: saline GSM2465786–GSM2465788, PM2.5 1 mg/kg GSM2465789–GSM2465791, and PM2.5 5 mg/kg GSM2465792–GSM2465794; three arrays per group. No black-carbon or lentiviral-interference arm is selected.",
+      "strain_model_sex": "Male C57BL/6 mice; approximately 8 weeks old at the start of the animal treatment protocol. No substrain suffix is supplied in the reviewed paper.",
+      "brain_region": "Hippocampus",
+      "pollutant_dose_or_concentration": "PM2.5 at 1 or 5 mg/kg body weight per administration; paper also reports 20 or 100 µg in 20 µL saline, respectively. Comparator: saline.",
+      "route": "Oropharyngeal aspiration, with isoflurane anesthesia before PM2.5 or saline administration.",
+      "schedule_duration": "Every other day for 4 weeks.",
+      "age_at_start": "Approximately 8 weeks (paper Animal treatment section); GEO records male sex and treatment but not individual age.",
+      "age_at_collection": "Animals were sacrificed 18 h after the final exposure. Absolute collection age is not explicitly tabulated; approximately 12 weeks follows from the reported starting age and duration.",
+      "evidence_scope": {
+        "sample_specific": "GEO selected GSM characteristics identify male hippocampal samples and saline/1/5 mg/kg groups; the repeated sample treatment protocol confirms oropharyngeal aspiration every other day for 4 weeks.",
+        "study_wide": "Paper Methods > Animal treatment supplies C57BL/6 strain, approximate starting age, administration volumes, anesthesia and the 18-hour final-exposure-to-harvest interval. The tissue collection description specifies no interference treatment for these samples."
+      },
+      "unknowns_or_cautions": [
+        "This is aspiration of a suspension, not a measured whole-body airborne PM concentration.",
+        "The paper includes separate black-carbon and lentiviral mechanistic experiments; their doses or six-week pretreatment intervals do not apply to these nine primary arrays.",
+        "The paper discusses ambient-concentration calculations to motivate doses; those are not measured chamber exposures for this arm.",
+        "No individual collection age or C57BL/6 substrain suffix is available in the reviewed sources."
+      ],
+      "provenance": {
+        "citation_doi": "10.1186/s12989-017-0215-3",
+        "citation_url": "https://doi.org/10.1186/s12989-017-0215-3",
+        "local_pdf": "papers/pdf/GSE93967_Ku_2017_Particle_Fibre_Toxicology.pdf",
+        "pdf_pages_one_based": [
+          13,
+          14
+        ],
+        "sections": [
+          "Methods > Particle preparation and characterization; Animal treatment (PDF/printed p13 of19)",
+          "Methods > MicroRNA microarray analysis (PDF/printed p14 of19)"
+        ],
+        "pdf_sha256": "731cdb2c33ffdb9a41efc0e968638835a129f171f1dee662bbf219bf336663d7",
+        "deposited_metadata": [
+          {
+            "path": "metadata/GSE93967/GSE93967_family.soft",
+            "locators": [
+              "Series_overall_design, line14",
+              "GSM2465786–GSM2465794: Sample_characteristics_ch1 (tissue, gender, treatment), Sample_treatment_protocol_ch1"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "accession": "E-MTAB-14917",
+      "citation": "Nakamya et al., International Journal of Molecular Sciences (2025), Age- and ApoE Genotype-Dependent Transcriptomic Responses to O3 in the Hippocampus of Mice.",
+      "selected_brain_arm": "All 24 sequenced hippocampal samples: age-at-start 3 or 17 months × human APOE3 or APOE4 targeted replacement × filtered air or ozone, n=3 per eight combinations.",
+      "strain_model_sex": "Male human APOE3 and APOE4 gene-targeted replacement mice obtained from Taconic. A specific C57BL/6 background is not established in the reviewed paper/IDF. SDRF strain strings are Mus musculus musculus x M. m. domesticus for 23 animals and Mus musculus domesticus for Sample 1.",
+      "brain_region": "Hippocampus isolated from the left hemisphere; right hemisphere fixed for other assays.",
+      "pollutant_dose_or_concentration": "O3 at 0.8 ppm during exposure sessions. Comparator: filtered air.",
+      "route": "Gaseous ozone exposure at the UAB environmental exposure facility. The reviewed paper/IDF do not name the chamber configuration (whole-body versus nose-only), so no such configuration is assigned.",
+      "schedule_duration": "Eight cycles; each cycle has 5 days of O3 or filtered air for 7 h/day, followed by 9 days of filtered air. Eight 14-day cycles imply 112 days (16 weeks), a calendar calculation rather than a separately reported harvest date.",
+      "age_at_start": "Three or seventeen months (paper §4.1 and IDF growth protocol); these are exposure-onset labels, not terminal tissue ages.",
+      "age_at_collection": "Paper §4.2 states tissue collection after completion of exposure. Exact terminal age and last-O3-session-to-harvest lag are not reported; do not relabel the samples as 3 or 17 months at death.",
+      "evidence_scope": {
+        "sample_specific": "SDRF identifies each animal/run, genotype, hippocampus, environmental stress and the 3/17-month labels. There are two SDRF rows per animal for paired read files; deduplication by Source Name gives 24 animals.",
+        "study_wide": "Paper §4.1 and IDF growth/treatment protocols establish male sex, targeted replacement model, starting ages and cyclic concentration/schedule. The paper describes 14–16 animals per experimental group overall, whereas the deposited sequenced subset has three per stratum; these are different denominators."
+      },
+      "unknowns_or_cautions": [
+        "Specific strain background, chamber geometry and exact final-dose-to-harvest interval are not established by the saved sources.",
+        "SDRF Sample 1 / ERR14708304 (3-month-start ApoE3 filtered air) has the differing strain string; this is one animal, not complete strain-by-genotype confounding.",
+        "The model is humanized at APOE. Gene-level quantification against the mouse reference does not validate human APOE allele-specific expression.",
+        "Keep the paper-wide 14–16 animals per group separate from n=3 sequenced biological replicates per stratum."
+      ],
+      "provenance": {
+        "citation_doi": "10.3390/ijms26062407",
+        "citation_url": "https://doi.org/10.3390/ijms26062407",
+        "local_pdf": "papers/pdf/E-MTAB-14917_Nakamya_2025_IJMS.pdf",
+        "pdf_pages_one_based": [
+          14,
+          15
+        ],
+        "sections": [
+          "4.1 Animals and Exposure (PDF/printed p14 of19)",
+          "4.2 Tissue Collection and RNA Isolation (PDF/printed p14 of19)",
+          "4.3 Library Preparation, Sequencing, and Data Processing (PDF/printed p15 of19)"
+        ],
+        "pdf_sha256": "9646a7d85ece70ecd573b1fd21fb0fa9d7cd1f809252d22b4f6c126e0e868595",
+        "deposited_metadata": [
+          {
+            "path": "metadata/E-MTAB-14917/article.xml",
+            "locators": [
+              "sec id=sec4dot1-ijms-26-02407",
+              "sec id=sec4dot2-ijms-26-02407"
+            ]
+          },
+          {
+            "path": "metadata/E-MTAB-14917/E-MTAB-14917.idf.txt",
+            "locators": [
+              "Protocol P-MTAB-151816: growth",
+              "Protocol P-MTAB-151817: treatment",
+              "Protocol P-MTAB-151812: sample collection"
+            ]
+          },
+          {
+            "path": "metadata/E-MTAB-14917/E-MTAB-14917.sdrf.txt",
+            "locators": [
+              "Source Name; Characteristics[age]; Characteristics[genotype]; Characteristics[environmental stress]; Characteristics[strain]",
+              "Deduplicated Source Name counts: 24; Sample 1 strain exception"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "cross_study_cautions": [
+    "Routes and exposure metrics differ, so these four interventions are not interchangeable dose scales.",
+    "No selected primary arm is a NO2 exposure study.",
+    "No pollutant-exposed MERFISH animals are present in this four-study collection."
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "ozone_effect_uncertainty": {
+    "caption": "A: Unshrunken ozone-versus-air log2 fold changes and pointwise95% Wald intervals;3 animals per exposure in each stratum, with dispersion estimation shared across24 animals. Filled symbols mark within-stratum BH FDR<0.05; intervals are not simultaneous. B: apeglm-regularized effects on the same genes. Gray/missing marks mean unavailable estimates, not zero. Six genes were selected by the global ozone LRT among protein-coding genes with mean normalized count>=20; Fos,Gfap,Aif1,Trem2 are named secondary display targets. Selection is post hoc and does not establish gene-specific replication. Regularization is estimated separately for each contrast and can contract a mode almost to zero despite a significant unshrunken Wald result;for example,Fos in M17/APOE4 has MLE=-2.271,q=0.0212,but mode≈0. The matrix is a regularization diagnostic,not evidence that the original exposure effect is absent.",
+    "alt": "Four forest plots and a regularized-effect heatmap for ten selected ozone-study genes.",
+    "language": "en",
+    "files": {
+      "png": {
+        "path": "results/advanced_omics/figures/ozone_effect_uncertainty.png",
+        "sha256": "d4bfa4653adaa6a27d9b60716602d220699ebda80477c2267f8822c967203972"
+      },
+      "svg": {
+        "path": "results/advanced_omics/figures/ozone_effect_uncertainty.svg",
+        "sha256": "d0e166683b535447dd9a4fbf8e9399906be7cf60726a3fd716f04691cc12a186"
+      },
+      "pdf": {
+        "path": "results/advanced_omics/figures/ozone_effect_uncertainty.pdf",
+        "sha256": "6ec8a4af8cebdca491167e5c3a0294f70b1a8ce99c26390076b9d9fd750816df"
+      }
+    },
+    "figure_inches": [
+      15.3,
+      7.8
+    ],
+    "png_dpi": 300
+  },
+  "ozone_interaction_evidence": {
+    "caption": "A: Fixed-universe nested-model likelihood-ratio tests;each gene is one point. A separate BH family is used for each test. All24 animals and effective-length offsets are retained;the full/reduced ranks are8/6,8/6,and8/7. B: Eight age-dependent-response genes, zero genotype-omnibus and zero three-way genes meet BH FDR<0.05. A null test is not equivalence. C: Unshrunken differences of ozone log2 fold changes for all eight age-LRT discoveries;black dots indicate the corresponding conditional Wald-family FDR<0.05. These one-df conditional tests and omnibus tests answer different hypotheses;their discovery sets need not agree. All analyses are secondary and exploratory.",
+    "alt": "Three interaction evidence plots, discovery counts and a signed response-difference heatmap.",
+    "language": "en",
+    "files": {
+      "png": {
+        "path": "results/advanced_omics/figures/ozone_interaction_evidence.png",
+        "sha256": "f4da53e20ac0667d2c561d59a691c2b731d3c0da59affe84cbe5fa6d5432347f"
+      },
+      "svg": {
+        "path": "results/advanced_omics/figures/ozone_interaction_evidence.svg",
+        "sha256": "95ffe2d20fee28112e1b3fb5bedeed2353442a319868c54e994726263ec71803"
+      },
+      "pdf": {
+        "path": "results/advanced_omics/figures/ozone_interaction_evidence.pdf",
+        "sha256": "d6057e4981e5a3750293f0d062e1d8a62491a2985ab79f905b01f9a7cde594c2"
+      }
+    },
+    "figure_inches": [
+      14.5,
+      10.0
+    ],
+    "png_dpi": 300
+  },
+  "ozone_interaction_animals": {
+    "caption": "All24 independent animals per gene are shown,3 per exposure/age/genotype cell. Counts use the original DESeq2 gene-length normalization factors, then log2(1+count) for display. Point-position plots use gene-specific nonzero y-ranges,identical across groups within a panel. Connected bars represent arithmetic means of displayed transformed values;they do not connect paired animals and are not inferential intervals. Six lowest-q age-dependent-exposure LRT genes are displayed, preserving secondary selection. Count-model tests were not fitted on these log-transformed values. Gene names and grouping do not establish cell-specific expression.",
+    "alt": "Six panels showing all24 individual animal values for selected age-response genes.",
+    "language": "en",
+    "files": {
+      "png": {
+        "path": "results/advanced_omics/figures/ozone_interaction_animals.png",
+        "sha256": "e29c72819454c67e1d55df097def06165939e28e87cb9525ce64738145ae22de"
+      },
+      "svg": {
+        "path": "results/advanced_omics/figures/ozone_interaction_animals.svg",
+        "sha256": "6456147aa4e32784d95da09ecaeea57b9a7618147f2c424d239b496865ec1949"
+      },
+      "pdf": {
+        "path": "results/advanced_omics/figures/ozone_interaction_animals.pdf",
+        "sha256": "d94f00f1690ac2553516c8563b7b72ee189259aa7be001475c2101823b552db2"
+      }
+    },
+    "figure_inches": [
+      14.5,
+      8.5
+    ],
+    "png_dpi": 300
+  },
+  "GO_multi_contrast_heatmap": {
+    "caption": "Signed NES values are displayed for a deterministic, redundancy-reduced selection:up to2 FDR<0.05 terms per direction per contrast, ordered by estimated q then absolute NES;new terms require Jaccard<0.75 with already selected terms using the union of rank-eligible GO members. Outlined circles mark that cell's GSEA algorithmic FDR<0.05;these are not BH p-values. Gray× means the term was not eligible/tested, never zero enrichment. Gene-set permutations do not preserve gene-gene correlation or sample uncertainty. Contrasts have distinct tissues/models/assays and are not pooled;differences in NES or q do not constitute a formal between-study test. Source GO names are retained.",
+    "alt": "A signed NES matrix across six contrasts with explicit missing eligibility and algorithmic FDR markers.",
+    "language": "en",
+    "files": {
+      "png": {
+        "path": "results/advanced_omics/figures/GO_multi_contrast_heatmap.png",
+        "sha256": "0cc5fd5d32ed33e1b647cd77670e33cedec918b6af96b343d4270ee192d04e0d"
+      },
+      "svg": {
+        "path": "results/advanced_omics/figures/GO_multi_contrast_heatmap.svg",
+        "sha256": "6ac10e800d6a3f54445d093fa67c7470f7369b64f33cbfcf518df57b8e5c9fd1"
+      },
+      "pdf": {
+        "path": "results/advanced_omics/figures/GO_multi_contrast_heatmap.pdf",
+        "sha256": "95233ffad2cacdcb5a5044be6593e99876a0c76bfcaa711fdc7b9a8250d3cd90"
+      }
+    },
+    "figure_inches": [
+      13.8,
+      8.8
+    ],
+    "png_dpi": 300
+  },
+  "GO_overlap_network": {
+    "caption": "Ten lowest-q positive and ten lowest-q negative GO-BP terms for ozone M3/APOE4, with |NES| tie-breaks. Nodes encode gene-set size in the eligible rank and NES, not cell abundance. Edges join sets with Jaccard membership overlap>=0.25;they do not represent coexpression, protein interaction, causal regulation or independent pathway discoveries. Connected components use a deterministic grid and circular positions; visual distances are graphical, not anatomical or molecular. Selection is exploratory and restricted to one contrast;the original algorithmic GSEA FDR estimates are retained. Zero q values reflect finite permutations. Full names, memberships, node and edge tables are available.",
+    "alt": "A membership-overlap network of twenty selected GO terms with a numbered term table.",
+    "language": "en",
+    "files": {
+      "png": {
+        "path": "results/advanced_omics/figures/GO_overlap_network.png",
+        "sha256": "7ee689092d5cdc17fc3016e81b7cd703068b30a24a89d12caa7057e3a7109627"
+      },
+      "svg": {
+        "path": "results/advanced_omics/figures/GO_overlap_network.svg",
+        "sha256": "b40780b4792d86c88d9142364805e8fda47f56639c4c7fa481b2c22bfbe559de"
+      },
+      "pdf": {
+        "path": "results/advanced_omics/figures/GO_overlap_network.pdf",
+        "sha256": "7ab441ef97d9df79b1405d532042e8f1b2f5ce56eeb415b4bbce5bfba7a0f4e1"
+      }
+    },
+    "figure_inches": [
+      15.5,
+      9.8
+    ],
+    "png_dpi": 300
+  },
+  "ozone_effect_uncertainty_es": {
+    "caption": "A: Cambios log2 de ozono frente a aire sin regularizar e intervalos puntuales de Wald del95%;3 animales por exposición en cada estrato, con dispersión estimada en24 animales. Símbolos rellenos:FDR de BH del estrato<0.05;los intervalos no son simultáneos. B:Efectos regularizados por apeglm de los mismos genes. Gris o ausente indica estimaciones no disponibles, no cero. Seis genes se seleccionaron por la LRT global entre genes codificantes con conteo medio>=20;Fos,Gfap,Aif1,Trem2 son objetivos secundarios de visualización. La selección es posterior al análisis y no establece replicación génica. La regularización se estima por separado en cada contraste y puede llevar el modo casi a cero pese a una prueba de Wald significativa sin regularizar;por ejemplo,Fos en M17/APOE4 tiene MLE=-2.271,q=0.0212,pero modo≈0. La matriz diagnostica la regularización,no demuestra ausencia del efecto original de exposición.",
+    "alt": "Cuatro gráficos de efectos e intervalos y un mapa de efectos regularizados de diez genes seleccionados del estudio de ozono.",
+    "language": "es",
+    "files": {
+      "png": {
+        "path": "results/advanced_omics/figures/ozone_effect_uncertainty_es.png",
+        "sha256": "15fc28e5c6b79b2afa7ebdbaed5edd0fc270807ad0b46c0c013f6f8b8ff1aa9a"
+      },
+      "svg": {
+        "path": "results/advanced_omics/figures/ozone_effect_uncertainty_es.svg",
+        "sha256": "25a5de7cee047a012a66ac8851527ecc04b41107582e011b919d96c68ab0d01b"
+      },
+      "pdf": {
+        "path": "results/advanced_omics/figures/ozone_effect_uncertainty_es.pdf",
+        "sha256": "7913696aabc023d6b103857e2cbe6e4b26553d5f54ef40e9019684139527c46d"
+      }
+    },
+    "figure_inches": [
+      15.3,
+      7.8
+    ],
+    "png_dpi": 300
+  },
+  "ozone_interaction_evidence_es": {
+    "caption": "A:LRT de modelos anidados con universo génico fijo;cada gen es un punto. Cada prueba usa una familia de BH separada. Se conservan24 animales y los ajustes por longitud efectiva;los rangos completo/reducido son8/6,8/6 y8/7. B:Ocho genes muestran respuesta dependiente de la edad;ninguno supera FDR<0.05 en la prueba ómnibus de genotipo ni en la interacción triple. Un resultado nulo no implica equivalencia. C:Diferencias sin regularizar de los cambios log2 por ozono en los ocho hallazgos de edad;los puntos negros indican FDR<0.05 en la familia condicional de Wald correspondiente. Las pruebas condicionales de1gl y las ómnibus responden hipótesis distintas;no requieren los mismos hallazgos. Son análisis secundarios exploratorios.",
+    "alt": "Tres gráficos de evidencia de interacción, conteos de hallazgos y mapa de diferencias de respuesta con signo.",
+    "language": "es",
+    "files": {
+      "png": {
+        "path": "results/advanced_omics/figures/ozone_interaction_evidence_es.png",
+        "sha256": "4affa832251b6808c87b0574cbd8df1b51f6be5f29253ac8a29799993226cb32"
+      },
+      "svg": {
+        "path": "results/advanced_omics/figures/ozone_interaction_evidence_es.svg",
+        "sha256": "2872e019c0c5e81888ae404b47d955d7b1c87ec848e46fe2f085f21ebf171664"
+      },
+      "pdf": {
+        "path": "results/advanced_omics/figures/ozone_interaction_evidence_es.pdf",
+        "sha256": "a934f663d0d11347e9d0f9a77e2b34348ed6926d71ce14820818512c4f5b22a4"
+      }
+    },
+    "figure_inches": [
+      14.5,
+      10.0
+    ],
+    "png_dpi": 300
+  },
+  "ozone_interaction_animals_es": {
+    "caption": "Se muestran los24 animales independientes por gen,3 por combinación exposición/edad/genotipo. Los conteos usan los factores originales de normalización por longitud génica de DESeq2 y después log2(1+conteo) para visualizar. Los puntos usan rangos verticales específicos por gen que no comienzan en cero,iguales entre grupos dentro de cada panel. Las barras conectadas son medias aritméticas de los valores transformados;no conectan animales pareados ni son intervalos inferenciales. Se muestran los seis menores valores q de la LRT de respuesta dependiente de la edad,como selección secundaria. Las pruebas del modelo de conteos no se ajustaron sobre estos valores logarítmicos. Los nombres génicos y los grupos no establecen expresión específica de células.",
+    "alt": "Seis paneles con los valores de los24 animales individuales en genes seleccionados de respuesta por edad.",
+    "language": "es",
+    "files": {
+      "png": {
+        "path": "results/advanced_omics/figures/ozone_interaction_animals_es.png",
+        "sha256": "b3d4dfd8710d750f5f76d23328cb7560249d3e5bd90a51700923cacec1a9e9f0"
+      },
+      "svg": {
+        "path": "results/advanced_omics/figures/ozone_interaction_animals_es.svg",
+        "sha256": "a85e3e2fe221bc37b54fb2823a527dc7d84d82cc87524f23d0cc60d8199d944f"
+      },
+      "pdf": {
+        "path": "results/advanced_omics/figures/ozone_interaction_animals_es.pdf",
+        "sha256": "007707b84db911a13929df9262489c8774c58b88ec16fe73e29d313d9aa0ae4b"
+      }
+    },
+    "figure_inches": [
+      14.5,
+      8.5
+    ],
+    "png_dpi": 300
+  },
+  "GO_multi_contrast_heatmap_es": {
+    "caption": "Se muestran NES con signo en una selección determinista con reducción de redundancia:hasta2 términos con FDR<0.05 por dirección y contraste, ordenados por q estimado y |NES|;un término nuevo requiere Jaccard<0.75 respecto de los ya elegidos, usando la unión de miembros elegibles. Los círculos delineados indican FDR algorítmica de GSEA<0.05 en esa celda;no son valores p de BH. Gris× significa no elegible/no analizado, nunca enriquecimiento cero. Las permutaciones de conjuntos no conservan la correlación génica ni la incertidumbre muestral. Los contrastes tienen tejidos/modelos/ensayos distintos y no se combinan;diferencias de NES o q no son pruebas formales entre estudios. Se conservan los nombres originales de GO.",
+    "alt": "Matriz de NES con signo en seis contrastes, con elegibilidad ausente explícita y marcas de FDR algorítmica.",
+    "language": "es",
+    "files": {
+      "png": {
+        "path": "results/advanced_omics/figures/GO_multi_contrast_heatmap_es.png",
+        "sha256": "4a8480a05fa2f4be54bda63e1d530a9c5e5baf2f3d861de83abff0cb387edbb4"
+      },
+      "svg": {
+        "path": "results/advanced_omics/figures/GO_multi_contrast_heatmap_es.svg",
+        "sha256": "78608d66358c9bbd6314910a051a60649dfb02a2b559ae960e5c5dbd50824cf4"
+      },
+      "pdf": {
+        "path": "results/advanced_omics/figures/GO_multi_contrast_heatmap_es.pdf",
+        "sha256": "a50154a3dfe95d4d92147b85280965877fe9aac20b00fd95a2f9f84353f72da9"
+      }
+    },
+    "figure_inches": [
+      13.8,
+      8.8
+    ],
+    "png_dpi": 300
+  },
+  "GO_overlap_network_es": {
+    "caption": "Diez términos GO-BP de NES positivo y diez de NES negativo con menor q para ozono M3/APOE4, desempatados por |NES|. Los nodos representan tamaño del conjunto en la lista elegible y NES, no abundancia celular. Las aristas unen conjuntos con Jaccard>=0.25;no representan coexpresión, interacción proteica, regulación causal ni vías independientes. Los componentes se distribuyen en una cuadrícula determinista con posiciones circulares; las distancias son gráficas, no anatómicas ni moleculares. La selección es exploratoria y corresponde a un único contraste;se conservan las estimaciones originales de FDR algorítmica. Los q iguales a cero reflejan permutaciones finitas. Se proporcionan nombres completos, miembros y tablas de nodos/aristas.",
+    "alt": "Red de solapamiento de miembros de veinte términos GO seleccionados con tabla numerada.",
+    "language": "es",
+    "files": {
+      "png": {
+        "path": "results/advanced_omics/figures/GO_overlap_network_es.png",
+        "sha256": "c1f19b6fa26ae7baf2b73d84860cd0413d18fb5a272621b028587077b3a7d4b9"
+      },
+      "svg": {
+        "path": "results/advanced_omics/figures/GO_overlap_network_es.svg",
+        "sha256": "88580278bf6053abda2773b34d8bc475a04964b9bc51af2770ad74f6be0bedc6"
+      },
+      "pdf": {
+        "path": "results/advanced_omics/figures/GO_overlap_network_es.pdf",
+        "sha256": "85255e55ca17ea6582432dcb7dbc7d5381f7efe8f2a2d8d6f8fef7f7cd2408c4"
+      }
+    },
+    "figure_inches": [
+      15.5,
+      9.8
+    ],
+    "png_dpi": 300
+  }
+}

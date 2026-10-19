@@ -1,0 +1,43 @@
+[
+  {
+    "dataset": "GSE297423",
+    "title": "Lewy body dementia promotion by air pollutants",
+    "organism": "Mus musculus",
+    "tissue": "anterior cingulate cortex",
+    "pollutant": "PM2.5",
+    "selected_samples": 20,
+    "selected_runs": 20,
+    "source": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE297423"
+  },
+  {
+    "dataset": "GSE145840",
+    "title": "Metabolic Effects of Air Pollution Exposure and Reversibility  ",
+    "organism": "Mus musculus",
+    "tissue": "hypothalamus",
+    "pollutant": "PM2.5",
+    "selected_samples": 11,
+    "selected_runs": 11,
+    "source": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145840"
+  },
+  {
+    "dataset": "GSE93967",
+    "title": "MicroRNA microarray of mouse in response to atmospheric PM2.5 inhalation",
+    "organism": "Mus musculus",
+    "tissue": "hippocampus",
+    "pollutant": "PM2.5",
+    "selected_samples": 9,
+    "selected_runs": 0,
+    "source": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE93967"
+  },
+  {
+    "dataset": "E-MTAB-14917",
+    "title": "Age- and ApoE genotype-dependent transcriptomic responses to O3 in the hippocampus of mice",
+    "organism": "Mus musculus",
+    "tissue": "hippocampus",
+    "pollutant": "O3",
+    "selected_samples": 24,
+    "selected_runs": 24,
+    "source": "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-14917",
+    "processed_note": "The deposited CSV is a genotype differential-expression result, not a sample-level count matrix."
+  }
+]

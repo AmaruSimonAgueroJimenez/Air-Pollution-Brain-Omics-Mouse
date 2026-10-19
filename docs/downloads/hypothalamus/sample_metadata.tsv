@@ -1,0 +1,8 @@
+sample	title	organism	source	description	characteristics	relations	label	condition	comparison_included
+GSM4337097	HYPO-FA1	Mus musculus	Hypothalamus	NA	tissue: Hypothalamus | treatment: Chow diet	BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN14175114 | SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX7795050	FA1	FA	True
+GSM4337098	HYPO-FA2	Mus musculus	Hypothalamus	NA	tissue: Hypothalamus | treatment: Chow diet	BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN14175113 | SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX7795051	FA2	FA	True
+GSM4337099	HYPO-FA3	Mus musculus	Hypothalamus	NA	tissue: Hypothalamus | treatment: Chow diet	BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN14175112 | SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX7795052	FA3	FA	True
+GSM4337100	HYPO-FA4	Mus musculus	Hypothalamus	NA	tissue: Hypothalamus | treatment: Chow diet	BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN14175051 | SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX7795053	FA4	FA	True
+GSM4337101	HYPO-PM1	Mus musculus	Hypothalamus	NA	tissue: Hypothalamus | treatment: Chow diet, PM exposure	BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN14175050 | SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX7795054	PM1	PM	True
+GSM4337102	HYPO-PM2	Mus musculus	Hypothalamus	NA	tissue: Hypothalamus | treatment: Chow diet, PM exposure	BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN14175048 | SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX7795055	PM2	PM	True
+GSM4337103	HYPO-PM3	Mus musculus	Hypothalamus	NA	tissue: Hypothalamus | treatment: Chow diet, PM exposure	BioSample: https://www.ncbi.nlm.nih.gov/biosample/SAMN14175047 | SRA: https://www.ncbi.nlm.nih.gov/sra?term=SRX7795056	PM3	PM	True

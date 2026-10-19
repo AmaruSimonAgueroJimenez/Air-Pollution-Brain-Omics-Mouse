@@ -1,0 +1,171 @@
+{
+  "study": {
+    "first_author": "Wei Yan",
+    "year": 2020,
+    "doi": "10.1016/j.envint.2020.105659",
+    "pmid": "32203807",
+    "tissue": "mouse cerebral cortex",
+    "pollutant": "NO2"
+  },
+  "review_date": "2026-10-14",
+  "method": {
+    "workbook_reader": "xlrd",
+    "reader_version": "2.0.2",
+    "biff_version": 80,
+    "reader_installation_source": "https://pypi.org/simple",
+    "doc_reader": "macOS textutil; no source mutation",
+    "scope": "all workbook cell values, sheet visibility, populated columns, and full DOC extracted text"
+  },
+  "sources": [
+    {
+      "file": "data/NO2_Yan_2020/supplements/Yan2020_mmc2.doc",
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0160412019338279-mmc2.doc",
+      "bytes": 342016,
+      "sha256": "75314c156abf01e4fb8c0df461cef7dde749d3de32b9a7a915250d3ab6a72f26"
+    },
+    {
+      "file": "data/NO2_Yan_2020/supplements/Yan2020_mmc3.xls",
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0160412019338279-mmc3.xls",
+      "bytes": 335360,
+      "sha256": "2f654ade4ff90d6c0afff2971c05c5db881978d10f24136a2aeee9d32eb36d00"
+    }
+  ],
+  "workbook": {
+    "sheets": [
+      {
+        "name": "Excel table S1",
+        "title": "Excel table S1. Full list of GO terms associated with cortical DEGs (differentially expressed genes)  on PNDs 1, 7 and 21 in male offspring following prenatal NO2 exposure",
+        "stored_rows": 247,
+        "stored_columns": 17,
+        "populated_columns": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G"
+        ],
+        "visible": true,
+        "header_row": 3,
+        "header_values": [
+          "Posnatal period",
+          "Category",
+          "Term",
+          "The number of genes involved in the term",
+          "% (involved genes/total genes)",
+          "Fisher exact p-value",
+          "Genes involved in the term"
+        ],
+        "record_kind": "GO_enrichment",
+        "record_count": 240,
+        "no_enrichment_rows": 0,
+        "individual_sample_expression_columns": [],
+        "repository_accessions": []
+      },
+      {
+        "name": "Excel table S2",
+        "title": "Excel table S2. Full list of GO terms associated with cortical DEGs (differentially expressed genes)  on PNDs 1, 7 and 21 in female offspring following prenatal NO2 exposure",
+        "stored_rows": 60,
+        "stored_columns": 19,
+        "populated_columns": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G"
+        ],
+        "visible": true,
+        "header_row": 3,
+        "header_values": [
+          "Posnatal period",
+          "Category",
+          "Term",
+          "The number of genes involved in the term",
+          "% (involved genes/total genes)",
+          "Fisher exact p-value",
+          "Genes involved in the term"
+        ],
+        "record_kind": "GO_enrichment",
+        "record_count": 48,
+        "no_enrichment_rows": 2,
+        "individual_sample_expression_columns": [],
+        "repository_accessions": []
+      },
+      {
+        "name": "Excel table S3",
+        "title": "Excel table S3. The significantly co-expressed lncRNA-mRNA pairs based on Pearson correlation coefficient in the cortex of male offspring on PND21 in response to prenatal NO2 exposure",
+        "stored_rows": 907,
+        "stored_columns": 33,
+        "populated_columns": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "visible": true,
+        "header_row": 3,
+        "header_values": [
+          "Number",
+          "LncRNA",
+          "mRNA",
+          "Pearson correlation coefficient",
+          "Significance of  correlation coefficient          （FDR-adjusted p-value<0.01 was presented）"
+        ],
+        "record_kind": "lncRNA_mRNA_correlation_pairs",
+        "record_count": 900,
+        "no_enrichment_rows": 0,
+        "individual_sample_expression_columns": [],
+        "repository_accessions": []
+      },
+      {
+        "name": "Excel table S4",
+        "title": "Excel table S4. The significantly co-expressed lncRNA-mRNA pairs based on Pearson correlation coefficient in the cortex of female offspring on PND21 in response to prenatal NO2 exposure",
+        "stored_rows": 202,
+        "stored_columns": 5,
+        "populated_columns": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "visible": true,
+        "header_row": 3,
+        "header_values": [
+          "Number",
+          "LncRNA",
+          "mRNA",
+          "Pearson correlation coefficient",
+          "Significance of  correlation coefficient          （FDR-adjusted p-value<0.01 was presented）"
+        ],
+        "record_kind": "lncRNA_mRNA_correlation_pairs",
+        "record_count": 198,
+        "no_enrichment_rows": 0,
+        "individual_sample_expression_columns": [],
+        "repository_accessions": []
+      }
+    ],
+    "hidden_sheets": [],
+    "expression_matrix_per_sample_present": false,
+    "complete_gene_counts_or_FPKM_per_sample_present": false,
+    "repository_accessions": [],
+    "classification": "downloadable derived brain transcriptomics results"
+  },
+  "doc": {
+    "contents": [
+      "Figures S1 and S2: Morris water maze swimming tracks",
+      "Table S1: primers for Malat1, ApoE, Gapdh",
+      "Table S2: fold change for 14 overlapping male cortical DEGs at PND1, PND7, PND21",
+      "Table S3: fold change for 2 overlapping female cortical DEGs at PND1, PND7, PND21",
+      "Table S4: top 10 hub lncRNAs; fold change, direction, number of coding genes",
+      "Descriptions of Excel tables S1-S4"
+    ],
+    "repository_accessions": [],
+    "source_caption_discrepancy": "DOC description calls Excel table S2 male; actual workbook title calls S2 female. The workbook title is recorded without changing source."
+  },
+  "conclusion_es": "Los suplementos públicos contienen resultados derivados de transcriptómica cerebral: enriquecimiento GO, pares de correlación lncRNA-mRNA, genes seleccionados y primers. No incluyen matriz completa por muestra de conteos o FPKM, FASTQ, metadatos identificables de bibliotecas/runs ni accession de un repositorio. El artículo y sus suplementos no permiten confirmar descarga pública de los datos primarios."
+}

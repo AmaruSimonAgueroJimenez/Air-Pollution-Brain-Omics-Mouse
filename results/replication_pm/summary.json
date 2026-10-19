@@ -1,0 +1,145 @@
+{
+  "created_at_UTC": "2026-10-19T14:34:36.658477+00:00",
+  "cortex": {
+    "classification": "Successful count-based statistical reproduction, not independent biological replication or raw-read realignment",
+    "paper_counts": {
+      "PFF": 109,
+      "PM": 1205,
+      "PMPFF": 1222,
+      "PMPFFPM": 639
+    },
+    "refit_counts": {
+      "PFF": 109,
+      "PM": 1205,
+      "PMPFF": 1222,
+      "PMPFFPM": 639
+    },
+    "all_four_FDR_sets_identical": true,
+    "gene_level_comparison": [
+      {
+        "contrast": "PM",
+        "genes": 21388,
+        "author_FDR05": 1205,
+        "refit_FDR05": 1205,
+        "intersection": 1205,
+        "symmetric_difference": 0,
+        "Jaccard": 1.0,
+        "MLE_Spearman": 1.0,
+        "max_abs_MLE_difference": 7.929796089811703e-05,
+        "max_abs_nominal_p_difference": 1.4959379829315722e-06,
+        "max_abs_shrunken_difference": 0.0030700401841579905,
+        "shrunken_Spearman": 0.9999999996062906,
+        "same_pvalue_missingness": true,
+        "same_padj_missingness": true
+      },
+      {
+        "contrast": "PFF",
+        "genes": 21388,
+        "author_FDR05": 109,
+        "refit_FDR05": 109,
+        "intersection": 109,
+        "symmetric_difference": 0,
+        "Jaccard": 1.0,
+        "MLE_Spearman": 1.0,
+        "max_abs_MLE_difference": 8.026546110073696e-05,
+        "max_abs_nominal_p_difference": 1.342394272962899e-06,
+        "max_abs_shrunken_difference": 0.0005708573000440999,
+        "shrunken_Spearman": 0.9999988953839649,
+        "same_pvalue_missingness": true,
+        "same_padj_missingness": true
+      },
+      {
+        "contrast": "PMPFF",
+        "genes": 21388,
+        "author_FDR05": 1222,
+        "refit_FDR05": 1222,
+        "intersection": 1222,
+        "symmetric_difference": 0,
+        "Jaccard": 1.0,
+        "MLE_Spearman": 1.0,
+        "max_abs_MLE_difference": 8.114565029870846e-05,
+        "max_abs_nominal_p_difference": 1.7660241309891411e-06,
+        "max_abs_shrunken_difference": 2.4306156049501426e-05,
+        "shrunken_Spearman": 0.9999999999644315,
+        "same_pvalue_missingness": true,
+        "same_padj_missingness": true
+      },
+      {
+        "contrast": "PMPFFPM",
+        "genes": 21388,
+        "author_FDR05": 639,
+        "refit_FDR05": 639,
+        "intersection": 639,
+        "symmetric_difference": 0,
+        "Jaccard": 1.0,
+        "MLE_Spearman": 1.0,
+        "max_abs_MLE_difference": 8.10929984993436e-05,
+        "max_abs_nominal_p_difference": 1.930716280962308e-06,
+        "max_abs_shrunken_difference": 0.0007423436665168065,
+        "shrunken_Spearman": 0.999999918897096,
+        "same_pvalue_missingness": true,
+        "same_padj_missingness": true
+      }
+    ],
+    "count_matrix_identical_to_GEO": true,
+    "genes_retained": 21388,
+    "biological_samples": 20,
+    "group_size": 4,
+    "PCA": {
+      "PC1": 29.2014,
+      "PC2": 9.7606,
+      "top_variable_genes": 500,
+      "scale": true,
+      "normalization": "TMM log2CPM"
+    },
+    "paper_intersections": {
+      "PM_specific": 582,
+      "PM_PMPFF_exclusive_pair": 323
+    },
+    "author_GO_tables_verified": {
+      "PFF": 13,
+      "PM": 365,
+      "PMPFF": 266,
+      "PMPFFPM": 271
+    },
+    "GSEA_recomputed": false,
+    "marker_QC": {
+      "markers": [
+        "Ddx3y",
+        "Uty",
+        "Kdm5d",
+        "Xist"
+      ],
+      "PBS_raw_Y_counts_all_zero": true,
+      "sample_sex_independently_verified": false,
+      "qualification": "Observed source counts for Ddx3y, Uty, Kdm5d and Xist in every cortex animal. A: normalized expression with condition labels; no animals are omitted. B: Xist versus the sum of three Y-linked markers, without classification or an exposure-effect test. All four PBS animals have zero raw counts for each Y marker, while other conditions contain heterogeneous values. These genes also rank at the top of the original Wald FDR tables but shrink toward zero with apeglm. This is a diagnostic flag for independently verifying sample sex, identity and other technical explanations. Sex cannot be assigned or a confounder established from this plot alone. The original group-only model is preserved."
+    }
+  },
+  "hypothalamus": {
+    "classification": "Partial methodological sensitivity only; exact original RUVg fit not recoverable",
+    "reported_PM": 17,
+    "reported_HFD": 761,
+    "partial_refit_PM": 0,
+    "partial_refit_HFD": 3600,
+    "primary_report_PM": 11,
+    "M13_coding_input": 21932,
+    "tested_genes": 13398,
+    "shared_source_features": 50417,
+    "excluded_HFD_only_features": 91,
+    "not_exact_reason": [
+      "The original 5000 empirical negative-control gene IDs were not recovered; the RUVg factor count k was not stated.",
+      "The supplement describes limma/edgeR and negative-binomial testing without complete reproducible R commands.",
+      "Negative-control selection text pairs not significantly changed genes with FDR <0.05, leaving the intended rule ambiguous.",
+      "No original gene-level DE table was recovered; only published count benchmarks could be read.",
+      "Main Figure 2 logCPM >1 differs from supplement CPM >2; this sensitivity explicitly declares its own abundance rule."
+    ],
+    "publication_caption_issue": "Supplement Figure S9 caption C calls the tissue muscle, but panel C is visibly labeled Hypothalamus (N=11): PM 12 specific +5 shared; HFD 756 specific +5 shared."
+  },
+  "no_primary_analysis_overwritten": true,
+  "figure_families": [
+    "cortex_replication_benchmark",
+    "cortex_multicondition_signature",
+    "hypothalamus_method_sensitivity",
+    "cortex_marker_qc"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "checked_at_UTC": "2026-10-19T00:57:59.818565+00:00",
+  "scope": "Check unique official GAF aliases for the eleven primary hits; no effect remapping or imputation",
+  "input_sha256": {
+    "results/hypothalamus/differential_expression.tsv": "4c6809b0b2abe171c9e4eb0b3d5488a73b3e0a8cd8d97ffe1f362b06a4b30806",
+    "results/spatial_viewer/gene_panel_coverage.tsv": "517b61bdee5ba42513b4388be5598d6ba6dcdcc804e0e60677f2a3ba81627b10",
+    "results/enrichment/hypothalamus/gene_mapping.tsv.gz": "47e126ee153ce0d653df869a4edc57c01f6a26851093bd89d3e83d43ae70fb53"
+  },
+  "primary_hits": [
+    {
+      "primary_gene": "Gm13423",
+      "canonical_mouse_gene": "NA",
+      "mapping_status": "unmapped_symbol",
+      "exact_symbol_in_panel": false,
+      "canonical_symbol_in_panel": false
+    },
+    {
+      "primary_gene": "Hipk3",
+      "canonical_mouse_gene": "Hipk3",
+      "mapping_status": "direct_canonical_symbol",
+      "exact_symbol_in_panel": false,
+      "canonical_symbol_in_panel": false
+    },
+    {
+      "primary_gene": "B230312C02Rik",
+      "canonical_mouse_gene": "B230312C02Rik",
+      "mapping_status": "direct_canonical_symbol",
+      "exact_symbol_in_panel": false,
+      "canonical_symbol_in_panel": false
+    },
+    {
+      "primary_gene": "Mmp16",
+      "canonical_mouse_gene": "Mmp16",
+      "mapping_status": "direct_canonical_symbol",
+      "exact_symbol_in_panel": false,
+      "canonical_symbol_in_panel": false
+    },
+    {
+      "primary_gene": "Ksr2",
+      "canonical_mouse_gene": "Ksr2",
+      "mapping_status": "direct_canonical_symbol",
+      "exact_symbol_in_panel": false,
+      "canonical_symbol_in_panel": false
+    },
+    {
+      "primary_gene": "Tll1",
+      "canonical_mouse_gene": "Tll1",
+      "mapping_status": "direct_canonical_symbol",
+      "exact_symbol_in_panel": true,
+      "canonical_symbol_in_panel": true
+    },
+    {
+      "primary_gene": "Fstl4",
+      "canonical_mouse_gene": "Fstl4",
+      "mapping_status": "direct_canonical_symbol",
+      "exact_symbol_in_panel": false,
+      "canonical_symbol_in_panel": false
+    },
+    {
+      "primary_gene": "Pcnx",
+      "canonical_mouse_gene": "Pcnx1",
+      "mapping_status": "unique_GAF_synonym",
+      "exact_symbol_in_panel": false,
+      "canonical_symbol_in_panel": false
+    },
+    {
+      "primary_gene": "Fzd3",
+      "canonical_mouse_gene": "Fzd3",
+      "mapping_status": "direct_canonical_symbol",
+      "exact_symbol_in_panel": false,
+      "canonical_symbol_in_panel": false
+    },
+    {
+      "primary_gene": "Lmbrd2",
+      "canonical_mouse_gene": "Lmbrd2",
+      "mapping_status": "direct_canonical_symbol",
+      "exact_symbol_in_panel": false,
+      "canonical_symbol_in_panel": false
+    },
+    {
+      "primary_gene": "Ptar1",
+      "canonical_mouse_gene": "Ptar1",
+      "mapping_status": "direct_canonical_symbol",
+      "exact_symbol_in_panel": false,
+      "canonical_symbol_in_panel": false
+    }
+  ],
+  "matched_primary_genes": [
+    "Tll1"
+  ],
+  "additional_alias_only_hits_in_panel": []
+}

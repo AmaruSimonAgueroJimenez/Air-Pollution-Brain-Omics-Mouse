@@ -1,0 +1,12 @@
+Warning messages:
+1: package ‘S4Vectors’ was built under R version 4.5.3 
+2: package ‘Biobase’ was built under R version 4.5.3 
+Author-style candidate: genotype_pooled
+Author-style candidate: genotype_additive
+Author-style candidate: age_pooled
+Author-style candidate: exposure_pooled
+Author-style candidate: old_ozone_genotype
+Author-style candidate: M3_E3_exposure_subset
+Author-style candidate: M3_E4_exposure_subset
+Author-style candidate: M17_E3_exposure_subset
+Author-style candidate: M17_E4_exposure_subset

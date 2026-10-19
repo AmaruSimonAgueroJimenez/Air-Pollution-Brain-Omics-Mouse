@@ -10,9 +10,37 @@ import shutil
 import subprocess
 import sys
 import zipfile
+import hashlib
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
+
+
+def promote_site():
+    """Place the compiled static website in /docs for branch-based GitHub Pages."""
+    built = DOCS / "_site"
+    if not (built / "index.html").exists() or not (built / "es/index.html").exists():
+        raise RuntimeError("Render both language versions before preparing GitHub Pages")
+    published = []
+    for source in sorted(built.rglob("*")):
+        if not source.is_file():
+            continue
+        relative = source.relative_to(built)
+        if any(part in {".quarto", "_freeze", "_site", "private_inputs"} for part in relative.parts):
+            continue
+        destination = DOCS / relative
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, destination)
+        published.append({"path": relative.as_posix(), "bytes": source.stat().st_size,
+                          "sha256": hashlib.sha256(source.read_bytes()).hexdigest()})
+    (DOCS / ".nojekyll").write_text("")
+    manifest = {"publishing_source": "main:/docs", "entry_point": "index.html",
+                "spanish_entry_point": "es/index.html", "files": published,
+                "total_bytes": sum(item["bytes"] for item in published),
+                "excludes": ["original FASTQ/H5AD", "reference genomes", "fitted R objects",
+                             "article PDFs/full text", "private_inputs", "local environments"]}
+    (DOCS / "pages-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+    print(f"GitHub Pages ready in docs/: {len(published)} files, {manifest['total_bytes']/1e6:.1f} MB")
 
 
 def prepare_assets():
@@ -44,8 +72,16 @@ def prepare_assets():
         if source.is_file() and source.suffix in {".py", ".R"}:
             destination = DOCS / "downloads/code" / source.name
             destination.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(source, destination)
+            # Keep unrelated in-progress downloader maintenance out of this release.
+            if source.name in {"download_data.py", "start_download.py"}:
+                committed = subprocess.run(["git", "show", "HEAD:scripts/" + source.name],
+                                           cwd=ROOT, check=True, capture_output=True)
+                destination.write_bytes(committed.stdout)
+            else:
+                shutil.copy2(source, destination)
     for source in (ROOT / "metadata").rglob("*"):
+        if "private_inputs" in source.relative_to(ROOT / "metadata").parts:
+            continue
         if source.is_file() and source.suffix in {".json", ".csv", ".tsv", ".txt", ".soft", ".bib", ".ris"}:
             destination = DOCS / "downloads/provenance" / source.relative_to(ROOT / "metadata")
             destination.parent.mkdir(parents=True, exist_ok=True)
@@ -54,6 +90,13 @@ def prepare_assets():
         destination = DOCS / "downloads/papers" / source.name
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, destination)
+    # Preserve source QC locally, but publish portable paths instead of account paths.
+    for destination in (DOCS / "downloads").rglob("*"):
+        if destination.is_file() and destination.suffix in {".json", ".csv", ".tsv", ".txt", ".soft"}:
+            original = destination.read_text()
+            portable = original.replace(str(ROOT), ".").replace(str(Path.home()), "~")
+            if portable != original:
+                destination.write_text(portable)
     packages = ["numpy", "pandas", "scipy", "scikit-learn", "statsmodels", "matplotlib", "seaborn",
                 "h5py", "pydeseq2", "anndata", "gseapy", "nibabel", "scikit-image", "plotly", "ipykernel", "adjustText"]
     versions = {}
@@ -86,9 +129,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--prepare-only", action="store_true")
     parser.add_argument("--page")
+    parser.add_argument("--promote-only", action="store_true",
+                        help="Copy an already rendered bilingual site into /docs for GitHub Pages")
     parser.add_argument("--language", choices=("both", "en", "es"), default="both",
                         help="Render both language versions by default, or select one")
     args = parser.parse_args()
+    if args.promote_only:
+        promote_site()
+        return
     prepare_assets()
     if args.prepare_only:
         return
@@ -103,6 +151,7 @@ def main():
     for language in languages:
         source_dir = DOCS if language == "en" else DOCS / "es"
         subprocess.run(command, cwd=source_dir, env=environment, check=True)
+    promote_site()
 
 
 if __name__ == "__main__":

@@ -1,0 +1,75 @@
+{
+  "reviewed_on": "2026-10-14",
+  "scope": "brain tissue in the four downloaded mouse studies; published reuse requires explicit analytic use, not citation",
+  "results": [
+    {
+      "accession": "GSE145840",
+      "brain_subset": "hypothalamus, 11 selected samples",
+      "original_analyzed_brain": true,
+      "original_evidence": "Rajagopalan2020; Supplemental Figure9",
+      "confirmed_later_brain_reuses": [],
+      "peripheral_reuse_pmids": [
+        "38595789",
+        "38601536",
+        "37860912"
+      ],
+      "same_group_accession_declared_pmid": "40985891",
+      "queries_reviewed": [
+        "GSE145840",
+        "GSE145840 AND hypothalamus",
+        "GSE145840 AND hypothalamic",
+        "GSE145840 AND brain",
+        "GSE145840 AND cortex",
+        "GSE145840 AND neuronal"
+      ],
+      "sources": [
+        "NCBI GEO",
+        "Europe PMC fulltext index",
+        "primary publications and supplemental descriptions"
+      ],
+      "limitation": "No confirmed later hypothalamus reuse found in reviewed sources; not proof of universal absence."
+    },
+    {
+      "accession": "GSE93967",
+      "confirmed_later_brain_reuses": [],
+      "queries_reviewed": [
+        "GSE93967",
+        "REF:28851397 AND OPEN_ACCESS:Y"
+      ],
+      "oa_citing_xml_examined": 40,
+      "citing_xml_with_accession": 0,
+      "sources": [
+        "Europe PMC",
+        "NCBI GEO",
+        "web exact accession search"
+      ],
+      "limitation": "Unindexed reuse or reuse without explicit accession cannot be excluded."
+    },
+    {
+      "accession": "GSE297423",
+      "alias": "PRJNA1263837",
+      "confirmed_later_brain_reuses": [],
+      "sources": [
+        "Europe PMC",
+        "NCBI GEO",
+        "web exact accession and BioProject searches"
+      ],
+      "limitation": "No verified independent reuse identified in reviewed sources."
+    },
+    {
+      "accession": "E-MTAB-14917",
+      "alias": "PRJEB86782",
+      "confirmed_later_brain_reuses": [],
+      "excluded_false_positive": {
+        "pmid": "34714329",
+        "reason": "antibody catalog14917 and different dataset E-MTAB-8593; macrophage study"
+      },
+      "sources": [
+        "Europe PMC",
+        "BioStudies/ArrayExpress",
+        "web exact accession and project searches"
+      ],
+      "limitation": "No verified independent reuse identified in reviewed sources."
+    }
+  ]
+}

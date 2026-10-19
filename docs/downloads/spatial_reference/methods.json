@@ -1,0 +1,36 @@
+{
+  "created_at_UTC": "2026-10-19T00:43:35.955861+00:00",
+  "source": "Zhang et al. 2023, DOI 10.1038/s41586-023-06808-9; exact inputs retained from the spatial viewer",
+  "input_files_SHA256": {
+    "results/spatial_viewer/reference_counts.npz": "ea701f768b446ac00ddf2dd289fdb0e44de80b1cdcd85900f79f2eb649b6c3a0",
+    "results/spatial_viewer/registered_hypothalamus_cells.tsv.gz": "2de9b2265c3f66f9f167d8304c6a86d8a96ea0e161603b22ded1726180af5c01",
+    "results/spatial_viewer/gene_panel_coverage.tsv": "517b61bdee5ba42513b4388be5598d6ba6dcdcc804e0e60677f2a3ba81627b10",
+    "results/spatial_viewer/summary.json": "b44a3825becb2e5a44f47554fc6cd9577142bebbd9c77368c9578e1f2cf252dd"
+  },
+  "cell_join": "Exact string cell_label equality; reorder annotation to NPZ labels; reject missing or duplicate identifiers",
+  "gene_join": "Exact Ensembl ID order with unique deposited gene symbols",
+  "groups": [
+    "deposited atlas class",
+    "deposited CCF substructure"
+  ],
+  "anatomy": "Substructures include named nuclei, other anatomical areas, and unassigned source labels; they are not all distinct nuclei.",
+  "mean_imaging_count": "Arithmetic sum of linear imaging counts divided by all selected cells in the group, including measured zeros",
+  "positive_cells": "Number of selected cells with a measured imaging count strictly greater than zero",
+  "detection_fraction": "positive_cells / n_cells, not a population prevalence estimate",
+  "Tll1_substructure_display": "Top 15 detection fractions among substructures with n_cells >=100; all 49 retained in exported table",
+  "inference": "None; no p values, confidence intervals, cell-level DE or exposure modeling",
+  "source_limits": [
+    "One male donor and one registered hemisphere",
+    "Selected registered HY cells are not an unbiased whole-organ composition survey",
+    "Taxonomy names are inherited labels, not a replacement for deposited anatomical locations",
+    "Measured zeros do not establish biological absence",
+    "Detection differences may reflect assay sensitivity, cell size or segmentation as well as underlying biology",
+    "No exposed single cells or cell-type vulnerability estimates are added"
+  ],
+  "software": {
+    "Python": "3.14.3",
+    "numpy": "2.4.3",
+    "pandas": "2.3.3",
+    "matplotlib": "3.10.8"
+  }
+}

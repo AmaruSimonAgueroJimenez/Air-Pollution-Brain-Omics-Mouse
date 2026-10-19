@@ -1,0 +1,124 @@
+---
+title: "Reproducing the original studies"
+subtitle: "Source code, published gene lists, matched contrasts, and unresolved methods"
+---
+
+```{python}
+import json
+import pandas as pd
+from _report_utils import ROOT, summary, read_table, show_table, figure
+pm = json.loads((ROOT / "results/replication_pm/cortex_refit_summary.json").read_text())
+mo = summary("replication_mirna_ozone")
+caps = json.loads((ROOT / "results/replication_mirna_ozone/figure_captions.json").read_text())
+pm_caps = json.loads((ROOT / "results/replication_pm/figure_manifest.json").read_text())
+def pm_panel(stem):
+    figure("replication_pm", stem, pm_caps[stem]["caption"])
+def mo_panel(stem):
+    figure("replication_mirna_ozone", stem, caps[stem]["en"])
+```
+
+## What constitutes reproduction here?
+
+We compare the reanalysis with **the original authors' code, deposited numerical results, and supplementary tables**, using the same source animals. Computational reproduction checks whether the reported analysis can be recovered. It does not add biological replicates or independently validate a mechanism. Matching gene counts alone is insufficient: we compare feature identities, effect sizes, p-values, selection rules, and analytical populations.
+
+| Study | Source anchor | Outcome |
+|---|---|---|
+| Cortex, GSE297423 | Original Zenodo code, counts, and four DE tables | Exact significant-gene sets recovered in all four comparisons |
+| Hypothalamus, GSE145840 | JCI methods and supplementary figure | Partial method sensitivity; original RUVg specification unavailable |
+| Hippocampal miRNA, GSE93967 | Figure 6 target and deposited arrays | Direction and nominal high-dose evidence agree; not array-wide FDR confirmation |
+| Hippocampal ozone, E-MTAB-14917 | Author genotype CSV and supplementary S2/S3 | Exact reconstruction of deposited selection; partial cross-pipeline effect concordance |
+
+These layers complement the [primary analyses](index.qmd), which retain their original study-specific models and thresholds.
+
+## Cortex: exact recovery of the four author gene sets
+
+Zhang et al.'s [original Zenodo deposit](https://doi.org/10.5281/zenodo.15374632) contains code and numerical results associated with the Science study. The source count matrix agrees exactly with the GEO matrix after matching identifiers and library names. The reproduction uses **all 20 samples across five treatment groups**, including PFF-related arms, with the original `~group` design. @Zhang2025_40906862
+
+The supplied code retains genes with at least ten counts in at least four samples, resulting in 21,388 genes. DESeq2's original `results()` behavior uses alpha = 0.1 for independent filtering, followed by the authors' final **adjusted p < 0.05** selection. Keeping that distinction is necessary for an accurate reproduction.
+
+```{python}
+show_table(pd.DataFrame([
+    {"Author contrast versus control": k, "Genes": v["retained_genes"],
+     "Author and reproduced FDR count": v["FDR05"], "Higher": v["up"], "Lower": v["down"]}
+    for k, v in pm["contrasts"].items()
+]))
+pm_panel("cortex_replication_benchmark")
+```
+
+The reproduced counts are **109, 1,205, 1,222, and 639**, with **zero discordant significant genes** in all four comparisons. Across contrasts, the largest absolute difference in MLE log₂FC is approximately 8.12 × 10⁻⁵ and the largest difference in nominal p is 1.94 × 10⁻⁶. All coefficient fits converge. The exact-set result refers to the deposited count-based inference, rather than independent reconstruction of sequencing alignment or every figure in the paper.
+
+The original-code PCA uses the 500 most variable TMM log₂CPM genes with gene-variance scaling. It recovers PC1 = **29.2014%** and PC2 = **9.7606%**, agreeing with the published rounded 29.2% and 9.8%. The manuscript mentions a different preliminary filtering function; the reproduction follows the deposited code and records that discrepancy.
+
+```{python}
+pm_panel("cortex_multicondition_signature")
+```
+
+**A successful fit is not proof of an exposure mechanism.** The leading reproduced genes include the Y-linked genes *Ddx3y, Uty,* and *Kdm5d*. All four PBS controls have zero raw counts for these genes, whereas other treatment groups contain heterogeneous counts. This pattern raises a possible sex-composition or sample-identity issue. The available metadata do not establish the animals' sex, and the authors' model has no sex covariate. We preserve the reproducible numerical result while flagging this unresolved source-quality question; we do not infer sample sex from three genes or assign all expression changes to PM2.5.
+
+```{python}
+pm_panel("cortex_marker_qc")
+```
+
+[Marker counts by animal](downloads/replication_pm/cortex_marker_expression_by_animal.csv)
+
+The **1,205-gene author reproduction** differs from the **1,167-gene eight-sample primary contrast** because the analysis population, dispersion estimates, filter, and implementation differ. They answer related questions under different models and must not be substituted for one another.
+
+## Hypothalamus: an underdetermined RUVg workflow
+
+Rajagopalan et al. describe lane normalization, empirical control genes and RUVg before limma/edgeR analysis. The exact 5,000 control-gene identities and number of unwanted factors are unavailable. The control-selection wording is also internally ambiguous. Those parameters cannot be inferred uniquely from the deposited counts. @Rajagopalan2020_32780721
+
+A transparent sensitivity analysis includes all 11 FA/PM/HFD libraries and the 50,417 features shared across files. Ninety-one HFD-only source rows are excluded rather than filled with invented zeros. GENCODE M13 protein-coding annotation and a stated CPM filter yield 13,398 genes. A TMM/voom model **without RUVg** produces zero PM genes and 3,600 HFD genes at the reconstructed abundance, absolute log₂FC > 0.8, and BH < 0.05 gates. The original supplementary hypothalamus Venn diagram implies 17 PM genes and 761 HFD genes.
+
+```{python}
+pm_panel("hypothalamus_method_sensitivity")
+```
+
+This is **partial methodological sensitivity, not exact reproduction**. Differences between the main figure and supplement abundance gates and an apparent supplementary-caption tissue error are recorded in the audit. The seven-animal primary analysis and its 11 BH discoveries remain unchanged. Recovering the original RUVg controls, factor count, and executable analysis would be necessary for a stronger computational claim.
+
+## miRNA: target direction versus multiplicity
+
+Ku et al.'s Figure 6 highlights miR-574-5p. In the nine deposited arrays, its signal is lower at both doses. At 5 mg/kg, the difference is **−0.26945 original signal units**. The nominal unmoderated LSD comparison gives p = **0.0368** and the primary limma comparison gives p = **0.0253**, but limma BH q = **0.312**. @Ku2017_28851397
+
+```{python}
+mo_panel("mirna_author_reproduction")
+```
+
+The omnibus unmoderated ANOVA gives p = **0.0788**; therefore a protected LSD procedure requiring a significant omnibus test would not proceed. The paper describes ANOVA/LSD generally without supplying the array-specific gate, feature-selection rule, or complete GeneSpring configuration. We report the alternative interpretations explicitly. The new descriptive heatmap is selected by a documented rule and does not claim to recover the unknown original Figure 6 row selection.
+
+The direction and nominal high-dose evidence agree with the microarray claim, while array-wide FDR evidence does not confirm that target. These arrays cannot reproduce the separate qPCR, BACE1, ChIP, rescue, protein, or behavioral experiments. They do not by themselves establish or refute those mechanisms.
+
+## Ozone: recover the author labels, compare matched effects
+
+The deposited E4-versus-E3 CSV is a **genotype result table**, not an exposure count matrix. Its original nominal p < 0.05 and |log₂FC| > 0.3 rule recovers exactly **1,490 higher and 1,011 lower genes**, matching supplementary S2. Other comparisons in the paper use |log₂FC| > 0.1. Thresholds are matched to the actual contrast. @Nakamya2025_40141051
+
+The new raw-read quantification uses Salmon/tximport rather than the original HISAT2/featureCounts workflow. Candidate count models reuse the fixed 18,537-gene filter and effective-length offsets but reestimate dispersions for each candidate design/subset. Default DESeq2 outlier replacement for sufficiently replicated groups is restored for these reproduction candidates; it remains separate from the primary factorial model.
+
+```{python}
+mo_panel("ozone_author_concordance")
+```
+
+For the pooled genotype-only candidate, **15,559 common finite effects** have Spearman ρ = **0.865**. It selects 2,362 nominal genes, compared with the original 2,501. In their common testable universe, 1,527 selected genes overlap, with Jaccard approximately **0.612**.
+
+For E4 versus E3 at 17 months under ozone, **858 of 959** published S3 genes have exact-symbol finite estimates. Their effect correlation is **0.962**, with **98.8%** direction agreement; 543 retain the candidate nominal selection and 71 retain BH < 0.05. This correlation is conditional on the authors' selected list and the same animals. It is not an unbiased whole-transcriptome or independent-replication estimate.
+
+All four highlighted hemoglobin genes retain negative E4/E3 effects and candidate BH significance. Other highlighted genes retain direction without the same statistical support. Bulk hemoglobin expression cannot distinguish blood-brain-barrier function, retained vascular material, cell composition, and expression regulation without additional measurements.
+
+```{python}
+mo_panel("ozone_factor_upset_reproduction")
+```
+
+The UpSet figure compares intersections of age, genotype, and exposure lists on a shared exact-symbol universe. Set overlap is descriptive and does not test statistical interaction. The [formal response-interaction analyses](advanced_results.qmd) address that separate question.
+
+## What remains unresolved
+
+The strongest result is exact computational recovery of the cortex author gene sets, accompanied by an unresolved Y-chromosome quality signal. Hypothalamus reproduction is limited by missing RUVg settings. miRNA supports the original target direction and nominal high-dose evidence under an unprotected comparison, while multiplicity and omnibus gating change the conclusion. Ozone demonstrates substantial matched-effect concordance across quantifiers, without reproducing every historical filtering, annotation, design and software choice.
+
+[PM claim audit](downloads/replication_pm/paper_claim_audit.csv) ·
+[Cortex gene-level metrics](downloads/replication_pm/cortex_gene_level_metrics.csv) ·
+[miRNA and ozone claim audit](downloads/replication_mirna_ozone/paper_replication_audit.csv) ·
+[miRNA target statistics](downloads/replication_mirna_ozone/mirna_author_targets.csv) ·
+[Ozone matched genotype effects](downloads/replication_mirna_ozone/ozone_concordance_genotype_pooled.csv.gz) ·
+[Ozone matched S3 effects](downloads/replication_mirna_ozone/ozone_concordance_old_ozone_genotype.csv.gz)
+
+All source URLs, hashes, comparison universes, software sessions, and limitations are preserved with the results. Original article reading copies remain in the local literature library; the public report links to the original publications.
+

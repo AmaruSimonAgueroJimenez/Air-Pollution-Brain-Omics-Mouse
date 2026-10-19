@@ -1,0 +1,3550 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Enriquecimiento funcional: procesos biológicos de GO – Contaminación del aire · ómica cerebral</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5dd942ac47374bdb5320a9bbd29a7aa4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../assets/report.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Contaminación del aire · ómica cerebral</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Resumen</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./introduction.html"> 
+<span class="menu-text">Introducción</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./methods.html"> 
+<span class="menu-text">Métodos</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resultados" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Resultados</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-resultados">    
+        <li>
+    <a class="dropdown-item" href="./results.html">
+ <span class="dropdown-text">Hipotálamo · PM2.5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cortex.html">
+ <span class="dropdown-text">Corteza cingulada · PM2.5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./mirna.html">
+ <span class="dropdown-text">miRNA del hipocampo · PM2.5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ozone.html">
+ <span class="dropdown-text">Hipocampo · ozono</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./enrichment.html">
+ <span class="dropdown-text">Enriquecimiento funcional</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./advanced_results.html">
+ <span class="dropdown-text">Interacciones y paneles moleculares</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./replication.html">
+ <span class="dropdown-text">Reproducción de los artículos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./spatial_reference.html">
+ <span class="dropdown-text">Referencia espacial medida</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./viewer.html"> 
+<span class="menu-text">Visor 3D</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./reproducibility.html"> 
+<span class="menu-text">Datos y código</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./../index.html"> 
+<span class="menu-text">English</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Alternar modo lector">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#preguntas-y-alcance-analítico" id="toc-preguntas-y-alcance-analítico" class="nav-link active" data-scroll-target="#preguntas-y-alcance-analítico">Preguntas y alcance analítico</a></li>
+  <li><a href="#materiales-y-métodos" id="toc-materiales-y-métodos" class="nav-link" data-scroll-target="#materiales-y-métodos">Materiales y métodos</a>
+  <ul class="collapse">
+  <li><a href="#anotación-de-ratón-correspondencia-de-genes-y-reproducibilidad" id="toc-anotación-de-ratón-correspondencia-de-genes-y-reproducibilidad" class="nav-link" data-scroll-target="#anotación-de-ratón-correspondencia-de-genes-y-reproducibilidad">Anotación de ratón, correspondencia de genes y reproducibilidad</a></li>
+  <li><a href="#universo-de-fondo-genes-seleccionados-y-fdr-de-ora" id="toc-universo-de-fondo-genes-seleccionados-y-fdr-de-ora" class="nav-link" data-scroll-target="#universo-de-fondo-genes-seleccionados-y-fdr-de-ora">Universo de fondo, genes seleccionados y FDR de ORA</a></li>
+  <li><a href="#gsea-preordenado-y-calidad-de-las-pruebas-génicas" id="toc-gsea-preordenado-y-calidad-de-las-pruebas-génicas" class="nav-link" data-scroll-target="#gsea-preordenado-y-calidad-de-las-pruebas-génicas">GSEA preordenado y calidad de las pruebas génicas</a></li>
+  </ul></li>
+  <li><a href="#resultados-y-cobertura" id="toc-resultados-y-cobertura" class="nav-link" data-scroll-target="#resultados-y-cobertura">Resultados y cobertura</a>
+  <ul class="collapse">
+  <li><a href="#por-qué-importan-las-correspondencias-y-las-familias-de-pruebas" id="toc-por-qué-importan-las-correspondencias-y-las-familias-de-pruebas" class="nav-link" data-scroll-target="#por-qué-importan-las-correspondencias-y-las-familias-de-pruebas">Por qué importan las correspondencias y las familias de pruebas</a></li>
+  <li><a href="#resultados-específicos-de-cada-contraste" id="toc-resultados-específicos-de-cada-contraste" class="nav-link" data-scroll-target="#resultados-específicos-de-cada-contraste">Resultados específicos de cada contraste</a></li>
+  </ul></li>
+  <li><a href="#interpretación-biológica" id="toc-interpretación-biológica" class="nav-link" data-scroll-target="#interpretación-biológica">Interpretación biológica</a></li>
+  <li><a href="#procedencia-descargable" id="toc-procedencia-descargable" class="nav-link" data-scroll-target="#procedencia-descargable">Procedencia descargable</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Enriquecimiento funcional: procesos biológicos de GO</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha del análisis</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">19 octubre 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="preguntas-y-alcance-analítico" class="level2">
+<h2 class="anchored" data-anchor-id="preguntas-y-alcance-analítico">Preguntas y alcance analítico</h2>
+<p>Dos enfoques clásicos de conjuntos de genes resumen los contrastes completos de RNA-seq a nivel génico. El <strong>análisis de sobrerrepresentación (ORA)</strong> pregunta si una anotación aparece entre los genes seleccionados por FDR con mayor frecuencia que la esperada en el universo de genes mapeados y evaluables. El <strong>análisis de enriquecimiento de conjuntos de genes preordenados (GSEA)</strong> pregunta si los genes de un conjunto tienden a acumularse hacia alguno de los extremos de la clasificación completa de estadísticos de Wald con signo y elegibles por calidad. Los enfoques utilizan datos de entrada y procedimientos de multiplicidad distintos, por lo que su concordancia es informativa pero no obligatoria. <span class="citation" data-cites="Ashburner2000_GO Subramanian2005_GSEA Fang2023_GSEApy">(<a href="#ref-Ashburner2000_GO" role="doc-biblioref"><span class="nocase">Ashburner et&nbsp;al.</span> 2000</a>; <a href="#ref-Subramanian2005_GSEA" role="doc-biblioref">Subramanian et&nbsp;al. 2005</a>; <a href="#ref-Fang2023_GSEApy" role="doc-biblioref">Fang et&nbsp;al. 2023</a>)</span></p>
+<p>Se mantienen separadas las comparaciones de PM en hipotálamo y corteza. Los cuatro contrastes de ozono por edad y genotipo solo se incorporan cuando están completas sus correspondientes tablas de Wald. Son <strong>seis entradas de contraste posibles</strong>, no seis cohortes intercambiables. No se agrupan listas de genes, animales, valores p ni afirmaciones causales entre regiones cerebrales, agentes de exposición o protocolos experimentales. La LRT global de ozono sin signo y las características del microarreglo de miRNA no se introducen como clasificaciones de mRNA con signo.</p>
+<blockquote class="blockquote">
+<p><strong>Interpretación:</strong> los términos GO se superponen y comparten ancestros. Un número elevado de términos significativos no representa el mismo número de mecanismos independientes. Las permutaciones de conjuntos de genes de GSEA no capturan la incertidumbre de las réplicas biológicas ni conservan las correlaciones entre genes. El enriquecimiento es evidencia exploratoria sobre conjuntos de genes ordenados o seleccionados, no una prueba de activación o supresión de vías ni de un mecanismo del contaminante específico por célula.</p>
+</blockquote>
+</section>
+<section id="materiales-y-métodos" class="level2">
+<h2 class="anchored" data-anchor-id="materiales-y-métodos">Materiales y métodos</h2>
+<section id="anotación-de-ratón-correspondencia-de-genes-y-reproducibilidad" class="level3">
+<h3 class="anchored" data-anchor-id="anotación-de-ratón-correspondencia-de-genes-y-reproducibilidad">Anotación de ratón, correspondencia de genes y reproducibilidad</h3>
+<p>Los conjuntos de genes se construyen a partir del archivo GAF de MGI de ratón y la ontología GO Basic descargados, conservando las URL originales, fechas de cabecera de las versiones, sumas de comprobación y procedencia del GMT derivado. Se mantienen las fechas individuales de cada fuente; no deben tratarse como una nueva versión conjunta de anotaciones generada de forma coordinada. Solo se utilizan anotaciones positivas de procesos biológicos de ratón. Se excluyen las anotaciones <code>NOT</code>, mientras que se conservan los códigos de evidencia de anotaciones positivas, incluida la evidencia electrónica. Los nombres de los términos GO se mantienen en su forma original para conservar su correspondencia con la ontología.</p>
+<p>La pertenencia a términos se propaga por ancestros activos de procesos biológicos mediante <strong><code>is_a</code> y <code>part_of</code></strong>. No se utilizan para la propagación las aristas regulatorias ni las relaciones entre aspectos. Los identificadores alternativos y los términos obsoletos se resuelven solo cuando existe un reemplazo activo inequívoco. <span class="citation" data-cites="Ashburner2000_GO">(<a href="#ref-Ashburner2000_GO" role="doc-biblioref"><span class="nocase">Ashburner et&nbsp;al.</span> 2000</a>)</span></p>
+<p>La correspondencia utiliza símbolos canónicos de ratón sensibles a mayúsculas o sinónimos GAF que se resuelven de forma única. No convierte genes a mayúsculas, no infiere ortólogos humanos ni relaciona descripciones génicas de texto libre. Cuando varias características de expresión diferencial corresponden a un símbolo, se elige como representante la de mayor <code>baseMean</code>, con desempate lexicográfico por identificador de característica, <strong>independientemente de la dirección del efecto y de su significación</strong>. Los símbolos ambiguos y sin correspondencia permanecen visibles en el registro de correspondencias.</p>
+</section>
+<section id="universo-de-fondo-genes-seleccionados-y-fdr-de-ora" class="level3">
+<h3 class="anchored" data-anchor-id="universo-de-fondo-genes-seleccionados-y-fdr-de-ora">Universo de fondo, genes seleccionados y FDR de ORA</h3>
+<p>El universo de ORA comprende genes representantes mapeados únicos con un valor p ajustado de expresión diferencial finito. Los genes mapeados sin anotación específica GO-BP permanecen en el universo. Los conjuntos seleccionados de expresión mayor y menor utilizan FDR génica &lt; 0.05 y el signo del coeficiente original sin regularizar, sin un umbral adicional de tamaño de efecto.</p>
+<p>Los términos GO elegibles tienen <strong>15–500 miembros después de intersectarlos con el universo específico de cada contraste</strong>. Una probabilidad de supervivencia hipergeométrica unilateral evalúa el solapamiento observado o uno mayor. Los términos con solapamiento cero permanecen en la familia de pruebas con p = 1. La corrección BH se aplica a toda la familia de términos elegibles, por separado para cada contraste y dirección. Por tanto, <code>padj_BH</code> de ORA es diferente del valor p ajustado de expresión diferencial a nivel génico. <span class="citation" data-cites="Benjamini1995_FDR">(<a href="#ref-Benjamini1995_FDR" role="doc-biblioref">Benjamini y Hochberg 1995</a>)</span></p>
+</section>
+<section id="gsea-preordenado-y-calidad-de-las-pruebas-génicas" class="level3">
+<h3 class="anchored" data-anchor-id="gsea-preordenado-y-calidad-de-las-pruebas-génicas">GSEA preordenado y calidad de las pruebas génicas</h3>
+<p>La clasificación incluye representantes mapeados únicos con <strong>un estadístico de Wald sin regularizar finito y un valor p de la prueba sin regularizar finito después de las comprobaciones de validez del análisis original</strong>. Un estadístico finito no basta: las pruebas filtradas por Cook o no fiables por otros motivos pueden conservar un estadístico numérico y tener un valor p no disponible. Estas filas se excluyen de GSEA y las exclusiones se exportan. En ozono, el análisis original también retira pruebas de ajustes sin convergencia y de genes con conteos cero en los seis animales del estrato correspondiente. Los valores p previos al filtrado conservados para auditoría no sustituyen esos valores p de pruebas válidas no disponibles. Es una decisión de calidad de la prueba génica, no una exclusión de animales.</p>
+<p>Los genes con valor p finito de la prueba sin regularizar, pero sin valor p ajustado por el filtrado independiente, siguen siendo elegibles para la clasificación. Esto se aplica a los análisis de PM donde ese filtrado estaba habilitado; ozono utiliza un prefiltro fijo de conteos sin filtrado independiente adaptativo. Ningún umbral de FDR génica o cambio de expresión selecciona los genes clasificados. Los genes se ordenan por estadístico con signo descendente, con desempate por símbolo génico. La pertenencia de términos se restringe además a 15–500 genes en la clasificación resultante. <span class="citation" data-cites="Subramanian2005_GSEA Fang2023_GSEApy">(<a href="#ref-Subramanian2005_GSEA" role="doc-biblioref">Subramanian et&nbsp;al. 2005</a>; <a href="#ref-Fang2023_GSEApy" role="doc-biblioref">Fang et&nbsp;al. 2023</a>)</span></p>
+<p>GSEApy utiliza <strong>1,000 permutaciones de conjuntos/etiquetas de genes</strong>, peso <strong>1</strong> y semilla <strong>20261018</strong>. No son permutaciones de etiquetas fenotípicas. El <code>fdr_qvalue</code> informado es la estimación algorítmica de FDR de GSEA basada en puntuaciones de enriquecimiento normalizadas, <strong>no una corrección BH</strong>. Un valor p nominal por permutación o un valor q estimado igual a cero es un resultado de un número finito de permutaciones y no significa probabilidad de error cero.</p>
+</section>
+</section>
+<section id="resultados-y-cobertura" class="level2">
+<h2 class="anchored" data-anchor-id="resultados-y-cobertura">Resultados y cobertura</h2>
+<div id="enrichment-completed-contrasts" class="cell" data-execution_count="3">
+Hay resultados completos de enriquecimiento para <strong>6 de los seis contrastes planificados</strong> en esta generación del informe.
+<div class="table-scroll">
+<table class="dataframe table table-sm table-striped evidence-table small">
+<thead>
+<tr>
+<th>
+Conjunto de datos
+</th>
+<th>
+Universo ORA
+</th>
+<th>
+Genes aumentados de ORA
+</th>
+<th>
+Genes disminuidos de ORA
+</th>
+<th>
+Términos ORA significativos: aumento
+</th>
+<th>
+Términos ORA significativos: disminución
+</th>
+<th>
+Genes ordenados de GSEA
+</th>
+<th>
+Términos de GSEA analizados
+</th>
+<th>
+Términos GSEA con FDR algorítmica &lt; 0.05
+</th>
+<th>
+Términos significativos con NES positivo
+</th>
+<th>
+Términos significativos con NES negativo
+</th>
+<th>
+Genes excluidos: p original no finito
+</th>
+<th>
+Genes conservados: p finito y p ajustado ausente
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+hypothalamus
+</td>
+<td>
+16016
+</td>
+<td>
+1
+</td>
+<td>
+9
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+16016
+</td>
+<td>
+4564
+</td>
+<td>
+916
+</td>
+<td>
+78
+</td>
+<td>
+838
+</td>
+<td>
+147
+</td>
+<td>
+0
+</td>
+</tr>
+<tr>
+<td>
+cortex
+</td>
+<td>
+14587
+</td>
+<td>
+650
+</td>
+<td>
+379
+</td>
+<td>
+86
+</td>
+<td>
+2
+</td>
+<td>
+15352
+</td>
+<td>
+4363
+</td>
+<td>
+223
+</td>
+<td>
+208
+</td>
+<td>
+15
+</td>
+<td>
+8
+</td>
+<td>
+765
+</td>
+</tr>
+<tr>
+<td>
+ozone_M3_E3
+</td>
+<td>
+15446
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+15446
+</td>
+<td>
+4550
+</td>
+<td>
+4
+</td>
+<td>
+4
+</td>
+<td>
+0
+</td>
+<td>
+23
+</td>
+<td>
+0
+</td>
+</tr>
+<tr>
+<td>
+ozone_M3_E4
+</td>
+<td>
+15448
+</td>
+<td>
+79
+</td>
+<td>
+189
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+15448
+</td>
+<td>
+4550
+</td>
+<td>
+368
+</td>
+<td>
+141
+</td>
+<td>
+227
+</td>
+<td>
+21
+</td>
+<td>
+0
+</td>
+</tr>
+<tr>
+<td>
+ozone_M17_E3
+</td>
+<td>
+15449
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+15449
+</td>
+<td>
+4548
+</td>
+<td>
+85
+</td>
+<td>
+7
+</td>
+<td>
+78
+</td>
+<td>
+20
+</td>
+<td>
+0
+</td>
+</tr>
+<tr>
+<td>
+ozone_M17_E4
+</td>
+<td>
+15451
+</td>
+<td>
+0
+</td>
+<td>
+3
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+15451
+</td>
+<td>
+4550
+</td>
+<td>
+23
+</td>
+<td>
+11
+</td>
+<td>
+12
+</td>
+<td>
+18
+</td>
+<td>
+0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Ningún término ORA cumple BH FDR &lt; 0.05 dentro de cada dirección en ninguno de los cuatro estratos de ozono.</strong> Los resultados de GSEA con clasificación de signo que se presentan a continuación utilizan datos de entrada y un modelo de error distintos; su presencia no revierte este resultado nulo de ORA.</p>
+</div>
+<section id="por-qué-importan-las-correspondencias-y-las-familias-de-pruebas" class="level3">
+<h3 class="anchored" data-anchor-id="por-qué-importan-las-correspondencias-y-las-familias-de-pruebas">Por qué importan las correspondencias y las familias de pruebas</h3>
+<p>La tabla de expresión diferencial, los genes representantes mapeados, el universo de ORA y la clasificación GSEA pueden tener tamaños distintos. Las pérdidas de correspondencia y la elección entre símbolos duplicados explican algunas diferencias. En los análisis de PM donde se utiliza, el filtrado independiente cambia la elegibilidad para ORA, mientras que GSEA conserva genes de calidad elegible con p finito aunque su valor p ajustado no esté disponible. Los conteos de exclusiones por validez de la expresión diferencial original también pueden diferir de las exclusiones mapeadas de GSEA, porque una característica original puede no tener correspondencia o eliminarse según la regla declarada para símbolos duplicados. Los conjuntos seleccionados de ORA de ozono utilizan los valores BH génicos <strong>dentro de cada estrato</strong>, no la columna suplementaria entre los cuatro estratos.</p>
+<div id="cell-enrichment-coverage-table" class="cell" data-execution_count="4">
+<div id="enrichment-coverage-table" class="cell-output cell-output-display cell-output-markdown">
+<div class="table-scroll">
+<table class="dataframe table table-sm table-striped evidence-table small">
+<thead>
+<tr>
+<th>
+Contraste
+</th>
+<th>
+Características de origen
+</th>
+<th>
+Representantes con correspondencia
+</th>
+<th>
+Universo ORA
+</th>
+<th>
+GSEA rank
+</th>
+<th>
+Genes con correspondencia excluidos: p no finito
+</th>
+<th>
+Genes conservados: p finito y p ajustado ausente
+</th>
+<th>
+Características seleccionadas por FDR
+</th>
+<th>
+ORA mapped foreground
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+hypothalamus
+</td>
+<td>
+19611
+</td>
+<td>
+16163
+</td>
+<td>
+16016
+</td>
+<td>
+16016
+</td>
+<td>
+147
+</td>
+<td>
+0
+</td>
+<td>
+11
+</td>
+<td>
+10
+</td>
+</tr>
+<tr>
+<td>
+cortex
+</td>
+<td>
+19235
+</td>
+<td>
+15360
+</td>
+<td>
+14587
+</td>
+<td>
+15352
+</td>
+<td>
+8
+</td>
+<td>
+765
+</td>
+<td>
+1167
+</td>
+<td>
+1029
+</td>
+</tr>
+<tr>
+<td>
+ozone_M3_E3
+</td>
+<td>
+18537
+</td>
+<td>
+15469
+</td>
+<td>
+15446
+</td>
+<td>
+15446
+</td>
+<td>
+23
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+</tr>
+<tr>
+<td>
+ozone_M3_E4
+</td>
+<td>
+18537
+</td>
+<td>
+15469
+</td>
+<td>
+15448
+</td>
+<td>
+15448
+</td>
+<td>
+21
+</td>
+<td>
+0
+</td>
+<td>
+399
+</td>
+<td>
+268
+</td>
+</tr>
+<tr>
+<td>
+ozone_M17_E3
+</td>
+<td>
+18537
+</td>
+<td>
+15469
+</td>
+<td>
+15449
+</td>
+<td>
+15449
+</td>
+<td>
+20
+</td>
+<td>
+0
+</td>
+<td>
+2
+</td>
+<td>
+0
+</td>
+</tr>
+<tr>
+<td>
+ozone_M17_E4
+</td>
+<td>
+18537
+</td>
+<td>
+15469
+</td>
+<td>
+15451
+</td>
+<td>
+15451
+</td>
+<td>
+18
+</td>
+<td>
+0
+</td>
+<td>
+3
+</td>
+<td>
+3
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="resultados-específicos-de-cada-contraste" class="level3">
+<h3 class="anchored" data-anchor-id="resultados-específicos-de-cada-contraste">Resultados específicos de cada contraste</h3>
+<div id="enrichment-contrast-results" class="cell" data-execution_count="5">
+<section id="hipotálamo-pm-frente-a-aire-filtrado" class="level4">
+<h4 class="anchored" data-anchor-id="hipotálamo-pm-frente-a-aire-filtrado">Hipotálamo · PM frente a aire filtrado</h4>
+<p>ORA utiliza <strong>16,016 genes mapeados evaluables</strong>, con <strong>1 genes seleccionados de mayor expresión</strong> y <strong>9 de menor expresión</strong>. Con BH FDR &lt; 0.05 dentro de cada familia, cumplen el criterio <strong>0 términos GO de la dirección mayor</strong> y <strong>0 de la dirección menor</strong>.</p>
+GSEA clasifica <strong>16,016 genes</strong> y evalúa <strong>4,564 términos</strong>. Su FDR algorítmica &lt; 0.05 identifica <strong>916 etiquetas de términos</strong>, incluidos <strong>78 términos con NES positivo</strong> y <strong>838 con NES negativo</strong>. Estos conteos se refieren a anotaciones superpuestas, no a descubrimientos biológicos independientes. La ausencia de significación de ORA debe interpretarse junto con sus conjuntos seleccionados pequeños. Dentro de ellos, <strong>1 genes de mayor expresión</strong> y <strong>2 de menor expresión</strong> carecen de una anotación específica GO-BP en esta versión, aunque permanecen en el universo mapeado. El número mucho mayor de términos GSEA refleja otra pregunta basada en clasificación y otro modelo de permutación; no demuestra cientos de mecanismos hipotalámicos separados. La superposición de los genes que impulsan el enriquecimiento, la incertidumbre original de siete animales y la sensibilidad a animales individuales siguen siendo relevantes. Ningún término ORA cumple el umbral BH declarado en ninguna dirección; los términos ordenados nominalmente permanecen disponibles en las tablas completas.
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/hypothalamus/ORA_significant_terms.svg"><img loading="lazy" width="3900" height="2100" src="../assets/figures/enrichment/hypothalamus/ORA_significant_terms.png" alt="Resumen de ORA específico del contraste para Hipotálamo · PM frente a aire filtrado." class="figure-img"></a>
+<figcaption>
+Términos GO-BP de ORA que cumplen BH FDR &lt; 0.05 dentro de cada dirección. Los paneles vacíos informan explícitamente que no hay términos significativos. Los conteos de solapamiento se refieren a genes seleccionados, no a animales ni a células del atlas. <span class="figure-links"><a href="../assets/figures/enrichment/hypothalamus/ORA_significant_terms.svg">SVG</a> · <a href="../assets/figures/enrichment/hypothalamus/ORA_significant_terms.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<div class="table-scroll">
+<table class="dataframe table table-sm table-striped evidence-table small">
+<thead>
+<tr>
+<th>
+ID de GO
+</th>
+<th>
+Término de GO
+</th>
+<th>
+NES
+</th>
+<th>
+Genes del término en la lista
+</th>
+<th>
+p nominal
+</th>
+<th>
+FDR estimada de GSEA
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+GO:0001539
+</td>
+<td>
+cilium or flagellum-dependent cell motility
+</td>
+<td>
+2.86
+</td>
+<td>
+198
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0003341
+</td>
+<td>
+cilium movement
+</td>
+<td>
+2.66
+</td>
+<td>
+238
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0010770
+</td>
+<td>
+positive regulation of cell morphogenesis
+</td>
+<td>
+-2.3
+</td>
+<td>
+66
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0030317
+</td>
+<td>
+flagellated sperm motility
+</td>
+<td>
+2.78
+</td>
+<td>
+184
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0034242
+</td>
+<td>
+negative regulation of syncytium formation by plasma membrane fusion
+</td>
+<td>
+2.74
+</td>
+<td>
+52
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0035082
+</td>
+<td>
+axoneme assembly
+</td>
+<td>
+2.86
+</td>
+<td>
+108
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0048814
+</td>
+<td>
+regulation of dendrite morphogenesis
+</td>
+<td>
+-2.39
+</td>
+<td>
+100
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0050773
+</td>
+<td>
+regulation of dendrite development
+</td>
+<td>
+-2.35
+</td>
+<td>
+144
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0050803
+</td>
+<td>
+regulation of synapse structure or activity
+</td>
+<td>
+-2.33
+</td>
+<td>
+403
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0050807
+</td>
+<td>
+regulation of synapse organization
+</td>
+<td>
+-2.34
+</td>
+<td>
+395
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0060285
+</td>
+<td>
+cilium-dependent cell motility
+</td>
+<td>
+2.86
+</td>
+<td>
+198
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0060294
+</td>
+<td>
+cilium movement involved in cell motility
+</td>
+<td>
+2.89
+</td>
+<td>
+194
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/hypothalamus/GSEA_terms.svg"><img loading="lazy" width="3150" height="2340" src="../assets/figures/enrichment/hypothalamus/GSEA_terms.png" alt="Puntuaciones de enriquecimiento normalizadas de los principales términos GO en Hipotálamo · PM frente a aire filtrado." class="figure-img"></a>
+<figcaption>
+Hasta doce términos GO-BP con menor q del análisis preordenado elegible por calidad. NES indica asociación con el extremo positivo o negativo de la clasificación de este contraste. Los valores q de GSEA son estimaciones por permutación, no valores BH de ORA. <span class="figure-links"><a href="../assets/figures/enrichment/hypothalamus/GSEA_terms.svg">SVG</a> · <a href="../assets/figures/enrichment/hypothalamus/GSEA_terms.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/hypothalamus/GSEA_curve_GO_0001539.svg"><img loading="lazy" width="2400" height="1500" src="../assets/figures/enrichment/hypothalamus/GSEA_curve_GO_0001539.png" alt="Curva de enriquecimiento acumulado de un término seleccionado en Hipotálamo · PM frente a aire filtrado." class="figure-img"></a>
+<figcaption>
+Curva ilustrativa de enriquecimiento ponderado acumulado y posiciones de los genes del conjunto en la clasificación completa elegible por calidad. La selección de un término principal es exploratoria; su q estimado conserva las limitaciones por permutaciones finitas y tamaño muestral. <span class="figure-links"><a href="../assets/figures/enrichment/hypothalamus/GSEA_curve_GO_0001539.svg">SVG</a> · <a href="../assets/figures/enrichment/hypothalamus/GSEA_curve_GO_0001539.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/hypothalamus/GSEA_curve_GO_0010770.svg"><img loading="lazy" width="2400" height="1500" src="../assets/figures/enrichment/hypothalamus/GSEA_curve_GO_0010770.png" alt="Curva de enriquecimiento acumulado de un término seleccionado en Hipotálamo · PM frente a aire filtrado." class="figure-img"></a>
+<figcaption>
+Curva ilustrativa de enriquecimiento ponderado acumulado y posiciones de los genes del conjunto en la clasificación completa elegible por calidad. La selección de un término principal es exploratoria; su q estimado conserva las limitaciones por permutaciones finitas y tamaño muestral. <span class="figure-links"><a href="../assets/figures/enrichment/hypothalamus/GSEA_curve_GO_0010770.svg">SVG</a> · <a href="../assets/figures/enrichment/hypothalamus/GSEA_curve_GO_0010770.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<p><a href="../downloads/enrichment/hypothalamus/ORA_up_all_terms.tsv">Tabla completa ORA de la dirección mayor</a> · <a href="../downloads/enrichment/hypothalamus/ORA_down_all_terms.tsv">Tabla completa ORA de la dirección menor</a> · <a href="../downloads/enrichment/hypothalamus/GSEA_all_terms.tsv">Tabla completa GSEA y genes que impulsan el enriquecimiento</a> · <a href="../downloads/enrichment/hypothalamus/GSEA_ranked_genes.tsv">Genes ordenados</a> · <a href="../downloads/enrichment/hypothalamus/gene_mapping.tsv.gz">Decisiones de correspondencia</a> · <a href="../downloads/enrichment/hypothalamus/GSEA_excluded_for_nonfinite_original_pvalue.tsv">Pruebas originales no fiables excluidas</a> #### Corteza cingulada anterior · PM frente a PBS ORA utiliza <strong>14,587 genes mapeados evaluables</strong>, con <strong>650 genes seleccionados de mayor expresión</strong> y <strong>379 de menor expresión</strong>. Con BH FDR &lt; 0.05 dentro de cada familia, cumplen el criterio <strong>86 términos GO de la dirección mayor</strong> y <strong>2 de la dirección menor</strong>.</p>
+GSEA clasifica <strong>15,352 genes</strong> y evalúa <strong>4,363 términos</strong>. Su FDR algorítmica &lt; 0.05 identifica <strong>223 etiquetas de términos</strong>, incluidos <strong>208 términos con NES positivo</strong> y <strong>15 con NES negativo</strong>. Estos conteos se refieren a anotaciones superpuestas, no a descubrimientos biológicos independientes. Entre los principales resultados corticales aparecen anotaciones de plegamiento de proteínas y de respuestas relacionadas del retículo endoplásmico. Sus genes compartidos y relaciones ontológicas constituyen un patrón coordinado de anotaciones para estudiar posteriormente, no confirmaciones independientes de múltiples vías activadas.
+<div class="table-scroll">
+<table class="dataframe table table-sm table-striped evidence-table small">
+<thead>
+<tr>
+<th>
+ID de GO
+</th>
+<th>
+Término de GO
+</th>
+<th>
+Dirección
+</th>
+<th>
+Genes compartidos
+</th>
+<th>
+Genes seleccionados
+</th>
+<th>
+Razón de enriquecimiento
+</th>
+<th>
+FDR de BH del término
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+GO:0006457
+</td>
+<td>
+protein folding
+</td>
+<td>
+Aumento
+</td>
+<td>
+28
+</td>
+<td>
+650
+</td>
+<td>
+3.63
+</td>
+<td>
+1.23e-05
+</td>
+</tr>
+<tr>
+<td>
+GO:0045321
+</td>
+<td>
+leukocyte activation
+</td>
+<td>
+Aumento
+</td>
+<td>
+45
+</td>
+<td>
+650
+</td>
+<td>
+2.18
+</td>
+<td>
+1.59e-03
+</td>
+</tr>
+<tr>
+<td>
+GO:0042026
+</td>
+<td>
+protein refolding
+</td>
+<td>
+Aumento
+</td>
+<td>
+8
+</td>
+<td>
+650
+</td>
+<td>
+8.55
+</td>
+<td>
+2.64e-03
+</td>
+</tr>
+<tr>
+<td>
+GO:0098542
+</td>
+<td>
+defense response to other organism
+</td>
+<td>
+Aumento
+</td>
+<td>
+39
+</td>
+<td>
+650
+</td>
+<td>
+2.15
+</td>
+<td>
+6.19e-03
+</td>
+</tr>
+<tr>
+<td>
+GO:0019221
+</td>
+<td>
+cytokine-mediated signaling pathway
+</td>
+<td>
+Aumento
+</td>
+<td>
+29
+</td>
+<td>
+650
+</td>
+<td>
+2.42
+</td>
+<td>
+6.26e-03
+</td>
+</tr>
+<tr>
+<td>
+GO:0010720
+</td>
+<td>
+positive regulation of cell development
+</td>
+<td>
+Aumento
+</td>
+<td>
+42
+</td>
+<td>
+650
+</td>
+<td>
+2.03
+</td>
+<td>
+6.26e-03
+</td>
+</tr>
+<tr>
+<td>
+GO:0045005
+</td>
+<td>
+DNA-templated DNA replication maintenance of fidelity
+</td>
+<td>
+Disminución
+</td>
+<td>
+11
+</td>
+<td>
+379
+</td>
+<td>
+7.18
+</td>
+<td>
+1.26e-03
+</td>
+</tr>
+<tr>
+<td>
+GO:0031297
+</td>
+<td>
+replication fork processing
+</td>
+<td>
+Disminución
+</td>
+<td>
+10
+</td>
+<td>
+379
+</td>
+<td>
+7.13
+</td>
+<td>
+2.35e-03
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/cortex/ORA_significant_terms.svg"><img loading="lazy" width="3900" height="2100" src="../assets/figures/enrichment/cortex/ORA_significant_terms.png" alt="Resumen de ORA específico del contraste para Corteza cingulada anterior · PM frente a PBS." class="figure-img"></a>
+<figcaption>
+Términos GO-BP de ORA que cumplen BH FDR &lt; 0.05 dentro de cada dirección. Los paneles vacíos informan explícitamente que no hay términos significativos. Los conteos de solapamiento se refieren a genes seleccionados, no a animales ni a células del atlas. <span class="figure-links"><a href="../assets/figures/enrichment/cortex/ORA_significant_terms.svg">SVG</a> · <a href="../assets/figures/enrichment/cortex/ORA_significant_terms.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<div class="table-scroll">
+<table class="dataframe table table-sm table-striped evidence-table small">
+<thead>
+<tr>
+<th>
+ID de GO
+</th>
+<th>
+Término de GO
+</th>
+<th>
+NES
+</th>
+<th>
+Genes del término en la lista
+</th>
+<th>
+p nominal
+</th>
+<th>
+FDR estimada de GSEA
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+GO:0006457
+</td>
+<td>
+protein folding
+</td>
+<td>
+2.49
+</td>
+<td>
+177
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:1905897
+</td>
+<td>
+regulation of response to endoplasmic reticulum stress
+</td>
+<td>
+2.4
+</td>
+<td>
+86
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0002478
+</td>
+<td>
+antigen processing and presentation of exogenous peptide antigen
+</td>
+<td>
+2.32
+</td>
+<td>
+27
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+5.90e-04
+</td>
+</tr>
+<tr>
+<td>
+GO:0048002
+</td>
+<td>
+antigen processing and presentation of peptide antigen
+</td>
+<td>
+2.25
+</td>
+<td>
+51
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+5.90e-04
+</td>
+</tr>
+<tr>
+<td>
+GO:1900101
+</td>
+<td>
+regulation of endoplasmic reticulum unfolded protein response
+</td>
+<td>
+2.23
+</td>
+<td>
+30
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+5.90e-04
+</td>
+</tr>
+<tr>
+<td>
+GO:0060142
+</td>
+<td>
+regulation of syncytium formation by plasma membrane fusion
+</td>
+<td>
+2.23
+</td>
+<td>
+69
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+6.55e-04
+</td>
+</tr>
+<tr>
+<td>
+GO:1901739
+</td>
+<td>
+regulation of myoblast fusion
+</td>
+<td>
+2.27
+</td>
+<td>
+60
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+6.74e-04
+</td>
+</tr>
+<tr>
+<td>
+GO:0070670
+</td>
+<td>
+response to interleukin-4
+</td>
+<td>
+2.28
+</td>
+<td>
+29
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+7.08e-04
+</td>
+</tr>
+<tr>
+<td>
+GO:0019884
+</td>
+<td>
+antigen processing and presentation of exogenous antigen
+</td>
+<td>
+2.28
+</td>
+<td>
+33
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+7.87e-04
+</td>
+</tr>
+<tr>
+<td>
+GO:1903573
+</td>
+<td>
+negative regulation of response to endoplasmic reticulum stress
+</td>
+<td>
+2.33
+</td>
+<td>
+48
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+7.87e-04
+</td>
+</tr>
+<tr>
+<td>
+GO:0071353
+</td>
+<td>
+cellular response to interleukin-4
+</td>
+<td>
+2.21
+</td>
+<td>
+27
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+8.58e-04
+</td>
+</tr>
+<tr>
+<td>
+GO:0006986
+</td>
+<td>
+response to unfolded protein
+</td>
+<td>
+2.19
+</td>
+<td>
+93
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+1.18e-03
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/cortex/GSEA_terms.svg"><img loading="lazy" width="3150" height="2340" src="../assets/figures/enrichment/cortex/GSEA_terms.png" alt="Puntuaciones de enriquecimiento normalizadas de los principales términos GO en Corteza cingulada anterior · PM frente a PBS." class="figure-img"></a>
+<figcaption>
+Hasta doce términos GO-BP con menor q del análisis preordenado elegible por calidad. NES indica asociación con el extremo positivo o negativo de la clasificación de este contraste. Los valores q de GSEA son estimaciones por permutación, no valores BH de ORA. <span class="figure-links"><a href="../assets/figures/enrichment/cortex/GSEA_terms.svg">SVG</a> · <a href="../assets/figures/enrichment/cortex/GSEA_terms.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/cortex/GSEA_curve_GO_0006457.svg"><img loading="lazy" width="2400" height="1500" src="../assets/figures/enrichment/cortex/GSEA_curve_GO_0006457.png" alt="Curva de enriquecimiento acumulado de un término seleccionado en Corteza cingulada anterior · PM frente a PBS." class="figure-img"></a>
+<figcaption>
+Curva ilustrativa de enriquecimiento ponderado acumulado y posiciones de los genes del conjunto en la clasificación completa elegible por calidad. La selección de un término principal es exploratoria; su q estimado conserva las limitaciones por permutaciones finitas y tamaño muestral. <span class="figure-links"><a href="../assets/figures/enrichment/cortex/GSEA_curve_GO_0006457.svg">SVG</a> · <a href="../assets/figures/enrichment/cortex/GSEA_curve_GO_0006457.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/cortex/GSEA_curve_GO_0070192.svg"><img loading="lazy" width="2400" height="1500" src="../assets/figures/enrichment/cortex/GSEA_curve_GO_0070192.png" alt="Curva de enriquecimiento acumulado de un término seleccionado en Corteza cingulada anterior · PM frente a PBS." class="figure-img"></a>
+<figcaption>
+Curva ilustrativa de enriquecimiento ponderado acumulado y posiciones de los genes del conjunto en la clasificación completa elegible por calidad. La selección de un término principal es exploratoria; su q estimado conserva las limitaciones por permutaciones finitas y tamaño muestral. <span class="figure-links"><a href="../assets/figures/enrichment/cortex/GSEA_curve_GO_0070192.svg">SVG</a> · <a href="../assets/figures/enrichment/cortex/GSEA_curve_GO_0070192.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<p><a href="../downloads/enrichment/cortex/ORA_up_all_terms.tsv">Tabla completa ORA de la dirección mayor</a> · <a href="../downloads/enrichment/cortex/ORA_down_all_terms.tsv">Tabla completa ORA de la dirección menor</a> · <a href="../downloads/enrichment/cortex/GSEA_all_terms.tsv">Tabla completa GSEA y genes que impulsan el enriquecimiento</a> · <a href="../downloads/enrichment/cortex/GSEA_ranked_genes.tsv">Genes ordenados</a> · <a href="../downloads/enrichment/cortex/gene_mapping.tsv.gz">Decisiones de correspondencia</a> · <a href="../downloads/enrichment/cortex/GSEA_excluded_for_nonfinite_original_pvalue.tsv">Pruebas originales no fiables excluidas</a> #### Hipocampo · O3 frente a aire filtrado · edad inicial de 3 meses · APOE3 ORA utiliza <strong>15,446 genes mapeados evaluables</strong>, con <strong>0 genes seleccionados de mayor expresión</strong> y <strong>0 de menor expresión</strong>. Con BH FDR &lt; 0.05 dentro de cada familia, cumplen el criterio <strong>0 términos GO de la dirección mayor</strong> y <strong>0 de la dirección menor</strong>.</p>
+GSEA clasifica <strong>15,446 genes</strong> y evalúa <strong>4,550 términos</strong>. Su FDR algorítmica &lt; 0.05 identifica <strong>4 etiquetas de términos</strong>, incluidos <strong>4 términos con NES positivo</strong> y <strong>0 con NES negativo</strong>. Estos conteos se refieren a anotaciones superpuestas, no a descubrimientos biológicos independientes. Las anotaciones de fototransducción y detección de luz aparecen entre las asociaciones GO ordenadas de este contraste del hipocampo, pese a no haber hallazgos génicos con FDR significativa dentro del estrato. Estas asociaciones de ontología/clasificación no demuestran función visual ni una respuesta celular localizada al ozono. Se deben evaluar la especificidad tisular y el contexto de disección original antes de utilizar estos términos para proponer mecanismos. Ningún término ORA cumple el umbral BH declarado en ninguna dirección; los términos ordenados nominalmente permanecen disponibles en las tablas completas.
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/ozone_M3_E3/ORA_significant_terms.svg"><img loading="lazy" width="3900" height="2100" src="../assets/figures/enrichment/ozone_M3_E3/ORA_significant_terms.png" alt="Resumen de ORA específico del contraste para Hipocampo · O3 frente a aire filtrado · edad inicial de 3 meses · APOE3." class="figure-img"></a>
+<figcaption>
+Términos GO-BP de ORA que cumplen BH FDR &lt; 0.05 dentro de cada dirección. Los paneles vacíos informan explícitamente que no hay términos significativos. Los conteos de solapamiento se refieren a genes seleccionados, no a animales ni a células del atlas. <span class="figure-links"><a href="../assets/figures/enrichment/ozone_M3_E3/ORA_significant_terms.svg">SVG</a> · <a href="../assets/figures/enrichment/ozone_M3_E3/ORA_significant_terms.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<div class="table-scroll">
+<table class="dataframe table table-sm table-striped evidence-table small">
+<thead>
+<tr>
+<th>
+ID de GO
+</th>
+<th>
+Término de GO
+</th>
+<th>
+NES
+</th>
+<th>
+Genes del término en la lista
+</th>
+<th>
+p nominal
+</th>
+<th>
+FDR estimada de GSEA
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+GO:0007602
+</td>
+<td>
+phototransduction
+</td>
+<td>
+2.34
+</td>
+<td>
+28
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0009583
+</td>
+<td>
+detection of light stimulus
+</td>
+<td>
+2.45
+</td>
+<td>
+52
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:1905953
+</td>
+<td>
+negative regulation of lipid localization
+</td>
+<td>
+2.23
+</td>
+<td>
+45
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+8.56e-04
+</td>
+</tr>
+<tr>
+<td>
+GO:0140448
+</td>
+<td>
+signaling receptor ligand precursor processing
+</td>
+<td>
+2.03
+</td>
+<td>
+33
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0.046
+</td>
+</tr>
+<tr>
+<td>
+GO:0016486
+</td>
+<td>
+peptide hormone processing
+</td>
+<td>
+2.04
+</td>
+<td>
+29
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0.053
+</td>
+</tr>
+<tr>
+<td>
+GO:0032369
+</td>
+<td>
+negative regulation of lipid transport
+</td>
+<td>
+2.05
+</td>
+<td>
+35
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0.053
+</td>
+</tr>
+<tr>
+<td>
+GO:0014912
+</td>
+<td>
+negative regulation of smooth muscle cell migration
+</td>
+<td>
+1.92
+</td>
+<td>
+34
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0.115
+</td>
+</tr>
+<tr>
+<td>
+GO:0043537
+</td>
+<td>
+negative regulation of blood vessel endothelial cell migration
+</td>
+<td>
+1.93
+</td>
+<td>
+30
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0.122
+</td>
+</tr>
+<tr>
+<td>
+GO:0048634
+</td>
+<td>
+regulation of muscle organ development
+</td>
+<td>
+1.92
+</td>
+<td>
+43
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0.123
+</td>
+</tr>
+<tr>
+<td>
+GO:0050908
+</td>
+<td>
+detection of light stimulus involved in visual perception
+</td>
+<td>
+1.93
+</td>
+<td>
+24
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0.127
+</td>
+</tr>
+<tr>
+<td>
+GO:0050962
+</td>
+<td>
+detection of light stimulus involved in sensory perception
+</td>
+<td>
+1.93
+</td>
+<td>
+24
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0.127
+</td>
+</tr>
+<tr>
+<td>
+GO:0016125
+</td>
+<td>
+sterol metabolic process
+</td>
+<td>
+1.85
+</td>
+<td>
+85
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0.133
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/ozone_M3_E3/GSEA_terms.svg"><img loading="lazy" width="3150" height="2340" src="../assets/figures/enrichment/ozone_M3_E3/GSEA_terms.png" alt="Puntuaciones de enriquecimiento normalizadas de los principales términos GO en Hipocampo · O3 frente a aire filtrado · edad inicial de 3 meses · APOE3." class="figure-img"></a>
+<figcaption>
+Hasta doce términos GO-BP con menor q del análisis preordenado elegible por calidad. NES indica asociación con el extremo positivo o negativo de la clasificación de este contraste. Los valores q de GSEA son estimaciones por permutación, no valores BH de ORA. <span class="figure-links"><a href="../assets/figures/enrichment/ozone_M3_E3/GSEA_terms.svg">SVG</a> · <a href="../assets/figures/enrichment/ozone_M3_E3/GSEA_terms.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/ozone_M3_E3/GSEA_curve_GO_0007602.svg"><img loading="lazy" width="2400" height="1500" src="../assets/figures/enrichment/ozone_M3_E3/GSEA_curve_GO_0007602.png" alt="Curva de enriquecimiento acumulado de un término seleccionado en Hipocampo · O3 frente a aire filtrado · edad inicial de 3 meses · APOE3." class="figure-img"></a>
+<figcaption>
+Curva ilustrativa de enriquecimiento ponderado acumulado y posiciones de los genes del conjunto en la clasificación completa elegible por calidad. La selección de un término principal es exploratoria; su q estimado conserva las limitaciones por permutaciones finitas y tamaño muestral. <span class="figure-links"><a href="../assets/figures/enrichment/ozone_M3_E3/GSEA_curve_GO_0007602.svg">SVG</a> · <a href="../assets/figures/enrichment/ozone_M3_E3/GSEA_curve_GO_0007602.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/ozone_M3_E3/GSEA_curve_GO_0046460.svg"><img loading="lazy" width="2400" height="1500" src="../assets/figures/enrichment/ozone_M3_E3/GSEA_curve_GO_0046460.png" alt="Curva de enriquecimiento acumulado de un término seleccionado en Hipocampo · O3 frente a aire filtrado · edad inicial de 3 meses · APOE3." class="figure-img"></a>
+<figcaption>
+Curva ilustrativa de enriquecimiento ponderado acumulado y posiciones de los genes del conjunto en la clasificación completa elegible por calidad. La selección de un término principal es exploratoria; su q estimado conserva las limitaciones por permutaciones finitas y tamaño muestral. <span class="figure-links"><a href="../assets/figures/enrichment/ozone_M3_E3/GSEA_curve_GO_0046460.svg">SVG</a> · <a href="../assets/figures/enrichment/ozone_M3_E3/GSEA_curve_GO_0046460.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<p><a href="../downloads/enrichment/ozone_M3_E3/ORA_up_all_terms.tsv">Tabla completa ORA de la dirección mayor</a> · <a href="../downloads/enrichment/ozone_M3_E3/ORA_down_all_terms.tsv">Tabla completa ORA de la dirección menor</a> · <a href="../downloads/enrichment/ozone_M3_E3/GSEA_all_terms.tsv">Tabla completa GSEA y genes que impulsan el enriquecimiento</a> · <a href="../downloads/enrichment/ozone_M3_E3/GSEA_ranked_genes.tsv">Genes ordenados</a> · <a href="../downloads/enrichment/ozone_M3_E3/gene_mapping.tsv.gz">Decisiones de correspondencia</a> · <a href="../downloads/enrichment/ozone_M3_E3/GSEA_excluded_for_nonfinite_original_pvalue.tsv">Pruebas originales no fiables excluidas</a> #### Hipocampo · O3 frente a aire filtrado · edad inicial de 3 meses · APOE4 ORA utiliza <strong>15,448 genes mapeados evaluables</strong>, con <strong>79 genes seleccionados de mayor expresión</strong> y <strong>189 de menor expresión</strong>. Con BH FDR &lt; 0.05 dentro de cada familia, cumplen el criterio <strong>0 términos GO de la dirección mayor</strong> y <strong>0 de la dirección menor</strong>.</p>
+GSEA clasifica <strong>15,448 genes</strong> y evalúa <strong>4,550 términos</strong>. Su FDR algorítmica &lt; 0.05 identifica <strong>368 etiquetas de términos</strong>, incluidos <strong>141 términos con NES positivo</strong> y <strong>227 con NES negativo</strong>. Estos conteos se refieren a anotaciones superpuestas, no a descubrimientos biológicos independientes. Ningún término ORA cumple el umbral BH declarado en ninguna dirección; los términos ordenados nominalmente permanecen disponibles en las tablas completas.
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/ozone_M3_E4/ORA_significant_terms.svg"><img loading="lazy" width="3900" height="2100" src="../assets/figures/enrichment/ozone_M3_E4/ORA_significant_terms.png" alt="Resumen de ORA específico del contraste para Hipocampo · O3 frente a aire filtrado · edad inicial de 3 meses · APOE4." class="figure-img"></a>
+<figcaption>
+Términos GO-BP de ORA que cumplen BH FDR &lt; 0.05 dentro de cada dirección. Los paneles vacíos informan explícitamente que no hay términos significativos. Los conteos de solapamiento se refieren a genes seleccionados, no a animales ni a células del atlas. <span class="figure-links"><a href="../assets/figures/enrichment/ozone_M3_E4/ORA_significant_terms.svg">SVG</a> · <a href="../assets/figures/enrichment/ozone_M3_E4/ORA_significant_terms.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<div class="table-scroll">
+<table class="dataframe table table-sm table-striped evidence-table small">
+<thead>
+<tr>
+<th>
+ID de GO
+</th>
+<th>
+Término de GO
+</th>
+<th>
+NES
+</th>
+<th>
+Genes del término en la lista
+</th>
+<th>
+p nominal
+</th>
+<th>
+FDR estimada de GSEA
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+GO:0002181
+</td>
+<td>
+cytoplasmic translation
+</td>
+<td>
+2.65
+</td>
+<td>
+196
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0006119
+</td>
+<td>
+oxidative phosphorylation
+</td>
+<td>
+3.21
+</td>
+<td>
+109
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0006412
+</td>
+<td>
+translation
+</td>
+<td>
+2.74
+</td>
+<td>
+393
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0006754
+</td>
+<td>
+ATP biosynthetic process
+</td>
+<td>
+2.88
+</td>
+<td>
+79
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0009060
+</td>
+<td>
+aerobic respiration
+</td>
+<td>
+2.9
+</td>
+<td>
+195
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0009142
+</td>
+<td>
+nucleoside triphosphate biosynthetic process
+</td>
+<td>
+2.86
+</td>
+<td>
+100
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0009145
+</td>
+<td>
+purine nucleoside triphosphate biosynthetic process
+</td>
+<td>
+2.96
+</td>
+<td>
+91
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0009201
+</td>
+<td>
+ribonucleoside triphosphate biosynthetic process
+</td>
+<td>
+2.88
+</td>
+<td>
+98
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0009206
+</td>
+<td>
+purine ribonucleoside triphosphate biosynthetic process
+</td>
+<td>
+2.94
+</td>
+<td>
+90
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0010257
+</td>
+<td>
+NADH dehydrogenase complex assembly
+</td>
+<td>
+2.6
+</td>
+<td>
+39
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0015986
+</td>
+<td>
+proton motive force-driven ATP synthesis
+</td>
+<td>
+3.09
+</td>
+<td>
+67
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0019646
+</td>
+<td>
+aerobic electron transport chain
+</td>
+<td>
+2.93
+</td>
+<td>
+58
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/ozone_M3_E4/GSEA_terms.svg"><img loading="lazy" width="3150" height="2340" src="../assets/figures/enrichment/ozone_M3_E4/GSEA_terms.png" alt="Puntuaciones de enriquecimiento normalizadas de los principales términos GO en Hipocampo · O3 frente a aire filtrado · edad inicial de 3 meses · APOE4." class="figure-img"></a>
+<figcaption>
+Hasta doce términos GO-BP con menor q del análisis preordenado elegible por calidad. NES indica asociación con el extremo positivo o negativo de la clasificación de este contraste. Los valores q de GSEA son estimaciones por permutación, no valores BH de ORA. <span class="figure-links"><a href="../assets/figures/enrichment/ozone_M3_E4/GSEA_terms.svg">SVG</a> · <a href="../assets/figures/enrichment/ozone_M3_E4/GSEA_terms.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/ozone_M3_E4/GSEA_curve_GO_0002181.svg"><img loading="lazy" width="2400" height="1500" src="../assets/figures/enrichment/ozone_M3_E4/GSEA_curve_GO_0002181.png" alt="Curva de enriquecimiento acumulado de un término seleccionado en Hipocampo · O3 frente a aire filtrado · edad inicial de 3 meses · APOE4." class="figure-img"></a>
+<figcaption>
+Curva ilustrativa de enriquecimiento ponderado acumulado y posiciones de los genes del conjunto en la clasificación completa elegible por calidad. La selección de un término principal es exploratoria; su q estimado conserva las limitaciones por permutaciones finitas y tamaño muestral. <span class="figure-links"><a href="../assets/figures/enrichment/ozone_M3_E4/GSEA_curve_GO_0002181.svg">SVG</a> · <a href="../assets/figures/enrichment/ozone_M3_E4/GSEA_curve_GO_0002181.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/ozone_M3_E4/GSEA_curve_GO_2001222.svg"><img loading="lazy" width="2400" height="1500" src="../assets/figures/enrichment/ozone_M3_E4/GSEA_curve_GO_2001222.png" alt="Curva de enriquecimiento acumulado de un término seleccionado en Hipocampo · O3 frente a aire filtrado · edad inicial de 3 meses · APOE4." class="figure-img"></a>
+<figcaption>
+Curva ilustrativa de enriquecimiento ponderado acumulado y posiciones de los genes del conjunto en la clasificación completa elegible por calidad. La selección de un término principal es exploratoria; su q estimado conserva las limitaciones por permutaciones finitas y tamaño muestral. <span class="figure-links"><a href="../assets/figures/enrichment/ozone_M3_E4/GSEA_curve_GO_2001222.svg">SVG</a> · <a href="../assets/figures/enrichment/ozone_M3_E4/GSEA_curve_GO_2001222.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<p><a href="../downloads/enrichment/ozone_M3_E4/ORA_up_all_terms.tsv">Tabla completa ORA de la dirección mayor</a> · <a href="../downloads/enrichment/ozone_M3_E4/ORA_down_all_terms.tsv">Tabla completa ORA de la dirección menor</a> · <a href="../downloads/enrichment/ozone_M3_E4/GSEA_all_terms.tsv">Tabla completa GSEA y genes que impulsan el enriquecimiento</a> · <a href="../downloads/enrichment/ozone_M3_E4/GSEA_ranked_genes.tsv">Genes ordenados</a> · <a href="../downloads/enrichment/ozone_M3_E4/gene_mapping.tsv.gz">Decisiones de correspondencia</a> · <a href="../downloads/enrichment/ozone_M3_E4/GSEA_excluded_for_nonfinite_original_pvalue.tsv">Pruebas originales no fiables excluidas</a> #### Hipocampo · O3 frente a aire filtrado · edad inicial de 17 meses · APOE3 ORA utiliza <strong>15,449 genes mapeados evaluables</strong>, con <strong>0 genes seleccionados de mayor expresión</strong> y <strong>0 de menor expresión</strong>. Con BH FDR &lt; 0.05 dentro de cada familia, cumplen el criterio <strong>0 términos GO de la dirección mayor</strong> y <strong>0 de la dirección menor</strong>.</p>
+GSEA clasifica <strong>15,449 genes</strong> y evalúa <strong>4,548 términos</strong>. Su FDR algorítmica &lt; 0.05 identifica <strong>85 etiquetas de términos</strong>, incluidos <strong>7 términos con NES positivo</strong> y <strong>78 con NES negativo</strong>. Estos conteos se refieren a anotaciones superpuestas, no a descubrimientos biológicos independientes. Ningún término ORA cumple el umbral BH declarado en ninguna dirección; los términos ordenados nominalmente permanecen disponibles en las tablas completas.
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/ozone_M17_E3/ORA_significant_terms.svg"><img loading="lazy" width="3900" height="2100" src="../assets/figures/enrichment/ozone_M17_E3/ORA_significant_terms.png" alt="Resumen de ORA específico del contraste para Hipocampo · O3 frente a aire filtrado · edad inicial de 17 meses · APOE3." class="figure-img"></a>
+<figcaption>
+Términos GO-BP de ORA que cumplen BH FDR &lt; 0.05 dentro de cada dirección. Los paneles vacíos informan explícitamente que no hay términos significativos. Los conteos de solapamiento se refieren a genes seleccionados, no a animales ni a células del atlas. <span class="figure-links"><a href="../assets/figures/enrichment/ozone_M17_E3/ORA_significant_terms.svg">SVG</a> · <a href="../assets/figures/enrichment/ozone_M17_E3/ORA_significant_terms.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<div class="table-scroll">
+<table class="dataframe table table-sm table-striped evidence-table small">
+<thead>
+<tr>
+<th>
+ID de GO
+</th>
+<th>
+Término de GO
+</th>
+<th>
+NES
+</th>
+<th>
+Genes del término en la lista
+</th>
+<th>
+p nominal
+</th>
+<th>
+FDR estimada de GSEA
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+GO:0002181
+</td>
+<td>
+cytoplasmic translation
+</td>
+<td>
+-3.01
+</td>
+<td>
+196
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0006091
+</td>
+<td>
+generation of precursor metabolites and energy
+</td>
+<td>
+-2.53
+</td>
+<td>
+325
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0006119
+</td>
+<td>
+oxidative phosphorylation
+</td>
+<td>
+-3.05
+</td>
+<td>
+109
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0006412
+</td>
+<td>
+translation
+</td>
+<td>
+-2.77
+</td>
+<td>
+393
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0006754
+</td>
+<td>
+ATP biosynthetic process
+</td>
+<td>
+-2.85
+</td>
+<td>
+79
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0009060
+</td>
+<td>
+aerobic respiration
+</td>
+<td>
+-2.9
+</td>
+<td>
+195
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0009142
+</td>
+<td>
+nucleoside triphosphate biosynthetic process
+</td>
+<td>
+-2.73
+</td>
+<td>
+100
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0009145
+</td>
+<td>
+purine nucleoside triphosphate biosynthetic process
+</td>
+<td>
+-2.86
+</td>
+<td>
+91
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0009201
+</td>
+<td>
+ribonucleoside triphosphate biosynthetic process
+</td>
+<td>
+-2.74
+</td>
+<td>
+98
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0009205
+</td>
+<td>
+purine ribonucleoside triphosphate metabolic process
+</td>
+<td>
+-2.42
+</td>
+<td>
+185
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0009206
+</td>
+<td>
+purine ribonucleoside triphosphate biosynthetic process
+</td>
+<td>
+-2.83
+</td>
+<td>
+90
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0010257
+</td>
+<td>
+NADH dehydrogenase complex assembly
+</td>
+<td>
+-2.44
+</td>
+<td>
+39
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/ozone_M17_E3/GSEA_terms.svg"><img loading="lazy" width="3150" height="2340" src="../assets/figures/enrichment/ozone_M17_E3/GSEA_terms.png" alt="Puntuaciones de enriquecimiento normalizadas de los principales términos GO en Hipocampo · O3 frente a aire filtrado · edad inicial de 17 meses · APOE3." class="figure-img"></a>
+<figcaption>
+Hasta doce términos GO-BP con menor q del análisis preordenado elegible por calidad. NES indica asociación con el extremo positivo o negativo de la clasificación de este contraste. Los valores q de GSEA son estimaciones por permutación, no valores BH de ORA. <span class="figure-links"><a href="../assets/figures/enrichment/ozone_M17_E3/GSEA_terms.svg">SVG</a> · <a href="../assets/figures/enrichment/ozone_M17_E3/GSEA_terms.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/ozone_M17_E3/GSEA_curve_GO_0002088.svg"><img loading="lazy" width="2400" height="1500" src="../assets/figures/enrichment/ozone_M17_E3/GSEA_curve_GO_0002088.png" alt="Curva de enriquecimiento acumulado de un término seleccionado en Hipocampo · O3 frente a aire filtrado · edad inicial de 17 meses · APOE3." class="figure-img"></a>
+<figcaption>
+Curva ilustrativa de enriquecimiento ponderado acumulado y posiciones de los genes del conjunto en la clasificación completa elegible por calidad. La selección de un término principal es exploratoria; su q estimado conserva las limitaciones por permutaciones finitas y tamaño muestral. <span class="figure-links"><a href="../assets/figures/enrichment/ozone_M17_E3/GSEA_curve_GO_0002088.svg">SVG</a> · <a href="../assets/figures/enrichment/ozone_M17_E3/GSEA_curve_GO_0002088.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/ozone_M17_E3/GSEA_curve_GO_0002181.svg"><img loading="lazy" width="2400" height="1500" src="../assets/figures/enrichment/ozone_M17_E3/GSEA_curve_GO_0002181.png" alt="Curva de enriquecimiento acumulado de un término seleccionado en Hipocampo · O3 frente a aire filtrado · edad inicial de 17 meses · APOE3." class="figure-img"></a>
+<figcaption>
+Curva ilustrativa de enriquecimiento ponderado acumulado y posiciones de los genes del conjunto en la clasificación completa elegible por calidad. La selección de un término principal es exploratoria; su q estimado conserva las limitaciones por permutaciones finitas y tamaño muestral. <span class="figure-links"><a href="../assets/figures/enrichment/ozone_M17_E3/GSEA_curve_GO_0002181.svg">SVG</a> · <a href="../assets/figures/enrichment/ozone_M17_E3/GSEA_curve_GO_0002181.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<p><a href="../downloads/enrichment/ozone_M17_E3/ORA_up_all_terms.tsv">Tabla completa ORA de la dirección mayor</a> · <a href="../downloads/enrichment/ozone_M17_E3/ORA_down_all_terms.tsv">Tabla completa ORA de la dirección menor</a> · <a href="../downloads/enrichment/ozone_M17_E3/GSEA_all_terms.tsv">Tabla completa GSEA y genes que impulsan el enriquecimiento</a> · <a href="../downloads/enrichment/ozone_M17_E3/GSEA_ranked_genes.tsv">Genes ordenados</a> · <a href="../downloads/enrichment/ozone_M17_E3/gene_mapping.tsv.gz">Decisiones de correspondencia</a> · <a href="../downloads/enrichment/ozone_M17_E3/GSEA_excluded_for_nonfinite_original_pvalue.tsv">Pruebas originales no fiables excluidas</a> #### Hipocampo · O3 frente a aire filtrado · edad inicial de 17 meses · APOE4 ORA utiliza <strong>15,451 genes mapeados evaluables</strong>, con <strong>0 genes seleccionados de mayor expresión</strong> y <strong>3 de menor expresión</strong>. Con BH FDR &lt; 0.05 dentro de cada familia, cumplen el criterio <strong>0 términos GO de la dirección mayor</strong> y <strong>0 de la dirección menor</strong>.</p>
+GSEA clasifica <strong>15,451 genes</strong> y evalúa <strong>4,550 términos</strong>. Su FDR algorítmica &lt; 0.05 identifica <strong>23 etiquetas de términos</strong>, incluidos <strong>11 términos con NES positivo</strong> y <strong>12 con NES negativo</strong>. Estos conteos se refieren a anotaciones superpuestas, no a descubrimientos biológicos independientes. Ningún término ORA cumple el umbral BH declarado en ninguna dirección; los términos ordenados nominalmente permanecen disponibles en las tablas completas.
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/ozone_M17_E4/ORA_significant_terms.svg"><img loading="lazy" width="3900" height="2100" src="../assets/figures/enrichment/ozone_M17_E4/ORA_significant_terms.png" alt="Resumen de ORA específico del contraste para Hipocampo · O3 frente a aire filtrado · edad inicial de 17 meses · APOE4." class="figure-img"></a>
+<figcaption>
+Términos GO-BP de ORA que cumplen BH FDR &lt; 0.05 dentro de cada dirección. Los paneles vacíos informan explícitamente que no hay términos significativos. Los conteos de solapamiento se refieren a genes seleccionados, no a animales ni a células del atlas. <span class="figure-links"><a href="../assets/figures/enrichment/ozone_M17_E4/ORA_significant_terms.svg">SVG</a> · <a href="../assets/figures/enrichment/ozone_M17_E4/ORA_significant_terms.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<div class="table-scroll">
+<table class="dataframe table table-sm table-striped evidence-table small">
+<thead>
+<tr>
+<th>
+ID de GO
+</th>
+<th>
+Término de GO
+</th>
+<th>
+NES
+</th>
+<th>
+Genes del término en la lista
+</th>
+<th>
+p nominal
+</th>
+<th>
+FDR estimada de GSEA
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+GO:0140236
+</td>
+<td>
+translation at presynapse
+</td>
+<td>
+-2.66
+</td>
+<td>
+47
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0140241
+</td>
+<td>
+translation at synapse
+</td>
+<td>
+-2.68
+</td>
+<td>
+48
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0140242
+</td>
+<td>
+translation at postsynapse
+</td>
+<td>
+-2.68
+</td>
+<td>
+48
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:1901740
+</td>
+<td>
+negative regulation of myoblast fusion
+</td>
+<td>
+-2.5
+</td>
+<td>
+47
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+</tr>
+<tr>
+<td>
+GO:0034242
+</td>
+<td>
+negative regulation of syncytium formation by plasma membrane fusion
+</td>
+<td>
+-2.32
+</td>
+<td>
+50
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+4.30e-04
+</td>
+</tr>
+<tr>
+<td>
+GO:1901739
+</td>
+<td>
+regulation of myoblast fusion
+</td>
+<td>
+-2.25
+</td>
+<td>
+59
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+8.97e-04
+</td>
+</tr>
+<tr>
+<td>
+GO:0002181
+</td>
+<td>
+cytoplasmic translation
+</td>
+<td>
+-2.23
+</td>
+<td>
+196
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+1.23e-03
+</td>
+</tr>
+<tr>
+<td>
+GO:0001975
+</td>
+<td>
+response to amphetamine
+</td>
+<td>
+-2.18
+</td>
+<td>
+32
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+3.23e-03
+</td>
+</tr>
+<tr>
+<td>
+GO:0001578
+</td>
+<td>
+microtubule bundle formation
+</td>
+<td>
+2.2
+</td>
+<td>
+140
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+4.94e-03
+</td>
+</tr>
+<tr>
+<td>
+GO:0035082
+</td>
+<td>
+axoneme assembly
+</td>
+<td>
+2.22
+</td>
+<td>
+105
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+5.10e-03
+</td>
+</tr>
+<tr>
+<td>
+GO:0035335
+</td>
+<td>
+peptidyl-tyrosine dephosphorylation
+</td>
+<td>
+-2.15
+</td>
+<td>
+21
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+5.98e-03
+</td>
+</tr>
+<tr>
+<td>
+GO:0035456
+</td>
+<td>
+response to interferon-beta
+</td>
+<td>
+2.18
+</td>
+<td>
+54
+</td>
+<td>
+0 estimado; permutaciones finitas
+</td>
+<td>
+6.26e-03
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/ozone_M17_E4/GSEA_terms.svg"><img loading="lazy" width="3150" height="2340" src="../assets/figures/enrichment/ozone_M17_E4/GSEA_terms.png" alt="Puntuaciones de enriquecimiento normalizadas de los principales términos GO en Hipocampo · O3 frente a aire filtrado · edad inicial de 17 meses · APOE4." class="figure-img"></a>
+<figcaption>
+Hasta doce términos GO-BP con menor q del análisis preordenado elegible por calidad. NES indica asociación con el extremo positivo o negativo de la clasificación de este contraste. Los valores q de GSEA son estimaciones por permutación, no valores BH de ORA. <span class="figure-links"><a href="../assets/figures/enrichment/ozone_M17_E4/GSEA_terms.svg">SVG</a> · <a href="../assets/figures/enrichment/ozone_M17_E4/GSEA_terms.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/ozone_M17_E4/GSEA_curve_GO_0001578.svg"><img loading="lazy" width="2400" height="1500" src="../assets/figures/enrichment/ozone_M17_E4/GSEA_curve_GO_0001578.png" alt="Curva de enriquecimiento acumulado de un término seleccionado en Hipocampo · O3 frente a aire filtrado · edad inicial de 17 meses · APOE4." class="figure-img"></a>
+<figcaption>
+Curva ilustrativa de enriquecimiento ponderado acumulado y posiciones de los genes del conjunto en la clasificación completa elegible por calidad. La selección de un término principal es exploratoria; su q estimado conserva las limitaciones por permutaciones finitas y tamaño muestral. <span class="figure-links"><a href="../assets/figures/enrichment/ozone_M17_E4/GSEA_curve_GO_0001578.svg">SVG</a> · <a href="../assets/figures/enrichment/ozone_M17_E4/GSEA_curve_GO_0001578.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<figure class="research-figure figure">
+<a href="../assets/figures/enrichment/ozone_M17_E4/GSEA_curve_GO_0140236.svg"><img loading="lazy" width="2400" height="1500" src="../assets/figures/enrichment/ozone_M17_E4/GSEA_curve_GO_0140236.png" alt="Curva de enriquecimiento acumulado de un término seleccionado en Hipocampo · O3 frente a aire filtrado · edad inicial de 17 meses · APOE4." class="figure-img"></a>
+<figcaption>
+Curva ilustrativa de enriquecimiento ponderado acumulado y posiciones de los genes del conjunto en la clasificación completa elegible por calidad. La selección de un término principal es exploratoria; su q estimado conserva las limitaciones por permutaciones finitas y tamaño muestral. <span class="figure-links"><a href="../assets/figures/enrichment/ozone_M17_E4/GSEA_curve_GO_0140236.svg">SVG</a> · <a href="../assets/figures/enrichment/ozone_M17_E4/GSEA_curve_GO_0140236.pdf">PDF</a></span>
+</figcaption>
+</figure>
+<p><a href="../downloads/enrichment/ozone_M17_E4/ORA_up_all_terms.tsv">Tabla completa ORA de la dirección mayor</a> · <a href="../downloads/enrichment/ozone_M17_E4/ORA_down_all_terms.tsv">Tabla completa ORA de la dirección menor</a> · <a href="../downloads/enrichment/ozone_M17_E4/GSEA_all_terms.tsv">Tabla completa GSEA y genes que impulsan el enriquecimiento</a> · <a href="../downloads/enrichment/ozone_M17_E4/GSEA_ranked_genes.tsv">Genes ordenados</a> · <a href="../downloads/enrichment/ozone_M17_E4/gene_mapping.tsv.gz">Decisiones de correspondencia</a> · <a href="../downloads/enrichment/ozone_M17_E4/GSEA_excluded_for_nonfinite_original_pvalue.tsv">Pruebas originales no fiables excluidas</a></p>
+</section>
+</div>
+</section>
+</section>
+<section id="interpretación-biológica" class="level2">
+<h2 class="anchored" data-anchor-id="interpretación-biológica">Interpretación biológica</h2>
+<p>Un NES positivo indica asociación hacia el extremo de mayor expresión del contraste de exposición específico; un NES negativo indica asociación hacia el extremo de menor expresión. Ningún signo establece actividad bioquímica de una vía ni la población celular responsable. Los mismos genes pueden contribuir a muchos términos GO relacionados y la cobertura de anotaciones es desigual entre genes. El ORA clásico no modela explícitamente los sesgos de longitud génica o detectabilidad; el universo de fondo evaluable limita estas preocupaciones, pero no las elimina.</p>
+<p>Los modelos moleculares y tamaños muestrales siguen siendo los de los experimentos regionales originales. Un término aparentemente compartido entre corteza, hipotálamo o un estrato de ozono es una hipótesis para una comparación específica posterior, no una estimación causal conjunta. La composición celular, el muestreo, la edad, el genotipo, la administración de la exposición y las diferencias técnicas pueden contribuir a una aparente convergencia. No se proporciona un mapa de blancos validado para el microarreglo de miRNA, por lo que no se infiere un análisis GO de mRNA a partir de identificadores de miRNA.</p>
+</section>
+<section id="procedencia-descargable" class="level2">
+<h2 class="anchored" data-anchor-id="procedencia-descargable">Procedencia descargable</h2>
+<ul>
+<li><a href="../downloads/enrichment/summary_counts.tsv">Conteos resumidos por contraste</a></li>
+<li><a href="../downloads/enrichment/methods.json">Métodos, políticas de anotación y versiones originales</a></li>
+<li><a href="../downloads/enrichment/summary.json">Resumen completo legible por máquina</a></li>
+<li><a href="../downloads/enrichment/validation_checks.json">Comprobaciones de validación</a></li>
+</ul>
+
+
+<!-- -->
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referencias</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Ashburner2000_GO" class="csl-entry" role="listitem">
+<span class="nocase">Ashburner, Michael, Catherine A. Ball, Judith A. Blake, et&nbsp;al.</span> 2000. <span>«<span>Gene Ontology</span>: tool for the unification of biology»</span>. <em>Nature Genetics</em> 25 (1): 25-29. <a href="https://doi.org/10.1038/75556">https://doi.org/10.1038/75556</a>.
+</div>
+<div id="ref-Benjamini1995_FDR" class="csl-entry" role="listitem">
+Benjamini, Yoav, y Yosef Hochberg. 1995. <span>«Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing»</span>. <em>Journal of the Royal Statistical Society Series B: Statistical Methodology</em> 57 (1): 289-300. <a href="https://doi.org/10.1111/j.2517-6161.1995.tb02031.x">https://doi.org/10.1111/j.2517-6161.1995.tb02031.x</a>.
+</div>
+<div id="ref-Fang2023_GSEApy" class="csl-entry" role="listitem">
+Fang, Zhuoqing, Xinyuan Liu, y Gary Peltz. 2023. <span>«<span>GSEApy</span>: a comprehensive package for performing gene set enrichment analysis in <span>Python</span>»</span>. <em>Bioinformatics</em> 39 (1): btac757. <a href="https://doi.org/10.1093/bioinformatics/btac757">https://doi.org/10.1093/bioinformatics/btac757</a>.
+</div>
+<div id="ref-Subramanian2005_GSEA" class="csl-entry" role="listitem">
+Subramanian, Aravind, Pablo Tamayo, Vamsi K. Mootha, et&nbsp;al. 2005. <span>«Gene set enrichment analysis: A knowledge-based approach for interpreting genome-wide expression profiles»</span>. <em>Proceedings of the National Academy of Sciences</em> 102 (43): 15545-50. <a href="https://doi.org/10.1073/pnas.0506580102">https://doi.org/10.1073/pnas.0506580102</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/amarusimonaguerojimenez\.github\.io\/Air-Pollution-Brain-Omics-Mouse\/es\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Enriquecimiento funcional: procesos biológicos de GO"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: enrichment-setup</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display, Markdown</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> _report_utils <span class="im">import</span> ROOT, summary, read_table, show_table, figure, fmt_p</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>enrichment_dir <span class="op">=</span> ROOT <span class="op">/</span> <span class="st">"results/enrichment"</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>es <span class="op">=</span> summary(<span class="st">"enrichment"</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>em <span class="op">=</span> json.loads((enrichment_dir <span class="op">/</span> <span class="st">"methods.json"</span>).read_text())</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>available_datasets <span class="op">=</span> es.get(<span class="st">"datasets"</span>, {})</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>dataset_labels <span class="op">=</span> {</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"hypothalamus"</span>: <span class="st">"Hipotálamo · PM frente a aire filtrado"</span>,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"cortex"</span>: <span class="st">"Corteza cingulada anterior · PM frente a PBS"</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ozone_M3_E3"</span>: <span class="st">"Hipocampo · O3 frente a aire filtrado · edad inicial de 3 meses · APOE3"</span>,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ozone_M3_E4"</span>: <span class="st">"Hipocampo · O3 frente a aire filtrado · edad inicial de 3 meses · APOE4"</span>,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ozone_M17_E3"</span>: <span class="st">"Hipocampo · O3 frente a aire filtrado · edad inicial de 17 meses · APOE3"</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ozone_M17_E4"</span>: <span class="st">"Hipocampo · O3 frente a aire filtrado · edad inicial de 17 meses · APOE4"</span>,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>selected_keys <span class="op">=</span> [key <span class="cf">for</span> key <span class="kw">in</span> dataset_labels <span class="cf">if</span> key <span class="kw">in</span> available_datasets]</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> permutation_value(value):</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> pd.isna(value):</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"no estimado"</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"0 estimado; permutaciones finitas"</span> <span class="cf">if</span> value <span class="op">==</span> <span class="dv">0</span> <span class="cf">else</span> fmt_p(value)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> enrichment_figure(key, stem, caption, alt):</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (enrichment_dir <span class="op">/</span> key <span class="op">/</span> <span class="st">"figures"</span> <span class="op">/</span> <span class="ss">f"</span><span class="sc">{</span>stem<span class="sc">}</span><span class="ss">.png"</span>).exists():</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>        figure(<span class="st">"enrichment/"</span> <span class="op">+</span> key, stem, caption, alt<span class="op">=</span>alt)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Preguntas y alcance analítico</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>Dos enfoques clásicos de conjuntos de genes resumen los contrastes completos de RNA-seq a nivel génico. El **análisis de sobrerrepresentación (ORA)** pregunta si una anotación aparece entre los genes seleccionados por FDR con mayor frecuencia que la esperada en el universo de genes mapeados y evaluables. El **análisis de enriquecimiento de conjuntos de genes preordenados (GSEA)** pregunta si los genes de un conjunto tienden a acumularse hacia alguno de los extremos de la clasificación completa de estadísticos de Wald con signo y elegibles por calidad. Los enfoques utilizan datos de entrada y procedimientos de multiplicidad distintos, por lo que su concordancia es informativa pero no obligatoria. <span class="co">[</span><span class="ot">@Ashburner2000_GO; @Subramanian2005_GSEA; @Fang2023_GSEApy</span><span class="co">]</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Se mantienen separadas las comparaciones de PM en hipotálamo y corteza. Los cuatro contrastes de ozono por edad y genotipo solo se incorporan cuando están completas sus correspondientes tablas de Wald. Son **seis entradas de contraste posibles**, no seis cohortes intercambiables. No se agrupan listas de genes, animales, valores p ni afirmaciones causales entre regiones cerebrales, agentes de exposición o protocolos experimentales. La LRT global de ozono sin signo y las características del microarreglo de miRNA no se introducen como clasificaciones de mRNA con signo.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Interpretación:** los términos GO se superponen y comparten ancestros. Un número elevado de términos significativos no representa el mismo número de mecanismos independientes. Las permutaciones de conjuntos de genes de GSEA no capturan la incertidumbre de las réplicas biológicas ni conservan las correlaciones entre genes. El enriquecimiento es evidencia exploratoria sobre conjuntos de genes ordenados o seleccionados, no una prueba de activación o supresión de vías ni de un mecanismo del contaminante específico por célula.</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## Materiales y métodos</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="fu">### Anotación de ratón, correspondencia de genes y reproducibilidad</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>Los conjuntos de genes se construyen a partir del archivo GAF de MGI de ratón y la ontología GO Basic descargados, conservando las URL originales, fechas de cabecera de las versiones, sumas de comprobación y procedencia del GMT derivado. Se mantienen las fechas individuales de cada fuente; no deben tratarse como una nueva versión conjunta de anotaciones generada de forma coordinada. Solo se utilizan anotaciones positivas de procesos biológicos de ratón. Se excluyen las anotaciones <span class="in">`NOT`</span>, mientras que se conservan los códigos de evidencia de anotaciones positivas, incluida la evidencia electrónica. Los nombres de los términos GO se mantienen en su forma original para conservar su correspondencia con la ontología.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>La pertenencia a términos se propaga por ancestros activos de procesos biológicos mediante **`is_a` y `part_of`**. No se utilizan para la propagación las aristas regulatorias ni las relaciones entre aspectos. Los identificadores alternativos y los términos obsoletos se resuelven solo cuando existe un reemplazo activo inequívoco. <span class="co">[</span><span class="ot">@Ashburner2000_GO</span><span class="co">]</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>La correspondencia utiliza símbolos canónicos de ratón sensibles a mayúsculas o sinónimos GAF que se resuelven de forma única. No convierte genes a mayúsculas, no infiere ortólogos humanos ni relaciona descripciones génicas de texto libre. Cuando varias características de expresión diferencial corresponden a un símbolo, se elige como representante la de mayor <span class="in">`baseMean`</span>, con desempate lexicográfico por identificador de característica, **independientemente de la dirección del efecto y de su significación**. Los símbolos ambiguos y sin correspondencia permanecen visibles en el registro de correspondencias.</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="fu">### Universo de fondo, genes seleccionados y FDR de ORA</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>El universo de ORA comprende genes representantes mapeados únicos con un valor p ajustado de expresión diferencial finito. Los genes mapeados sin anotación específica GO-BP permanecen en el universo. Los conjuntos seleccionados de expresión mayor y menor utilizan FDR génica &lt; 0.05 y el signo del coeficiente original sin regularizar, sin un umbral adicional de tamaño de efecto.</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>Los términos GO elegibles tienen **15–500 miembros después de intersectarlos con el universo específico de cada contraste**. Una probabilidad de supervivencia hipergeométrica unilateral evalúa el solapamiento observado o uno mayor. Los términos con solapamiento cero permanecen en la familia de pruebas con p = 1. La corrección BH se aplica a toda la familia de términos elegibles, por separado para cada contraste y dirección. Por tanto, <span class="in">`padj_BH`</span> de ORA es diferente del valor p ajustado de expresión diferencial a nivel génico. <span class="co">[</span><span class="ot">@Benjamini1995_FDR</span><span class="co">]</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="fu">### GSEA preordenado y calidad de las pruebas génicas</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>La clasificación incluye representantes mapeados únicos con **un estadístico de Wald sin regularizar finito y un valor p de la prueba sin regularizar finito después de las comprobaciones de validez del análisis original**. Un estadístico finito no basta: las pruebas filtradas por Cook o no fiables por otros motivos pueden conservar un estadístico numérico y tener un valor p no disponible. Estas filas se excluyen de GSEA y las exclusiones se exportan. En ozono, el análisis original también retira pruebas de ajustes sin convergencia y de genes con conteos cero en los seis animales del estrato correspondiente. Los valores p previos al filtrado conservados para auditoría no sustituyen esos valores p de pruebas válidas no disponibles. Es una decisión de calidad de la prueba génica, no una exclusión de animales.</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>Los genes con valor p finito de la prueba sin regularizar, pero sin valor p ajustado por el filtrado independiente, siguen siendo elegibles para la clasificación. Esto se aplica a los análisis de PM donde ese filtrado estaba habilitado; ozono utiliza un prefiltro fijo de conteos sin filtrado independiente adaptativo. Ningún umbral de FDR génica o cambio de expresión selecciona los genes clasificados. Los genes se ordenan por estadístico con signo descendente, con desempate por símbolo génico. La pertenencia de términos se restringe además a 15–500 genes en la clasificación resultante. <span class="co">[</span><span class="ot">@Subramanian2005_GSEA; @Fang2023_GSEApy</span><span class="co">]</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: enrichment-permutation-method</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="co">#| output: asis</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>gsea_method <span class="op">=</span> em[<span class="st">"GSEA"</span>]</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>display(Markdown(</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"GSEApy utiliza **</span><span class="sc">{</span>gsea_method[<span class="st">'permutations'</span>]<span class="sc">:,}</span><span class="ss"> permutaciones de conjuntos/etiquetas de genes**, "</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"peso **</span><span class="sc">{</span>gsea_method[<span class="st">'weight'</span>]<span class="sc">}</span><span class="ss">** y semilla **</span><span class="sc">{</span>gsea_method[<span class="st">'seed'</span>]<span class="sc">}</span><span class="ss">**. "</span></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    <span class="st">"No son permutaciones de etiquetas fenotípicas. El `fdr_qvalue` informado es la estimación "</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>    <span class="st">"algorítmica de FDR de GSEA basada en puntuaciones de enriquecimiento normalizadas, "</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>    <span class="st">"**no una corrección BH**. Un valor p nominal por permutación o un valor q estimado igual "</span></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>    <span class="st">"a cero es un resultado de un número finito de permutaciones y no significa probabilidad de error cero."</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="fu">## Resultados y cobertura</span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: enrichment-completed-contrasts</span></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="co">#| output: asis</span></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>display(Markdown(<span class="ss">f"Hay resultados completos de enriquecimiento para **</span><span class="sc">{</span><span class="bu">len</span>(selected_keys)<span class="sc">}</span><span class="ss"> de los seis contrastes planificados** en esta generación del informe."</span>))</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (enrichment_dir <span class="op">/</span> <span class="st">"summary_counts.tsv"</span>).exists():</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>    counts <span class="op">=</span> read_table(<span class="st">"enrichment"</span>, <span class="st">"summary_counts.tsv"</span>)</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>    counts <span class="op">=</span> counts[counts.dataset.isin(selected_keys)].copy()</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>    show_table(counts, n<span class="op">=</span><span class="dv">6</span>)</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>ozone_keys <span class="op">=</span> [key <span class="cf">for</span> key <span class="kw">in</span> dataset_labels <span class="cf">if</span> key.startswith(<span class="st">"ozone_"</span>)]</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">all</span>(key <span class="kw">in</span> available_datasets <span class="cf">for</span> key <span class="kw">in</span> ozone_keys) <span class="kw">and</span> <span class="bu">all</span>(</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>    available_datasets[key][<span class="st">"ORA"</span>][<span class="st">"significant_up_terms_BH_FDR_0_05"</span>] <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>    available_datasets[key][<span class="st">"ORA"</span>][<span class="st">"significant_down_terms_BH_FDR_0_05"</span>] <span class="op">==</span> <span class="dv">0</span></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> key <span class="kw">in</span> ozone_keys</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>):</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>    display(Markdown(<span class="st">"**Ningún término ORA cumple BH FDR &lt; 0.05 dentro de cada dirección en ninguno de los cuatro estratos de ozono.** Los resultados de GSEA con clasificación de signo que se presentan a continuación utilizan datos de entrada y un modelo de error distintos; su presencia no revierte este resultado nulo de ORA."</span>))</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>missing <span class="op">=</span> [dataset_labels[k] <span class="cf">for</span> k <span class="kw">in</span> dataset_labels <span class="cf">if</span> k <span class="kw">not</span> <span class="kw">in</span> available_datasets]</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> missing:</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>    display(Markdown(<span class="st">"**En espera de contrastes originales o resultados de enriquecimiento completos:** "</span> <span class="op">+</span> <span class="st">"; "</span>.join(missing) <span class="op">+</span> <span class="st">". No se asignan hallazgos de vías a esas entradas."</span>))</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="fu">### Por qué importan las correspondencias y las familias de pruebas</span></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>La tabla de expresión diferencial, los genes representantes mapeados, el universo de ORA y la clasificación GSEA pueden tener tamaños distintos. Las pérdidas de correspondencia y la elección entre símbolos duplicados explican algunas diferencias. En los análisis de PM donde se utiliza, el filtrado independiente cambia la elegibilidad para ORA, mientras que GSEA conserva genes de calidad elegible con p finito aunque su valor p ajustado no esté disponible. Los conteos de exclusiones por validez de la expresión diferencial original también pueden diferir de las exclusiones mapeadas de GSEA, porque una característica original puede no tener correspondencia o eliminarse según la regla declarada para símbolos duplicados. Los conjuntos seleccionados de ORA de ozono utilizan los valores BH génicos **dentro de cada estrato**, no la columna suplementaria entre los cuatro estratos.</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: enrichment-coverage-table</span></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>coverage <span class="op">=</span> []</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key <span class="kw">in</span> selected_keys:</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> available_datasets[key][<span class="st">"annotation_mapping"</span>]</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>    coverage.append({<span class="st">"contrast"</span>: key, <span class="st">"source_features"</span>: a[<span class="st">"input_features"</span>],</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"mapped_representatives"</span>: a[<span class="st">"unique_mapped_gene_representatives"</span>],</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"ORA_universe"</span>: a[<span class="st">"ORA_universe_genes"</span>],</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"GSEA_rank"</span>: a[<span class="st">"GSEA_rank_genes"</span>],</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"mapped_nonfinite_p_excluded"</span>: a[<span class="st">"GSEA_genes_removed_for_nonfinite_original_pvalue"</span>],</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"finite_p_missing_padj_retained"</span>: a[<span class="st">"GSEA_genes_retained_with_missing_adjusted_pvalue"</span>],</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"DE_FDR_selected_features"</span>: a[<span class="st">"source_significant_features"</span>],</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"ORA_mapped_foreground"</span>: a[<span class="st">"ORA_significant_mapped_gene_representatives"</span>]})</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> coverage:</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>    show_table(pd.DataFrame(coverage), n<span class="op">=</span><span class="dv">6</span>)</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="fu">### Resultados específicos de cada contraste</span></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: enrichment-contrast-results</span></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a><span class="co">#| output: asis</span></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key <span class="kw">in</span> selected_keys:</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>    entry <span class="op">=</span> available_datasets[key]</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>    ora <span class="op">=</span> entry[<span class="st">"ORA"</span>]</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>    gsea <span class="op">=</span> entry[<span class="st">"GSEA"</span>]</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>    display(Markdown(<span class="st">"#### "</span> <span class="op">+</span> dataset_labels[key]))</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>    display(Markdown(</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"ORA utiliza **</span><span class="sc">{</span>ora[<span class="st">'universe_size'</span>]<span class="sc">:,}</span><span class="ss"> genes mapeados evaluables**, con "</span></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"**</span><span class="sc">{</span>ora[<span class="st">'up_foreground_size'</span>]<span class="sc">:,}</span><span class="ss"> genes seleccionados de mayor expresión** y "</span></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"**</span><span class="sc">{</span>ora[<span class="st">'down_foreground_size'</span>]<span class="sc">:,}</span><span class="ss"> de menor expresión**. Con BH FDR &lt; 0.05 dentro "</span></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"de cada familia, cumplen el criterio **</span><span class="sc">{</span>ora[<span class="st">'significant_up_terms_BH_FDR_0_05'</span>]<span class="sc">:,}</span><span class="ss"> términos GO "</span></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"de la dirección mayor** y **</span><span class="sc">{</span>ora[<span class="st">'significant_down_terms_BH_FDR_0_05'</span>]<span class="sc">:,}</span><span class="ss"> de la dirección menor**.</span><span class="ch">\n\n</span><span class="ss">"</span></span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"GSEA clasifica **</span><span class="sc">{</span>gsea[<span class="st">'ranking_size'</span>]<span class="sc">:,}</span><span class="ss"> genes** y evalúa **</span><span class="sc">{</span>gsea[<span class="st">'tested_terms'</span>]<span class="sc">:,}</span><span class="ss"> términos**. "</span></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"Su FDR algorítmica &lt; 0.05 identifica **</span><span class="sc">{</span>gsea[<span class="st">'significant_terms_algorithmic_FDR_0_05'</span>]<span class="sc">:,}</span><span class="ss"> "</span></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"etiquetas de términos**, incluidos **</span><span class="sc">{</span>gsea[<span class="st">'positive_NES_significant_terms'</span>]<span class="sc">:,}</span><span class="ss"> términos con "</span></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"NES positivo** y **</span><span class="sc">{</span>gsea[<span class="st">'negative_NES_significant_terms'</span>]<span class="sc">:,}</span><span class="ss"> con NES negativo**. "</span></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Estos conteos se refieren a anotaciones superpuestas, no a descubrimientos biológicos independientes."</span></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> key <span class="op">==</span> <span class="st">"hypothalamus"</span>:</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>        no_specific <span class="op">=</span> ora.get(<span class="st">"foreground_genes_without_specific_BP_annotation"</span>, {})</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>        display(Markdown(</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>            <span class="st">"La ausencia de significación de ORA debe interpretarse junto con sus conjuntos "</span></span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>            <span class="st">"seleccionados pequeños. Dentro de ellos, "</span></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"**</span><span class="sc">{</span><span class="bu">len</span>(no_specific.get(<span class="st">'up'</span>, []))<span class="sc">}</span><span class="ss"> genes de mayor expresión** y "</span></span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"**</span><span class="sc">{</span><span class="bu">len</span>(no_specific.get(<span class="st">'down'</span>, []))<span class="sc">}</span><span class="ss"> de menor expresión** carecen de una anotación "</span></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>            <span class="st">"específica GO-BP en esta versión, aunque permanecen en el universo mapeado. El número "</span></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>            <span class="st">"mucho mayor de términos GSEA refleja otra pregunta basada en clasificación y otro "</span></span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>            <span class="st">"modelo de permutación; no demuestra cientos de mecanismos hipotalámicos separados. "</span></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>            <span class="st">"La superposición de los genes que impulsan el enriquecimiento, la incertidumbre "</span></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>            <span class="st">"original de siete animales y la sensibilidad a animales individuales siguen siendo relevantes."</span></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>        ))</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> key <span class="op">==</span> <span class="st">"cortex"</span>:</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>        display(Markdown(</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Entre los principales resultados corticales aparecen anotaciones de plegamiento "</span></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>            <span class="st">"de proteínas y de respuestas relacionadas del retículo endoplásmico. Sus genes "</span></span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>            <span class="st">"compartidos y relaciones ontológicas constituyen un patrón coordinado de anotaciones "</span></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>            <span class="st">"para estudiar posteriormente, no confirmaciones independientes de múltiples vías activadas."</span></span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>        ))</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> key <span class="op">==</span> <span class="st">"ozone_M3_E3"</span>:</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>        display(Markdown(</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Las anotaciones de fototransducción y detección de luz aparecen entre las asociaciones "</span></span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>            <span class="st">"GO ordenadas de este contraste del hipocampo, pese a no haber hallazgos génicos con "</span></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>            <span class="st">"FDR significativa dentro del estrato. Estas asociaciones de ontología/clasificación "</span></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>            <span class="st">"no demuestran función visual ni una respuesta celular localizada al ozono. Se deben "</span></span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>            <span class="st">"evaluar la especificidad tisular y el contexto de disección original antes de utilizar "</span></span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>            <span class="st">"estos términos para proponer mecanismos."</span></span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>        ))</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>    ora_tables <span class="op">=</span> []</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> direction <span class="kw">in</span> [<span class="st">"up"</span>, <span class="st">"down"</span>]:</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>        tab <span class="op">=</span> read_table(<span class="st">"enrichment"</span>, <span class="ss">f"</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">/ORA_</span><span class="sc">{</span>direction<span class="sc">}</span><span class="ss">_all_terms.tsv"</span>)</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>        tab <span class="op">=</span> tab.loc[tab.padj_BH.lt(<span class="fl">.05</span>)].sort_values([<span class="st">"padj_BH"</span>, <span class="st">"pvalue"</span>]).head(<span class="dv">6</span>).copy()</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">len</span>(tab):</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>            ora_tables.append(tab)</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ora_tables:</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>        tab <span class="op">=</span> pd.concat(ora_tables, ignore_index<span class="op">=</span><span class="va">True</span>)[[<span class="st">"GO_ID"</span>, <span class="st">"term_name"</span>, <span class="st">"direction"</span>, <span class="st">"overlap"</span>, <span class="st">"foreground_genes"</span>, <span class="st">"fold_enrichment"</span>, <span class="st">"padj_BH"</span>]]</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>        tab[<span class="st">"padj_BH"</span>] <span class="op">=</span> tab.padj_BH.<span class="bu">map</span>(fmt_p)</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>        show_table(tab, n<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>        display(Markdown(<span class="st">"Ningún término ORA cumple el umbral BH declarado en ninguna dirección; los términos ordenados nominalmente permanecen disponibles en las tablas completas."</span>))</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    enrichment_figure(key, <span class="st">"ORA_significant_terms"</span>, <span class="st">"Términos GO-BP de ORA que cumplen BH FDR &lt; 0.05 dentro de cada dirección. Los paneles vacíos informan explícitamente que no hay términos significativos. Los conteos de solapamiento se refieren a genes seleccionados, no a animales ni a células del atlas."</span>, <span class="ss">f"Resumen de ORA específico del contraste para </span><span class="sc">{</span>dataset_labels[key]<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    tab <span class="op">=</span> read_table(<span class="st">"enrichment"</span>, <span class="ss">f"</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">/GSEA_all_terms.tsv"</span>).sort_values([<span class="st">"fdr_qvalue"</span>, <span class="st">"nominal_pvalue"</span>], na_position<span class="op">=</span><span class="st">"last"</span>)</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    preview <span class="op">=</span> tab[[<span class="st">"GO_ID"</span>, <span class="st">"term_name"</span>, <span class="st">"NES"</span>, <span class="st">"rank_member_genes"</span>, <span class="st">"nominal_pvalue"</span>, <span class="st">"fdr_qvalue"</span>]].head(<span class="dv">12</span>).copy()</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> c <span class="kw">in</span> [<span class="st">"nominal_pvalue"</span>, <span class="st">"fdr_qvalue"</span>]:</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>        preview[c] <span class="op">=</span> preview[c].<span class="bu">map</span>(permutation_value)</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>    show_table(preview, n<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>    enrichment_figure(key, <span class="st">"GSEA_terms"</span>, <span class="st">"Hasta doce términos GO-BP con menor q del análisis preordenado elegible por calidad. NES indica asociación con el extremo positivo o negativo de la clasificación de este contraste. Los valores q de GSEA son estimaciones por permutación, no valores BH de ORA."</span>, <span class="ss">f"Puntuaciones de enriquecimiento normalizadas de los principales términos GO en </span><span class="sc">{</span>dataset_labels[key]<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>    curves <span class="op">=</span> <span class="bu">sorted</span>((enrichment_dir <span class="op">/</span> key <span class="op">/</span> <span class="st">"figures"</span>).glob(<span class="st">"GSEA_curve_*.png"</span>))[:<span class="dv">2</span>]</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> curve <span class="kw">in</span> curves:</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>        enrichment_figure(key, curve.stem, <span class="st">"Curva ilustrativa de enriquecimiento ponderado acumulado y posiciones de los genes del conjunto en la clasificación completa elegible por calidad. La selección de un término principal es exploratoria; su q estimado conserva las limitaciones por permutaciones finitas y tamaño muestral."</span>, <span class="ss">f"Curva de enriquecimiento acumulado de un término seleccionado en </span><span class="sc">{</span>dataset_labels[key]<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>    display(Markdown(</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"[Tabla completa ORA de la dirección mayor](../downloads/enrichment/</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">/ORA_up_all_terms.tsv) · "</span></span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"[Tabla completa ORA de la dirección menor](../downloads/enrichment/</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">/ORA_down_all_terms.tsv) · "</span></span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"[Tabla completa GSEA y genes que impulsan el enriquecimiento](../downloads/enrichment/</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">/GSEA_all_terms.tsv) · "</span></span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"[Genes ordenados](../downloads/enrichment/</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">/GSEA_ranked_genes.tsv) · "</span></span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"[Decisiones de correspondencia](../downloads/enrichment/</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">/gene_mapping.tsv.gz) · "</span></span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"[Pruebas originales no fiables excluidas](../downloads/enrichment/</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">/GSEA_excluded_for_nonfinite_original_pvalue.tsv)"</span></span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interpretación biológica</span></span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>Un NES positivo indica asociación hacia el extremo de mayor expresión del contraste de exposición específico; un NES negativo indica asociación hacia el extremo de menor expresión. Ningún signo establece actividad bioquímica de una vía ni la población celular responsable. Los mismos genes pueden contribuir a muchos términos GO relacionados y la cobertura de anotaciones es desigual entre genes. El ORA clásico no modela explícitamente los sesgos de longitud génica o detectabilidad; el universo de fondo evaluable limita estas preocupaciones, pero no las elimina.</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>Los modelos moleculares y tamaños muestrales siguen siendo los de los experimentos regionales originales. Un término aparentemente compartido entre corteza, hipotálamo o un estrato de ozono es una hipótesis para una comparación específica posterior, no una estimación causal conjunta. La composición celular, el muestreo, la edad, el genotipo, la administración de la exposición y las diferencias técnicas pueden contribuir a una aparente convergencia. No se proporciona un mapa de blancos validado para el microarreglo de miRNA, por lo que no se infiere un análisis GO de mRNA a partir de identificadores de miRNA.</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a><span class="fu">## Procedencia descargable</span></span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Conteos resumidos por contraste</span><span class="co">](../downloads/enrichment/summary_counts.tsv)</span></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Métodos, políticas de anotación y versiones originales</span><span class="co">](../downloads/enrichment/methods.json)</span></span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Resumen completo legible por máquina</span><span class="co">](../downloads/enrichment/summary.json)</span></span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Comprobaciones de validación</span><span class="co">](../downloads/enrichment/validation_checks.json)</span></span>
+</code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Reanálisis de datos públicos · Mus musculus</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Se distingue la referencia medida de la exposición simulada.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

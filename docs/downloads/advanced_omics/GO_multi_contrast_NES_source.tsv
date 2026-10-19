@@ -1,0 +1,133 @@
+GO_ID	contrast	term_name	NES	algorithmic_FDR	eligible_tested	rank_member_genes
+GO:0140241	hypothalamus	translation at synapse	3.048188431	0	True	48
+GO:0140241	cortex	translation at synapse	2.059776007	0.003146364829	True	48
+GO:0140241	ozone_M3_E3	translation at synapse	1.656092874	0.217695665	True	48
+GO:0140241	ozone_M3_E4	translation at synapse	2.976603076	0	True	48
+GO:0140241	ozone_M17_E3	translation at synapse	-3.408597729	0	True	48
+GO:0140241	ozone_M17_E4	translation at synapse	-2.68209215	0	True	48
+GO:0060294	hypothalamus	cilium movement involved in cell motility	2.886227881	0	True	194
+GO:0060294	cortex	cilium movement involved in cell motility	-1.901131976	0.0558223455	True	174
+GO:0060294	ozone_M3_E3	cilium movement involved in cell motility	-1.485864089	1	True	173
+GO:0060294	ozone_M3_E4	cilium movement involved in cell motility	-0.6651441886	0.9864638018	True	173
+GO:0060294	ozone_M17_E3	cilium movement involved in cell motility	0.7549410292	0.9673338162	True	173
+GO:0060294	ozone_M17_E4	cilium movement involved in cell motility	2.082110984	0.01400921937	True	173
+GO:0061001	hypothalamus	regulation of dendritic spine morphogenesis	-2.445095031	0	True	64
+GO:0061001	cortex	regulation of dendritic spine morphogenesis	1.191239223	0.3706115845	True	67
+GO:0061001	ozone_M3_E3	regulation of dendritic spine morphogenesis	-0.4837119301	0.9996086571	True	67
+GO:0061001	ozone_M3_E4	regulation of dendritic spine morphogenesis	-2.103211811	0.008005843492	True	67
+GO:0061001	ozone_M17_E3	regulation of dendritic spine morphogenesis	1.737986927	0.08276721081	True	67
+GO:0061001	ozone_M17_E4	regulation of dendritic spine morphogenesis	-1.095372468	0.7226518291	True	67
+GO:0048814	hypothalamus	regulation of dendrite morphogenesis	-2.389126403	0	True	100
+GO:0048814	cortex	regulation of dendrite morphogenesis	1.20332009	0.355972598	True	102
+GO:0048814	ozone_M3_E3	regulation of dendrite morphogenesis	0.606004454	0.9951674576	True	102
+GO:0048814	ozone_M3_E4	regulation of dendrite morphogenesis	-1.909558315	0.02558820072	True	102
+GO:0048814	ozone_M17_E3	regulation of dendrite morphogenesis	1.591209207	0.1295849208	True	102
+GO:0048814	ozone_M17_E4	regulation of dendrite morphogenesis	-0.8062356235	0.9609132101	True	102
+GO:0006457	hypothalamus	protein folding	1.080510863	0.5980287815	True	177
+GO:0006457	cortex	protein folding	2.488922285	0	True	177
+GO:0006457	ozone_M3_E3	protein folding	1.127875129	0.5892726047	True	174
+GO:0006457	ozone_M3_E4	protein folding	1.602093665	0.09546862596	True	174
+GO:0006457	ozone_M17_E3	protein folding	-1.160834535	0.6237071212	True	174
+GO:0006457	ozone_M17_E4	protein folding	-1.328978236	0.5180789135	True	174
+GO:1905897	hypothalamus	regulation of response to endoplasmic reticulum stress	-1.211674608	0.2942703717	True	87
+GO:1905897	cortex	regulation of response to endoplasmic reticulum stress	2.398446265	0	True	86
+GO:1905897	ozone_M3_E3	regulation of response to endoplasmic reticulum stress	1.179530426	0.5461086364	True	86
+GO:1905897	ozone_M3_E4	regulation of response to endoplasmic reticulum stress	0.8424475102	1	True	86
+GO:1905897	ozone_M17_E3	regulation of response to endoplasmic reticulum stress	-1.170130999	0.6174835718	True	86
+GO:1905897	ozone_M17_E4	regulation of response to endoplasmic reticulum stress	-0.9172802546	0.8830808944	True	86
+GO:0070192	hypothalamus	chromosome organization involved in meiotic cell cycle	-0.9352197131	0.7071259397	True	56
+GO:0070192	cortex	chromosome organization involved in meiotic cell cycle	-2.237992249	0.01373523501	True	59
+GO:0070192	ozone_M3_E3	chromosome organization involved in meiotic cell cycle	-1.112741772	0.9901682067	True	55
+GO:0070192	ozone_M3_E4	chromosome organization involved in meiotic cell cycle	-0.7519086319	0.956542709	True	55
+GO:0070192	ozone_M17_E3	chromosome organization involved in meiotic cell cycle	-0.9850808558	0.8647795568	True	55
+GO:0070192	ozone_M17_E4	chromosome organization involved in meiotic cell cycle	0.966931577	0.8960653588	True	55
+GO:0086010	hypothalamus	membrane depolarization during action potential	-1.79126331	0.01223319265	True	22
+GO:0086010	cortex	membrane depolarization during action potential	-2.085887349	0.02590964786	True	22
+GO:0086010	ozone_M3_E3	membrane depolarization during action potential	-1.512250403	1	True	21
+GO:0086010	ozone_M3_E4	membrane depolarization during action potential	-1.578308891	0.1026850582	True	21
+GO:0086010	ozone_M17_E3	membrane depolarization during action potential	1.866773194	0.06871741596	True	21
+GO:0086010	ozone_M17_E4	membrane depolarization during action potential	-1.011301166	0.787507063	True	21
+GO:0009583	hypothalamus	detection of light stimulus	-0.9913186297	0.623917086	True	37
+GO:0009583	cortex	detection of light stimulus	0.4106504406	0.9996061395	True	40
+GO:0009583	ozone_M3_E3	detection of light stimulus	2.454630442	0	True	52
+GO:0009583	ozone_M3_E4	detection of light stimulus	0.7652188286	1	True	52
+GO:0009583	ozone_M17_E3	detection of light stimulus	1.381432197	0.2478870306	True	52
+GO:0009583	ozone_M17_E4	detection of light stimulus	-1.184177155	0.6446879248	True	52
+GO:0007602	hypothalamus	phototransduction	-0.9203538227	0.7302513744	True	19
+GO:0007602	cortex	phototransduction			False	
+GO:0007602	ozone_M3_E3	phototransduction	2.342890836	0	True	28
+GO:0007602	ozone_M3_E4	phototransduction	-0.8689892264	0.8623236628	True	28
+GO:0007602	ozone_M17_E3	phototransduction	0.9414808937	0.7994770831	True	28
+GO:0007602	ozone_M17_E4	phototransduction	-1.446016189	0.4590249717	True	28
+GO:0006119	hypothalamus	oxidative phosphorylation	1.847204866	0.03258927373	True	109
+GO:0006119	cortex	oxidative phosphorylation	1.339364974	0.2274361567	True	108
+GO:0006119	ozone_M3_E3	oxidative phosphorylation	-1.085429265	1	True	109
+GO:0006119	ozone_M3_E4	oxidative phosphorylation	3.205243449	0	True	109
+GO:0006119	ozone_M17_E3	oxidative phosphorylation	-3.054315448	0	True	109
+GO:0006119	ozone_M17_E4	oxidative phosphorylation	-1.243339156	0.5939774855	True	109
+GO:0032543	hypothalamus	mitochondrial translation	2.051383048	0.009576139201	True	106
+GO:0032543	cortex	mitochondrial translation	1.24286399	0.3130961373	True	106
+GO:0032543	ozone_M3_E3	mitochondrial translation	-1.813836684	1	True	107
+GO:0032543	ozone_M3_E4	mitochondrial translation	3.133108853	0	True	107
+GO:0032543	ozone_M17_E3	mitochondrial translation	-2.496278896	0	True	107
+GO:0032543	ozone_M17_E4	mitochondrial translation	-0.7223012915	0.9836763886	True	107
+GO:2001222	hypothalamus	regulation of neuron migration	-1.887978013	0.004826233255	True	58
+GO:2001222	cortex	regulation of neuron migration	0.8250904232	0.8618935782	True	56
+GO:2001222	ozone_M3_E3	regulation of neuron migration	1.218908975	0.5071601315	True	55
+GO:2001222	ozone_M3_E4	regulation of neuron migration	-2.260369762	0.002134891598	True	55
+GO:2001222	ozone_M17_E3	regulation of neuron migration	2.024741437	0.05247195858	True	55
+GO:2001222	ozone_M17_E4	regulation of neuron migration	1.300127939	0.5898138879	True	55
+GO:0060323	hypothalamus	head morphogenesis	-1.881428819	0.005310292603	True	46
+GO:0060323	cortex	head morphogenesis	1.097987911	0.4893640635	True	44
+GO:0060323	ozone_M3_E3	head morphogenesis	-0.5787605785	1	True	45
+GO:0060323	ozone_M3_E4	head morphogenesis	-2.264343828	0.003202337397	True	45
+GO:0060323	ozone_M17_E3	head morphogenesis	1.575315205	0.1345677361	True	45
+GO:0060323	ozone_M17_E4	head morphogenesis	-1.024921218	0.7816217067	True	45
+GO:0002088	hypothalamus	lens development in camera-type eye	-1.5239833	0.06987663542	True	71
+GO:0002088	cortex	lens development in camera-type eye	1.24375326	0.3122944163	True	68
+GO:0002088	ozone_M3_E3	lens development in camera-type eye	0.8022585872	0.9591750335	True	79
+GO:0002088	ozone_M3_E4	lens development in camera-type eye	-1.529742697	0.1226461034	True	79
+GO:0002088	ozone_M17_E3	lens development in camera-type eye	2.238679791	0.01459484941	True	79
+GO:0002088	ozone_M17_E4	lens development in camera-type eye	-1.618801673	0.3241714568	True	79
+GO:0007156	hypothalamus	homophilic cell-cell adhesion	-2.055136374	0.0008865374645	True	152
+GO:0007156	cortex	homophilic cell-cell adhesion	-1.201709269	0.5335782043	True	147
+GO:0007156	ozone_M3_E3	homophilic cell-cell adhesion	0.9211209669	0.8353275245	True	155
+GO:0007156	ozone_M3_E4	homophilic cell-cell adhesion	-2.051787977	0.009497664084	True	155
+GO:0007156	ozone_M17_E3	homophilic cell-cell adhesion	2.217031723	0.01459484941	True	155
+GO:0007156	ozone_M17_E4	homophilic cell-cell adhesion	-0.8522970176	0.946434116	True	155
+GO:1901740	hypothalamus	negative regulation of myoblast fusion	2.668465557	0	True	49
+GO:1901740	cortex	negative regulation of myoblast fusion	2.149522489	0.001415864173	True	47
+GO:1901740	ozone_M3_E3	negative regulation of myoblast fusion	1.603281283	0.2592477617	True	47
+GO:1901740	ozone_M3_E4	negative regulation of myoblast fusion	3.057176673	0	True	47
+GO:1901740	ozone_M17_E3	negative regulation of myoblast fusion	-3.306099543	0	True	47
+GO:1901740	ozone_M17_E4	negative regulation of myoblast fusion	-2.49912354	0	True	47
+GO:0015986	hypothalamus	proton motive force-driven ATP synthesis	2.430997529	0.0003724054134	True	66
+GO:0015986	cortex	proton motive force-driven ATP synthesis	1.397874348	0.1849664116	True	67
+GO:0015986	ozone_M3_E3	proton motive force-driven ATP synthesis	-1.370810327	0.8306262726	True	67
+GO:0015986	ozone_M3_E4	proton motive force-driven ATP synthesis	3.089434621	0	True	67
+GO:0015986	ozone_M17_E3	proton motive force-driven ATP synthesis	-3.059084609	0	True	67
+GO:0015986	ozone_M17_E4	proton motive force-driven ATP synthesis	-1.075023707	0.7433676879	True	67
+GO:0001578	hypothalamus	microtubule bundle formation	2.366548518	0.0008039227972	True	142
+GO:0001578	cortex	microtubule bundle formation	-1.687116455	0.149526763	True	133
+GO:0001578	ozone_M3_E3	microtubule bundle formation	-1.60055019	1	True	140
+GO:0001578	ozone_M3_E4	microtubule bundle formation	-1.439344084	0.1681297378	True	140
+GO:0001578	ozone_M17_E3	microtubule bundle formation	0.9923694483	0.7167414348	True	140
+GO:0001578	ozone_M17_E4	microtubule bundle formation	2.200981484	0.004944430367	True	140
+GO:0035456	hypothalamus	response to interferon-beta	-0.5845361385	0.994362391	True	57
+GO:0035456	cortex	response to interferon-beta	1.668652143	0.06957162973	True	48
+GO:0035456	ozone_M3_E3	response to interferon-beta	1.286094476	0.4528228369	True	54
+GO:0035456	ozone_M3_E4	response to interferon-beta	1.085095199	0.6628956506	True	54
+GO:0035456	ozone_M17_E3	response to interferon-beta	-0.6102672182	1	True	54
+GO:0035456	ozone_M17_E4	response to interferon-beta	2.175036745	0.006257794684	True	54
+GO:0002181	hypothalamus	cytoplasmic translation	2.166813955	0.004590466728	True	200
+GO:0002181	cortex	cytoplasmic translation	1.833630871	0.02847311757	True	197
+GO:0002181	ozone_M3_E3	cytoplasmic translation	0.9617784954	0.7941129605	True	196
+GO:0002181	ozone_M3_E4	cytoplasmic translation	2.652383305	0	True	196
+GO:0002181	ozone_M17_E3	cytoplasmic translation	-3.007250428	0	True	196
+GO:0002181	ozone_M17_E4	cytoplasmic translation	-2.228274416	0.001229900736	True	196
+GO:0001975	hypothalamus	response to amphetamine	-1.172796937	0.341564997	True	27
+GO:0001975	cortex	response to amphetamine	1.049488416	0.5558630015	True	32
+GO:0001975	ozone_M3_E3	response to amphetamine	1.342452015	0.4005582056	True	32
+GO:0001975	ozone_M3_E4	response to amphetamine	-0.7684345905	0.9505505542	True	32
+GO:0001975	ozone_M17_E3	response to amphetamine	-0.595962437	1	True	32
+GO:0001975	ozone_M17_E4	response to amphetamine	-2.184863098	0.003228489431	True	32

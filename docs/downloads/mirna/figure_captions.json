@@ -1,0 +1,155 @@
+{
+  "pca": {
+    "caption": "PCA of the 500 most variable features on published normalized signal. Features are centered, not variance-scaled. Each point is one biological sample. No sample was removed by PCA.",
+    "source_tables": [
+      "pca_scores.tsv",
+      "pca_features.tsv",
+      "sample_metadata.tsv"
+    ],
+    "formats": [
+      "PNG at 300 dpi",
+      "SVG with editable text",
+      "PDF with embedded TrueType fonts"
+    ],
+    "size_inches": [
+      7.6,
+      5.3
+    ]
+  },
+  "sample_correlation": {
+    "caption": "Pearson correlations across all 1245 finite, variable features on published normalized signal; fixed color limits from -1 to 1.",
+    "source_tables": [
+      "sample_correlation.tsv"
+    ],
+    "formats": [
+      "PNG at 300 dpi",
+      "SVG with editable text",
+      "PDF with embedded TrueType fonts"
+    ],
+    "size_inches": [
+      7.0,
+      6.0
+    ]
+  },
+  "sample_qc": {
+    "caption": "Left: distributions of the analysis values, with extreme boxplot points omitted only from this display. Right: sample-level assay quality summaries. All biological samples are retained; individual samples are identified by name.",
+    "source_tables": [
+      "sample_qc.tsv",
+      "sample_metadata.tsv"
+    ],
+    "formats": [
+      "PNG at 300 dpi",
+      "SVG with editable text",
+      "PDF with embedded TrueType fonts"
+    ],
+    "size_inches": [
+      11.0,
+      4.8
+    ]
+  },
+  "volcano_PM1_vs_Control": {
+    "caption": "Probe-level limma moderated t tests for PM 1 mg/kg minus saline, n=3 biological samples per group. Effect units are published normalized signal units, not an asserted log2 fold change. Orange triangles: BH FDR <0.05 across tested miRNA rows for this contrast; gray circles: remaining rows. Only the top-ranked feature is labeled. No additional log transform or normalization was applied.",
+    "source_tables": [
+      "DE_PM1_vs_Control.tsv"
+    ],
+    "formats": [
+      "PNG at 300 dpi",
+      "SVG with editable text",
+      "PDF with embedded TrueType fonts"
+    ],
+    "size_inches": [
+      7.8,
+      5.2
+    ]
+  },
+  "mean_difference_PM1_vs_Control": {
+    "caption": "Mean published normalized signal versus group mean difference; linear units are retained, including negative values. Orange triangles mark BH FDR <0.05; gray circles: remaining rows. This is a mean\u2013difference display, not a conventional log-ratio MA plot.",
+    "source_tables": [
+      "DE_PM1_vs_Control.tsv"
+    ],
+    "formats": [
+      "PNG at 300 dpi",
+      "SVG with editable text",
+      "PDF with embedded TrueType fonts"
+    ],
+    "size_inches": [
+      7.2,
+      5.2
+    ]
+  },
+  "top30_heatmap_PM1_vs_Control": {
+    "caption": "Top 30 features ranked by limma BH-adjusted p value for PM1_vs_Control; rows are centered and scaled by their sample standard deviation for display only. Selection is descriptive and is not independent validation. Fixed sample order; no clustering of samples.",
+    "source_tables": [
+      "top30_heatmap_PM1_vs_Control_zscores.tsv"
+    ],
+    "formats": [
+      "PNG at 300 dpi",
+      "SVG with editable text",
+      "PDF with embedded TrueType fonts"
+    ],
+    "size_inches": [
+      8.4,
+      8.0
+    ]
+  },
+  "volcano_PM5_vs_Control": {
+    "caption": "Probe-level limma moderated t tests for PM 5 mg/kg minus saline, n=3 biological samples per group. Effect units are published normalized signal units, not an asserted log2 fold change. Orange triangles: BH FDR <0.05 across tested miRNA rows for this contrast; gray circles: remaining rows. Only the top-ranked feature is labeled. No additional log transform or normalization was applied.",
+    "source_tables": [
+      "DE_PM5_vs_Control.tsv"
+    ],
+    "formats": [
+      "PNG at 300 dpi",
+      "SVG with editable text",
+      "PDF with embedded TrueType fonts"
+    ],
+    "size_inches": [
+      7.8,
+      5.2
+    ]
+  },
+  "mean_difference_PM5_vs_Control": {
+    "caption": "Mean published normalized signal versus group mean difference; linear units are retained, including negative values. Orange triangles mark BH FDR <0.05; gray circles: remaining rows. This is a mean\u2013difference display, not a conventional log-ratio MA plot.",
+    "source_tables": [
+      "DE_PM5_vs_Control.tsv"
+    ],
+    "formats": [
+      "PNG at 300 dpi",
+      "SVG with editable text",
+      "PDF with embedded TrueType fonts"
+    ],
+    "size_inches": [
+      7.2,
+      5.2
+    ]
+  },
+  "top30_heatmap_PM5_vs_Control": {
+    "caption": "Top 30 features ranked by limma BH-adjusted p value for PM5_vs_Control; rows are centered and scaled by their sample standard deviation for display only. Selection is descriptive and is not independent validation. Fixed sample order; no clustering of samples.",
+    "source_tables": [
+      "top30_heatmap_PM5_vs_Control_zscores.tsv"
+    ],
+    "formats": [
+      "PNG at 300 dpi",
+      "SVG with editable text",
+      "PDF with embedded TrueType fonts"
+    ],
+    "size_inches": [
+      8.4,
+      8.0
+    ]
+  },
+  "top30_heatmap_omnibus": {
+    "caption": "Top 30 features ranked by two-degree-of-freedom moderated F-test BH-adjusted p value; rows are centered and scaled by their sample standard deviation for display only. Selection is descriptive and is not independent validation. Fixed sample order; no clustering of samples.",
+    "source_tables": [
+      "top30_heatmap_omnibus_zscores.tsv"
+    ],
+    "formats": [
+      "PNG at 300 dpi",
+      "SVG with editable text",
+      "PDF with embedded TrueType fonts"
+    ],
+    "size_inches": [
+      8.4,
+      8.0
+    ]
+  }
+}

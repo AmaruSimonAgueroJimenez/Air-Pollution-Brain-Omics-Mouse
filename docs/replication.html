@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-10-19">
+
+<title>Reproducing the original studies – Air pollution · brain omics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5dd942ac47374bdb5320a9bbd29a7aa4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="assets/report.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Air pollution · brain omics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Overview</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./introduction.html"> 
+<span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./methods.html"> 
+<span class="menu-text">Methods</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-results" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Results</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-results">    
+        <li>
+    <a class="dropdown-item" href="./results.html">
+ <span class="dropdown-text">Hypothalamus · PM2.5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cortex.html">
+ <span class="dropdown-text">Cingulate cortex · PM2.5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./mirna.html">
+ <span class="dropdown-text">Hippocampal miRNA · PM2.5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ozone.html">
+ <span class="dropdown-text">Hippocampus · ozone</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./enrichment.html">
+ <span class="dropdown-text">Functional enrichment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./advanced_results.html">
+ <span class="dropdown-text">Interactions &amp; molecular panels</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./replication.html">
+ <span class="dropdown-text">Original-study reproduction</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./spatial_reference.html">
+ <span class="dropdown-text">Measured spatial reference</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./viewer.html"> 
+<span class="menu-text">3D Viewer</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./reproducibility.html"> 
+<span class="menu-text">Data &amp; code</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./es/index.html"> 
+<span class="menu-text">Español</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-constitutes-reproduction-here" id="toc-what-constitutes-reproduction-here" class="nav-link active" data-scroll-target="#what-constitutes-reproduction-here">What constitutes reproduction here?</a></li>
+  <li><a href="#cortex-exact-recovery-of-the-four-author-gene-sets" id="toc-cortex-exact-recovery-of-the-four-author-gene-sets" class="nav-link" data-scroll-target="#cortex-exact-recovery-of-the-four-author-gene-sets">Cortex: exact recovery of the four author gene sets</a></li>
+  <li><a href="#hypothalamus-an-underdetermined-ruvg-workflow" id="toc-hypothalamus-an-underdetermined-ruvg-workflow" class="nav-link" data-scroll-target="#hypothalamus-an-underdetermined-ruvg-workflow">Hypothalamus: an underdetermined RUVg workflow</a></li>
+  <li><a href="#mirna-target-direction-versus-multiplicity" id="toc-mirna-target-direction-versus-multiplicity" class="nav-link" data-scroll-target="#mirna-target-direction-versus-multiplicity">miRNA: target direction versus multiplicity</a></li>
+  <li><a href="#ozone-recover-the-author-labels-compare-matched-effects" id="toc-ozone-recover-the-author-labels-compare-matched-effects" class="nav-link" data-scroll-target="#ozone-recover-the-author-labels-compare-matched-effects">Ozone: recover the author labels, compare matched effects</a></li>
+  <li><a href="#what-remains-unresolved" id="toc-what-remains-unresolved" class="nav-link" data-scroll-target="#what-remains-unresolved">What remains unresolved</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Reproducing the original studies</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead">Source code, published gene lists, matched contrasts, and unresolved methods</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Analysis date</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">19 October 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="what-constitutes-reproduction-here" class="level2">
+<h2 class="anchored" data-anchor-id="what-constitutes-reproduction-here">What constitutes reproduction here?</h2>
+<p>We compare the reanalysis with <strong>the original authors’ code, deposited numerical results, and supplementary tables</strong>, using the same source animals. Computational reproduction checks whether the reported analysis can be recovered. It does not add biological replicates or independently validate a mechanism. Matching gene counts alone is insufficient: we compare feature identities, effect sizes, p-values, selection rules, and analytical populations.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Study</th>
+<th>Source anchor</th>
+<th>Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cortex, GSE297423</td>
+<td>Original Zenodo code, counts, and four DE tables</td>
+<td>Exact significant-gene sets recovered in all four comparisons</td>
+</tr>
+<tr class="even">
+<td>Hypothalamus, GSE145840</td>
+<td>JCI methods and supplementary figure</td>
+<td>Partial method sensitivity; original RUVg specification unavailable</td>
+</tr>
+<tr class="odd">
+<td>Hippocampal miRNA, GSE93967</td>
+<td>Figure 6 target and deposited arrays</td>
+<td>Direction and nominal high-dose evidence agree; not array-wide FDR confirmation</td>
+</tr>
+<tr class="even">
+<td>Hippocampal ozone, E-MTAB-14917</td>
+<td>Author genotype CSV and supplementary S2/S3</td>
+<td>Exact reconstruction of deposited selection; partial cross-pipeline effect concordance</td>
+</tr>
+</tbody>
+</table>
+<p>These layers complement the <a href="./index.html">primary analyses</a>, which retain their original study-specific models and thresholds.</p>
+</section>
+<section id="cortex-exact-recovery-of-the-four-author-gene-sets" class="level2">
+<h2 class="anchored" data-anchor-id="cortex-exact-recovery-of-the-four-author-gene-sets">Cortex: exact recovery of the four author gene sets</h2>
+<p>Zhang et al.’s <a href="https://doi.org/10.5281/zenodo.15374632">original Zenodo deposit</a> contains code and numerical results associated with the Science study. The source count matrix agrees exactly with the GEO matrix after matching identifiers and library names. The reproduction uses <strong>all 20 samples across five treatment groups</strong>, including PFF-related arms, with the original <code>~group</code> design. <span class="citation" data-cites="Zhang2025_40906862">Zhang et al. (<a href="#ref-Zhang2025_40906862" role="doc-biblioref">2025</a>)</span></p>
+<p>The supplied code retains genes with at least ten counts in at least four samples, resulting in 21,388 genes. DESeq2’s original <code>results()</code> behavior uses alpha = 0.1 for independent filtering, followed by the authors’ final <strong>adjusted p &lt; 0.05</strong> selection. Keeping that distinction is necessary for an accurate reproduction.</p>
+<div id="36ae7177" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display cell-output-markdown">
+<div class="table-scroll">
+<table class="dataframe table table-sm table-striped evidence-table small">
+<thead>
+<tr>
+<th>
+Author contrast versus control
+</th>
+<th>
+Genes
+</th>
+<th>
+Author and reproduced FDR count
+</th>
+<th>
+Higher
+</th>
+<th>
+Lower
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+PFF
+</td>
+<td>
+21388
+</td>
+<td>
+109
+</td>
+<td>
+58
+</td>
+<td>
+51
+</td>
+</tr>
+<tr>
+<td>
+PM
+</td>
+<td>
+21388
+</td>
+<td>
+1205
+</td>
+<td>
+688
+</td>
+<td>
+517
+</td>
+</tr>
+<tr>
+<td>
+PMPFF
+</td>
+<td>
+21388
+</td>
+<td>
+1222
+</td>
+<td>
+659
+</td>
+<td>
+563
+</td>
+</tr>
+<tr>
+<td>
+PMPFFPM
+</td>
+<td>
+21388
+</td>
+<td>
+639
+</td>
+<td>
+330
+</td>
+<td>
+309
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<figure class="research-figure figure">
+<a href="assets/figures/replication_pm/cortex_replication_benchmark.svg"><img loading="lazy" width="4140" height="2580" src="assets/figures/replication_pm/cortex_replication_benchmark.png" alt="Count-based reproduction of the original five-condition cortex model (20 animals; four per condition). A: TMM logCPM PCA of the 500 most variable genes, scaled to unit variance as in the deposited code. B–D: original and recomputed discovery counts and maximum-likelihood log2 fold changes. Orange lines indicate identity; hexbin color encodes log gene density. E–F: sensitivity to using only the eight PM/PBS animals. The contingency includes only genes with finite adjusted values in both fits; full source tables retain missing values. This is computational reproduction, not independent biological replication." class="figure-img"></a>
+<figcaption>
+Count-based reproduction of the original five-condition cortex model (20 animals; four per condition). A: TMM logCPM PCA of the 500 most variable genes, scaled to unit variance as in the deposited code. B–D: original and recomputed discovery counts and maximum-likelihood log2 fold changes. Orange lines indicate identity; hexbin color encodes log gene density. E–F: sensitivity to using only the eight PM/PBS animals. The contingency includes only genes with finite adjusted values in both fits; full source tables retain missing values. This is computational reproduction, not independent biological replication. <span class="figure-links"><a href="assets/figures/replication_pm/cortex_replication_benchmark.svg">SVG</a> · <a href="assets/figures/replication_pm/cortex_replication_benchmark.pdf">PDF</a></span>
+</figcaption>
+</figure>
+</div>
+</div>
+<p>The reproduced counts are <strong>109, 1,205, 1,222, and 639</strong>, with <strong>zero discordant significant genes</strong> in all four comparisons. Across contrasts, the largest absolute difference in MLE log₂FC is approximately 8.12 × 10⁻⁵ and the largest difference in nominal p is 1.94 × 10⁻⁶. All coefficient fits converge. The exact-set result refers to the deposited count-based inference, rather than independent reconstruction of sequencing alignment or every figure in the paper.</p>
+<p>The original-code PCA uses the 500 most variable TMM log₂CPM genes with gene-variance scaling. It recovers PC1 = <strong>29.2014%</strong> and PC2 = <strong>9.7606%</strong>, agreeing with the published rounded 29.2% and 9.8%. The manuscript mentions a different preliminary filtering function; the reproduction follows the deposited code and records that discrepancy.</p>
+<div id="3a1cf759" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display cell-output-markdown">
+<figure class="research-figure figure">
+<a href="assets/figures/replication_pm/cortex_multicondition_signature.svg"><img loading="lazy" width="4140" height="2700" src="assets/figures/replication_pm/cortex_multicondition_signature.png" alt="A: union of the eight genes with smallest author FDR in each condition. Colors show recomputed apeglm-shrunken log2 effects; black dots mark the original Wald BH FDR <0.05. The top Y-linked genes have large MLEs but near-zero shrunken effects; see the separate marker QC diagnostic before interpreting mechanism. B: exact intersections of reproduced FDR sets, including 582 PM-specific genes and 323 exclusive to the PM/PM–PFF pair. C: the eight smallest-author-FDR genes in the deposited GO:0002443 leading edge (leukocyte-mediated immunity). Pointwise intervals are original-model MLE ±1.96 SE; they do not adjust for gene selection. All contrasts share the same four PBS animals. GO membership was verified from the author table; enrichment was not independently recomputed." class="figure-img"></a>
+<figcaption>
+A: union of the eight genes with smallest author FDR in each condition. Colors show recomputed apeglm-shrunken log2 effects; black dots mark the original Wald BH FDR &lt;0.05. The top Y-linked genes have large MLEs but near-zero shrunken effects; see the separate marker QC diagnostic before interpreting mechanism. B: exact intersections of reproduced FDR sets, including 582 PM-specific genes and 323 exclusive to the PM/PM–PFF pair. C: the eight smallest-author-FDR genes in the deposited GO:0002443 leading edge (leukocyte-mediated immunity). Pointwise intervals are original-model MLE ±1.96 SE; they do not adjust for gene selection. All contrasts share the same four PBS animals. GO membership was verified from the author table; enrichment was not independently recomputed. <span class="figure-links"><a href="assets/figures/replication_pm/cortex_multicondition_signature.svg">SVG</a> · <a href="assets/figures/replication_pm/cortex_multicondition_signature.pdf">PDF</a></span>
+</figcaption>
+</figure>
+</div>
+</div>
+<p><strong>A successful fit is not proof of an exposure mechanism.</strong> The leading reproduced genes include the Y-linked genes <em>Ddx3y, Uty,</em> and <em>Kdm5d</em>. All four PBS controls have zero raw counts for these genes, whereas other treatment groups contain heterogeneous counts. This pattern raises a possible sex-composition or sample-identity issue. The available metadata do not establish the animals’ sex, and the authors’ model has no sex covariate. We preserve the reproducible numerical result while flagging this unresolved source-quality question; we do not infer sample sex from three genes or assign all expression changes to PM2.5.</p>
+<div id="2174e229" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display cell-output-markdown">
+<figure class="research-figure figure">
+<a href="assets/figures/replication_pm/cortex_marker_qc.svg"><img loading="lazy" width="4020" height="1500" src="assets/figures/replication_pm/cortex_marker_qc.png" alt="Observed source counts for Ddx3y, Uty, Kdm5d and Xist in every cortex animal. A: normalized expression with condition labels; no animals are omitted. B: Xist versus the sum of three Y-linked markers, without classification or an exposure-effect test. All four PBS animals have zero raw counts for each Y marker, while other conditions contain heterogeneous values. These genes also rank at the top of the original Wald FDR tables but shrink toward zero with apeglm. This is a diagnostic flag for independently verifying sample sex, identity and other technical explanations. Sex cannot be assigned or a confounder established from this plot alone. The original group-only model is preserved." class="figure-img"></a>
+<figcaption>
+Observed source counts for Ddx3y, Uty, Kdm5d and Xist in every cortex animal. A: normalized expression with condition labels; no animals are omitted. B: Xist versus the sum of three Y-linked markers, without classification or an exposure-effect test. All four PBS animals have zero raw counts for each Y marker, while other conditions contain heterogeneous values. These genes also rank at the top of the original Wald FDR tables but shrink toward zero with apeglm. This is a diagnostic flag for independently verifying sample sex, identity and other technical explanations. Sex cannot be assigned or a confounder established from this plot alone. The original group-only model is preserved. <span class="figure-links"><a href="assets/figures/replication_pm/cortex_marker_qc.svg">SVG</a> · <a href="assets/figures/replication_pm/cortex_marker_qc.pdf">PDF</a></span>
+</figcaption>
+</figure>
+</div>
+</div>
+<p><a href="downloads/replication_pm/cortex_marker_expression_by_animal.csv">Marker counts by animal</a></p>
+<p>The <strong>1,205-gene author reproduction</strong> differs from the <strong>1,167-gene eight-sample primary contrast</strong> because the analysis population, dispersion estimates, filter, and implementation differ. They answer related questions under different models and must not be substituted for one another.</p>
+</section>
+<section id="hypothalamus-an-underdetermined-ruvg-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="hypothalamus-an-underdetermined-ruvg-workflow">Hypothalamus: an underdetermined RUVg workflow</h2>
+<p>Rajagopalan et al.&nbsp;describe lane normalization, empirical control genes and RUVg before limma/edgeR analysis. The exact 5,000 control-gene identities and number of unwanted factors are unavailable. The control-selection wording is also internally ambiguous. Those parameters cannot be inferred uniquely from the deposited counts. <span class="citation" data-cites="Rajagopalan2020_32780721">Rajagopalan et al. (<a href="#ref-Rajagopalan2020_32780721" role="doc-biblioref">2020</a>)</span></p>
+<p>A transparent sensitivity analysis includes all 11 FA/PM/HFD libraries and the 50,417 features shared across files. Ninety-one HFD-only source rows are excluded rather than filled with invented zeros. GENCODE M13 protein-coding annotation and a stated CPM filter yield 13,398 genes. A TMM/voom model <strong>without RUVg</strong> produces zero PM genes and 3,600 HFD genes at the reconstructed abundance, absolute log₂FC &gt; 0.8, and BH &lt; 0.05 gates. The original supplementary hypothalamus Venn diagram implies 17 PM genes and 761 HFD genes.</p>
+<div id="27d94758" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display cell-output-markdown">
+<figure class="research-figure figure">
+<a href="assets/figures/replication_pm/hypothalamus_method_sensitivity.svg"><img loading="lazy" width="3720" height="2880" src="assets/figures/replication_pm/hypothalamus_method_sensitivity.png" alt="Explicit partial methodological reconstruction; the original RUVg controls and number of unwanted factors were not recovered. All 11 animals are included: FA=4, PM=3, HFD=4. Shared source features were restricted to GENCODE M13 protein-coding symbols; CPM >2 in at least three samples, TMM/voom and limma moderated tests were used. The declared reconstruction gate is BH FDR <0.05, |log2FC| >0.8 and AveExpr >1. A: PCA of 500 variable unadjusted logCPM genes, centered without scaling. B: diet and exposure remain separate contrasts; orange denotes passing either contrast gate. C: union of ten smallest-FDR genes per contrast; row z scores describe expression patterns. D: published 17 PM genes, primary PyDESeq2 11, independent R DESeq2 12, and unadjusted limma 0 use different models and gene universes. These differences cannot establish biological nonreplication or the validity of the unavailable original adjustment." class="figure-img"></a>
+<figcaption>
+Explicit partial methodological reconstruction; the original RUVg controls and number of unwanted factors were not recovered. All 11 animals are included: FA=4, PM=3, HFD=4. Shared source features were restricted to GENCODE M13 protein-coding symbols; CPM &gt;2 in at least three samples, TMM/voom and limma moderated tests were used. The declared reconstruction gate is BH FDR &lt;0.05, |log2FC| &gt;0.8 and AveExpr &gt;1. A: PCA of 500 variable unadjusted logCPM genes, centered without scaling. B: diet and exposure remain separate contrasts; orange denotes passing either contrast gate. C: union of ten smallest-FDR genes per contrast; row z scores describe expression patterns. D: published 17 PM genes, primary PyDESeq2 11, independent R DESeq2 12, and unadjusted limma 0 use different models and gene universes. These differences cannot establish biological nonreplication or the validity of the unavailable original adjustment. <span class="figure-links"><a href="assets/figures/replication_pm/hypothalamus_method_sensitivity.svg">SVG</a> · <a href="assets/figures/replication_pm/hypothalamus_method_sensitivity.pdf">PDF</a></span>
+</figcaption>
+</figure>
+</div>
+</div>
+<p>This is <strong>partial methodological sensitivity, not exact reproduction</strong>. Differences between the main figure and supplement abundance gates and an apparent supplementary-caption tissue error are recorded in the audit. The seven-animal primary analysis and its 11 BH discoveries remain unchanged. Recovering the original RUVg controls, factor count, and executable analysis would be necessary for a stronger computational claim.</p>
+</section>
+<section id="mirna-target-direction-versus-multiplicity" class="level2">
+<h2 class="anchored" data-anchor-id="mirna-target-direction-versus-multiplicity">miRNA: target direction versus multiplicity</h2>
+<p>Ku et al.’s Figure 6 highlights miR-574-5p. In the nine deposited arrays, its signal is lower at both doses. At 5 mg/kg, the difference is <strong>−0.26945 original signal units</strong>. The nominal unmoderated LSD comparison gives p = <strong>0.0368</strong> and the primary limma comparison gives p = <strong>0.0253</strong>, but limma BH q = <strong>0.312</strong>. <span class="citation" data-cites="Ku2017_28851397">Ku et al. (<a href="#ref-Ku2017_28851397" role="doc-biblioref">2017</a>)</span></p>
+<div id="ff570c8e" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display cell-output-markdown">
+<figure class="research-figure figure">
+<a href="assets/figures/replication_mirna_ozone/mirna_author_reproduction.svg"><img loading="lazy" width="3000" height="2375" src="assets/figures/replication_mirna_ozone/mirna_author_reproduction.png" alt="Four-panel microarray reproduction audit. A: all nine source animals for the prespecified miR-574-5p target; black marks show mean ± SE. B: signal differences with limma and unmoderated LSD pointwise 95% intervals. C: nominal and BH-adjusted discovery counts across 1,245 fixed features, with each contrast adjusted separately. D: a new descriptive control/high-dose heatmap of the 20 highest-variance features plus the author target, row z scored and hierarchically ordered (average linkage, Euclidean distance); C1–C3 = control, H1–H3 = high dose. The original Figure 6a row selection is unreported. qPCR and functional experiments are separate assays." class="figure-img"></a>
+<figcaption>
+Four-panel microarray reproduction audit. A: all nine source animals for the prespecified miR-574-5p target; black marks show mean ± SE. B: signal differences with limma and unmoderated LSD pointwise 95% intervals. C: nominal and BH-adjusted discovery counts across 1,245 fixed features, with each contrast adjusted separately. D: a new descriptive control/high-dose heatmap of the 20 highest-variance features plus the author target, row z scored and hierarchically ordered (average linkage, Euclidean distance); C1–C3 = control, H1–H3 = high dose. The original Figure 6a row selection is unreported. qPCR and functional experiments are separate assays. <span class="figure-links"><a href="assets/figures/replication_mirna_ozone/mirna_author_reproduction.svg">SVG</a> · <a href="assets/figures/replication_mirna_ozone/mirna_author_reproduction.pdf">PDF</a></span>
+</figcaption>
+</figure>
+</div>
+</div>
+<p>The omnibus unmoderated ANOVA gives p = <strong>0.0788</strong>; therefore a protected LSD procedure requiring a significant omnibus test would not proceed. The paper describes ANOVA/LSD generally without supplying the array-specific gate, feature-selection rule, or complete GeneSpring configuration. We report the alternative interpretations explicitly. The new descriptive heatmap is selected by a documented rule and does not claim to recover the unknown original Figure 6 row selection.</p>
+<p>The direction and nominal high-dose evidence agree with the microarray claim, while array-wide FDR evidence does not confirm that target. These arrays cannot reproduce the separate qPCR, BACE1, ChIP, rescue, protein, or behavioral experiments. They do not by themselves establish or refute those mechanisms.</p>
+</section>
+<section id="ozone-recover-the-author-labels-compare-matched-effects" class="level2">
+<h2 class="anchored" data-anchor-id="ozone-recover-the-author-labels-compare-matched-effects">Ozone: recover the author labels, compare matched effects</h2>
+<p>The deposited E4-versus-E3 CSV is a <strong>genotype result table</strong>, not an exposure count matrix. Its original nominal p &lt; 0.05 and |log₂FC| &gt; 0.3 rule recovers exactly <strong>1,490 higher and 1,011 lower genes</strong>, matching supplementary S2. Other comparisons in the paper use |log₂FC| &gt; 0.1. Thresholds are matched to the actual contrast. <span class="citation" data-cites="Nakamya2025_40141051">Nakamya et al. (<a href="#ref-Nakamya2025_40141051" role="doc-biblioref">2025</a>)</span></p>
+<p>The new raw-read quantification uses Salmon/tximport rather than the original HISAT2/featureCounts workflow. Candidate count models reuse the fixed 18,537-gene filter and effective-length offsets but reestimate dispersions for each candidate design/subset. Default DESeq2 outlier replacement for sufficiently replicated groups is restored for these reproduction candidates; it remains separate from the primary factorial model.</p>
+<div id="77b53352" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display cell-output-markdown">
+<figure class="research-figure figure">
+<a href="assets/figures/replication_mirna_ozone/ozone_author_concordance.svg"><img loading="lazy" width="3000" height="2500" src="assets/figures/replication_mirna_ozone/ozone_author_concordance.png" alt="Reproduction candidates versus source author results. A: all common finite exact-symbol genotype effects. B: 17-month O3 E4/E3 effects conditional on author S3 selection. C: prespecified targets, published point estimates and candidate MLE ± 1.96 SE pointwise intervals. D: full nominal selection counts from different quantified and filtered universes; counts alone do not measure replication. Global genotype uses nominal p < 0.05 and |log2FC| > 0.3; the 17-month O3 subgroup uses p < 0.05 and |log2FC| > 0.1. Current Salmon quantification differs from the source HISAT2/featureCounts workflow. These comparisons use the same animals, rather than an independent cohort." class="figure-img"></a>
+<figcaption>
+Reproduction candidates versus source author results. A: all common finite exact-symbol genotype effects. B: 17-month O3 E4/E3 effects conditional on author S3 selection. C: prespecified targets, published point estimates and candidate MLE ± 1.96 SE pointwise intervals. D: full nominal selection counts from different quantified and filtered universes; counts alone do not measure replication. Global genotype uses nominal p &lt; 0.05 and |log2FC| &gt; 0.3; the 17-month O3 subgroup uses p &lt; 0.05 and |log2FC| &gt; 0.1. Current Salmon quantification differs from the source HISAT2/featureCounts workflow. These comparisons use the same animals, rather than an independent cohort. <span class="figure-links"><a href="assets/figures/replication_mirna_ozone/ozone_author_concordance.svg">SVG</a> · <a href="assets/figures/replication_mirna_ozone/ozone_author_concordance.pdf">PDF</a></span>
+</figcaption>
+</figure>
+</div>
+</div>
+<p>For the pooled genotype-only candidate, <strong>15,559 common finite effects</strong> have Spearman ρ = <strong>0.865</strong>. It selects 2,362 nominal genes, compared with the original 2,501. In their common testable universe, 1,527 selected genes overlap, with Jaccard approximately <strong>0.612</strong>.</p>
+<p>For E4 versus E3 at 17 months under ozone, <strong>858 of 959</strong> published S3 genes have exact-symbol finite estimates. Their effect correlation is <strong>0.962</strong>, with <strong>98.8%</strong> direction agreement; 543 retain the candidate nominal selection and 71 retain BH &lt; 0.05. This correlation is conditional on the authors’ selected list and the same animals. It is not an unbiased whole-transcriptome or independent-replication estimate.</p>
+<p>All four highlighted hemoglobin genes retain negative E4/E3 effects and candidate BH significance. Other highlighted genes retain direction without the same statistical support. Bulk hemoglobin expression cannot distinguish blood-brain-barrier function, retained vascular material, cell composition, and expression regulation without additional measurements.</p>
+<div id="e8d78944" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display cell-output-markdown">
+<figure class="research-figure figure">
+<a href="assets/figures/replication_mirna_ozone/ozone_factor_upset_reproduction.svg"><img loading="lazy" width="3000" height="2000" src="assets/figures/replication_mirna_ozone/ozone_factor_upset_reproduction.png" alt="Factor-intersection comparison inspired by original Figure 1, restricted to the same 15,661 exact-symbol genes testable in all three candidate models. Original S2 lists and candidate marginal models are shown separately for higher and lower expression, with matched vertical scales within each direction. All seven nonempty genotype/age/exposure membership patterns are shown, including zero counts. Global genotype and age use nominal p < 0.05 and |log2FC| > 0.3; exposure uses p < 0.05 and |log2FC| > 0.1. These correlated list memberships are not interaction tests or evidence of relative pollutant toxicity." class="figure-img"></a>
+<figcaption>
+Factor-intersection comparison inspired by original Figure 1, restricted to the same 15,661 exact-symbol genes testable in all three candidate models. Original S2 lists and candidate marginal models are shown separately for higher and lower expression, with matched vertical scales within each direction. All seven nonempty genotype/age/exposure membership patterns are shown, including zero counts. Global genotype and age use nominal p &lt; 0.05 and |log2FC| &gt; 0.3; exposure uses p &lt; 0.05 and |log2FC| &gt; 0.1. These correlated list memberships are not interaction tests or evidence of relative pollutant toxicity. <span class="figure-links"><a href="assets/figures/replication_mirna_ozone/ozone_factor_upset_reproduction.svg">SVG</a> · <a href="assets/figures/replication_mirna_ozone/ozone_factor_upset_reproduction.pdf">PDF</a></span>
+</figcaption>
+</figure>
+</div>
+</div>
+<p>The UpSet figure compares intersections of age, genotype, and exposure lists on a shared exact-symbol universe. Set overlap is descriptive and does not test statistical interaction. The <a href="./advanced_results.html">formal response-interaction analyses</a> address that separate question.</p>
+</section>
+<section id="what-remains-unresolved" class="level2">
+<h2 class="anchored" data-anchor-id="what-remains-unresolved">What remains unresolved</h2>
+<p>The strongest result is exact computational recovery of the cortex author gene sets, accompanied by an unresolved Y-chromosome quality signal. Hypothalamus reproduction is limited by missing RUVg settings. miRNA supports the original target direction and nominal high-dose evidence under an unprotected comparison, while multiplicity and omnibus gating change the conclusion. Ozone demonstrates substantial matched-effect concordance across quantifiers, without reproducing every historical filtering, annotation, design and software choice.</p>
+<p><a href="downloads/replication_pm/paper_claim_audit.csv">PM claim audit</a> · <a href="downloads/replication_pm/cortex_gene_level_metrics.csv">Cortex gene-level metrics</a> · <a href="downloads/replication_mirna_ozone/paper_replication_audit.csv">miRNA and ozone claim audit</a> · <a href="downloads/replication_mirna_ozone/mirna_author_targets.csv">miRNA target statistics</a> · <a href="downloads/replication_mirna_ozone/ozone_concordance_genotype_pooled.csv.gz">Ozone matched genotype effects</a> · <a href="downloads/replication_mirna_ozone/ozone_concordance_old_ozone_genotype.csv.gz">Ozone matched S3 effects</a></p>
+<p>All source URLs, hashes, comparison universes, software sessions, and limitations are preserved with the results. Original article reading copies remain in the local literature library; the public report links to the original publications.</p>
+
+
+<!-- -->
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Ku2017_28851397" class="csl-entry" role="listitem">
+Ku, Tingting, Ben Li, Rui Gao, et al. 2017. <span>“NF-κB-Regulated microRNA-574-5p Underlies Synaptic and Cognitive Impairment in Response to Atmospheric PM2.5 Aspiration.”</span> <em>Particle and Fibre Toxicology</em> 14 (1): 34. <a href="https://doi.org/10.1186/s12989-017-0215-3">https://doi.org/10.1186/s12989-017-0215-3</a>.
+</div>
+<div id="ref-Nakamya2025_40141051" class="csl-entry" role="listitem">
+Nakamya, Mary F, Kaili Hu, Chunsun Jiang, Zechen Chong, and Rui-Ming Liu. 2025. <span>“Age- and ApoE Genotype-Dependent Transcriptomic Responses to O3 in the Hippocampus of Mice.”</span> <em>International Journal of Molecular Sciences</em> 26 (6). <a href="https://doi.org/10.3390/ijms26062407">https://doi.org/10.3390/ijms26062407</a>.
+</div>
+<div id="ref-Rajagopalan2020_32780721" class="csl-entry" role="listitem">
+Rajagopalan, Sanjay, Bongsoo Park, Rengasamy Palanivel, et al. 2020. <span>“Metabolic Effects of Air Pollution Exposure and Reversibility.”</span> <em>The Journal of Clinical Investigation</em> 130 (11): 6034–40. <a href="https://doi.org/10.1172/JCI137315">https://doi.org/10.1172/JCI137315</a>.
+</div>
+<div id="ref-Zhang2025_40906862" class="csl-entry" role="listitem">
+Zhang, Xiaodi, Haiqing Liu, Xiao Wu, et al. 2025. <span>“Lewy Body Dementia Promotion by Air Pollutants.”</span> <em>Science (New York, N.Y.)</em> 389 (6764): eadu4132. <a href="https://doi.org/10.1126/science.adu4132">https://doi.org/10.1126/science.adu4132</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/amarusimonaguerojimenez\.github\.io\/Air-Pollution-Brain-Omics-Mouse\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Reproducing the original studies"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Source code, published gene lists, matched contrasts, and unresolved methods"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> _report_utils <span class="im">import</span> ROOT, summary, read_table, show_table, figure</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>pm <span class="op">=</span> json.loads((ROOT <span class="op">/</span> <span class="st">"results/replication_pm/cortex_refit_summary.json"</span>).read_text())</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>mo <span class="op">=</span> summary(<span class="st">"replication_mirna_ozone"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>caps <span class="op">=</span> json.loads((ROOT <span class="op">/</span> <span class="st">"results/replication_mirna_ozone/figure_captions.json"</span>).read_text())</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>pm_caps <span class="op">=</span> json.loads((ROOT <span class="op">/</span> <span class="st">"results/replication_pm/figure_manifest.json"</span>).read_text())</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> pm_panel(stem):</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    figure(<span class="st">"replication_pm"</span>, stem, pm_caps[stem][<span class="st">"caption"</span>])</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mo_panel(stem):</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    figure(<span class="st">"replication_mirna_ozone"</span>, stem, caps[stem][<span class="st">"en"</span>])</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## What constitutes reproduction here?</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>We compare the reanalysis with **the original authors' code, deposited numerical results, and supplementary tables**, using the same source animals. Computational reproduction checks whether the reported analysis can be recovered. It does not add biological replicates or independently validate a mechanism. Matching gene counts alone is insufficient: we compare feature identities, effect sizes, p-values, selection rules, and analytical populations.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Study <span class="pp">|</span> Source anchor <span class="pp">|</span> Outcome <span class="pp">|</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Cortex, GSE297423 <span class="pp">|</span> Original Zenodo code, counts, and four DE tables <span class="pp">|</span> Exact significant-gene sets recovered in all four comparisons <span class="pp">|</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Hypothalamus, GSE145840 <span class="pp">|</span> JCI methods and supplementary figure <span class="pp">|</span> Partial method sensitivity; original RUVg specification unavailable <span class="pp">|</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Hippocampal miRNA, GSE93967 <span class="pp">|</span> Figure 6 target and deposited arrays <span class="pp">|</span> Direction and nominal high-dose evidence agree; not array-wide FDR confirmation <span class="pp">|</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Hippocampal ozone, E-MTAB-14917 <span class="pp">|</span> Author genotype CSV and supplementary S2/S3 <span class="pp">|</span> Exact reconstruction of deposited selection; partial cross-pipeline effect concordance <span class="pp">|</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>These layers complement the <span class="co">[</span><span class="ot">primary analyses</span><span class="co">](index.qmd)</span>, which retain their original study-specific models and thresholds.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## Cortex: exact recovery of the four author gene sets</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Zhang et al.'s <span class="co">[</span><span class="ot">original Zenodo deposit</span><span class="co">](https://doi.org/10.5281/zenodo.15374632)</span> contains code and numerical results associated with the Science study. The source count matrix agrees exactly with the GEO matrix after matching identifiers and library names. The reproduction uses **all 20 samples across five treatment groups**, including PFF-related arms, with the original <span class="in">`~group`</span> design. @Zhang2025_40906862</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>The supplied code retains genes with at least ten counts in at least four samples, resulting in 21,388 genes. DESeq2's original <span class="in">`results()`</span> behavior uses alpha = 0.1 for independent filtering, followed by the authors' final **adjusted p &lt; 0.05** selection. Keeping that distinction is necessary for an accurate reproduction.</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>show_table(pd.DataFrame([</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"Author contrast versus control"</span>: k, <span class="st">"Genes"</span>: v[<span class="st">"retained_genes"</span>],</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>     <span class="st">"Author and reproduced FDR count"</span>: v[<span class="st">"FDR05"</span>], <span class="st">"Higher"</span>: v[<span class="st">"up"</span>], <span class="st">"Lower"</span>: v[<span class="st">"down"</span>]}</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> k, v <span class="kw">in</span> pm[<span class="st">"contrasts"</span>].items()</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>]))</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>pm_panel(<span class="st">"cortex_replication_benchmark"</span>)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>The reproduced counts are **109, 1,205, 1,222, and 639**, with **zero discordant significant genes** in all four comparisons. Across contrasts, the largest absolute difference in MLE log₂FC is approximately 8.12 × 10⁻⁵ and the largest difference in nominal p is 1.94 × 10⁻⁶. All coefficient fits converge. The exact-set result refers to the deposited count-based inference, rather than independent reconstruction of sequencing alignment or every figure in the paper.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>The original-code PCA uses the 500 most variable TMM log₂CPM genes with gene-variance scaling. It recovers PC1 = **29.2014%** and PC2 = **9.7606%**, agreeing with the published rounded 29.2% and 9.8%. The manuscript mentions a different preliminary filtering function; the reproduction follows the deposited code and records that discrepancy.</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>pm_panel(<span class="st">"cortex_multicondition_signature"</span>)</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>**A successful fit is not proof of an exposure mechanism.** The leading reproduced genes include the Y-linked genes *Ddx3y, Uty,* and *Kdm5d*. All four PBS controls have zero raw counts for these genes, whereas other treatment groups contain heterogeneous counts. This pattern raises a possible sex-composition or sample-identity issue. The available metadata do not establish the animals' sex, and the authors' model has no sex covariate. We preserve the reproducible numerical result while flagging this unresolved source-quality question; we do not infer sample sex from three genes or assign all expression changes to PM2.5.</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>pm_panel(<span class="st">"cortex_marker_qc"</span>)</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Marker counts by animal</span><span class="co">](downloads/replication_pm/cortex_marker_expression_by_animal.csv)</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>The **1,205-gene author reproduction** differs from the **1,167-gene eight-sample primary contrast** because the analysis population, dispersion estimates, filter, and implementation differ. They answer related questions under different models and must not be substituted for one another.</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="fu">## Hypothalamus: an underdetermined RUVg workflow</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>Rajagopalan et al. describe lane normalization, empirical control genes and RUVg before limma/edgeR analysis. The exact 5,000 control-gene identities and number of unwanted factors are unavailable. The control-selection wording is also internally ambiguous. Those parameters cannot be inferred uniquely from the deposited counts. @Rajagopalan2020_32780721</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>A transparent sensitivity analysis includes all 11 FA/PM/HFD libraries and the 50,417 features shared across files. Ninety-one HFD-only source rows are excluded rather than filled with invented zeros. GENCODE M13 protein-coding annotation and a stated CPM filter yield 13,398 genes. A TMM/voom model **without RUVg** produces zero PM genes and 3,600 HFD genes at the reconstructed abundance, absolute log₂FC &gt; 0.8, and BH &lt; 0.05 gates. The original supplementary hypothalamus Venn diagram implies 17 PM genes and 761 HFD genes.</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>pm_panel(<span class="st">"hypothalamus_method_sensitivity"</span>)</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>This is **partial methodological sensitivity, not exact reproduction**. Differences between the main figure and supplement abundance gates and an apparent supplementary-caption tissue error are recorded in the audit. The seven-animal primary analysis and its 11 BH discoveries remain unchanged. Recovering the original RUVg controls, factor count, and executable analysis would be necessary for a stronger computational claim.</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="fu">## miRNA: target direction versus multiplicity</span></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>Ku et al.'s Figure 6 highlights miR-574-5p. In the nine deposited arrays, its signal is lower at both doses. At 5 mg/kg, the difference is **−0.26945 original signal units**. The nominal unmoderated LSD comparison gives p = **0.0368** and the primary limma comparison gives p = **0.0253**, but limma BH q = **0.312**. @Ku2017_28851397</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>mo_panel(<span class="st">"mirna_author_reproduction"</span>)</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>The omnibus unmoderated ANOVA gives p = **0.0788**; therefore a protected LSD procedure requiring a significant omnibus test would not proceed. The paper describes ANOVA/LSD generally without supplying the array-specific gate, feature-selection rule, or complete GeneSpring configuration. We report the alternative interpretations explicitly. The new descriptive heatmap is selected by a documented rule and does not claim to recover the unknown original Figure 6 row selection.</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>The direction and nominal high-dose evidence agree with the microarray claim, while array-wide FDR evidence does not confirm that target. These arrays cannot reproduce the separate qPCR, BACE1, ChIP, rescue, protein, or behavioral experiments. They do not by themselves establish or refute those mechanisms.</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ozone: recover the author labels, compare matched effects</span></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>The deposited E4-versus-E3 CSV is a **genotype result table**, not an exposure count matrix. Its original nominal p &lt; 0.05 and |log₂FC| &gt; 0.3 rule recovers exactly **1,490 higher and 1,011 lower genes**, matching supplementary S2. Other comparisons in the paper use |log₂FC| &gt; 0.1. Thresholds are matched to the actual contrast. @Nakamya2025_40141051</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>The new raw-read quantification uses Salmon/tximport rather than the original HISAT2/featureCounts workflow. Candidate count models reuse the fixed 18,537-gene filter and effective-length offsets but reestimate dispersions for each candidate design/subset. Default DESeq2 outlier replacement for sufficiently replicated groups is restored for these reproduction candidates; it remains separate from the primary factorial model.</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>mo_panel(<span class="st">"ozone_author_concordance"</span>)</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>For the pooled genotype-only candidate, **15,559 common finite effects** have Spearman ρ = **0.865**. It selects 2,362 nominal genes, compared with the original 2,501. In their common testable universe, 1,527 selected genes overlap, with Jaccard approximately **0.612**.</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>For E4 versus E3 at 17 months under ozone, **858 of 959** published S3 genes have exact-symbol finite estimates. Their effect correlation is **0.962**, with **98.8%** direction agreement; 543 retain the candidate nominal selection and 71 retain BH &lt; 0.05. This correlation is conditional on the authors' selected list and the same animals. It is not an unbiased whole-transcriptome or independent-replication estimate.</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>All four highlighted hemoglobin genes retain negative E4/E3 effects and candidate BH significance. Other highlighted genes retain direction without the same statistical support. Bulk hemoglobin expression cannot distinguish blood-brain-barrier function, retained vascular material, cell composition, and expression regulation without additional measurements.</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>mo_panel(<span class="st">"ozone_factor_upset_reproduction"</span>)</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>The UpSet figure compares intersections of age, genotype, and exposure lists on a shared exact-symbol universe. Set overlap is descriptive and does not test statistical interaction. The <span class="co">[</span><span class="ot">formal response-interaction analyses</span><span class="co">](advanced_results.qmd)</span> address that separate question.</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="fu">## What remains unresolved</span></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>The strongest result is exact computational recovery of the cortex author gene sets, accompanied by an unresolved Y-chromosome quality signal. Hypothalamus reproduction is limited by missing RUVg settings. miRNA supports the original target direction and nominal high-dose evidence under an unprotected comparison, while multiplicity and omnibus gating change the conclusion. Ozone demonstrates substantial matched-effect concordance across quantifiers, without reproducing every historical filtering, annotation, design and software choice.</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">PM claim audit</span><span class="co">](downloads/replication_pm/paper_claim_audit.csv)</span> ·</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Cortex gene-level metrics</span><span class="co">](downloads/replication_pm/cortex_gene_level_metrics.csv)</span> ·</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">miRNA and ozone claim audit</span><span class="co">](downloads/replication_mirna_ozone/paper_replication_audit.csv)</span> ·</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">miRNA target statistics</span><span class="co">](downloads/replication_mirna_ozone/mirna_author_targets.csv)</span> ·</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Ozone matched genotype effects</span><span class="co">](downloads/replication_mirna_ozone/ozone_concordance_genotype_pooled.csv.gz)</span> ·</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Ozone matched S3 effects</span><span class="co">](downloads/replication_mirna_ozone/ozone_concordance_old_ozone_genotype.csv.gz)</span></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>All source URLs, hashes, comparison universes, software sessions, and limitations are preserved with the results. Original article reading copies remain in the local literature library; the public report links to the original publications.</span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Public-data reanalysis · Mus musculus</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Measured reference and simulated exposure are distinguished.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

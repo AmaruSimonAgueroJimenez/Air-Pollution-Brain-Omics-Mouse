@@ -1,0 +1,44 @@
+{
+  "created_at_UTC": "2026-10-19T14:27:07.128065+00:00",
+  "secondary_exploratory": true,
+  "source_sha256": {
+    "results/ozone/dds_full_wald.rds": "e9df95c750aa18da621a8056259c3db3d26cc3bc0b7c6bfb7a3fde8616aad38f",
+    "results/ozone/normalized_counts.csv.gz": "2686632bfeae347a1de41c403e11f1ab04849d56b5497cbf5230533b6ae1b324",
+    "results/ozone/de_global_ozone_LRT.csv": "c8b4ba69f88a7a76e8e5b941ec932781f530e1dc6c51b3945e24007e717bd340",
+    "results/ozone/de_M3_E3_O3_vs_FA.csv": "919e87d5d56502dce9c844a29a4a58d550af4dc805c1cc5db4509cdf2d1cdb5a",
+    "results/ozone/de_M3_E4_O3_vs_FA.csv": "903b0afe260773492c050603d627396956b4b1552302b32bb6dad36ea9be591b",
+    "results/ozone/de_M17_E3_O3_vs_FA.csv": "aa8702919f49c643379b0fa149ef81f0e0abb099322bc7d853a93de0eeb639cc",
+    "results/ozone/de_M17_E4_O3_vs_FA.csv": "59f3c30a82eed64be5c977c93077e4cf475c6cf42e56129e62ad97f056ad0519",
+    "results/enrichment/hypothalamus/GSEA_all_terms.tsv": "c62ab88805756ce9211f4f38e0bcf3ce8e92c3f3cf46bf1bd9add1dbdf984d56",
+    "results/enrichment/cortex/GSEA_all_terms.tsv": "45796ae75563d6a84ddea9d60686509070b2ab9b64e1a3a8cc21a57c47718879",
+    "results/enrichment/ozone_M3_E3/GSEA_all_terms.tsv": "acd87baa81f5175152257cc48475433dafc73bc87b73777b6ec3b58d6c5820aa",
+    "results/enrichment/ozone_M3_E4/GSEA_all_terms.tsv": "74fb6eba7db2ccef2510fb8a5e3f9a7da347fc5c28d2eadaedbd26bbf97f3ea0",
+    "results/enrichment/ozone_M17_E3/GSEA_all_terms.tsv": "78c74207e0b57491df875fb1d8460df6b432aa3403b21740ca859c165e344d51",
+    "results/enrichment/ozone_M17_E4/GSEA_all_terms.tsv": "3ab927a99abfff9dc7a65000b5c29bbe25dea68084af60992e3a35ba6acfccee"
+  },
+  "code_sha256": {
+    "scripts/analyze_advanced_omics.py": "cd65d3b2b5ec945568b591df76bdf5062b2e7d7b7605b5dae1e34da3c90624aa",
+    "scripts/analyze_advanced_omics.R": "020ebb54bb068d62bc66d80f95ea8916fae5725b52a50f63f04866cce348123b"
+  },
+  "methods": "Three nested ozone exposure-heterogeneity LRTs and five signed covariance-aware Wald response-difference tests; all24 animals and original18537-gene universe. Effective-length normalization offsets and fitted dispersions preserved; no source re-quantification. Cook filter on, independent filtering off, numerical validity masks before BH. Conditional signed contrasts additionally exclude all-zero required strata.",
+  "multiplicity": "BH within each LRT and each Wald contrast; separate supplementary BH across all three LRT families/all five Wald families. Discovery sets across families are not required to be nested.",
+  "intervals": "Unshrunken pointwise95% Wald intervals MLE\u00b11.9599639845SE; not simultaneous; not cell-level. Primary-effect forest uses the existing stratum tables. Regularized-effect matrix uses apeglm modes only, not changed hypothesis tests.",
+  "GO_display_selection": "Up to2 significant terms per sign per contrast; q then |NES|, skips terms at Jaccard>=0.75 to already selected sets, using union of rank-eligible members. Missing term eligibility remains NA. Original GO term names retained.",
+  "GO_network": "20 terms from ozone M3/APOE4(10 per NES sign), ordered by q,then|NES|;edges Jaccard>=0.25 of rank-eligible gene-set membership;node area proportional set size;deterministic component-grid/circular layout. Not regulation/coexpression/anatomy.",
+  "animal_profiles": "All24 independent animals for each of6 selected age-LRT genes;log2(1+original DESeq2 normalized count), reproducible tiny horizontal jitter, connected means of displayed values, no pairing or inferential errorbars.",
+  "graphics": "PNG300dpi and editable SVG/vector PDF; dense MA points rasterized in SVG/PDF, preserving all points. Both English and Spanish labels; original taxonomy/GO names retained.",
+  "documentation": [
+    {
+      "url": "https://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html#interactions",
+      "accessed_date": "2026-10-19",
+      "used_for": "Interaction coefficients and nested-model LRT interpretation; installed DESeq2 version is separately pinned."
+    }
+  ],
+  "versions": {
+    "numpy": "2.4.3",
+    "pandas": "2.3.3",
+    "matplotlib": "3.10.8",
+    "scipy": "1.17.1",
+    "networkx": "3.6.1"
+  }
+}

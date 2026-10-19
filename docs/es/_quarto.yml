@@ -11,13 +11,15 @@ project:
   - mirna.qmd
   - ozone.qmd
   - enrichment.qmd
+  - advanced_results.qmd
+  - replication.qmd
   - spatial_reference.qmd
   - viewer.qmd
   - reproducibility.qmd
 website:
   title: Contaminación del aire · ómica cerebral
-  description: Reanálisis reproducible de datos públicos de ómica cerebral de ratón,
-    con una referencia espacial medida y una simulación explícita de PM2.5.
+  description: Reanálisis reproducible de datos públicos de ómica cerebral de ratón, con una referencia espacial
+    medida y una simulación explícita de PM2.5.
   reader-mode: true
   navbar:
     background: '#123d46'
@@ -43,6 +45,10 @@ website:
         text: Hipocampo · ozono
       - href: enrichment.qmd
         text: Enriquecimiento funcional
+      - href: advanced_results.qmd
+        text: Interacciones y paneles moleculares
+      - href: replication.qmd
+        text: Reproducción de los artículos
       - href: spatial_reference.qmd
         text: Referencia espacial medida
     - href: viewer.qmd
@@ -56,6 +62,8 @@ website:
     left: Reanálisis de datos públicos · Mus musculus
     right: Se distingue la referencia medida de la exposición simulada.
     border: true
+  site-url: https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/
+  repo-url: https://github.com/AmaruSimonAgueroJimenez/Air-Pollution-Brain-Omics-Mouse
 format:
   html:
     theme: cosmo
@@ -78,7 +86,7 @@ format:
 lang: es
 language:
   title-block-published: Fecha del análisis
-date: 2026-10-18
+date: '2026-10-19'
 date-format: D MMMM YYYY
 bibliography: ../references.bib
 link-citations: true

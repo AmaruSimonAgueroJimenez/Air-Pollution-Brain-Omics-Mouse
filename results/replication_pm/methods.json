@@ -1,0 +1,21 @@
+{
+  "cortex": "Reviewed reimplementation of deposited Zenodo R code: all 20 samples, design ~group; retain >=10 counts in >=4 samples; DESeq2 default normalization, dispersion, Wald and Cook filtering; results() default alpha=0.1 for independent filtering, followed by BH FDR <0.05 for discoveries; apeglm shrinkage. PCA uses TMM logCPM, the 500 most variable genes and scale=TRUE. Downloaded source code was reviewed and never executed wholesale.",
+  "cortex_prose_code_discrepancy": "PCA prose states filterByExpr; deposited code uses >=10 counts in >=4 samples. The original DESeq2 dispersion fit includes all 20 libraries across five groups.",
+  "hypothalamus": "All 11 animals; separate FA, PM and HFD conditions; exact intersection of 50,417 source features with no zero imputation; GENCODE M13 protein-coding symbols; declared CPM >2 in >=3 samples; TMM/voom and limma ~condition moderated tests; PM versus FA and HFD versus FA. Gate: BH FDR <0.05, |log2FC| >0.8 and AveExpr >1. No RUVg or batch factors were invented. This is declared methodological sensitivity, not recovery of the original fit.",
+  "multiplicity": "Cortex: BH within each contrast after default alpha=0.1 independent filtering. Hypothalamus: BH within each contrast across 13,398 tested genes. Forest intervals are pointwise Wald MLE +/-1.96 SE and do not adjust for displayed-gene selection.",
+  "source_identifiers": "Exact Ensembl IDs establish cortex agreement; displayed symbols come from the deposit. Existing primary eight-sample cortex and seven-sample hypothalamus analyses remain unchanged.",
+  "software": {
+    "R": "R version 4.5.2 (2025-10-31)",
+    "DESeq2": "1.50.2",
+    "apeglm": "1.32.0",
+    "edgeR": "4.8.2",
+    "limma": "3.66.0",
+    "Python": "3.14.3",
+    "numpy": "2.4.3",
+    "pandas": "2.3.3",
+    "matplotlib": "3.10.8"
+  },
+  "script_sha256": "c7e6519852b9b26f2255d6f5db5461445ef4704070715a01d89cbfc193739c7a",
+  "R_script_sha256": "ec640c89c2b70d74ffc15bdd36917398175304f4d7111555f4d242fd32cde5c2",
+  "marker_QC": "Descriptive raw and normalized Ddx3y/Uty/Kdm5d/Xist expression in all 20 animals. Independent sex metadata were not recovered. No sex covariate, sample exclusion or mechanistic claim was inferred from the diagnostic."
+}

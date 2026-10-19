@@ -1,0 +1,150 @@
+{
+  "secondary_exploratory": true,
+  "samples": 24,
+  "genes": 18537,
+  "full_model": "~age * genotype * exposure",
+  "original_Wald_results_names": [
+    "Intercept",
+    "age_M17_vs_M3",
+    "genotype_E4_vs_E3",
+    "exposure_O3_vs_FA",
+    "ageM17.genotypeE4",
+    "ageM17.exposureO3",
+    "genotypeE4.exposureO3",
+    "ageM17.genotypeE4.exposureO3"
+  ],
+  "designs": {
+    "genotype_dependent_exposure": {
+      "full": "~age * genotype * exposure",
+      "reduced": "~age * genotype + exposure + age:exposure",
+      "full_rank": 8,
+      "reduced_rank": 6,
+      "nested": true,
+      "df": 2
+    },
+    "age_dependent_exposure": {
+      "full": "~age * genotype * exposure",
+      "reduced": "~age * genotype + exposure + genotype:exposure",
+      "full_rank": 8,
+      "reduced_rank": 6,
+      "nested": true,
+      "df": 2
+    },
+    "three_way_interaction": {
+      "full": "~age * genotype * exposure",
+      "reduced": "~(age + genotype + exposure)^2",
+      "full_rank": 8,
+      "reduced_rank": 7,
+      "nested": true,
+      "df": 1
+    }
+  },
+  "LRT": {
+    "genotype_dependent_exposure": {
+      "df": 2,
+      "genes": 18537,
+      "tested": 18511,
+      "FDR_005": 0,
+      "full_nonconverged": 0,
+      "reduced_nonconverged": 0,
+      "FDR_005_across_three_LRTs": 0
+    },
+    "age_dependent_exposure": {
+      "df": 2,
+      "genes": 18537,
+      "tested": 18511,
+      "FDR_005": 8,
+      "full_nonconverged": 0,
+      "reduced_nonconverged": 0,
+      "FDR_005_across_three_LRTs": 1
+    },
+    "three_way_interaction": {
+      "df": 1,
+      "genes": 18537,
+      "tested": 18511,
+      "FDR_005": 0,
+      "full_nonconverged": 0,
+      "reduced_nonconverged": 0,
+      "FDR_005_across_three_LRTs": 0
+    }
+  },
+  "Wald": {
+    "genotype_response_difference_at_M3": {
+      "tested": 18480,
+      "FDR_005": 6,
+      "required_stratum_all_zero": 34,
+      "nonconverged": 0,
+      "FDR_005_across_five_Wald_tests": 3
+    },
+    "genotype_response_difference_at_M17": {
+      "tested": 18489,
+      "FDR_005": 4,
+      "required_stratum_all_zero": 25,
+      "nonconverged": 0,
+      "FDR_005_across_five_Wald_tests": 3
+    },
+    "age_response_difference_in_E3": {
+      "tested": 18480,
+      "FDR_005": 2,
+      "required_stratum_all_zero": 35,
+      "nonconverged": 0,
+      "FDR_005_across_five_Wald_tests": 2
+    },
+    "age_response_difference_in_E4": {
+      "tested": 18487,
+      "FDR_005": 4,
+      "required_stratum_all_zero": 27,
+      "nonconverged": 0,
+      "FDR_005_across_five_Wald_tests": 3
+    },
+    "three_way_response_difference": {
+      "tested": 18463,
+      "FDR_005": 0,
+      "required_stratum_all_zero": 54,
+      "nonconverged": 0,
+      "FDR_005_across_five_Wald_tests": 0
+    }
+  },
+  "dispersions_preserved": true,
+  "normalization_factor_offsets_preserved": true,
+  "multiplicity": "BH separately within each three LRT and each five Wald families; supplementary all-three LRT/all-five Wald BH columns form different families.",
+  "validity": "Cook filtering enabled; adaptive independent filtering disabled. Nonconverged fits have p-values withheld before BH. Signed Wald contrasts additionally withhold estimates when a required six-animal age/genotype stratum is all-zero.",
+  "intervals": "Pointwise unshrunken Wald MLE +/-1.9599639845 SE; covariance-aware linear combinations from the full fitted model. Not simultaneous intervals and not per-cell intervals.",
+  "scope": "Secondary response-heterogeneity tests, not replication of original author methods. All24 animals, fixed18537-gene universe and original effective-length offsets; no dispersion re-estimation.",
+  "documentation": "https://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html#interactions",
+  "R": "R version 4.5.2 (2025-10-31)",
+  "DESeq2": "1.50.2",
+  "figure_families": 5,
+  "figure_language_versions": 2,
+  "GO_heatmap_terms": 22,
+  "GO_overlap_network": {
+    "contrast": "ozone_M3_E4",
+    "nodes": 20,
+    "edges": 15,
+    "Jaccard_threshold": 0.25,
+    "layout": "Deterministic connected-component grid with circular within-component positions"
+  },
+  "display_genes": [
+    "Ryr3",
+    "Nfasc",
+    "Pex11g",
+    "Ntsr2",
+    "Ap3m1",
+    "Rps24",
+    "Fos",
+    "Gfap",
+    "Aif1",
+    "Trem2"
+  ],
+  "age_response_gene_symbols": [
+    "Ryr3",
+    "Rps24",
+    "Pkig",
+    "Rpl26",
+    "Inpp5d",
+    "Stk11",
+    "Rpl34",
+    "Gm21586"
+  ],
+  "complete": true
+}

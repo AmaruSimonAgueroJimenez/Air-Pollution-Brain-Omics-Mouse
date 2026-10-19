@@ -1,0 +1,58 @@
+{
+  "contrasts": {
+    "PFF": {
+      "retained_genes": 21388,
+      "finite_pvalue": 21378,
+      "finite_padj": 18476,
+      "FDR05": 109,
+      "up": 58,
+      "down": 51,
+      "beta_nonconverged": 0,
+      "independent_filter_alpha": 0.1
+    },
+    "PM": {
+      "retained_genes": 21388,
+      "finite_pvalue": 21378,
+      "finite_padj": 19305,
+      "FDR05": 1205,
+      "up": 688,
+      "down": 517,
+      "beta_nonconverged": 0,
+      "independent_filter_alpha": 0.1
+    },
+    "PMPFF": {
+      "retained_genes": 21388,
+      "finite_pvalue": 21378,
+      "finite_padj": 18061,
+      "FDR05": 1222,
+      "up": 659,
+      "down": 563,
+      "beta_nonconverged": 0,
+      "independent_filter_alpha": 0.1
+    },
+    "PMPFFPM": {
+      "retained_genes": 21388,
+      "finite_pvalue": 21378,
+      "finite_padj": 18476,
+      "FDR05": 639,
+      "up": 330,
+      "down": 309,
+      "beta_nonconverged": 0,
+      "independent_filter_alpha": 0.1
+    }
+  },
+  "genes": 21388,
+  "PCA": {
+    "PC1": 29.2014,
+    "PC2": 9.7606,
+    "top_variable_genes": 500,
+    "scale": true,
+    "normalization": "TMM log2CPM"
+  },
+  "software": {
+    "R": "R version 4.5.2 (2025-10-31)",
+    "DESeq2": "1.50.2",
+    "apeglm": "1.32.0",
+    "edgeR": "4.8.2"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "reviewed_utc": "2026-10-19T14:32:18.566130+00:00",
+  "status": "Passed manual image inspection of all six English/Spanish PNG figures",
+  "checks": [
+    "Axes, legends and panel labels readable with no clipped labels",
+    "Pointwise intervals identified, all source animals visible",
+    "Discovery counts and source denominators agree with exported numeric tables",
+    "UpSet comparison panels share vertical scale within direction",
+    "Original source artwork not reused"
+  ],
+  "figures": [
+    {
+      "path": "results/replication_mirna_ozone/figures/mirna_author_reproduction.png",
+      "sha256": "9806ba5462142b81389cbbfbf52afa3e1a0aa2190c3bcce92f3f7016bac13ad9",
+      "pixels": [
+        3000,
+        2375
+      ]
+    },
+    {
+      "path": "results/replication_mirna_ozone/figures/mirna_author_reproduction_es.png",
+      "sha256": "0e23f81729ceda2646075a0af8628f4d1472b20b9942cb74bc3dc0e509f29fe3",
+      "pixels": [
+        3000,
+        2375
+      ]
+    },
+    {
+      "path": "results/replication_mirna_ozone/figures/ozone_author_concordance.png",
+      "sha256": "5b891c4f3f0dbe3eb787c18d375dbf5b42a5a661801d418d6ef1e09504d5f50e",
+      "pixels": [
+        3000,
+        2500
+      ]
+    },
+    {
+      "path": "results/replication_mirna_ozone/figures/ozone_author_concordance_es.png",
+      "sha256": "0226a3c5e5205235646397364691fe7fe2d3810146b2df602fa4050f827ab5c5",
+      "pixels": [
+        3000,
+        2500
+      ]
+    },
+    {
+      "path": "results/replication_mirna_ozone/figures/ozone_factor_upset_reproduction.png",
+      "sha256": "69c14e5ab0af2f3ece3f496f3f7bcc25424a0887a2bb63e0a6a8eb333d7e4137",
+      "pixels": [
+        3000,
+        2000
+      ]
+    },
+    {
+      "path": "results/replication_mirna_ozone/figures/ozone_factor_upset_reproduction_es.png",
+      "sha256": "c108ab9283ee3c686962fcf1b8f8d8af316a54c1792e0703ab5b3314da4ab7d2",
+      "pixels": [
+        3000,
+        2000
+      ]
+    }
+  ]
+}

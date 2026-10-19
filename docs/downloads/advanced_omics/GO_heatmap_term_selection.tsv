@@ -1,0 +1,23 @@
+GO_ID	term_name	selection_contrast	selection_direction	selection_q	selection_NES
+GO:0140241	translation at synapse	hypothalamus	1	0	3.048188431
+GO:0060294	cilium movement involved in cell motility	hypothalamus	1	0	2.886227881
+GO:0061001	regulation of dendritic spine morphogenesis	hypothalamus	-1	0	-2.445095031
+GO:0048814	regulation of dendrite morphogenesis	hypothalamus	-1	0	-2.389126403
+GO:0006457	protein folding	cortex	1	0	2.488922285
+GO:1905897	regulation of response to endoplasmic reticulum stress	cortex	1	0	2.398446265
+GO:0070192	chromosome organization involved in meiotic cell cycle	cortex	-1	0.01373523501	-2.237992249
+GO:0086010	membrane depolarization during action potential	cortex	-1	0.02590964786	-2.085887349
+GO:0009583	detection of light stimulus	ozone_M3_E3	1	0	2.454630442
+GO:0007602	phototransduction	ozone_M3_E3	1	0	2.342890836
+GO:0006119	oxidative phosphorylation	ozone_M3_E4	1	0	3.205243449
+GO:0032543	mitochondrial translation	ozone_M3_E4	1	0	3.133108853
+GO:2001222	regulation of neuron migration	ozone_M3_E4	-1	0.002134891598	-2.260369762
+GO:0060323	head morphogenesis	ozone_M3_E4	-1	0.003202337397	-2.264343828
+GO:0002088	lens development in camera-type eye	ozone_M17_E3	1	0.01459484941	2.238679791
+GO:0007156	homophilic cell-cell adhesion	ozone_M17_E3	1	0.01459484941	2.217031723
+GO:1901740	negative regulation of myoblast fusion	ozone_M17_E3	-1	0	-3.306099543
+GO:0015986	proton motive force-driven ATP synthesis	ozone_M17_E3	-1	0	-3.059084609
+GO:0001578	microtubule bundle formation	ozone_M17_E4	1	0.004944430367	2.200981484
+GO:0035456	response to interferon-beta	ozone_M17_E4	1	0.006257794684	2.175036745
+GO:0002181	cytoplasmic translation	ozone_M17_E4	-1	0.001229900736	-2.228274416
+GO:0001975	response to amphetamine	ozone_M17_E4	-1	0.003228489431	-2.184863098

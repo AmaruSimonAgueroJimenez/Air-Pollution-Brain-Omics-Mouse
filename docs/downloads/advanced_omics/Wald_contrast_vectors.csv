@@ -1,0 +1,6 @@
+"test","Intercept","age_M17_vs_M3","genotype_E4_vs_E3","exposure_O3_vs_FA","ageM17.genotypeE4","ageM17.exposureO3","genotypeE4.exposureO3","ageM17.genotypeE4.exposureO3"
+"genotype_response_difference_at_M3",0,0,0,0,0,0,1,0
+"genotype_response_difference_at_M17",0,0,0,0,0,0,1,1
+"age_response_difference_in_E3",0,0,0,0,0,1,0,0
+"age_response_difference_in_E4",0,0,0,0,0,1,0,1
+"three_way_response_difference",0,0,0,0,0,0,0,1

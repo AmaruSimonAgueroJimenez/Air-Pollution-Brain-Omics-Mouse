@@ -1,0 +1,129 @@
+{
+  "manifest_created_UTC": "2026-10-19T14:34:36.627868+00:00",
+  "sources": [
+    {
+      "source": "https://doi.org/10.1126/science.adu4132",
+      "role": "Original cortex paper; main PDF page 8 results and pages 13–14 methods"
+    },
+    {
+      "source": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE297423",
+      "role": "Public 20-animal cortex count deposit; exact equality with author matrix verified"
+    },
+    {
+      "source": "https://doi.org/10.5281/zenodo.15374632",
+      "resolved_record": "15374633",
+      "download": "https://zenodo.org/api/records/15374633/files/Fig5%20mouse.zip/content",
+      "file": "Fig5 mouse.zip",
+      "role": "Official author code, count matrix, all four DE tables, PCA and GO exports"
+    },
+    {
+      "source": "https://doi.org/10.1172/JCI137315",
+      "role": "Original hypothalamus paper"
+    },
+    {
+      "source": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145840",
+      "role": "Public hypothalamus source counts and animal metadata"
+    },
+    {
+      "source": "https://www.jci.org/articles/view/137315/sd/pdf/render/1",
+      "role": "Original supplementary methods pages 19–20 and Figure S9 page 10"
+    },
+    {
+      "source": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M13/gencode.vM13.annotation.gtf.gz",
+      "role": "Frozen GENCODE M13 protein-coding annotation"
+    }
+  ],
+  "files": [
+    {
+      "path": "metadata/replication_pm/private_inputs/zenodo_record.json",
+      "bytes": 4570,
+      "sha256": "46dbb352f6a2214f3fe2eca92ef426907519cfa4039c1e6a0f94491bb215fed5"
+    },
+    {
+      "path": "metadata/replication_pm/private_inputs/cortex_authors_mouse.zip",
+      "bytes": 26732890,
+      "sha256": "8d0bbfd578dcddf38c4fc22100619c0c02deaea00666da055a556dc8c837a915"
+    },
+    {
+      "path": "metadata/replication_pm/private_inputs/cortex_authors/mouse/mouse_deg.R",
+      "bytes": 9684,
+      "sha256": "65029e184575c76e391eaf1d9170c7c399af787760302b9df325c9a88fcfaeda"
+    },
+    {
+      "path": "metadata/replication_pm/private_inputs/cortex_authors/mouse/data/mouse_gene_count.txt",
+      "bytes": 10494655,
+      "sha256": "acf23c9a8efe86c450561efcf0fc0a5647558c2547cce448f59e743cf8883172"
+    },
+    {
+      "path": "metadata/replication_pm/private_inputs/hypothalamus_supplement.pdf",
+      "bytes": 5997010,
+      "sha256": "9ec4d6691489351015269dc324b6dbb132df4fef01d1c1f366beb83b0c526e34"
+    },
+    {
+      "path": "metadata/replication_pm/private_inputs/gencode.vM13.annotation.gtf.gz",
+      "bytes": 24537985,
+      "sha256": "7d52b435e0b6b9e06cadc123ca61e9fd96529faf12702b7ede824b0056892648"
+    },
+    {
+      "path": "data/GSE297423/processed/GSE297423_mouse_gene_count.txt.gz",
+      "bytes": 2908586,
+      "sha256": "7cf5292127d1e6d01646da4f3065de75aaee8d279a7da54b8ba84f29eee9eecd"
+    },
+    {
+      "path": "data/GSE145840/processed/GSM4337093_Hypothalamus_HFD1.txt.gz",
+      "bytes": 241357,
+      "sha256": "f8c5885521c89248cd2cf24d5fb746acf9d88f6abf96f1ccb6ca19e9c6cfde2e"
+    },
+    {
+      "path": "data/GSE145840/processed/GSM4337094_Hypothalamus_HFD2.txt.gz",
+      "bytes": 239668,
+      "sha256": "973e18f1099b58709dd317e08e52bbdad3224b57182b539eb454397769ceb79c"
+    },
+    {
+      "path": "data/GSE145840/processed/GSM4337095_Hypothalamus_HFD3.txt.gz",
+      "bytes": 241980,
+      "sha256": "8f92d6977ff9c8025e98db897e533c9726032cb9ac034342062caffdffbc010b"
+    },
+    {
+      "path": "data/GSE145840/processed/GSM4337096_Hypothalamus_HFD4.txt.gz",
+      "bytes": 241618,
+      "sha256": "13800f73a9e4437f8d4a0a41566ab63f3fea1d8ad500b57e6b814c86ddcf3ee2"
+    },
+    {
+      "path": "data/GSE145840/processed/GSM4337097_Hypothalamus_FA1.txt.gz",
+      "bytes": 244170,
+      "sha256": "f4598dfae1113800a73ff69dbcb01683a87cbd2795e4ef81adca721f17e4aaea"
+    },
+    {
+      "path": "data/GSE145840/processed/GSM4337098_Hypothalamus_FA2.txt.gz",
+      "bytes": 241648,
+      "sha256": "4eb8d52881f3fec98195077e5835e8f68214a5b94e383014f2a25f53902990a2"
+    },
+    {
+      "path": "data/GSE145840/processed/GSM4337099_Hypothalamus_FA3.txt.gz",
+      "bytes": 242355,
+      "sha256": "e380dc35dc0d520819e965aff8e20959223d6f62ee1d2192c009ba457e6c5c84"
+    },
+    {
+      "path": "data/GSE145840/processed/GSM4337100_Hypothalamus_FA4.txt.gz",
+      "bytes": 244846,
+      "sha256": "bb094b3a9e3042f83b75ca051e4bb214c9774372f985a9d3d17655003d09a484"
+    },
+    {
+      "path": "data/GSE145840/processed/GSM4337101_Hypothalamus_PM1.txt.gz",
+      "bytes": 244622,
+      "sha256": "09915e7e684574df5a43aba628c385e4816d15c651ba65794bf61964a7ea62a4"
+    },
+    {
+      "path": "data/GSE145840/processed/GSM4337102_Hypothalamus_PM2.txt.gz",
+      "bytes": 243823,
+      "sha256": "3700eec8abd3000c47250bbfba72e0a4f8b6f5c692054d19c15deb50ad8a1e7f"
+    },
+    {
+      "path": "data/GSE145840/processed/GSM4337103_Hypothalamus_PM3.txt.gz",
+      "bytes": 244535,
+      "sha256": "5d64772d0748816ae7ba458645896299a0df73a7a1be506d5b4a562679a0e00b"
+    }
+  ],
+  "private_source_inputs": "Publisher text and original source archives stay local under ignored private_inputs. Public artifacts retain curated facts, URLs and hashes."
+}

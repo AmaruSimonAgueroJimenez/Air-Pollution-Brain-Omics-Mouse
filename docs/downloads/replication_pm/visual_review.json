@@ -1,0 +1,60 @@
+{
+  "reviewed_UTC": "2026-10-19T14:34:53.339379+00:00",
+  "passed": true,
+  "figures": [
+    {
+      "figure": "cortex_replication_benchmark",
+      "PNG_sha256": "f38e287ed9aa02d4897b0ddd0fd756a26f4120333b017b0562dd7b4283fd6adc",
+      "inspected": true,
+      "checks": [
+        "Panels and source data agree",
+        "Axis labels and thresholds stated",
+        "No clipped labels or legends",
+        "Readable contrast and gene identities",
+        "Selection and uncertainty disclosed in bilingual caption"
+      ]
+    },
+    {
+      "figure": "cortex_multicondition_signature",
+      "PNG_sha256": "d738549d1659793945111317004cf8d91988d75ca5764a6b8ed771fa70c11cd0",
+      "inspected": true,
+      "checks": [
+        "Panels and source data agree",
+        "Axis labels and thresholds stated",
+        "No clipped labels or legends",
+        "Readable contrast and gene identities",
+        "Selection and uncertainty disclosed in bilingual caption"
+      ]
+    },
+    {
+      "figure": "hypothalamus_method_sensitivity",
+      "PNG_sha256": "1bbbfb002cca30eadf40d5aa457de68a8e4f07a72beaad8ac8482f30802b5d46",
+      "inspected": true,
+      "checks": [
+        "Panels and source data agree",
+        "Axis labels and thresholds stated",
+        "No clipped labels or legends",
+        "Readable contrast and gene identities",
+        "Selection and uncertainty disclosed in bilingual caption"
+      ]
+    },
+    {
+      "figure": "cortex_marker_qc",
+      "PNG_sha256": "97bc92b3b6829cfc7f5e211ee4155f8b909ed1f192fd3ff2888ea757269b5587",
+      "inspected": true,
+      "checks": [
+        "Panels and source data agree",
+        "Axis labels and thresholds stated",
+        "No clipped labels or legends",
+        "Readable contrast and gene identities",
+        "Selection and uncertainty disclosed in bilingual caption"
+      ]
+    }
+  ],
+  "repairs": [
+    "Separated overlapping hypothalamus PCA sample labels with explicit leader lines",
+    "Made model sample counts and contrast labels readable",
+    "Added all-animal Y-linked/Xist QC after identifying source marker heterogeneity"
+  ],
+  "scope": "PNG rendering inspected directly; SVG parsed and PDF headers verified. Numerical assertions and selection conventions independently checked. Internal figure artwork is English; all captions and scientific narratives have Spanish versions."
+}

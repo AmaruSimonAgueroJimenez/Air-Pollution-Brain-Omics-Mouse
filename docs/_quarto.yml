@@ -3,63 +3,70 @@ project:
   output-dir: _site
   execute-dir: project
   render:
-    - index.qmd
-    - introduction.qmd
-    - methods.qmd
-    - results.qmd
-    - cortex.qmd
-    - mirna.qmd
-    - ozone.qmd
-    - enrichment.qmd
-    - spatial_reference.qmd
-    - viewer.qmd
-    - reproducibility.qmd
+  - index.qmd
+  - introduction.qmd
+  - methods.qmd
+  - results.qmd
+  - cortex.qmd
+  - mirna.qmd
+  - ozone.qmd
+  - enrichment.qmd
+  - advanced_results.qmd
+  - replication.qmd
+  - spatial_reference.qmd
+  - viewer.qmd
+  - reproducibility.qmd
   resources:
-    - assets/**
-    - downloads/**
-
+  - assets/**
+  - downloads/**
 website:
-  title: "Air pollution · brain omics"
-  description: "A reproducible reanalysis of public mouse brain omics, with a measured spatial reference and an explicit PM2.5 scenario."
+  title: Air pollution · brain omics
+  description: A reproducible reanalysis of public mouse brain omics, with a measured spatial reference and an explicit
+    PM2.5 scenario.
   reader-mode: true
   navbar:
-    background: "#123d46"
-    foreground: "#ffffff"
+    background: '#123d46'
+    foreground: '#ffffff'
     pinned: true
     search: true
     left:
-      - href: index.qmd
-        text: Overview
-      - href: introduction.qmd
-        text: Introduction
-      - href: methods.qmd
-        text: Methods
-      - text: Results
-        menu:
-          - href: results.qmd
-            text: Hypothalamus · PM2.5
-          - href: cortex.qmd
-            text: Cingulate cortex · PM2.5
-          - href: mirna.qmd
-            text: Hippocampal miRNA · PM2.5
-          - href: ozone.qmd
-            text: Hippocampus · ozone
-          - href: enrichment.qmd
-            text: Functional enrichment
-          - href: spatial_reference.qmd
-            text: Measured spatial reference
-      - href: viewer.qmd
-        text: 3D Viewer
-      - href: reproducibility.qmd
-        text: Data & code
+    - href: index.qmd
+      text: Overview
+    - href: introduction.qmd
+      text: Introduction
+    - href: methods.qmd
+      text: Methods
+    - text: Results
+      menu:
+      - href: results.qmd
+        text: Hypothalamus · PM2.5
+      - href: cortex.qmd
+        text: Cingulate cortex · PM2.5
+      - href: mirna.qmd
+        text: Hippocampal miRNA · PM2.5
+      - href: ozone.qmd
+        text: Hippocampus · ozone
+      - href: enrichment.qmd
+        text: Functional enrichment
+      - href: advanced_results.qmd
+        text: Interactions & molecular panels
+      - href: replication.qmd
+        text: Original-study reproduction
+      - href: spatial_reference.qmd
+        text: Measured spatial reference
+    - href: viewer.qmd
+      text: 3D Viewer
+    - href: reproducibility.qmd
+      text: Data & code
     right:
-      - href: es/index.html
-        text: Español
+    - href: es/index.html
+      text: Español
   page-footer:
-    left: "Public-data reanalysis · Mus musculus"
-    right: "Measured reference and simulated exposure are distinguished."
+    left: Public-data reanalysis · Mus musculus
+    right: Measured reference and simulated exposure are distinguished.
     border: true
-
+  site-url: https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/
+  repo-url: https://github.com/AmaruSimonAgueroJimenez/Air-Pollution-Brain-Omics-Mouse
 format:
   html:
     theme: cosmo
@@ -74,17 +81,16 @@ format:
     fig-format: png
     fig-dpi: 180
     smooth-scroll: true
-    mainfont: "system-ui"
+    mainfont: system-ui
     fontsize: 1rem
     grid:
       body-width: 1020px
       margin-width: 230px
-
 lang: en
 language:
-  title-block-published: "Analysis date"
-date: 2026-10-18
-date-format: "D MMMM YYYY"
+  title-block-published: Analysis date
+date: '2026-10-19'
+date-format: D MMMM YYYY
 bibliography: references.bib
 link-citations: true
 jupyter: omics-analysis

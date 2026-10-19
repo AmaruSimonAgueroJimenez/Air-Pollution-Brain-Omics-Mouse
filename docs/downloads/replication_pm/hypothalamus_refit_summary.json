@@ -1,0 +1,26 @@
+{
+  "classification": "Partial methodological sensitivity only; no original RUVg controls or k recovered",
+  "input_genes": 50417,
+  "source_union_genes": 50508,
+  "source_union_only_genes": 91,
+  "M13_protein_coding_input": 21932,
+  "genes_after_abundance_filter": 13398,
+  "prefilter": "CPM>2 in>=3 of11samples, chosen transparent reconstruction; not specified by original authors",
+  "no_RUVg": true,
+  "contrasts": {
+    "PM_vs_FA": {
+      "FDR05": 0,
+      "FDR05_abslogFC_gt08_AveExpr_gt1": 0,
+      "tested": 13398
+    },
+    "HFD_vs_FA": {
+      "FDR05": 5738,
+      "FDR05_abslogFC_gt08_AveExpr_gt1": 3600,
+      "tested": 13398
+    }
+  },
+  "software": {
+    "limma": "3.66.0",
+    "edgeR": "4.8.2"
+  }
+}

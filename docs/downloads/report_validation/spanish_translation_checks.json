@@ -1,0 +1,140 @@
+{
+  "checked_at_UTC": "2026-10-19T13:16:22.831576+00:00",
+  "passed": true,
+  "scope": "Spanish translation, bilingual rendering, unchanged analytical results, and actual browser localization checks. This is not a new biological or statistical validation.",
+  "analysis_base_commit": "50999bc",
+  "source_checks": {
+    "cortex.qmd": {
+      "python_chunks": 11,
+      "numeric_code_constants_unchanged": true,
+      "source_dataset_and_figure_calls_unchanged": true,
+      "citation_sequence_unchanged": true,
+      "compiled_HTML_language_es": true
+    },
+    "enrichment.qmd": {
+      "python_chunks": 5,
+      "numeric_code_constants_unchanged": true,
+      "source_dataset_and_figure_calls_unchanged": true,
+      "citation_sequence_unchanged": true,
+      "compiled_HTML_language_es": true
+    },
+    "index.qmd": {
+      "python_chunks": 4,
+      "numeric_code_constants_unchanged": true,
+      "source_dataset_and_figure_calls_unchanged": true,
+      "citation_sequence_unchanged": true,
+      "compiled_HTML_language_es": true
+    },
+    "introduction.qmd": {
+      "python_chunks": 0,
+      "numeric_code_constants_unchanged": true,
+      "source_dataset_and_figure_calls_unchanged": true,
+      "citation_sequence_unchanged": true,
+      "compiled_HTML_language_es": true
+    },
+    "methods.qmd": {
+      "python_chunks": 3,
+      "numeric_code_constants_unchanged": true,
+      "source_dataset_and_figure_calls_unchanged": true,
+      "citation_sequence_unchanged": true,
+      "compiled_HTML_language_es": true
+    },
+    "mirna.qmd": {
+      "python_chunks": 16,
+      "numeric_code_constants_unchanged": true,
+      "source_dataset_and_figure_calls_unchanged": true,
+      "citation_sequence_unchanged": true,
+      "compiled_HTML_language_es": true
+    },
+    "ozone.qmd": {
+      "python_chunks": 11,
+      "numeric_code_constants_unchanged": true,
+      "source_dataset_and_figure_calls_unchanged": true,
+      "citation_sequence_unchanged": true,
+      "compiled_HTML_language_es": true
+    },
+    "reproducibility.qmd": {
+      "python_chunks": 0,
+      "numeric_code_constants_unchanged": true,
+      "source_dataset_and_figure_calls_unchanged": true,
+      "citation_sequence_unchanged": true,
+      "compiled_HTML_language_es": true
+    },
+    "results.qmd": {
+      "python_chunks": 10,
+      "numeric_code_constants_unchanged": true,
+      "source_dataset_and_figure_calls_unchanged": true,
+      "citation_sequence_unchanged": true,
+      "compiled_HTML_language_es": true
+    },
+    "spatial_reference.qmd": {
+      "python_chunks": 5,
+      "numeric_code_constants_unchanged": true,
+      "source_dataset_and_figure_calls_unchanged": true,
+      "citation_sequence_unchanged": true,
+      "compiled_HTML_language_es": true
+    },
+    "viewer.qmd": {
+      "python_chunks": 2,
+      "numeric_code_constants_unchanged": true,
+      "source_dataset_and_figure_calls_unchanged": true,
+      "citation_sequence_unchanged": true,
+      "compiled_HTML_language_es": true
+    }
+  },
+  "Python_chunks_checked": 67,
+  "tracked_analytical_results_and_annotation_inputs_unchanged": true,
+  "presentation_policy": "Decimal point/comma thousands, source identifiers, original downloadable column names, GO names and original scientific figure artwork are preserved; captions, report narrative, table presentation and interactive viewer labels are translated.",
+  "source_archive_contains_all_11_Spanish_QMDs": true,
+  "viewer_localization_regression": {
+    "performed_by": "spanish_viewer agent",
+    "cases": 12,
+    "matrix": "central/lower/upper x hide-zero on/off x estimable/reference-only",
+    "reported_passed": true,
+    "compared": "expression, coordinates, colors, color limit, cameras, eligibility; English strings and numeric formatting unchanged"
+  },
+  "actual_browser_checks": {
+    "Chrome": [
+      "Spanish controls, Plotly toolbar, evidence and visible model notice",
+      "Tll1 central ratio0.428 and37811 cells",
+      "Lower scenario ratio0.273 and Spanish lower-bound label",
+      "Chat reference-only/unavailable exposure labels",
+      "Tll1 hide-zero shows667 positive cells",
+      "English/Spanish language switching in both standalone viewer and report navbar",
+      "Embedded Spanish viewer loads",
+      "No console errors"
+    ],
+    "in_app_browser": [
+      "Narrow Spanish page layout",
+      "Embedded Spanish viewer and37,811 cells",
+      "Fresh script URL resolves previously cached English dynamic labels; Spanish status, coverage and FDR confirmed after reload"
+    ]
+  },
+  "cache_update": {
+    "viewer_script_query_version": "b7feccded096",
+    "reason": "Refresh shared viewer script in clients holding the previous English-only version"
+  },
+  "screenshot": {
+    "path": "results/report_validation/spanish_viewer_browser_proof.png",
+    "sha256": "f7ff0194b8aef8fe519a3af729744ed8b9601810ef97a1abf2728c091bdf7a7c",
+    "display": "Tll1 central scenario; measured-zero cells hidden;667 positive cells per panel"
+  },
+  "source_sha256": {
+    "docs/es/cortex.qmd": "682186374653a543d6dac6f4675ca15fec19629e9ead81d3dcf5ec99c28a6ec0",
+    "docs/es/enrichment.qmd": "312b8dcc33697970deed374fa05974347a157d0b821afe677343b9450ed292a3",
+    "docs/es/index.qmd": "037fc0c175e94a47c310caacff6c616c6d7b9003542079ad684b63211ad04762",
+    "docs/es/introduction.qmd": "db950f64cd03996b04560005d6b8fbe2fc4c53323edfb25bd06c005af09c5f8f",
+    "docs/es/methods.qmd": "ce91e990a03a509a4a266f44defd825c45ce0ff80121ba267d395e5d9099405a",
+    "docs/es/mirna.qmd": "e1327f5db202cce56162ebe7d70d8803bb9b56508d2bdbd654cafa6b71b6d6fa",
+    "docs/es/ozone.qmd": "c5a378a521546b383b1e778eb71ff109bcd2c3a6d3f29aef6f5cf289e56c979c",
+    "docs/es/reproducibility.qmd": "9d28326a6bdefe22a42a000b5246f7e2d08bb275ddc8fecfe3a08ec3672dfc19",
+    "docs/es/results.qmd": "40121d6104cf7facb9e4a377c0759bf76e318f8682179dd7814040b9965912ea",
+    "docs/es/spatial_reference.qmd": "06c7938484383cdcfcb9cbeccbfd74b1ff42bc62b07f77eb7210a9f14861d5ab",
+    "docs/es/viewer.qmd": "42bc0823ada49997d1ca13c7fab2288ce1d64bcf82f96847124ab0469243f8a9",
+    "docs/es/_report_utils.py": "7ab9cabc6ebc6558cd91091cb225e1354526cbb2016819f084a6ffa3e27090cf",
+    "docs/es/_quarto.yml": "3b7b6fe0e576bee106aed5ba8d6d306c1c0d68005aaa58a46e26a54cd36661e2",
+    "docs/assets/viewer/index-es.html": "ad92a5d73afa6907ca11b4994ce6dca70f2d28710c78cb62b74d8c307b1a5e80",
+    "docs/assets/viewer/viewer.js": "b7feccded096446eeea559620706222a5dd3d2af96eb5c6f18fba9488b378f3a"
+  },
+  "compiled_report_check": "results/report_validation/compiled_report_checks.json"
+}

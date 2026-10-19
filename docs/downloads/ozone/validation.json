@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "study": "E-MTAB-14917",
+  "samples": 24,
+  "model_rank": 8,
+  "retained_genes": 18537,
+  "checks": [
+    "24 unique libraries, 3 per stratum",
+    "full model rank is eight",
+    "integer count input and fixed filter",
+    "pooled and separate contrast tables match; global LRT shares the count universe",
+    "per-contrast BH independently reproduced with SciPy",
+    "pooled-four BH independently reproduced",
+    "Wald normal-tail p-values",
+    "global four-df chi-square LRT p-values",
+    "all-zero stratum and numerical-convergence exclusions",
+    "posterior effects valid for projection",
+    "all-read QC covers 24 libraries and retained pair totals match quantification input",
+    "all 24 Salmon EM optimizations converged and transcript TPM sums verified"
+  ],
+  "contrasts": {
+    "M3_E3_O3_vs_FA": {
+      "tested": 18490,
+      "FDR_005": 0,
+      "all_zero_stratum": 23,
+      "wald_nonconverged": 0,
+      "apeglm_nonconverged": 0
+    },
+    "M3_E4_O3_vs_FA": {
+      "tested": 18498,
+      "FDR_005": 399,
+      "all_zero_stratum": 15,
+      "wald_nonconverged": 0,
+      "apeglm_nonconverged": 0
+    },
+    "M17_E3_O3_vs_FA": {
+      "tested": 18498,
+      "FDR_005": 2,
+      "all_zero_stratum": 15,
+      "wald_nonconverged": 0,
+      "apeglm_nonconverged": 0
+    },
+    "M17_E4_O3_vs_FA": {
+      "tested": 18499,
+      "FDR_005": 3,
+      "all_zero_stratum": 13,
+      "wald_nonconverged": 0,
+      "apeglm_nonconverged": 0
+    }
+  },
+  "global_LRT_nonconverged": 0,
+  "source_output_sha256": {
+    "results/ozone/de_M3_E3_O3_vs_FA.csv": "919e87d5d56502dce9c844a29a4a58d550af4dc805c1cc5db4509cdf2d1cdb5a",
+    "results/ozone/de_M3_E4_O3_vs_FA.csv": "903b0afe260773492c050603d627396956b4b1552302b32bb6dad36ea9be591b",
+    "results/ozone/de_M17_E3_O3_vs_FA.csv": "aa8702919f49c643379b0fa149ef81f0e0abb099322bc7d853a93de0eeb639cc",
+    "results/ozone/de_M17_E4_O3_vs_FA.csv": "59f3c30a82eed64be5c977c93077e4cf475c6cf42e56129e62ad97f056ad0519",
+    "results/ozone/de_global_ozone_LRT.csv": "c8b4ba69f88a7a76e8e5b941ec932781f530e1dc6c51b3945e24007e717bd340",
+    "results/ozone/de_all_four_strata.csv": "6409ea0e904ffd47910a8960cf194280ac7ac3b311db7a980b1eda03415ef8fd",
+    "results/ozone/analysis_gene_counts.csv.gz": "1f6f0450232ebead19b87e4268ac472a1d866b6827cee4ec923f377017465017",
+    "results/ozone/samples.csv": "d98c4366ca916d2307ebea60cc30434e13091206151367ac47843a31b74918e3"
+  }
+}

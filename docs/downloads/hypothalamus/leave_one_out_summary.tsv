@@ -1,0 +1,8 @@
+omitted_sample	omitted_label	FA_samples	PM_samples	genes_testable	genes_fdr_below_0_05	primary_hits_still_fdr_below_0_05	primary_hits_same_lfc_direction	wald_stat_spearman_with_primary
+GSM4337097	FA1	3	3	19434	12	6	11	0.919906554
+GSM4337098	FA2	3	3	19522	15	4	11	0.890487476
+GSM4337099	FA3	3	3	19463	825	9	11	0.9535112653
+GSM4337100	FA4	3	3	19492	477	11	11	0.9602028849
+GSM4337101	PM1	4	2	19487	0	0	11	0.9698727108
+GSM4337102	PM2	4	2	19489	1	1	11	0.9746935522
+GSM4337103	PM3	4	2	19489	1	0	11	0.9692879373

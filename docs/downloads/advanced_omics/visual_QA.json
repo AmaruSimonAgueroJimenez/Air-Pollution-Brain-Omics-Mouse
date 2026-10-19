@@ -1,0 +1,66 @@
+{
+  "reviewed_at_utc": "2026-10-19T14:31:47.743371+00:00",
+  "reviewer": "Codex advanced_omics agent",
+  "scope": "All ten final PNG language versions visually inspected after font, axis and network-layout repairs. SVG/PDF export existence and SHA verified; no separate pixel-level review of vector formats.",
+  "checks": {
+    "all_ten_PNG_versions_reviewed": true,
+    "axis_labels_units_and_O3_glyphs_legible": true,
+    "network_nodes_nonoverlapping_and_numbered": true,
+    "animal_individual_points_and_group_means_visible": true,
+    "animal_gene_specific_y_ranges_disclosed": true,
+    "forest_common_x_range_and_pointwise_CI_disclosed": true,
+    "heatmap_missing_eligibility_separate_from_zero": true,
+    "GO_significance_marker_contrast_visible": true,
+    "network_membership_edges_not_regulatory_claim": true,
+    "bilingual_text_and_go_names_preserved": true
+  },
+  "repairs": [
+    "DejaVu Sans prevents missing subscript/symbol glyphs.",
+    "Gene-specific animal y ranges avoid unnecessary zero-baseline empty space.",
+    "Deterministic component/circular network layout removes connected-node collisions.",
+    "Outlined white GO significance circles remain visible on all NES colors."
+  ],
+  "figures": {
+    "ozone_effect_uncertainty": {
+      "png_sha256": "d4bfa4653adaa6a27d9b60716602d220699ebda80477c2267f8822c967203972",
+      "visually_reviewed": true
+    },
+    "ozone_interaction_evidence": {
+      "png_sha256": "f4da53e20ac0667d2c561d59a691c2b731d3c0da59affe84cbe5fa6d5432347f",
+      "visually_reviewed": true
+    },
+    "ozone_interaction_animals": {
+      "png_sha256": "e29c72819454c67e1d55df097def06165939e28e87cb9525ce64738145ae22de",
+      "visually_reviewed": true
+    },
+    "GO_multi_contrast_heatmap": {
+      "png_sha256": "0cc5fd5d32ed33e1b647cd77670e33cedec918b6af96b343d4270ee192d04e0d",
+      "visually_reviewed": true
+    },
+    "GO_overlap_network": {
+      "png_sha256": "7ee689092d5cdc17fc3016e81b7cd703068b30a24a89d12caa7057e3a7109627",
+      "visually_reviewed": true
+    },
+    "ozone_effect_uncertainty_es": {
+      "png_sha256": "15fc28e5c6b79b2afa7ebdbaed5edd0fc270807ad0b46c0c013f6f8b8ff1aa9a",
+      "visually_reviewed": true
+    },
+    "ozone_interaction_evidence_es": {
+      "png_sha256": "4affa832251b6808c87b0574cbd8df1b51f6be5f29253ac8a29799993226cb32",
+      "visually_reviewed": true
+    },
+    "ozone_interaction_animals_es": {
+      "png_sha256": "b3d4dfd8710d750f5f76d23328cb7560249d3e5bd90a51700923cacec1a9e9f0",
+      "visually_reviewed": true
+    },
+    "GO_multi_contrast_heatmap_es": {
+      "png_sha256": "4a8480a05fa2f4be54bda63e1d530a9c5e5baf2f3d861de83abff0cb387edbb4",
+      "visually_reviewed": true
+    },
+    "GO_overlap_network_es": {
+      "png_sha256": "c1f19b6fa26ae7baf2b73d84860cd0413d18fb5a272621b028587077b3a7d4b9",
+      "visually_reviewed": true
+    }
+  },
+  "passed": true
+}

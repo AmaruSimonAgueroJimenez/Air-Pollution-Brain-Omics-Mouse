@@ -1,0 +1,45 @@
+{
+  "gaf_counts": {
+    "total_gaf_rows": 709827,
+    "positive_mouse_BP_rows": 286796,
+    "negative_NOT_rows_excluded": 622,
+    "unresolvable_or_non_BP_term_rows": 60,
+    "alt_id_or_single_replaced_by_rows_resolved": 26
+  },
+  "evidence_codes_retained": {
+    "IMP": 55208,
+    "IDA": 21409,
+    "ISO": 65863,
+    "IEA": 70538,
+    "ISS": 17442,
+    "ND": 5377,
+    "TAS": 1442,
+    "EXP": 164,
+    "IGI": 13461,
+    "ISA": 2167,
+    "NAS": 3827,
+    "IC": 287,
+    "IEP": 1559,
+    "IPI": 207,
+    "RCA": 61,
+    "HDA": 1,
+    "IBA": 27723
+  },
+  "canonical_mouse_symbols": 28557,
+  "unique_aliases": 48738,
+  "ambiguous_aliases": 734,
+  "active_BP_terms_in_ontology": 23974,
+  "BP_terms_with_mouse_annotations": 14572,
+  "genes_with_BP_annotations_including_root": 27430,
+  "propagation_relations": [
+    "is_a",
+    "part_of"
+  ],
+  "ontology_ID_policy": "Resolve alternative IDs and obsolete IDs with exactly one replacement leading to an active BP term; ambiguous or missing replacements are excluded.",
+  "synonym_field": "GAF column 11 (zero-based index 10); column 10 is the descriptive name and is never used as a symbol alias.",
+  "derived_gmt": {
+    "path": "data/references/go/mouse_BP_is_a_part_of.gmt",
+    "bytes": 8742854,
+    "sha256": "144c0ee6af52b68550efcef35528422e06e40b03a1772deb47b41ea9044c234f"
+  }
+}
