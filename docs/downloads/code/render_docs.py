@@ -26,6 +26,8 @@ def promote_site():
         if not source.is_file():
             continue
         relative = source.relative_to(built)
+        if relative.as_posix() == "pages-manifest.json":
+            continue  # A manifest cannot include its own content hash.
         if any(part in {".quarto", "_freeze", "_site", "private_inputs"} for part in relative.parts):
             continue
         destination = DOCS / relative
@@ -39,7 +41,10 @@ def promote_site():
                 "total_bytes": sum(item["bytes"] for item in published),
                 "excludes": ["original FASTQ/H5AD", "reference genomes", "fitted R objects",
                              "article PDFs/full text", "private_inputs", "local environments"]}
-    (DOCS / "pages-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+    manifest["manifest_self_excluded"] = True
+    manifest_text = json.dumps(manifest, indent=2) + "\n"
+    (DOCS / "pages-manifest.json").write_text(manifest_text)
+    (built / "pages-manifest.json").write_text(manifest_text)
     print(f"GitHub Pages ready in docs/: {len(published)} files, {manifest['total_bytes']/1e6:.1f} MB")
 
 
@@ -128,6 +133,8 @@ def prepare_assets():
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--prepare-only", action="store_true")
+    parser.add_argument("--refresh-static", action="store_true",
+                        help="Refresh static assets/downloads and promote an existing bilingual render")
     parser.add_argument("--page")
     parser.add_argument("--promote-only", action="store_true",
                         help="Copy an already rendered bilingual site into /docs for GitHub Pages")
@@ -139,6 +146,11 @@ def main():
         return
     prepare_assets()
     if args.prepare_only:
+        return
+    if args.refresh_static:
+        for folder in ("assets", "downloads"):
+            shutil.copytree(DOCS / folder, DOCS / "_site" / folder, dirs_exist_ok=True)
+        promote_site()
         return
     prefix = ROOT / ".venv-analysis"
     subprocess.run([sys.executable, "-m", "ipykernel", "install", "--prefix", str(prefix),

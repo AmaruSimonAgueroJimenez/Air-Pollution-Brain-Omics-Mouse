@@ -1,0 +1,142 @@
+{
+  "checked_at": "2026-10-19T14:48:13.555553+00:00",
+  "repository": "https://github.com/AmaruSimonAgueroJimenez/Air-Pollution-Brain-Omics-Mouse",
+  "site": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/",
+  "publishing_source": {
+    "branch": "main",
+    "path": "/docs"
+  },
+  "content_commit": "fb13b93099660fa99c7f0ffac7f670651c7d4fdb",
+  "deployment_workflow": "https://github.com/AmaruSimonAgueroJimenez/Air-Pollution-Brain-Omics-Mouse/actions/runs/39271843238",
+  "workflow_conclusion": "success",
+  "checks": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 61781,
+      "sha256": "989a0f864eadc7a844f737cf2d6ce044cd5641897fd754d3fb2367b89425a783",
+      "matches_local": true
+    },
+    {
+      "path": "es/index.html",
+      "status": 200,
+      "bytes": 63938,
+      "sha256": "58064f71c4b686c391af5e26d8fdb2a1405aacb6ad0a72ed92168e90575f6ff5",
+      "matches_local": true
+    },
+    {
+      "path": "replication.html",
+      "status": 200,
+      "bytes": 83677,
+      "sha256": "6c92bf9e1e9d821e2e04314c3afcae3e1fc358c28334d8641e6d52cb7e599dd1",
+      "matches_local": true
+    },
+    {
+      "path": "es/replication.html",
+      "status": 200,
+      "bytes": 84925,
+      "sha256": "da6cc09e6328da5d7beb4b0f04aaefe89869d94df52aac54b01e02f76a95067e",
+      "matches_local": true
+    },
+    {
+      "path": "advanced_results.html",
+      "status": 200,
+      "bytes": 72648,
+      "sha256": "2af92241fc60b4a4c751d6ca9b2aa027536dbe105c74ac08739541b9f3ef1f57",
+      "matches_local": true
+    },
+    {
+      "path": "es/advanced_results.html",
+      "status": 200,
+      "bytes": 74731,
+      "sha256": "579e2c30fbb764e0ac718a122158e8368f3c7bcb2c0e6f985eacc55aa42ec939",
+      "matches_local": true
+    },
+    {
+      "path": "viewer.html",
+      "status": 200,
+      "bytes": 48190,
+      "sha256": "a932bc6c7422760ac96ee5a3f2eb143ba7a9f246a3e1ca67cf717647897ba0ca",
+      "matches_local": true
+    },
+    {
+      "path": "es/viewer.html",
+      "status": 200,
+      "bytes": 49631,
+      "sha256": "f75a1244d1c3a1f7375e5888c31dc90ecfcf6daa68eeb0ee11c8ea6f99b79eab",
+      "matches_local": true
+    },
+    {
+      "path": "assets/viewer/index.html",
+      "status": 200,
+      "bytes": 6315,
+      "sha256": "aeedef9d575410fc5648f48cb5140476d108a2cb573444d306b20e7a29b16f38",
+      "matches_local": true
+    },
+    {
+      "path": "assets/viewer/index-es.html",
+      "status": 200,
+      "bytes": 6925,
+      "sha256": "ad92a5d73afa6907ca11b4994ce6dca70f2d28710c78cb62b74d8c307b1a5e80",
+      "matches_local": true
+    },
+    {
+      "path": "assets/viewer/viewer.js",
+      "status": 200,
+      "bytes": 17293,
+      "sha256": "b7feccded096446eeea559620706222a5dd3d2af96eb5c6f18fba9488b378f3a",
+      "matches_local": true
+    },
+    {
+      "path": "assets/viewer/data.js",
+      "status": 200,
+      "bytes": 5933066,
+      "sha256": "0512df48fb54d2995aad96fe70383690e5912f7150ce3f50bbe74ff17d7dfa42",
+      "matches_local": true
+    },
+    {
+      "path": "assets/viewer/plotly.min.js",
+      "status": 200,
+      "bytes": 4847499,
+      "sha256": "28498fa2ea4ba45c8633218088eb223436ca0ca02fc57027fd6fa841ad1901f9",
+      "matches_local": true
+    },
+    {
+      "path": "assets/viewer/genes/ENSMUSG00000053626.js",
+      "status": 200,
+      "bytes": 2512,
+      "sha256": "0b2acd0ad233146054fc161c2493c35a5e9371a2ba0dd1424a124ff8762f503c",
+      "matches_local": true
+    },
+    {
+      "path": "assets/report.css",
+      "status": 200,
+      "bytes": 3545,
+      "sha256": "6951c18f892af40a48a9975fddcbcd37480c66604c8a2040b0f11e8442522243",
+      "matches_local": true
+    },
+    {
+      "path": "assets/figures/advanced_omics/GO_multi_contrast_heatmap_es.png",
+      "status": 200,
+      "bytes": 454446,
+      "sha256": "4a8480a05fa2f4be54bda63e1d530a9c5e5baf2f3d861de83abff0cb387edbb4",
+      "matches_local": true
+    },
+    {
+      "path": "assets/figures/replication_pm/cortex_replication_benchmark.png",
+      "status": 200,
+      "bytes": 487898,
+      "sha256": "f38e287ed9aa02d4897b0ddd0fd756a26f4120333b017b0562dd7b4283fd6adc",
+      "matches_local": true
+    },
+    {
+      "path": "downloads/replication_pm/cortex_gene_level_metrics.csv",
+      "status": 200,
+      "bytes": 677,
+      "sha256": "942a4f2596a30316d4620f30e7be953a264d3c086d3671e6b46cdc7c414315dd",
+      "matches_local": true
+    }
+  ],
+  "passed": true,
+  "scope": "Public HTTP status and exact-content integrity; browser layout and interactive viewer checked separately."
+}

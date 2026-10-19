@@ -6776,12 +6776,12 @@
     {
       "path": "assets/viewer/index-es.html",
       "bytes": 6925,
-      "sha256": "ad92a5d73afa6907ca11b4994ce6dca70f2d28710c78cb62b74d8c307b1a5e80"
+      "sha256": "5e14e6d93116a2145dfe60c2141b6a8c70e8b6a5a166219c06866999d45f204b"
     },
     {
       "path": "assets/viewer/index.html",
       "bytes": 6315,
-      "sha256": "aeedef9d575410fc5648f48cb5140476d108a2cb573444d306b20e7a29b16f38"
+      "sha256": "b7f5edd1ef1d041fe1ebc11980f31a2cf8414d1aa9780b60dab96e70a8dc2467"
     },
     {
       "path": "assets/viewer/plotly.min.js",
@@ -6795,8 +6795,8 @@
     },
     {
       "path": "assets/viewer/viewer.js",
-      "bytes": 17293,
-      "sha256": "b7feccded096446eeea559620706222a5dd3d2af96eb5c6f18fba9488b378f3a"
+      "bytes": 18722,
+      "sha256": "bad1e22017a71c8c6563cd9e88c5eb336f069ad6fa0d27b3e52a982e66292c88"
     },
     {
       "path": "cortex.html",
@@ -7035,8 +7035,8 @@
     },
     {
       "path": "downloads/code/render_docs.py",
-      "bytes": 8421,
-      "sha256": "c949ad170f2fc2082b9ef6f8c9cf445eaf06518423210a0344f40ca6999f52b2"
+      "bytes": 9063,
+      "sha256": "c052d2f3c48c9c5764921eac5fd6ae2c182efc307c96d1952986bb429149acf6"
     },
     {
       "path": "downloads/code/replicate_mirna_ozone.R",
@@ -9020,8 +9020,8 @@
     },
     {
       "path": "downloads/report-source.zip",
-      "bytes": 156802,
-      "sha256": "ffd8fc9794b45a12eaa3c889a16d0f18c8c1118f72bdf65c3e1bb6c72e03efa9"
+      "bytes": 158771,
+      "sha256": "43ebeb37aeea023186d74a6d792da675db710ce82baeb3f69f4be5f318b8ccb5"
     },
     {
       "path": "downloads/report_validation/browser_checks.json",
@@ -9036,12 +9036,17 @@
     {
       "path": "downloads/report_validation/compiled_report_checks.json",
       "bytes": 506,
-      "sha256": "416f9ee336442bb1dfb11bf641d10165f92c33f8b069cd15878f60d12f771f36"
+      "sha256": "150a7ec4c38cb46aaabe27cac54658a79cb2b9224169cd026fbe0a6de1c3da72"
     },
     {
       "path": "downloads/report_validation/experimental_design_review.json",
       "bytes": 16502,
       "sha256": "09b748a4590dcf2f81dcaaeb97a9346e930006dc560619b2f3e4e67db5eb838a"
+    },
+    {
+      "path": "downloads/report_validation/github_pages_deployment.json",
+      "bytes": 4527,
+      "sha256": "9403b92ce6681263684676054b076742d80ce219717e4c3731814086d9af6274"
     },
     {
       "path": "downloads/report_validation/independent_content_review.json",
@@ -9051,7 +9056,7 @@
     {
       "path": "downloads/report_validation/published_report_checks.json",
       "bytes": 500,
-      "sha256": "ea38be12e8c5f2c6e2fc69802f083dea027b828e7e428d016ac722a602151c4b"
+      "sha256": "a18e9a8eb8737f52b91ef8a7d4030f6e042a0ba182eb2f1f9157d9cb3efcb6f4"
     },
     {
       "path": "downloads/report_validation/significant_gene_panel_match.json",
@@ -9200,8 +9205,8 @@
     },
     {
       "path": "es/reproducibility.html",
-      "bytes": 111865,
-      "sha256": "0f18dba40d12f9b784b594976d06d17dcdfd5eb0991c1d98c8873c71780c83dc"
+      "bytes": 121470,
+      "sha256": "acee580a30ea5d8c8bd70aabf01988f1a2cf40c09f8e2fa57dcdeb87b180c496"
     },
     {
       "path": "es/results.html",
@@ -9215,8 +9220,8 @@
     },
     {
       "path": "es/search.json",
-      "bytes": 230823,
-      "sha256": "76c4b644d600cbfc8ddc30ec99e9a13590b59a55e7240f3bb749f8251c08aaf4"
+      "bytes": 233086,
+      "sha256": "11d070f8a776a15f66f96b314da3260f0e0af400ebcf4fabb50f09c6dd8220ce"
     },
     {
       "path": "es/site_libs/bootstrap/bootstrap-5dd942ac47374bdb5320a9bbd29a7aa4.min.css",
@@ -9306,7 +9311,7 @@
     {
       "path": "es/sitemap.xml",
       "bytes": 2351,
-      "sha256": "8939779c201c07d0203d09387cc097f68593782b7d9bd224a0be2352a32bdb57"
+      "sha256": "2cd18391c166cca0f6b5e7cc4ba7dceb7f897cd8a0a5d2ebb6e684bbaf08ffa4"
     },
     {
       "path": "es/spatial_reference.html",
@@ -9350,8 +9355,8 @@
     },
     {
       "path": "reproducibility.html",
-      "bytes": 100872,
-      "sha256": "15e90d423ee3cab7161dbbfb4d3f38d0a3818be58d112ca7575ed8a29630d87c"
+      "bytes": 110082,
+      "sha256": "9ebfb13cd3d8b806ed8e692886b5f4bc235cb534a27f46ffd453fe50e7123c40"
     },
     {
       "path": "results.html",
@@ -9365,8 +9370,8 @@
     },
     {
       "path": "search.json",
-      "bytes": 202908,
-      "sha256": "f6a2883144a78c188709cfae7a9dc9235c3f3d8aa737a38fca41dcb6e0ed06f7"
+      "bytes": 205002,
+      "sha256": "3ce576303c5e3aee4c4620e1fe02f3008dcb405c1d5822d847df67b2e4651b21"
     },
     {
       "path": "site_libs/bootstrap/bootstrap-5dd942ac47374bdb5320a9bbd29a7aa4.min.css",
@@ -9456,7 +9461,7 @@
     {
       "path": "sitemap.xml",
       "bytes": 2312,
-      "sha256": "b167a26eea17af92ffaf66080e1bd4c1b823abf27b0fd9dc8d609d1b011b0eaf"
+      "sha256": "e42233dfd76b66ce6f2f73b63234886a3842b3073c0740ad1b590dfe31b08c69"
     },
     {
       "path": "spatial_reference.html",
@@ -9469,7 +9474,7 @@
       "sha256": "a932bc6c7422760ac96ee5a3f2eb143ba7a9f246a3e1ca67cf717647897ba0ca"
     }
   ],
-  "total_bytes": 371609323,
+  "total_bytes": 371641062,
   "excludes": [
     "original FASTQ/H5AD",
     "reference genomes",
@@ -9477,5 +9482,6 @@
     "article PDFs/full text",
     "private_inputs",
     "local environments"
-  ]
+  ],
+  "manifest_self_excluded": true
 }

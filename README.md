@@ -163,3 +163,5 @@ To refit the expanded analyses from locally downloaded source data:
 ```
 
 Reanalysis requires the local source datasets and recorded dependencies. Rebuilding the website alone uses the committed result tables. Public hosting does not redistribute restricted article copies or the hundreds of gigabytes of downloaded source reads.
+
+For changes limited to viewer assets or downloadable artifacts, `scripts/render_docs.py --refresh-static` refreshes an existing bilingual render and its Pages manifest without reexecuting the QMD pages. Numerical analysis results are unchanged.

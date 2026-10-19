@@ -17,7 +17,9 @@ const D = window.ATLAS_DATA;
 const geneBySymbol = new Map(D.genes.map(g => [g.symbol.toLowerCase(), g]));
 const geneById = new Map(D.genes.map(g => [g.id, g]));
 const pending = new Map(), cache = new Map(), inFlight = new Map();
-let currentGene = null, currentCounts = null, renderVersion = 0, sceneVersion = 0, cameraLock = false;
+let currentGene = null, currentCounts = null, renderVersion = 0, sceneVersion = 0;
+let cameraSyncRunning = false, queuedCamera = null, activeCameraTarget = null;
+const cameraEchoes = new Map();
 let lastCamera = {eye:{x:1.2,y:1.2,z:.9},up:{x:0,y:0,z:1}};
 const config = {responsive:true,displaylogo:false,toImageButtonOptions:{format:"png",filename:"hypothalamus_reference_scenario",scale:2},modeBarButtonsToRemove:["lasso2d","select2d"]};
 if(spanish) config.locale="es";
@@ -171,11 +173,42 @@ async function applyGene(){
   finally{if(version===renderVersion)$('apply').disabled=false;}
 }
 
+function sameCamera(a,b){
+  if(!a||!b)return false;
+  const defaults={eye:{x:1.25,y:1.25,z:1.25},center:{x:0,y:0,z:0},up:{x:0,y:0,z:1}};
+  return Object.entries(defaults).every(([part,values])=>Object.keys(values).every(axis=>
+    Math.abs((a[part]?.[axis]??values[axis])-(b[part]?.[axis]??values[axis]))<1e-12
+  ))&&(a.projection?.type??'perspective')===(b.projection?.type??'perspective');
+}
+
+async function flushCameraQueue(){
+  if(cameraSyncRunning)return;
+  cameraSyncRunning=true;
+  try{
+    while(queuedCamera){
+      const update=queuedCamera;queuedCamera=null;
+      for(const target of update.targets){
+        // A newer gesture supersedes any remaining writes from this update.
+        if(queuedCamera)break;
+        activeCameraTarget=target;cameraEchoes.set(target,update.camera);
+        try{await Plotly.relayout(target,{'scene.camera':update.camera});}
+        catch(error){console.error(error);}
+        finally{cameraEchoes.delete(target);activeCameraTarget=null;}
+      }
+    }
+  }finally{cameraSyncRunning=false;}
+}
+
 function linkCameras(source,target){
   $(source).on('plotly_relayout',event=>{
-    if(cameraLock||!event['scene.camera'])return;
-    lastCamera=event['scene.camera'];cameraLock=true;
-    Plotly.relayout(target,{'scene.camera':lastCamera}).finally(()=>{cameraLock=false;});
+    const camera=event['scene.camera'];
+    if(!camera||sameCamera(camera,cameraEchoes.get(source))||sameCamera(camera,lastCamera))return;
+    lastCamera=JSON.parse(JSON.stringify(camera));
+    // Keep only the latest gesture. If an older write is still targeting its
+    // source, restore that source too before synchronizing the opposite view.
+    const targets=activeCameraTarget===source?[source,target]:[target];
+    queuedCamera={camera:lastCamera,targets};
+    void flushCameraQueue();
   });
 }
 

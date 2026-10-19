@@ -47,7 +47,7 @@ El entorno Python registrado utiliza **Python 3.14.3** en macOS arm64. El inform
 | Visor MERFISH | Extracción H5AD/CCF y construcción de superficies en Python; Plotly JavaScript incluido localmente | [build_spatial_viewer.py](../downloads/code/build_spatial_viewer.py) |
 | Sitio web | Quarto con el kernel Python/Jupyter `omics-analysis` | [render_docs.py](../downloads/code/render_docs.py) |
 
-R **4.5.2** está disponible por separado de Python. Los scripts anteponen la biblioteca local del proyecto `.r-library` a la ruta de búsqueda de bibliotecas de R. Los paquetes R requeridos directamente son `limma`, `tximport`, `DESeq2`, `apeglm`, `jsonlite` y, para la comprobación independiente, `BiocParallel`. También deben instalarse sus dependencias de Bioconductor. Los registros de sesión R conservan el contexto completo de paquetes cargados; consulte la [sesión de miRNA](../downloads/mirna/R_session_info.txt) y la [sesión independiente de DESeq2](../downloads/hypothalamus/independent_deseq2_check/R_session_info.txt).
+R **4.5.2** está disponible por separado de Python. Los scripts anteponen la biblioteca local del proyecto `.r-library` a la ruta de búsqueda de bibliotecas de R. Los paquetes R requeridos directamente son `limma`, `edgeR`, `tximport`, `DESeq2`, `apeglm`, `jsonlite` y, para la comprobación independiente, `BiocParallel`. También deben instalarse sus dependencias de Bioconductor. Los registros de sesión R conservan el contexto completo de paquetes cargados; consulte la [sesión de miRNA](../downloads/mirna/R_session_info.txt) y la [sesión independiente de DESeq2](../downloads/hypothalamus/independent_deseq2_check/R_session_info.txt).
 
 El procesamiento de ozono requiere además `salmon`, `fastp`, `aria2c` y `Rscript` disponibles en `PATH`. El descargador de anotaciones utiliza `aria2c`, aunque el descargador de transcritos y genoma dispone de una alternativa con curl. Las descargas de exposición utilizan `curl`. La generación del informe requiere la interfaz de línea de comandos de Quarto e `ipykernel`. El visor local requiere un navegador compatible con WebGL y gzip `DecompressionStream`; su biblioteca Plotly y sus archivos de expresión se sirven localmente, sin depender de una CDN durante el uso.
 
@@ -179,3 +179,25 @@ El sitio inglés queda disponible en `http://127.0.0.1:8000/` y la versión espa
 Los archivos originales de los estudios pueden restaurarse o reanudarse con el [descargador de exposición](../downloads/code/download_data.py) y el [descargador del atlas espacial](../downloads/code/download_spatial_atlas.py), utilizando sus manifiestos guardados. `scripts/status.py` informa del estado de descarga de exposición; `scripts/download_spatial_atlas.py --status` informa del estado de descarga del atlas. La [validación completa de entradas](../downloads/code/verify_repository.py) y los registros de validación por análisis describen las comprobaciones realizadas, manteniendo la distinción entre comprobación informática y validación biológica.
 
 El [archivo de código QMD e interfaz](../downloads/report-source.zip) contiene los archivos de autoría del informe. Para editarlo, restaure su árbol `docs/` dentro del repositorio completo; el archivo no incluye datos ómicos originales ni los archivos generados de expresión.
+
+## Reproducir los análisis ampliados
+
+Los capítulos nuevos tienen flujos separados; el ejecutor principal no los reajusta automáticamente. La reproducción de corteza y la sensibilidad de hipotálamo utilizan además **edgeR 4.8.2**. Se exportan las sesiones completas de R en cada carpeta nueva de resultados.
+
+Con los conjuntos originales y el objeto ajustado principal de ozono disponibles localmente, los modelos se reajustan con:
+
+```bash
+.venv-analysis/bin/python scripts/analyze_advanced_omics.py --refit
+.venv-analysis/bin/python scripts/replicate_pm_papers.py --fetch-sources --refit
+.venv-analysis/bin/python scripts/replicate_mirna_ozone.py
+```
+
+Para regenerar figuras desde tablas numéricas guardadas, se omite `--refit` en los dos primeros y se utiliza `--reuse-models` en la reproducción miRNA/ozono. Los objetos R, lecturas originales y texto editorial se excluyen de GitHub; el flujo principal de conteos reconstruye el objeto ajustado de ozono cuando sea necesario.
+
+[Métodos de modelos y figuras avanzados](../downloads/provenance/advanced_omics/methods.json) · [Métodos de reproducción PM](../downloads/replication_pm/methods.json) · [Métodos de reproducción miRNA/ozono](../downloads/replication_mirna_ozone/methods.json) · [Sesión R avanzada](../downloads/advanced_omics/R_session_info.txt) · [Sesión R de reproducción PM](../downloads/replication_pm/R_session_info.txt) · [Sesión R miRNA/ozono](../downloads/replication_mirna_ozone/R_session_info.txt)
+
+## Publicación en GitHub Pages
+
+La página pública se genera directamente en **docs/** desde fuentes QMD en Python, con índice bilingüe y `.nojekyll`. GitHub Pages utiliza **main → /docs**. La compilación intermedia está en `docs/_site/`; `scripts/render_docs.py` compila ambos idiomas y copia su salida estática. Para actualizar solo recursos estáticos, `--refresh-static` actualiza una compilación existente sin ejecutar de nuevo los bloques numéricos QMD. El [manifiesto de recursos](../pages-manifest.json) registra tamaños y hashes SHA256.
+
+Enlaces públicos: [English](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/) · [Español](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/) · [Repositorio](https://github.com/AmaruSimonAgueroJimenez/Air-Pollution-Brain-Omics-Mouse).
