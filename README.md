@@ -96,15 +96,33 @@ python3 scripts/download_spatial_atlas.py --background --workers 4
 
 `logs/spatial_atlas/completion.json` registra el resultado final y [metadata/spatial_atlas/download_receipts.json](metadata/spatial_atlas/download_receipts.json) guarda las comprobaciones de integridad. Los 49 archivos coincidieron en tamaño y MD5 con el manifiesto publicado. Se revisaron además las dimensiones e identificadores de las ocho matrices y los valores de sus primeras 1.000 células; el alcance de esa inspección está en [metadata/spatial_atlas/h5ad_inspection.json](metadata/spatial_atlas/h5ad_inspection.json). `--verify-only` permite repetir la comprobación completa sin descargar archivos nuevos. Las matrices y los metadatos se mantienen separados de los estudios de exposición y no se suman a sus 64 muestras ni a sus 110 FASTQ.
 
-## Reconstrucción 3D y comparación con PM2.5
+## Analysis report and 3D hypothalamus viewer
 
-Evaluación de factibilidad al **18 de octubre de 2026**. Los datos descargados permiten construir un visor 3D de referencia con las coordenadas CCF, las anotaciones anatómicas y la expresión MERFISH medida de los 1.122 genes del panel. El modelo representa células de cortes registrados a un marco anatómico común; una superficie o un volumen continuo interpolado debe identificarse como tal. El visor todavía no está implementado.
+The English Quarto report is authored in Python QMD files under [`docs/`](docs/index.qmd), with **Introduction, Methods, Results, functional enrichment, a 3D viewer, and reproducibility instructions**. The website is built locally in `docs/_site/`; generated figure and download copies remain local and can be regenerated.
 
-Una comparación con PM2.5 requiere distinguir la expresión de referencia medida y una proyección de la respuesta regional. Los estudios de PM2.5 descargados son bulk, sin coordenadas por célula, y el atlas no es su grupo control experimental. Una vista de genes aumentados o disminuidos puede mostrar dónde se expresan esos genes en el atlas; no demuestra que cada célula localizada haya cambiado por exposición. Una simulación que modifique la expresión basal debe declarar sus supuestos y no presentarse como expresión espacial medida bajo PM2.5.
+The analysis population comprises **48 independent animal samples across four separate studies**: seven chow-fed hypothalamus samples, eight cingulate-cortex samples without PFF, nine hippocampal miRNA arrays, and 24 hippocampal ozone libraries. These samples are a subset of the 64 downloaded study samples. Studies are not pooled. The completed ozone analysis starts from the original paired-end reads, using adapter QC, a fixed GENCODE M25/GRCm38 decoy-aware Salmon reference, tximport, and a factorial DESeq2 model.
 
-Como primera comparación se prioriza **GSE145840, hipotálamo: PM2.5 frente a aire filtrado, 3 frente a 4 muestras**, ambas con dieta estándar. El grupo HFD queda como comparador separado. Para corteza cingulada, **GSE297423: PM2.5 intranasal frente a PBS, 4 frente a 4 muestras**; los brazos PFF no se mezclan con este contraste. Ese estudio utiliza ratones humanizados para alfa-sinucleína y no equivale al fondo genético del atlas. Los detalles y metadatos están en [docs/datasets.md](docs/datasets.md).
+The three PM2.5 analyses retain their assay-specific units. The primary hypothalamus contrast identifies **11 genes at BH FDR <0.05**, and the cortex contrast identifies **1,167**. The miRNA low-dose contrast identifies **one feature**, with none in the high-dose contrast. These discovery counts are study-specific and are not a ranking of pollutant toxicity. The hypothalamus shows marked control heterogeneity: none of its eleven primary hits remains significant in all seven leave-one-out fits. An independent R/DESeq2 implementation check preserves all eleven hits and adds one borderline gene, Tnrc6c; it is not biological replication.
 
-Antes de proyectar una firma, se debe comprobar qué genes coinciden con el panel espacial, estimar el contraste entre animales del mismo estudio y conservar la incertidumbre. No se extrapolará una respuesta regional medida al resto del cerebro como un efecto demostrado. El bulk no identifica por sí solo qué parte de un cambio procede de regulación dentro de células y qué parte de diferencias en su abundancia.
+Ozone analysis retains **18,537 genes**. Within-stratum BH FDR <0.05 identifies **0, 399, 2 and 3 genes** in starting-age/genotype strata M3/APOE3, M3/APOE4, M17/APOE3 and M17/APOE4, respectively. The separate four-degree-of-freedom global exposure LRT identifies **24 genes**. All coefficient and shrinkage fits converged. These counts do not establish an age or genotype interaction, and a null contrast does not demonstrate absence of response. The supplementary BH family across all four contrasts is reported separately.
+
+The interactive viewer uses **37,811 registered hypothalamic cells from the male Zhuang-ABCA-2 atlas donor**, all **1,122 measured MERFISH genes**, 26 cell classes and 49 substructures. It compares measured reference expression with an explicitly labeled **SIMULATED** PM2.5 scenario using the same cell positions, linked cameras and color scale. Of the measured genes, 1,003 have estimable bulk effects; **Tll1** is the only primary hypothalamic FDR hit in the spatial panel. Its central multiplier is approximately **0.428×**. The simulation transfers a uniform regional bulk effect; it does not measure cell-specific exposure, cell loss, migration or whole-brain molecular effects. No cells are mirrored or expression values interpolated.
+
+After installing the recorded Python and R dependencies, run from the repository root:
+
+```bash
+.venv-analysis/bin/python scripts/run_analysis.py --dry-run
+.venv-analysis/bin/python scripts/run_analysis.py --cpus 4
+```
+
+To rebuild the report from existing results without refitting the analyses:
+
+```bash
+.venv-analysis/bin/python scripts/render_docs.py
+.venv-analysis/bin/python -m http.server 8819 --bind 127.0.0.1 --directory docs/_site
+```
+
+Open `http://127.0.0.1:8819/`. The viewer uses local data assets. Execution details, source manifests, software versions, statistical limits and all downloadable tables are described in [`docs/reproducibility.qmd`](docs/reproducibility.qmd). The original study data, reference atlas, literature library and analysis outputs remain in this repository; creating this local report does not publish it online.
 
 ## Integridad y uso analítico
 

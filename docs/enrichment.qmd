@@ -1,0 +1,216 @@
+---
+title: "Functional enrichment: GO Biological Process"
+---
+
+```{python}
+#| label: enrichment-setup
+#| include: false
+from pathlib import Path
+import json
+import pandas as pd
+from IPython.display import display, Markdown
+from _report_utils import ROOT, summary, read_table, show_table, figure, fmt_p
+
+enrichment_dir = ROOT / "results/enrichment"
+es = summary("enrichment")
+em = json.loads((enrichment_dir / "methods.json").read_text())
+available_datasets = es.get("datasets", {})
+dataset_labels = {
+    "hypothalamus": "Hypothalamus · PM versus filtered air",
+    "cortex": "Anterior cingulate cortex · PM versus PBS",
+    "ozone_M3_E3": "Hippocampus · O3 versus filtered air · starting age 3 months · APOE3",
+    "ozone_M3_E4": "Hippocampus · O3 versus filtered air · starting age 3 months · APOE4",
+    "ozone_M17_E3": "Hippocampus · O3 versus filtered air · starting age 17 months · APOE3",
+    "ozone_M17_E4": "Hippocampus · O3 versus filtered air · starting age 17 months · APOE4",
+}
+selected_keys = [key for key in dataset_labels if key in available_datasets]
+
+def permutation_value(value):
+    if pd.isna(value):
+        return "not estimated"
+    return "estimated 0; finite permutations" if value == 0 else fmt_p(value)
+
+def enrichment_figure(key, stem, caption, alt):
+    if (enrichment_dir / key / "figures" / f"{stem}.png").exists():
+        figure("enrichment/" + key, stem, caption, alt=alt)
+```
+
+## Questions and analytical scope
+
+Two classical gene-set approaches summarize completed gene-level RNA-seq contrasts. **Overrepresentation analysis (ORA)** asks whether an annotation occurs more often among FDR-selected genes than expected in the mapped testable gene universe. **Preranked gene-set enrichment analysis (GSEA)** asks whether genes belonging to a set tend to accumulate toward either end of the complete quality-eligible signed Wald-statistic ranking. The approaches use different inputs and different multiplicity procedures, so agreement is informative but is not required. [@Ashburner2000_GO; @Subramanian2005_GSEA; @Fang2023_GSEApy]
+
+The PM hypothalamus and cortex comparisons are kept separate. The four ozone age-by-genotype contrasts are added only after their corresponding Wald tables are complete. These are **six possible contrast entries**, not six exchangeable cohorts. No gene lists, animals, p values, or causal claims are pooled across brain regions, exposure agents, or experimental protocols. The unsigned global ozone LRT and miRNA array features are not supplied as signed mRNA rankings.
+
+> **Interpretation:** GO terms overlap and share ancestors. A large number of significant term labels does not represent the same number of independent mechanisms. GSEA's gene-set permutations do not capture biological-replicate uncertainty or preserve gene–gene correlations. Enrichment is exploratory evidence about ranked or selected gene sets, rather than proof of pathway activation, suppression, or a cell-specific pollutant mechanism.
+
+## Materials and methods
+
+### Mouse annotation, mapping, and reproducibility
+
+Gene sets are built from the downloaded mouse MGI GAF and GO Basic ontology, with source URLs, release-header dates, checksums, and derived GMT provenance retained. Their individual source dates are preserved; they should not be treated as a newly generated matched annotation release. Only positive mouse Biological Process annotations are used. `NOT` annotations are excluded, while positive annotation evidence codes, including electronic evidence, are retained.
+
+Term memberships propagate through active **`is_a` and `part_of`** Biological Process ancestors. Regulatory edges and cross-aspect relations are not used for propagation. Alternative IDs and obsolete terms resolve only when an unambiguous active replacement is available. [@Ashburner2000_GO]
+
+Mapping uses case-sensitive canonical mouse symbols or uniquely resolving GAF synonyms. It does not uppercase genes, infer human orthologs, or match free-text gene descriptions. When several DE features map to one symbol, the representative is selected by the highest `baseMean`, with lexical feature-ID tie-breaking, **independently of effect direction and significance**. Ambiguous and unmapped symbols remain visible in the mapping audit.
+
+### ORA background, foreground, and FDR
+
+The ORA universe comprises unique mapped representative genes with a finite adjusted DE p value. Mapped genes without a specific GO-BP annotation remain in the universe. Higher- and lower-expression foregrounds use gene-level DE FDR < 0.05 and the sign of the original unshrunken coefficient, without an additional effect-size threshold.
+
+Eligible GO terms have **15–500 members after intersection with the contrast-specific universe**. A one-sided hypergeometric survival probability tests the observed or greater overlap. Terms with zero overlap remain in the tested family with p = 1. BH correction is applied across the entire eligible term family, separately for each contrast and each direction. ORA's `padj_BH` is therefore distinct from a gene-level DE adjusted p value. [@Benjamini1995_FDR]
+
+### Preranked GSEA and gene-test quality
+
+The ranking includes unique mapped representatives with **both a finite unshrunken Wald statistic and a finite unshrunken-test p value after the source analysis's validity checks**. A finite statistic alone is insufficient: Cook-filtered or otherwise unreliable tests can retain a numerical statistic while having an unavailable p value. These rows are excluded from GSEA, and the exclusions are exported. For ozone, the source analysis also withholds tests for nonconverged fits and genes with zero counts in all six animals of the corresponding stratum. The pre-filter audit p values are not substituted for those unavailable valid-test p values. This is a gene-test quality decision, not an exclusion of an animal.
+
+Genes that have a finite unshrunken-test p value but a missing adjusted p value because of independent filtering remain eligible for ranking. This applies to the PM analyses where that filtering was enabled; ozone uses a fixed count prefilter without adaptive independent filtering. No gene-level FDR or fold-change threshold selects the ranked genes. Genes are ordered by descending signed statistic, with gene-symbol tie-breaking. Term membership is additionally restricted to 15–500 genes in the resulting rank. [@Subramanian2005_GSEA; @Fang2023_GSEApy]
+
+```{python}
+#| label: enrichment-permutation-method
+#| output: asis
+gsea_method = em["GSEA"]
+display(Markdown(
+    f"GSEApy uses **{gsea_method['permutations']:,} gene-set/gene-label permutations**, "
+    f"weight **{gsea_method['weight']}**, and seed **{gsea_method['seed']}**. "
+    "These are not phenotype-label permutations. The reported `fdr_qvalue` is the GSEA "
+    "algorithmic normalized-enrichment-score FDR estimate, **not BH correction**. "
+    "A nominal permutation p value or estimated q value of zero is a finite-permutation "
+    "result and does not mean zero error probability."
+))
+```
+
+## Results and coverage
+
+```{python}
+#| label: enrichment-completed-contrasts
+#| output: asis
+display(Markdown(f"Completed enrichment entries are available for **{len(selected_keys)} of the six planned contrasts** at this report build."))
+if (enrichment_dir / "summary_counts.tsv").exists():
+    counts = read_table("enrichment", "summary_counts.tsv")
+    counts = counts[counts.dataset.isin(selected_keys)].copy()
+    show_table(counts, n=6)
+ozone_keys = [key for key in dataset_labels if key.startswith("ozone_")]
+if all(key in available_datasets for key in ozone_keys) and all(
+    available_datasets[key]["ORA"]["significant_up_terms_BH_FDR_0_05"] == 0 and
+    available_datasets[key]["ORA"]["significant_down_terms_BH_FDR_0_05"] == 0
+    for key in ozone_keys
+):
+    display(Markdown("**No ORA term meets within-direction BH FDR < 0.05 in any of the four ozone strata.** The signed-rank GSEA results below use a different input and error model; their presence does not overturn this ORA null finding."))
+missing = [dataset_labels[k] for k in dataset_labels if k not in available_datasets]
+if missing:
+    display(Markdown("**Awaiting completed source contrasts or enrichment outputs:** " + "; ".join(missing) + ". No pathway findings are assigned to those entries."))
+```
+
+### Why mapping and test families matter
+
+The DE table, mapped gene representatives, ORA universe, and GSEA rank can have different sizes. Mapping losses and duplicate-symbol choices account for some differences. Where used in the PM analyses, independent filtering changes ORA eligibility, while GSEA retains quality-eligible finite-p genes even when their adjusted p value is unavailable. Source DE validity-exclusion counts can also differ from mapped GSEA exclusions because a source feature may be unmapped or removed by the declared duplicate-symbol rule. Ozone ORA foregrounds use the corresponding **within-stratum** gene-level BH values, rather than the supplementary across-four-strata column.
+
+```{python}
+#| label: enrichment-coverage-table
+coverage = []
+for key in selected_keys:
+    a = available_datasets[key]["annotation_mapping"]
+    coverage.append({"contrast": key, "source_features": a["input_features"],
+                    "mapped_representatives": a["unique_mapped_gene_representatives"],
+                    "ORA_universe": a["ORA_universe_genes"],
+                    "GSEA_rank": a["GSEA_rank_genes"],
+                    "mapped_nonfinite_p_excluded": a["GSEA_genes_removed_for_nonfinite_original_pvalue"],
+                    "finite_p_missing_padj_retained": a["GSEA_genes_retained_with_missing_adjusted_pvalue"],
+                    "DE_FDR_selected_features": a["source_significant_features"],
+                    "ORA_mapped_foreground": a["ORA_significant_mapped_gene_representatives"]})
+if coverage:
+    show_table(pd.DataFrame(coverage), n=6)
+```
+
+### Contrast-specific results
+
+```{python}
+#| label: enrichment-contrast-results
+#| output: asis
+for key in selected_keys:
+    entry = available_datasets[key]
+    ora = entry["ORA"]
+    gsea = entry["GSEA"]
+    display(Markdown("#### " + dataset_labels[key]))
+    display(Markdown(
+        f"ORA uses **{ora['universe_size']:,} mapped testable genes**, with "
+        f"**{ora['up_foreground_size']:,} higher-expression** and "
+        f"**{ora['down_foreground_size']:,} lower-expression** foreground genes. "
+        f"At within-family BH FDR < 0.05, **{ora['significant_up_terms_BH_FDR_0_05']:,} higher-direction** "
+        f"and **{ora['significant_down_terms_BH_FDR_0_05']:,} lower-direction** GO terms meet the criterion.\n\n"
+        f"GSEA ranks **{gsea['ranking_size']:,} genes** and evaluates **{gsea['tested_terms']:,} terms**. "
+        f"Its algorithmic FDR < 0.05 identifies **{gsea['significant_terms_algorithmic_FDR_0_05']:,} term labels**, "
+        f"including **{gsea['positive_NES_significant_terms']:,} positive-NES** and "
+        f"**{gsea['negative_NES_significant_terms']:,} negative-NES** terms. "
+        "These counts refer to overlapping annotations, not independent biological discoveries."
+    ))
+    if key == "hypothalamus":
+        no_specific = ora.get("foreground_genes_without_specific_BP_annotation", {})
+        display(Markdown(
+            "The absence of ORA significance must be read together with its small foregrounds. "
+            f"Of those foregrounds, **{len(no_specific.get('up', []))} higher-expression** and "
+            f"**{len(no_specific.get('down', []))} lower-expression** genes lack a specific GO-BP "
+            "annotation in this snapshot, while remaining in the mapped universe. "
+            "The much larger GSEA term count reflects a different rank-based question and permutation model; "
+            "it does not establish hundreds of separate hypothalamic mechanisms. Leading-edge overlap, "
+            "the original seven-animal uncertainty, and sensitivity to individual animals remain relevant."
+        ))
+    if key == "cortex":
+        display(Markdown(
+            "Protein-folding and related endoplasmic-reticulum response annotations occur among the "
+            "leading cortex results. Their shared member genes and ontology relationships make them "
+            "a coordinated annotation pattern for follow-up, rather than independent confirmations of "
+            "multiple activated pathways."
+        ))
+    if key == "ozone_M3_E3":
+        display(Markdown(
+            "Phototransduction and light-detection annotations occur among this hippocampal contrast's "
+            "ranked GO associations despite the absence of within-stratum gene-level FDR discoveries. "
+            "These ontology/rank associations do not establish visual function or a localized cellular "
+            "ozone response. Tissue specificity and the source-dissection context should be assessed "
+            "before using these terms mechanistically."
+        ))
+    ora_tables = []
+    for direction in ["up", "down"]:
+        tab = read_table("enrichment", f"{key}/ORA_{direction}_all_terms.tsv")
+        tab = tab.loc[tab.padj_BH.lt(.05)].sort_values(["padj_BH", "pvalue"]).head(6).copy()
+        if len(tab):
+            ora_tables.append(tab)
+    if ora_tables:
+        tab = pd.concat(ora_tables, ignore_index=True)[["GO_ID", "term_name", "direction", "overlap", "foreground_genes", "fold_enrichment", "padj_BH"]]
+        tab["padj_BH"] = tab.padj_BH.map(fmt_p)
+        show_table(tab, n=12)
+    else:
+        display(Markdown("No ORA term meets the declared BH threshold in either direction; nominally ranked terms remain available in the complete tables."))
+    enrichment_figure(key, "ORA_significant_terms", "GO-BP ORA terms meeting within-direction BH FDR < 0.05. Empty panels explicitly report no significant terms. Overlap counts refer to foreground genes, not animals or atlas cells.", f"Contrast-specific ORA summary for {dataset_labels[key]}.")
+    tab = read_table("enrichment", f"{key}/GSEA_all_terms.tsv").sort_values(["fdr_qvalue", "nominal_pvalue"], na_position="last")
+    preview = tab[["GO_ID", "term_name", "NES", "rank_member_genes", "nominal_pvalue", "fdr_qvalue"]].head(12).copy()
+    for c in ["nominal_pvalue", "fdr_qvalue"]:
+        preview[c] = preview[c].map(permutation_value)
+    show_table(preview, n=12)
+    enrichment_figure(key, "GSEA_terms", "Up to twelve lowest-q GO-BP terms from the quality-eligible preranked analysis. NES indicates association with the positive or negative end of this contrast's ranking. GSEA q values are permutation estimates, not ORA BH values.", f"Normalized enrichment scores for leading GO terms in {dataset_labels[key]}.")
+    curves = sorted((enrichment_dir / key / "figures").glob("GSEA_curve_*.png"))[:2]
+    for curve in curves:
+        enrichment_figure(key, curve.stem, "Illustrative running weighted enrichment curve and gene-set hit positions in the complete quality-eligible rank. Selection of a leading term is exploratory; its estimated q value retains finite-permutation and sample-level limitations.", f"Running enrichment curve for a selected term in {dataset_labels[key]}.")
+    display(Markdown(
+        f"[Full ORA higher-direction table](downloads/enrichment/{key}/ORA_up_all_terms.tsv) · "
+        f"[Full ORA lower-direction table](downloads/enrichment/{key}/ORA_down_all_terms.tsv) · "
+        f"[Full GSEA table and leading-edge genes](downloads/enrichment/{key}/GSEA_all_terms.tsv) · "
+        f"[Ranked genes](downloads/enrichment/{key}/GSEA_ranked_genes.tsv) · "
+        f"[Mapping decisions](downloads/enrichment/{key}/gene_mapping.tsv.gz) · "
+        f"[Excluded unreliable original tests](downloads/enrichment/{key}/GSEA_excluded_for_nonfinite_original_pvalue.tsv)"
+    ))
+```
+
+## Biological interpretation
+
+Positive NES denotes association toward the higher-expression end of the specific exposure contrast; negative NES denotes association toward the lower-expression end. Neither sign establishes biochemical pathway activity or the cell population responsible. The same genes can contribute to many related GO terms, and annotation coverage is unequal across genes. Classical ORA does not explicitly model gene-length or detectability biases; the testable background limits, but does not remove, those concerns.
+
+The molecular models and sample sizes remain those of the original regional experiments. An apparent shared term across cortex, hypothalamus, or an ozone stratum is a hypothesis for targeted comparison, not a pooled causal estimate. Cell composition, sampling, age, genotype, exposure delivery, and technical differences can contribute to apparent convergence. No validated target map is supplied for the miRNA array, so mRNA GO analysis is not inferred from miRNA identifiers.
+
+## Downloadable provenance
+
+- [Contrast summary counts](downloads/enrichment/summary_counts.tsv)
+- [Methods, annotation policies, and source versions](downloads/enrichment/methods.json)
+- [Complete machine-readable summary](downloads/enrichment/summary.json)
+- [Validation checks](downloads/enrichment/validation_checks.json)

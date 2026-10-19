@@ -1,0 +1,127 @@
+{
+  "sampling": "first 200000 read pairs per library; not all-read FastQC",
+  "trim_criterion": "adapter bases detected by paired read overlap in >=0.5% sampled reads",
+  "filtering": "no quality/length filtering; no poly-G trimming; no duplicate removal",
+  "decisions": [
+    {
+      "sample_id": "S1",
+      "adapter_trimmed_read_fraction": 0.0619475,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S2",
+      "adapter_trimmed_read_fraction": 0.0437625,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S3",
+      "adapter_trimmed_read_fraction": 0.0730675,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S4",
+      "adapter_trimmed_read_fraction": 0.0626225,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S5",
+      "adapter_trimmed_read_fraction": 0.0676025,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S6",
+      "adapter_trimmed_read_fraction": 0.0582075,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S7",
+      "adapter_trimmed_read_fraction": 0.070005,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S8",
+      "adapter_trimmed_read_fraction": 0.051915,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S9",
+      "adapter_trimmed_read_fraction": 0.0251525,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S10",
+      "adapter_trimmed_read_fraction": 0.069765,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S11",
+      "adapter_trimmed_read_fraction": 0.02911,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S12",
+      "adapter_trimmed_read_fraction": 0.0480525,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S13",
+      "adapter_trimmed_read_fraction": 0.048725,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S14",
+      "adapter_trimmed_read_fraction": 0.03427,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S15",
+      "adapter_trimmed_read_fraction": 0.0454075,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S16",
+      "adapter_trimmed_read_fraction": 0.0404925,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S17",
+      "adapter_trimmed_read_fraction": 0.055165,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S18",
+      "adapter_trimmed_read_fraction": 0.0519125,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S19",
+      "adapter_trimmed_read_fraction": 0.0416075,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S20",
+      "adapter_trimmed_read_fraction": 0.04579,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S21",
+      "adapter_trimmed_read_fraction": 0.0322225,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S22",
+      "adapter_trimmed_read_fraction": 0.041985,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S23",
+      "adapter_trimmed_read_fraction": 0.0426975,
+      "trim_for_quant": true
+    },
+    {
+      "sample_id": "S24",
+      "adapter_trimmed_read_fraction": 0.044855,
+      "trim_for_quant": true
+    }
+  ]
+}

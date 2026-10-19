@@ -1,0 +1,65 @@
+---
+title: "3D viewer · hypothalamus"
+subtitle: "Measured MERFISH reference beside a regional PM2.5 scenario"
+page-layout: full
+toc: false
+---
+
+```{python}
+from pathlib import Path
+from IPython.display import display, Markdown
+from _report_utils import summary, metric_cards, figure
+v = summary("spatial_viewer")
+metric_cards([
+    ("Reference donor", "ABCA-2", "Adult male; registered hemisphere"),
+    ("Hypothalamic cells", f"{v['hypothalamus_cells']:,}", "All registered cells; no subsampling"),
+    ("Measured genes", f"{v['measured_genes']:,}", "One gene loads at a time; local files"),
+    ("Bulk evidence", "4 FA / 3 PM", "Seven independent animals")
+])
+```
+
+The left view shows measured expression from the reference atlas. The right view multiplies those same cell values by a gene-specific regional effect from the hypothalamic bulk study. It is permanently labeled **SIMULATED**. Both views use the same cell positions, linked cameras, and a common color scale.
+
+::: {.model-note}
+**Start with Tll1.** It is the only primary hypothalamic FDR hit measured in this panel. The central multiplier is approximately 0.428×, but its significance is sensitive to individual animals. The other measured genes remain available, with nonsignificant exposure estimates labeled exploratory and unreliable estimates kept reference-only.
+:::
+
+<iframe id="atlas-frame" class="viewer-frame" src="assets/viewer/index.html" title="Linked measured-reference and simulated-PM2.5 three-dimensional hypothalamus views" loading="lazy"></iframe>
+
+<script>
+window.addEventListener("message", function(event) {
+  const frame = document.getElementById("atlas-frame");
+  if (frame && event.source === frame.contentWindow && (event.origin === window.location.origin || event.origin === "null") && event.data && event.data.type === "omics-atlas-height") {
+    frame.style.height = Math.min(4200, Math.max(1350, Number(event.data.height) + 30)) + "px";
+  }
+});
+</script>
+
+[Open the standalone viewer](assets/viewer/index.html){.btn .btn-outline-primary target="_blank"}
+
+## Using the viewer
+
+1. Type a gene symbol and select **Apply**. All 1,122 measured panel genes are available.
+2. Rotate either scene; the other camera follows. Select **Whole-brain context** to see the anatomical surface surrounding the hypothalamus.
+3. Filter by cell class or hypothalamic substructure. Filtering changes the cells shown, not their expression values.
+4. Compare the central shrunken effect with the lower or upper pointwise group-effect scenario. These bounds are not individual-cell confidence intervals.
+5. Inspect the seven bulk-animal values below the scenes. The atlas cells do not increase the experimental sample size.
+
+The optional common color cap uses the 99th percentile of positive reference/scenario values. Saturated colors do not discard values: actual values remain in hover and source files. Measured zeros are shown by default and can be hidden explicitly.
+
+Tll1 has a positive measured imaging count in **667 of 37,811 cells (1.76%)** in this reference. The remaining measured zeros dominate an all-cell view; a zero imaging count does not establish biological absence. The viewer reports the number of currently shown cells with positive measured counts. Hiding zeros is an explicit display filter and does not create additional observations.
+
+## Static and data alternatives
+
+```{python}
+figure("spatial_viewer", "reference_vs_simulation",
+       "Tll1 measured MERFISH reference and uniform regional PM2.5 simulation. The same 37,811 registered cells are shown, with measured zeros faint and positive measured counts emphasized in both views. The multiplier is derived from the shrunken seven-animal bulk contrast, not a measured exposure effect in those cells.")
+```
+
+- [Registered cells and original identifiers](downloads/spatial_viewer/registered_hypothalamus_cells.tsv.gz)
+- [Measured panel and eligible bulk effects](downloads/spatial_viewer/gene_panel_coverage.tsv)
+- [Spatial model and provenance](downloads/spatial_viewer/summary.json)
+- [Spatial input checks](downloads/spatial_viewer/validation_checks.json)
+- [Reproducible viewer builder](downloads/code/build_spatial_viewer.py)
+
+The whole-brain surface is anatomical context. No expression is mirrored into the other hemisphere, and no PM2.5 effect is assigned outside the hypothalamus. The model preserves cell abundance and geometry and cannot identify cell loss, migration, or cell-specific vulnerability. See the [statistical and spatial Methods](methods.qmd) and [hypothalamic sensitivity analysis](results.qmd#sensitivity-to-individual-samples).

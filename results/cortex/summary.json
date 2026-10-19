@@ -1,0 +1,40 @@
+{
+  "dataset": "GSE297423",
+  "tissue": "anterior cingulate cortex",
+  "contrast": "PM versus PBS without PFF injection",
+  "n_samples": 8,
+  "n_PM": 4,
+  "n_PBS": 4,
+  "genes_input": 56748,
+  "genes_retained": 19235,
+  "genes_with_Wald_pvalue": 19225,
+  "genes_with_adjusted_pvalue": 17360,
+  "FDR05_genes": 1167,
+  "FDR05_higher_in_PM": 658,
+  "FDR05_lower_in_PM": 509,
+  "FDR05_abs_shrunken_log2FC_ge_1": 45,
+  "Cook_filtered_genes": [
+    "ENSMUSG00000061808",
+    "ENSMUSG00000021342",
+    "ENSMUSG00000020660",
+    "ENSMUSG00000058488",
+    "ENSMUSG00000020713",
+    "ENSMUSG00000024164",
+    "ENSMUSG00000054072",
+    "ENSMUSG00000078899",
+    "ENSMUSG00000048108",
+    "ENSMUSG00000000386"
+  ],
+  "library_size_range": [
+    29498988,
+    41748872
+  ],
+  "QC_notes": [
+    "PM samples show greater spread than PBS in the first two principal components; all samples were retained.",
+    "Sample-level correlations are high on VST values and do not constitute proof of absence of batch effects or other confounding."
+  ],
+  "PCA_PC1_percent": 39.25752683778442,
+  "PCA_PC2_percent": 20.716383481503396,
+  "samples_excluded_by_analysis": [],
+  "interpretation": "Exploratory analysis of the supplied bulk gene-count matrix; n=4 biological samples per group. Effects are specific to the studied humanized alpha-synuclein mouse model and nasal PM exposure."
+}

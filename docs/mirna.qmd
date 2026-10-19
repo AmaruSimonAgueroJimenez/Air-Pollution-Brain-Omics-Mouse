@@ -1,0 +1,193 @@
+---
+title: "Hippocampal miRNA: two PM doses"
+---
+
+```{python}
+#| label: mirna-setup
+#| include: false
+import pandas as pd
+from IPython.display import display, Markdown
+from _report_utils import summary, read_table, show_table, figure, fmt_p
+
+s = summary("mirna")
+meta = read_table("mirna", "sample_metadata.tsv")
+qc = read_table("mirna", "sample_qc.tsv")
+low = read_table("mirna", "DE_PM1_vs_Control.tsv")
+high = read_table("mirna", "DE_PM5_vs_Control.tsv")
+omnibus = read_table("mirna", "DE_omnibus.tsv")
+```
+
+## Study question
+
+GSE93967 measures hippocampal miRNA signals after saline or PM2.5 administered by oropharyngeal aspiration at 1 or 5 mg/kg every other day for four weeks. The deposited microarray experiment contains **nine biological samples: three per group**. The original report focused on miR-574-5p and additional functional experiments; this report reanalyzes the deposited array matrix and does not reproduce those additional experiments. [@Ku2017_28851397]
+
+## Materials and methods
+
+### Input, annotation, and measurement scale
+
+The GEO series matrix contains 1,268 feature rows. The GPL17912 platform table maps biological mouse miRNA probes to the supplied `miRNA_ID` labels. Historical platform identifiers are retained without a silent miRBase update or aggregation. Twenty-one control or unannotated rows are preserved in the source export but excluded from differential analysis. Two biological miRNA rows, **mmu-miR-3963 and mmu-miR-6366**, have zero variance across the nine samples and are also excluded.
+
+GEO describes quantile normalization with GeneSpring but does not explicitly establish the log2 measurement scale of the deposited matrix. The supplied values include negative values and a large lower-bound pile-up. **The analysis applies neither a second log transform nor a count-data model.** Effects are labeled **mean differences in published normalized signal units**, with positive values indicating higher signal in the PM group. They are not interpreted as log2 fold changes or converted to fold changes.
+
+```{python}
+#| label: mirna-samples
+show_table(meta[["sample", "title", "condition", "dose_mg_per_kg"]], n=9)
+```
+
+### Statistical model and detection flags
+
+Limma fits a three-group linear model with one group-mean coefficient for saline, 1 mg/kg PM, and 5 mg/kg PM. The two planned contrasts compare each PM group with saline. Empirical Bayes moderation uses `trend=True` and `robust=False`; the optional omnibus test is a two-coefficient moderated F test for the two PM-minus-saline contrasts. [@Ritchie2015_limma]
+
+Benjamini–Hochberg adjustment is applied across the retained miRNA rows **within each pairwise contrast**, and separately within the omnibus test. These adjustments do not provide a single pooled FDR guarantee across the three test families. Exported standard errors and pointwise 95% moderated t intervals refer to the reported signal differences; the intervals are not simultaneous or multiplicity-adjusted. [@Benjamini1995_FDR]
+
+The original Agilent detection calls are retained. A low-detection flag identifies rows with fewer than three Present calls in every group. These rows remain in the primary testing family, with their flag available for interpretation. No biological sample is removed on the basis of PCA. PCA uses the 500 most variable retained features, centered without variance scaling, on the deposited signal scale.
+
+## Results
+
+### Quality and signal limitations
+
+```{python}
+#| label: mirna-qc-text
+#| output: asis
+display(Markdown(
+    f"**{s['miRNA_features_tested']:,} biological miRNA features** enter the model. "
+    f"Of these, **{s['low_detection_features_flagged_not_removed']:,}** receive the low-detection "
+    f"flag. Across the retained features and nine samples, **{s['negative_signal_values_retained']:,}** "
+    "negative signal values are retained. The sample-specific floor near −3.3 dominates the "
+    "lower portion of the signal distribution and limits the information available for many features.\n\n"
+    f"PC1 and PC2 explain **{s['PCA_PC1_percent']:.1f}%** and **{s['PCA_PC2_percent']:.1f}%** "
+    "of the variance in the PCA input. The three exposure groups do not separate cleanly in this display. "
+    "A lack of clear PCA separation does not establish equivalence, and the nine samples remain in all models."
+))
+```
+
+```{python}
+#| label: mirna-qc-table
+quality = qc[["sample", "condition", "signal_min", "signal_median", "present_miRNA_features", "absent_miRNA_features", "features_equal_to_sample_minimum"]].copy()
+quality[["signal_min", "signal_median"]] = quality[["signal_min", "signal_median"]].round(4)
+show_table(quality, n=9)
+```
+
+```{python}
+#| label: mirna-pca-figure
+figure("mirna", "pca", "PCA of the 500 most variable retained miRNA features, using the published signal scale. Circles: saline; squares: 1 mg/kg PM; triangles: 5 mg/kg PM. Each point represents one biological sample.", alt="PCA of nine hippocampal miRNA samples showing overlapping exposure groups and heterogeneous individual samples.")
+```
+
+```{python}
+#| label: mirna-quality-figure
+figure("mirna", "sample_qc", "Published signal distributions and numbers of miRNA features called Present by the original array processing. Boxplot extremes are omitted from the visualization only; all retained signal values enter analysis.", alt="miRNA signal boxplots show a large floor near minus 3.3, with Present feature counts around four hundred per sample.")
+```
+
+### Exposure contrasts
+
+```{python}
+#| label: mirna-de-summary
+#| output: asis
+rows = {row["contrast"]: row for row in s["contrasts"]}
+display(Markdown(
+    f"At **1 mg/kg**, **{rows['PM1_vs_Control']['FDR05_features']} feature** passes FDR < 0.05. "
+    f"At **5 mg/kg**, **{rows['PM5_vs_Control']['FDR05_features']} features** pass that threshold. "
+    f"The separately adjusted omnibus moderated F test identifies **{s['omnibus_FDR05_features']} feature**. "
+    "The absence of a higher-dose FDR hit does not establish the absence of an effect or a safe exposure dose."
+))
+```
+
+```{python}
+#| label: mirna-summary-table
+show_table(read_table("mirna", "de_summary.tsv"), n=2)
+```
+
+```{python}
+#| label: mirna-leading-feature
+#| output: asis
+hit = low.loc[low.padj.lt(.05)]
+if len(hit):
+    text = []
+    for _, row in hit.iterrows():
+        text.append(f"**{row.miRNA}**: mean difference **{row.effect_mean_difference:.3f}** "
+                    f"published signal units, pointwise 95% interval "
+                    f"**{row.CI95_lower:.3f} to {row.CI95_upper:.3f}**, "
+                    f"adjusted p = **{fmt_p(row.padj)}**")
+    display(Markdown("The lower-dose FDR result is " + "; ".join(text) +
+                     ". This feature is not flagged for low detection. Its lower-dose signal "
+                     "does not by itself establish a monotonic dose response."))
+```
+
+::: {.panel-tabset}
+
+### 1 mg/kg versus saline
+
+```{python}
+#| label: mirna-low-dose-table
+cols = ["miRNA", "effect_mean_difference", "SE_moderated", "CI95_lower", "CI95_upper", "pvalue", "padj", "low_detection_flag"]
+tab = low[cols].head(10).copy()
+for c in ["effect_mean_difference", "SE_moderated", "CI95_lower", "CI95_upper"]:
+    tab[c] = tab[c].round(3)
+for c in ["pvalue", "padj"]:
+    tab[c] = tab[c].map(fmt_p)
+show_table(tab, n=10)
+```
+
+```{python}
+#| label: mirna-low-volcano-figure
+figure("mirna", "volcano_PM1_vs_Control", "Limma mean differences in published normalized signal versus nominal moderated t-test p values for 1 mg/kg PM minus saline. Orange triangles denote FDR < 0.05; gray circles denote the remaining features.", alt="Low-dose miRNA volcano plot with mmu-miR-5119 as the only FDR-significant feature.")
+```
+
+```{python}
+#| label: mirna-low-heatmap-figure
+figure("mirna", "top30_heatmap_PM1_vs_Control", "Thirty features ranked by the 1 mg/kg contrast's adjusted p value, displayed as within-feature z scores of the deposited signals. Ranking does not imply that all displayed rows are significant.", alt="Heatmap of the 30 leading lower-dose miRNA features across all nine samples.")
+```
+
+### 5 mg/kg versus saline
+
+```{python}
+#| label: mirna-high-dose-table
+tab = high[cols].head(10).copy()
+for c in ["effect_mean_difference", "SE_moderated", "CI95_lower", "CI95_upper"]:
+    tab[c] = tab[c].round(3)
+for c in ["pvalue", "padj"]:
+    tab[c] = tab[c].map(fmt_p)
+show_table(tab, n=10)
+```
+
+```{python}
+#| label: mirna-high-volcano-figure
+figure("mirna", "volcano_PM5_vs_Control", "Limma mean differences in published normalized signal versus nominal moderated t-test p values for 5 mg/kg PM minus saline. No feature passes FDR < 0.05 in this contrast.", alt="High-dose miRNA volcano plot with no FDR-significant features and mmu-miR-709 labeled as the leading ranked feature.")
+```
+
+```{python}
+#| label: mirna-high-heatmap-figure
+figure("mirna", "top30_heatmap_PM5_vs_Control", "Thirty features ranked by the 5 mg/kg contrast's adjusted p value, displayed as within-feature z scores of the deposited signals. These are ranked features, not an FDR-significant gene set.", alt="Heatmap of the 30 leading higher-dose miRNA features across all nine samples.")
+```
+
+:::
+
+### Relation to the original miR-574-5p report
+
+The original publication investigated miR-574-5p with array discovery and additional biological experiments. The current secondary array analysis does **not** identify miR-574-5p at FDR < 0.05 in either prespecified pairwise contrast. This difference should not be described as replication of the original central mechanism, nor as refutation of experiments that were not reanalyzed here. [@Ku2017_28851397]
+
+```{python}
+#| label: mirna-original-candidate
+candidate_rows = []
+for name, frame in [("1 mg/kg minus saline", low), ("5 mg/kg minus saline", high)]:
+    row = frame.loc[frame.miRNA.eq("mmu-miR-574-5p"), ["miRNA", "effect_mean_difference", "pvalue", "padj", "low_detection_flag"]].copy()
+    row.insert(0, "contrast", name)
+    candidate_rows.append(row)
+candidate = pd.concat(candidate_rows, ignore_index=True)
+candidate["effect_mean_difference"] = candidate.effect_mean_difference.round(4)
+for c in ["pvalue", "padj"]:
+    candidate[c] = candidate[c].map(fmt_p)
+show_table(candidate, n=2)
+```
+
+### Interpretation and limits
+
+The small group sizes, extensive low-detection features, normalization-scale ambiguity, and within-group heterogeneity limit mechanistic interpretation. A positive array coefficient indicates a signal difference on the deposited scale. It does not establish the direction or magnitude of an unmeasured mRNA target, a validated miRNA–target interaction, or a change in a specific hippocampal cell population. For that reason, this analysis does not apply mRNA Gene Ontology enrichment directly to miRNA names.
+
+## Downloadable results
+
+- [1 mg/kg differential results](downloads/mirna/DE_PM1_vs_Control.tsv), [5 mg/kg differential results](downloads/mirna/DE_PM5_vs_Control.tsv), and [omnibus results](downloads/mirna/DE_omnibus.tsv)
+- [Published normalized signal matrix](downloads/mirna/published_normalized_signal.tsv) and [retained analysis matrix](downloads/mirna/analysis_signal.tsv)
+- [Probe annotations and exclusions](downloads/mirna/probe_annotation.tsv), [detection calls](downloads/mirna/detection_calls.tsv), and [feature detection summaries](downloads/mirna/miRNA_feature_summary.tsv)
+- [Sample metadata](downloads/mirna/sample_metadata.tsv), [sample quality](downloads/mirna/sample_qc.tsv), and [sample correlations](downloads/mirna/sample_correlation.tsv)
+- [Methods and provenance](downloads/mirna/methods.json), [R session information](downloads/mirna/R_session_info.txt), and [validation record](downloads/mirna/validation.json)

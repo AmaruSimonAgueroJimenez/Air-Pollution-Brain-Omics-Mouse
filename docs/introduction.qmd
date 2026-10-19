@@ -1,0 +1,32 @@
+---
+title: "Introduction and study scope"
+---
+
+## Rationale
+
+The cerebral cortex, hypothalamus, and hippocampus contain different mixtures of neurons, glia, vascular cells, and other cell populations. An expression signature measured in one region therefore addresses a different biological question from a signature measured elsewhere. Bulk tissue measurements also combine changes within cells with differences in the proportions or states of the cells contributing RNA. These distinctions matter when interpreting studies of air pollutants: an observed tissue signature can motivate a mechanistic hypothesis, but it does not identify the affected cell population or its anatomical position on its own.
+
+The available experimental studies cover several complementary settings. Zhang and colleagues investigated air pollutants in a humanized alpha-synuclein mouse model and deposited anterior cingulate cortex RNA-seq data. Rajagopalan and colleagues examined metabolic responses to air pollution and reversibility, with hypothalamus among several sampled tissues. Ku and colleagues studied hippocampal miRNA expression after repeated PM2.5 aspiration. Nakamya and colleagues investigated hippocampal transcriptomic responses to ozone across age and APOE genotype groups. These studies provide region-specific starting points for secondary analysis rather than technical replicates of one experiment. [@Zhang2025_40906862; @Rajagopalan2020_32780721; @Ku2017_28851397; @Nakamya2025_40141051]
+
+## Four studies, distinct estimands
+
+This project retains four pollutant studies as separate analytical units. The hypothalamus analysis separates PM exposure from the high-fat-diet comparison; the cortex analysis selects PM and PBS samples without alpha-synuclein preformed-fibril injection; the miRNA analysis compares each administered PM dose with saline. The ozone workflow starts from all 24 original paired-end libraries and preserves the age-by-genotype design. The deposited genotype-only result table is not treated as a sample-level count matrix or as an ozone exposure contrast.
+
+| Dataset | Tissue | Deposited assay | Scope used in this report |
+|---|---|---|---|
+| GSE145840 | Hypothalamus | Bulk RNA-seq | Brain samples only; PM, filtered-air, and high-fat-diet groups distinguished |
+| GSE297423 | Anterior cingulate cortex | Bulk RNA-seq | PM versus PBS without preformed-fibril injection |
+| GSE93967 | Hippocampus | miRNA microarray | Saline, 1 mg/kg PM, and 5 mg/kg PM; probe-level analysis |
+| E-MTAB-14917 | Hippocampus | Bulk RNA-seq | Original-read reanalysis; four within-age/genotype ozone contrasts and a global exposure test |
+
+Particulate matter and ozone are different exposure classes. PM preparations, delivery routes, dose schedules, animal ages, genotypes, and tissue collection differ between the studies. Consequently, effect sizes are interpreted within each experiment. A shared gene or pathway is a candidate point of convergence, not evidence that the exposures or their doses are interchangeable. Cerebral NO2 publications remain part of the literature inventory, but an unavailable complete expression matrix cannot be replaced by supplementary gene lists when estimating a sample-level exposure effect. [@Yan2020_32203807; @Li2026_42526541]
+
+## Matching the analysis to the assay
+
+RNA-seq count models and microarray signal models answer related questions on different measurement scales. The bulk RNA-seq analyses use count-based inference, retain original identifiers, and distinguish statistical testing from stabilized effect-size estimates. The miRNA analysis retains the deposited normalized signals and reports differences in those units because the deposited preprocessing description does not explicitly establish a log2 scale. Uncertainty, multiple testing, sample quality, and low-information features are reported alongside ranked results. [@Love2014_DESeq2; @Muzellec2023_PyDESeq2; @Ritchie2015_limma]
+
+## What the spatial atlas contributes
+
+The Zhang 2023 whole-mouse-brain MERFISH atlas supplies a measured spatial reference from animals without an experimental pollutant exposure. Its targeted panel measures 1,122 genes and links individual segmented cells with anatomical coordinates and transferred transcriptomic annotations. This enables inspection of where a gene is normally detected and which annotated populations express it. It does not measure a pollutant response in the atlas animals. A projected bulk signature is therefore an inferred correspondence between experiments and reference tissue; it cannot establish exposure-induced expression changes in individual atlas cells. Genes outside the measured panel require a separately identified inference strategy. [@Zhang2023_38092912]
+
+The objective is to deliver reproducible classical omics analyses and a transparent spatial reference for follow-up. Each result is linked to its source matrix, sample selection, model, quality checks, and downloadable table. The report distinguishes completed comparisons from data that remain insufficient for a new exposure contrast, preserving a clear boundary between direct measurement, statistical estimation, and biological interpretation.

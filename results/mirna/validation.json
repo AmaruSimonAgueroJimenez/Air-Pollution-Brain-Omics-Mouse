@@ -1,0 +1,127 @@
+{
+  "verified_at_UTC": "2026-10-19T00:16:52.509973+00:00",
+  "numerical_checks": [
+    "Expression-to-metadata sample ordering checked",
+    "All tested features retain explicit IDs without silent collapse",
+    "All exported PNG files decoded; SVG files parsed and PDF signatures checked",
+    "All figure families exported in PNG/SVG/PDF with captions and source-table pointers",
+    "Effects equal exposed minus control group mean of the untransformed published signal",
+    "Finite moderated SE, degrees of freedom and pointwise 95% intervals for all tested rows",
+    "Moderated t equals effect / moderated SE",
+    "Two-sided p values agree with moderated t tails",
+    "BH adjustment agrees with independent recalculation within each contrast"
+  ],
+  "visual_review": "All 16 figure families reviewed on a contact sheet; final cortex and high-dose miRNA volcano plots inspected individually after reducing overlapping labels; no clipped axes or unreadable labels observed.",
+  "figures": [
+    {
+      "file": "results/mirna/figures/mean_difference_PM1_vs_Control.png",
+      "pixels": [
+        2160,
+        1560
+      ],
+      "DPI": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "results/mirna/figures/mean_difference_PM5_vs_Control.png",
+      "pixels": [
+        2160,
+        1560
+      ],
+      "DPI": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "results/mirna/figures/pca.png",
+      "pixels": [
+        2280,
+        1590
+      ],
+      "DPI": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "results/mirna/figures/sample_correlation.png",
+      "pixels": [
+        2100,
+        1800
+      ],
+      "DPI": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "results/mirna/figures/sample_qc.png",
+      "pixels": [
+        3300,
+        1440
+      ],
+      "DPI": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "results/mirna/figures/top30_heatmap_PM1_vs_Control.png",
+      "pixels": [
+        2520,
+        2400
+      ],
+      "DPI": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "results/mirna/figures/top30_heatmap_PM5_vs_Control.png",
+      "pixels": [
+        2520,
+        2400
+      ],
+      "DPI": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "results/mirna/figures/top30_heatmap_omnibus.png",
+      "pixels": [
+        2520,
+        2400
+      ],
+      "DPI": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "results/mirna/figures/volcano_PM1_vs_Control.png",
+      "pixels": [
+        2340,
+        1560
+      ],
+      "DPI": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "results/mirna/figures/volcano_PM5_vs_Control.png",
+      "pixels": [
+        2340,
+        1560
+      ],
+      "DPI": [
+        299.9994,
+        299.9994
+      ]
+    }
+  ]
+}

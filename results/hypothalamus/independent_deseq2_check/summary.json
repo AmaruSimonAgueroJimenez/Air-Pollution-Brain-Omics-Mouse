@@ -1,0 +1,171 @@
+{
+  "purpose": "Independent software cross-check of the fixed primary hypothesis, not biological replication or a substitute primary analysis",
+  "primary_analysis_unchanged": true,
+  "input_SHA256": {
+    "results/hypothalamus/counts.tsv.gz": "4e0f5f3d2d4935ef45c6c44107c17323f8958569583886e006a5d15346442775",
+    "results/hypothalamus/sample_metadata.tsv": "964023122c132e3efc5a77db3215c7af7a84b7a5fb05e46a49a74331f17a693a",
+    "results/hypothalamus/differential_expression_mle.tsv": "f9af93e60834a1b740179ea1e495789a7c197e91f56de2b1d0680fc083906186",
+    "results/hypothalamus/qc_samples.tsv": "37c5b0b16066de1e08f5340e685d80fe148da6e0e840674cd691953164f017dd",
+    "results/hypothalamus/methods.json": "5a75ca6162770d4fbdd1fb876e65d851f29a8dc07cf6307e7ac8391fe6eaa913"
+  },
+  "R_fit": {
+    "purpose": "Independent DESeq2 implementation cross-check, not biological replication or a replacement primary analysis",
+    "software": {
+      "R": "R version 4.5.2 (2025-10-31)",
+      "DESeq2": "1.50.2"
+    },
+    "condition_reference": "FA",
+    "contrast": [
+      "condition",
+      "PM",
+      "FA"
+    ],
+    "design": "~condition",
+    "samples": 7,
+    "groups": {
+      "FA": 4,
+      "PM": 3
+    },
+    "prefilter": "count >=10 in at least 3 of 7 samples before size-factor estimation",
+    "input_genes": 50417,
+    "fitted_genes": 19611,
+    "size_factor_method": "ratio",
+    "fit_type": "parametric",
+    "test": "two-sided Wald",
+    "beta_prior": false,
+    "minimum_replicates_for_count_replacement": 7,
+    "replacement_assay_present": false,
+    "parallel": false,
+    "CPU_limit": 1,
+    "default_Cooks_filter_enabled": true,
+    "Cooks_cutoff": 13.2739,
+    "finite_pvalues_no_independent_filter": 19452,
+    "Cooks_filtered_genes": 159,
+    "FDR_hits_no_independent_filter": 12,
+    "FDR_hits_default_independent_filter": 12,
+    "independent_filter_threshold": 4.855,
+    "fitted_dispersion_trend_type": "parametric",
+    "completed_at": "2026-10-19T00:29:35Z"
+  },
+  "primary_PyDESeq2_version": "0.5.4",
+  "validation_script_SHA256": {
+    "R": "7b47d27fae8ff4609ec745aa2a692bf43584b2aa04e606f33b064cf7a248f5b3",
+    "Python": "ef880dd452b442f6b9b0bdbbf31d0f616d5e8e046c6258a7ba78c7ae6a0b1e75"
+  },
+  "fitted_genes": 19611,
+  "Python_finite_pvalues": 19452,
+  "R_finite_pvalues": 19452,
+  "common_finite_pvalue_universe": 19452,
+  "same_gene_universe": true,
+  "native_FDR_hits": {
+    "PyDESeq2_primary": 11,
+    "R_independent_filter_FALSE": 12,
+    "R_default_independent_filter_TRUE": 12
+  },
+  "shared_family_BH_FDR_hits": {
+    "PyDESeq2": 11,
+    "R_DESeq2": 12
+  },
+  "Cooks_filter": {
+    "Python_genes": 159,
+    "R_genes": 159,
+    "same_status_genes": 19611,
+    "discordant_genes": 0
+  },
+  "numerical_agreement_metrics": {
+    "size_factor_max_absolute_relative_difference": 2.7081814568674645e-10,
+    "common_universe_log2FC_Pearson": 0.9999999996002856,
+    "common_universe_log2FC_Spearman": 0.9999999972022705,
+    "median_absolute_log2FC_difference": 1.550794189508764e-06,
+    "p99_absolute_log2FC_difference": 7.398075866273006e-05,
+    "maximum_absolute_log2FC_difference": 0.00018509321703996662,
+    "median_SE_ratio_R_over_Python": 0.9984578313847396,
+    "p01_SE_ratio_R_over_Python": 0.9897502343107341,
+    "p99_SE_ratio_R_over_Python": 1.0018586385272332,
+    "common_universe_Wald_statistic_Pearson": 0.9999757789386354,
+    "common_universe_minus_log10_pvalue_Spearman": 0.9999708816959204
+  },
+  "descriptive_tolerances": {
+    "size_factors_relative_difference_at_most": 1e-06,
+    "log2FC_Pearson_at_least": 0.995,
+    "median_absolute_log2FC_difference_at_most": 0.01,
+    "p99_absolute_log2FC_difference_at_most": 0.1,
+    "median_SE_ratio_between": [
+      0.95,
+      1.05
+    ],
+    "Wald_statistic_Pearson_at_least": 0.99,
+    "minus_log10_pvalue_Spearman_at_least": 0.99
+  },
+  "tolerance_checks": {
+    "size_factors": true,
+    "log2FC_global_correlation": true,
+    "log2FC_median_difference": true,
+    "log2FC_99th_percentile_difference": true,
+    "median_SE_ratio": true,
+    "Wald_statistic_global_correlation": true,
+    "pvalue_rank_correlation": true
+  },
+  "all_descriptive_tolerances_met": true,
+  "FDR_discordant_genes": [
+    "Tnrc6c"
+  ],
+  "FDR_discordant_gene_details": [
+    {
+      "gene": "Tnrc6c",
+      "baseMean_PyDESeq2": 7273.48221,
+      "log2FoldChange_PyDESeq2": -0.3695357006,
+      "lfcSE_PyDESeq2": 0.08888011506,
+      "stat_PyDESeq2": -4.157687019,
+      "pvalue_PyDESeq2": 3.214860621e-05,
+      "padj_PyDESeq2": 0.05211289066,
+      "baseMean_R_DESeq2": 7273.48221022696,
+      "log2FoldChange_R_DESeq2": -0.369539001818864,
+      "lfcSE_R_DESeq2": 0.0876056161787351,
+      "stat_R_DESeq2": -4.21821131952228,
+      "pvalue_R_DESeq2": 2.46247982218345e-05,
+      "padj_R_DESeq2": 0.0399167979175937,
+      "padj_R_default_independent_filter": 0.0399167979175937,
+      "in_common_finite_pvalue_universe": true,
+      "padj_common_PyDESeq2": 0.05211289066641,
+      "padj_common_R_DESeq2": 0.03991679791759372,
+      "log2FC_difference_R_minus_Python": -3.3012188639935935e-06,
+      "SE_ratio_R_over_Python": 0.9856604721944325,
+      "FDR05_Python_primary": false,
+      "FDR05_R_no_independent_filter": true,
+      "FDR05_R_default_independent_filter": true,
+      "FDR05_common_Python": false,
+      "FDR05_common_R": true
+    }
+  ],
+  "Tll1": {
+    "baseMean_PyDESeq2": 204.2131246,
+    "log2FoldChange_PyDESeq2": -1.343708121,
+    "lfcSE_PyDESeq2": 0.2711210025,
+    "stat_PyDESeq2": -4.956119622,
+    "pvalue_PyDESeq2": 7.191495012e-07,
+    "padj_PyDESeq2": 0.003497224024,
+    "baseMean_R_DESeq2": 204.213124629998,
+    "log2FoldChange_R_DESeq2": -1.34372164487393,
+    "lfcSE_R_DESeq2": 0.270520441399777,
+    "stat_R_DESeq2": -4.96717230653993,
+    "pvalue_R_DESeq2": 6.79362215051481e-07,
+    "padj_R_DESeq2": 0.0033037384517953,
+    "padj_R_default_independent_filter": 0.0033037384517953,
+    "in_common_finite_pvalue_universe": true,
+    "padj_common_PyDESeq2": 0.0034972240243356,
+    "padj_common_R_DESeq2": 0.0033037384517953525,
+    "log2FC_difference_R_minus_Python": -1.352387393005472e-05,
+    "SE_ratio_R_over_Python": 0.9977848964311682,
+    "FDR05_Python_primary": true,
+    "FDR05_R_no_independent_filter": true,
+    "FDR05_R_default_independent_filter": true,
+    "FDR05_common_Python": true,
+    "FDR05_common_R": true
+  },
+  "material_differences": [
+    "1 gene(s) change native BH FDR<0.05 status between primary PyDESeq2 and R DESeq2 without independent filtering."
+  ],
+  "interpretation": "Numerical and threshold agreement assess implementation sensitivity only. FDR crossings do not identify the preferred software, and agreement does not compensate for seven biological samples or control-group heterogeneity. No sample, gene threshold or model was adjusted to increase significant hits.",
+  "completed_at": "2026-10-19T00:30:26.662967+00:00"
+}

@@ -1,0 +1,150 @@
+---
+title: "Results · hypothalamus and PM2.5"
+subtitle: "GSE145840 · filtered air versus PM2.5 in chow-fed mice"
+---
+
+```{python}
+from pathlib import Path
+import json
+import numpy as np
+import pandas as pd
+from IPython.display import display, Markdown
+from _report_utils import summary, read_table, show_table, figure, metric_cards, fmt_p
+ROOT = Path.cwd().parent
+h = summary("hypothalamus")
+v = summary("spatial_viewer")
+de = read_table("hypothalamus", "differential_expression.tsv")
+hits = de.loc[de.padj.lt(.05)].sort_values("padj")
+```
+
+## Analysis population
+
+The main contrast includes four filtered-air controls and three PM2.5-exposed animals receiving standard chow. Four high-fat-diet samples in the same deposit are not added to the control group. Gene-assigned counts are analyzed as seven independent bulk samples; the atlas contributes no exposure replicates. @Rajagopalan2020_32780721
+
+```{python}
+metric_cards([
+    ("Independent animals", "7", "Filtered air 4 · PM2.5 3"),
+    ("Retained genes", f"{h['prefiltered_genes']:,}", "≥10 counts in ≥3 samples"),
+    ("Primary FDR hits", str(h['genes_fdr_below_0_05']), "BH-adjusted Wald p < 0.05"),
+    ("Hits in spatial panel", str(len(v['primary_fdr_hits_available_in_measured_panel'])), "Tll1 · measured MERFISH reference")
+])
+show_table(read_table("hypothalamus", "sample_metadata.tsv")[["sample", "label", "condition"]], n=10)
+```
+
+## Quality, normalization, and sample relationships
+
+```{python}
+q = read_table("hypothalamus", "qc_samples.tsv")
+figure("hypothalamus", "sample_quality",
+       "Gene-assigned library depth and detected genes in all seven samples. Each bar represents one animal; no sample was excluded.")
+figure("hypothalamus", "pca",
+       "PCA of the 500 most variable variance-stabilized genes, centered without variance scaling. Individual animals are labeled.")
+display(Markdown(f"PC1 explains **{100*h['pca_variance_explained'][0]:.1f}%** of variance and PC2 **{100*h['pca_variance_explained'][1]:.1f}%**. "
+                 "The dominant variation does not form a clean exposure-group separation: FA1 and FA2 are distinct, whereas FA3 and FA4 lie closer to the PM samples. "
+                 "This is observed heterogeneity, not evidence of a known batch covariate. No principal component was used to manufacture a batch correction."))
+figure("hypothalamus", "sample_similarity",
+       "Sample correlations and variance-stabilized distances provide complementary views of sample similarity. The matrices retain all seven animals.")
+```
+
+Median-of-ratios size factors were estimated within the seven-sample primary dataset. Size factors, count distributions, and Cook's diagnostics are available in the source tables. The source does not provide the per-sample RIN or batch information needed to resolve the observed heterogeneity.
+
+## Differential expression
+
+```{python}
+display(Markdown(
+    f"The analysis retained **{h['prefiltered_genes']:,}** of **{h['input_gene_rows']:,}** genes. "
+    f"**{h['genes_with_finite_adjusted_pvalue']:,}** genes received a finite adjusted p-value; "
+    f"**{h['genes_cooks_filtered_for_inference']:,}** were filtered from inferential reporting by Cook's diagnostics. "
+    f"At FDR < 0.05, **{h['genes_fdr_below_0_05']} genes** differ between PM and FA: "
+    f"**{h['upregulated_fdr_below_0_05_mle_sign']} higher** and **{h['downregulated_fdr_below_0_05_mle_sign']} lower** in PM. "
+    f"**{h['exploratory_fdr_and_abs_shrunken_lfc_at_least_1']}** also have absolute shrunken log₂FC ≥ 1."))
+show_table(hits[["gene", "baseMean", "log2FoldChange", "lfcSE", "padj", "log2FoldChange_shrunk"]], n=20)
+figure("hypothalamus", "volcano",
+       "Volcano view of the primary gene-level tests. FDR identifies the primary discovery set; shrunken effects are retained separately from the original Wald inference.")
+figure("hypothalamus", "ma",
+       "Mean expression versus effect size. Low-information and outlier-filtered hypotheses are not converted into significant results.")
+```
+
+The small discovery set is not evidence that other genes are unaffected. Conversely, the eleven discoveries do not establish a uniform cellular response or an unmeasured whole-brain effect.
+
+## Expression patterns and individual animals
+
+```{python}
+figure("hypothalamus", "heatmap_top30",
+       "The 30 genes selected for the heatmap are displayed on row-standardized variance-stabilized expression. Row z-scores are descriptive and are not fold changes; selection and clustering are part of the same dataset.")
+figure("hypothalamus", "selected_gene_counts",
+       "Normalized expression in individual animals for selected genes, including Gfap and Ahr. Their presence in a plot does not imply FDR significance.")
+```
+
+```{python}
+selected = de.loc[de.gene.isin(["Tll1", "Hipk3", "Ksr2", "Gfap", "Ahr"]),
+                  ["gene", "log2FoldChange", "pvalue", "padj", "log2FoldChange_shrunk"]]
+show_table(selected.sort_values("padj"), n=10)
+```
+
+## Sensitivity to individual samples
+
+The complete model was refitted after omitting each animal once. Every omission is reported; none was chosen to replace the primary comparison.
+
+```{python}
+loo = read_table("hypothalamus", "leave_one_out_summary.tsv")
+stability = read_table("hypothalamus", "leave_one_out_primary_hits.tsv")
+show_table(loo, n=10)
+show_table(stability[["gene", "primary_padj", "runs_same_lfc_direction", "runs_fdr_below_0_05", "minimum_leave_one_out_lfc", "maximum_leave_one_out_lfc"]], n=20)
+```
+
+All eleven primary hits retain their direction in seven of seven fits, but **none remains FDR-significant in all seven fits**. The total discovery count ranges from zero to 825 across omissions. This sensitivity limits the certainty of gene-level discovery and any spatial scenario derived from it. Omitting a control that increases the discovery count is not a justification for excluding that control.
+
+```{python}
+check = ROOT / "results/hypothalamus/independent_deseq2_check/summary.json"
+if check.exists():
+    comparison = json.loads(check.read_text())
+    display(Markdown(
+        "The independent R/DESeq2 cross-check uses the same 19,452 finite-p hypotheses and the same 159 Cook-filtered genes. "
+        "All eleven primary hits remain significant in R; R additionally identifies **Tnrc6c**, whose FDR is 0.0399 in R and 0.0521 in Python. "
+        "**Tll1** remains significant in both implementations (FDR 0.00330 in R; 0.00350 in Python). "
+        "Effect estimates agree closely (Pearson correlation >0.999999). "
+        "This [software comparison](downloads/hypothalamus/independent_deseq2_check/summary.json) does not provide biological replication or resolve sample heterogeneity. "
+        "The fixed Python primary result is retained, including its threshold-sensitive genes."))
+```
+
+## Functional enrichment
+
+```{python}
+e = summary("enrichment")["datasets"]["hypothalamus"]
+display(Markdown(
+    f"GO Biological Process over-representation analysis found **{e['ORA']['significant_up_terms_BH_FDR_0_05']} higher-expression** "
+    f"and **{e['ORA']['significant_down_terms_BH_FDR_0_05']} lower-expression** significant terms after BH correction. "
+    "The small, partially annotated discovery list does not support a confirmed pathway conclusion."
+))
+```
+
+Preranked GSEA detects broader signed rank patterns, including overlapping ciliary and neuronal/synaptic annotations, but these results are exploratory. They do not remove the control heterogeneity, establish independent pathway mechanisms, or substitute for additional animals. The [functional-enrichment page](enrichment.qmd) reports the full tested universe, annotation coverage, rank exclusions, and algorithmic FDR separately from ORA.
+
+## Spatial interpretation
+
+```{python}
+tll = de.set_index("gene").loc["Tll1"]
+lower, upper = tll.log2FoldChange - 1.96*tll.lfcSE, tll.log2FoldChange + 1.96*tll.lfcSE
+display(Markdown(
+    f"**Tll1** is the only primary FDR hit measured in this atlas panel. Its bulk MLE log₂FC is "
+    f"**{tll.log2FoldChange:.3f}**, its shrunken log₂FC is **{tll.log2FoldChange_shrunk:.3f}**, and its FDR is **{fmt_p(tll.padj)}**. "
+    f"The central visualization multiplier is therefore **{2**tll.log2FoldChange_shrunk:.3f}×**; the pointwise group MLE interval corresponds to "
+    f"**{2**lower:.3f}–{2**upper:.3f}×**. These multipliers define scenarios on the measured reference; they are not per-cell exposure measurements."
+))
+```
+
+[Open the reference and simulation side by side](viewer.qmd){.btn .btn-primary}
+
+Bulk-to-panel matching uses exact mouse gene symbols. An additional [identifier check](downloads/report_validation/significant_gene_panel_match.json) resolves unambiguous official GAF aliases for all eleven primary hits: it finds no additional measured hit beyond Tll1. Genes without an eligible exact matched effect remain reference-only; related family members are not substituted for absent genes.
+
+## Source tables and code
+
+- [All differential-expression results](downloads/hypothalamus/differential_expression.tsv)
+- [Original MLE results](downloads/hypothalamus/differential_expression_mle.tsv)
+- [Normalized counts](downloads/hypothalamus/normalized_counts.tsv.gz)
+- [Sample QC](downloads/hypothalamus/qc_samples.tsv)
+- [All leave-one-out gene results](downloads/hypothalamus/leave_one_out_all_genes.tsv.gz)
+- [Primary-hit stability](downloads/hypothalamus/leave_one_out_primary_hits.tsv)
+- [Methods and parameters](downloads/hypothalamus/methods.json)
+- [Executed Python analysis](downloads/code/analyze_hypothalamus.py)

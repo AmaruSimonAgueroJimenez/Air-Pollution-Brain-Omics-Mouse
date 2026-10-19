@@ -1,0 +1,5 @@
+Warning messages:
+1: package ‘S4Vectors’ was built under R version 4.5.3 
+2: package ‘Biobase’ was built under R version 4.5.3 
+Fitting the fixed PM-versus-FA model in DESeq2 R with one CPU.
+Independent fixed-model DESeq2 fit completed.

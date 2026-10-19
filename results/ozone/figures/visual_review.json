@@ -1,0 +1,27 @@
+{
+  "reviewed_at": "2026-10-19T01:24:03.191716+00:00",
+  "reviewed_format": "PNG at rendered resolution",
+  "figure_families": [
+    "quality_control",
+    "pca",
+    "volcano",
+    "ma",
+    "top_genes_heatmap"
+  ],
+  "passed": true,
+  "checks": [
+    "axis labels and titles legible",
+    "legends and colorbars present",
+    "sample and gene labels visible",
+    "no clipped panels",
+    "plotted counts and thresholds match source tables"
+  ],
+  "repair": "PCA sample labels use seeded adjustText repulsion and leader lines for the dense cluster. Statistical outputs were unchanged.",
+  "png_sha256": {
+    "quality_control": "861ed3fedace5331f10d01c709842517d61e0b01ee934475ad965553776726fd",
+    "pca": "357831bf00e175d59d66c13d2ab1e07693044bc919c59c5602f09455bd1e901e",
+    "volcano": "3a2ed4a34459394dac34ae10bbc9a216a0ee144a1b685b2681a4259dd7b4c8b7",
+    "ma": "87b8dd75988855cd52835768510281f70bc16607b61034b4d2c29f2f0aaf8f7e",
+    "top_genes_heatmap": "02ada4c20e2dac2b7a60f81e29a5302b65f6e870ff492478290acfaaea1a6c61"
+  }
+}

@@ -1,0 +1,143 @@
+---
+title: "Anterior cingulate cortex: PM versus PBS"
+---
+
+```{python}
+#| label: cortex-setup
+#| include: false
+import numpy as np
+import pandas as pd
+from IPython.display import display, Markdown
+from _report_utils import summary, read_table, show_table, figure, fmt_p
+
+s = summary("cortex")
+de = read_table("cortex", "DE_PM_vs_PBS.tsv")
+qc = read_table("cortex", "sample_qc.tsv")
+meta = read_table("cortex", "sample_metadata.tsv")
+```
+
+## Study question
+
+This secondary analysis compares anterior cingulate cortex expression between the **PM nasal-exposure** and **PBS control** groups of GSE297423. Only samples without alpha-synuclein preformed-fibril injection enter this comparison. The animals belong to the original humanized alpha-synuclein model; results should be interpreted within that experimental context. Other arms in the deposited study are preserved in the source collection but are outside this contrast. [@Zhang2025_40906862]
+
+## Materials and methods
+
+### Input and sample selection
+
+The analysis starts from the depositor's gene-count table, rather than realigning FASTQ files. Ensembl identifiers are the analysis keys; the gene symbols, biotypes, and chromosomes supplied in that table remain annotations. Counts are required to be finite, nonnegative integers, and duplicate gene identifiers cause an explicit failure rather than an implicit aggregation.
+
+The eight selected libraries are `Control5`, `Control6`, `Control7`, `Control8`, `PMA2775`, `PMA2776`, `PMA2778`, and `PMA2779`. Their GEO sample-to-library mapping determines group allocation. All selected biological samples are retained. No unverified batch, sex, or pairing variable is added to the model.
+
+```{python}
+#| label: cortex-samples
+show_table(meta[["sample", "gsm", "title", "condition", "PFF_injection"]], n=8)
+```
+
+### Differential expression and effect sizes
+
+Genes must have at least 10 counts in at least four of the eight selected samples. PyDESeq2 fits a negative-binomial generalized linear model with design `~condition`, median-of-ratios size factors, and a two-sided Wald contrast for PM relative to PBS. Benjamini–Hochberg adjusted p values target an FDR of 0.05 within this contrast, with independent filtering and Cook's filtering enabled. [@Love2014_DESeq2; @Muzellec2023_PyDESeq2; @Benjamini1995_FDR]
+
+The unshrunken maximum-likelihood coefficients, standard errors, Wald statistics, p values, and adjusted p values are saved **before** effect-size shrinkage. The additional shrunken coefficient and uncertainty columns use the apeGLM-style heavy-tailed shrinkage implemented by PyDESeq2. Shrinkage stabilizes effect-size displays; it does not replace the preserved Wald test results. [@Zhu2019_apeglm]
+
+At four biological replicates per group, the default requirement of at least seven replicates for Cook's count replacement is not met. Gene-level Cook's filtering can therefore leave p values unavailable, even though no biological sample is removed. Missing adjusted p values caused by independent filtering are distinguished from these unavailable nominal tests.
+
+### Quality assessment and displays
+
+Sample summaries include total assigned gene counts, detected genes, size factors, and mitochondrial and ribosomal RNA count fractions. These fractions summarize the supplied count matrix and do not replace read-level quality assessment. PCA uses a blind variance-stabilizing transformation and the 500 most variable retained genes, centered without variance scaling. Heatmap rows are standardized only for visualization. Neither PCA nor the top-ranked heatmap is an independent validation dataset.
+
+## Results
+
+### Quality and sample structure
+
+```{python}
+#| label: cortex-qc-text
+#| output: asis
+display(Markdown(
+    f"The supplied table contains **{s['genes_input']:,} genes**. After the prespecified "
+    f"count filter, **{s['genes_retained']:,} genes** remain. The selected libraries contain "
+    f"{qc.library_size.min()/1e6:.1f}–{qc.library_size.max()/1e6:.1f} million assigned gene counts. "
+    f"PC1 and PC2 explain **{s['PCA_PC1_percent']:.1f}%** and **{s['PCA_PC2_percent']:.1f}%** "
+    "of the variance in the PCA input, respectively. PM samples are more dispersed than PBS "
+    "samples on these axes. This heterogeneity is reported rather than used to remove samples."
+))
+```
+
+```{python}
+#| label: cortex-qc-table
+quality = qc[["sample", "condition", "library_size", "detected_genes_count_gt_0", "size_factor", "mitochondrial_count_fraction", "rRNA_count_fraction"]].copy()
+quality["size_factor"] = quality.size_factor.round(3)
+quality["mitochondrial_count_fraction"] = quality.mitochondrial_count_fraction.round(4)
+quality["rRNA_count_fraction"] = quality.rRNA_count_fraction.round(4)
+show_table(quality, n=8)
+```
+
+```{python}
+#| label: cortex-pca-figure
+figure("cortex", "pca", "PCA of blind variance-stabilized counts for the 500 most variable retained genes. Circles: PBS; triangles: PM. Each point is one biological sample; no sample is excluded.", alt="PCA of eight cortex samples, showing a compact PBS group and a more dispersed PM group.")
+```
+
+```{python}
+#| label: cortex-quality-figure
+figure("cortex", "sample_qc", "Distributions of variance-stabilized values and total assigned counts for all eight cortex libraries. Extreme boxplot observations are omitted from the display only.", alt="Boxplots of cortex expression distributions and bars of assigned gene counts by sample.")
+```
+
+### Differential expression
+
+```{python}
+#| label: cortex-de-text
+#| output: asis
+n_missing_p = int(de.pvalue.isna().sum())
+n_missing_adj = int(de.padj.isna().sum())
+n_independent_only = int((de.pvalue.notna() & de.padj.isna()).sum())
+display(Markdown(
+    f"There are **{s['FDR05_genes']:,} genes with FDR < 0.05**: "
+    f"**{s['FDR05_higher_in_PM']:,} higher** and **{s['FDR05_lower_in_PM']:,} lower** in PM. "
+    f"Of these, **{s['FDR05_abs_shrunken_log2FC_ge_1']:,}** additionally have an absolute "
+    "shrunken log2 fold change of at least 1. That additional effect-size summary is a "
+    "descriptive selection, not a separate test of a minimum effect size.\n\n"
+    f"Nominal Wald p values are available for **{s['genes_with_Wald_pvalue']:,} genes** and "
+    f"adjusted p values for **{s['genes_with_adjusted_pvalue']:,} genes**. The **{n_missing_adj:,}** "
+    f"unavailable adjusted p values include **{n_missing_p:,}** Cook-filtered nominal tests and "
+    f"**{n_independent_only:,}** genes with a nominal test that were not retained for multiple-testing "
+    "adjustment by independent filtering. These categories should not all be called outlier genes."
+))
+```
+
+```{python}
+#| label: cortex-de-table
+top = de[["gene_id", "gene", "baseMean", "log2FoldChange", "lfcSE", "log2FoldChange_shrunk", "pvalue", "padj"]].head(20).copy()
+for c in ["baseMean", "log2FoldChange", "lfcSE", "log2FoldChange_shrunk"]:
+    top[c] = top[c].round(3)
+for c in ["pvalue", "padj"]:
+    top[c] = top[c].map(fmt_p)
+show_table(top, n=20)
+```
+
+The leading ranked genes include **Hspa5, Pdia4, and Xbp1**. Their presence among the strongest signals motivates follow-up of coordinated expression programs. A mechanistic pathway claim requires the separate gene-set analysis and its own background, ranking, and multiplicity checks; these individual rows alone do not establish pathway activation.
+
+```{python}
+#| label: cortex-volcano-figure
+figure("cortex", "volcano", "Unshrunken log2 PM/PBS coefficients versus nominal Wald p values. Orange triangles identify FDR < 0.05; gray circles denote the remaining finite tests. The three leading adjusted-p-ranked genes are labeled.", alt="Cortex volcano plot with significant genes in both directions and Hspa5, Pdia4, and Xbp1 labeled.")
+```
+
+```{python}
+#| label: cortex-ma-figure
+figure("cortex", "ma", "Mean normalized counts versus shrunken log2 PM/PBS effects. Orange triangles identify FDR < 0.05 from the preserved unshrunken Wald tests; gray circles include nonsignificant genes and genes without adjusted p values.", alt="Cortex MA plot showing stabilized effect sizes across mean normalized counts.")
+```
+
+```{python}
+#| label: cortex-heatmap-figure
+figure("cortex", "top30_heatmap", "The 30 leading genes ranked by adjusted Wald p value, displayed as within-gene z scores of variance-stabilized counts. This selected display summarizes the fitted comparison and is not independent validation.", alt="Heatmap of the top 30 ranked cortex genes across four PBS and four PM samples.")
+```
+
+### Interpretation and limits
+
+The comparison supports a tissue-level expression difference in this specific PM exposure model. It does not identify which cell populations changed expression, distinguish cell-state shifts from cellular composition, or establish a human disease mechanism. Sample heterogeneity and unmeasured covariates remain relevant despite high sample correlations. The analysis also does not recreate read alignment, transcript quantification, or the other experimental arms of the original study.
+
+## Downloadable results
+
+- [Complete differential-expression table](downloads/cortex/DE_PM_vs_PBS.tsv)
+- [Original Wald MLE statistics before shrinkage](downloads/cortex/DE_PM_vs_PBS_MLE.tsv)
+- [Sample metadata](downloads/cortex/sample_metadata.tsv), [quality summaries](downloads/cortex/sample_qc.tsv), and [sample correlations](downloads/cortex/sample_correlation.tsv)
+- [Gene filter decisions](downloads/cortex/gene_filter.tsv)
+- [Methods and software provenance](downloads/cortex/methods.json) and [validation record](downloads/cortex/validation.json)

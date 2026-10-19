@@ -1,0 +1,5 @@
+{
+  "status": "superseded_diagnostic_results_do_not_use_as_main_analysis",
+  "reason": "Initial exploratory GSEA ranks included finite Wald statistics with nonfinite original p-values. The final analysis excludes these unreliable tests, including Cook-filtered genes, while retaining genes with finite raw p-values and missing adjusted p-values from independent filtering.",
+  "final_rank_criterion": "finite Wald statistic AND finite original Wald p-value; no FDR or effect-size selection"
+}

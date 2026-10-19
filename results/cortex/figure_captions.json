@@ -1,0 +1,95 @@
+{
+  "pca": {
+    "caption": "PCA of the 500 most variable features on blind variance-stabilized counts. Features are centered, not variance-scaled. Each point is one biological sample. No sample was removed by PCA.",
+    "source_tables": [
+      "pca_scores.tsv",
+      "pca_features.tsv",
+      "sample_metadata.tsv"
+    ],
+    "formats": [
+      "PNG at 300 dpi",
+      "SVG with editable text",
+      "PDF with embedded TrueType fonts"
+    ],
+    "size_inches": [
+      7.6,
+      5.3
+    ]
+  },
+  "sample_correlation": {
+    "caption": "Pearson correlations across all 19235 finite, variable features on blind variance-stabilized counts; fixed color limits from -1 to 1.",
+    "source_tables": [
+      "sample_correlation.tsv"
+    ],
+    "formats": [
+      "PNG at 300 dpi",
+      "SVG with editable text",
+      "PDF with embedded TrueType fonts"
+    ],
+    "size_inches": [
+      7.0,
+      6.0
+    ]
+  },
+  "sample_qc": {
+    "caption": "Left: distributions of the analysis values, with extreme boxplot points omitted only from this display. Right: sample-level assay quality summaries. All biological samples are retained; individual samples are identified by name.",
+    "source_tables": [
+      "sample_qc.tsv",
+      "sample_metadata.tsv"
+    ],
+    "formats": [
+      "PNG at 300 dpi",
+      "SVG with editable text",
+      "PDF with embedded TrueType fonts"
+    ],
+    "size_inches": [
+      11.0,
+      4.8
+    ]
+  },
+  "ma": {
+    "caption": "Mean normalized counts versus apeGLM-style shrunken log2 fold change. Orange triangles: BH-adjusted Wald p < 0.05; gray circles: all other retained genes, including genes without adjusted p values. Significance is derived from the preserved unshrunken Wald test.",
+    "source_tables": [
+      "DE_PM_vs_PBS.tsv"
+    ],
+    "formats": [
+      "PNG at 300 dpi",
+      "SVG with editable text",
+      "PDF with embedded TrueType fonts"
+    ],
+    "size_inches": [
+      7.0,
+      5.2
+    ]
+  },
+  "volcano": {
+    "caption": "Each point is one retained gene with a finite Wald p value; x: unshrunken model coefficient, y: unadjusted Wald p value. Orange triangles indicate BH-adjusted p < 0.05; gray circles denote the remaining genes. Labels identify the top three adjusted-p-value ranked rows; no horizontal nominal-p cutoff is used to imply multiplicity-adjusted significance.",
+    "source_tables": [
+      "DE_PM_vs_PBS.tsv"
+    ],
+    "formats": [
+      "PNG at 300 dpi",
+      "SVG with editable text",
+      "PDF with embedded TrueType fonts"
+    ],
+    "size_inches": [
+      7.0,
+      5.2
+    ]
+  },
+  "top30_heatmap": {
+    "caption": "Top 30 features ranked by adjusted Wald p value, then nominal p value (PM versus PBS); rows are centered and scaled by their sample standard deviation for display only. Selection is descriptive and is not independent validation. Fixed sample order; no clustering of samples.",
+    "source_tables": [
+      "top30_heatmap_zscores.tsv"
+    ],
+    "formats": [
+      "PNG at 300 dpi",
+      "SVG with editable text",
+      "PDF with embedded TrueType fonts"
+    ],
+    "size_inches": [
+      8.4,
+      8.0
+    ]
+  }
+}

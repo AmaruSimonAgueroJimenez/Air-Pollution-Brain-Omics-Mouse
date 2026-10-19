@@ -1,0 +1,35 @@
+{
+  "cell_class_composition": {
+    "caption": "Counts and percentages of all selected HY reference cells in each of the 26 deposited atlas classes. No classes or cells are omitted.",
+    "source_tables": [
+      "composition_by_class.tsv"
+    ],
+    "formats": [
+      "300-dpi PNG",
+      "editable-text SVG",
+      "PDF"
+    ]
+  },
+  "Tll1_detection_by_class": {
+    "caption": "Percentage of cells with measured Tll1 count >0 in every atlas class; annotations give exact positive/all-cell denominators. Classes follow decreasing cell count, not detection rank. No intervals or tests are calculated.",
+    "source_tables": [
+      "Tll1_by_class.tsv"
+    ],
+    "formats": [
+      "300-dpi PNG",
+      "editable-text SVG",
+      "PDF"
+    ]
+  },
+  "Tll1_detection_by_substructure": {
+    "caption": "The 15 highest Tll1 detection fractions among deposited HY substructures with at least 100 selected cells. The complete table retains all 49 substructures, including unassigned labels and those below the display threshold. This ranking is descriptive, without exposure data or inference.",
+    "source_tables": [
+      "Tll1_displayed_substructures.tsv"
+    ],
+    "formats": [
+      "300-dpi PNG",
+      "editable-text SVG",
+      "PDF"
+    ]
+  }
+}

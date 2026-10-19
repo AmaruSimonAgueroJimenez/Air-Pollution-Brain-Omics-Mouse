@@ -1,0 +1,124 @@
+---
+title: "Air pollution and the mouse brain"
+subtitle: "Regional omics reanalysis and a measured spatial reference"
+page-layout: full
+toc: false
+---
+
+```{python}
+from pathlib import Path
+import json
+import pandas as pd
+from IPython.display import display, Markdown, HTML
+from _report_utils import summary, metric_cards, show_table
+ROOT = Path.cwd().parent
+h = summary("hypothalamus")
+c = summary("cortex")
+m = summary("mirna")
+v = summary("spatial_viewer")
+o = summary("ozone") if (ROOT / "results/ozone/summary.json").exists() else {}
+ozone_ready = o.get("complete", False)
+```
+
+<p class="research-kicker">REPRODUCIBLE PUBLIC-DATA STUDY · FOUR INDEPENDENT EXPERIMENTS</p>
+
+::: {.lead}
+How do regional brain expression profiles differ after PM2.5 or ozone exposure, and where are the affected genes normally expressed? This report separates the experimental contrasts from a spatial reference and an explicitly modeled PM2.5 scenario.
+:::
+
+```{python}
+metric_cards([
+    ("Exposure studies", "4", "Three PM2.5 studies and one ozone study"),
+    ("Primary study samples", "48", "Contrasts are fitted within each study"),
+    ("Measured spatial genes", f"{v['measured_genes']:,}", "MERFISH panel; no imputed genes"),
+    ("Registered HY cells", f"{v['hypothalamus_cells']:,}", "One male atlas donor; spatial reference")
+])
+if not ozone_ready:
+    display(Markdown("> **Analysis in progress:** the three PM2.5 analyses and spatial viewer are complete. "
+                     "The ozone arm is being processed from its 24 original paired-end libraries; "
+                     "no ozone differential result is inferred from the deposited genotype-only table."))
+```
+
+## Introduction
+
+The four studies measure different regions, exposures, and assays. They are analyzed separately rather than pooled into a single pollution effect. The reference atlas preserves cell locations and measures 1,122 genes by MERFISH, providing an anatomical setting for selected regional signals. It does not supply exposed single cells. [Read the Introduction](introduction.qmd).
+
+## Methods
+
+The classical workflow includes source and sample checks, count or signal distributions, sample relationships and PCA, differential expression with multiple-testing control, effect-size estimation, and functional enrichment where gene annotations are applicable. Ozone is reprocessed from the original reads. The 3D model uses one bulk gene-specific multiplier within the hypothalamus and keeps the reference cell positions fixed. [Read the Methods](methods.qmd).
+
+## Results
+
+```{python}
+rows = [
+    ["Hypothalamus · PM2.5", "4 FA / 3 PM", f"{h['genes_fdr_below_0_05']:,}", "Bulk RNA-seq", "Sensitive to individual animals"],
+    ["Cingulate cortex · PM2.5", "4 PBS / 4 PM", f"{c['FDR05_genes']:,}", "Bulk RNA-seq", "Different model and exposure route"],
+    ["Hippocampal miRNA · PM2.5", "3 control / 3 low / 3 high", "1 low-dose / 0 high-dose", "Normalized microarray signal", "Strong lower-signal floor"],
+    ["Hippocampus · ozone", "24 libraries; 8 groups", " / ".join(str(o['contrasts'][k]['fdr_005']) for k in ["M3_E3_O3_vs_FA", "M3_E4_O3_vs_FA", "M17_E3_O3_vs_FA", "M17_E4_O3_vs_FA"]) + " (four strata)" if ozone_ready else "Raw-read processing in progress", "RNA-seq from FASTQ", "Age × genotype × exposure design"],
+]
+show_table(pd.DataFrame(rows, columns=["Study", "Independent samples", "FDR < 0.05", "Evidence", "Interpretive limit"]), n=10)
+if ozone_ready:
+    display(Markdown(
+        f"Ozone counts follow starting-age/genotype order **M3/APOE3, M3/APOE4, M17/APOE3, M17/APOE4**. "
+        f"The separate global four-degree-of-freedom exposure LRT identifies **{o['global_LRT']['fdr_005']:,} genes**. "
+        "Unequal discovery counts do not establish an age or genotype interaction; the null stratum does not demonstrate absence of response."
+    ))
+```
+
+These counts are study-specific findings, not a ranking of pollutant toxicity. The sample sizes, tissue composition, protocols, and statistical power differ.
+
+::: {.study-grid}
+::: {.study-card}
+<p class="tag">PRIMARY 3D LINK</p>
+### Hypothalamus
+
+Seven animals support the PM2.5 contrast. All eleven primary hits retain their effect direction in leave-one-out fits, but none retains FDR significance in all seven fits. No control was selectively removed.
+
+[Explore the hypothalamus results →](results.qmd)
+:::
+::: {.study-card}
+<p class="tag">REGIONAL RESPONSE</p>
+### Cingulate cortex
+
+The PM-versus-PBS contrast is restricted to eight humanized α-synuclein mice. PFF treatment arms are not pooled with this exposure comparison.
+
+[Explore the cortex results →](cortex.qmd)
+:::
+::: {.study-card}
+<p class="tag">A DIFFERENT MOLECULAR LAYER</p>
+### Hippocampal miRNA
+
+Two dose-specific contrasts retain the deposited normalized signal scale. Effects are mean signal differences, not RNA-seq counts or confirmed log₂ fold changes.
+
+[Explore the miRNA results →](mirna.qmd)
+:::
+::: {.study-card}
+<p class="tag">AGE AND GENOTYPE</p>
+### Hippocampus and ozone
+
+Original paired-end reads are quantified against a fixed mouse reference. Age-, genotype-, and exposure-specific effects are separated in a factorial model.
+
+[Explore the ozone results →](ozone.qmd)
+:::
+:::
+
+## A measured reference beside an explicit simulation
+
+```{python}
+display(Markdown(
+    f"**{v['default_gene']}** is the only primary hypothalamic FDR hit measured in this MERFISH panel. "
+    f"Its central regional multiplier is **{v['default_multiplier']:.3f}×**. The viewer contains "
+    f"**{v['measured_genes']:,} measured genes**, with reliable bulk effect estimates for "
+    f"**{v['genes_with_estimable_bulk_effect']:,}** of them; nonsignificant genes are labeled exploratory."
+))
+```
+
+[![Measured spatial reference and modeled PM2.5 scenario for Tll1, with the same hypothalamic cell positions.](assets/figures/spatial_viewer/reference_vs_simulation.png){.site-overview-image}](viewer.qmd)
+
+::: {.model-note}
+**A modeled scenario, not exposed spatial data.** The atlas donor is not an experimental control for the seven bulk animals. A uniform regional multiplier does not identify which cell types respond, and it does not model cell loss, movement, or anatomical change.
+:::
+
+[Open the linked 3D viewer](viewer.qmd){.btn .btn-primary} [Inspect data, code, and reproducibility](reproducibility.qmd){.btn .btn-outline-secondary}
+
+[Inspect measured cell composition and Tll1 detection across classes and substructures →](spatial_reference.qmd)

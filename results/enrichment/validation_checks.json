@@ -1,0 +1,796 @@
+{
+  "all_checks_passed": true,
+  "global_checks": {
+    "frozen_reference_SHA256_matches": true,
+    "all_dataset_checks_pass": true,
+    "summary_counts_all_six_datasets_consistent": true
+  },
+  "datasets": {
+    "hypothalamus": {
+      "checks": {
+        "ORA_universe_finite_padj_and_unique": true,
+        "canonical_representative_uses_maximum_baseMean": true,
+        "ORA_up_family_and_size_filter": true,
+        "ORA_up_hypergeometric_recomputed": true,
+        "ORA_up_BH_including_zero_overlaps_recomputed": true,
+        "ORA_up_listed_overlaps_match_counts": true,
+        "ORA_down_family_and_size_filter": true,
+        "ORA_down_hypergeometric_recomputed": true,
+        "ORA_down_BH_including_zero_overlaps_recomputed": true,
+        "ORA_down_listed_overlaps_match_counts": true,
+        "GSEA_rank_unique_finite_statistic_and_original_pvalue": true,
+        "GSEA_rank_order_descending": true,
+        "GSEA_rank_complete_after_QC_without_FDR_selection": true,
+        "GSEA_qvalues_valid_and_summary_consistent": true,
+        "GSEA_1000_permutations_seed_recorded": true,
+        "GSEA_GO:0001539_running_ES_matches_result": true,
+        "GSEA_GO:0010770_running_ES_matches_result": true,
+        "four_complete_figure_sets_nonblank": true,
+        "superseded_initial_rank_preserved": true
+      },
+      "all_checks_passed": true,
+      "ORA_counts": {
+        "up": {
+          "terms": 4564,
+          "zero_overlap_terms": 4564,
+          "significant": 0
+        },
+        "down": {
+          "terms": 4564,
+          "zero_overlap_terms": 4423,
+          "significant": 0
+        }
+      },
+      "GSEA_terms": 4564,
+      "GSEA_significant_algorithmic_FDR_0_05": 916,
+      "figure_metadata": {
+        "GSEA_curve_GO_0010770": {
+          "pixels": [
+            2400,
+            1500
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        },
+        "ORA_significant_terms": {
+          "pixels": [
+            3900,
+            2100
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        },
+        "GSEA_terms": {
+          "pixels": [
+            3150,
+            2340
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        },
+        "GSEA_curve_GO_0001539": {
+          "pixels": [
+            2400,
+            1500
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        }
+      }
+    },
+    "cortex": {
+      "checks": {
+        "ORA_universe_finite_padj_and_unique": true,
+        "canonical_representative_uses_maximum_baseMean": true,
+        "ORA_up_family_and_size_filter": true,
+        "ORA_up_hypergeometric_recomputed": true,
+        "ORA_up_BH_including_zero_overlaps_recomputed": true,
+        "ORA_up_listed_overlaps_match_counts": true,
+        "ORA_down_family_and_size_filter": true,
+        "ORA_down_hypergeometric_recomputed": true,
+        "ORA_down_BH_including_zero_overlaps_recomputed": true,
+        "ORA_down_listed_overlaps_match_counts": true,
+        "GSEA_rank_unique_finite_statistic_and_original_pvalue": true,
+        "GSEA_rank_order_descending": true,
+        "GSEA_rank_complete_after_QC_without_FDR_selection": true,
+        "GSEA_qvalues_valid_and_summary_consistent": true,
+        "GSEA_1000_permutations_seed_recorded": true,
+        "GSEA_GO:0006457_running_ES_matches_result": true,
+        "GSEA_GO:0070192_running_ES_matches_result": true,
+        "four_complete_figure_sets_nonblank": true,
+        "superseded_initial_rank_preserved": true
+      },
+      "all_checks_passed": true,
+      "ORA_counts": {
+        "up": {
+          "terms": 4375,
+          "zero_overlap_terms": 659,
+          "significant": 86
+        },
+        "down": {
+          "terms": 4375,
+          "zero_overlap_terms": 1808,
+          "significant": 2
+        }
+      },
+      "GSEA_terms": 4363,
+      "GSEA_significant_algorithmic_FDR_0_05": 223,
+      "figure_metadata": {
+        "GSEA_curve_GO_0070192": {
+          "pixels": [
+            2400,
+            1500
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        },
+        "ORA_significant_terms": {
+          "pixels": [
+            3900,
+            2100
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        },
+        "GSEA_terms": {
+          "pixels": [
+            3150,
+            2340
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        },
+        "GSEA_curve_GO_0006457": {
+          "pixels": [
+            2400,
+            1500
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        }
+      }
+    },
+    "ozone_M3_E3": {
+      "checks": {
+        "input_source_hash_matches": true,
+        "input_table_matches_final_ozone_Wald_results": true,
+        "mouse_GAF_canonical_and_unambiguous_synonym_mapping_recomputed": true,
+        "canonical_representative_uses_maximum_baseMean": true,
+        "ORA_universe_finite_padj_and_unique": true,
+        "GSEA_rank_complete_finite_original_p_and_statistic_without_FDR_selection": true,
+        "GSEA_rank_unique_and_descending": true,
+        "GSEA_excludes_Cook_nonfinite_p_Wald_nonconvergence_and_all_zero_strata": true,
+        "ORA_all_size_eligible_terms_retained": true,
+        "ORA_up_family_and_size_filter": true,
+        "ORA_up_hypergeometric_recomputed": true,
+        "ORA_up_BH_including_zero_overlaps_recomputed": true,
+        "ORA_up_universe_foreground_overlap_counts": true,
+        "ORA_up_listed_overlaps_match_references": true,
+        "ORA_up_summary_and_significant_subset_consistent": true,
+        "ORA_down_family_and_size_filter": true,
+        "ORA_down_hypergeometric_recomputed": true,
+        "ORA_down_BH_including_zero_overlaps_recomputed": true,
+        "ORA_down_universe_foreground_overlap_counts": true,
+        "ORA_down_listed_overlaps_match_references": true,
+        "ORA_down_summary_and_significant_subset_consistent": true,
+        "GSEA_test_family_and_size_match_QC_rank": true,
+        "GSEA_algorithmic_FDR_label_and_numeric_ranges": true,
+        "GSEA_significant_subset_and_summary_consistent": true,
+        "GSEA_1000_permutations_and_seed_recorded": true,
+        "combined_summary_matches_dataset_summary": true,
+        "annotation_coverage_counts_consistent": true,
+        "GSEA_GO:0007602_running_score_matches_result": true,
+        "GSEA_GO:0046460_running_score_matches_result": true,
+        "ORA_null_panels_explicit": true,
+        "GSEA_term_plot_algorithmic_FDR_label": true,
+        "GSEA_curve_GO_0007602_algorithmic_q_and_exposure_direction_labeled": true,
+        "GSEA_curve_GO_0046460_algorithmic_q_and_exposure_direction_labeled": true,
+        "complete_PNG_SVG_PDF_exports_nonblank": true,
+        "rank_exclusion_summary_consistent": true,
+        "manual_visual_review_final_figures_passed": true,
+        "combined_summary_count_row_matches_json": true
+      },
+      "all_checks_passed": true,
+      "ORA_counts": {
+        "up": {
+          "terms": 4550,
+          "zero_overlap_terms": 4550,
+          "foreground_genes": 0,
+          "significant": 0
+        },
+        "down": {
+          "terms": 4550,
+          "zero_overlap_terms": 4550,
+          "foreground_genes": 0,
+          "significant": 0
+        }
+      },
+      "GSEA_terms": 4550,
+      "GSEA_rank_genes": 15446,
+      "GSEA_significant_algorithmic_FDR_0_05": 4,
+      "source_validity_exclusions": {
+        "final_DE_nonfinite_pvalue": 47,
+        "Wald_nonconverged": 0,
+        "all_zero_stratum": 23,
+        "unreliable_mapped_representatives_excluded": 23
+      },
+      "curve_score_checks": {
+        "GO:0007602": {
+          "ES_recomputed": 0.7058443375628272,
+          "ES_reported": 0.7058443375,
+          "maximum_absolute_running_score_difference": 8.147887919918162e-11,
+          "absolute_running_score_tolerance": 1e-09,
+          "tolerance_basis": "TSV exports round Wald statistics and running scores to ten significant digits."
+        },
+        "GO:0046460": {
+          "ES_recomputed": -0.40360581783272126,
+          "ES_reported": -0.4036058178,
+          "maximum_absolute_running_score_difference": 9.743117423965941e-11,
+          "absolute_running_score_tolerance": 1e-09,
+          "tolerance_basis": "TSV exports round Wald statistics and running scores to ten significant digits."
+        }
+      },
+      "figure_metadata": {
+        "ORA_significant_terms": {
+          "pixels": [
+            3900,
+            2100
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        },
+        "GSEA_terms": {
+          "pixels": [
+            3150,
+            2340
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        },
+        "GSEA_curve_GO_0007602": {
+          "pixels": [
+            2400,
+            1500
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        },
+        "GSEA_curve_GO_0046460": {
+          "pixels": [
+            2400,
+            1500
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        }
+      },
+      "source_DE_sha256": "919e87d5d56502dce9c844a29a4a58d550af4dc805c1cc5db4509cdf2d1cdb5a",
+      "enrichment_input_sha256": "829b63b7203869e28bfb762a884aca900e313b48acb8a5223f6232d33002800f",
+      "validated_at_utc": "2026-10-19T01:29:09.173264+00:00",
+      "plot_exports_sha256": {
+        "results/enrichment/ozone_M3_E3/figures/GSEA_curve_GO_0007602.png": "509e4c3d96a638f2b3c5f5de600220b85f6bb1cd1fa7aa832b254bbb7038f033",
+        "results/enrichment/ozone_M3_E3/figures/GSEA_curve_GO_0007602.svg": "ad30a34b4b3707527607b5a74784dcab899b89f7dea6713d10a9196737267d51",
+        "results/enrichment/ozone_M3_E3/figures/GSEA_curve_GO_0007602.pdf": "17f56295de11c3d5f9120fcaa50288e8954801d67f10a6ecb696a09b036f5d82",
+        "results/enrichment/ozone_M3_E3/figures/GSEA_curve_GO_0046460.png": "32aecb754f9224c0aa53d59118d3c63bfcb4afb2901206cd79251ebc8c3bf945",
+        "results/enrichment/ozone_M3_E3/figures/GSEA_curve_GO_0046460.svg": "3cf683da64622a7b24bfd0ccff87d8683b05665aa701eea44ebf4f63fef53a9a",
+        "results/enrichment/ozone_M3_E3/figures/GSEA_curve_GO_0046460.pdf": "de2e9a1b5d8fe3664f96be6563ed2ea83181553bae82880de12ca1d791cb78e3",
+        "results/enrichment/ozone_M3_E3/figures/GSEA_terms.png": "e75642d6bdce4d24693764e61c7f6b4495ac038c67e6221d71ff03ec28b6c610",
+        "results/enrichment/ozone_M3_E3/figures/GSEA_terms.svg": "3d5007a5db4dfbc143e3081603306b691aa360b60a620cbe0ef43a48dde0ba41",
+        "results/enrichment/ozone_M3_E3/figures/GSEA_terms.pdf": "53cb6f16dfa5a50e6e84e0fc09aa81bcc8c68662d9b72a5096e67f0014c656dd",
+        "results/enrichment/ozone_M3_E3/figures/ORA_significant_terms.png": "e9625aab8596e2137f41659626803552c8282d777a205f46f1ae31688ad0e6fa",
+        "results/enrichment/ozone_M3_E3/figures/ORA_significant_terms.svg": "dd9a0dc8bdd5c15ed1e8c9393cf9c325880c3f020c62ded36b3e0aae66a9c5b7",
+        "results/enrichment/ozone_M3_E3/figures/ORA_significant_terms.pdf": "9b5896a42738da72a80e5da9ee6411e0578ca3f495dd80c2d478efda5127c604"
+      },
+      "visual_review": "Final four PNG figures inspected manually: explicit null ORA panels, exploratory GSEA term plot and both weighted running-score curves. Final curve figures have readable complete axis titles, correct exposed-versus-control rank direction and displayed algorithmic q-values. SVG/PDF/PNG exports verified."
+    },
+    "ozone_M3_E4": {
+      "checks": {
+        "input_source_hash_matches": true,
+        "input_table_matches_final_ozone_Wald_results": true,
+        "mouse_GAF_canonical_and_unambiguous_synonym_mapping_recomputed": true,
+        "canonical_representative_uses_maximum_baseMean": true,
+        "ORA_universe_finite_padj_and_unique": true,
+        "GSEA_rank_complete_finite_original_p_and_statistic_without_FDR_selection": true,
+        "GSEA_rank_unique_and_descending": true,
+        "GSEA_excludes_Cook_nonfinite_p_Wald_nonconvergence_and_all_zero_strata": true,
+        "ORA_all_size_eligible_terms_retained": true,
+        "ORA_up_family_and_size_filter": true,
+        "ORA_up_hypergeometric_recomputed": true,
+        "ORA_up_BH_including_zero_overlaps_recomputed": true,
+        "ORA_up_universe_foreground_overlap_counts": true,
+        "ORA_up_listed_overlaps_match_references": true,
+        "ORA_up_summary_and_significant_subset_consistent": true,
+        "ORA_down_family_and_size_filter": true,
+        "ORA_down_hypergeometric_recomputed": true,
+        "ORA_down_BH_including_zero_overlaps_recomputed": true,
+        "ORA_down_universe_foreground_overlap_counts": true,
+        "ORA_down_listed_overlaps_match_references": true,
+        "ORA_down_summary_and_significant_subset_consistent": true,
+        "GSEA_test_family_and_size_match_QC_rank": true,
+        "GSEA_algorithmic_FDR_label_and_numeric_ranges": true,
+        "GSEA_significant_subset_and_summary_consistent": true,
+        "GSEA_1000_permutations_and_seed_recorded": true,
+        "combined_summary_matches_dataset_summary": true,
+        "annotation_coverage_counts_consistent": true,
+        "GSEA_GO:0002181_running_score_matches_result": true,
+        "GSEA_GO:2001222_running_score_matches_result": true,
+        "ORA_null_panels_explicit": true,
+        "GSEA_term_plot_algorithmic_FDR_label": true,
+        "GSEA_curve_GO_0002181_algorithmic_q_and_exposure_direction_labeled": true,
+        "GSEA_curve_GO_2001222_algorithmic_q_and_exposure_direction_labeled": true,
+        "complete_PNG_SVG_PDF_exports_nonblank": true,
+        "rank_exclusion_summary_consistent": true,
+        "manual_visual_review_final_figures_passed": true,
+        "combined_summary_count_row_matches_json": true
+      },
+      "all_checks_passed": true,
+      "ORA_counts": {
+        "up": {
+          "terms": 4550,
+          "zero_overlap_terms": 3309,
+          "foreground_genes": 79,
+          "significant": 0
+        },
+        "down": {
+          "terms": 4550,
+          "zero_overlap_terms": 2262,
+          "foreground_genes": 189,
+          "significant": 0
+        }
+      },
+      "GSEA_terms": 4550,
+      "GSEA_rank_genes": 15448,
+      "GSEA_significant_algorithmic_FDR_0_05": 368,
+      "source_validity_exclusions": {
+        "final_DE_nonfinite_pvalue": 39,
+        "Wald_nonconverged": 0,
+        "all_zero_stratum": 15,
+        "unreliable_mapped_representatives_excluded": 21
+      },
+      "curve_score_checks": {
+        "GO:0002181": {
+          "ES_recomputed": 0.514306348230335,
+          "ES_reported": 0.5143063482,
+          "maximum_absolute_running_score_difference": 5.435096817052454e-11,
+          "absolute_running_score_tolerance": 1e-09,
+          "tolerance_basis": "TSV exports round Wald statistics and running scores to ten significant digits."
+        },
+        "GO:2001222": {
+          "ES_recomputed": -0.5599097256515817,
+          "ES_reported": -0.5599097257,
+          "maximum_absolute_running_score_difference": 7.910067045813207e-11,
+          "absolute_running_score_tolerance": 1e-09,
+          "tolerance_basis": "TSV exports round Wald statistics and running scores to ten significant digits."
+        }
+      },
+      "figure_metadata": {
+        "ORA_significant_terms": {
+          "pixels": [
+            3900,
+            2100
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        },
+        "GSEA_terms": {
+          "pixels": [
+            3150,
+            2340
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        },
+        "GSEA_curve_GO_0002181": {
+          "pixels": [
+            2400,
+            1500
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        },
+        "GSEA_curve_GO_2001222": {
+          "pixels": [
+            2400,
+            1500
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        }
+      },
+      "source_DE_sha256": "903b0afe260773492c050603d627396956b4b1552302b32bb6dad36ea9be591b",
+      "enrichment_input_sha256": "b08d79844b3ce04c2419b15019303f75f011b6908bfbc6722815a625e6a254c5",
+      "validated_at_utc": "2026-10-19T01:29:09.267655+00:00",
+      "plot_exports_sha256": {
+        "results/enrichment/ozone_M3_E4/figures/GSEA_curve_GO_0002181.png": "f560dcb0df10e131550d9147b5ee19d1b283cd96c8dbb9e69b6c2ef4f46e18c0",
+        "results/enrichment/ozone_M3_E4/figures/GSEA_curve_GO_0002181.svg": "ed51c4e3231733a2fd7f0b738c9b8d7454ebbdfb6d20ece39b90206545693e4b",
+        "results/enrichment/ozone_M3_E4/figures/GSEA_curve_GO_0002181.pdf": "e0c57e540c25e6eac6316bd6366f665c3484c9fbf1312a1a8bf91714bb9527fa",
+        "results/enrichment/ozone_M3_E4/figures/GSEA_curve_GO_2001222.png": "bb9ea1ba999c8732857ee347fbbbc74eb420f49e6ce7dea681b3ce7386fac049",
+        "results/enrichment/ozone_M3_E4/figures/GSEA_curve_GO_2001222.svg": "d53e43e4cab611d95ea4933ac3e255dd873c262a45a6e96501fe8140eaaaea2a",
+        "results/enrichment/ozone_M3_E4/figures/GSEA_curve_GO_2001222.pdf": "e6b03675d9cbd19b662991e5530a2817152c51f24a34a07a380c39d8638f200e",
+        "results/enrichment/ozone_M3_E4/figures/GSEA_terms.png": "e2da8449dee3037f6ab9ba54c3efa3917625aed1619da329802d7512339fa8ef",
+        "results/enrichment/ozone_M3_E4/figures/GSEA_terms.svg": "80b3c671a17072f5d53df0a4672a4f3380845b40e93f505b18ee88d37ba569cb",
+        "results/enrichment/ozone_M3_E4/figures/GSEA_terms.pdf": "38f3ac0af2cd6cba3363c29af1317d0c1d74abf400269a77aed1e15e0d7dac6d",
+        "results/enrichment/ozone_M3_E4/figures/ORA_significant_terms.png": "3a3f90761e54efbe30a20adff94443f51597d3c5a01049e68a4579d023da8525",
+        "results/enrichment/ozone_M3_E4/figures/ORA_significant_terms.svg": "725c23ef548b5687b61083e246063ee9f81857e809ada30430d60f5982d2d43a",
+        "results/enrichment/ozone_M3_E4/figures/ORA_significant_terms.pdf": "929059b053b4f03a437b8406a389a9f8d33e01d6f0e25ed548e8ceb61a8f69fb"
+      },
+      "visual_review": "Final four PNG figures inspected manually: explicit null ORA panels, exploratory GSEA term plot and both weighted running-score curves. Final curve figures have readable complete axis titles, correct exposed-versus-control rank direction and displayed algorithmic q-values. SVG/PDF/PNG exports verified."
+    },
+    "ozone_M17_E3": {
+      "checks": {
+        "input_source_hash_matches": true,
+        "input_table_matches_final_ozone_Wald_results": true,
+        "mouse_GAF_canonical_and_unambiguous_synonym_mapping_recomputed": true,
+        "canonical_representative_uses_maximum_baseMean": true,
+        "ORA_universe_finite_padj_and_unique": true,
+        "GSEA_rank_complete_finite_original_p_and_statistic_without_FDR_selection": true,
+        "GSEA_rank_unique_and_descending": true,
+        "GSEA_excludes_Cook_nonfinite_p_Wald_nonconvergence_and_all_zero_strata": true,
+        "ORA_all_size_eligible_terms_retained": true,
+        "ORA_up_family_and_size_filter": true,
+        "ORA_up_hypergeometric_recomputed": true,
+        "ORA_up_BH_including_zero_overlaps_recomputed": true,
+        "ORA_up_universe_foreground_overlap_counts": true,
+        "ORA_up_listed_overlaps_match_references": true,
+        "ORA_up_summary_and_significant_subset_consistent": true,
+        "ORA_down_family_and_size_filter": true,
+        "ORA_down_hypergeometric_recomputed": true,
+        "ORA_down_BH_including_zero_overlaps_recomputed": true,
+        "ORA_down_universe_foreground_overlap_counts": true,
+        "ORA_down_listed_overlaps_match_references": true,
+        "ORA_down_summary_and_significant_subset_consistent": true,
+        "GSEA_test_family_and_size_match_QC_rank": true,
+        "GSEA_algorithmic_FDR_label_and_numeric_ranges": true,
+        "GSEA_significant_subset_and_summary_consistent": true,
+        "GSEA_1000_permutations_and_seed_recorded": true,
+        "combined_summary_matches_dataset_summary": true,
+        "annotation_coverage_counts_consistent": true,
+        "GSEA_GO:0002088_running_score_matches_result": true,
+        "GSEA_GO:0002181_running_score_matches_result": true,
+        "ORA_null_panels_explicit": true,
+        "GSEA_term_plot_algorithmic_FDR_label": true,
+        "GSEA_curve_GO_0002088_algorithmic_q_and_exposure_direction_labeled": true,
+        "GSEA_curve_GO_0002181_algorithmic_q_and_exposure_direction_labeled": true,
+        "complete_PNG_SVG_PDF_exports_nonblank": true,
+        "rank_exclusion_summary_consistent": true,
+        "manual_visual_review_final_figures_passed": true,
+        "combined_summary_count_row_matches_json": true
+      },
+      "all_checks_passed": true,
+      "ORA_counts": {
+        "up": {
+          "terms": 4548,
+          "zero_overlap_terms": 4548,
+          "foreground_genes": 0,
+          "significant": 0
+        },
+        "down": {
+          "terms": 4548,
+          "zero_overlap_terms": 4548,
+          "foreground_genes": 0,
+          "significant": 0
+        }
+      },
+      "GSEA_terms": 4548,
+      "GSEA_rank_genes": 15449,
+      "GSEA_significant_algorithmic_FDR_0_05": 85,
+      "source_validity_exclusions": {
+        "final_DE_nonfinite_pvalue": 39,
+        "Wald_nonconverged": 0,
+        "all_zero_stratum": 15,
+        "unreliable_mapped_representatives_excluded": 20
+      },
+      "curve_score_checks": {
+        "GO:0002088": {
+          "ES_recomputed": 0.5311730734125956,
+          "ES_reported": 0.5311730734,
+          "maximum_absolute_running_score_difference": 6.713685163362015e-11,
+          "absolute_running_score_tolerance": 1e-09,
+          "tolerance_basis": "TSV exports round Wald statistics and running scores to ten significant digits."
+        },
+        "GO:0002181": {
+          "ES_recomputed": -0.5846309898641392,
+          "ES_reported": -0.5846309899,
+          "maximum_absolute_running_score_difference": 6.163236587752863e-11,
+          "absolute_running_score_tolerance": 1e-09,
+          "tolerance_basis": "TSV exports round Wald statistics and running scores to ten significant digits."
+        }
+      },
+      "figure_metadata": {
+        "ORA_significant_terms": {
+          "pixels": [
+            3900,
+            2100
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        },
+        "GSEA_terms": {
+          "pixels": [
+            3150,
+            2340
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        },
+        "GSEA_curve_GO_0002088": {
+          "pixels": [
+            2400,
+            1500
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        },
+        "GSEA_curve_GO_0002181": {
+          "pixels": [
+            2400,
+            1500
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        }
+      },
+      "source_DE_sha256": "aa8702919f49c643379b0fa149ef81f0e0abb099322bc7d853a93de0eeb639cc",
+      "enrichment_input_sha256": "e81b4913a8843b7aeb999dae706d312af9a9677cbdb572e746e61ab217ad160f",
+      "validated_at_utc": "2026-10-19T01:29:09.363096+00:00",
+      "plot_exports_sha256": {
+        "results/enrichment/ozone_M17_E3/figures/GSEA_curve_GO_0002088.png": "be4f6be2a1173f338db50573ddc003d88d31e4b9f78b0c3d00f8e7513bdabb8f",
+        "results/enrichment/ozone_M17_E3/figures/GSEA_curve_GO_0002088.svg": "587308be3d41cbfd1faf94e11be8ab70b45e40b17cc6e2543e6345f4445466b1",
+        "results/enrichment/ozone_M17_E3/figures/GSEA_curve_GO_0002088.pdf": "721488c3aa555cf93e31331c86619d71d7554d1ed1b033ebf8405d64f3ce4997",
+        "results/enrichment/ozone_M17_E3/figures/GSEA_curve_GO_0002181.png": "28e509f67f0080917f4453d6c260edfc76fc5ec14546a09e19b540954621906d",
+        "results/enrichment/ozone_M17_E3/figures/GSEA_curve_GO_0002181.svg": "d0cea3365ef8fd36eb70c7c7b1436fc7ce3ef2540aa2804bfde4c2a686d0acb4",
+        "results/enrichment/ozone_M17_E3/figures/GSEA_curve_GO_0002181.pdf": "1d8330e06216cee30b65532ad03c1652be64259f2c0b4cfa0943ba2988d6660c",
+        "results/enrichment/ozone_M17_E3/figures/GSEA_terms.png": "0abf2ec63f753ed91258f9a2e0491981a6a8bd2ccda83017b346c3fe46021ddf",
+        "results/enrichment/ozone_M17_E3/figures/GSEA_terms.svg": "6677dfe353637ecbde6443fc35ee6c11da328cb0a07cd77afde12f9d0e2e4d6b",
+        "results/enrichment/ozone_M17_E3/figures/GSEA_terms.pdf": "a6e3470c97db9dc7399a203b2d7773aad37997c692a0ab4143b49ba525b82466",
+        "results/enrichment/ozone_M17_E3/figures/ORA_significant_terms.png": "32536d35181b55ac1359c27e2211a7f55a8533f87353cdcfe77d460f6e2a9ac4",
+        "results/enrichment/ozone_M17_E3/figures/ORA_significant_terms.svg": "8d626e2994d3775a89febf6157abcb04ca4feac8520443a0970cd5db1e55a0a3",
+        "results/enrichment/ozone_M17_E3/figures/ORA_significant_terms.pdf": "dd2768d5a93a27e2186086b8c5f78c3c8d9939a575ca84b30d7fe956e852087b"
+      },
+      "visual_review": "Final four PNG figures inspected manually: explicit null ORA panels, exploratory GSEA term plot and both weighted running-score curves. Final curve figures have readable complete axis titles, correct exposed-versus-control rank direction and displayed algorithmic q-values. SVG/PDF/PNG exports verified."
+    },
+    "ozone_M17_E4": {
+      "checks": {
+        "input_source_hash_matches": true,
+        "input_table_matches_final_ozone_Wald_results": true,
+        "mouse_GAF_canonical_and_unambiguous_synonym_mapping_recomputed": true,
+        "canonical_representative_uses_maximum_baseMean": true,
+        "ORA_universe_finite_padj_and_unique": true,
+        "GSEA_rank_complete_finite_original_p_and_statistic_without_FDR_selection": true,
+        "GSEA_rank_unique_and_descending": true,
+        "GSEA_excludes_Cook_nonfinite_p_Wald_nonconvergence_and_all_zero_strata": true,
+        "ORA_all_size_eligible_terms_retained": true,
+        "ORA_up_family_and_size_filter": true,
+        "ORA_up_hypergeometric_recomputed": true,
+        "ORA_up_BH_including_zero_overlaps_recomputed": true,
+        "ORA_up_universe_foreground_overlap_counts": true,
+        "ORA_up_listed_overlaps_match_references": true,
+        "ORA_up_summary_and_significant_subset_consistent": true,
+        "ORA_down_family_and_size_filter": true,
+        "ORA_down_hypergeometric_recomputed": true,
+        "ORA_down_BH_including_zero_overlaps_recomputed": true,
+        "ORA_down_universe_foreground_overlap_counts": true,
+        "ORA_down_listed_overlaps_match_references": true,
+        "ORA_down_summary_and_significant_subset_consistent": true,
+        "GSEA_test_family_and_size_match_QC_rank": true,
+        "GSEA_algorithmic_FDR_label_and_numeric_ranges": true,
+        "GSEA_significant_subset_and_summary_consistent": true,
+        "GSEA_1000_permutations_and_seed_recorded": true,
+        "combined_summary_matches_dataset_summary": true,
+        "annotation_coverage_counts_consistent": true,
+        "GSEA_GO:0001578_running_score_matches_result": true,
+        "GSEA_GO:0140236_running_score_matches_result": true,
+        "ORA_null_panels_explicit": true,
+        "GSEA_term_plot_algorithmic_FDR_label": true,
+        "GSEA_curve_GO_0001578_algorithmic_q_and_exposure_direction_labeled": true,
+        "GSEA_curve_GO_0140236_algorithmic_q_and_exposure_direction_labeled": true,
+        "complete_PNG_SVG_PDF_exports_nonblank": true,
+        "rank_exclusion_summary_consistent": true,
+        "manual_visual_review_final_figures_passed": true,
+        "combined_summary_count_row_matches_json": true
+      },
+      "all_checks_passed": true,
+      "ORA_counts": {
+        "up": {
+          "terms": 4550,
+          "zero_overlap_terms": 4550,
+          "foreground_genes": 0,
+          "significant": 0
+        },
+        "down": {
+          "terms": 4550,
+          "zero_overlap_terms": 4381,
+          "foreground_genes": 3,
+          "significant": 0
+        }
+      },
+      "GSEA_terms": 4550,
+      "GSEA_rank_genes": 15451,
+      "GSEA_significant_algorithmic_FDR_0_05": 23,
+      "source_validity_exclusions": {
+        "final_DE_nonfinite_pvalue": 38,
+        "Wald_nonconverged": 0,
+        "all_zero_stratum": 13,
+        "unreliable_mapped_representatives_excluded": 18
+      },
+      "curve_score_checks": {
+        "GO:0001578": {
+          "ES_recomputed": 0.47475926988659,
+          "ES_reported": 0.4747592699,
+          "maximum_absolute_running_score_difference": 6.806366581457723e-11,
+          "absolute_running_score_tolerance": 1e-09,
+          "tolerance_basis": "TSV exports round Wald statistics and running scores to ten significant digits."
+        },
+        "GO:0140236": {
+          "ES_recomputed": -0.6993858327455511,
+          "ES_reported": -0.6993858327,
+          "maximum_absolute_running_score_difference": 6.182987455360944e-11,
+          "absolute_running_score_tolerance": 1e-09,
+          "tolerance_basis": "TSV exports round Wald statistics and running scores to ten significant digits."
+        }
+      },
+      "figure_metadata": {
+        "ORA_significant_terms": {
+          "pixels": [
+            3900,
+            2100
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        },
+        "GSEA_terms": {
+          "pixels": [
+            3150,
+            2340
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        },
+        "GSEA_curve_GO_0001578": {
+          "pixels": [
+            2400,
+            1500
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        },
+        "GSEA_curve_GO_0140236": {
+          "pixels": [
+            2400,
+            1500
+          ],
+          "dpi": [
+            299.9994,
+            299.9994
+          ],
+          "nonblank": true
+        }
+      },
+      "source_DE_sha256": "59f3c30a82eed64be5c977c93077e4cf475c6cf42e56129e62ad97f056ad0519",
+      "enrichment_input_sha256": "3a5698d9d16d4bd079cab45fab5889494e4448e0c9014936b2fabf9ff6851a9e",
+      "validated_at_utc": "2026-10-19T01:29:09.458248+00:00",
+      "plot_exports_sha256": {
+        "results/enrichment/ozone_M17_E4/figures/GSEA_curve_GO_0001578.png": "a07108d98bcb2a6554361d931e65489ebebfbf338f63c94be04a00e96934c5e2",
+        "results/enrichment/ozone_M17_E4/figures/GSEA_curve_GO_0001578.svg": "bf9a5b8f74f71f6976fa0084cf9e339665c367364c534acb546c64b2dd8f5408",
+        "results/enrichment/ozone_M17_E4/figures/GSEA_curve_GO_0001578.pdf": "28091e7d7fc77a51e16a8470a1cd39d888452e88090d78d482fa3077a3f2d054",
+        "results/enrichment/ozone_M17_E4/figures/GSEA_curve_GO_0140236.png": "7b807ffa3f32b07883611ed468caf206c09e07ffdbaf44bf22415a72d7b48160",
+        "results/enrichment/ozone_M17_E4/figures/GSEA_curve_GO_0140236.svg": "0049f1c79bef1600525019f0ffefebf932361fe64d51dcc67c35897835fa80ca",
+        "results/enrichment/ozone_M17_E4/figures/GSEA_curve_GO_0140236.pdf": "375b68237765b47f772e1d31392eb04a2ecb4537411f123adeb54d621de7d124",
+        "results/enrichment/ozone_M17_E4/figures/GSEA_terms.png": "22cd1475d1ca6f29d0a1e7a14785753731ca7193ec2a144f927977ee78c47582",
+        "results/enrichment/ozone_M17_E4/figures/GSEA_terms.svg": "58b230b60a7c6b9daddfb175af6657b37c7e8a97a60b4127db062cdc6653449d",
+        "results/enrichment/ozone_M17_E4/figures/GSEA_terms.pdf": "1e864d77d0cfb8ef68f029f96e322a56ea92c237f651ffe70dbedd781a8cb4d3",
+        "results/enrichment/ozone_M17_E4/figures/ORA_significant_terms.png": "6af543ed81a3f27a222603f091fb2d0a6cba1f0232f8ce0ec193b7624230d3cc",
+        "results/enrichment/ozone_M17_E4/figures/ORA_significant_terms.svg": "082292564ac8a0ac0bff0a155d1430d5e78cb5f76c771cebd46d2466d53c42ec",
+        "results/enrichment/ozone_M17_E4/figures/ORA_significant_terms.pdf": "3e140e85e900a7e9bb77f91f865ec664e91310ddd014f365ebd1f9844d961456"
+      },
+      "visual_review": "Final four PNG figures inspected manually: explicit null ORA panels, exploratory GSEA term plot and both weighted running-score curves. Final curve figures have readable complete axis titles, correct exposed-versus-control rank direction and displayed algorithmic q-values. SVG/PDF/PNG exports verified."
+    }
+  },
+  "scope": "Arithmetic, gene-mapping, rank-quality, multiplicity-family and export checks. This does not establish biological mechanisms or independent replication.",
+  "visual_review": "Eight final PNG figures inspected: both ORA panels (including explicit hypothalamus null), both GSEA term plots and four running-score curves. Labels and axes remain readable; SVG/PDF/PNG exports are available.",
+  "ozone_completed_scope": "All four finalized O3-versus-FA age/genotype strata: source-table linkage, mouse GAF mapping/deduplication, complete hypergeometric/BH ORA families including zero overlaps, full valid-p/Wald ranks excluding unreliable tests, GSEA algorithmic-FDR labels, running-score arithmetic, summary counts and all sixteen final PNG figure inspections. No model fitting or enrichment rerun.",
+  "summary_counts_regeneration": {
+    "all_six_rows_match_JSON_summaries": true,
+    "established_columns_and_PM_rows_preserved": true,
+    "source_summary_sha256": "1e89f41ddb6ff1140d9a8effea587a2d1fc1437d266ed2e23a0f0a0f2aafb300",
+    "summary_counts_sha256": "0f1e5f0ec91d1c6c9a1bd5fa0631c20c843d90504f1a72d146d67b33d6001c70",
+    "pure_helper": "scripts/analyze_enrichment.py:summary_count_table",
+    "current_script_sha256": "586b0a19cb91eca6523f0725c0084ddcee9629630d5005b26a47f255e704d19f",
+    "analysis_run_script_sha256_recorded_in_methods": "cd7d5edfdcaac303824f5ca50575618aa81429561890e7fbdd61d472fa485a6e",
+    "post_analysis_changes": "Added deterministic report-count export and shortened curve axis wording with fixed margins. Eight ozone curve figure sets were redrawn from saved unchanged curve TSV files. No DE model, annotation mapping, ORA or GSEA computation was repeated."
+  },
+  "ozone_visual_review": {
+    "passed": true,
+    "PNG_figures_manually_inspected": [
+      "results/enrichment/ozone_M3_E3/figures/GSEA_curve_GO_0007602.png",
+      "results/enrichment/ozone_M3_E3/figures/GSEA_curve_GO_0046460.png",
+      "results/enrichment/ozone_M3_E3/figures/GSEA_terms.png",
+      "results/enrichment/ozone_M3_E3/figures/ORA_significant_terms.png",
+      "results/enrichment/ozone_M3_E4/figures/GSEA_curve_GO_0002181.png",
+      "results/enrichment/ozone_M3_E4/figures/GSEA_curve_GO_2001222.png",
+      "results/enrichment/ozone_M3_E4/figures/GSEA_terms.png",
+      "results/enrichment/ozone_M3_E4/figures/ORA_significant_terms.png",
+      "results/enrichment/ozone_M17_E3/figures/GSEA_curve_GO_0002088.png",
+      "results/enrichment/ozone_M17_E3/figures/GSEA_curve_GO_0002181.png",
+      "results/enrichment/ozone_M17_E3/figures/GSEA_terms.png",
+      "results/enrichment/ozone_M17_E3/figures/ORA_significant_terms.png",
+      "results/enrichment/ozone_M17_E4/figures/GSEA_curve_GO_0001578.png",
+      "results/enrichment/ozone_M17_E4/figures/GSEA_curve_GO_0140236.png",
+      "results/enrichment/ozone_M17_E4/figures/GSEA_terms.png",
+      "results/enrichment/ozone_M17_E4/figures/ORA_significant_terms.png"
+    ],
+    "figure_count": 16,
+    "axis_layout_repair": "All eight ozone running-score plots use fixed figure margins and a shorter scientific axis label. Final title/axis bounds also checked at 300 DPI.",
+    "table_and_curve_source_data_unchanged": true,
+    "reviewed_at_utc": "2026-10-19T01:29:09.458509+00:00"
+  }
+}

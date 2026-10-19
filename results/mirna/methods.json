@@ -1,0 +1,36 @@
+{
+  "created_at_UTC": "2026-10-19T00:16:01.934889+00:00",
+  "source": "data/GSE93967/processed/GSE93967_series_matrix.txt.gz",
+  "source_sha256": "6140d10b4d69e71ffdfdb3d7448535b73c0e88232231857e0dc59a7703f32f32",
+  "GEO_SOFT_sha256": "a0e57c145d113e438e1e1eb29dfaa20de2010b13f3aad0a7fdbcc07e561836da",
+  "platform": "GPL17912",
+  "annotation": "Exact probe ID to supplied miRNA_ID mapping; historical miRBase v19 labels retained; no silent identifier update or collapse",
+  "exclusions": "Non-mmu annotated platform controls, nonfinite and zero-variance miRNA rows only. All nine biological samples retained.",
+  "normalization": "None added; retain deposited quantile-normalized GeneSpring signal unchanged",
+  "scale_caution": "GEO documents quantile normalization but does not explicitly document log2 units. Signed deposited values are retained; no log transform, count model or fold-change interpretation is imposed.",
+  "model": "limma lmFit with ~0+condition (Control, PM1, PM5), contrasts PM1-Control and PM5-Control, eBayes(trend=TRUE, robust=FALSE)",
+  "multiplicity": "Benjamini-Hochberg adjusted p within each pairwise contrast across all retained miRNA rows; separately within the two-coefficient omnibus moderated F test. No joint correction across contrasts is claimed.",
+  "uncertainty": "SE_moderated and pointwise 95% t intervals use posterior residual variance and moderated total degrees of freedom; intervals are not simultaneous or multiplicity-adjusted",
+  "PCA": "Top 500 variable retained miRNA features; feature centered, not standardized; deposited signal units",
+  "detection": "Agilent P/M/A detection calls retained. Low-detection flag: fewer than three Present calls in every group. Detection flags do not enter significance tests or remove miRNA rows.",
+  "controls": "21 non-miRNA/control rows remain available in published_normalized_signal.tsv and probe_annotation.tsv but do not enter differential analysis",
+  "references": [
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE93967",
+    "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL17912",
+    "https://doi.org/10.1186/s12989-017-0215-3",
+    "https://doi.org/10.1093/nar/gkv007"
+  ],
+  "software": {
+    "numpy": "2.4.3",
+    "pandas": "2.3.3",
+    "matplotlib": "3.10.8",
+    "scikit-learn": "1.8.0"
+  },
+  "R_software": "See R_session_info.txt",
+  "random_seed": 20261018,
+  "limitations": [
+    "n=3 biological samples per condition; no verified batch or pairing variables are available.",
+    "Results do not establish miRNA-target interactions; no mRNA GO enrichment is inferred from miRNA names.",
+    "Normalization and log-scale ambiguity cannot be resolved solely from the deposited normalized signal. Effect sizes are conservatively labeled in published signal units."
+  ]
+}

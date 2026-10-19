@@ -1,0 +1,136 @@
+---
+title: "Methods"
+subtitle: "Experimental units, statistical models, and spatial assumptions"
+---
+
+```{python}
+from pathlib import Path
+import json
+import pandas as pd
+from IPython.display import display, Markdown
+from _report_utils import summary, show_table, read_table
+ROOT = Path.cwd().parent
+h = summary("hypothalamus")
+v = summary("spatial_viewer")
+```
+
+## Study scope and experimental units
+
+The source collection comprises four public mouse-brain exposure studies and a separate MERFISH reference atlas. Raw files and original metadata are preserved. Primary analyses use seven hypothalamic RNA-seq libraries, eight cingulate-cortex RNA-seq libraries, nine hippocampal miRNA arrays, and 24 ozone-study RNA-seq libraries. Individual libraries or arrays represent study samples; atlas cells are not independent exposure replicates. Studies are not pooled because region, animal model, exposure route, and assay differ.
+
+| Dataset | Main contrast | Excluded from that contrast |
+|---|---|---|
+| GSE145840 | PM2.5 versus filtered air, chow-fed; 3 versus 4 | Four high-fat-diet samples |
+| GSE297423 | Intranasal PM2.5 versus PBS; 4 versus 4 | Twelve PFF/PM-PFF treatment-arm samples |
+| GSE93967 | 1 mg/kg or 5 mg/kg versus saline; 3 per group | Platform controls and constant biological features |
+| E-MTAB-14917 | Ozone versus filtered air within age × APOE strata; 3 per group | No inferred exposure contrast from the deposited E4-versus-E3 result table |
+
+The original experimental designs are described by Rajagopalan et al., Zhang et al., Ku et al., and Nakamya et al. @Rajagopalan2020_32780721 @Zhang2025_40906862 @Ku2017_28851397 @Nakamya2025_40141051
+
+### Experimental exposure regimens
+
+The table records the selected brain-study arms from the original publications. Dose units and exposure routes are retained as reported; they are not converted into a shared inhalation-equivalent dose.
+
+::: {.table-scroll}
+
+| Source | Animal model and sex | Age at exposure onset | Exposure and schedule |
+|---|---|---|---|
+| GSE145840 [@Rajagopalan2020_32780721] | Male C57BL/6J, standard chow | 3 weeks | Inhaled concentrated ambient PM2.5, approximately 60–120 µg/m³ (reported mean about 80); 6 h/day, 5 days/week, 14 weeks. |
+| GSE297423 [@Zhang2025_40906862] | Humanized hWT α-synuclein, JAX 010710, FVB;129S6 background; sex not specified | 2 months | Intranasal 2 µL at 5 mg/mL every two days for two months; PBS comparator. |
+| GSE93967 [@Ku2017_28851397] | Male C57BL/6 | Approximately 8 weeks | Oropharyngeal aspiration of 1 or 5 mg/kg every other day for four weeks; tissue collected 18 h after the final dose. |
+| E-MTAB-14917 [@Nakamya2025_40141051] | Male human APOE3/APOE4 targeted-replacement mice | 3 or 17 months | Ozone gas at 0.8 ppm, 7 h/day for five days, followed by nine days filtered air; eight cycles. |
+
+:::
+
+The cortex RNA-seq arm uses the young humanized hWT animals; the same publication also includes a distinct experiment in older conventional mice. Those designs are not interchanged. Exact terminal ages and tissue-collection lags are not explicitly deposited for hypothalamus, cortex, or ozone, so they are not invented by adding calendar intervals. The [exposure-design review](downloads/report_validation/experimental_design_review.json) records the PDF pages, source metadata, checksums, and remaining uncertainties for each row.
+
+## Source checks and preprocessing
+
+Downloaded exposure files were checked against provider sizes and MD5 sums where available. The 49 spatial-reference files matched the Allen manifest in both size and MD5. Integer-valued, nonnegative counts, unique feature identifiers, sample order, group assignments, and gene-list agreement were checked before modeling. The seven hypothalamic files use a headerless whitespace-separated format and share the same 50,417 gene symbols in the same order. Negative values in the deposited miRNA signal matrix were retained because those values are already normalized continuous signals.
+
+The cingulate-cortex matrix was matched to samples by the deposited **library names**, not the GEO sample order. The ambiguous alias in a PM-PFF-plus-PM sample is outside the eight-sample primary contrast and is not silently corrected. No batch, RIN, or individual age covariate was invented for the PM2.5 RNA-seq studies.
+
+## Classical RNA-seq analysis
+
+### Hypothalamus and cingulate cortex
+
+Counts were analyzed in Python using PyDESeq2, a Python implementation of the DESeq2 framework. @Muzellec2023_PyDESeq2 @Love2014_DESeq2 The hypothalamic filter required at least 10 counts in at least three of seven samples, retaining 19,611 genes. The cortex filter required at least 10 counts in at least four of eight samples, retaining 19,235 genes. Filters were applied before normalization and inferential modeling.
+
+Each study was modeled separately with **condition as the sole design factor** and an explicit PM-versus-control contrast. Median-of-ratios size factors, gene-wise and trend-based dispersion estimation, negative-binomial generalized linear models, and two-sided Wald tests were used. Multiple-testing adjustment followed the implementation's Benjamini–Hochberg procedure, with **FDR < 0.05** as the primary threshold. @Benjamini1995_FDR Cook's filtering and independent filtering remain distinguished: missing adjusted p-values are not all attributed to outliers.
+
+The original maximum-likelihood log₂ fold changes, errors, Wald statistics, p-values, and adjusted p-values were saved **before** apeglm shrinkage. Shrunken log₂ fold changes were retained separately for effect visualization and spatial scenarios; they do not replace the original hypothesis-test results. @Zhu2019_apeglm A secondary threshold of absolute shrunken log₂FC ≥ 1 is reported descriptively in addition to FDR, without redefining the primary discovery set.
+
+### Sample quality and relationships
+
+The report includes gene-assigned library depth, detected genes, normalized distributions, sample correlations/distances, and PCA. PCA uses the 500 most variable variance-stabilized genes, centered across samples without gene-variance scaling. Individual samples are labeled. No sample was removed to improve visual separation, no batch was inferred from a principal component, and no unrecorded batch correction was applied.
+
+The hypothalamic variance-stabilizing transform uses the condition design when estimating the dispersion trend; the cortex and ozone exploratory transforms are blind to the design. This distinction is retained in the analysis provenance. It changes the transformation used for visualization, not the gene-level differential-expression contrast.
+
+### Hypothalamus sensitivity analysis
+
+Because the hypothalamic PCA shows marked control heterogeneity, the complete analysis was refitted after omitting each of the seven samples in turn. The original primary gene universe was retained. Direction, effect magnitude, and FDR stability are reported for the eleven primary hits, and discovery counts are reported for every omission. These fits assess sensitivity; they do not select a preferred deletion or replace the seven-animal primary result.
+
+An independent DESeq2 R fit checks implementation agreement using the same samples, gene filter, normalization, condition contrast, parametric dispersion trend, Cook's settings, and finite-p hypothesis family. Original maximum-likelihood effects and standard errors are compared before shrinkage. Threshold crossings are reported without changing the prespecified Python primary analysis. This evaluates numerical sensitivity, not biological replication.
+
+## Hippocampal miRNA analysis
+
+GSE93967 was analyzed on its **deposited quantile-normalized signal scale**, without a second log transformation. GPL17912 probe annotations identify biological miRNA features and platform controls. Controls and constant biological rows were excluded; low-detection features were flagged and retained. Effects are mean differences in published signal units because a log₂ scale was not established from the deposit.
+
+A three-group linear model was fit using the empirical-Bayes moderated statistics in limma. @Ritchie2015_limma The 1 mg/kg-versus-control and 5 mg/kg-versus-control contrasts were tested separately, with Benjamini–Hochberg correction within each contrast family. An omnibus moderated F test describes differences across the three groups. Pointwise t-based intervals and all nine sample values remain available. mRNA Gene Ontology analysis was not applied to miRNA names without a validated target mapping.
+
+## Ozone analysis from original reads
+
+```{python}
+ozone_done = (ROOT / "results/ozone/summary.json").exists()
+if not ozone_done:
+    display(Markdown("> **Processing-stage note:** this section records the fixed raw-read workflow. "
+                     "The final sample-level QC and result tables are added after all 24 libraries finish."))
+```
+
+The 24 paired-end libraries are resolved from the source SDRF, keeping paired files together by ENA run. Initial raw quality and adapter content are assessed on the **first 200,000 read pairs per library**, explicitly a diagnostic subset rather than a complete-read quality audit. Full-run adapter-removal reports are retained. Adapter trimming is applied consistently when the documented criterion is met; no duplicate removal or arbitrary quality trimming is used.
+
+Salmon quantification uses a fixed **GENCODE M25/GRCm38** transcriptome plus the complete primary genome as decoys, automatic library-type inference, and sequence/GC bias correction. Provider checksums, reference-building steps, software versions, and per-library reports are stored with the workflow. @Patro2017_Salmon Quantifications are imported at gene level with tximport, retaining effective-length information for DESeq2. @Soneson2015_tximport Mouse-reference quantification does not establish allele-specific human APOE expression.
+
+The eight-group design crosses age, APOE genotype, and exposure, with three libraries per group. The full model includes the corresponding two-way and three-way interactions. Four ozone-versus-filtered-air contrasts describe the age/genotype strata. A likelihood-ratio test compares the full model with an age-by-genotype model, jointly testing the exposure-associated terms. Adjusted p-values are retained both within each stratum and across the family of four stratum contrasts. Inconsistent strain descriptions in the source metadata are documented rather than converted into an unsupported adjustment.
+
+## Functional enrichment
+
+Mouse Gene Ontology Biological Process associations are taken from a frozen official **MGI GAF** and **go-basic OBO** snapshot. NOT annotations are excluded, taxon is restricted to mouse, and eligible is-a/part-of ancestors are propagated. Exact current symbols and unambiguous source synonyms are distinguished; ambiguous aliases remain unmapped. Annotation versions, hashes, mapping decisions, and coverage are exported. @Ashburner2000_GO
+
+Over-representation analysis uses a one-sided hypergeometric test for higher- and lower-expression gene lists separately. The background comprises mapped, unique genes eligible for the original differential-expression test. Terms containing 15–500 background genes are tested. All eligible terms, including zero-overlap terms, enter the Benjamini–Hochberg correction within each direction-specific family. Lack of significant over-representation is reported directly.
+
+Preranked GSEA uses finite signed Wald statistics **with finite original p-values**, excluding Cook-filtered nonfinite-p results while retaining finite-p genes that were independently filtered from adjusted-p reporting. It uses 1,000 gene-set permutations, a fixed seed, and 15–500-gene sets. @Subramanian2005_GSEA @Fang2023_GSEApy Its algorithmic FDR is distinct from ORA's BH adjustment. GSEA is exploratory here: overlapping terms and correlated genes are not independent mechanistic discoveries, and these analyses do not remove the small-sample and control-heterogeneity limitations.
+
+## Measured 3D reference and modeled PM2.5 scenario
+
+The spatial reference uses **Zhuang-ABCA-2**, an adult male donor. Cells are selected by the deposited CCF parcellation assignments to the hypothalamic division, matched by exact string cell identifiers to the measured H5AD matrix, and annotated by the atlas taxonomy. @Zhang2023_38092912
+
+```{python}
+display(Markdown(f"This selection contains **{v['hypothalamus_cells']:,} cells**, **{v['cell_classes']} cell classes**, "
+                 f"and **{v['anatomical_substructures']} hypothalamic substructures**. All **{v['measured_genes']:,} measured genes** "
+                 f"are accessible; **{v['genes_with_estimable_bulk_effect']:,}** have reliable bulk effect estimates. "
+                 "Cells are not subsampled, mirrored, or interpolated."))
+```
+
+The viewer plots CCF millimeter distances as ML, AP, and −DV. It does not apply the centered NIfTI RAS affine to positive CCF coordinate distances. A voxel-label agreement check verifies the frame; boundary-level differences are retained. Anatomical surfaces are simplified to 0.15 mm for whole-brain context and 0.075 mm for the hypothalamus; the molecular coordinates themselves remain unchanged.
+
+The central scenario is defined on the **linear imaging-count scale**:
+
+```text
+Simulated value(cell, gene) = measured reference count(cell, gene)
+                            × 2^(shrunken bulk PM-versus-FA log2 fold change)
+```
+
+The multiplier applies uniformly within the hypothalamus. Other regions provide anatomical context only and are not assigned an exposure effect. Alternative lower/upper scenarios use the unshrunken group coefficient ±1.96 standard errors; these are group-effect sensitivity scenarios, not single-cell confidence intervals.
+
+The two views use identical cell positions, linked cameras, and a common **log₂(1 + value)** color scale. An optional common positive-value 99th-percentile cap is disclosed, with clipped color values retained in hover and source exports. Genes without reliable bulk inference remain reference-only; nonsignificant modeled genes carry an exploratory label.
+
+The reference is not a matched control for the bulk study. Uniform transfer preserves basal gradients and zeros and does not identify cell-specific responses, altered abundance, migration, morphology, or exposed single-cell expression.
+
+### Descriptive atlas summaries
+
+The measured reference is also summarized by each of its 26 classes and 49 substructures. Every measured gene retains its arithmetic mean linear imaging count, number of positive-count cells, and detection fraction within each group, including zeros in the denominator. Class composition and Tll1 detection plots are descriptive measurements from one donor. They do not include cell-level tests, confidence intervals or exposed-cell inference. The anatomical Tll1 plot displays the top 15 detection fractions among substructures with at least 100 selected cells; complete exports retain all 49 substructures. [Measured-reference results](spatial_reference.qmd).
+
+## Reproducibility
+
+Python source scripts, QMD notebooks, version records, original sample annotations, differential tables, normalized matrices, sensitivity fits, and SVG/PDF/PNG figure exports are retained in the repository. The miRNA backend uses R/limma and the ozone gene-level backend uses R/tximport/DESeq2, called from the Python workflow. No results are fabricated to fill unavailable spatial exposure measurements. [Data and execution instructions](reproducibility.qmd).

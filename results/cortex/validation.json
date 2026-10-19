@@ -1,0 +1,82 @@
+{
+  "verified_at_UTC": "2026-10-19T00:16:52.503038+00:00",
+  "numerical_checks": [
+    "Expression-to-metadata sample ordering checked",
+    "All tested features retain explicit IDs without silent collapse",
+    "All exported PNG files decoded; SVG files parsed and PDF signatures checked",
+    "All figure families exported in PNG/SVG/PDF with captions and source-table pointers",
+    "Unshrunken MLE coefficients, SEs, statistics and p values match pre-shrinkage table",
+    "Wald statistic equals log2 coefficient / SE for finite p values",
+    "Two-sided Wald p values agree with normal tails",
+    "BH-adjusted p values agree with independent recalculation over the independently filtered test family"
+  ],
+  "visual_review": "All 16 figure families reviewed on a contact sheet; final cortex and high-dose miRNA volcano plots inspected individually after reducing overlapping labels; no clipped axes or unreadable labels observed.",
+  "figures": [
+    {
+      "file": "results/cortex/figures/ma.png",
+      "pixels": [
+        2100,
+        1560
+      ],
+      "DPI": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "results/cortex/figures/pca.png",
+      "pixels": [
+        2280,
+        1590
+      ],
+      "DPI": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "results/cortex/figures/sample_correlation.png",
+      "pixels": [
+        2100,
+        1800
+      ],
+      "DPI": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "results/cortex/figures/sample_qc.png",
+      "pixels": [
+        3300,
+        1440
+      ],
+      "DPI": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "results/cortex/figures/top30_heatmap.png",
+      "pixels": [
+        2520,
+        2400
+      ],
+      "DPI": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "results/cortex/figures/volcano.png",
+      "pixels": [
+        2100,
+        1560
+      ],
+      "DPI": [
+        299.9994,
+        299.9994
+      ]
+    }
+  ]
+}

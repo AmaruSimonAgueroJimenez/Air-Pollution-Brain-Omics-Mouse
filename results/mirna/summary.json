@@ -1,0 +1,47 @@
+{
+  "dataset": "GSE93967",
+  "tissue": "hippocampus",
+  "n_samples": 9,
+  "n_per_group": 3,
+  "features_input": 1268,
+  "platform_controls_or_unannotated_removed": 21,
+  "nonfinite_or_constant_miRNA_removed": 2,
+  "miRNA_features_tested": 1245,
+  "scale": "Published quantile-normalized signal; log2 preprocessing is not explicitly confirmed by GEO, so effects are mean differences in published signal units",
+  "contrasts": [
+    {
+      "contrast": "PM1_vs_Control",
+      "n_control": 3,
+      "n_exposed": 3,
+      "features_tested": 1245,
+      "FDR05_features": 1,
+      "FDR05_higher": 1,
+      "FDR05_lower": 0,
+      "FDR05_low_detection_flag": 0,
+      "effect_units": "mean difference in published normalized signal"
+    },
+    {
+      "contrast": "PM5_vs_Control",
+      "n_control": 3,
+      "n_exposed": 3,
+      "features_tested": 1245,
+      "FDR05_features": 0,
+      "FDR05_higher": 0,
+      "FDR05_lower": 0,
+      "FDR05_low_detection_flag": 0,
+      "effect_units": "mean difference in published normalized signal"
+    }
+  ],
+  "omnibus_FDR05_features": 1,
+  "PCA_PC1_percent": 38.61972536491383,
+  "PCA_PC2_percent": 18.655953244777773,
+  "low_detection_features_flagged_not_removed": 823,
+  "negative_signal_values_retained": 7722,
+  "samples_excluded": [],
+  "QC_notes": [
+    "The deposited matrix contains a large sample-specific lower-bound pile-up near -3.3; negative values and detection flags are retained explicitly.",
+    "PCA does not cleanly separate the three groups. No sample was removed based on its position in PCA.",
+    "Low-detection features remain in the test family, so nominal or adjusted significance must be interpreted together with detection flags."
+  ],
+  "interpretation": "Exploratory probe-level secondary analysis; low detection is explicitly flagged. The two pairwise contrast families and the omnibus family have separate BH correction; no pooled FDR guarantee is claimed."
+}

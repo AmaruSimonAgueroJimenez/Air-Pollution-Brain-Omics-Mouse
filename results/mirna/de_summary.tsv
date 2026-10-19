@@ -1,0 +1,3 @@
+contrast	n_control	n_exposed	features_tested	FDR05_features	FDR05_higher	FDR05_lower	FDR05_low_detection_flag	effect_units
+PM1_vs_Control	3	3	1245	1	1	0	0	mean difference in published normalized signal
+PM5_vs_Control	3	3	1245	0	0	0	0	mean difference in published normalized signal

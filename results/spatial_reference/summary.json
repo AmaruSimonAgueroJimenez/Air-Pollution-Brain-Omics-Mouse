@@ -1,0 +1,25 @@
+{
+  "created_at_UTC": "2026-10-19T00:43:35.955388+00:00",
+  "reference_dataset": "Zhuang-ABCA-2",
+  "reference_donors": 1,
+  "sex": "male",
+  "registered_hemispheres": 1,
+  "cells": 37811,
+  "measured_genes": 1122,
+  "cell_classes": 26,
+  "substructures": 49,
+  "all_gene_class_rows": 29172,
+  "all_gene_substructure_rows": 54978,
+  "Tll1": {
+    "gene_id": "ENSMUSG00000053626",
+    "positive_cells": 667,
+    "detection_fraction": 0.017640369204728782,
+    "sum_imaging_counts": 821.0,
+    "mean_imaging_count": 0.021713258046600195
+  },
+  "substructures_with_at_least_100_cells": 40,
+  "substructures_displayed": 15,
+  "HY_unassigned_cells": 6393,
+  "ZI_unassigned_cells": 3518,
+  "statistical_scope": "Descriptive measurements from one reference donor; no per-cell differential tests, confidence intervals, clustering or exposure-response inference."
+}

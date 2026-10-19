@@ -1,0 +1,286 @@
+---
+title: "Hippocampal ozone: age and APOE genotype"
+---
+
+```{python}
+#| label: ozone-setup
+#| include: false
+from pathlib import Path
+import json
+import pandas as pd
+from IPython.display import display, Markdown
+from _report_utils import ROOT, summary, read_table, show_table, figure, fmt_p
+
+ozone_dir = ROOT / "results/ozone"
+contrast_keys = ["M3_E3_O3_vs_FA", "M3_E4_O3_vs_FA", "M17_E3_O3_vs_FA", "M17_E4_O3_vs_FA"]
+required = [ozone_dir / f"de_{key}.csv" for key in contrast_keys]
+required.append(ozone_dir / "de_global_ozone_LRT.csv")
+ozone_summary = {}
+if (ozone_dir / "summary.json").exists():
+    try:
+        ozone_summary = summary("ozone")
+    except (json.JSONDecodeError, OSError):
+        ozone_summary = {}
+ozone_ready = bool(ozone_summary.get("complete")) and all(p.exists() for p in required)
+sample_path = ozone_dir / "samples.csv"
+if not sample_path.exists():
+    sample_path = ROOT / "metadata/ozone_analysis/samples.csv"
+ozone_samples = pd.read_csv(sample_path) if sample_path.exists() else pd.DataFrame()
+
+def ozone_figure(stem, caption, alt):
+    if (ozone_dir / "figures" / f"{stem}.png").exists():
+        figure("ozone", stem, caption, alt=alt)
+
+def stratum_label(key):
+    age, genotype = key.split("_")[:2]
+    return f"Starting age {age[1:]} months · APO{genotype}"
+```
+
+## Study question and analysis status
+
+E-MTAB-14917 contains hippocampal RNA-seq from male human APOE3- or APOE4-targeted-replacement mice, with filtered-air and ozone groups in two starting-age strata. The ozone regimen used 0.8 ppm for seven hours per day on five days, followed by nine days of filtered air, repeated for eight cycles. The source age categories refer to **3 or 17 months at exposure onset**, rather than establishing age at tissue collection. This analysis keeps age, genotype, and exposure distinct and estimates ozone-versus-filtered-air contrasts within each age-by-genotype stratum. [@Nakamya2025_40141051]
+
+```{python}
+#| label: ozone-processing-status
+#| output: asis
+if ozone_ready:
+    display(Markdown(
+        f"**Gene-level inference is complete for {ozone_summary['n_samples']} libraries.** "
+        "The results below are read from the completed contrast tables. Read-level QC, "
+        "quantification QC, and figures are displayed when their corresponding completed outputs are available."
+    ))
+else:
+    quant_complete = len(list((ozone_dir / "quant").glob("*/ozone_quant_complete.json")))
+    display(Markdown(
+        "> **Analysis in progress.** Read processing and gene-level inference are not yet complete. "
+        f"At this report build, **{quant_complete} of 24 libraries** have a completed quantification record. "
+        "No ozone differential-expression counts, gene rankings, or pathway findings are asserted here. "
+        "The methods describe the configured workflow; the available QC summaries are shown separately. "
+        "Completed result tables will populate this page when the report is rebuilt."
+    ))
+```
+
+## Materials and methods
+
+### Design and biological replication
+
+The complete design contains **24 sequenced animal samples**, with three libraries in each of eight combinations of starting age, APOE genotype, and exposure. A library represents a biological sample; reads and atlas cells are not additional exposure replicates. No animal is excluded from the configured analysis. The deposited metadata contain one strain entry that differs from the other entries; it is preserved and documented rather than silently corrected.
+
+```{python}
+#| label: ozone-design-table
+if len(ozone_samples):
+    design = ozone_samples.groupby(["age", "genotype", "exposure"], sort=False).agg(
+        animals=("sample_id", "size"), sample_ids=("sample_id", lambda v: ", ".join(v))
+    ).reset_index()
+    show_table(design, n=8)
+```
+
+### Read-level QC and adapter decisions
+
+The initial fastp screen examines the **first 200,000 read pairs per library**. This is a bounded, position-dependent QC sample, not a random subsample or an all-read quality assessment. Adapter evidence from paired-read overlap determines whether at least 0.5% of sampled reads require adapter trimming. For a flagged library, fastp then processes the complete paired FASTQ files to produce derived adapter-trimmed input for quantification. Quality filtering, length filtering, poly-G trimming, and duplicate removal are disabled in this workflow. Original downloaded FASTQ files are preserved.
+
+Full-read fastp reports, where trimming is performed, remain available separately from the initial sampled-QC reports. Q30 percentages in the initial screen must therefore be interpreted as sampled-read summaries. Adapter-related pair removals are counted separately in the full-run records, including short adapter-dimer pairs; disabled quality and length filters do not imply that every original pair survives adapter processing. Quantification integrity is assessed from the complete library's Salmon outputs and reference-to-transcript mapping, rather than inferred from that screen alone.
+
+### Transcript quantification and gene-level import
+
+The workflow uses Salmon selective alignment against **GENCODE M25 mouse transcripts** with the **whole GRCm38 primary genome as decoys**. Library orientation is detected automatically, and sequence- and GC-bias models are enabled. Quantification uses all input read pairs or their complete derived adapter-trimmed equivalents. [@Patro2017_Salmon]
+
+Tximport summarizes estimated transcript fragments to genes with `countsFromAbundance="no"`, preserving sample-specific abundance-weighted effective gene lengths. `DESeqDataSetFromTximport` includes the corresponding gene-length offsets in the count model. Estimated fragments and TPM are exported separately; TPM values are not supplied as raw counts to DESeq2. Genes require at least ten rounded estimated fragments in at least three of the 24 libraries, using a rule independent of the group labels. [@Soneson2015_tximport; @Love2014_DESeq2]
+
+The mouse reference does **not** provide allele-specific quantification of the human APOE3 and APOE4 replacement sequences. Genotype groups come from the experimental metadata. No APOE-allele expression estimate or verified allele-specific mapping performance is claimed. Counts aligned at the mouse `Apoe`/humanized `APOE` replacement locus are not interpreted as validated allele- or locus-specific expression measurements.
+
+### Four stratified contrasts and the global ozone test
+
+The full negative-binomial model is `~age * genotype * exposure`. Dispersions are estimated using all 24 libraries. Equivalent group-factor reparameterizations make each planned within-stratum ozone-versus-filtered-air effect a single coefficient for Wald testing and apeglm shrinkage. Original Wald maximum-likelihood effects and p values are preserved; shrunken effects are additional estimates for interpretation and visualization. [@Love2014_DESeq2; @Zhu2019_apeglm]
+
+Benjamini–Hochberg adjustment is reported **within each of the four prespecified contrasts**. A supplementary column, `padj_across_four_strata`, adjusts the combined p-value family across all four contrasts. These columns answer different multiplicity questions and are shown separately. Their discovery sets need not be nested: a different ranked p-value family can increase or decrease the adjusted value for an individual test. This p-value adjustment does not pool animals into a single exposure group. A global likelihood-ratio test compares the full model with `~age * genotype`, using **four degrees of freedom** to ask whether adding exposure-related coefficients improves the fit. Its gene-level BH adjustment forms a separate family. The global test has no single signed ozone effect and is not used as a signed preranked-enrichment statistic. [@Benjamini1995_FDR]
+
+Cook's filtering remains enabled. The fixed count prefilter is followed by BH adjustment of the valid tests; adaptive independent filtering is disabled. Numerically nonconverged coefficient fits and genes with zero counts in all six animals of a stratum are flagged, with their exposure-test p values withheld before BH adjustment. Global full- and reduced-model convergence is checked separately. No unverified library batch or RIN covariate is invented. Evidence that ozone responses differ between strata requires an appropriate interaction comparison; differing numbers of significant genes alone are insufficient.
+
+### Relationship to the original publication
+
+This is an independent raw-read reanalysis. The original publication used HISAT2/featureCounts and selected exposure-associated genes with nominal p < 0.05 and absolute log₂FC > 0.1. Here, Salmon/tximport quantification, the factorial count model, and BH FDR < 0.05 define a different analysis. Discovery counts must therefore not be described as reproducing the publication's nominal-p gene lists. [@Nakamya2025_40141051]
+
+## Results
+
+### Available read-quality summaries
+
+```{python}
+#| label: ozone-raw-qc
+#| output: asis
+raw_qc = None
+if (ozone_dir / "raw_qc_summary.csv").exists():
+    raw_qc = read_table("ozone", "raw_qc_summary.csv")
+    display(Markdown(
+        f"Sampled raw-read QC is available for **{len(raw_qc)} libraries**. "
+        f"Q30 fractions range from **{100*raw_qc.q30_rate.min():.2f}% to {100*raw_qc.q30_rate.max():.2f}%**, "
+        "within the sampled reads. The complete sampled-QC table preserves adapter fractions and "
+        "the resulting trimming decision for every library. The preview below shows the first twelve libraries."
+    ))
+    preview = raw_qc[["sample_id", "age", "genotype", "exposure", "qc_sampled_pairs", "q30_rate", "adapter_trimmed_read_fraction", "trim_for_quant"]].copy()
+    show_table(preview, n=12)
+else:
+    display(Markdown("Sampled raw-read QC summaries are not yet available in this report build."))
+```
+
+```{python}
+#| label: ozone-full-library-qc
+#| output: asis
+if (ozone_dir / "full_qc_summary.csv").exists():
+    full_qc = read_table("ozone", "full_qc_summary.csv")
+    pairs = int(full_qc.raw_pairs.sum())
+    removed = int(full_qc.removed_pairs_after_adapter_processing.sum())
+    display(Markdown(
+        f"**Full-library fastp QC covers {len(full_qc)} libraries and {pairs:,} original read pairs.** "
+        f"Raw Q30 fractions range from **{100*full_qc.raw_q30_rate.min():.2f}% to "
+        f"{100*full_qc.raw_q30_rate.max():.2f}%** across complete libraries. "
+        f"Adapter processing leaves **{removed:,} pairs ({100*removed/pairs:.3g}%)** unretained. "
+        "These all-read measurements are separate from the bounded initial screen. "
+        "The preview shows twelve libraries; the complete table contains all libraries, "
+        "before/after quality, GC, read lengths, and adapter metrics. "
+        "[Download full-library QC](downloads/ozone/full_qc_summary.csv)."
+    ))
+    preview = full_qc[["sample_id", "raw_pairs", "after_adapter_pairs", "raw_q30_rate",
+                       "raw_gc_fraction", "removed_pairs_after_adapter_processing"]].copy()
+    preview["Raw Q30 (%)"] = 100*preview.pop("raw_q30_rate")
+    preview["Raw GC (%)"] = 100*preview.pop("raw_gc_fraction")
+    show_table(preview, n=12)
+```
+
+```{python}
+#| label: ozone-quantification-qc
+#| output: asis
+if (ozone_dir / "quantification_qc.csv").exists():
+    quant_qc = read_table("ozone", "quantification_qc.csv")
+    display(Markdown(
+        f"Complete quantification-QC summaries are available for **{len(quant_qc)} libraries**. "
+        f"Salmon-assigned fragment percentages range from **{quant_qc.percent_mapped.min():.2f}% "
+        f"to {quant_qc.percent_mapped.max():.2f}%**. A successful integrity check verifies transcript "
+        "identifiers, finite nonnegative quantification values, positive assigned-fragment totals, "
+        "and a TPM sum near one million; it does not establish absence of biological or mapping bias."
+    ))
+    show_table(quant_qc[["sample_id", "num_processed_fragments", "num_mapped_fragments", "percent_mapped", "library_types", "sum_tpm", "quantification_integrity_passed"]], n=12)
+ozone_figure("quality_control", "Sampled raw-read QC and complete-library quantification summaries for 24 animal libraries. Each bar is one animal; the raw-read Q30 and adapter panels describe the first 200,000 pairs, whereas assigned fragments and processed-pair totals describe quantification input.", "Four quality panels for 24 ozone-study libraries: sampled Q30, sampled adapters, Salmon assignment, and processed read pairs.")
+```
+
+### Expression quality and sample structure
+
+```{python}
+#| label: ozone-expression-qc
+#| output: asis
+if ozone_ready:
+    display(Markdown(
+        f"**{ozone_summary['n_retained_genes']:,} of {ozone_summary['n_input_genes']:,} genes** "
+        "pass the count filter. The full design has rank "
+        f"**{ozone_summary['design_rank']}**. PCA uses the most variable "
+        f"**{ozone_summary['pca']['top_variable_genes']} genes** after a blind variance-stabilizing transform. "
+        f"PC1 and PC2 explain **{100*ozone_summary['pca']['PC1_variance']:.1f}%** and "
+        f"**{100*ozone_summary['pca']['PC2_variance']:.1f}%** of the PCA-input variance. "
+        "Samples S9, S11, and S24 are displaced along PC1, illustrating individual-sample heterogeneity "
+        "rather than a clean separation explained by age or genotype alone. Sample positions are "
+        "descriptive and do not determine exclusions."
+    ))
+    if (ozone_dir / "expression_qc.csv").exists():
+        show_table(read_table("ozone", "expression_qc.csv"), n=12)
+    ozone_figure("pca", "Blind variance-stabilized PCA of the 500 most variable retained genes. Colors identify starting age and genotype; shapes identify filtered air and ozone. All 24 animals are retained.", "PCA of ozone-study animal libraries, labeled by age, genotype, and exposure.")
+else:
+    display(Markdown("Gene-expression QC and PCA await completion of quantification and the count model."))
+```
+
+### Within-stratum ozone contrasts
+
+```{python}
+#| label: ozone-stratified-results
+#| output: asis
+if ozone_ready:
+    rows = []
+    for key in contrast_keys:
+        item = ozone_summary["contrasts"][key]
+        rows.append({"contrast": stratum_label(key), "n_FA": item["n_FA"], "n_O3": item["n_O3"],
+                     "genes_with_nominal_test": item["tested"], "FDR05_within_stratum": item["fdr_005"],
+                     "higher_in_O3": item["up_fdr_005"], "lower_in_O3": item["down_fdr_005"],
+                     "FDR05_across_four_strata": item["across_four_fdr_005"],
+                     "all_zero_in_stratum": item["all_zero_in_stratum"],
+                     "nonconverged_coefficient_fits": item["nonconverged"],
+                     "nonconverged_shrinkage_fits": item["shrinkage_nonconverged"]})
+    show_table(pd.DataFrame(rows), n=4)
+    display(Markdown("Counts in the within-stratum and across-four-strata columns use their respective adjusted-p-value definitions and are not necessarily nested. Genes with zero counts in all six animals of a stratum have their exposure effect and p value withheld. Numerical-fit exclusions are reported separately from those all-zero genes and Cook-filtered tests; no animal is excluded."))
+    if all(ozone_summary["contrasts"][key]["nonconverged"] == 0 and
+           ozone_summary["contrasts"][key]["shrinkage_nonconverged"] == 0 for key in contrast_keys):
+        display(Markdown("**All four coefficient fits and all four apeglm fits converged for every retained gene.** The unavailable stratum tests therefore reflect validity filtering, including all-zero strata and Cook's diagnostics, rather than observed numerical nonconvergence."))
+    for key in contrast_keys:
+        display(Markdown("#### " + stratum_label(key) + ": O3 versus filtered air"))
+        item = ozone_summary["contrasts"][key]
+        if item["fdr_005"] == 0:
+            display(Markdown("**No gene meets within-stratum BH FDR < 0.05 in this contrast.** The lowest-adjusted-p rows below are descriptive rankings, not a significant gene list. This null result does not establish equivalence or absence of an ozone response."))
+        else:
+            display(Markdown(f"**{item['fdr_005']:,} genes meet within-stratum BH FDR < 0.05**: "
+                             f"{item['up_fdr_005']:,} higher and {item['down_fdr_005']:,} lower in ozone. "
+                             "The table previews the leading adjusted-p-ranked genes."))
+        tab = read_table("ozone", f"de_{key}.csv")
+        columns = ["gene_id", "gene_symbol", "log2FoldChange", "lfcSE", "log2FoldChange_shrunk", "pvalue", "padj", "padj_across_four_strata"]
+        preview = tab.sort_values(["padj", "pvalue"], na_position="last")[columns].head(10).copy()
+        for c in ["pvalue", "padj", "padj_across_four_strata"]:
+            preview[c] = preview[c].map(fmt_p)
+        show_table(preview, n=10)
+else:
+    display(Markdown("The four prespecified ozone contrasts are awaiting completed source tables. No ranked gene table is presented from partial quantification."))
+```
+
+```{python}
+#| label: ozone-differential-figures
+if ozone_ready:
+    ozone_figure("volcano", "Four within-stratum Wald contrasts. The horizontal guide uses within-contrast BH FDR 0.05; missing-FDR genes remain in downloadable tables. The x axis shows unshrunken log2 effects and the y axis adjusted p values, unlike the nominal-p cortex volcano plot.", "Four ozone volcano panels, one for each starting-age and APOE-genotype stratum.")
+    ozone_figure("ma", "Four MA plots using apeglm-shrunken effect estimates, with statistical significance taken from the original within-contrast Wald tests. Shrinkage does not change the stored hypothesis-test evidence.", "Four mean-count versus shrunken-effect panels for the ozone contrasts.")
+```
+
+### Global ozone likelihood-ratio test
+
+```{python}
+#| label: ozone-global-results
+#| output: asis
+if ozone_ready:
+    global_summary = ozone_summary["global_LRT"]
+    display(Markdown(
+        f"The global **{global_summary['df']}-degree-of-freedom** ozone LRT has nominal tests for "
+        f"**{global_summary['tested']:,} genes** and identifies **{global_summary['fdr_005']:,} genes** "
+        "at its own BH FDR < 0.05. This test assesses exposure-related model terms collectively; "
+        "its statistic is not a signed expression effect for one biological stratum. "
+        f"The full and reduced fits have **{global_summary['full_nonconverged']:,}** and "
+        f"**{global_summary['reduced_nonconverged']:,}** nonconverged genes, respectively; "
+        "unreliable fit p values are withheld before the global BH adjustment."
+    ))
+    if global_summary["fdr_005"] == 0:
+        display(Markdown("**No gene meets the global LRT BH FDR threshold.** Any ranked heatmap remains exploratory."))
+    global_table = read_table("ozone", "de_global_ozone_LRT.csv")
+    preview = global_table[["gene_id", "gene_symbol", "baseMean", "stat", "degrees_of_freedom", "pvalue", "padj"]].head(15).copy()
+    for c in ["pvalue", "padj"]:
+        preview[c] = preview[c].map(fmt_p)
+    show_table(preview, n=15)
+    ozone_figure("top_genes_heatmap", "Up to 24 genes selected by the global LRT and displayed as within-gene standardized VST values. If no gene meets global FDR 0.05, the source figure explicitly labels the lowest-p-ranked display as exploratory. Columns represent animals, not cells.", "Heatmap of global ozone-ranked genes across the 24 animal libraries.")
+```
+
+## Interpretation and limits
+
+The stratified comparisons estimate hippocampal tissue-level differences in the original mouse experiment. Sample numbers remain three per exposure group within each stratum even though the full model borrows information across the complete design. Genotype and starting-age labels do not make these libraries interchangeable with the PM cortex or hypothalamus studies. Mouse-reference quantification, the unprovided batch/RIN covariates, and the deposited strain inconsistency remain limitations. No spatially resolved ozone-response measurement or cell-type-specific exposure effect is generated by this pipeline.
+
+Unequal discovery counts across the strata do not by themselves establish that APOE4 or older age increases susceptibility. The global four-degree-of-freedom test assesses whether any exposure-related term improves the model; it does **not** isolate an age-by-exposure or genotype-by-exposure interaction. Such a claim would require a corresponding interaction contrast and its own uncertainty and multiplicity assessment.
+
+GO analyses of completed signed Wald contrasts, when available, are presented separately on the [enrichment page](enrichment.qmd). Their addition does not convert the global LRT into a directional pathway analysis or justify pooling contrasts from different brain regions and exposures.
+
+## Downloadable outputs
+
+```{python}
+#| label: ozone-downloads
+#| output: asis
+links = []
+available = ["raw_qc_summary.csv", "full_qc_summary.csv", "quantification_qc.csv", "samples.csv", "expression_qc.csv", "pca.csv", "pca_variance.csv", "sample_distances.csv", "gene_filter.csv", "estimated_gene_fragments.csv.gz", "analysis_gene_counts.csv.gz", "gene_tpm.csv.gz", "normalized_counts.csv.gz", "vst_counts.csv.gz", "de_all_four_strata.csv", "de_global_ozone_LRT.csv", "methods.json", "summary.json", "validation.json", "figure_captions.json", "R_session_info.txt"]
+available += [f"de_{key}.csv" for key in contrast_keys]
+for filename in available:
+    if (ozone_dir / filename).exists():
+        links.append(f"- [{filename}](downloads/ozone/{filename})")
+if links:
+    display(Markdown("\n".join(links)))
+else:
+    display(Markdown("Completed analysis outputs are not yet available for download in this report build."))
+```

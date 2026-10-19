@@ -1,0 +1,51 @@
+{
+  "all_checks_passed": true,
+  "checks": {
+    "exact_unique_cell_ID_join": true,
+    "exact_gene_ID_order": true,
+    "finite_nonnegative_integer_imaging_counts": true,
+    "all_cells_deposited_HY": true,
+    "class_composition_sums_to_37811": true,
+    "substructure_composition_sums_to_37811": true,
+    "all_1122_genes_in_each_class": true,
+    "all_1122_genes_in_each_substructure": true,
+    "grouped_sums_and_detections_reconcile": true,
+    "Tll1_positive_cells_reconcile_to_667": true,
+    "no_cell_level_tests_or_exposure_effects": true
+  },
+  "scope": "ID joins, arithmetic conservation and complete group/gene export; descriptive reference only",
+  "qmd_chunks_executed_successfully": 5,
+  "figure_metadata": {
+    "Tll1_detection_by_class": {
+      "pixels": [
+        2975,
+        3052
+      ],
+      "DPI": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "Tll1_detection_by_substructure": {
+      "pixels": [
+        2974,
+        2029
+      ],
+      "DPI": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "cell_class_composition": {
+      "pixels": [
+        3094,
+        3124
+      ],
+      "DPI": [
+        299.9994,
+        299.9994
+      ]
+    }
+  },
+  "visual_review": "All three final PNG figure families inspected individually: all 26 class labels, exact cell denominators, zero-baseline count/percentage axes, anatomical display threshold, and single-donor scope are legible without clipping. Rare nonzero class percentages below 0.01 are labeled <0.01% rather than 0.00%."
+}

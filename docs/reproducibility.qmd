@@ -1,0 +1,172 @@
+---
+title: "Data, code, and reproducibility"
+subtitle: "Source files, statistical backends, and commands for a local rebuild"
+---
+
+## Scope and source inventory
+
+The four exposure studies are independent analyses. They are not combined into a single expression matrix, and the unexposed MERFISH donor is not a control animal for an exposure study. The source collection contains 64 mouse-brain samples; the primary contrasts use the subsets below.
+
+| Source | Preserved source material | Primary analysis | Starting point |
+|---|---|---|---|
+| [GSE145840](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145840) | Eleven hypothalamus count files and their paired RNA-seq reads | Four chow/filtered-air and three chow/PM2.5 samples; four high-fat-diet samples excluded | Deposited gene counts; read alignment is not repeated |
+| [GSE297423](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE297423) | Twenty cingulate-cortex libraries and the deposited count matrix | Four PBS and four intranasal-PM samples; twelve other treatment-arm samples excluded | Deposited gene counts, matched by source library names |
+| [GSE93967](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE93967) | Nine hippocampal miRNA arrays, original array files, normalized matrix, and [GPL17912](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL17912) annotation | Saline, 1 mg/kg PM2.5 and 5 mg/kg PM2.5; three samples per group | Published quantile-normalized continuous signals |
+| [E-MTAB-14917](https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-14917) | Twenty-four paired-end hippocampal libraries, SDRF metadata, and the deposited genotype-result table | Ozone versus filtered air within each age × APOE stratum; three samples in each of eight combinations | All original FASTQ pairs, followed by transcript quantification and gene-level inference |
+| [Zhang et al. whole-brain MERFISH atlas](https://doi.org/10.1038/s41586-023-06808-9) | Zhuang-ABCA-1–4 measured matrices, metadata, taxonomy, CCF coordinates and anatomical volumes | The viewer fixes the adult male **Zhuang-ABCA-2** reference donor | Measured raw imaging counts and registered cell coordinates; no pollutant-exposure observations |
+
+The exposure collection includes **110 FASTQ files, approximately 261.9 GB compressed**, before reference genomes, indexes and derived files. The spatial-reference manifest describes approximately **10.74 GB** across 49 files. Raw FASTQ, H5AD matrices, reference genomes, software environments and quantification workspaces are local project inputs; they are not embedded in the HTML report.
+
+The deposited E-MTAB-14917 CSV is a genotype differential-expression result, not a sample-level count matrix. It is preserved as source material but does not substitute for the ozone read-based analysis. In that study, the **3- and 17-month labels describe age at exposure onset**. The mouse reference does not establish allele-specific expression of the humanized APOE replacement locus. Genotype is a source experimental label, not an inferred APOE allele-expression measurement.
+
+### Download and provenance records
+
+The manifests retain original URLs, selected samples, file destinations, expected sizes and source MD5 values where supplied. Local receipts record the files that were verified. A local hash without a published source checksum documents the saved copy but is not an independent provider-integrity check.
+
+- Exposure collection: [download manifest](downloads/provenance/download_manifest.json), [file receipts](downloads/provenance/download_receipts.csv), and [source-data validation](downloads/provenance/validation_report.json).
+- MERFISH reference: [manifest and per-file versions](downloads/provenance/spatial_atlas/download_manifest.json), and [verified receipts](downloads/provenance/spatial_atlas/download_receipts.json). The Allen source manifest uses the literal release label `20261031`; individual matrix and metadata versions are recorded separately.
+- Ozone: [sample/run assignments](downloads/provenance/ozone_analysis/samples.csv), [GENCODE transcript/genome sources and hashes](downloads/provenance/ozone_analysis/reference_sources.json), and [gene-annotation source](downloads/provenance/ozone_analysis/gene_annotation_source.json).
+- Functional annotation: [frozen GO source manifest](downloads/provenance/functional_annotation/source_manifest.json), [annotation parsing and propagation audit](downloads/provenance/functional_annotation/annotation_audit.json), and [enrichment methods](downloads/enrichment/methods.json).
+- Literature inventory: [BibTeX](downloads/papers/bibliography.bib) and [RIS](downloads/papers/bibliography.ris). Downloaded article PDFs and their provenance are retained in the local repository under `papers/pdf/` and `metadata/papers/`.
+
+The GO files were obtained from the official current distribution and then frozen by SHA256: the GAF header is dated **21 May 2026**, and `go-basic.obo` declares **release 2026-07-26**. These are the dates of the actual delivered files. Reproduction requires those recorded copies, not an unexamined replacement from a future current release. The enrichment script rejects a local reference whose hash differs from its saved manifest.
+
+## Software and backend separation
+
+The recorded Python environment is **Python 3.14.3** on macOS arm64. The [Python package inventory](downloads/requirements-analysis.txt) and [environment record](downloads/analysis_environment.json) accompany the report. They document the environment used here; the package list alone is not a complete operating-system, binary or transitive-dependency lockfile.
+
+| Component | Backend actually used | Main code |
+|---|---|---|
+| Hypothalamus RNA-seq | Python, PyDESeq2 0.5.4 | [analyze_hypothalamus.py](downloads/code/analyze_hypothalamus.py) |
+| Cingulate-cortex RNA-seq | Python, PyDESeq2 0.5.4 | [analyze_cortex.py](downloads/code/analyze_cortex.py) |
+| Hippocampal miRNA | Python preparation/figures; **R limma 3.66.0** for moderated inference | [Python wrapper](downloads/code/analyze_mirna.py), [R model](downloads/code/analyze_mirna.R) |
+| Ozone RNA-seq | fastp 1.3.6, Salmon 2.5.1; **R tximport 1.38.2, DESeq2 1.50.2 and apeglm 1.32.0** | [pipeline](downloads/code/ozone_pipeline.py), [gene annotation](downloads/code/ozone_reference_annotation.py), [R model](downloads/code/analyze_ozone.R), [figures](downloads/code/ozone_figures.py) |
+| GO Biological Process | Python hypergeometric/BH ORA; GSEApy 1.3.1 preranked GSEA | [analyze_enrichment.py](downloads/code/analyze_enrichment.py) |
+| MERFISH viewer | Python H5AD/CCF extraction and surface construction; locally bundled Plotly JavaScript | [build_spatial_viewer.py](downloads/code/build_spatial_viewer.py) |
+| Website | Quarto with the `omics-analysis` Python/Jupyter kernel | [render_docs.py](downloads/code/render_docs.py) |
+
+R **4.5.2** is available separately from Python. The scripts prepend the project-local `.r-library` to the R library search path. Required direct R packages are `limma`, `tximport`, `DESeq2`, `apeglm`, `jsonlite` and, for the independent cross-check, `BiocParallel`. Their Bioconductor dependencies must also be installed. R session records preserve the complete loaded-package context; see the [miRNA session](downloads/mirna/R_session_info.txt) and [independent DESeq2 session](downloads/hypothalamus/independent_deseq2_check/R_session_info.txt).
+
+Ozone processing additionally requires `salmon`, `fastp`, `aria2c` and `Rscript` on `PATH`. `aria2c` is used by the annotation downloader even though the transcript/genome downloader has a curl fallback. Exposure downloads use `curl`. Rendering requires the Quarto CLI and `ipykernel`. The local viewer requires a browser supporting WebGL and gzip `DecompressionStream`; its Plotly library and expression files are served locally, without a runtime CDN dependency.
+
+For a new Python environment, the recorded package inventory can be installed as follows. This prepares software only; the original data, R packages, external tools and references remain separate prerequisites.
+
+```bash
+python3.14 -m venv .venv-analysis
+.venv-analysis/bin/python -m pip install -r requirements-analysis.txt
+```
+
+The commands below assume the shell is in the repository root and use the existing `.venv-analysis` interpreter. Scripts resolve data paths from their project location. A rendered HTML copy alone is not a replacement for the complete repository, source data and environments needed for a rebuild.
+
+## Regenerate the study analyses
+
+The [execution runner](downloads/code/run_analysis.py) provides a readable plan before execution:
+
+```bash
+.venv-analysis/bin/python scripts/run_analysis.py --stage all --cpus 4 --dry-run
+.venv-analysis/bin/python scripts/run_analysis.py --stage all --cpus 4
+```
+
+The full runner follows this order: hypothalamus, cortex, miRNA, ozone, enrichment, spatial viewer, descriptive spatial-reference summaries, then report. It does not install tools or download the original study collection. It refits the processed-data analyses; it should not be used merely to refresh HTML. Run only one ozone pipeline instance in a project workspace so that concurrent processes do not write the same quantification directories.
+
+Individual commands make each backend and dependency explicit:
+
+```bash
+# Seven-sample hypothalamus analysis, including all seven leave-one-out fits.
+.venv-analysis/bin/python scripts/analyze_hypothalamus.py --cpus 4
+
+# Eight-sample cingulate-cortex PM-versus-PBS analysis.
+.venv-analysis/bin/python scripts/analyze_cortex.py --workers 4
+
+# Nine miRNA arrays; this command invokes the R/limma backend.
+.venv-analysis/bin/python scripts/analyze_mirna.py
+
+# GO-BP analyses for the completed hypothalamus and cortex gene-level contrasts.
+.venv-analysis/bin/python scripts/analyze_enrichment.py --threads 4
+```
+
+Hypothalamus uses at most six Python inference workers; cortex accepts one to six workers. GSEA uses at most four threads. The hypothalamus `--skip-sensitivity` option deliberately omits the leave-one-out fits; the standard viewer rebuild expects their saved primary-hit stability table, so the complete default run is the reproducibility route documented here.
+
+Each study writes to its own `results/` directory. Count filters, sample selections, MLE versus shrunken effects, missing-p handling, normalized matrices and figure captions are recorded in the corresponding [hypothalamus](downloads/hypothalamus/methods.json), [cortex](downloads/cortex/methods.json) and [miRNA](downloads/mirna/methods.json) method files. PCA is descriptive: hypothalamus uses a design-informed VST, whereas cortex uses a blind VST. Both use mean-centered, unscaled gene features; neither PCA determines sample removal.
+
+The enrichment command uses exact mouse symbols and unambiguous GAF synonyms. Its ORA universe requires finite adjusted DE p-values; its GSEA rank requires finite original p-values and signed Wald statistics while retaining finite-p genes with missing adjusted p-values from independent filtering. [Rank exclusions and mapping decisions](enrichment.qmd) are part of the reproducibility record. miRNA identifiers are not submitted as mRNA genes for GO enrichment.
+
+### Independent implementation check
+
+The optional [R DESeq2 cross-check](downloads/hypothalamus/independent_deseq2_check/summary.json) is separate from the primary PyDESeq2 workflow:
+
+```bash
+.venv-analysis/bin/python scripts/validate_hypothalamus_deseq2.py
+
+# Regenerate only its comparison tables from the existing R fit.
+.venv-analysis/bin/python scripts/validate_hypothalamus_deseq2.py --reuse-R-fit
+```
+
+The saved check uses the same seven samples, count filter and 19,452 finite-p hypotheses, with identical 159-gene Cook's filtering. Numerical agreement is close. R finds twelve FDR hits compared with the primary eleven; the additional threshold crossing is **Tnrc6c** (R adjusted p = 0.0399; Python = 0.0521). **Tll1** remains significant in both implementations (approximately 0.00330 and 0.00350). This is an implementation comparison, not independent biological replication, and it does not replace the primary result or its sample-sensitivity limitation. The [R code](downloads/code/validate_hypothalamus_deseq2.R), [comparison code](downloads/code/validate_hypothalamus_deseq2.py) and [gene-level differences](downloads/hypothalamus/independent_deseq2_check/discordant_FDR_genes.tsv) are available.
+
+## Ozone: stages and resumability
+
+The ozone workflow starts from the original paired reads. `prepare` obtains and verifies GENCODE M25/GRCm38 references, creates transcript-to-gene mappings and full-genome decoys, and obtains true gene-type annotations from the GTF. `index` builds the Salmon index. `qc` examines the first 200,000 pairs per library and records the adapter-trimming rule. `quant` processes complete libraries, applying adapter trimming where indicated. `de` imports all 24 quantifications with effective-length offsets and runs the fixed factorial R model. `figures` and `enrichment` consume completed statistical results.
+
+```bash
+# Complete raw-read workflow; use a budget appropriate to the local computer.
+.venv-analysis/bin/python scripts/ozone_pipeline.py --stage all --cpus 12
+
+# Resume quantification after an interrupted process has stopped.
+.venv-analysis/bin/python scripts/ozone_pipeline.py --stage quant --cpus 12
+
+# These stages require all 24 completed quantifications / statistical results.
+.venv-analysis/bin/python scripts/ozone_pipeline.py --stage de
+.venv-analysis/bin/python scripts/ozone_pipeline.py --stage figures
+.venv-analysis/bin/python scripts/ozone_pipeline.py --stage enrichment
+```
+
+The `--cpus` budget governs indexing and quantification. At eight or more CPUs, quantification uses two concurrent workers, each with half the integer budget; otherwise it uses one worker. Raw-read fastp QC uses two threads, and the enrichment stage uses four. Original FASTQ files are never modified. Derived trimmed reads are removed after successful quantification while the trimming reports are retained.
+
+The index and per-library `ozone_quant_complete.json` markers allow completed work to be reused. They are local checkpoints, not a mechanism for changing references or analysis parameters in place. Preserve the associated quantification files and source hashes; changed inputs or settings require a separately reviewed rebuild. A resumed process should not be launched alongside another active pipeline instance.
+
+Current stage information is in [pipeline_status.json](downloads/provenance/ozone_analysis/pipeline_status.json). Its `complete` field refers to the selected stage; successful `quant` does not imply that differential expression or enrichment has finished. Per-library logs and quantifications remain under `results/ozone/`. The [ozone results page](ozone.qmd) distinguishes available QC from completed inference and does not fill missing stages with simulated results.
+
+The full statistical model crosses age, genotype and exposure. A fixed count prefilter defines the candidate genes; adaptive independent filtering is disabled for this analysis. Numerical convergence flags are checked before the final BH adjustment, and failed shrinkage estimates are withheld. Within-stratum Wald tests, a supplementary pooled-four-contrast BH family and the separate four-degree-of-freedom global LRT answer different questions. The reference cannot validate human APOE allele-specific quantification. A source strain annotation that differs for one library is retained as a metadata limitation, rather than being converted into a wholly confounded genotype adjustment.
+
+## Regenerate the measured-reference viewer
+
+The viewer builder requires the downloaded Zhuang reference inputs and completed hypothalamus count, effect and leave-one-out files. The reference donor is fixed to ABCA-2; changing donors requires a separately named analysis rather than overwriting this release.
+
+```bash
+.venv-analysis/bin/python scripts/build_spatial_viewer.py --dataset Zhuang-ABCA-2
+```
+
+This writes the local expression payloads, coordinates, geometry and Plotly library into `docs/assets/viewer/`, and data checks and static figures into `results/spatial_viewer/`. The versioned `index.html`, `viewer.js` and `viewer.css` frontend files remain part of the repository. The extraction cache is reused only when its recorded cell and gene identifiers match the current selection.
+
+The published view contains all 37,811 selected hypothalamic reference cells and 1,122 measured genes. A uniform regional multiplier transfers each eligible bulk effect to the same reference positions. It does not estimate exposed single-cell expression, alter cell abundance or create a spatially measured exposure response. The [model and coordinate checks](downloads/spatial_viewer/summary.json), [validation record](downloads/spatial_viewer/validation_checks.json), and [viewer instructions](viewer.qmd) accompany the assets.
+
+The descriptive reference summaries reuse the validated viewer cache and keep all measured genes, classes and substructures:
+
+```bash
+.venv-analysis/bin/python scripts/analyze_spatial_reference.py
+```
+
+[Measured-reference composition and expression summaries](spatial_reference.qmd) contain no cell-level exposure tests or animal-level replication claims.
+
+## Render the report without refitting models
+
+Quarto renders completed tables, figures and the local viewer. The rendering helper copies eligible outputs into `docs/downloads/` and `docs/assets/figures/`, bundles source scripts and provenance, and records the Python environment. It does not call the statistical analysis scripts.
+
+```bash
+# Copy the existing outputs and source bundles without rendering HTML.
+.venv-analysis/bin/python scripts/render_docs.py --prepare-only
+
+# Render the complete website, or only this page.
+.venv-analysis/bin/python scripts/render_docs.py
+.venv-analysis/bin/python scripts/render_docs.py --page reproducibility.qmd
+
+# Inspect the rendered site on this computer.
+.venv-analysis/bin/python -m http.server 8000 --bind 127.0.0.1 --directory docs/_site
+```
+
+The site is then available at `http://127.0.0.1:8000/`. The helper registers the local `omics-analysis` kernel and supplies its Python/Jupyter paths to Quarto. The output directory is `docs/_site/`. Rendering does not require repeating RNA-seq quantification, fitting models, rebuilding the spatial atlas or downloading source files.
+
+Downloadable original study files can be restored or resumed with the [exposure downloader](downloads/code/download_data.py) and [spatial downloader](downloads/code/download_spatial_atlas.py), using their saved manifests. `scripts/status.py` reports exposure-download state; `scripts/download_spatial_atlas.py --status` reports atlas-download state. [Full input validation](downloads/code/verify_repository.py) and per-analysis validation records describe the checks performed, while preserving the distinction between computational checks and biological validation.
+
+The [QMD and frontend source archive](downloads/report-source.zip) contains the report authoring files. Restore its `docs/` tree within the complete repository when editing; the archive does not include original omics data or the generated expression payloads.
