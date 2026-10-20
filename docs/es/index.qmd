@@ -39,6 +39,13 @@ if not ozone_ready:
                      "no se infiere ningún resultado diferencial de ozono a partir de la tabla depositada que solo compara genotipos."))
 ```
 
+## Anatomía espacial y predicción
+
+Explore **cortes físicos, capas de ACA y núcleos hipotalámicos**, junto con mapas de detección medida cuyos denominadores incluyen los ceros. El nuevo capítulo bayesiano evalúa predicciones espaciales en cortes completos reservados y distingue incertidumbre de la media latente y de una nueva célula en un nuevo corte. La referencia sigue siendo un donante sin exposición experimental.
+
+[Cortes, capas y detección →](spatial_explorer.qmd){.btn .btn-primary}
+[Validación e incertidumbre bayesianas →](spatial_bayes.qmd){.btn .btn-outline-primary}
+
 ## Introducción
 
 Los cuatro estudios miden regiones, exposiciones y ensayos diferentes. Se analizan por separado y no se combinan en un único efecto de la contaminación. El atlas de referencia conserva las ubicaciones celulares y mide 1,122 genes mediante MERFISH, lo que aporta un contexto anatómico para determinadas señales regionales. No proporciona células individuales expuestas. [Leer la introducción](introduction.qmd).

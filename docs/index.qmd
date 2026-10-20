@@ -40,6 +40,13 @@ if not ozone_ready:
                      "no ozone differential result is inferred from the deposited genotype-only table."))
 ```
 
+## Spatial anatomy and prediction
+
+Explore **physical sections, ACA layers and hypothalamic nuclei**, together with measured detection maps whose denominators include zeros. The new Bayesian baseline chapter evaluates spatial predictions on reserved whole sections and displays latent-mean and new-cell/new-section uncertainty separately. The reference remains one unexposed donor.
+
+[Sections, layers and detection →](spatial_explorer.qmd){.btn .btn-primary}
+[Bayesian validation and uncertainty →](spatial_bayes.qmd){.btn .btn-outline-primary}
+
 ## Introduction
 
 The four studies measure different regions, exposures, and assays. They are analyzed separately rather than pooled into a single pollution effect. The reference atlas preserves cell locations and measures 1,122 genes by MERFISH, providing an anatomical setting for selected regional signals. It does not supply exposed single cells. [Read the Introduction](introduction.qmd).

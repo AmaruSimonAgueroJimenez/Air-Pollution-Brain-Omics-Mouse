@@ -1,0 +1,88 @@
+[
+  {
+    "fold": 1,
+    "n_train": 14108,
+    "n_test": 372,
+    "test_sections": [
+      "Zhuang-ABCA-2.015",
+      "Zhuang-ABCA-2.016",
+      "Zhuang-ABCA-2.017",
+      "Zhuang-ABCA-2.018"
+    ],
+    "guard_sections": [
+      "Zhuang-ABCA-2.019"
+    ],
+    "unknown_anatomy_test_cells": 0,
+    "knn_global_fallback_cells": 0,
+    "minimum_acquisition_AP_gap_mm": 0.37821246724366375
+  },
+  {
+    "fold": 2,
+    "n_train": 10626,
+    "n_test": 1850,
+    "test_sections": [
+      "Zhuang-ABCA-2.019",
+      "Zhuang-ABCA-2.020",
+      "Zhuang-ABCA-2.021",
+      "Zhuang-ABCA-2.022"
+    ],
+    "guard_sections": [
+      "Zhuang-ABCA-2.018",
+      "Zhuang-ABCA-2.023"
+    ],
+    "unknown_anatomy_test_cells": 0,
+    "knn_global_fallback_cells": 0,
+    "minimum_acquisition_AP_gap_mm": 0.35414812805414453
+  },
+  {
+    "fold": 3,
+    "n_train": 5860,
+    "n_test": 6092,
+    "test_sections": [
+      "Zhuang-ABCA-2.023",
+      "Zhuang-ABCA-2.025",
+      "Zhuang-ABCA-2.026",
+      "Zhuang-ABCA-2.027"
+    ],
+    "guard_sections": [
+      "Zhuang-ABCA-2.022",
+      "Zhuang-ABCA-2.028"
+    ],
+    "unknown_anatomy_test_cells": 0,
+    "knn_global_fallback_cells": 26,
+    "minimum_acquisition_AP_gap_mm": 0.45548354849083816
+  },
+  {
+    "fold": 4,
+    "n_train": 7778,
+    "n_test": 4811,
+    "test_sections": [
+      "Zhuang-ABCA-2.028",
+      "Zhuang-ABCA-2.030",
+      "Zhuang-ABCA-2.031"
+    ],
+    "guard_sections": [
+      "Zhuang-ABCA-2.027",
+      "Zhuang-ABCA-2.032"
+    ],
+    "unknown_anatomy_test_cells": 0,
+    "knn_global_fallback_cells": 0,
+    "minimum_acquisition_AP_gap_mm": 0.3415406836121875
+  },
+  {
+    "fold": 5,
+    "n_train": 11684,
+    "n_test": 1457,
+    "test_sections": [
+      "Zhuang-ABCA-2.032",
+      "Zhuang-ABCA-2.033",
+      "Zhuang-ABCA-2.034"
+    ],
+    "guard_sections": [
+      "Zhuang-ABCA-2.031"
+    ],
+    "unknown_anatomy_test_cells": 0,
+    "knn_global_fallback_cells": 0,
+    "minimum_acquisition_AP_gap_mm": 0.31346673168960937
+  }
+]

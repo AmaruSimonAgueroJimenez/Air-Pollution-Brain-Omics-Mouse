@@ -186,10 +186,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Genes y funciones</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-visores-3d" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Visores 3D</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-atlas-espacial" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Atlas espacial</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-visores-3d">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-atlas-espacial">    
+        <li>
+    <a class="dropdown-item" href="./spatial_explorer.html">
+ <span class="dropdown-text">Cortes, capas y detección</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./spatial_bayes.html">
+ <span class="dropdown-text">Modelo bayesiano y validación</span></a>
+  </li>  
         <li>
     <a class="dropdown-item" href="./viewer.html">
  <span class="dropdown-text">Hipotálamo y selección regional</span></a>
@@ -244,7 +252,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha del análisis</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">19 octubre 2026</p>
+      <p class="date">20 octubre 2026</p>
     </div>
   </div>
   
@@ -256,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="4aa44595" class="cell" data-execution_count="1">
+<div id="99cf2b0d" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display cell-output-markdown">
 <div class="metric-cards">
 <div>
@@ -274,11 +282,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p><a href="./viewer.html" class="btn btn-outline-secondary">Visor de hipotálamo</a> <a href="./gene_profiles.html" class="btn btn-primary">Productos y funciones génicas</a> <a href="./cortex.html" class="btn btn-outline-secondary">Análisis principal de corteza</a></p>
+<p><a href="./viewer.html" class="btn btn-outline-secondary">Visor de hipotálamo</a> <a href="./gene_profiles.html" class="btn btn-primary">Productos y funciones génicas</a> <a href="./cortex.html" class="btn btn-outline-secondary">Análisis principal de corteza</a> <a href="./spatial_explorer.html" class="btn btn-outline-primary">Cortes medidos, capas y detección</a> <a href="./spatial_bayes.html" class="btn btn-outline-secondary">Referencia bayesiana y validación</a></p>
 <section id="varios-genes-corticales-relevantes" class="level2">
 <h2 class="anchored" data-anchor-id="varios-genes-corticales-relevantes">Varios genes corticales relevantes</h2>
 <p>La corteza tiene ahora su propia referencia anatómica y estimaciones de exposición. <strong>Fosb, Egr3, S1pr1, Fosl2, Col19a1, Pcdh8, Iqgap2, Usp43 y Rorb</strong>, junto al no codificante <strong>C730002L08Rik</strong>, conforman las diez prioridades medibles elegibles de mayor evidencia. El visor incorpora accesos a genes, qué codifica cada gen curado, su función molecular y enlaces oficiales. Una tabla permite comparar hasta tres genes medidos.</p>
-<div id="ef58a412" class="cell" data-execution_count="2">
+<div id="aa3b7f7d" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>El multiplicador regional central predeterminado de <strong>Fosb</strong> es <strong>1.996×</strong>. Tiene conteo medido positivo en <strong>1,418 de 14,582</strong> células de referencia. La detección describe este donante del atlas; no identifica qué células responden a la exposición.</p>
 </div>
@@ -311,7 +319,7 @@ window.addEventListener("message", function(event) {
 </section>
 <section id="alternativas-estáticas-con-varios-genes" class="level2">
 <h2 class="anchored" data-anchor-id="alternativas-estáticas-con-varios-genes">Alternativas estáticas con varios genes</h2>
-<div id="b14eb7e9" class="cell" data-execution_count="3">
+<div id="77fd5ab2" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display cell-output-markdown">
 <figure class="research-figure figure">
 <a href="../assets/figures/spatial_cortex/cortical_priority_spatial_panel_es.svg"><img loading="lazy" width="3105" height="4889" src="../assets/figures/spatial_cortex/cortical_priority_spatial_panel_es.png" alt="Expresión MERFISH medida de corteza cingulada anterior junto a un escenario regional uniforme PM/PBS para Fosb, Egr3, S1pr1. Se muestran las 14,582 células ACAd/ACAv del donante macho ABCA-2 sin reflejo, interpolación ni submuestreo. Los puntos grises son ceros medidos y los positivos se colorean. Cada gen comparte una escala log2(1+conteo) entre referencia y escenario, limitada al percentil 99 conjunto de valores positivos; las filas utilizan escalas distintas y se conservan los conteos originales. Los efectos regionales proceden de cuatro animales PM y cuatro PBS. Las células del atlas no son réplicas de exposición ni se identifica qué tipos responden." class="figure-img"></a>
@@ -820,64 +828,66 @@ Expresión MERFISH medida de corteza cingulada anterior junto a un escenario reg
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Visor de hipotálamo</span><span class="co">](viewer.qmd)</span>{.btn .btn-outline-secondary}</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Productos y funciones génicas</span><span class="co">](gene_profiles.qmd)</span>{.btn .btn-primary}</span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Análisis principal de corteza</span><span class="co">](cortex.qmd)</span>{.btn .btn-outline-secondary}</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Varios genes corticales relevantes</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Cortes medidos, capas y detección</span><span class="co">](spatial_explorer.qmd)</span>{.btn .btn-outline-primary}</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Referencia bayesiana y validación</span><span class="co">](spatial_bayes.qmd)</span>{.btn .btn-outline-secondary}</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>La corteza tiene ahora su propia referencia anatómica y estimaciones de exposición. **Fosb, Egr3, S1pr1, Fosl2, Col19a1, Pcdh8, Iqgap2, Usp43 y Rorb**, junto al no codificante **C730002L08Rik**, conforman las diez prioridades medibles elegibles de mayor evidencia. El visor incorpora accesos a genes, qué codifica cada gen curado, su función molecular y enlaces oficiales. Una tabla permite comparar hasta tres genes medidos.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Varios genes corticales relevantes</span></span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>display(Markdown(</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"El multiplicador regional central predeterminado de **</span><span class="sc">{</span>v[<span class="st">'default_gene'</span>]<span class="sc">}</span><span class="ss">** es **</span><span class="sc">{</span>v[<span class="st">'default_multiplier'</span>]<span class="sc">:.3f}</span><span class="ss">×**. "</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"Tiene conteo medido positivo en **</span><span class="sc">{</span>v[<span class="st">'default_reference_nonzero_cells'</span>]<span class="sc">:,}</span><span class="ss"> de </span><span class="sc">{</span>v[<span class="st">'anterior_cingulate_cells'</span>]<span class="sc">:,}</span><span class="ss">** células de referencia. "</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="st">"La detección describe este donante del atlas; no identifica qué células responden a la exposición."</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>))</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>::: {.model-note}</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>**Referencia medida junto a un escenario regional simulado.** Ambas escenas conservan las mismas posiciones celulares y anatomía. El multiplicador procede del modelo principal de ocho animales de GSE297423, no de células expuestas del atlas. El donante no es un control emparejado para los ratones humanizados para α-sinucleína.</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">iframe</span><span class="ot"> id</span><span class="op">=</span><span class="st">"atlas-frame"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"viewer-frame"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"../assets/viewer-cortex/index-es.html"</span><span class="ot"> title</span><span class="op">=</span><span class="st">"Corteza cingulada anterior medida y expresión regional de PM2.5 simulada"</span><span class="ot"> loading</span><span class="op">=</span><span class="st">"lazy"</span><span class="dt">&gt;&lt;/</span><span class="kw">iframe</span><span class="dt">&gt;</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>La corteza tiene ahora su propia referencia anatómica y estimaciones de exposición. **Fosb, Egr3, S1pr1, Fosl2, Col19a1, Pcdh8, Iqgap2, Usp43 y Rorb**, junto al no codificante **C730002L08Rik**, conforman las diez prioridades medibles elegibles de mayor evidencia. El visor incorpora accesos a genes, qué codifica cada gen curado, su función molecular y enlaces oficiales. Una tabla permite comparar hasta tres genes medidos.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>display(Markdown(</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"El multiplicador regional central predeterminado de **</span><span class="sc">{</span>v[<span class="st">'default_gene'</span>]<span class="sc">}</span><span class="ss">** es **</span><span class="sc">{</span>v[<span class="st">'default_multiplier'</span>]<span class="sc">:.3f}</span><span class="ss">×**. "</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"Tiene conteo medido positivo en **</span><span class="sc">{</span>v[<span class="st">'default_reference_nonzero_cells'</span>]<span class="sc">:,}</span><span class="ss"> de </span><span class="sc">{</span>v[<span class="st">'anterior_cingulate_cells'</span>]<span class="sc">:,}</span><span class="ss">** células de referencia. "</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    <span class="st">"La detección describe este donante del atlas; no identifica qué células responden a la exposición."</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>::: {.model-note}</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>**Referencia medida junto a un escenario regional simulado.** Ambas escenas conservan las mismas posiciones celulares y anatomía. El multiplicador procede del modelo principal de ocho animales de GSE297423, no de células expuestas del atlas. El donante no es un control emparejado para los ratones humanizados para α-sinucleína.</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span><span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"message"</span><span class="op">,</span> <span class="kw">function</span>(<span class="bu">event</span>) {</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> frame <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"atlas-frame"</span>)<span class="op">;</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (frame <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">source</span> <span class="op">===</span> frame<span class="op">.</span><span class="at">contentWindow</span> <span class="op">&amp;&amp;</span> (<span class="bu">event</span><span class="op">.</span><span class="at">origin</span> <span class="op">===</span> <span class="bu">window</span><span class="op">.</span><span class="at">location</span><span class="op">.</span><span class="at">origin</span> <span class="op">||</span> <span class="bu">event</span><span class="op">.</span><span class="at">origin</span> <span class="op">===</span> <span class="st">"null"</span>) <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">data</span> <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">type</span> <span class="op">===</span> <span class="st">"omics-atlas-height"</span>) {</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    frame<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">height</span> <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(<span class="dv">9000</span><span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">1750</span><span class="op">,</span> <span class="bu">Number</span>(<span class="bu">event</span><span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">height</span>) <span class="op">+</span> <span class="dv">30</span>)) <span class="op">+</span> <span class="st">"px"</span><span class="op">;</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Abrir el visor independiente de corteza</span><span class="co">](../assets/viewer-cortex/index-es.html)</span>{.btn .btn-outline-primary target="_blank"}</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">iframe</span><span class="ot"> id</span><span class="op">=</span><span class="st">"atlas-frame"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"viewer-frame"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"../assets/viewer-cortex/index-es.html"</span><span class="ot"> title</span><span class="op">=</span><span class="st">"Corteza cingulada anterior medida y expresión regional de PM2.5 simulada"</span><span class="ot"> loading</span><span class="op">=</span><span class="st">"lazy"</span><span class="dt">&gt;&lt;/</span><span class="kw">iframe</span><span class="dt">&gt;</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span><span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"message"</span><span class="op">,</span> <span class="kw">function</span>(<span class="bu">event</span>) {</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> frame <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"atlas-frame"</span>)<span class="op">;</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (frame <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">source</span> <span class="op">===</span> frame<span class="op">.</span><span class="at">contentWindow</span> <span class="op">&amp;&amp;</span> (<span class="bu">event</span><span class="op">.</span><span class="at">origin</span> <span class="op">===</span> <span class="bu">window</span><span class="op">.</span><span class="at">location</span><span class="op">.</span><span class="at">origin</span> <span class="op">||</span> <span class="bu">event</span><span class="op">.</span><span class="at">origin</span> <span class="op">===</span> <span class="st">"null"</span>) <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">data</span> <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">type</span> <span class="op">===</span> <span class="st">"omics-atlas-height"</span>) {</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    frame<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">height</span> <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(<span class="dv">9000</span><span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">1750</span><span class="op">,</span> <span class="bu">Number</span>(<span class="bu">event</span><span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">height</span>) <span class="op">+</span> <span class="dv">30</span>)) <span class="op">+</span> <span class="st">"px"</span><span class="op">;</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="fu">## Qué codifican y cómo compararlos</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Abrir el visor independiente de corteza</span><span class="co">](../assets/viewer-cortex/index-es.html)</span>{.btn .btn-outline-primary target="_blank"}</span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>Los <span class="co">[</span><span class="ot">perfiles génicos</span><span class="co">](gene_profiles.qmd)</span> conservan los genes de mayor evidencia de tejido completo aunque no estén medidos por MERFISH. En particular, **Hspa5, Pdia4 y Xbp1** siguen siendo prioridades regionales; no se inventa su expresión espacial. Los genes no codificantes se identifican como productos de RNA, sin asignarles una proteína.</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="fu">## Qué codifican y cómo compararlos</span></span>
 <span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>Seleccione un acceso génico, consulte su producto y función y agréguelo a la comparación de tres genes. El porcentaje de detección y el conteo de imagen medio incluyen todas las células, incluidos los ceros. Son magnitudes distintas de los conteos RNA-seq normalizados y de los cambios regionales de expresión. Las eficiencias de las sondas y las distribuciones biológicas limitan comparar directamente los niveles de conteo entre genes.</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>Los <span class="co">[</span><span class="ot">perfiles génicos</span><span class="co">](gene_profiles.qmd)</span> conservan los genes de mayor evidencia de tejido completo aunque no estén medidos por MERFISH. En particular, **Hspa5, Pdia4 y Xbp1** siguen siendo prioridades regionales; no se inventa su expresión espacial. Los genes no codificantes se identifican como productos de RNA, sin asignarles una proteína.</span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>Un efecto regional positivo indica más RNA en PM que en PBS bajo ese modelo. No establece mayor abundancia de proteína, un tipo celular que responde ni un papel causal. Las cuestiones de calidad muestral se conservan en la <span class="co">[</span><span class="ot">auditoría de reproducción</span><span class="co">](replication.qmd)</span>.</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>Seleccione un acceso génico, consulte su producto y función y agréguelo a la comparación de tres genes. El porcentaje de detección y el conteo de imagen medio incluyen todas las células, incluidos los ceros. Son magnitudes distintas de los conteos RNA-seq normalizados y de los cambios regionales de expresión. Las eficiencias de las sondas y las distribuciones biológicas limitan comparar directamente los niveles de conteo entre genes.</span>
 <span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="fu">## Alcance anatómico y estadístico</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>Un efecto regional positivo indica más RNA en PM que en PBS bajo ese modelo. No establece mayor abundancia de proteína, un tipo celular que responde ni un papel causal. Las cuestiones de calidad muestral se conservan en la <span class="co">[</span><span class="ot">auditoría de reproducción</span><span class="co">](replication.qmd)</span>.</span>
 <span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>La máscara comprende **ACAd y ACAv con todas sus capas**, restringidas a corteza cingulada anterior registrada. Incluye 7,784 células de ACA dorsal y 6,798 de ventral, sin submuestreo ni reflejo del hemisferio. No representa todas las áreas corticales. Es una aproximación anatómica ACA a la disección informada; no se depositaron sus límites quirúrgicos exactos.</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="fu">## Alcance anatómico y estadístico</span></span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>Los identificadores Ensembl exactos emparejan 960 de los 1,122 genes medidos con efectos corticales principales. De ellos, 916 cumplen la regla de estimación del visor y 76 tienen q BH primaria &lt; 0.05. Los efectos ausentes o no fiables permiten solo la referencia. El escenario central utiliza el coeficiente regularizado; los escenarios alternativos corresponden a MLE ± 1.96 EE del efecto grupal.</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>La máscara comprende **ACAd y ACAv con todas sus capas**, restringidas a corteza cingulada anterior registrada. Incluye 7,784 células de ACA dorsal y 6,798 de ventral, sin submuestreo ni reflejo del hemisferio. No representa todas las áreas corticales. Es una aproximación anatómica ACA a la disección informada; no se depositaron sus límites quirúrgicos exactos.</span>
 <span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## Alternativas estáticas con varios genes</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>Los identificadores Ensembl exactos emparejan 960 de los 1,122 genes medidos con efectos corticales principales. De ellos, 916 cumplen la regla de estimación del visor y 76 tienen q BH primaria &lt; 0.05. Los efectos ausentes o no fiables permiten solo la referencia. El escenario central utiliza el coeficiente regularizado; los escenarios alternativos corresponden a MLE ± 1.96 EE del efecto grupal.</span>
 <span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>aca_panel(<span class="st">"cortical_priority_spatial_panel_es"</span>)</span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>aca_panel(<span class="st">"reference_vs_simulation_es"</span>)</span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Células ACA registradas</span><span class="co">](../downloads/spatial_cortex/registered_cortex_cells.tsv.gz)</span> ·</span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Cobertura del panel</span><span class="co">](../downloads/spatial_cortex/gene_panel_coverage.tsv)</span> ·</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Definición anatómica y modelo</span><span class="co">](../downloads/spatial_cortex/summary.json)</span> ·</span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Validación</span><span class="co">](../downloads/spatial_cortex/validation_checks.json)</span> ·</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Extracción reproducible</span><span class="co">](../downloads/code/build_cortex_spatial_viewer.py)</span></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>La superficie del cerebro completo orienta la anatomía. No se aplica el efecto cortical al hipotálamo, a otras áreas ni al hemisferio opuesto. El modelo no estima pérdida celular, migración ni vulnerabilidad específica por célula.</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="fu">## Alternativas estáticas con varios genes</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>aca_panel(<span class="st">"cortical_priority_spatial_panel_es"</span>)</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>aca_panel(<span class="st">"reference_vs_simulation_es"</span>)</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Células ACA registradas</span><span class="co">](../downloads/spatial_cortex/registered_cortex_cells.tsv.gz)</span> ·</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Cobertura del panel</span><span class="co">](../downloads/spatial_cortex/gene_panel_coverage.tsv)</span> ·</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Definición anatómica y modelo</span><span class="co">](../downloads/spatial_cortex/summary.json)</span> ·</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Validación</span><span class="co">](../downloads/spatial_cortex/validation_checks.json)</span> ·</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Extracción reproducible</span><span class="co">](../downloads/code/build_cortex_spatial_viewer.py)</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>La superficie del cerebro completo orienta la anatomía. No se aplica el efecto cortical al hipotálamo, a otras áreas ni al hemisferio opuesto. El modelo no estima pérdida celular, migración ni vulnerabilidad específica por célula.</span>
 </code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

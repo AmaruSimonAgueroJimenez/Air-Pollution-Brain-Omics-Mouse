@@ -1,0 +1,237 @@
+{
+  "region": "ACA",
+  "n_cells": 14582,
+  "n_sections": 18,
+  "anatomical_groups": 10,
+  "genes": [
+    "Fosb",
+    "Egr3",
+    "S1pr1",
+    "C730002L08Rik",
+    "Fosl2",
+    "Col19a1",
+    "Pcdh8",
+    "Iqgap2",
+    "Usp43",
+    "Rorb"
+  ],
+  "heldout_results": [
+    {
+      "n_cells": 14582,
+      "n_sections": 18,
+      "rmse": 0.29768684090645287,
+      "mae": 0.13440130468022501,
+      "predictive_95_coverage": 0.938828692909066,
+      "predictive_95_mean_width": 1.2922706018910237,
+      "negative_predictive_probability_mean": 0.4378939801634238,
+      "coverage_positive": 0.3709449929478138,
+      "coverage_zero": 1.0,
+      "n_positive": 1418,
+      "interval_score_95": 2.1606826986076912,
+      "anatomy_baseline_rmse": 0.2932231953276876,
+      "knn_rmse": 0.30180190369160076,
+      "flags": [
+        "undercoverage_positive_cells",
+        "no_RMSE_improvement_over_anatomy_baseline",
+        "nonnegative_support_mismatch"
+      ],
+      "section_macro_rmse": 0.236967844466565,
+      "gene": "Fosb"
+    },
+    {
+      "n_cells": 14582,
+      "n_sections": 18,
+      "rmse": 0.7187743831868805,
+      "mae": 0.5420915493867295,
+      "predictive_95_coverage": 0.9336853655191332,
+      "predictive_95_mean_width": 2.9589698002123503,
+      "negative_predictive_probability_mean": 0.3140975226344125,
+      "coverage_positive": 0.8303211089664854,
+      "coverage_zero": 1.0,
+      "n_positive": 5699,
+      "interval_score_95": 4.132198668320427,
+      "anatomy_baseline_rmse": 0.7294968384600701,
+      "knn_rmse": 0.7870517567075411,
+      "flags": [
+        "undercoverage_positive_cells",
+        "nonnegative_support_mismatch"
+      ],
+      "section_macro_rmse": 0.6325487999745656,
+      "gene": "Egr3"
+    },
+    {
+      "n_cells": 14582,
+      "n_sections": 18,
+      "rmse": 0.9401573091067439,
+      "mae": 0.7741747749770851,
+      "predictive_95_coverage": 0.9559045398436429,
+      "predictive_95_mean_width": 4.084518561374414,
+      "negative_predictive_probability_mean": 0.25192031505712026,
+      "coverage_positive": 0.9048957254843958,
+      "coverage_zero": 1.0,
+      "n_positive": 6761,
+      "interval_score_95": 4.776233016351417,
+      "anatomy_baseline_rmse": 0.9389831628971687,
+      "knn_rmse": 0.9882501059364475,
+      "flags": [
+        "no_RMSE_improvement_over_anatomy_baseline",
+        "nonnegative_support_mismatch"
+      ],
+      "section_macro_rmse": 0.8743972841804966,
+      "gene": "S1pr1"
+    },
+    {
+      "n_cells": 14582,
+      "n_sections": 18,
+      "rmse": 0.18724818644284733,
+      "mae": 0.07542981468410079,
+      "predictive_95_coverage": 0.9381429159237415,
+      "predictive_95_mean_width": 0.813267688708163,
+      "negative_predictive_probability_mean": 0.4388937515437784,
+      "coverage_positive": 0.0,
+      "coverage_zero": 1.0,
+      "n_positive": 902,
+      "interval_score_95": 1.6012281476963035,
+      "anatomy_baseline_rmse": 0.18599047457585713,
+      "knn_rmse": 0.19460886138179656,
+      "flags": [
+        "undercoverage_positive_cells",
+        "no_RMSE_improvement_over_anatomy_baseline",
+        "nonnegative_support_mismatch"
+      ],
+      "section_macro_rmse": 0.15739091145437878,
+      "gene": "C730002L08Rik"
+    },
+    {
+      "n_cells": 14582,
+      "n_sections": 18,
+      "rmse": 0.34873154647119387,
+      "mae": 0.23222190311595878,
+      "predictive_95_coverage": 0.95076121245371,
+      "predictive_95_mean_width": 1.5061695531668844,
+      "negative_predictive_probability_mean": 0.36156523052869616,
+      "coverage_positive": 0.6943380161770967,
+      "coverage_zero": 1.0,
+      "n_positive": 2349,
+      "interval_score_95": 2.325965228420041,
+      "anatomy_baseline_rmse": 0.35019236708934853,
+      "knn_rmse": 0.3739215214292844,
+      "flags": [
+        "undercoverage_positive_cells",
+        "nonnegative_support_mismatch"
+      ],
+      "section_macro_rmse": 0.26957925475169314,
+      "gene": "Fosl2"
+    },
+    {
+      "n_cells": 14582,
+      "n_sections": 18,
+      "rmse": 0.39801938421991817,
+      "mae": 0.19977912789740768,
+      "predictive_95_coverage": 0.9469208613358936,
+      "predictive_95_mean_width": 1.7203248532037057,
+      "negative_predictive_probability_mean": 0.4138752770056972,
+      "coverage_positive": 0.5528596187175043,
+      "coverage_zero": 1.0,
+      "n_positive": 1731,
+      "interval_score_95": 2.985598121088775,
+      "anatomy_baseline_rmse": 0.3981749293084049,
+      "knn_rmse": 0.4234863419307507,
+      "flags": [
+        "undercoverage_positive_cells",
+        "nonnegative_support_mismatch"
+      ],
+      "section_macro_rmse": 0.3176701621230136,
+      "gene": "Col19a1"
+    },
+    {
+      "n_cells": 14582,
+      "n_sections": 18,
+      "rmse": 0.48682488093218934,
+      "mae": 0.2987383975086404,
+      "predictive_95_coverage": 0.9321080784528871,
+      "predictive_95_mean_width": 2.0160432633320498,
+      "negative_predictive_probability_mean": 0.37875746612135774,
+      "coverage_positive": 0.6349557522123894,
+      "coverage_zero": 1.0,
+      "n_positive": 2712,
+      "interval_score_95": 3.350265825673823,
+      "anatomy_baseline_rmse": 0.47394365833283636,
+      "knn_rmse": 0.5254571818256661,
+      "flags": [
+        "undercoverage_positive_cells",
+        "no_RMSE_improvement_over_anatomy_baseline",
+        "nonnegative_support_mismatch"
+      ],
+      "section_macro_rmse": 0.39245226013138623,
+      "gene": "Pcdh8"
+    },
+    {
+      "n_cells": 14582,
+      "n_sections": 18,
+      "rmse": 0.4753780522979593,
+      "mae": 0.3457153306102238,
+      "predictive_95_coverage": 0.9381429159237415,
+      "predictive_95_mean_width": 2.0583943703164724,
+      "negative_predictive_probability_mean": 0.3422125989904229,
+      "coverage_positive": 0.7321057321057322,
+      "coverage_zero": 1.0,
+      "n_positive": 3367,
+      "interval_score_95": 2.893783875698878,
+      "anatomy_baseline_rmse": 0.47544136200419373,
+      "knn_rmse": 0.5023334217434813,
+      "flags": [
+        "undercoverage_positive_cells",
+        "nonnegative_support_mismatch"
+      ],
+      "section_macro_rmse": 0.42766748671620347,
+      "gene": "Iqgap2"
+    },
+    {
+      "n_cells": 14582,
+      "n_sections": 18,
+      "rmse": 0.18786994104217494,
+      "mae": 0.07843968351837939,
+      "predictive_95_coverage": 0.9410917569606364,
+      "predictive_95_mean_width": 0.857778133008535,
+      "negative_predictive_probability_mean": 0.438807564642978,
+      "coverage_positive": 0.0,
+      "coverage_zero": 1.0,
+      "n_positive": 859,
+      "interval_score_95": 1.5889328733809647,
+      "anatomy_baseline_rmse": 0.1870436982437282,
+      "knn_rmse": 0.19496806497085264,
+      "flags": [
+        "undercoverage_positive_cells",
+        "no_RMSE_improvement_over_anatomy_baseline",
+        "nonnegative_support_mismatch"
+      ],
+      "section_macro_rmse": 0.155834703324009,
+      "gene": "Usp43"
+    },
+    {
+      "n_cells": 14582,
+      "n_sections": 18,
+      "rmse": 0.33451342771471,
+      "mae": 0.209038379700387,
+      "predictive_95_coverage": 0.9533671649979427,
+      "predictive_95_mean_width": 1.4711034880470137,
+      "negative_predictive_probability_mean": 0.38498167975175496,
+      "coverage_positive": 0.6979120390937361,
+      "coverage_zero": 1.0,
+      "n_positive": 2251,
+      "interval_score_95": 2.239077056793188,
+      "anatomy_baseline_rmse": 0.33192165108347677,
+      "knn_rmse": 0.35066313393479753,
+      "flags": [
+        "undercoverage_positive_cells",
+        "no_RMSE_improvement_over_anatomy_baseline",
+        "nonnegative_support_mismatch"
+      ],
+      "section_macro_rmse": 0.2890342944566333,
+      "gene": "Rorb"
+    }
+  ],
+  "elapsed_seconds": 2.757304208003916,
+  "cell_ids_sha256": "c939d9b6e657e95a928ff1f40653f6bea98b926bd4c3e608607c1e958847661c"
+}

@@ -180,3 +180,19 @@ The [cortex 3D viewer](docs/cortex_viewer.qmd) uses 14,582 actual registered ant
 ```
 
 Full provenance and selection rules accompany the result tables. The 3D comparisons preserve measured positions and apply a uniform regional scenario; they do not identify exposed single cells.
+
+## Sections, detection and Bayesian baseline
+
+The bilingual [section explorer](docs/spatial_explorer.qmd) uses original within-section coordinates, ACA layers and HY nuclei. Occupied-bin detection maps keep positive/all-cell denominators, zero counts and small groups explicit. No cells are relocated.
+
+The [Bayesian baseline chapter](docs/spatial_bayes.qmd) evaluates an anatomy-aware Normal–Inverse-Gamma spatial-basis model on contiguous blocks of whole physical sections, with guard sections, training-only preprocessing, anatomy-only and neighbor baselines, calibration diagnostics and fixed prior sensitivity. Twenty previously selected region–gene pairs are retained. Posterior mean credible intervals and new-cell/new-section predictive intervals are different outputs. Negative Gaussian predictive support and unsuccessful validation are reported rather than hidden. No cell-type-specific PM2.5 effect or additional measured spatial resolution is claimed.
+
+```bash
+.venv-analysis/bin/python scripts/build_spatial_sections.py
+.venv-analysis/bin/python scripts/analyze_spatial_bayes.py
+.venv-analysis/bin/python scripts/analyze_bayesian_detection.py
+.venv-analysis/bin/python scripts/render_docs.py
+.venv-analysis/bin/python scripts/validate_report.py --published
+```
+
+A separate hierarchical beta-binomial detection model uses section–anatomy positive/all-cell counts, proper fixed priors, whole-section held-out count prediction and an explicit regional baseline. It keeps probabilities within[0,1] and distinguishes known-section p, anatomical μ and new-section uncertainty. ACA shows a modest Brier improvement; HY fails to improve the regional baseline overall because many held-out anatomical groups lack training support. These failures, prior-only groups, predictive interval widths and numerical grid sensitivity are retained. Detection modeling does not reconstruct RNA magnitude or create cells.

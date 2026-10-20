@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-10-19">
+<meta name="dcterms.date" content="2026-10-20">
 
 <title>Methods – Air pollution · brain omics</title>
 <style>
@@ -206,10 +206,18 @@ div.csl-indent {
 <span class="menu-text">Genes &amp; functions</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-d-viewers" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">3D viewers</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-spatial-atlas" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Spatial atlas</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-d-viewers">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-spatial-atlas">    
+        <li>
+    <a class="dropdown-item" href="./spatial_explorer.html">
+ <span class="dropdown-text">Sections, layers &amp; detection</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./spatial_bayes.html">
+ <span class="dropdown-text">Bayesian baseline &amp; validation</span></a>
+  </li>  
         <li>
     <a class="dropdown-item" href="./viewer.html">
  <span class="dropdown-text">Hypothalamus &amp; region selection</span></a>
@@ -273,6 +281,7 @@ div.csl-indent {
   <li><a href="#expanded-analyses-and-original-method-recovery" id="toc-expanded-analyses-and-original-method-recovery" class="nav-link" data-scroll-target="#expanded-analyses-and-original-method-recovery">Expanded analyses and original-method recovery</a></li>
   <li><a href="#gene-centered-priorities-and-encoded-product-annotation" id="toc-gene-centered-priorities-and-encoded-product-annotation" class="nav-link" data-scroll-target="#gene-centered-priorities-and-encoded-product-annotation">Gene-centered priorities and encoded-product annotation</a></li>
   <li><a href="#anterior-cingulate-cortex-spatial-extension" id="toc-anterior-cingulate-cortex-spatial-extension" class="nav-link" data-scroll-target="#anterior-cingulate-cortex-spatial-extension">Anterior cingulate cortex spatial extension</a></li>
+  <li><a href="#sectional-measurement-and-bayesian-spatial-prediction" id="toc-sectional-measurement-and-bayesian-spatial-prediction" class="nav-link" data-scroll-target="#sectional-measurement-and-bayesian-spatial-prediction">Sectional measurement and Bayesian spatial prediction</a></li>
   </ul>
 </nav>
     </div>
@@ -293,7 +302,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Analysis date</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">19 October 2026</p>
+      <p class="date">20 October 2026</p>
     </div>
   </div>
   
@@ -439,7 +448,7 @@ div.csl-indent {
 <section id="measured-3d-reference-and-modeled-pm2.5-scenario" class="level2">
 <h2 class="anchored" data-anchor-id="measured-3d-reference-and-modeled-pm2.5-scenario">Measured 3D reference and modeled PM2.5 scenario</h2>
 <p>The spatial reference uses <strong>Zhuang-ABCA-2</strong>, an adult male donor. Cells are selected by the deposited CCF parcellation assignments to the hypothalamic division, matched by exact string cell identifiers to the measured H5AD matrix, and annotated by the atlas taxonomy. <span class="citation" data-cites="Zhang2023_38092912">Zhang et al. (<a href="#ref-Zhang2023_38092912" role="doc-biblioref">2023</a>)</span></p>
-<div id="c1626952" class="cell" data-execution_count="3">
+<div id="172ede35" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>This selection contains <strong>37,811 cells</strong>, <strong>26 cell classes</strong>, and <strong>49 hypothalamic substructures</strong>. All <strong>1,122 measured genes</strong> are accessible; <strong>1,003</strong> have reliable bulk effect estimates. Cells are not subsampled, mirrored, or interpolated.</p>
 </div>
@@ -474,6 +483,11 @@ div.csl-indent {
 <p>The same unexposed male Zhuang-ABCA-2 reference supplies all registered cells with division Isocortex and structure ACAd or ACAv, retaining all ten layer/substructure labels. ACA is an anatomical proxy for the reported dissection, whose exact surgical boundaries were not deposited. Exact cell IDs link coordinates and the raw measured H5AD matrix. The 14,582-cell reference is not subsampled, mirrored, or expression-imputed. Exact Ensembl identifiers map measured genes to the primary cortical result; a symbol difference is retained in provenance rather than resolved by invented substitution.</p>
 <p>Each cortical gene’s measured imaging values are multiplied uniformly by 2 to the power of its primary cortical shrunken log₂FC. The cortical effect is restricted to ACA; hypothalamus retains its own independent bulk effect. The common reference/scenario scale is computed within each gene. A three-gene comparison reports observed detection and mean imaging counts including zeros, original regional RNA effects, BH q and annotation; it does not test between-gene exposure differences or equalize probe efficiencies.</p>
 <p>The cortical atlas donor is not an experimental control for the humanized α-synuclein animals. Spatial location of a reference transcript and a regional effect do not identify which cells respond to PM2.5. Source coordinate/volume agreement, join invariants, count ranges and all 1,122 compressed gene vectors are checked numerically. See <a href="./gene_profiles.html">gene profiles</a> and <a href="./cortex_viewer.html">cortical 3D methods and results</a>.</p>
+</section>
+<section id="sectional-measurement-and-bayesian-spatial-prediction" class="level2">
+<h2 class="anchored" data-anchor-id="sectional-measurement-and-bayesian-spatial-prediction">Sectional measurement and Bayesian spatial prediction</h2>
+<p>The <a href="./spatial_explorer.html">measured-section chapter</a> joins original section metadata by exact cell ID and retains all registered ACA/HY cells and raw counts. Within-section experimental coordinates remain separate from CCF coordinates. Detection is positive raw count divided by all selected measured cells, including zeros; empty spatial bins are missing. ACA labels are layers/subdivisions, while HY labels are nuclei/subregions.</p>
+<p>The <a href="./spatial_bayes.html">Bayesian chapter</a> gives the working likelihood, proper priors, section offsets, posterior targets, blocked whole-section validation, simple baselines and prior sensitivity. Model/data integrity and scientific performance are reported separately. The model is an unexposed-reference analysis and supplies no cell-type-specific pollutant effect or increase in measured acquisition resolution.</p>
 
 
 <!-- -->
@@ -1138,6 +1152,12 @@ Zhu, Anqi, Joseph G. Ibrahim, and Michael I. Love. 2019. <span>“Heavy-Tailed P
 <span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>Each cortical gene's measured imaging values are multiplied uniformly by 2 to the power of its primary cortical shrunken log₂FC. The cortical effect is restricted to ACA; hypothalamus retains its own independent bulk effect. The common reference/scenario scale is computed within each gene. A three-gene comparison reports observed detection and mean imaging counts including zeros, original regional RNA effects, BH q and annotation; it does not test between-gene exposure differences or equalize probe efficiencies.</span>
 <span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a>The cortical atlas donor is not an experimental control for the humanized α-synuclein animals. Spatial location of a reference transcript and a regional effect do not identify which cells respond to PM2.5. Source coordinate/volume agreement, join invariants, count ranges and all 1,122 compressed gene vectors are checked numerically. See <span class="co">[</span><span class="ot">gene profiles</span><span class="co">](gene_profiles.qmd)</span> and <span class="co">[</span><span class="ot">cortical 3D methods and results</span><span class="co">](cortex_viewer.qmd)</span>.</span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sectional measurement and Bayesian spatial prediction</span></span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">measured-section chapter</span><span class="co">](spatial_explorer.qmd)</span> joins original section metadata by exact cell ID and retains all registered ACA/HY cells and raw counts. Within-section experimental coordinates remain separate from CCF coordinates. Detection is positive raw count divided by all selected measured cells, including zeros; empty spatial bins are missing. ACA labels are layers/subdivisions, while HY labels are nuclei/subregions.</span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">Bayesian chapter</span><span class="co">](spatial_bayes.qmd)</span> gives the working likelihood, proper priors, section offsets, posterior targets, blocked whole-section validation, simple baselines and prior sensitivity. Model/data integrity and scientific performance are reported separately. The model is an unexposed-reference analysis and supplies no cell-type-specific pollutant effect or increase in measured acquisition resolution.</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

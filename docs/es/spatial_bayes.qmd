@@ -1,0 +1,179 @@
+---
+title: "Detección bayesiana y validación de la referencia espacial"
+subtitle: "Modelo anatómico de referencia evaluado en cortes físicos reservados"
+page-layout: full
+toc: true
+format:
+  html:
+    html-math-method: mathml
+---
+
+```{python}
+import json
+import numpy as np
+import pandas as pd
+from IPython.display import Markdown, display
+from _report_utils import ROOT, summary, metric_cards, figure, read_table, show_table
+b = summary("spatial_bayes")
+d = summary("spatial_detection_bayes")
+```
+
+## Introducción
+
+Dos análisis bayesianos abordan objetivos distintos para veinte pares región–gen definidos previamente. Un modelo beta-binomial jerárquico estima la **probabilidad de detectar un gen**, permitiendo variación entre cortes físicos. Un modelo espacial gaussiano estima la **log-expresión basal esperada, ajustada por corte**; sus limitaciones para conteos de RNA dispersos se evalúan explícitamente. Ambos cuantifican incertidumbre condicional y usan cortes completos reservados. Las mediciones, las estimaciones y los contrastes experimentales de contaminación permanecen diferenciados.
+
+La referencia de expresión espacial es una regresión bayesiana con funciones base desarrollada para este proyecto; no es una implementación de Tangram, BayesSpace o cell2location. Utiliza priors propios y una distribución posterior analítica. La regresión bayesiana con bases fijas aporta el fundamento metodológico; los priors, los términos de corte y los supuestos para conteos transformados se documentan junto al código. [@RasmussenWilliams2006; @Murphy2007Conjugate]
+
+[Cortes medidos, capas y detección](spatial_explorer.qmd){.btn .btn-primary}
+[Productos génicos y evidencia de exposición](gene_profiles.qmd){.btn .btn-outline-secondary}
+
+## Detección bayesiana: metodología
+
+Para gen $g$, anatomía $a$ y corte físico $s$, $Y_{sag}$ es el número de conteos de imagen positivos entre $n_{sa}$ células medidas, incluidos todos los ceros en el denominador. Se utiliza
+
+$$
+Y_{sag}\mid p_{sag}\sim\operatorname{Binomial}(n_{sa},p_{sag}),\qquad
+p_{sag}\mid\mu_{ag},\kappa_{ag}\sim\operatorname{Beta}(\mu_{ag}\kappa_{ag},(1-\mu_{ag})\kappa_{ag}).
+$$
+
+La verosimilitud marginal beta-binomial admite heterogeneidad entre cortes, en lugar de tratar todas las células como réplicas independientes con una probabilidad fija común. Los priors propios e independientes son $\mu\sim\operatorname{Beta}(0.5,0.5)$ y $\ln\kappa\sim\mathcal N(\ln20,1.5^2)$. Se fijan sin usar expresión reservada. La integración emplea una cuadrícula determinista de cuantiles previos de 64 × 48, con sensibilidad de cuadrícula documentada. Los intervalos de la hipermedia usan cuantiles ponderados de la cuadrícula discreta. Los de probabilidad de cortes conocidos y número de positivos reservado usan 8,192 muestras de mezcla con semilla fija; los de probabilidad de un nuevo corte en la referencia completa usan inversión determinista de la CDF de la mezcla Beta ponderada. Es integración numérica por cuadrícula/Monte Carlo, sin afirmar una posterior continua exacta ni convergencia MCMC. [@SciPyBetaBinomial] Las propensiones de los cortes son intercambiables dentro de cada anatomía y gen; el modelo no separa tendencias biológicas AP de variación técnica entre cortes.
+
+Al aumentar la cuadrícula de integración de 64 × 48 a 96 × 64, las medias posteriores de probabilidad de la referencia completa cambian como máximo 0.00020 en ACA y 0.00054 en HY. Los extremos de los intervalos de probabilidad de un nuevo corte cambian como máximo 0.0026 y 0.0036; los de la hipermedia discreta pueden cambiar aproximadamente 0.020 y 0.018. La cobertura de conteos reservados pasa de 97.89% a 98.05% en ACA y permanece en 99.35% en HY. Estas comprobaciones describen la precisión numérica finita; una cobertura alta con intervalos amplios no establece utilidad predictiva.
+
+La **probabilidad posterior de un corte conocido** usa su numerador y denominador observados en la referencia. Es una estimación ajustada, no una predicción reservada. Su intervalo creíble difiere de la incertidumbre de la hipermedia anatómica $\mu$ y de la distribución distinta de la **probabilidad de un nuevo corte**. Los intervalos predictivos del número de positivos de un nuevo corte condicionan al denominador real $n$ reservado. Son probabilidades o conteos de detección, no magnitudes de expresión ni moléculas inferidas espacialmente.
+
+Se usan los mismos cinco bloques de cortes completos y cortes vecinos de guarda del análisis siguiente. El modelo regional sin anatomía se entrena con los mismos cortes permitidos para comparar. La pérdida de Brier es una medida descriptiva de predicción ponderada por células; la cobertura del número de positivos se calcula entre grupos corte–anatomía, explicitando denominadores y grupos sostenidos solo por el prior. Una anatomía reservada ausente del entrenamiento conserva el prior especificado; no se sustituye silenciosamente por un patrón anatómico aprendido.
+
+[Explorar detección observada y bayesiana juntas](spatial_explorer.qmd){.btn .btn-outline-primary}
+
+### Resultados de detección
+
+```{python}
+for region, info in d.items():
+    wins = sum(x["brier"] < x["baseline_brier"] for x in info["metrics_by_gene"].values())
+    display(Markdown(
+        f"**{region}:** la cobertura predictiva observada del número de positivos es **{info['count_pi_coverage']:.1%}** "
+        f"en **{info['n_groups']:,} evaluaciones gen × corte × anatomía**. "
+        f"El intervalo predictivo medio abarca **{100*info['count_pi_mean_fraction_width']:.1f} puntos porcentuales** del denominador del grupo. "
+        f"La pérdida de Brier ponderada por células es **{info['brier']:.4f}**, frente a **{info['baseline_brier']:.4f}** "
+        f"del modelo regional sin anatomía (menor es mejor); la anatomía mejora Brier en **{wins}/10 genes**."
+    ))
+rows = []
+for region, info in d.items():
+    for gene, row in info["metrics_by_gene"].items():
+        rows.append([region, gene, row["brier"], row["baseline_brier"], 100*row["count_pi_coverage"],
+                     row["n_groups"], row["prior_only_groups"], 100*row["count_pi_mean_fraction_width"]])
+show_table(pd.DataFrame(rows, columns=["Región", "Gen", "Brier anatómico", "Brier regional", "Cobertura predictiva de positivos (%)",
+                                      "Grupos corte–anatomía evaluados", "Grupos solo prior", "Ancho predictivo medio (puntos porcentuales)"]), n=20)
+```
+
+**Corteza e hipotálamo tienen distinto soporte.** En ACA, la mejora modesta de Brier se acompaña de intervalos amplios; una cobertura superior al 95% no demuestra recuperación de alta resolución. En HY, 79 de 186 grupos corte–anatomía reservados por gen carecen de esa anatomía en entrenamiento, representando 10,416 de 37,811 células. Su media previa es 0.5 bajo el prior simétrico especificado. El modelo resulta sustancialmente peor que la referencia regional en conjunto. Esos casos se conservan sin eliminarlos silenciosamente. Entre grupos con anatomía presente en entrenamiento, Brier agrupado de HY es 0.03256 frente a 0.03288 de la referencia regional; este diagnóstico restringido no reemplaza el resultado completo. El explorador y el resumen fuente conservan ambos subconjuntos.
+
+Las evaluaciones agrupadas por gen reutilizan las mismas células y cortes físicos; no son observaciones independientes adicionales. Hay 14,582 células ACA y 37,811 HY de referencia, un animal y diez genes objetivo por región.
+
+```{python}
+manifest = json.loads((ROOT / "results/spatial_detection_bayes/figure_manifest.json").read_text())
+for stem, item in manifest.items():
+    language = item.get("language", "es" if stem.endswith("_es") else "en")
+    if language == "es":
+        figure("spatial_detection_bayes", stem, item.get("caption_es", item.get("caption", "")))
+```
+
+Las estimaciones de detección de cortes conocidos y sus intervalos creíbles aparecen bajo la tabla anatómica observada del [explorador de cortes](spatial_explorer.qmd). Usan todas las clases celulares del grupo anatómico; al seleccionar una clase se ocultan esas estimaciones para todas las clases. Las estimaciones ajustadas condicionales no deben confundirse con las predicciones reservadas que generan las métricas anteriores.
+
+[Resumen de detección](../downloads/spatial_detection_bayes/summary.json) · [Comprobaciones de detección](../downloads/spatial_detection_bayes/validation.json) · [Código del modelo de detección](../downloads/code/analyze_bayesian_detection.py) · [Predicciones de detección reservadas de ACA](../downloads/spatial_detection_bayes/ACA/out_of_fold_predictions.tsv.gz) · [Predicciones de detección reservadas de HY](../downloads/spatial_detection_bayes/HY/out_of_fold_predictions.tsv.gz).
+
+## Referencia de expresión espacial: metodología
+
+### Datos, objetivo e información anatómica
+
+Se conservan todas las células registradas de corteza cingulada anterior e hipotálamo del donante macho ABCA-2 sin exposición experimental. Se modelan diez genes medidos seleccionados anteriormente por región. Los conteos y coordenadas no cambian. La respuesta es el **logaritmo natural del conteo de imagen transformado**, $y_{ig}=\ln(1+c_{ig})$, incluidos los ceros. No es log₂ fold change, expresión RNA-seq normalizada ni una medición de proteínas. [@Zhang2023_38092912]
+
+La media espacial se describe mediante subestructuras anatómicas, coordenadas CCF estandarizadas y una expansión finita de bases radiales anisotrópicas. El modelo permite discontinuidades entre categorías anatómicas. Interceptos por corte original absorben desplazamientos compartidos por sus células. Las etiquetas de clase y subclase derivadas de expresión se excluyen de los predictores principales, evitando información del gen objetivo transmitida por la anotación de RNA del atlas. Los cortes físicos definen las particiones de validación.
+
+### Priors propios y distribuciones posteriores
+
+Para cada gen, el modelo de trabajo es
+
+$$
+y_{ig}=\phi(\mathbf r_i,a_i)^\top\boldsymbol\beta_g+\delta_{s(i),g}+\epsilon_{ig},
+\qquad \epsilon_{ig}\sim\mathcal N(0,\sigma_g^2).
+$$
+
+$\mathbf r_i$ representa la posición registrada, $a_i$ la categoría anatómica y $s(i)$ el corte físico. Los coeficientes y efectos de corte tienen priors normales propios centrados en cero, condicionados a la varianza residual, y esta varianza tiene un prior inverso-Gamma propio. La actualización Normal–Inversa-Gamma produce distribuciones posteriores t de Student al integrar incertidumbre de coeficientes y varianza. La anisotropía, regularización, varianza de corte y número de bases se fijan para el análisis principal; ajustes de sensibilidad varían alternativas predefinidas.
+
+El mapa representa la **media espacial promediando a cero el desplazamiento del corte**. Se distinguen dos cantidades:
+
+- El **intervalo creíble del 95% de la media latente** describe la incertidumbre sobre esa media ajustada por corte bajo el modelo.
+- El **intervalo predictivo del 95% para una nueva célula en un nuevo corte** añade variación residual y el efecto de un corte no observado. Este intervalo más amplio se contrasta con las células medidas reservadas.
+
+La verosimilitud gaussiana es una aproximación de trabajo para conteos transformados dispersos. Puede asignar probabilidad a valores negativos, fuera del soporte físico de $\ln(1+c)$. Las medias ajustadas negativas, los límites negativos y la masa predictiva bajo cero se conservan y diagnostican. No se aplica la exponencial para afirmar conteos moleculares esperados. La incertidumbre es condicional a anatomía, bases, priors y registro; no incluye toda la incertidumbre biológica ni de registro.
+
+### Validación por cortes completos
+
+Se reservan sucesivamente cinco bloques contiguos de cortes físicos. Los cortes vecinos de guarda se excluyen del entrenamiento. Las categorías anatómicas, la estandarización de coordenadas y las posiciones de las bases se obtienen solo de células de entrenamiento; la expresión reservada no las determina. Cada célula de prueba permanece junto con su corte original. Los mapas finales ajustados con toda la referencia se distinguen de las predicciones fuera de muestra.
+
+Cada gen se compara con un modelo de media anatómica y una interpolación sencilla por vecinos espaciales, ambos obtenidos del entrenamiento. Se conservan RMSE, MAE, cobertura y amplitud del intervalo predictivo, examinando por separado ceros y conteos positivos. Alternativas fijas de escala espacial y regularización evalúan la dependencia de los priors. Un resultado desfavorable no se renombra como modelo validado.
+
+Un donante permite evaluar **predicción espacial dentro del donante**, sin aportar replicación animal independiente, rendimiento en otros donantes ni generalización a exposición. El bloqueo por cortes reduce fugas de información local, pero no elimina toda la dependencia espacial ni la especificación incorrecta del modelo.
+
+## Referencia de expresión espacial: resultados
+
+Los resultados siguientes muestran precisión predictiva y calibración, incluidos los fallos. Una comprobación de implementación/datos satisfactoria no establece calibración científica ni superioridad frente a un modelo sencillo.
+
+El modelo espacial gaussiano **no estableció una reconstrucción validada del RNA celular**. Su soporte predictivo negativo es físicamente incompatible con los conteos transformados, y anatomía/posición solas recuperan mal las observaciones positivas. Una respuesta con muchos ceros puede aparentar cobertura global alta mientras predice mal la cola positiva. La cobertura entre positivos es un diagnóstico descriptivo de cola; un intervalo marginal del 95% no garantiza cobertura del 95% condicionada a que la observación realizada sea positiva.
+
+```{python}
+for region, info in b["regions"].items():
+    rows = info["heldout_results"]
+    wins = sum(row["rmse"] < row["anatomy_baseline_rmse"] for row in rows)
+    display(Markdown(
+        f"**{region}:** el RMSE espacial mejora la referencia de solo anatomía en **{wins}/10 genes**. "
+        f"La mediana de cobertura predictiva global observada del 95% es **{np.median([r['predictive_95_coverage'] for r in rows]):.1%}**, "
+        f"frente a **{np.median([r['coverage_positive'] for r in rows]):.1%}** entre observaciones positivas. "
+        f"La mediana de probabilidad predictiva asignada bajo cero es **{np.median([r['negative_predictive_probability_mean'] for r in rows]):.1%}**."
+    ))
+rows = []
+for region, info in b["regions"].items():
+    for row in info["heldout_results"]:
+        rows.append([region, row["gene"], row["rmse"], row["anatomy_baseline_rmse"], row["knn_rmse"],
+                     100*row["predictive_95_coverage"], 100*row["coverage_positive"],
+                     100*row["negative_predictive_probability_mean"]])
+show_table(pd.DataFrame(rows, columns=["Región", "Gen", "RMSE espacial", "RMSE anatómico", "RMSE kNN",
+                                      "Cobertura global (%)", "Cobertura entre positivos (%)", "Probabilidad bajo cero (%)"]), n=20)
+```
+
+Por ejemplo, Tll1 tiene cobertura predictiva global del 98.2%, pero cobertura del 0% entre sus 667 observaciones positivas. Fosb presenta cobertura global del 93.9% y del 37.1% entre positivos. Los mapas permanecen visibles como referencia de trabajo evaluada; no deben sustituir la expresión medida ni implicar detalle espacial recuperado.
+
+## Explorar las estimaciones posteriores
+
+<iframe id="bayes-frame" class="viewer-frame" src="../assets/spatial-explorer/index-es.html?region=ACA&amp;mode=bayes" title="Media basal bayesiana e incertidumbre en posiciones celulares medidas existentes" loading="lazy"></iframe>
+<script>
+window.addEventListener("message", function(event) {
+ const frame = document.getElementById("bayes-frame");
+ if (frame && event.source === frame.contentWindow && event.origin === window.location.origin && event.data && ["omics-spatial-height", "omics-atlas-height"].includes(event.data.type)) {
+  const height = Number(event.data.height);
+  if (Number.isFinite(height)) frame.style.height = Math.min(14000, Math.max(1700, height + 30)) + "px";
+ }
+});
+</script>
+
+[Abrir directamente la pestaña bayesiana](../assets/spatial-explorer/index-es.html?region=ACA&mode=bayes){.btn .btn-outline-primary target="_blank"}
+
+```{python}
+manifest = json.loads((ROOT / "results/spatial_bayes/figure_manifest.json").read_text())
+for stem, item in manifest.items():
+    language = item.get("language", "es" if stem.endswith("_es") else "en")
+    if language == "es":
+        figure("spatial_bayes", stem, item.get("caption_es", item.get("caption", "")))
+```
+
+## Interpretación y límites
+
+Una cuadrícula más fina, un campo más suave o un intervalo creíble condicional estrecho no aumentan la resolución de adquisición. Las predicciones en posiciones existentes no crean células en los espacios de aproximadamente 200 µm entre cortes muestreados, y este modelo no genera células adicionales ni otro hemisferio. Demostrar mayor resolución exigiría mediciones independientes que acrediten la recuperación de ese detalle.
+
+**Aquí no se ajusta una respuesta de PM2.5 específica por tipo celular.** Los priors espaciales basales y los cambios regionales de tejido completo no identifican de forma única esas respuestas. El escenario 3D original de PM2.5 conserva su multiplicador regional uniforme. La incertidumbre posterior basal no es un intervalo del efecto de exposición.
+
+## Reproducibilidad y tablas fuente
+
+[Resumen del modelo](../downloads/spatial_bayes/summary.json) · [Validación de implementación/datos](../downloads/spatial_bayes/validation.json) · [Modelo y figuras reproducibles](../downloads/code/analyze_spatial_bayes.py) · [Capítulo completo de reproducibilidad](reproducibility.qmd).

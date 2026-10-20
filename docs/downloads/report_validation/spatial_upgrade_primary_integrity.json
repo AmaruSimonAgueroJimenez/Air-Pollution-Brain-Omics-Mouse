@@ -1,0 +1,39 @@
+{
+  "checked_UTC": "2026-10-20T16:28:33.559410+00:00",
+  "baseline_commit": "5bd18454b8b0619b352eda583af58f9bdf0b97d4",
+  "existing_tracked_artifacts_checked": 769,
+  "changed_existing_study_artifacts": [],
+  "key_inputs": [
+    {
+      "path": "results/cortex/DE_PM_vs_PBS.tsv",
+      "unchanged": true,
+      "sha256": "83f4a885a8ff58b69203f7f035dda49ef06eae747089a3f521ad736e44aedc4a"
+    },
+    {
+      "path": "results/gene_priorities/prioritized_genes.tsv",
+      "unchanged": true,
+      "sha256": "e40c5c43105a9370fb0f4f83d8bf60222d03907b51a425cb45423c93f103b62d"
+    },
+    {
+      "path": "results/spatial_viewer/registered_hypothalamus_cells.tsv.gz",
+      "unchanged": true,
+      "sha256": "2de9b2265c3f66f9f167d8304c6a86d8a96ea0e161603b22ded1726180af5c01"
+    },
+    {
+      "path": "results/spatial_cortex/registered_cortex_cells.tsv.gz",
+      "unchanged": true,
+      "sha256": "06e12ebd2a8d44f96b8935d3097a139c76edcad54d82f5f91b3c2a6796ed50d5"
+    },
+    {
+      "path": "docs/assets/viewer/data.js",
+      "unchanged": true,
+      "sha256": "0512df48fb54d2995aad96fe70383690e5912f7150ce3f50bbe74ff17d7dfa42"
+    },
+    {
+      "path": "docs/assets/viewer-cortex/data.js",
+      "unchanged": true,
+      "sha256": "e90efdb7a69cd695ff16251784640b8fef9d886dd0b9231848048a2434fd76fa"
+    }
+  ],
+  "passed": true
+}

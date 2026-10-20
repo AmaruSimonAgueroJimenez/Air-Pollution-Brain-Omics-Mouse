@@ -82,6 +82,15 @@ def main():
                 # Empty href="#" is a legitimate toggle; nonempty anchors must resolve.
                 errors.append(f"Missing anchor in {path.relative_to(SITE)}: {link}")
     checks.update(html_documents=len(documents), local_links_checked=link_count)
+    # These methods rely on equations: lost TeX delimiters can otherwise leave
+    # plausible-looking prose while silently removing the model definitions.
+    checks["bayesian_mathml_equations"] = {}
+    for relative in ("spatial_bayes.html", "es/spatial_bayes.html"):
+        page = SITE / relative
+        count = page.read_text().count("<math ") if page.exists() else 0
+        checks["bayesian_mathml_equations"][relative] = count
+        if count < 16:
+            errors.append("Bayesian method equations are missing or incomplete: " + relative)
     checks["unexpected_static_widget_dependencies"] = widget_dependencies
     if widget_dependencies:
         errors.append("Unexpected widget loader in static report pages: " + ", ".join(widget_dependencies))
@@ -97,6 +106,9 @@ def main():
         "results/spatial_cortex/validation_checks.json",
         "results/gene_priorities/validation.json",
         "results/report_validation/gene_annotation_assets.json",
+        "results/spatial_sections/validation.json",
+        "results/spatial_bayes/validation.json",
+        "results/spatial_detection_bayes/validation.json",
     ]
     for relative in expected:
         if not (ROOT / relative).exists():
@@ -120,6 +132,10 @@ def main():
         audit = ROOT / relative
         if audit.exists() and not json.loads(audit.read_text()).get(key, False):
             errors.append("Regional gene-profile audit has not passed: " + relative)
+    for dataset in ("spatial_sections", "spatial_bayes", "spatial_detection_bayes"):
+        path = ROOT / "results" / dataset / "validation.json"
+        if path.exists() and not json.loads(path.read_text()).get("passed", False):
+            errors.append("Spatial implementation/data audit has not passed: " + dataset)
     if args.published:
         if not (SITE / ".nojekyll").exists():
             errors.append("Public /docs is missing .nojekyll")

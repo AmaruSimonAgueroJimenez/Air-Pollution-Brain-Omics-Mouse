@@ -151,3 +151,9 @@ La misma referencia macho no expuesta Zhuang-ABCA-2 aporta todas las células re
 Los conteos de imagen de cada gen cortical se multiplican uniformemente por 2 elevado al log₂FC cortical principal regularizado. El efecto se restringe a ACA; el hipotálamo conserva su efecto regional independiente. La escala común referencia/escenario se calcula dentro de cada gen. La comparación de tres genes informa detección y conteo medio con ceros, efecto regional RNA, q de BH y anotación; no prueba diferencias de exposición entre genes ni iguala eficiencias de sondas.
 
 El donante del atlas no es un control experimental de los animales humanizados para α-sinucleína. Localizar un transcrito basal y disponer de un efecto regional no identifica qué células responden a PM2.5. Se verifican concordancia coordenadas/volumen, uniones, rangos y los 1,122 vectores comprimidos. Véanse los [perfiles génicos](gene_profiles.qmd) y los [métodos y resultados 3D corticales](cortex_viewer.qmd).
+
+## Medición por cortes y predicción espacial bayesiana
+
+El [capítulo de cortes medidos](spatial_explorer.qmd) enlaza metadatos originales por ID celular exacto y conserva todas las células registradas de ACA/HY y sus conteos. Las coordenadas experimentales dentro del corte se mantienen separadas de las CCF. La detección es conteo positivo dividido por todas las células medidas seleccionadas, incluidos los ceros; los bins vacíos carecen de datos. Las etiquetas de ACA representan capas/subdivisiones y las de HY núcleos/subregiones.
+
+El [capítulo bayesiano](spatial_bayes.qmd) documenta verosimilitud de trabajo, priors propios, efectos de corte, objetivos posteriores, validación por bloques de cortes completos, modelos sencillos de comparación y sensibilidad a priors. Se distingue integridad de modelo/datos de rendimiento científico. Es un análisis de referencia sin exposición: no aporta efectos de contaminantes específicos por tipo celular ni mayor resolución medida de adquisición.

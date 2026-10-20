@@ -205,10 +205,18 @@ div.csl-indent {
 <span class="menu-text">Genes y funciones</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-visores-3d" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Visores 3D</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-atlas-espacial" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Atlas espacial</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-visores-3d">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-atlas-espacial">    
+        <li>
+    <a class="dropdown-item" href="./spatial_explorer.html">
+ <span class="dropdown-text">Cortes, capas y detección</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./spatial_bayes.html">
+ <span class="dropdown-text">Modelo bayesiano y validación</span></a>
+  </li>  
         <li>
     <a class="dropdown-item" href="./viewer.html">
  <span class="dropdown-text">Hipotálamo y selección regional</span></a>
@@ -272,6 +280,7 @@ div.csl-indent {
   <li><a href="#análisis-ampliados-y-recuperación-de-los-métodos-originales" id="toc-análisis-ampliados-y-recuperación-de-los-métodos-originales" class="nav-link" data-scroll-target="#análisis-ampliados-y-recuperación-de-los-métodos-originales">Análisis ampliados y recuperación de los métodos originales</a></li>
   <li><a href="#prioridades-génicas-y-anotación-del-producto-codificado" id="toc-prioridades-génicas-y-anotación-del-producto-codificado" class="nav-link" data-scroll-target="#prioridades-génicas-y-anotación-del-producto-codificado">Prioridades génicas y anotación del producto codificado</a></li>
   <li><a href="#extensión-espacial-a-corteza-cingulada-anterior" id="toc-extensión-espacial-a-corteza-cingulada-anterior" class="nav-link" data-scroll-target="#extensión-espacial-a-corteza-cingulada-anterior">Extensión espacial a corteza cingulada anterior</a></li>
+  <li><a href="#medición-por-cortes-y-predicción-espacial-bayesiana" id="toc-medición-por-cortes-y-predicción-espacial-bayesiana" class="nav-link" data-scroll-target="#medición-por-cortes-y-predicción-espacial-bayesiana">Medición por cortes y predicción espacial bayesiana</a></li>
   </ul>
 </nav>
     </div>
@@ -292,7 +301,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Fecha del análisis</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">19 octubre 2026</p>
+      <p class="date">20 octubre 2026</p>
     </div>
   </div>
   
@@ -438,7 +447,7 @@ div.csl-indent {
 <section id="referencia-3d-medida-y-escenario-modelado-de-pm2.5" class="level2">
 <h2 class="anchored" data-anchor-id="referencia-3d-medida-y-escenario-modelado-de-pm2.5">Referencia 3D medida y escenario modelado de PM2.5</h2>
 <p>La referencia espacial utiliza <strong>Zhuang-ABCA-2</strong>, un donante macho adulto. Las células se seleccionan según las asignaciones de parcelación CCF depositadas para la división hipotalámica, se vinculan mediante identificadores celulares exactos de tipo texto con la matriz H5AD medida y se anotan mediante la taxonomía del atlas. <span class="citation" data-cites="Zhang2023_38092912">Zhang et&nbsp;al. (<a href="#ref-Zhang2023_38092912" role="doc-biblioref">2023</a>)</span></p>
-<div id="cda68cd1" class="cell" data-execution_count="3">
+<div id="989692da" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>Esta selección contiene <strong>37,811 células</strong>, <strong>26 clases celulares</strong> y <strong>49 subestructuras hipotalámicas</strong>. Se puede acceder a los <strong>1,122 genes medidos</strong>; <strong>1,003</strong> tienen estimaciones fiables del efecto en tejido completo. Las células no se submuestrean, reflejan ni interpolan.</p>
 </div>
@@ -473,6 +482,11 @@ div.csl-indent {
 <p>La misma referencia macho no expuesta Zhuang-ABCA-2 aporta todas las células registradas con división Isocortex y estructura ACAd o ACAv, conservando diez capas/subestructuras. ACA aproxima anatómicamente la disección informada, cuyos límites quirúrgicos exactos no se depositaron. Los identificadores celulares exactos enlazan coordenadas y matriz H5AD medida. La referencia de 14,582 células no se submuestrea ni refleja ni imputa expresión. Los Ensembl exactos emparejan genes medidos y resultado cortical; las diferencias de símbolo quedan en la procedencia, sin sustituciones inventadas.</p>
 <p>Los conteos de imagen de cada gen cortical se multiplican uniformemente por 2 elevado al log₂FC cortical principal regularizado. El efecto se restringe a ACA; el hipotálamo conserva su efecto regional independiente. La escala común referencia/escenario se calcula dentro de cada gen. La comparación de tres genes informa detección y conteo medio con ceros, efecto regional RNA, q de BH y anotación; no prueba diferencias de exposición entre genes ni iguala eficiencias de sondas.</p>
 <p>El donante del atlas no es un control experimental de los animales humanizados para α-sinucleína. Localizar un transcrito basal y disponer de un efecto regional no identifica qué células responden a PM2.5. Se verifican concordancia coordenadas/volumen, uniones, rangos y los 1,122 vectores comprimidos. Véanse los <a href="./gene_profiles.html">perfiles génicos</a> y los <a href="./cortex_viewer.html">métodos y resultados 3D corticales</a>.</p>
+</section>
+<section id="medición-por-cortes-y-predicción-espacial-bayesiana" class="level2">
+<h2 class="anchored" data-anchor-id="medición-por-cortes-y-predicción-espacial-bayesiana">Medición por cortes y predicción espacial bayesiana</h2>
+<p>El <a href="./spatial_explorer.html">capítulo de cortes medidos</a> enlaza metadatos originales por ID celular exacto y conserva todas las células registradas de ACA/HY y sus conteos. Las coordenadas experimentales dentro del corte se mantienen separadas de las CCF. La detección es conteo positivo dividido por todas las células medidas seleccionadas, incluidos los ceros; los bins vacíos carecen de datos. Las etiquetas de ACA representan capas/subdivisiones y las de HY núcleos/subregiones.</p>
+<p>El <a href="./spatial_bayes.html">capítulo bayesiano</a> documenta verosimilitud de trabajo, priors propios, efectos de corte, objetivos posteriores, validación por bloques de cortes completos, modelos sencillos de comparación y sensibilidad a priors. Se distingue integridad de modelo/datos de rendimiento científico. Es un análisis de referencia sin exposición: no aporta efectos de contaminantes específicos por tipo celular ni mayor resolución medida de adquisición.</p>
 
 
 <!-- -->
@@ -1136,6 +1150,12 @@ Zhu, Anqi, Joseph G. Ibrahim, y Michael I. Love. 2019. <span>«Heavy-tailed prio
 <span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a>Los conteos de imagen de cada gen cortical se multiplican uniformemente por 2 elevado al log₂FC cortical principal regularizado. El efecto se restringe a ACA; el hipotálamo conserva su efecto regional independiente. La escala común referencia/escenario se calcula dentro de cada gen. La comparación de tres genes informa detección y conteo medio con ceros, efecto regional RNA, q de BH y anotación; no prueba diferencias de exposición entre genes ni iguala eficiencias de sondas.</span>
 <span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a>El donante del atlas no es un control experimental de los animales humanizados para α-sinucleína. Localizar un transcrito basal y disponer de un efecto regional no identifica qué células responden a PM2.5. Se verifican concordancia coordenadas/volumen, uniones, rangos y los 1,122 vectores comprimidos. Véanse los <span class="co">[</span><span class="ot">perfiles génicos</span><span class="co">](gene_profiles.qmd)</span> y los <span class="co">[</span><span class="ot">métodos y resultados 3D corticales</span><span class="co">](cortex_viewer.qmd)</span>.</span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a><span class="fu">## Medición por cortes y predicción espacial bayesiana</span></span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a>El <span class="co">[</span><span class="ot">capítulo de cortes medidos</span><span class="co">](spatial_explorer.qmd)</span> enlaza metadatos originales por ID celular exacto y conserva todas las células registradas de ACA/HY y sus conteos. Las coordenadas experimentales dentro del corte se mantienen separadas de las CCF. La detección es conteo positivo dividido por todas las células medidas seleccionadas, incluidos los ceros; los bins vacíos carecen de datos. Las etiquetas de ACA representan capas/subdivisiones y las de HY núcleos/subregiones.</span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a>El <span class="co">[</span><span class="ot">capítulo bayesiano</span><span class="co">](spatial_bayes.qmd)</span> documenta verosimilitud de trabajo, priors propios, efectos de corte, objetivos posteriores, validación por bloques de cortes completos, modelos sencillos de comparación y sensibilidad a priors. Se distingue integridad de modelo/datos de rendimiento científico. Es un análisis de referencia sin exposición: no aporta efectos de contaminantes específicos por tipo celular ni mayor resolución medida de adquisición.</span>
 </code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

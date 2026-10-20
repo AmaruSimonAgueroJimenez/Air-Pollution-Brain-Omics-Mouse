@@ -1,0 +1,64 @@
+{
+  "sources": [
+    {
+      "path": "results/gene_priorities/prioritized_genes.tsv",
+      "sha256": "e40c5c43105a9370fb0f4f83d8bf60222d03907b51a425cb45423c93f103b62d",
+      "bytes": 58292
+    },
+    {
+      "path": "results/spatial_cortex/reference_counts.npz",
+      "sha256": "7702331190e327f0befb47323f40c96fd2631ca5c585f77864b211b764f5bb0e",
+      "bytes": 3513947
+    },
+    {
+      "path": "results/spatial_cortex/registered_cortex_cells.tsv.gz",
+      "sha256": "06e12ebd2a8d44f96b8935d3097a139c76edcad54d82f5f91b3c2a6796ed50d5",
+      "bytes": 587362
+    },
+    {
+      "path": "results/spatial_sections/ACA/cells_with_sections.tsv.gz",
+      "sha256": "a7bbe306e2c1465cba0a1b493fcf1680cf216ef5507fab800729df111c665e18",
+      "bytes": 911036
+    },
+    {
+      "path": "results/spatial_sections/HY/cells_with_sections.tsv.gz",
+      "sha256": "4df20fd09adfe38a22d51d2d4526460356a6c19a3239a0a173823c4e4e284af2",
+      "bytes": 2377755
+    },
+    {
+      "path": "results/spatial_viewer/reference_counts.npz",
+      "sha256": "ea701f768b446ac00ddf2dd289fdb0e44de80b1cdcd85900f79f2eb649b6c3a0",
+      "bytes": 8206482
+    },
+    {
+      "path": "results/spatial_viewer/registered_hypothalamus_cells.tsv.gz",
+      "sha256": "2de9b2265c3f66f9f167d8304c6a86d8a96ea0e161603b22ded1726180af5c01",
+      "bytes": 1549443
+    }
+  ],
+  "parent_atlas_manifest": "metadata/spatial_atlas/download_manifest.json",
+  "parent_receipts": "metadata/spatial_atlas/download_receipts.json",
+  "method_sources": [
+    {
+      "title": "Murphy: Conjugate Bayesian analysis of the Gaussian distribution",
+      "url": "https://www.cs.ubc.ca/~murphyk/Papers/bayesGauss.pdf"
+    },
+    {
+      "title": "SciPy Student t implementation and parameterization",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.t.html"
+    },
+    {
+      "title": "Original MERFISH atlas",
+      "url": "https://doi.org/10.1038/s41586-023-06808-9"
+    }
+  ],
+  "script_sha256": "a18b9829215d29eb3093e61341b9112d054b13d5334b06a79f8eae94042350e6",
+  "software": {
+    "python": "3.14.3",
+    "numpy": "2.4.3",
+    "pandas": "2.3.3",
+    "scipy": "1.17.1",
+    "matplotlib": "3.10.8"
+  },
+  "selection": "Frozen10 measured candidates per region, from prior external bulk-result ranking; no current atlas-expression gene selection."
+}

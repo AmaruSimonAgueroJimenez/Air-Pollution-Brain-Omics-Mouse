@@ -124,6 +124,8 @@ def prepare_assets():
         "_quarto.yml", "_report_utils.py", "references.bib", "assets/report.css",
         "assets/viewer/index.html", "assets/viewer/index-es.html", "assets/viewer/viewer.css", "assets/viewer/viewer.js",
         "assets/viewer/annotations.js", "assets/viewer-cortex/index.html", "assets/viewer-cortex/index-es.html", "assets/viewer-cortex/viewer.css",
+        "assets/spatial-explorer/index.html", "assets/spatial-explorer/index-es.html",
+        "assets/spatial-explorer/explorer.js", "assets/spatial-explorer/explorer.css",
         "es/_quarto.yml", "es/_report_utils.py")]
     with zipfile.ZipFile(DOCS / "downloads/report-source.zip", "w", zipfile.ZIP_DEFLATED) as archive:
         for source in sources:

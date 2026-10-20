@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "scope": "Implementation, joins, posterior algebra, leakage boundaries and transport integrity; NOT scientific-performance certification. Calibration flags are separately retained per gene.",
+  "regions": {
+    "HY": {
+      "n10_measured_genes": true,
+      "all_original_cells_retained": true,
+      "cell_order_exact": true,
+      "unique_real_cell_ids": true,
+      "each_cell_tested_once": true,
+      "heldout_predictions_complete": true,
+      "all_posterior_arrays_finite": true,
+      "posterior_vs_predictive_width_distinct": true,
+      "no_test_guard_sections_in_training": true,
+      "normal_equations_verified": true,
+      "transport_roundtrip_5decimal_precision": true,
+      "no_expression_celltype_predictors": true,
+      "no_PM_or_bulk_effect_fitted": true,
+      "no_generated_or_relocated_cells": true
+    },
+    "ACA": {
+      "n10_measured_genes": true,
+      "all_original_cells_retained": true,
+      "cell_order_exact": true,
+      "unique_real_cell_ids": true,
+      "each_cell_tested_once": true,
+      "heldout_predictions_complete": true,
+      "all_posterior_arrays_finite": true,
+      "posterior_vs_predictive_width_distinct": true,
+      "no_test_guard_sections_in_training": true,
+      "normal_equations_verified": true,
+      "transport_roundtrip_5decimal_precision": true,
+      "no_expression_celltype_predictors": true,
+      "no_PM_or_bulk_effect_fitted": true,
+      "no_generated_or_relocated_cells": true
+    }
+  }
+}

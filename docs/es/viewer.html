@@ -186,10 +186,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Genes y funciones</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-visores-3d" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Visores 3D</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-atlas-espacial" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Atlas espacial</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-visores-3d">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-atlas-espacial">    
+        <li>
+    <a class="dropdown-item" href="./spatial_explorer.html">
+ <span class="dropdown-text">Cortes, capas y detección</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./spatial_bayes.html">
+ <span class="dropdown-text">Modelo bayesiano y validación</span></a>
+  </li>  
         <li>
     <a class="dropdown-item" href="./viewer.html">
  <span class="dropdown-text">Hipotálamo y selección regional</span></a>
@@ -244,7 +252,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Fecha del análisis</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">19 octubre 2026</p>
+      <p class="date">20 octubre 2026</p>
     </div>
   </div>
   
@@ -258,13 +266,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="seleccionar-la-región-y-explorar-genes-prioritarios" class="level2">
 <h2 class="anchored" data-anchor-id="seleccionar-la-región-y-explorar-genes-prioritarios">Seleccionar la región y explorar genes prioritarios</h2>
-<p><a href="./cortex_viewer.html" class="btn btn-primary"><strong>Corteza: 76 hallazgos principales medidos →</strong></a> <a href="./gene_profiles.html" class="btn btn-outline-primary"><strong>Qué codifican y qué función tienen →</strong></a></p>
+<p><a href="./cortex_viewer.html" class="btn btn-primary"><strong>Corteza: 76 hallazgos principales medidos →</strong></a> <a href="./gene_profiles.html" class="btn btn-outline-primary"><strong>Qué codifican y qué función tienen →</strong></a> <a href="./spatial_explorer.html" class="btn btn-outline-primary"><strong>Cortes medidos, capas y detección →</strong></a> <a href="./spatial_bayes.html" class="btn btn-outline-secondary"><strong>Referencia bayesiana y validación →</strong></a></p>
 <p>El informe ampliado conserva los once hallazgos hipotalámicos y los veinte genes codificantes de mayor evidencia primaria de corteza. Las fichas distinguen proteínas, RNA no codificantes y pseudogenes. Cada visor incorpora accesos a genes relevantes y una tabla comparativa de hasta tres genes medidos, además de las escenas 3D pareadas.</p>
 <p>El hipotálamo tiene un hallazgo principal medido, Tll1, y candidatos medidos exploratorios identificados. La referencia cingulada anterior tiene 76 hallazgos corticales primarios medidos: el predeterminado es Fosb, seguido de candidatos como Egr3 y S1pr1. Los genes no medidos se conservan en el informe biológico, sin imputación espacial.</p>
 </section>
 <section id="referencia-hipotalámica-y-escenario-regional" class="level2">
 <h2 class="anchored" data-anchor-id="referencia-hipotalámica-y-escenario-regional">Referencia hipotalámica y escenario regional</h2>
-<div id="106db4bd" class="cell" data-execution_count="1">
+<div id="b3a36ed7" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display cell-output-markdown">
 <div class="metric-cards">
 <div>
@@ -312,7 +320,7 @@ window.addEventListener("message", function(event) {
 </section>
 <section id="alternativas-estáticas-y-datos" class="level2">
 <h2 class="anchored" data-anchor-id="alternativas-estáticas-y-datos">Alternativas estáticas y datos</h2>
-<div id="fb5d5254" class="cell" data-execution_count="2">
+<div id="bf1a916f" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display cell-output-markdown">
 <figure class="research-figure figure">
 <a href="../assets/figures/spatial_viewer/reference_vs_simulation.svg"><img loading="lazy" width="2158" height="1431" src="../assets/figures/spatial_viewer/reference_vs_simulation.png" alt="Referencia MERFISH medida de Tll1 y simulación regional uniforme de PM2.5. Se muestran las mismas 37,811 células registradas, con ceros medidos tenues y conteos medidos positivos destacados en ambas vistas. El multiplicador deriva del contraste regional regularizado de siete animales, no de un efecto de exposición medido en esas células." class="figure-img"></a>
@@ -803,73 +811,75 @@ Referencia MERFISH medida de Tll1 y simulación regional uniforme de PM2.5. Se m
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**Corteza: 76 hallazgos principales medidos →**</span><span class="co">](cortex_viewer.qmd)</span>{.btn .btn-primary}</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**Qué codifican y qué función tienen →**</span><span class="co">](gene_profiles.qmd)</span>{.btn .btn-outline-primary}</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>El informe ampliado conserva los once hallazgos hipotalámicos y los veinte genes codificantes de mayor evidencia primaria de corteza. Las fichas distinguen proteínas, RNA no codificantes y pseudogenes. Cada visor incorpora accesos a genes relevantes y una tabla comparativa de hasta tres genes medidos, además de las escenas 3D pareadas.</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**Cortes medidos, capas y detección →**</span><span class="co">](spatial_explorer.qmd)</span>{.btn .btn-outline-primary}</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**Referencia bayesiana y validación →**</span><span class="co">](spatial_bayes.qmd)</span>{.btn .btn-outline-secondary}</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>El hipotálamo tiene un hallazgo principal medido, Tll1, y candidatos medidos exploratorios identificados. La referencia cingulada anterior tiene 76 hallazgos corticales primarios medidos: el predeterminado es Fosb, seguido de candidatos como Egr3 y S1pr1. Los genes no medidos se conservan en el informe biológico, sin imputación espacial.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>El informe ampliado conserva los once hallazgos hipotalámicos y los veinte genes codificantes de mayor evidencia primaria de corteza. Las fichas distinguen proteínas, RNA no codificantes y pseudogenes. Cada visor incorpora accesos a genes relevantes y una tabla comparativa de hasta tres genes medidos, además de las escenas 3D pareadas.</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Referencia hipotalámica y escenario regional</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>El hipotálamo tiene un hallazgo principal medido, Tll1, y candidatos medidos exploratorios identificados. La referencia cingulada anterior tiene 76 hallazgos corticales primarios medidos: el predeterminado es Fosb, seguido de candidatos como Egr3 y S1pr1. Los genes no medidos se conservan en el informe biológico, sin imputación espacial.</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Referencia hipotalámica y escenario regional</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display, Markdown</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> _report_utils <span class="im">import</span> summary, metric_cards, figure</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> summary(<span class="st">"spatial_viewer"</span>)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>metric_cards([</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Donante de referencia"</span>, <span class="st">"ABCA-2"</span>, <span class="st">"Macho adulto; hemisferio registrado"</span>),</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Células hipotalámicas"</span>, <span class="ss">f"</span><span class="sc">{</span>v[<span class="st">'hypothalamus_cells'</span>]<span class="sc">:,}</span><span class="ss">"</span>, <span class="st">"Todas las células registradas; sin submuestreo"</span>),</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Genes medidos"</span>, <span class="ss">f"</span><span class="sc">{</span>v[<span class="st">'measured_genes'</span>]<span class="sc">:,}</span><span class="ss">"</span>, <span class="st">"Se carga un gen cada vez; archivos locales"</span>),</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Evidencia regional"</span>, <span class="st">"4 FA / 3 PM"</span>, <span class="st">"Siete animales independientes"</span>)</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>])</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>La vista izquierda muestra la expresión medida en el atlas de referencia. La derecha multiplica esos mismos valores celulares por un efecto regional específico del gen, obtenido del estudio de RNA-seq regional del hipotálamo. Lleva permanentemente la etiqueta **SIMULADO**. Ambas vistas utilizan las mismas posiciones celulares, cámaras vinculadas y una escala de color común.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display, Markdown</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> _report_utils <span class="im">import</span> summary, metric_cards, figure</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> summary(<span class="st">"spatial_viewer"</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>metric_cards([</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Donante de referencia"</span>, <span class="st">"ABCA-2"</span>, <span class="st">"Macho adulto; hemisferio registrado"</span>),</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Células hipotalámicas"</span>, <span class="ss">f"</span><span class="sc">{</span>v[<span class="st">'hypothalamus_cells'</span>]<span class="sc">:,}</span><span class="ss">"</span>, <span class="st">"Todas las células registradas; sin submuestreo"</span>),</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Genes medidos"</span>, <span class="ss">f"</span><span class="sc">{</span>v[<span class="st">'measured_genes'</span>]<span class="sc">:,}</span><span class="ss">"</span>, <span class="st">"Se carga un gen cada vez; archivos locales"</span>),</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Evidencia regional"</span>, <span class="st">"4 FA / 3 PM"</span>, <span class="st">"Siete animales independientes"</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>::: {.model-note}</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>**Comience con Tll1.** Es el único hallazgo hipotalámico primario con FDR significativa que está medido en este panel. El multiplicador central es aproximadamente 0.428×, pero su significación es sensible a animales individuales. Los demás genes medidos siguen disponibles: se identifican como exploratorias las estimaciones de exposición no significativas, y las estimaciones no fiables se muestran solo como referencia.</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">iframe</span><span class="ot"> id</span><span class="op">=</span><span class="st">"atlas-frame"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"viewer-frame"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"../assets/viewer/index-es.html"</span><span class="ot"> title</span><span class="op">=</span><span class="st">"Vistas tridimensionales vinculadas del hipotálamo: referencia medida y PM2.5 simulado"</span><span class="ot"> loading</span><span class="op">=</span><span class="st">"lazy"</span><span class="dt">&gt;&lt;/</span><span class="kw">iframe</span><span class="dt">&gt;</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>La vista izquierda muestra la expresión medida en el atlas de referencia. La derecha multiplica esos mismos valores celulares por un efecto regional específico del gen, obtenido del estudio de RNA-seq regional del hipotálamo. Lleva permanentemente la etiqueta **SIMULADO**. Ambas vistas utilizan las mismas posiciones celulares, cámaras vinculadas y una escala de color común.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>::: {.model-note}</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>**Comience con Tll1.** Es el único hallazgo hipotalámico primario con FDR significativa que está medido en este panel. El multiplicador central es aproximadamente 0.428×, pero su significación es sensible a animales individuales. Los demás genes medidos siguen disponibles: se identifican como exploratorias las estimaciones de exposición no significativas, y las estimaciones no fiables se muestran solo como referencia.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span><span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"message"</span><span class="op">,</span> <span class="kw">function</span>(<span class="bu">event</span>) {</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> frame <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"atlas-frame"</span>)<span class="op">;</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (frame <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">source</span> <span class="op">===</span> frame<span class="op">.</span><span class="at">contentWindow</span> <span class="op">&amp;&amp;</span> (<span class="bu">event</span><span class="op">.</span><span class="at">origin</span> <span class="op">===</span> <span class="bu">window</span><span class="op">.</span><span class="at">location</span><span class="op">.</span><span class="at">origin</span> <span class="op">||</span> <span class="bu">event</span><span class="op">.</span><span class="at">origin</span> <span class="op">===</span> <span class="st">"null"</span>) <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">data</span> <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">type</span> <span class="op">===</span> <span class="st">"omics-atlas-height"</span>) {</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    frame<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">height</span> <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(<span class="dv">9000</span><span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">1750</span><span class="op">,</span> <span class="bu">Number</span>(<span class="bu">event</span><span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">height</span>) <span class="op">+</span> <span class="dv">30</span>)) <span class="op">+</span> <span class="st">"px"</span><span class="op">;</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Abrir el visor independiente</span><span class="co">](../assets/viewer/index-es.html)</span>{.btn .btn-outline-primary target="_blank"}</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">iframe</span><span class="ot"> id</span><span class="op">=</span><span class="st">"atlas-frame"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"viewer-frame"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"../assets/viewer/index-es.html"</span><span class="ot"> title</span><span class="op">=</span><span class="st">"Vistas tridimensionales vinculadas del hipotálamo: referencia medida y PM2.5 simulado"</span><span class="ot"> loading</span><span class="op">=</span><span class="st">"lazy"</span><span class="dt">&gt;&lt;/</span><span class="kw">iframe</span><span class="dt">&gt;</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span><span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"message"</span><span class="op">,</span> <span class="kw">function</span>(<span class="bu">event</span>) {</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> frame <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"atlas-frame"</span>)<span class="op">;</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (frame <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">source</span> <span class="op">===</span> frame<span class="op">.</span><span class="at">contentWindow</span> <span class="op">&amp;&amp;</span> (<span class="bu">event</span><span class="op">.</span><span class="at">origin</span> <span class="op">===</span> <span class="bu">window</span><span class="op">.</span><span class="at">location</span><span class="op">.</span><span class="at">origin</span> <span class="op">||</span> <span class="bu">event</span><span class="op">.</span><span class="at">origin</span> <span class="op">===</span> <span class="st">"null"</span>) <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">data</span> <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">type</span> <span class="op">===</span> <span class="st">"omics-atlas-height"</span>) {</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    frame<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">height</span> <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(<span class="dv">9000</span><span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">1750</span><span class="op">,</span> <span class="bu">Number</span>(<span class="bu">event</span><span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">height</span>) <span class="op">+</span> <span class="dv">30</span>)) <span class="op">+</span> <span class="st">"px"</span><span class="op">;</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">## Uso del visor</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Abrir el visor independiente</span><span class="co">](../assets/viewer/index-es.html)</span>{.btn .btn-outline-primary target="_blank"}</span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Escriba el símbolo de un gen y seleccione **Aplicar**. Están disponibles los 1,122 genes medidos del panel.</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Gire cualquiera de las escenas; la otra cámara seguirá el movimiento. Seleccione **Contexto del cerebro completo** para ver la superficie anatómica que rodea al hipotálamo.</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Filtre por clase celular o subestructura hipotalámica. El filtrado cambia las células mostradas, no sus valores de expresión.</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Compare el efecto central regularizado con los escenarios inferior o superior del efecto grupal puntual. Estos límites no son intervalos de confianza para células individuales.</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Examine los valores de los siete animales del análisis regional, situados debajo de las escenas. Las células del atlas no aumentan el tamaño muestral experimental.</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>El límite de color común opcional utiliza el percentil 99 de los valores positivos de la referencia y del escenario. Los colores saturados no eliminan valores: los valores reales siguen disponibles al pasar el cursor y en los archivos de origen. Los ceros medidos se muestran de forma predeterminada y pueden ocultarse explícitamente.</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="fu">## Uso del visor</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Escriba el símbolo de un gen y seleccione **Aplicar**. Están disponibles los 1,122 genes medidos del panel.</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Gire cualquiera de las escenas; la otra cámara seguirá el movimiento. Seleccione **Contexto del cerebro completo** para ver la superficie anatómica que rodea al hipotálamo.</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Filtre por clase celular o subestructura hipotalámica. El filtrado cambia las células mostradas, no sus valores de expresión.</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Compare el efecto central regularizado con los escenarios inferior o superior del efecto grupal puntual. Estos límites no son intervalos de confianza para células individuales.</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Examine los valores de los siete animales del análisis regional, situados debajo de las escenas. Las células del atlas no aumentan el tamaño muestral experimental.</span>
 <span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>Tll1 tiene un conteo de imagen medido positivo en **667 de 37,811 células (1.76%)** de esta referencia. Los restantes ceros medidos dominan la vista de todas las células; un conteo de imagen cero no demuestra ausencia biológica. El visor informa cuántas de las células actualmente mostradas tienen conteos medidos positivos. Ocultar ceros es un filtro explícito de visualización y no crea observaciones adicionales.</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>El límite de color común opcional utiliza el percentil 99 de los valores positivos de la referencia y del escenario. Los colores saturados no eliminan valores: los valores reales siguen disponibles al pasar el cursor y en los archivos de origen. Los ceros medidos se muestran de forma predeterminada y pueden ocultarse explícitamente.</span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="fu">## Alternativas estáticas y datos</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>Tll1 tiene un conteo de imagen medido positivo en **667 de 37,811 células (1.76%)** de esta referencia. Los restantes ceros medidos dominan la vista de todas las células; un conteo de imagen cero no demuestra ausencia biológica. El visor informa cuántas de las células actualmente mostradas tienen conteos medidos positivos. Ocultar ceros es un filtro explícito de visualización y no crea observaciones adicionales.</span>
 <span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>figure(<span class="st">"spatial_viewer"</span>, <span class="st">"reference_vs_simulation"</span>,</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>       <span class="st">"Referencia MERFISH medida de Tll1 y simulación regional uniforme de PM2.5. Se muestran las mismas 37,811 células registradas, con ceros medidos tenues y conteos medidos positivos destacados en ambas vistas. El multiplicador deriva del contraste regional regularizado de siete animales, no de un efecto de exposición medido en esas células."</span>)</span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Células registradas e identificadores originales</span><span class="co">](../downloads/spatial_viewer/registered_hypothalamus_cells.tsv.gz)</span></span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Panel medido y efectos regionales válidos</span><span class="co">](../downloads/spatial_viewer/gene_panel_coverage.tsv)</span></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Modelo espacial y procedencia</span><span class="co">](../downloads/spatial_viewer/summary.json)</span></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Comprobaciones de los datos espaciales</span><span class="co">](../downloads/spatial_viewer/validation_checks.json)</span></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Generador reproducible del visor</span><span class="co">](../downloads/code/build_spatial_viewer.py)</span></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>La superficie del cerebro completo es contexto anatómico. No se refleja la expresión en el otro hemisferio, y no se asigna ningún efecto de PM2.5 fuera del hipotálamo. El modelo conserva la abundancia y geometría celulares y no puede identificar pérdida celular, migración ni vulnerabilidad específica de cada célula. Consulte los <span class="co">[</span><span class="ot">Métodos estadísticos y espaciales</span><span class="co">](methods.qmd)</span> y el <span class="co">[</span><span class="ot">análisis de sensibilidad hipotalámica</span><span class="co">](results.qmd#sensibilidad-a-las-muestras-individuales)</span>.</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="fu">## Alternativas estáticas y datos</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>figure(<span class="st">"spatial_viewer"</span>, <span class="st">"reference_vs_simulation"</span>,</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>       <span class="st">"Referencia MERFISH medida de Tll1 y simulación regional uniforme de PM2.5. Se muestran las mismas 37,811 células registradas, con ceros medidos tenues y conteos medidos positivos destacados en ambas vistas. El multiplicador deriva del contraste regional regularizado de siete animales, no de un efecto de exposición medido en esas células."</span>)</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Células registradas e identificadores originales</span><span class="co">](../downloads/spatial_viewer/registered_hypothalamus_cells.tsv.gz)</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Panel medido y efectos regionales válidos</span><span class="co">](../downloads/spatial_viewer/gene_panel_coverage.tsv)</span></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Modelo espacial y procedencia</span><span class="co">](../downloads/spatial_viewer/summary.json)</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Comprobaciones de los datos espaciales</span><span class="co">](../downloads/spatial_viewer/validation_checks.json)</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Generador reproducible del visor</span><span class="co">](../downloads/code/build_spatial_viewer.py)</span></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>La superficie del cerebro completo es contexto anatómico. No se refleja la expresión en el otro hemisferio, y no se asigna ningún efecto de PM2.5 fuera del hipotálamo. El modelo conserva la abundancia y geometría celulares y no puede identificar pérdida celular, migración ni vulnerabilidad específica de cada célula. Consulte los <span class="co">[</span><span class="ot">Métodos estadísticos y espaciales</span><span class="co">](methods.qmd)</span> y el <span class="co">[</span><span class="ot">análisis de sensibilidad hipotalámica</span><span class="co">](results.qmd#sensibilidad-a-las-muestras-individuales)</span>.</span>
 </code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

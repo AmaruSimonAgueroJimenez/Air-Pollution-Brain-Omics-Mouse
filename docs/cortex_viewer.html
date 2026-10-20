@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-10-19">
+<meta name="dcterms.date" content="2026-10-20">
 
 <title>3D cortex viewer and priority genes – Air pollution · brain omics</title>
 <style>
@@ -187,10 +187,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Genes &amp; functions</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-d-viewers" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">3D viewers</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-spatial-atlas" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Spatial atlas</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-d-viewers">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-spatial-atlas">    
+        <li>
+    <a class="dropdown-item" href="./spatial_explorer.html">
+ <span class="dropdown-text">Sections, layers &amp; detection</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./spatial_bayes.html">
+ <span class="dropdown-text">Bayesian baseline &amp; validation</span></a>
+  </li>  
         <li>
     <a class="dropdown-item" href="./viewer.html">
  <span class="dropdown-text">Hypothalamus &amp; region selection</span></a>
@@ -245,7 +253,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Analysis date</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">19 October 2026</p>
+      <p class="date">20 October 2026</p>
     </div>
   </div>
   
@@ -257,7 +265,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="447e2dff" class="cell" data-execution_count="1">
+<div id="088bb97b" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display cell-output-markdown">
 <div class="metric-cards">
 <div>
@@ -275,11 +283,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p><a href="./viewer.html" class="btn btn-outline-secondary">Hypothalamus viewer</a> <a href="./gene_profiles.html" class="btn btn-primary">Gene products and functions</a> <a href="./cortex.html" class="btn btn-outline-secondary">Primary cortex analysis</a></p>
+<p><a href="./viewer.html" class="btn btn-outline-secondary">Hypothalamus viewer</a> <a href="./gene_profiles.html" class="btn btn-primary">Gene products and functions</a> <a href="./cortex.html" class="btn btn-outline-secondary">Primary cortex analysis</a> <a href="./spatial_explorer.html" class="btn btn-outline-primary">Measured sections, layers and detection</a> <a href="./spatial_bayes.html" class="btn btn-outline-secondary">Bayesian baseline and validation</a></p>
 <section id="several-relevant-cortical-genes" class="level2">
 <h2 class="anchored" data-anchor-id="several-relevant-cortical-genes">Several relevant cortical genes</h2>
 <p>The cortex now has its own anatomical reference and its own exposure-effect estimates. <strong>Fosb, Egr3, S1pr1, Fosl2, Col19a1, Pcdh8, Iqgap2, Usp43, and Rorb</strong>, together with the noncoding <strong>C730002L08Rik</strong>, form the ten strongest eligible measured priorities. The viewer provides gene shortcuts, what each curated gene encodes, its molecular function and official source links. A comparison table can retain up to three measured genes at once.</p>
-<div id="e5923678" class="cell" data-execution_count="2">
+<div id="81d3b2fe" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>The default <strong>Fosb</strong> central regional multiplier is <strong>1.996×</strong>. It has a positive measured count in <strong>1,418 of 14,582</strong> reference cells. Detection describes this atlas donor; it does not identify exposure-responsive cells.</p>
 </div>
@@ -312,7 +320,7 @@ window.addEventListener("message", function(event) {
 </section>
 <section id="static-multi-gene-alternatives" class="level2">
 <h2 class="anchored" data-anchor-id="static-multi-gene-alternatives">Static multi-gene alternatives</h2>
-<div id="f9836a6f" class="cell" data-execution_count="3">
+<div id="0b4f3e46" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display cell-output-markdown">
 <figure class="research-figure figure">
 <a href="assets/figures/spatial_cortex/cortical_priority_spatial_panel.svg"><img loading="lazy" width="3104" height="4889" src="assets/figures/spatial_cortex/cortical_priority_spatial_panel.png" alt="Measured anterior-cingulate MERFISH expression beside a uniform regional PM/PBS scenario for Fosb, Egr3, S1pr1. All 14,582 ACAd/ACAv cells from the male ABCA-2 donor are shown without mirroring, interpolation or cell subsampling. Gray points are measured zeros; positive measured counts are colored. Each gene has one shared reference/scenario log2(1+count) scale capped at the combined positive 99th percentile. The underlying counts are retained, and different rows have different scales. Bulk effects come from four PM and four PBS animals; atlas cells are not exposure replicates. The multiplier does not identify responding cell types." class="figure-img"></a>
@@ -821,64 +829,66 @@ Measured anterior-cingulate MERFISH expression beside a uniform regional PM/PBS 
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Hypothalamus viewer</span><span class="co">](viewer.qmd)</span>{.btn .btn-outline-secondary}</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Gene products and functions</span><span class="co">](gene_profiles.qmd)</span>{.btn .btn-primary}</span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Primary cortex analysis</span><span class="co">](cortex.qmd)</span>{.btn .btn-outline-secondary}</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Several relevant cortical genes</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Measured sections, layers and detection</span><span class="co">](spatial_explorer.qmd)</span>{.btn .btn-outline-primary}</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Bayesian baseline and validation</span><span class="co">](spatial_bayes.qmd)</span>{.btn .btn-outline-secondary}</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>The cortex now has its own anatomical reference and its own exposure-effect estimates. **Fosb, Egr3, S1pr1, Fosl2, Col19a1, Pcdh8, Iqgap2, Usp43, and Rorb**, together with the noncoding **C730002L08Rik**, form the ten strongest eligible measured priorities. The viewer provides gene shortcuts, what each curated gene encodes, its molecular function and official source links. A comparison table can retain up to three measured genes at once.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Several relevant cortical genes</span></span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>display(Markdown(</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"The default **</span><span class="sc">{</span>v[<span class="st">'default_gene'</span>]<span class="sc">}</span><span class="ss">** central regional multiplier is **</span><span class="sc">{</span>v[<span class="st">'default_multiplier'</span>]<span class="sc">:.3f}</span><span class="ss">×**. "</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"It has a positive measured count in **</span><span class="sc">{</span>v[<span class="st">'default_reference_nonzero_cells'</span>]<span class="sc">:,}</span><span class="ss"> of </span><span class="sc">{</span>v[<span class="st">'anterior_cingulate_cells'</span>]<span class="sc">:,}</span><span class="ss">** reference cells. "</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Detection describes this atlas donor; it does not identify exposure-responsive cells."</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>))</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>::: {.model-note}</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>**Measured reference beside a simulated regional scenario.** Both scenes preserve the same cell positions and anatomy. The regional multiplier comes from GSE297423's primary eight-animal model, not from exposed atlas cells. The current atlas donor is not a matched control for the humanized α-synuclein mice.</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">iframe</span><span class="ot"> id</span><span class="op">=</span><span class="st">"atlas-frame"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"viewer-frame"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"assets/viewer-cortex/index.html"</span><span class="ot"> title</span><span class="op">=</span><span class="st">"Measured anterior cingulate cortex and simulated regional PM2.5 expression"</span><span class="ot"> loading</span><span class="op">=</span><span class="st">"lazy"</span><span class="dt">&gt;&lt;/</span><span class="kw">iframe</span><span class="dt">&gt;</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>The cortex now has its own anatomical reference and its own exposure-effect estimates. **Fosb, Egr3, S1pr1, Fosl2, Col19a1, Pcdh8, Iqgap2, Usp43, and Rorb**, together with the noncoding **C730002L08Rik**, form the ten strongest eligible measured priorities. The viewer provides gene shortcuts, what each curated gene encodes, its molecular function and official source links. A comparison table can retain up to three measured genes at once.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>display(Markdown(</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"The default **</span><span class="sc">{</span>v[<span class="st">'default_gene'</span>]<span class="sc">}</span><span class="ss">** central regional multiplier is **</span><span class="sc">{</span>v[<span class="st">'default_multiplier'</span>]<span class="sc">:.3f}</span><span class="ss">×**. "</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"It has a positive measured count in **</span><span class="sc">{</span>v[<span class="st">'default_reference_nonzero_cells'</span>]<span class="sc">:,}</span><span class="ss"> of </span><span class="sc">{</span>v[<span class="st">'anterior_cingulate_cells'</span>]<span class="sc">:,}</span><span class="ss">** reference cells. "</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Detection describes this atlas donor; it does not identify exposure-responsive cells."</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>::: {.model-note}</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>**Measured reference beside a simulated regional scenario.** Both scenes preserve the same cell positions and anatomy. The regional multiplier comes from GSE297423's primary eight-animal model, not from exposed atlas cells. The current atlas donor is not a matched control for the humanized α-synuclein mice.</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span><span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"message"</span><span class="op">,</span> <span class="kw">function</span>(<span class="bu">event</span>) {</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> frame <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"atlas-frame"</span>)<span class="op">;</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (frame <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">source</span> <span class="op">===</span> frame<span class="op">.</span><span class="at">contentWindow</span> <span class="op">&amp;&amp;</span> (<span class="bu">event</span><span class="op">.</span><span class="at">origin</span> <span class="op">===</span> <span class="bu">window</span><span class="op">.</span><span class="at">location</span><span class="op">.</span><span class="at">origin</span> <span class="op">||</span> <span class="bu">event</span><span class="op">.</span><span class="at">origin</span> <span class="op">===</span> <span class="st">"null"</span>) <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">data</span> <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">type</span> <span class="op">===</span> <span class="st">"omics-atlas-height"</span>) {</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    frame<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">height</span> <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(<span class="dv">9000</span><span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">1750</span><span class="op">,</span> <span class="bu">Number</span>(<span class="bu">event</span><span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">height</span>) <span class="op">+</span> <span class="dv">30</span>)) <span class="op">+</span> <span class="st">"px"</span><span class="op">;</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Open standalone cortex viewer</span><span class="co">](assets/viewer-cortex/index.html)</span>{.btn .btn-outline-primary target="_blank"}</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">iframe</span><span class="ot"> id</span><span class="op">=</span><span class="st">"atlas-frame"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"viewer-frame"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"assets/viewer-cortex/index.html"</span><span class="ot"> title</span><span class="op">=</span><span class="st">"Measured anterior cingulate cortex and simulated regional PM2.5 expression"</span><span class="ot"> loading</span><span class="op">=</span><span class="st">"lazy"</span><span class="dt">&gt;&lt;/</span><span class="kw">iframe</span><span class="dt">&gt;</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span><span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"message"</span><span class="op">,</span> <span class="kw">function</span>(<span class="bu">event</span>) {</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> frame <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"atlas-frame"</span>)<span class="op">;</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (frame <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">source</span> <span class="op">===</span> frame<span class="op">.</span><span class="at">contentWindow</span> <span class="op">&amp;&amp;</span> (<span class="bu">event</span><span class="op">.</span><span class="at">origin</span> <span class="op">===</span> <span class="bu">window</span><span class="op">.</span><span class="at">location</span><span class="op">.</span><span class="at">origin</span> <span class="op">||</span> <span class="bu">event</span><span class="op">.</span><span class="at">origin</span> <span class="op">===</span> <span class="st">"null"</span>) <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">data</span> <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">type</span> <span class="op">===</span> <span class="st">"omics-atlas-height"</span>) {</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    frame<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">height</span> <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(<span class="dv">9000</span><span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">1750</span><span class="op">,</span> <span class="bu">Number</span>(<span class="bu">event</span><span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">height</span>) <span class="op">+</span> <span class="dv">30</span>)) <span class="op">+</span> <span class="st">"px"</span><span class="op">;</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="fu">## What the genes encode and how to compare them</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Open standalone cortex viewer</span><span class="co">](assets/viewer-cortex/index.html)</span>{.btn .btn-outline-primary target="_blank"}</span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">gene profiles</span><span class="co">](gene_profiles.qmd)</span> retain the strongest bulk genes even if they are absent from MERFISH. In particular, **Hspa5, Pdia4 and Xbp1** remain priorities in the bulk analysis; their spatial expression is not invented. Noncoding genes are identified as RNA products rather than assigned a protein.</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="fu">## What the genes encode and how to compare them</span></span>
 <span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>Select a gene shortcut, inspect its product/function card, and add it to the three-gene comparison. Detection percentage and mean imaging count include all measured cells, including zeros. Those counts are separate from RNA-seq normalized counts and from regional fold changes. Different probe efficiencies and biological distributions limit direct comparisons of count levels between genes.</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">gene profiles</span><span class="co">](gene_profiles.qmd)</span> retain the strongest bulk genes even if they are absent from MERFISH. In particular, **Hspa5, Pdia4 and Xbp1** remain priorities in the bulk analysis; their spatial expression is not invented. Noncoding genes are identified as RNA products rather than assigned a protein.</span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>A positive bulk estimate means higher regional RNA in PM than PBS under that model. It does not establish higher protein abundance, a responding cell type, or a causal role. The primary results retain sample-quality concerns documented in the <span class="co">[</span><span class="ot">reproduction audit</span><span class="co">](replication.qmd)</span>.</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>Select a gene shortcut, inspect its product/function card, and add it to the three-gene comparison. Detection percentage and mean imaging count include all measured cells, including zeros. Those counts are separate from RNA-seq normalized counts and from regional fold changes. Different probe efficiencies and biological distributions limit direct comparisons of count levels between genes.</span>
 <span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="fu">## Anatomical and statistical scope</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>A positive bulk estimate means higher regional RNA in PM than PBS under that model. It does not establish higher protein abundance, a responding cell type, or a causal role. The primary results retain sample-quality concerns documented in the <span class="co">[</span><span class="ot">reproduction audit</span><span class="co">](replication.qmd)</span>.</span>
 <span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>The mask is **ACAd and ACAv with all their layers**, restricted to the registered anterior cingulate cortex. It contains 7,784 dorsal and 6,798 ventral ACA cells, with no cell subsampling or mirrored hemisphere. It does not represent every cortical area. This is an anatomical ACA proxy for the reported dissection; exact surgical boundaries were not deposited.</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="fu">## Anatomical and statistical scope</span></span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>Exact Ensembl identifiers match 960 of the 1,122 measured panel genes to primary cortex effects. Of these, 916 meet the viewer's estimability rule; 76 have primary BH q &lt; 0.05. Missing or unreliable effects remain reference-only. The central scene uses the saved shrunken coefficient, while alternative interval scenarios use MLE ± 1.96 SE at group level.</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>The mask is **ACAd and ACAv with all their layers**, restricted to the registered anterior cingulate cortex. It contains 7,784 dorsal and 6,798 ventral ACA cells, with no cell subsampling or mirrored hemisphere. It does not represent every cortical area. This is an anatomical ACA proxy for the reported dissection; exact surgical boundaries were not deposited.</span>
 <span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## Static multi-gene alternatives</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>Exact Ensembl identifiers match 960 of the 1,122 measured panel genes to primary cortex effects. Of these, 916 meet the viewer's estimability rule; 76 have primary BH q &lt; 0.05. Missing or unreliable effects remain reference-only. The central scene uses the saved shrunken coefficient, while alternative interval scenarios use MLE ± 1.96 SE at group level.</span>
 <span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>aca_panel(<span class="st">"cortical_priority_spatial_panel"</span>)</span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>aca_panel(<span class="st">"reference_vs_simulation"</span>)</span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Registered ACA cells</span><span class="co">](downloads/spatial_cortex/registered_cortex_cells.tsv.gz)</span> ·</span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Panel coverage</span><span class="co">](downloads/spatial_cortex/gene_panel_coverage.tsv)</span> ·</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Anatomical definition and model</span><span class="co">](downloads/spatial_cortex/summary.json)</span> ·</span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Validation</span><span class="co">](downloads/spatial_cortex/validation_checks.json)</span> ·</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Reproducible extraction</span><span class="co">](downloads/code/build_cortex_spatial_viewer.py)</span></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>The full-brain surface provides orientation. No cortical effect is applied to the hypothalamus, other cortical areas, or the opposite hemisphere. The simulation does not estimate cell loss, migration or cell-specific vulnerability.</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="fu">## Static multi-gene alternatives</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>aca_panel(<span class="st">"cortical_priority_spatial_panel"</span>)</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>aca_panel(<span class="st">"reference_vs_simulation"</span>)</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Registered ACA cells</span><span class="co">](downloads/spatial_cortex/registered_cortex_cells.tsv.gz)</span> ·</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Panel coverage</span><span class="co">](downloads/spatial_cortex/gene_panel_coverage.tsv)</span> ·</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Anatomical definition and model</span><span class="co">](downloads/spatial_cortex/summary.json)</span> ·</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Validation</span><span class="co">](downloads/spatial_cortex/validation_checks.json)</span> ·</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Reproducible extraction</span><span class="co">](downloads/code/build_cortex_spatial_viewer.py)</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>The full-brain surface provides orientation. No cortical effect is applied to the hypothalamus, other cortical areas, or the opposite hemisphere. The simulation does not estimate cell loss, migration or cell-specific vulnerability.</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -1,0 +1,130 @@
+{
+  "spatial_bayes_performance": {
+    "caption_en": "Five contiguous physical-section blocks are held out with one neighboring represented section guarded on each side. All ten fixed measured candidates per region are scored on every original cell exactly once; no held-out outcome tunes a model. Left: RMSE for spatial Bayes, anatomy-only Bayesian mean and 30-neighbor interpolation; center: empirical coverage of nominal 95% NEW-CELL predictive intervals; right: mean width of those intervals. Units are natural ln(1+raw imaging count). kNN has no invented intervals. Differences are predictive comparisons within one donor, not independent-animal evidence; poor calibration and wide intervals are retained.",
+    "caption_es": "Se omiten cinco bloques contiguos de cortes físicos y se protege un corte representado vecino por lado. Los diez candidatos medidos fijos por región se evalúan una vez en cada célula original; no se ajusta el modelo con resultados omitidos. Izquierda: RMSE de Bayes espacial, media anatómica bayesiana e interpolación de 30 vecinos; centro: cobertura empírica de intervalos predictivos de NUEVA CÉLULA del 95%; derecha: su anchura media. Unidades: ln(1+conteo de imagen). No se inventan intervalos para kNN. La comparación corresponde a un donante, no a validación entre animales; se conservan mala calibración e intervalos amplios.",
+    "caption": "Five contiguous physical-section blocks are held out with one neighboring represented section guarded on each side. All ten fixed measured candidates per region are scored on every original cell exactly once; no held-out outcome tunes a model. Left: RMSE for spatial Bayes, anatomy-only Bayesian mean and 30-neighbor interpolation; center: empirical coverage of nominal 95% NEW-CELL predictive intervals; right: mean width of those intervals. Units are natural ln(1+raw imaging count). kNN has no invented intervals. Differences are predictive comparisons within one donor, not independent-animal evidence; poor calibration and wide intervals are retained.",
+    "language": "en",
+    "files": {
+      "png": "results/spatial_bayes/figures/spatial_bayes_performance.png",
+      "svg": "results/spatial_bayes/figures/spatial_bayes_performance.svg",
+      "pdf": "results/spatial_bayes/figures/spatial_bayes_performance.pdf"
+    },
+    "sha256": {
+      "png": "f17ef4aa167f34f2c035fe7a98dbb0a177884227b01fbfd48b81d0f9d6a0d8e3",
+      "svg": "b49203eb2cffe9c8a1106802e99076dc2373d1d4dc7ab6ef97670dedc8489365",
+      "pdf": "4df05e9bef8606357fbffc57049a0146c2e64ba8aae1693df634140cf8e98806"
+    }
+  },
+  "spatial_bayes_calibration": {
+    "caption_en": "Calibration uses only held-out whole-section cells. Thin curves show individual genes; bold curves average the ten gene-specific empirical coverages without assuming independent genes/cells. The diagonal is nominal calibration. Right: inclusion in the marginal 95%interval, separately among realized zeros/positives, is a tail-recovery diagnostic; neither conditional fraction is required to equal 95% even under a calibrated marginal model. No interval is clipped at zero or recalibrated using test outcomes. No binomial confidence interval treating cells as independent donors is asserted.",
+    "caption_es": "La calibración utiliza únicamente células de cortes omitidos. Líneas finas: genes individuales; líneas gruesas: promedio de diez coberturas génicas sin suponer independencia. La diagonal representa calibración nominal. Derecha: inclusión en el intervalo marginal 95%, separada entre ceros/positivos observados, como diagnóstico de recuperación de la cola. Ninguna fracción condicional debe necesariamente igualar 95% aunque el modelo marginal esté calibrado. No se truncan los intervalos ni se recalibran con datos de prueba; no se presentan intervalos binomiales que confundan células con donantes.",
+    "caption": "Calibration uses only held-out whole-section cells. Thin curves show individual genes; bold curves average the ten gene-specific empirical coverages without assuming independent genes/cells. The diagonal is nominal calibration. Right: inclusion in the marginal 95%interval, separately among realized zeros/positives, is a tail-recovery diagnostic; neither conditional fraction is required to equal 95% even under a calibrated marginal model. No interval is clipped at zero or recalibrated using test outcomes. No binomial confidence interval treating cells as independent donors is asserted.",
+    "language": "en",
+    "files": {
+      "png": "results/spatial_bayes/figures/spatial_bayes_calibration.png",
+      "svg": "results/spatial_bayes/figures/spatial_bayes_calibration.svg",
+      "pdf": "results/spatial_bayes/figures/spatial_bayes_calibration.pdf"
+    },
+    "sha256": {
+      "png": "ea85b2304a9a32b13c0dcd6d6996daba2506b6405f1f5df64bb3c0072cfa0f05",
+      "svg": "8bc4125a2ac44fbe83d5bd2a35ac5ba8a3031978e138d38ba9fa4708a22176aa",
+      "pdf": "bed3f5bfa19daa1fb172059c9447c7ebb5a8f1dcc4f5deeab78debdcfef803f2"
+    }
+  },
+  "spatial_bayes_sensitivity": {
+    "caption_en": "All five fixed configurations are re-fitted under the same guarded whole-section folds. Short/long lengths multiply all physical RBF lengths by 0.5/2; strong/weak shrinkage multiplies spatial coefficient prior variances by 0.25/4. Primary is retained regardless of results. Anatomy and section-prior multipliers are unchanged. Left: held-out RMSE divided by primary RMSE (lower is better); right: actual 95% predictive coverage. Color scales are explicitly different for the two metrics. Exact metrics, prior values and fold-specific basis centers are downloadable.",
+    "caption_es": "Las cinco configuraciones fijas se reajustan con los mismos bloques protegidos. Longitudes cortas/largas multiplican las longitudes RBF por 0.5/2; regularización fuerte/débil multiplica la varianza previa de coeficientes espaciales por 0.25/4. Se conserva el modelo principal cualquiera sea el resultado. No cambian las varianzas anatómica ni de corte. Izquierda: RMSE omitido dividido por el principal; derecha: cobertura predictiva 95% observada. Las escalas de color difieren explícitamente entre métricas; se entregan valores y centros exactos por ajuste.",
+    "caption": "All five fixed configurations are re-fitted under the same guarded whole-section folds. Short/long lengths multiply all physical RBF lengths by 0.5/2; strong/weak shrinkage multiplies spatial coefficient prior variances by 0.25/4. Primary is retained regardless of results. Anatomy and section-prior multipliers are unchanged. Left: held-out RMSE divided by primary RMSE (lower is better); right: actual 95% predictive coverage. Color scales are explicitly different for the two metrics. Exact metrics, prior values and fold-specific basis centers are downloadable.",
+    "language": "en",
+    "files": {
+      "png": "results/spatial_bayes/figures/spatial_bayes_sensitivity.png",
+      "svg": "results/spatial_bayes/figures/spatial_bayes_sensitivity.svg",
+      "pdf": "results/spatial_bayes/figures/spatial_bayes_sensitivity.pdf"
+    },
+    "sha256": {
+      "png": "af6d3ef120922f4629f0c9bbb46f00b24855331a3c7f549fdbe786dc8dc7800b",
+      "svg": "68ff0e86ed70aa108985e1b0ae55fc2d3dfc0ef1f3bca32a3eebba454980d0e2",
+      "pdf": "9ab055653af74736943d28d9bc780e6824eed0027649a18dd1a151f6e80f5cba"
+    }
+  },
+  "spatial_bayes_posterior_maps": {
+    "caption_en": "Illustrative median physical section in acquisition order for each region, selected without gene outcomes; every original cell of that section is plotted at its registered ML/−DV coordinate. Tll1 and Fosb were fixed as the leading measured relevant candidates. First two panels share a gene-specific 99th-percentile color cap (values retained); uncertainty widths each have their own explicit scale. These are all-reference fitted posterior summaries, NOT held-out predictions or measured PM responses. Credible width describes the section-adjusted latent mean; predictive width additionally includes residual/new-section variation. No expression is painted between cells, and no extra resolution is claimed.",
+    "caption_es": "Corte físico mediano según orden de adquisición de cada región, seleccionado sin observar expresión; se representan todas sus células originales en coordenadas ML/−DV registradas. Se fijaron Tll1 y Fosb como primeros candidatos medidos relevantes. Los dos primeros paneles comparten un límite de color por gen del percentil 99; se conservan valores originales. Las anchuras tienen escalas propias explícitas. Son resúmenes posteriores ajustados a toda la referencia, NO predicciones omitidas ni RNA expuesto medido. La anchura creíble corresponde a la media latente; la predictiva añade variación residual y de nuevo corte. No se pinta expresión entre células ni se afirma mayor resolución.",
+    "caption": "Illustrative median physical section in acquisition order for each region, selected without gene outcomes; every original cell of that section is plotted at its registered ML/−DV coordinate. Tll1 and Fosb were fixed as the leading measured relevant candidates. First two panels share a gene-specific 99th-percentile color cap (values retained); uncertainty widths each have their own explicit scale. These are all-reference fitted posterior summaries, NOT held-out predictions or measured PM responses. Credible width describes the section-adjusted latent mean; predictive width additionally includes residual/new-section variation. No expression is painted between cells, and no extra resolution is claimed.",
+    "language": "en",
+    "files": {
+      "png": "results/spatial_bayes/figures/spatial_bayes_posterior_maps.png",
+      "svg": "results/spatial_bayes/figures/spatial_bayes_posterior_maps.svg",
+      "pdf": "results/spatial_bayes/figures/spatial_bayes_posterior_maps.pdf"
+    },
+    "sha256": {
+      "png": "766fbe7e52fdec79c53e867aaadbfb841d0fd4fbd3e32f40f6fc58795e008682",
+      "svg": "81b243f8e97f76a52b2d84e9ea8e49007359b5c1f91b887531e3defc685d4de1",
+      "pdf": "8647ac91a5516dfa75a54a52480250305fceca93881602fee4cb314267125d8f"
+    }
+  },
+  "spatial_bayes_performance_es": {
+    "caption_en": "Five contiguous physical-section blocks are held out with one neighboring represented section guarded on each side. All ten fixed measured candidates per region are scored on every original cell exactly once; no held-out outcome tunes a model. Left: RMSE for spatial Bayes, anatomy-only Bayesian mean and 30-neighbor interpolation; center: empirical coverage of nominal 95% NEW-CELL predictive intervals; right: mean width of those intervals. Units are natural ln(1+raw imaging count). kNN has no invented intervals. Differences are predictive comparisons within one donor, not independent-animal evidence; poor calibration and wide intervals are retained.",
+    "caption_es": "Se omiten cinco bloques contiguos de cortes físicos y se protege un corte representado vecino por lado. Los diez candidatos medidos fijos por región se evalúan una vez en cada célula original; no se ajusta el modelo con resultados omitidos. Izquierda: RMSE de Bayes espacial, media anatómica bayesiana e interpolación de 30 vecinos; centro: cobertura empírica de intervalos predictivos de NUEVA CÉLULA del 95%; derecha: su anchura media. Unidades: ln(1+conteo de imagen). No se inventan intervalos para kNN. La comparación corresponde a un donante, no a validación entre animales; se conservan mala calibración e intervalos amplios.",
+    "caption": "Se omiten cinco bloques contiguos de cortes físicos y se protege un corte representado vecino por lado. Los diez candidatos medidos fijos por región se evalúan una vez en cada célula original; no se ajusta el modelo con resultados omitidos. Izquierda: RMSE de Bayes espacial, media anatómica bayesiana e interpolación de 30 vecinos; centro: cobertura empírica de intervalos predictivos de NUEVA CÉLULA del 95%; derecha: su anchura media. Unidades: ln(1+conteo de imagen). No se inventan intervalos para kNN. La comparación corresponde a un donante, no a validación entre animales; se conservan mala calibración e intervalos amplios.",
+    "language": "es",
+    "files": {
+      "png": "results/spatial_bayes/figures/spatial_bayes_performance_es.png",
+      "svg": "results/spatial_bayes/figures/spatial_bayes_performance_es.svg",
+      "pdf": "results/spatial_bayes/figures/spatial_bayes_performance_es.pdf"
+    },
+    "sha256": {
+      "png": "1fbb06ff3f8a867c80f6dd7518d51bbeda02743ac07a008b133a9e208d1c95ff",
+      "svg": "e7c016bf5ffd102a014abecb645b93d225a6f74f0da404e9a32ecd566b0f2e06",
+      "pdf": "2e8314c3e4784f78ce2390e1a19aae21b049cb4367abf3dd35ccbe10992d5d2d"
+    }
+  },
+  "spatial_bayes_calibration_es": {
+    "caption_en": "Calibration uses only held-out whole-section cells. Thin curves show individual genes; bold curves average the ten gene-specific empirical coverages without assuming independent genes/cells. The diagonal is nominal calibration. Right: inclusion in the marginal 95%interval, separately among realized zeros/positives, is a tail-recovery diagnostic; neither conditional fraction is required to equal 95% even under a calibrated marginal model. No interval is clipped at zero or recalibrated using test outcomes. No binomial confidence interval treating cells as independent donors is asserted.",
+    "caption_es": "La calibración utiliza únicamente células de cortes omitidos. Líneas finas: genes individuales; líneas gruesas: promedio de diez coberturas génicas sin suponer independencia. La diagonal representa calibración nominal. Derecha: inclusión en el intervalo marginal 95%, separada entre ceros/positivos observados, como diagnóstico de recuperación de la cola. Ninguna fracción condicional debe necesariamente igualar 95% aunque el modelo marginal esté calibrado. No se truncan los intervalos ni se recalibran con datos de prueba; no se presentan intervalos binomiales que confundan células con donantes.",
+    "caption": "La calibración utiliza únicamente células de cortes omitidos. Líneas finas: genes individuales; líneas gruesas: promedio de diez coberturas génicas sin suponer independencia. La diagonal representa calibración nominal. Derecha: inclusión en el intervalo marginal 95%, separada entre ceros/positivos observados, como diagnóstico de recuperación de la cola. Ninguna fracción condicional debe necesariamente igualar 95% aunque el modelo marginal esté calibrado. No se truncan los intervalos ni se recalibran con datos de prueba; no se presentan intervalos binomiales que confundan células con donantes.",
+    "language": "es",
+    "files": {
+      "png": "results/spatial_bayes/figures/spatial_bayes_calibration_es.png",
+      "svg": "results/spatial_bayes/figures/spatial_bayes_calibration_es.svg",
+      "pdf": "results/spatial_bayes/figures/spatial_bayes_calibration_es.pdf"
+    },
+    "sha256": {
+      "png": "1b6f0fa3ce81afd21110af6d169fc77fe61c9ccc4f1c5e042e4b440093b27c20",
+      "svg": "45e83814e502c01e798d2bdf8cf14ba46af8a2df30b62b4f190f130edd7a5087",
+      "pdf": "0e5739e8ba43d1a4dd1bad5a41baf9f4af5cc0715dc9b60e40b45311f17cd712"
+    }
+  },
+  "spatial_bayes_sensitivity_es": {
+    "caption_en": "All five fixed configurations are re-fitted under the same guarded whole-section folds. Short/long lengths multiply all physical RBF lengths by 0.5/2; strong/weak shrinkage multiplies spatial coefficient prior variances by 0.25/4. Primary is retained regardless of results. Anatomy and section-prior multipliers are unchanged. Left: held-out RMSE divided by primary RMSE (lower is better); right: actual 95% predictive coverage. Color scales are explicitly different for the two metrics. Exact metrics, prior values and fold-specific basis centers are downloadable.",
+    "caption_es": "Las cinco configuraciones fijas se reajustan con los mismos bloques protegidos. Longitudes cortas/largas multiplican las longitudes RBF por 0.5/2; regularización fuerte/débil multiplica la varianza previa de coeficientes espaciales por 0.25/4. Se conserva el modelo principal cualquiera sea el resultado. No cambian las varianzas anatómica ni de corte. Izquierda: RMSE omitido dividido por el principal; derecha: cobertura predictiva 95% observada. Las escalas de color difieren explícitamente entre métricas; se entregan valores y centros exactos por ajuste.",
+    "caption": "Las cinco configuraciones fijas se reajustan con los mismos bloques protegidos. Longitudes cortas/largas multiplican las longitudes RBF por 0.5/2; regularización fuerte/débil multiplica la varianza previa de coeficientes espaciales por 0.25/4. Se conserva el modelo principal cualquiera sea el resultado. No cambian las varianzas anatómica ni de corte. Izquierda: RMSE omitido dividido por el principal; derecha: cobertura predictiva 95% observada. Las escalas de color difieren explícitamente entre métricas; se entregan valores y centros exactos por ajuste.",
+    "language": "es",
+    "files": {
+      "png": "results/spatial_bayes/figures/spatial_bayes_sensitivity_es.png",
+      "svg": "results/spatial_bayes/figures/spatial_bayes_sensitivity_es.svg",
+      "pdf": "results/spatial_bayes/figures/spatial_bayes_sensitivity_es.pdf"
+    },
+    "sha256": {
+      "png": "2e8129f444ebe0fdeded5160af61f0b96671af6f9640fcae1435bb9926ea4eea",
+      "svg": "39f43493196bc688df6a8df29773a5aabbada9a50a7b9081cd9a6627da51e787",
+      "pdf": "bde48d66b04de5a39ba68471fc375363e7def755c1a74fad415233969d66d6af"
+    }
+  },
+  "spatial_bayes_posterior_maps_es": {
+    "caption_en": "Illustrative median physical section in acquisition order for each region, selected without gene outcomes; every original cell of that section is plotted at its registered ML/−DV coordinate. Tll1 and Fosb were fixed as the leading measured relevant candidates. First two panels share a gene-specific 99th-percentile color cap (values retained); uncertainty widths each have their own explicit scale. These are all-reference fitted posterior summaries, NOT held-out predictions or measured PM responses. Credible width describes the section-adjusted latent mean; predictive width additionally includes residual/new-section variation. No expression is painted between cells, and no extra resolution is claimed.",
+    "caption_es": "Corte físico mediano según orden de adquisición de cada región, seleccionado sin observar expresión; se representan todas sus células originales en coordenadas ML/−DV registradas. Se fijaron Tll1 y Fosb como primeros candidatos medidos relevantes. Los dos primeros paneles comparten un límite de color por gen del percentil 99; se conservan valores originales. Las anchuras tienen escalas propias explícitas. Son resúmenes posteriores ajustados a toda la referencia, NO predicciones omitidas ni RNA expuesto medido. La anchura creíble corresponde a la media latente; la predictiva añade variación residual y de nuevo corte. No se pinta expresión entre células ni se afirma mayor resolución.",
+    "caption": "Corte físico mediano según orden de adquisición de cada región, seleccionado sin observar expresión; se representan todas sus células originales en coordenadas ML/−DV registradas. Se fijaron Tll1 y Fosb como primeros candidatos medidos relevantes. Los dos primeros paneles comparten un límite de color por gen del percentil 99; se conservan valores originales. Las anchuras tienen escalas propias explícitas. Son resúmenes posteriores ajustados a toda la referencia, NO predicciones omitidas ni RNA expuesto medido. La anchura creíble corresponde a la media latente; la predictiva añade variación residual y de nuevo corte. No se pinta expresión entre células ni se afirma mayor resolución.",
+    "language": "es",
+    "files": {
+      "png": "results/spatial_bayes/figures/spatial_bayes_posterior_maps_es.png",
+      "svg": "results/spatial_bayes/figures/spatial_bayes_posterior_maps_es.svg",
+      "pdf": "results/spatial_bayes/figures/spatial_bayes_posterior_maps_es.pdf"
+    },
+    "sha256": {
+      "png": "0bc81cc001e28efd06582150773b6960968490fa75de8dfb0302ee1273963e2b",
+      "svg": "18a69d4a9ec8897957e21f983350bbea5deb7eadd455cc483196b6446030ba5f",
+      "pdf": "e80703467d303dfe7e74cc9e41c75ebe55a5ddf9c2951b89a77eb56f25210678"
+    }
+  }
+}

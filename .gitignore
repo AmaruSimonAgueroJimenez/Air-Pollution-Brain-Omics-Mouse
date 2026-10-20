@@ -15,6 +15,7 @@ docs/es/.quarto/
 docs/es/_freeze/
 results/spatial_viewer/reference_counts.npz
 results/spatial_cortex/reference_counts.npz
+results/spatial_bayes/*/posterior_and_heldout.npz
 results/ozone/quant/
 results/ozone/trimmed/
 results/ozone/qc_subsamples/

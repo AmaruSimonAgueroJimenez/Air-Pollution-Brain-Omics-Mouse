@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-20",
+  "implementation_checks_passed": true,
+  "checks": {
+    "all_20_measured_gene_vectors_and_original_cell_order_reconciled": true,
+    "whole_physical_section_validation_with_neighbor_guards": true,
+    "one_reference_donor_not_independent_cells_or_sections_as_animals": true,
+    "ACA_edge_section_one_cell_retained": true,
+    "empty_filtered_section_shows_no_observations_not_zero_fraction": true,
+    "observed_detection_denominators_include_measured_zeros": true,
+    "no_jitter_mirror_relocation_or_intermediate_cells_created": true,
+    "cell_class_filter_suppresses_non_class_specific_Beta_model": true,
+    "English_link_preserves_region_and_model_view": true,
+    "Gaussian_negative_support_and_conditional_tail_diagnostics_visible": true,
+    "posterior_credible_and_new_section_predictive_intervals_distinct": true,
+    "Gaussian_and_Beta_models_do_not_estimate_PM25_effects": true,
+    "28_interface_and_vector_tests_passed": true,
+    "independent_posterior_simulation_unit_test_passed": true
+  },
+  "scope": "Implementation and scientific-reporting audit; this does not declare predictive models successful. HY detection model fails regional baseline; Gaussian intensity model is exploratory.",
+  "source_browser_review": "Root IAB tab2, local source8841, measured ACA/HY, ACA layer colors, one-cell/empty-filter edge cases, Beta forest and class restriction, Gaussian uncertainty and EN/ES transitions.",
+  "test_commands": [
+    "node --test tests/test_viewer_camera_sync.cjs tests/test_viewer_gene_guide.cjs tests/test_spatial_explorer.cjs",
+    ".venv-analysis/bin/python tests/test_spatial_bayes_posterior.py"
+  ],
+  "model_audits": {
+    "spatial_sections": "cb7b96bfa3d3f70925b425891ac5ec402a5b0e1a63e736eaba4fa7d96412104d",
+    "spatial_bayes": "8b72d9e1ce15eab07441955e832b9f92b8d9612c1149ac8fad67c1b55434a4a0",
+    "spatial_detection_bayes": "354e6b534def08297bb09decedaf0c1ef25dfa736d67f11aa390d3a0f74e2bf7"
+  },
+  "compiled_review": {
+    "EN_ES_content_review": "passed; independently reviewed methods, tables, targets, finite-grid diagnostics, figures and source links",
+    "mathml_equations_per_language": 16,
+    "qmd_pages": 34,
+    "html_documents": 40,
+    "local_links_checked": 8081,
+    "errors": []
+  }
+}

@@ -17,6 +17,8 @@ project:
   - gene_profiles.qmd
   - viewer.qmd
   - cortex_viewer.qmd
+  - spatial_explorer.qmd
+  - spatial_bayes.qmd
   - reproducibility.qmd
 website:
   title: Contaminación del aire · ómica cerebral
@@ -55,8 +57,12 @@ website:
         text: Referencia espacial medida
     - href: gene_profiles.qmd
       text: Genes y funciones
-    - text: Visores 3D
+    - text: Atlas espacial
       menu:
+      - href: spatial_explorer.qmd
+        text: Cortes, capas y detección
+      - href: spatial_bayes.qmd
+        text: Modelo bayesiano y validación
       - href: viewer.qmd
         text: Hipotálamo y selección regional
       - href: cortex_viewer.qmd
@@ -94,7 +100,7 @@ format:
 lang: es
 language:
   title-block-published: Fecha del análisis
-date: '2026-10-19'
+date: '2026-10-20'
 date-format: D MMMM YYYY
 bibliography: ../references.bib
 link-citations: true

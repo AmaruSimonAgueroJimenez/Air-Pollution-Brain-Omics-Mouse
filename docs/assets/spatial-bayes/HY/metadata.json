@@ -1,0 +1,2181 @@
+{
+  "schema_version": 1,
+  "region": "HY",
+  "dataset": "Zhuang-ABCA-2",
+  "donor_n": 1,
+  "donor_sex": "male",
+  "cell_count": 37811,
+  "cell_ids_sha256": "cf4a8bc0c5f254e2e0b607e7647789e2a6f5de7bf00f59adb44a55594f222c07",
+  "units": "ln(1+raw imaging count)",
+  "method": "Proper conjugate Bayesian anatomy + anisotropic spatial-basis regression; section nuisance effects",
+  "method_en": "Bayesian unexposed reference baseline",
+  "method_es": "Referencia basal bayesiana sin exposición",
+  "fit_scope": "all reference cells; section-adjusted fitted spatial summaries, not held-out predictions",
+  "credible_target": "95% posterior credible interval for section-adjusted latent mean",
+  "predictive_target": "95% new-cell interval including new-section offset and observation noise",
+  "cross_validation": {
+    "scheme": "5 contiguous whole-section blocks with 1 neighbor section guarded per side",
+    "n_folds": 5,
+    "guard_sections_per_side": 1,
+    "unit": "whole physical brain section",
+    "donors": 1,
+    "section_count": 20
+  },
+  "limitations": [
+    "Gaussian fitted means, latent intervals and predictive distributions can be negative on the physically nonnegative ln(1 + count) scale. Predictive negative mass is quantified; fitted quantities and intervals are never clipped or presented as raw-count predictions.",
+    "Latent-mean credible intervals are not new-cell predictive intervals; empirical coverage is assessed only for the latter.",
+    "Full-reference posterior arrays are in-sample fitted spatial summaries; held-out metrics come exclusively from refits excluding test/guard sections.",
+    "No PM response, differential expression, protein abundance, additional resolution, missing-gene expression, new positions, cell generation, mirroring or relocation is inferred."
+  ],
+  "genes": [
+    {
+      "id": "ENSMUSG00000053626",
+      "symbol": "Tll1",
+      "file": "ENSMUSG00000053626.json",
+      "heldout": {
+        "n_cells": 37811,
+        "n_sections": 20,
+        "rmse": 0.10971316248220384,
+        "mae": 0.04551976151826951,
+        "predictive_95_coverage": 0.9823596307952712,
+        "predictive_95_mean_width": 0.5031544861346329,
+        "negative_predictive_probability_mean": 0.4123817182422776,
+        "coverage_positive": 0.0,
+        "coverage_zero": 1.0,
+        "n_positive": 667,
+        "interval_score_95": 0.8551323538595803,
+        "anatomy_baseline_rmse": 0.10758186387397102,
+        "knn_rmse": 0.10717543000237315,
+        "flags": [
+          "undercoverage_positive_cells",
+          "no_RMSE_improvement_over_anatomy_baseline",
+          "no_RMSE_improvement_over_knn",
+          "nonnegative_support_mismatch"
+        ],
+        "section_macro_rmse": 0.12240547698280421
+      },
+      "by_section": [
+        {
+          "section": "Zhuang-ABCA-2.025",
+          "fold": 1,
+          "n_cells": 29,
+          "rmse": 0.5330611666236565,
+          "mae": 0.33637295240149934,
+          "predictive_95_coverage": 0.6206896551724138,
+          "predictive_95_mean_width": 0.47736649275702897
+        },
+        {
+          "section": "Zhuang-ABCA-2.026",
+          "fold": 1,
+          "n_cells": 270,
+          "rmse": 0.0777920283438716,
+          "mae": 0.042672846442829995,
+          "predictive_95_coverage": 0.9888888888888889,
+          "predictive_95_mean_width": 0.5352066914318844
+        },
+        {
+          "section": "Zhuang-ABCA-2.027",
+          "fold": 1,
+          "n_cells": 937,
+          "rmse": 0.10730268905028204,
+          "mae": 0.04574220229491573,
+          "predictive_95_coverage": 0.9829242262540021,
+          "predictive_95_mean_width": 0.5382207125452212
+        },
+        {
+          "section": "Zhuang-ABCA-2.028",
+          "fold": 1,
+          "n_cells": 2082,
+          "rmse": 0.09959091862171648,
+          "mae": 0.04312291841935653,
+          "predictive_95_coverage": 0.9827089337175793,
+          "predictive_95_mean_width": 0.559680709185907
+        },
+        {
+          "section": "Zhuang-ABCA-2.030",
+          "fold": 2,
+          "n_cells": 1732,
+          "rmse": 0.1440610836395987,
+          "mae": 0.09015249340396655,
+          "predictive_95_coverage": 0.9745958429561201,
+          "predictive_95_mean_width": 0.5143838452807369
+        },
+        {
+          "section": "Zhuang-ABCA-2.031",
+          "fold": 2,
+          "n_cells": 2145,
+          "rmse": 0.11578897620911949,
+          "mae": 0.07849387948058945,
+          "predictive_95_coverage": 0.9822843822843823,
+          "predictive_95_mean_width": 0.5120854712927876
+        },
+        {
+          "section": "Zhuang-ABCA-2.032",
+          "fold": 2,
+          "n_cells": 2345,
+          "rmse": 0.10296154300918663,
+          "mae": 0.06443625101029417,
+          "predictive_95_coverage": 0.9859275053304905,
+          "predictive_95_mean_width": 0.4931232963571333
+        },
+        {
+          "section": "Zhuang-ABCA-2.033",
+          "fold": 2,
+          "n_cells": 2881,
+          "rmse": 0.09298697869975214,
+          "mae": 0.05613960835672469,
+          "predictive_95_coverage": 0.9881985421728566,
+          "predictive_95_mean_width": 0.46202898044990626
+        },
+        {
+          "section": "Zhuang-ABCA-2.034",
+          "fold": 3,
+          "n_cells": 3565,
+          "rmse": 0.13158640505449087,
+          "mae": 0.0570238887605493,
+          "predictive_95_coverage": 0.9730715287517532,
+          "predictive_95_mean_width": 0.43045959002461737
+        },
+        {
+          "section": "Zhuang-ABCA-2.035",
+          "fold": 3,
+          "n_cells": 1882,
+          "rmse": 0.07503709095327474,
+          "mae": 0.040696413817630214,
+          "predictive_95_coverage": 0.9925611052072264,
+          "predictive_95_mean_width": 0.4382132188888053
+        },
+        {
+          "section": "Zhuang-ABCA-2.036",
+          "fold": 3,
+          "n_cells": 2828,
+          "rmse": 0.1259859463311248,
+          "mae": 0.05073986417815753,
+          "predictive_95_coverage": 0.9748939179632249,
+          "predictive_95_mean_width": 0.43146880906970697
+        },
+        {
+          "section": "Zhuang-ABCA-2.037",
+          "fold": 3,
+          "n_cells": 2262,
+          "rmse": 0.08835353948156953,
+          "mae": 0.038366099475416936,
+          "predictive_95_coverage": 0.9862953138815208,
+          "predictive_95_mean_width": 0.42969171857401994
+        },
+        {
+          "section": "Zhuang-ABCA-2.039",
+          "fold": 4,
+          "n_cells": 3509,
+          "rmse": 0.1570718797221213,
+          "mae": 0.03851362341004345,
+          "predictive_95_coverage": 0.968937019093759,
+          "predictive_95_mean_width": 0.5145525591911759
+        },
+        {
+          "section": "Zhuang-ABCA-2.040",
+          "fold": 4,
+          "n_cells": 2880,
+          "rmse": 0.07428541257088424,
+          "mae": 0.01934724657443327,
+          "predictive_95_coverage": 0.9895833333333334,
+          "predictive_95_mean_width": 0.5205930742269176
+        },
+        {
+          "section": "Zhuang-ABCA-2.041",
+          "fold": 4,
+          "n_cells": 3079,
+          "rmse": 0.09948047945657093,
+          "mae": 0.023447512106235906,
+          "predictive_95_coverage": 0.9818122767132186,
+          "predictive_95_mean_width": 0.5304620004908533
+        },
+        {
+          "section": "Zhuang-ABCA-2.042",
+          "fold": 4,
+          "n_cells": 1999,
+          "rmse": 0.04516038841860154,
+          "mae": 0.012720717247336883,
+          "predictive_95_coverage": 0.9959979989994997,
+          "predictive_95_mean_width": 0.5363752892482285
+        },
+        {
+          "section": "Zhuang-ABCA-2.044",
+          "fold": 5,
+          "n_cells": 1608,
+          "rmse": 0.05629772348989606,
+          "mae": 0.027882596257131395,
+          "predictive_95_coverage": 0.9950248756218906,
+          "predictive_95_mean_width": 0.6222105010769978
+        },
+        {
+          "section": "Zhuang-ABCA-2.045",
+          "fold": 5,
+          "n_cells": 998,
+          "rmse": 0.1091941279074166,
+          "mae": 0.044236672917016794,
+          "predictive_95_coverage": 0.9819639278557114,
+          "predictive_95_mean_width": 0.6384918078159294
+        },
+        {
+          "section": "Zhuang-ABCA-2.046",
+          "fold": 5,
+          "n_cells": 454,
+          "rmse": 0.038940610026338016,
+          "mae": 0.03889886979066795,
+          "predictive_95_coverage": 1.0,
+          "predictive_95_mean_width": 0.6663839194062908
+        },
+        {
+          "section": "Zhuang-ABCA-2.047",
+          "fold": 5,
+          "n_cells": 326,
+          "rmse": 0.17317055204661172,
+          "mae": 0.07541534336360439,
+          "predictive_95_coverage": 0.9662576687116564,
+          "predictive_95_mean_width": 0.6685016736523198
+        }
+      ]
+    },
+    {
+      "id": "ENSMUSG00000029135",
+      "symbol": "Fosl2",
+      "file": "ENSMUSG00000029135.json",
+      "heldout": {
+        "n_cells": 37811,
+        "n_sections": 20,
+        "rmse": 0.22213244587047853,
+        "mae": 0.11049684299695196,
+        "predictive_95_coverage": 0.9437994234482029,
+        "predictive_95_mean_width": 1.055216695096382,
+        "negative_predictive_probability_mean": 0.40211050575804885,
+        "coverage_positive": 0.1365298659081674,
+        "coverage_zero": 1.0,
+        "n_positive": 2461,
+        "interval_score_95": 1.7125932982744752,
+        "anatomy_baseline_rmse": 0.22173744847559648,
+        "knn_rmse": 0.22685391254796217,
+        "flags": [
+          "undercoverage_positive_cells",
+          "no_RMSE_improvement_over_anatomy_baseline",
+          "nonnegative_support_mismatch"
+        ],
+        "section_macro_rmse": 0.2222347310641246
+      },
+      "by_section": [
+        {
+          "section": "Zhuang-ABCA-2.025",
+          "fold": 1,
+          "n_cells": 29,
+          "rmse": 0.5699248667460869,
+          "mae": 0.26193019883100704,
+          "predictive_95_coverage": 0.7931034482758621,
+          "predictive_95_mean_width": 0.9902568301834517
+        },
+        {
+          "section": "Zhuang-ABCA-2.026",
+          "fold": 1,
+          "n_cells": 270,
+          "rmse": 0.12897150205188204,
+          "mae": 0.057782160587572726,
+          "predictive_95_coverage": 0.9851851851851852,
+          "predictive_95_mean_width": 1.110241480689905
+        },
+        {
+          "section": "Zhuang-ABCA-2.027",
+          "fold": 1,
+          "n_cells": 937,
+          "rmse": 0.14822505808950423,
+          "mae": 0.06235616867293735,
+          "predictive_95_coverage": 0.9690501600853789,
+          "predictive_95_mean_width": 1.1164938151940742
+        },
+        {
+          "section": "Zhuang-ABCA-2.028",
+          "fold": 1,
+          "n_cells": 2082,
+          "rmse": 0.2559089807704263,
+          "mae": 0.10511818168218724,
+          "predictive_95_coverage": 0.9217098943323727,
+          "predictive_95_mean_width": 1.1610107818676636
+        },
+        {
+          "section": "Zhuang-ABCA-2.030",
+          "fold": 2,
+          "n_cells": 1732,
+          "rmse": 0.2728777331138414,
+          "mae": 0.14587701187563468,
+          "predictive_95_coverage": 0.8972286374133949,
+          "predictive_95_mean_width": 1.0095694934504775
+        },
+        {
+          "section": "Zhuang-ABCA-2.031",
+          "fold": 2,
+          "n_cells": 2145,
+          "rmse": 0.19042771547644277,
+          "mae": 0.10789111218720689,
+          "predictive_95_coverage": 0.9449883449883449,
+          "predictive_95_mean_width": 1.005058527011578
+        },
+        {
+          "section": "Zhuang-ABCA-2.032",
+          "fold": 2,
+          "n_cells": 2345,
+          "rmse": 0.19252329012489058,
+          "mae": 0.10788455109084379,
+          "predictive_95_coverage": 0.949680170575693,
+          "predictive_95_mean_width": 0.9678418968235519
+        },
+        {
+          "section": "Zhuang-ABCA-2.033",
+          "fold": 2,
+          "n_cells": 2881,
+          "rmse": 0.16669387573412672,
+          "mae": 0.10243100158968872,
+          "predictive_95_coverage": 0.9639014231169732,
+          "predictive_95_mean_width": 0.9068137890249578
+        },
+        {
+          "section": "Zhuang-ABCA-2.034",
+          "fold": 3,
+          "n_cells": 3565,
+          "rmse": 0.32760778529302015,
+          "mae": 0.15250613657421724,
+          "predictive_95_coverage": 0.8956521739130435,
+          "predictive_95_mean_width": 0.9114495317418674
+        },
+        {
+          "section": "Zhuang-ABCA-2.035",
+          "fold": 3,
+          "n_cells": 1882,
+          "rmse": 0.17476417041442371,
+          "mae": 0.09455867659229909,
+          "predictive_95_coverage": 0.9601487778958555,
+          "predictive_95_mean_width": 0.9278669645539931
+        },
+        {
+          "section": "Zhuang-ABCA-2.036",
+          "fold": 3,
+          "n_cells": 2828,
+          "rmse": 0.31344072933551076,
+          "mae": 0.15917238953841742,
+          "predictive_95_coverage": 0.8886138613861386,
+          "predictive_95_mean_width": 0.9135864390088639
+        },
+        {
+          "section": "Zhuang-ABCA-2.037",
+          "fold": 3,
+          "n_cells": 2262,
+          "rmse": 0.12161715508407986,
+          "mae": 0.08604084334998041,
+          "predictive_95_coverage": 0.9783377541998232,
+          "predictive_95_mean_width": 0.9098236507293315
+        },
+        {
+          "section": "Zhuang-ABCA-2.039",
+          "fold": 4,
+          "n_cells": 3509,
+          "rmse": 0.2298932963591362,
+          "mae": 0.11929149000910498,
+          "predictive_95_coverage": 0.9373040752351097,
+          "predictive_95_mean_width": 1.1371460576038155
+        },
+        {
+          "section": "Zhuang-ABCA-2.040",
+          "fold": 4,
+          "n_cells": 2880,
+          "rmse": 0.14230538144469282,
+          "mae": 0.08935076944186598,
+          "predictive_95_coverage": 0.9736111111111111,
+          "predictive_95_mean_width": 1.1504954185895764
+        },
+        {
+          "section": "Zhuang-ABCA-2.041",
+          "fold": 4,
+          "n_cells": 3079,
+          "rmse": 0.22341132942368708,
+          "mae": 0.11268325371046739,
+          "predictive_95_coverage": 0.9405651185449821,
+          "predictive_95_mean_width": 1.1723054560548607
+        },
+        {
+          "section": "Zhuang-ABCA-2.042",
+          "fold": 4,
+          "n_cells": 1999,
+          "rmse": 0.1390720365123651,
+          "mae": 0.07593324000131003,
+          "predictive_95_coverage": 0.9799899949974987,
+          "predictive_95_mean_width": 1.1853736506985566
+        },
+        {
+          "section": "Zhuang-ABCA-2.044",
+          "fold": 5,
+          "n_cells": 1608,
+          "rmse": 0.1836034563739157,
+          "mae": 0.08798871404235198,
+          "predictive_95_coverage": 0.972636815920398,
+          "predictive_95_mean_width": 1.2686452349403976
+        },
+        {
+          "section": "Zhuang-ABCA-2.045",
+          "fold": 5,
+          "n_cells": 998,
+          "rmse": 0.1877182313671981,
+          "mae": 0.08862743871056587,
+          "predictive_95_coverage": 0.9869739478957916,
+          "predictive_95_mean_width": 1.3018417209804054
+        },
+        {
+          "section": "Zhuang-ABCA-2.046",
+          "fold": 5,
+          "n_cells": 454,
+          "rmse": 0.15795166128712784,
+          "mae": 0.0673421045254544,
+          "predictive_95_coverage": 0.9933920704845814,
+          "predictive_95_mean_width": 1.3587118548021404
+        },
+        {
+          "section": "Zhuang-ABCA-2.047",
+          "fold": 5,
+          "n_cells": 326,
+          "rmse": 0.3177563662801347,
+          "mae": 0.13421281190339063,
+          "predictive_95_coverage": 0.9539877300613497,
+          "predictive_95_mean_width": 1.3630298128378038
+        }
+      ]
+    },
+    {
+      "id": "ENSMUSG00000028341",
+      "symbol": "Nr4a3",
+      "file": "ENSMUSG00000028341.json",
+      "heldout": {
+        "n_cells": 37811,
+        "n_sections": 20,
+        "rmse": 0.13660922606508505,
+        "mae": 0.05533589774060983,
+        "predictive_95_coverage": 0.9714633307767581,
+        "predictive_95_mean_width": 0.6413504163974088,
+        "negative_predictive_probability_mean": 0.4124352766776839,
+        "coverage_positive": 0.0,
+        "coverage_zero": 1.0,
+        "n_positive": 1079,
+        "interval_score_95": 1.131435862403612,
+        "anatomy_baseline_rmse": 0.13580148738825243,
+        "knn_rmse": 0.13809619990592287,
+        "flags": [
+          "undercoverage_positive_cells",
+          "no_RMSE_improvement_over_anatomy_baseline",
+          "nonnegative_support_mismatch"
+        ],
+        "section_macro_rmse": 0.14462365574528885
+      },
+      "by_section": [
+        {
+          "section": "Zhuang-ABCA-2.025",
+          "fold": 1,
+          "n_cells": 29,
+          "rmse": 0.625779868100875,
+          "mae": 0.33125425981016554,
+          "predictive_95_coverage": 0.7241379310344828,
+          "predictive_95_mean_width": 0.5875291462120766
+        },
+        {
+          "section": "Zhuang-ABCA-2.026",
+          "fold": 1,
+          "n_cells": 270,
+          "rmse": 0.08079307464001714,
+          "mae": 0.04969146423270327,
+          "predictive_95_coverage": 0.9888888888888889,
+          "predictive_95_mean_width": 0.6587172230037827
+        },
+        {
+          "section": "Zhuang-ABCA-2.027",
+          "fold": 1,
+          "n_cells": 937,
+          "rmse": 0.08282807474473665,
+          "mae": 0.046441667729890966,
+          "predictive_95_coverage": 0.9893276414087513,
+          "predictive_95_mean_width": 0.6624267947442636
+        },
+        {
+          "section": "Zhuang-ABCA-2.028",
+          "fold": 1,
+          "n_cells": 2082,
+          "rmse": 0.15758228491514142,
+          "mae": 0.06142091442409838,
+          "predictive_95_coverage": 0.9620557156580212,
+          "predictive_95_mean_width": 0.6888391502307086
+        },
+        {
+          "section": "Zhuang-ABCA-2.030",
+          "fold": 2,
+          "n_cells": 1732,
+          "rmse": 0.21623470158964567,
+          "mae": 0.11009997302681297,
+          "predictive_95_coverage": 0.9468822170900693,
+          "predictive_95_mean_width": 0.5139602553220181
+        },
+        {
+          "section": "Zhuang-ABCA-2.031",
+          "fold": 2,
+          "n_cells": 2145,
+          "rmse": 0.1628735495116568,
+          "mae": 0.09019297444842067,
+          "predictive_95_coverage": 0.965034965034965,
+          "predictive_95_mean_width": 0.5116637740220908
+        },
+        {
+          "section": "Zhuang-ABCA-2.032",
+          "fold": 2,
+          "n_cells": 2345,
+          "rmse": 0.15495546588486292,
+          "mae": 0.0805800250547409,
+          "predictive_95_coverage": 0.9633262260127932,
+          "predictive_95_mean_width": 0.4927172142480942
+        },
+        {
+          "section": "Zhuang-ABCA-2.033",
+          "fold": 2,
+          "n_cells": 2881,
+          "rmse": 0.1737989784519092,
+          "mae": 0.08385637271365715,
+          "predictive_95_coverage": 0.9538354737938216,
+          "predictive_95_mean_width": 0.4616485041994345
+        },
+        {
+          "section": "Zhuang-ABCA-2.034",
+          "fold": 3,
+          "n_cells": 3565,
+          "rmse": 0.17985484708633787,
+          "mae": 0.08173245498139982,
+          "predictive_95_coverage": 0.9464235624123423,
+          "predictive_95_mean_width": 0.6031109756145672
+        },
+        {
+          "section": "Zhuang-ABCA-2.035",
+          "fold": 3,
+          "n_cells": 1882,
+          "rmse": 0.06278951457607397,
+          "mae": 0.042660215192628165,
+          "predictive_95_coverage": 0.9946865037194474,
+          "predictive_95_mean_width": 0.6139744777346294
+        },
+        {
+          "section": "Zhuang-ABCA-2.036",
+          "fold": 3,
+          "n_cells": 2828,
+          "rmse": 0.12230130476854331,
+          "mae": 0.05170752295819187,
+          "predictive_95_coverage": 0.9717114568599717,
+          "predictive_95_mean_width": 0.6045249784547826
+        },
+        {
+          "section": "Zhuang-ABCA-2.037",
+          "fold": 3,
+          "n_cells": 2262,
+          "rmse": 0.0751856917178268,
+          "mae": 0.03291175829101491,
+          "predictive_95_coverage": 0.9902740937223696,
+          "predictive_95_mean_width": 0.6020351215496363
+        },
+        {
+          "section": "Zhuang-ABCA-2.039",
+          "fold": 4,
+          "n_cells": 3509,
+          "rmse": 0.13359409241053594,
+          "mae": 0.04115557974299075,
+          "predictive_95_coverage": 0.9703619264747791,
+          "predictive_95_mean_width": 0.7234536973280695
+        },
+        {
+          "section": "Zhuang-ABCA-2.040",
+          "fold": 4,
+          "n_cells": 2880,
+          "rmse": 0.06663177391658137,
+          "mae": 0.028141122721870918,
+          "predictive_95_coverage": 0.9934027777777777,
+          "predictive_95_mean_width": 0.7319465769344644
+        },
+        {
+          "section": "Zhuang-ABCA-2.041",
+          "fold": 4,
+          "n_cells": 3079,
+          "rmse": 0.10205158292083424,
+          "mae": 0.034694839106534814,
+          "predictive_95_coverage": 0.9831113998051315,
+          "predictive_95_mean_width": 0.745822149151082
+        },
+        {
+          "section": "Zhuang-ABCA-2.042",
+          "fold": 4,
+          "n_cells": 1999,
+          "rmse": 0.0628650328172668,
+          "mae": 0.02908842095442075,
+          "predictive_95_coverage": 0.9934967483741871,
+          "predictive_95_mean_width": 0.754136150390559
+        },
+        {
+          "section": "Zhuang-ABCA-2.044",
+          "fold": 5,
+          "n_cells": 1608,
+          "rmse": 0.1432407204999285,
+          "mae": 0.033327190188943014,
+          "predictive_95_coverage": 0.9651741293532339,
+          "predictive_95_mean_width": 0.7783319627445439
+        },
+        {
+          "section": "Zhuang-ABCA-2.045",
+          "fold": 5,
+          "n_cells": 998,
+          "rmse": 0.15336070755060444,
+          "mae": 0.036250741255363414,
+          "predictive_95_coverage": 0.9609218436873748,
+          "predictive_95_mean_width": 0.7986984808412717
+        },
+        {
+          "section": "Zhuang-ABCA-2.046",
+          "fold": 5,
+          "n_cells": 454,
+          "rmse": 0.05715262009528041,
+          "mae": 0.010096559565193399,
+          "predictive_95_coverage": 0.9933920704845814,
+          "predictive_95_mean_width": 0.8335891198157644
+        },
+        {
+          "section": "Zhuang-ABCA-2.047",
+          "fold": 5,
+          "n_cells": 326,
+          "rmse": 0.07859922870711784,
+          "mae": 0.018577292664713797,
+          "predictive_95_coverage": 0.9877300613496932,
+          "predictive_95_mean_width": 0.8362382487135719
+        }
+      ]
+    },
+    {
+      "id": "ENSMUSG00000037868",
+      "symbol": "Egr2",
+      "file": "ENSMUSG00000037868.json",
+      "heldout": {
+        "n_cells": 37811,
+        "n_sections": 20,
+        "rmse": 0.08103645959898924,
+        "mae": 0.027080189524289103,
+        "predictive_95_coverage": 0.9890508053212028,
+        "predictive_95_mean_width": 0.38032454940679716,
+        "negative_predictive_probability_mean": 0.43620476104353517,
+        "coverage_positive": 0.0,
+        "coverage_zero": 1.0,
+        "n_positive": 414,
+        "interval_score_95": 0.6121033570480233,
+        "anatomy_baseline_rmse": 0.07977165195029853,
+        "knn_rmse": 0.07944922364457377,
+        "flags": [
+          "overcoverage_overall_95_interval",
+          "undercoverage_positive_cells",
+          "no_RMSE_improvement_over_anatomy_baseline",
+          "no_RMSE_improvement_over_knn",
+          "nonnegative_support_mismatch"
+        ],
+        "section_macro_rmse": 0.09846243701762634
+      },
+      "by_section": [
+        {
+          "section": "Zhuang-ABCA-2.025",
+          "fold": 1,
+          "n_cells": 29,
+          "rmse": 0.4497381806188297,
+          "mae": 0.1797887971321503,
+          "predictive_95_coverage": 0.8275862068965517,
+          "predictive_95_mean_width": 0.34786067100280355
+        },
+        {
+          "section": "Zhuang-ABCA-2.026",
+          "fold": 1,
+          "n_cells": 270,
+          "rmse": 0.0725290481351838,
+          "mae": 0.01618522334757261,
+          "predictive_95_coverage": 0.9888888888888889,
+          "predictive_95_mean_width": 0.3900092730250481
+        },
+        {
+          "section": "Zhuang-ABCA-2.027",
+          "fold": 1,
+          "n_cells": 937,
+          "rmse": 0.05987434362432259,
+          "mae": 0.015232567556494839,
+          "predictive_95_coverage": 0.9925293489861259,
+          "predictive_95_mean_width": 0.3922056136203978
+        },
+        {
+          "section": "Zhuang-ABCA-2.028",
+          "fold": 1,
+          "n_cells": 2082,
+          "rmse": 0.09412703406699502,
+          "mae": 0.020847707012261792,
+          "predictive_95_coverage": 0.9846301633045149,
+          "predictive_95_mean_width": 0.40784367985339265
+        },
+        {
+          "section": "Zhuang-ABCA-2.030",
+          "fold": 2,
+          "n_cells": 1732,
+          "rmse": 0.11395070787398787,
+          "mae": 0.046736181267984823,
+          "predictive_95_coverage": 0.9826789838337182,
+          "predictive_95_mean_width": 0.378534288717161
+        },
+        {
+          "section": "Zhuang-ABCA-2.031",
+          "fold": 2,
+          "n_cells": 2145,
+          "rmse": 0.06725222456560653,
+          "mae": 0.03778450680331313,
+          "predictive_95_coverage": 0.992074592074592,
+          "predictive_95_mean_width": 0.37684291879814746
+        },
+        {
+          "section": "Zhuang-ABCA-2.032",
+          "fold": 2,
+          "n_cells": 2345,
+          "rmse": 0.06948879153420003,
+          "mae": 0.038964285215633145,
+          "predictive_95_coverage": 0.9914712153518124,
+          "predictive_95_mean_width": 0.3628886831283223
+        },
+        {
+          "section": "Zhuang-ABCA-2.033",
+          "fold": 2,
+          "n_cells": 2881,
+          "rmse": 0.07713158322069451,
+          "mae": 0.03867325053086078,
+          "predictive_95_coverage": 0.9892398472752516,
+          "predictive_95_mean_width": 0.34000642338576564
+        },
+        {
+          "section": "Zhuang-ABCA-2.034",
+          "fold": 3,
+          "n_cells": 3565,
+          "rmse": 0.09286936901302305,
+          "mae": 0.0356938271842824,
+          "predictive_95_coverage": 0.9820476858345021,
+          "predictive_95_mean_width": 0.35571485612314413
+        },
+        {
+          "section": "Zhuang-ABCA-2.035",
+          "fold": 3,
+          "n_cells": 1882,
+          "rmse": 0.038165772526486674,
+          "mae": 0.023752219608245032,
+          "predictive_95_coverage": 0.997874601487779,
+          "predictive_95_mean_width": 0.3621221497222927
+        },
+        {
+          "section": "Zhuang-ABCA-2.036",
+          "fold": 3,
+          "n_cells": 2828,
+          "rmse": 0.061462184175199386,
+          "mae": 0.0250765287664587,
+          "predictive_95_coverage": 0.9925742574257426,
+          "predictive_95_mean_width": 0.35654883500464674
+        },
+        {
+          "section": "Zhuang-ABCA-2.037",
+          "fold": 3,
+          "n_cells": 2262,
+          "rmse": 0.056253181491186764,
+          "mae": 0.022510538249995462,
+          "predictive_95_coverage": 0.9938107869142352,
+          "predictive_95_mean_width": 0.3550803173908214
+        },
+        {
+          "section": "Zhuang-ABCA-2.039",
+          "fold": 4,
+          "n_cells": 3509,
+          "rmse": 0.11476406070620096,
+          "mae": 0.02218318732305815,
+          "predictive_95_coverage": 0.9811912225705329,
+          "predictive_95_mean_width": 0.380645135087842
+        },
+        {
+          "section": "Zhuang-ABCA-2.040",
+          "fold": 4,
+          "n_cells": 2880,
+          "rmse": 0.05070186588936807,
+          "mae": 0.010071836251314725,
+          "predictive_95_coverage": 0.9958333333333333,
+          "predictive_95_mean_width": 0.38511366336684666
+        },
+        {
+          "section": "Zhuang-ABCA-2.041",
+          "fold": 4,
+          "n_cells": 3079,
+          "rmse": 0.06900676624806835,
+          "mae": 0.014519328199881066,
+          "predictive_95_coverage": 0.9902565768106528,
+          "predictive_95_mean_width": 0.39241429515616816
+        },
+        {
+          "section": "Zhuang-ABCA-2.042",
+          "fold": 4,
+          "n_cells": 1999,
+          "rmse": 0.057029316010059485,
+          "mae": 0.013097040346777784,
+          "predictive_95_coverage": 0.9934967483741871,
+          "predictive_95_mean_width": 0.3967887065892832
+        },
+        {
+          "section": "Zhuang-ABCA-2.044",
+          "fold": 5,
+          "n_cells": 1608,
+          "rmse": 0.08687669525129643,
+          "mae": 0.03254417315271868,
+          "predictive_95_coverage": 0.986318407960199,
+          "predictive_95_mean_width": 0.44587660496124343
+        },
+        {
+          "section": "Zhuang-ABCA-2.045",
+          "fold": 5,
+          "n_cells": 998,
+          "rmse": 0.08757051676957743,
+          "mae": 0.03189764721506248,
+          "predictive_95_coverage": 0.9929859719438878,
+          "predictive_95_mean_width": 0.4575438040209217
+        },
+        {
+          "section": "Zhuang-ABCA-2.046",
+          "fold": 5,
+          "n_cells": 454,
+          "rmse": 0.07366000107300295,
+          "mae": 0.03494866759065108,
+          "predictive_95_coverage": 0.9911894273127754,
+          "predictive_95_mean_width": 0.477531316284993
+        },
+        {
+          "section": "Zhuang-ABCA-2.047",
+          "fold": 5,
+          "n_cells": 326,
+          "rmse": 0.17679709755923737,
+          "mae": 0.06237087361291138,
+          "predictive_95_coverage": 0.9631901840490797,
+          "predictive_95_mean_width": 0.4790489008833359
+        }
+      ]
+    },
+    {
+      "id": "ENSMUSG00000030270",
+      "symbol": "Cpne9",
+      "file": "ENSMUSG00000030270.json",
+      "heldout": {
+        "n_cells": 37811,
+        "n_sections": 20,
+        "rmse": 0.4971490717336806,
+        "mae": 0.212643114883826,
+        "predictive_95_coverage": 0.9444341593716115,
+        "predictive_95_mean_width": 1.9014299479186718,
+        "negative_predictive_probability_mean": 0.44089517382567295,
+        "coverage_positive": 0.45724618961508656,
+        "coverage_zero": 1.0,
+        "n_positive": 3871,
+        "interval_score_95": 4.25251794327309,
+        "anatomy_baseline_rmse": 0.5114865400908966,
+        "knn_rmse": 0.555039038937757,
+        "flags": [
+          "undercoverage_positive_cells",
+          "nonnegative_support_mismatch"
+        ],
+        "section_macro_rmse": 0.4654550144523356
+      },
+      "by_section": [
+        {
+          "section": "Zhuang-ABCA-2.025",
+          "fold": 1,
+          "n_cells": 29,
+          "rmse": 0.20287951470692828,
+          "mae": 0.04271951336472285,
+          "predictive_95_coverage": 0.9655172413793104,
+          "predictive_95_mean_width": 1.7844169061906807
+        },
+        {
+          "section": "Zhuang-ABCA-2.026",
+          "fold": 1,
+          "n_cells": 270,
+          "rmse": 0.1845717919141911,
+          "mae": 0.09334189565620797,
+          "predictive_95_coverage": 0.9962962962962963,
+          "predictive_95_mean_width": 2.000626108006973
+        },
+        {
+          "section": "Zhuang-ABCA-2.027",
+          "fold": 1,
+          "n_cells": 937,
+          "rmse": 0.24874995991543375,
+          "mae": 0.12526965197998763,
+          "predictive_95_coverage": 0.9829242262540021,
+          "predictive_95_mean_width": 2.0118926512433686
+        },
+        {
+          "section": "Zhuang-ABCA-2.028",
+          "fold": 1,
+          "n_cells": 2082,
+          "rmse": 0.20850088216522586,
+          "mae": 0.1393104966704033,
+          "predictive_95_coverage": 0.9927953890489913,
+          "predictive_95_mean_width": 2.0921110607745246
+        },
+        {
+          "section": "Zhuang-ABCA-2.030",
+          "fold": 2,
+          "n_cells": 1732,
+          "rmse": 0.3768910052503399,
+          "mae": 0.1622511838487056,
+          "predictive_95_coverage": 0.9665127020785219,
+          "predictive_95_mean_width": 2.2051523578177026
+        },
+        {
+          "section": "Zhuang-ABCA-2.031",
+          "fold": 2,
+          "n_cells": 2145,
+          "rmse": 0.23275684500858362,
+          "mae": 0.1082209444990816,
+          "predictive_95_coverage": 0.9874125874125874,
+          "predictive_95_mean_width": 2.1952992785167638
+        },
+        {
+          "section": "Zhuang-ABCA-2.032",
+          "fold": 2,
+          "n_cells": 2345,
+          "rmse": 0.1389381961690038,
+          "mae": 0.06341438525889369,
+          "predictive_95_coverage": 0.9965884861407249,
+          "predictive_95_mean_width": 2.1140088469599783
+        },
+        {
+          "section": "Zhuang-ABCA-2.033",
+          "fold": 2,
+          "n_cells": 2881,
+          "rmse": 0.1317882592353691,
+          "mae": 0.04602173345878442,
+          "predictive_95_coverage": 0.9965289829920166,
+          "predictive_95_mean_width": 1.9807081909097717
+        },
+        {
+          "section": "Zhuang-ABCA-2.034",
+          "fold": 3,
+          "n_cells": 3565,
+          "rmse": 0.2833668324010767,
+          "mae": 0.10916488795028881,
+          "predictive_95_coverage": 0.973632538569425,
+          "predictive_95_mean_width": 2.0813332592615628
+        },
+        {
+          "section": "Zhuang-ABCA-2.035",
+          "fold": 3,
+          "n_cells": 1882,
+          "rmse": 0.12612195017461797,
+          "mae": 0.058338840274061256,
+          "predictive_95_coverage": 0.9973432518597237,
+          "predictive_95_mean_width": 2.118823156127566
+        },
+        {
+          "section": "Zhuang-ABCA-2.036",
+          "fold": 3,
+          "n_cells": 2828,
+          "rmse": 0.22983763696168416,
+          "mae": 0.09781395320786912,
+          "predictive_95_coverage": 0.9840876944837341,
+          "predictive_95_mean_width": 2.0862129766917286
+        },
+        {
+          "section": "Zhuang-ABCA-2.037",
+          "fold": 3,
+          "n_cells": 2262,
+          "rmse": 0.1587870833885263,
+          "mae": 0.0650856662954449,
+          "predictive_95_coverage": 0.993368700265252,
+          "predictive_95_mean_width": 2.0776204917312247
+        },
+        {
+          "section": "Zhuang-ABCA-2.039",
+          "fold": 4,
+          "n_cells": 3509,
+          "rmse": 0.3545333572924159,
+          "mae": 0.2084123365137054,
+          "predictive_95_coverage": 0.9569677970931889,
+          "predictive_95_mean_width": 1.646109239151204
+        },
+        {
+          "section": "Zhuang-ABCA-2.040",
+          "fold": 4,
+          "n_cells": 2880,
+          "rmse": 0.2568401743781755,
+          "mae": 0.1881172548384751,
+          "predictive_95_coverage": 0.9833333333333333,
+          "predictive_95_mean_width": 1.6654334994856501
+        },
+        {
+          "section": "Zhuang-ABCA-2.041",
+          "fold": 4,
+          "n_cells": 3079,
+          "rmse": 0.3452976597375195,
+          "mae": 0.2537481179143812,
+          "predictive_95_coverage": 0.9629749918804806,
+          "predictive_95_mean_width": 1.6970052610353412
+        },
+        {
+          "section": "Zhuang-ABCA-2.042",
+          "fold": 4,
+          "n_cells": 1999,
+          "rmse": 0.3909373341456447,
+          "mae": 0.282363783616625,
+          "predictive_95_coverage": 0.961480740370185,
+          "predictive_95_mean_width": 1.7159225107572835
+        },
+        {
+          "section": "Zhuang-ABCA-2.044",
+          "fold": 5,
+          "n_cells": 1608,
+          "rmse": 1.4319490837484024,
+          "mae": 1.017747801233647,
+          "predictive_95_coverage": 0.5310945273631841,
+          "predictive_95_mean_width": 1.3363605801953449
+        },
+        {
+          "section": "Zhuang-ABCA-2.045",
+          "fold": 5,
+          "n_cells": 998,
+          "rmse": 1.576352798843761,
+          "mae": 1.0645540299178813,
+          "predictive_95_coverage": 0.5761523046092184,
+          "predictive_95_mean_width": 1.371328965464183
+        },
+        {
+          "section": "Zhuang-ABCA-2.046",
+          "fold": 5,
+          "n_cells": 454,
+          "rmse": 1.0958867059305173,
+          "mae": 0.746100772879054,
+          "predictive_95_coverage": 0.6365638766519823,
+          "predictive_95_mean_width": 1.431234605698879
+        },
+        {
+          "section": "Zhuang-ABCA-2.047",
+          "fold": 5,
+          "n_cells": 326,
+          "rmse": 1.3341132176792954,
+          "mae": 0.7135081567860269,
+          "predictive_95_coverage": 0.7730061349693251,
+          "predictive_95_mean_width": 1.4357830395296094
+        }
+      ]
+    },
+    {
+      "id": "ENSMUSG00000033730",
+      "symbol": "Egr3",
+      "file": "ENSMUSG00000033730.json",
+      "heldout": {
+        "n_cells": 37811,
+        "n_sections": 20,
+        "rmse": 0.12015113249059019,
+        "mae": 0.053937307198426994,
+        "predictive_95_coverage": 0.9806141070058978,
+        "predictive_95_mean_width": 0.5527042687949874,
+        "negative_predictive_probability_mean": 0.4087225023907652,
+        "coverage_positive": 0.0,
+        "coverage_zero": 1.0,
+        "n_positive": 733,
+        "interval_score_95": 0.9222812610995497,
+        "anatomy_baseline_rmse": 0.11585180038142197,
+        "knn_rmse": 0.11531036108340659,
+        "flags": [
+          "undercoverage_positive_cells",
+          "no_RMSE_improvement_over_anatomy_baseline",
+          "no_RMSE_improvement_over_knn",
+          "nonnegative_support_mismatch"
+        ],
+        "section_macro_rmse": 0.14521019828385956
+      },
+      "by_section": [
+        {
+          "section": "Zhuang-ABCA-2.025",
+          "fold": 1,
+          "n_cells": 29,
+          "rmse": 0.6906862880029411,
+          "mae": 0.39051078397018146,
+          "predictive_95_coverage": 0.6551724137931034,
+          "predictive_95_mean_width": 0.49214008472631976
+        },
+        {
+          "section": "Zhuang-ABCA-2.026",
+          "fold": 1,
+          "n_cells": 270,
+          "rmse": 0.14531323162249493,
+          "mae": 0.03366731105734377,
+          "predictive_95_coverage": 0.9666666666666667,
+          "predictive_95_mean_width": 0.5517703283825686
+        },
+        {
+          "section": "Zhuang-ABCA-2.027",
+          "fold": 1,
+          "n_cells": 937,
+          "rmse": 0.09623487408207607,
+          "mae": 0.019662400344421103,
+          "predictive_95_coverage": 0.9850586979722519,
+          "predictive_95_mean_width": 0.5548776277606995
+        },
+        {
+          "section": "Zhuang-ABCA-2.028",
+          "fold": 1,
+          "n_cells": 2082,
+          "rmse": 0.1476001530981722,
+          "mae": 0.030506475454065915,
+          "predictive_95_coverage": 0.973583093179635,
+          "predictive_95_mean_width": 0.5770017707938161
+        },
+        {
+          "section": "Zhuang-ABCA-2.030",
+          "fold": 2,
+          "n_cells": 1732,
+          "rmse": 0.1596660326898766,
+          "mae": 0.10437136827767812,
+          "predictive_95_coverage": 0.9688221709006929,
+          "predictive_95_mean_width": 0.5491504889149906
+        },
+        {
+          "section": "Zhuang-ABCA-2.031",
+          "fold": 2,
+          "n_cells": 2145,
+          "rmse": 0.12576554688489547,
+          "mae": 0.09137325690376247,
+          "predictive_95_coverage": 0.9804195804195804,
+          "predictive_95_mean_width": 0.5466967703334847
+        },
+        {
+          "section": "Zhuang-ABCA-2.032",
+          "fold": 2,
+          "n_cells": 2345,
+          "rmse": 0.12035332266637963,
+          "mae": 0.08840727698646265,
+          "predictive_95_coverage": 0.982089552238806,
+          "predictive_95_mean_width": 0.5264529626549543
+        },
+        {
+          "section": "Zhuang-ABCA-2.033",
+          "fold": 2,
+          "n_cells": 2881,
+          "rmse": 0.10401547467841972,
+          "mae": 0.08174503721068659,
+          "predictive_95_coverage": 0.98750433877126,
+          "predictive_95_mean_width": 0.4932570158156605
+        },
+        {
+          "section": "Zhuang-ABCA-2.034",
+          "fold": 3,
+          "n_cells": 3565,
+          "rmse": 0.12246986686480826,
+          "mae": 0.059745842061502824,
+          "predictive_95_coverage": 0.9792426367461431,
+          "predictive_95_mean_width": 0.5323814178395266
+        },
+        {
+          "section": "Zhuang-ABCA-2.035",
+          "fold": 3,
+          "n_cells": 1882,
+          "rmse": 0.06484389371200652,
+          "mae": 0.04688126625917247,
+          "predictive_95_coverage": 0.9946865037194474,
+          "predictive_95_mean_width": 0.5419709078259891
+        },
+        {
+          "section": "Zhuang-ABCA-2.036",
+          "fold": 3,
+          "n_cells": 2828,
+          "rmse": 0.12470273876304196,
+          "mae": 0.0615589280345687,
+          "predictive_95_coverage": 0.9752475247524752,
+          "predictive_95_mean_width": 0.5336295941575516
+        },
+        {
+          "section": "Zhuang-ABCA-2.037",
+          "fold": 3,
+          "n_cells": 2262,
+          "rmse": 0.08762595492304047,
+          "mae": 0.0520762052248886,
+          "predictive_95_coverage": 0.9871794871794872,
+          "predictive_95_mean_width": 0.5314317340572133
+        },
+        {
+          "section": "Zhuang-ABCA-2.039",
+          "fold": 4,
+          "n_cells": 3509,
+          "rmse": 0.1388452542630437,
+          "mae": 0.037325564661149405,
+          "predictive_95_coverage": 0.9726417782844116,
+          "predictive_95_mean_width": 0.541135156069863
+        },
+        {
+          "section": "Zhuang-ABCA-2.040",
+          "fold": 4,
+          "n_cells": 2880,
+          "rmse": 0.09682222716992091,
+          "mae": 0.022282492932030776,
+          "predictive_95_coverage": 0.9868055555555556,
+          "predictive_95_mean_width": 0.5474877336408432
+        },
+        {
+          "section": "Zhuang-ABCA-2.041",
+          "fold": 4,
+          "n_cells": 3079,
+          "rmse": 0.14094148371453652,
+          "mae": 0.03366237184727489,
+          "predictive_95_coverage": 0.9691458265670673,
+          "predictive_95_mean_width": 0.5578665042031189
+        },
+        {
+          "section": "Zhuang-ABCA-2.042",
+          "fold": 4,
+          "n_cells": 1999,
+          "rmse": 0.06215668190550552,
+          "mae": 0.013270544748513996,
+          "predictive_95_coverage": 0.9949974987493747,
+          "predictive_95_mean_width": 0.5640852827855016
+        },
+        {
+          "section": "Zhuang-ABCA-2.044",
+          "fold": 5,
+          "n_cells": 1608,
+          "rmse": 0.08990742410589736,
+          "mae": 0.04521938741130566,
+          "predictive_95_coverage": 0.9894278606965174,
+          "predictive_95_mean_width": 0.6585933498121755
+        },
+        {
+          "section": "Zhuang-ABCA-2.045",
+          "fold": 5,
+          "n_cells": 998,
+          "rmse": 0.13207574553935128,
+          "mae": 0.06438160433472233,
+          "predictive_95_coverage": 0.9819639278557114,
+          "predictive_95_mean_width": 0.6758266821425561
+        },
+        {
+          "section": "Zhuang-ABCA-2.046",
+          "fold": 5,
+          "n_cells": 454,
+          "rmse": 0.09317730090506188,
+          "mae": 0.06670065319981955,
+          "predictive_95_coverage": 0.9911894273127754,
+          "predictive_95_mean_width": 0.7053497441510482
+        },
+        {
+          "section": "Zhuang-ABCA-2.047",
+          "fold": 5,
+          "n_cells": 326,
+          "rmse": 0.16100047008572138,
+          "mae": 0.09754775089685694,
+          "predictive_95_coverage": 0.9693251533742331,
+          "predictive_95_mean_width": 0.7075913309782668
+        }
+      ]
+    },
+    {
+      "id": "ENSMUSG00000028864",
+      "symbol": "Hgf",
+      "file": "ENSMUSG00000028864.json",
+      "heldout": {
+        "n_cells": 37811,
+        "n_sections": 20,
+        "rmse": 0.08505248919235782,
+        "mae": 0.019458153616997136,
+        "predictive_95_coverage": 0.9873317288619714,
+        "predictive_95_mean_width": 0.41325020337478596,
+        "negative_predictive_probability_mean": 0.469615437466989,
+        "coverage_positive": 0.0,
+        "coverage_zero": 1.0,
+        "n_positive": 479,
+        "interval_score_95": 0.6802597229283991,
+        "anatomy_baseline_rmse": 0.08479806083270408,
+        "knn_rmse": 0.08572867037059088,
+        "flags": [
+          "overcoverage_overall_95_interval",
+          "undercoverage_positive_cells",
+          "no_RMSE_improvement_over_anatomy_baseline",
+          "nonnegative_support_mismatch"
+        ],
+        "section_macro_rmse": 0.08439366605310257
+      },
+      "by_section": [
+        {
+          "section": "Zhuang-ABCA-2.025",
+          "fold": 1,
+          "n_cells": 29,
+          "rmse": 0.13063789766613873,
+          "mae": 0.03065827741613843,
+          "predictive_95_coverage": 0.9655172413793104,
+          "predictive_95_mean_width": 0.34925853366874215
+        },
+        {
+          "section": "Zhuang-ABCA-2.026",
+          "fold": 1,
+          "n_cells": 270,
+          "rmse": 0.1037435573362757,
+          "mae": 0.019317421491396092,
+          "predictive_95_coverage": 0.9777777777777777,
+          "predictive_95_mean_width": 0.39157650797736376
+        },
+        {
+          "section": "Zhuang-ABCA-2.027",
+          "fold": 1,
+          "n_cells": 937,
+          "rmse": 0.07575268287423771,
+          "mae": 0.012912242440619401,
+          "predictive_95_coverage": 0.9882604055496265,
+          "predictive_95_mean_width": 0.393781674469907
+        },
+        {
+          "section": "Zhuang-ABCA-2.028",
+          "fold": 1,
+          "n_cells": 2082,
+          "rmse": 0.14186036011493275,
+          "mae": 0.025424248192389295,
+          "predictive_95_coverage": 0.9745437079731027,
+          "predictive_95_mean_width": 0.40948258157793244
+        },
+        {
+          "section": "Zhuang-ABCA-2.030",
+          "fold": 2,
+          "n_cells": 1732,
+          "rmse": 0.14330123920069854,
+          "mae": 0.032006609143544494,
+          "predictive_95_coverage": 0.9705542725173211,
+          "predictive_95_mean_width": 0.3503163116825779
+        },
+        {
+          "section": "Zhuang-ABCA-2.031",
+          "fold": 2,
+          "n_cells": 2145,
+          "rmse": 0.07882548331168905,
+          "mae": 0.01769154290593684,
+          "predictive_95_coverage": 0.9883449883449883,
+          "predictive_95_mean_width": 0.3487510255529443
+        },
+        {
+          "section": "Zhuang-ABCA-2.032",
+          "fold": 2,
+          "n_cells": 2345,
+          "rmse": 0.07719811258806356,
+          "mae": 0.017810720619128754,
+          "predictive_95_coverage": 0.9880597014925373,
+          "predictive_95_mean_width": 0.3358370134861135
+        },
+        {
+          "section": "Zhuang-ABCA-2.033",
+          "fold": 2,
+          "n_cells": 2881,
+          "rmse": 0.08918821360690936,
+          "mae": 0.020220480652998703,
+          "predictive_95_coverage": 0.9847275251648733,
+          "predictive_95_mean_width": 0.31466052016726204
+        },
+        {
+          "section": "Zhuang-ABCA-2.034",
+          "fold": 3,
+          "n_cells": 3565,
+          "rmse": 0.09522145527124727,
+          "mae": 0.025785471385746075,
+          "predictive_95_coverage": 0.9842917251051894,
+          "predictive_95_mean_width": 0.40138454241183685
+        },
+        {
+          "section": "Zhuang-ABCA-2.035",
+          "fold": 3,
+          "n_cells": 1882,
+          "rmse": 0.053872368948191536,
+          "mae": 0.01690687296090421,
+          "predictive_95_coverage": 0.9941551540913921,
+          "predictive_95_mean_width": 0.4086144586358087
+        },
+        {
+          "section": "Zhuang-ABCA-2.036",
+          "fold": 3,
+          "n_cells": 2828,
+          "rmse": 0.08143580203389524,
+          "mae": 0.02245027325610083,
+          "predictive_95_coverage": 0.9865629420084866,
+          "predictive_95_mean_width": 0.4023255945663107
+        },
+        {
+          "section": "Zhuang-ABCA-2.037",
+          "fold": 3,
+          "n_cells": 2262,
+          "rmse": 0.051427163225262536,
+          "mae": 0.016616926339218362,
+          "predictive_95_coverage": 0.9946949602122016,
+          "predictive_95_mean_width": 0.4006685362222394
+        },
+        {
+          "section": "Zhuang-ABCA-2.039",
+          "fold": 4,
+          "n_cells": 3509,
+          "rmse": 0.08821198840506494,
+          "mae": 0.01878215852906145,
+          "predictive_95_coverage": 0.9854659447135936,
+          "predictive_95_mean_width": 0.45180486215204274
+        },
+        {
+          "section": "Zhuang-ABCA-2.040",
+          "fold": 4,
+          "n_cells": 2880,
+          "rmse": 0.0489122775918254,
+          "mae": 0.012288783152027246,
+          "predictive_95_coverage": 0.9951388888888889,
+          "predictive_95_mean_width": 0.4571087597117799
+        },
+        {
+          "section": "Zhuang-ABCA-2.041",
+          "fold": 4,
+          "n_cells": 3079,
+          "rmse": 0.07471022674238349,
+          "mae": 0.017368049363042617,
+          "predictive_95_coverage": 0.9902565768106528,
+          "predictive_95_mean_width": 0.46577420853837803
+        },
+        {
+          "section": "Zhuang-ABCA-2.042",
+          "fold": 4,
+          "n_cells": 1999,
+          "rmse": 0.04794212863302036,
+          "mae": 0.01354697245815624,
+          "predictive_95_coverage": 0.9954977488744372,
+          "predictive_95_mean_width": 0.47096639457296047
+        },
+        {
+          "section": "Zhuang-ABCA-2.044",
+          "fold": 5,
+          "n_cells": 1608,
+          "rmse": 0.06675494897480976,
+          "mae": 0.016012842923992854,
+          "predictive_95_coverage": 0.9906716417910447,
+          "predictive_95_mean_width": 0.49520420332218645
+        },
+        {
+          "section": "Zhuang-ABCA-2.045",
+          "fold": 5,
+          "n_cells": 998,
+          "rmse": 0.08153308029478094,
+          "mae": 0.020952637164199765,
+          "predictive_95_coverage": 0.9859719438877755,
+          "predictive_95_mean_width": 0.508162151667226
+        },
+        {
+          "section": "Zhuang-ABCA-2.046",
+          "fold": 5,
+          "n_cells": 454,
+          "rmse": 0.05685975689615194,
+          "mae": 0.01791569313737237,
+          "predictive_95_coverage": 0.9933920704845814,
+          "predictive_95_mean_width": 0.5303608944964942
+        },
+        {
+          "section": "Zhuang-ABCA-2.047",
+          "fold": 5,
+          "n_cells": 326,
+          "rmse": 0.10048457734647237,
+          "mae": 0.02982032283113759,
+          "predictive_95_coverage": 0.9785276073619632,
+          "predictive_95_mean_width": 0.5320463703964053
+        }
+      ]
+    },
+    {
+      "id": "ENSMUSG00000048251",
+      "symbol": "Bcl11b",
+      "file": "ENSMUSG00000048251.json",
+      "heldout": {
+        "n_cells": 37811,
+        "n_sections": 20,
+        "rmse": 0.19390939800951965,
+        "mae": 0.1181307188575499,
+        "predictive_95_coverage": 0.9555420380312607,
+        "predictive_95_mean_width": 0.8414243782119836,
+        "negative_predictive_probability_mean": 0.36905472297938235,
+        "coverage_positive": 0.0,
+        "coverage_zero": 1.0,
+        "n_positive": 1681,
+        "interval_score_95": 1.434350843163159,
+        "anatomy_baseline_rmse": 0.18396700558116363,
+        "knn_rmse": 0.18123999640984564,
+        "flags": [
+          "undercoverage_positive_cells",
+          "no_RMSE_improvement_over_anatomy_baseline",
+          "no_RMSE_improvement_over_knn",
+          "nonnegative_support_mismatch"
+        ],
+        "section_macro_rmse": 0.21353848164514733
+      },
+      "by_section": [
+        {
+          "section": "Zhuang-ABCA-2.025",
+          "fold": 1,
+          "n_cells": 29,
+          "rmse": 0.8403394814292985,
+          "mae": 0.6039204673517691,
+          "predictive_95_coverage": 0.4482758620689655,
+          "predictive_95_mean_width": 0.7110261877577647
+        },
+        {
+          "section": "Zhuang-ABCA-2.026",
+          "fold": 1,
+          "n_cells": 270,
+          "rmse": 0.2767165293125139,
+          "mae": 0.13950649054918324,
+          "predictive_95_coverage": 0.8814814814814815,
+          "predictive_95_mean_width": 0.7971778062457143
+        },
+        {
+          "section": "Zhuang-ABCA-2.027",
+          "fold": 1,
+          "n_cells": 937,
+          "rmse": 0.25573154164336964,
+          "mae": 0.12064276472482943,
+          "predictive_95_coverage": 0.8954108858057631,
+          "predictive_95_mean_width": 0.8016671199586651
+        },
+        {
+          "section": "Zhuang-ABCA-2.028",
+          "fold": 1,
+          "n_cells": 2082,
+          "rmse": 0.29512374016734066,
+          "mae": 0.12440052552830204,
+          "predictive_95_coverage": 0.8876080691642652,
+          "predictive_95_mean_width": 0.833631281315268
+        },
+        {
+          "section": "Zhuang-ABCA-2.030",
+          "fold": 2,
+          "n_cells": 1732,
+          "rmse": 0.2621266216819404,
+          "mae": 0.19076028419016194,
+          "predictive_95_coverage": 0.9260969976905312,
+          "predictive_95_mean_width": 0.7794874328119406
+        },
+        {
+          "section": "Zhuang-ABCA-2.031",
+          "fold": 2,
+          "n_cells": 2145,
+          "rmse": 0.18217846369862536,
+          "mae": 0.16057712471109334,
+          "predictive_95_coverage": 0.9692307692307692,
+          "predictive_95_mean_width": 0.7760045208660368
+        },
+        {
+          "section": "Zhuang-ABCA-2.032",
+          "fold": 2,
+          "n_cells": 2345,
+          "rmse": 0.17263922242334517,
+          "mae": 0.15235203445664758,
+          "predictive_95_coverage": 0.9761194029850746,
+          "predictive_95_mean_width": 0.7472696039421641
+        },
+        {
+          "section": "Zhuang-ABCA-2.033",
+          "fold": 2,
+          "n_cells": 2881,
+          "rmse": 0.1768709496610861,
+          "mae": 0.14996673100089644,
+          "predictive_95_coverage": 0.9635543214161749,
+          "predictive_95_mean_width": 0.7001498728231987
+        },
+        {
+          "section": "Zhuang-ABCA-2.034",
+          "fold": 3,
+          "n_cells": 3565,
+          "rmse": 0.23796603004958594,
+          "mae": 0.18166029091022692,
+          "predictive_95_coverage": 0.9287517531556803,
+          "predictive_95_mean_width": 0.7646451925383083
+        },
+        {
+          "section": "Zhuang-ABCA-2.035",
+          "fold": 3,
+          "n_cells": 1882,
+          "rmse": 0.1571890678224228,
+          "mae": 0.14023786729027518,
+          "predictive_95_coverage": 0.9835281615302869,
+          "predictive_95_mean_width": 0.7784183205464182
+        },
+        {
+          "section": "Zhuang-ABCA-2.036",
+          "fold": 3,
+          "n_cells": 2828,
+          "rmse": 0.21798342619153735,
+          "mae": 0.15290338403537174,
+          "predictive_95_coverage": 0.943069306930693,
+          "predictive_95_mean_width": 0.7664379148029042
+        },
+        {
+          "section": "Zhuang-ABCA-2.037",
+          "fold": 3,
+          "n_cells": 2262,
+          "rmse": 0.13288216785552082,
+          "mae": 0.1144929516797595,
+          "predictive_95_coverage": 0.9827586206896551,
+          "predictive_95_mean_width": 0.7632811871199293
+        },
+        {
+          "section": "Zhuang-ABCA-2.039",
+          "fold": 4,
+          "n_cells": 3509,
+          "rmse": 0.23083048928330532,
+          "mae": 0.08582386906942092,
+          "predictive_95_coverage": 0.9347392419492733,
+          "predictive_95_mean_width": 0.9088092914441668
+        },
+        {
+          "section": "Zhuang-ABCA-2.040",
+          "fold": 4,
+          "n_cells": 2880,
+          "rmse": 0.09748558098932653,
+          "mae": 0.044058803805793696,
+          "predictive_95_coverage": 0.9864583333333333,
+          "predictive_95_mean_width": 0.9194781261269042
+        },
+        {
+          "section": "Zhuang-ABCA-2.041",
+          "fold": 4,
+          "n_cells": 3079,
+          "rmse": 0.16619350013626907,
+          "mae": 0.0731006610841084,
+          "predictive_95_coverage": 0.9632997726534589,
+          "predictive_95_mean_width": 0.9369087495394873
+        },
+        {
+          "section": "Zhuang-ABCA-2.042",
+          "fold": 4,
+          "n_cells": 1999,
+          "rmse": 0.11992028730941313,
+          "mae": 0.057942101582312715,
+          "predictive_95_coverage": 0.9804902451225613,
+          "predictive_95_mean_width": 0.9473528755470274
+        },
+        {
+          "section": "Zhuang-ABCA-2.044",
+          "fold": 5,
+          "n_cells": 1608,
+          "rmse": 0.07742351559606975,
+          "mae": 0.03740878575050848,
+          "predictive_95_coverage": 0.9912935323383084,
+          "predictive_95_mean_width": 1.0401300970768383
+        },
+        {
+          "section": "Zhuang-ABCA-2.045",
+          "fold": 5,
+          "n_cells": 998,
+          "rmse": 0.1258280382004958,
+          "mae": 0.06730541798295987,
+          "predictive_95_coverage": 0.9809619238476954,
+          "predictive_95_mean_width": 1.0673470552117306
+        },
+        {
+          "section": "Zhuang-ABCA-2.046",
+          "fold": 5,
+          "n_cells": 454,
+          "rmse": 0.09439686954593968,
+          "mae": 0.08234566453607033,
+          "predictive_95_coverage": 0.9955947136563876,
+          "predictive_95_mean_width": 1.1139734375790227
+        },
+        {
+          "section": "Zhuang-ABCA-2.047",
+          "fold": 5,
+          "n_cells": 326,
+          "rmse": 0.15094410990554036,
+          "mae": 0.11859993251773876,
+          "predictive_95_coverage": 0.9815950920245399,
+          "predictive_95_mean_width": 1.1175136220112916
+        }
+      ]
+    },
+    {
+      "id": "ENSMUSG00000032373",
+      "symbol": "Car12",
+      "file": "ENSMUSG00000032373.json",
+      "heldout": {
+        "n_cells": 37811,
+        "n_sections": 20,
+        "rmse": 0.14428230576087692,
+        "mae": 0.06907107270303747,
+        "predictive_95_coverage": 0.961836502605062,
+        "predictive_95_mean_width": 0.6707553030528383,
+        "negative_predictive_probability_mean": 0.3957442617553904,
+        "coverage_positive": 0.0,
+        "coverage_zero": 1.0,
+        "n_positive": 1443,
+        "interval_score_95": 1.1882629651518615,
+        "anatomy_baseline_rmse": 0.14228470996266163,
+        "knn_rmse": 0.14186291639575838,
+        "flags": [
+          "undercoverage_positive_cells",
+          "no_RMSE_improvement_over_anatomy_baseline",
+          "no_RMSE_improvement_over_knn",
+          "nonnegative_support_mismatch"
+        ],
+        "section_macro_rmse": 0.16785417576876188
+      },
+      "by_section": [
+        {
+          "section": "Zhuang-ABCA-2.025",
+          "fold": 1,
+          "n_cells": 29,
+          "rmse": 0.6725552635043504,
+          "mae": 0.41841067220178063,
+          "predictive_95_coverage": 0.5862068965517241,
+          "predictive_95_mean_width": 0.6094910154573566
+        },
+        {
+          "section": "Zhuang-ABCA-2.026",
+          "fold": 1,
+          "n_cells": 270,
+          "rmse": 0.12687938535584187,
+          "mae": 0.027000073259621504,
+          "predictive_95_coverage": 0.9666666666666667,
+          "predictive_95_mean_width": 0.683340106165397
+        },
+        {
+          "section": "Zhuang-ABCA-2.027",
+          "fold": 1,
+          "n_cells": 937,
+          "rmse": 0.11935167147630676,
+          "mae": 0.024696847273292254,
+          "predictive_95_coverage": 0.9733191035218783,
+          "predictive_95_mean_width": 0.6871883418854364
+        },
+        {
+          "section": "Zhuang-ABCA-2.028",
+          "fold": 1,
+          "n_cells": 2082,
+          "rmse": 0.17169092229587085,
+          "mae": 0.048780718241694915,
+          "predictive_95_coverage": 0.9428434197886647,
+          "predictive_95_mean_width": 0.714587992557819
+        },
+        {
+          "section": "Zhuang-ABCA-2.030",
+          "fold": 2,
+          "n_cells": 1732,
+          "rmse": 0.20361812169335677,
+          "mae": 0.1346727590168919,
+          "predictive_95_coverage": 0.9197459584295612,
+          "predictive_95_mean_width": 0.5970777603143188
+        },
+        {
+          "section": "Zhuang-ABCA-2.031",
+          "fold": 2,
+          "n_cells": 2145,
+          "rmse": 0.16451904172899362,
+          "mae": 0.11423804652867786,
+          "predictive_95_coverage": 0.9529137529137529,
+          "predictive_95_mean_width": 0.5944098927176207
+        },
+        {
+          "section": "Zhuang-ABCA-2.032",
+          "fold": 2,
+          "n_cells": 2345,
+          "rmse": 0.13348895552259396,
+          "mae": 0.09937631341338474,
+          "predictive_95_coverage": 0.9739872068230278,
+          "predictive_95_mean_width": 0.5723993007343332
+        },
+        {
+          "section": "Zhuang-ABCA-2.033",
+          "fold": 2,
+          "n_cells": 2881,
+          "rmse": 0.15072247492843618,
+          "mae": 0.10421590629489859,
+          "predictive_95_coverage": 0.9607775078097883,
+          "predictive_95_mean_width": 0.5363061678128273
+        },
+        {
+          "section": "Zhuang-ABCA-2.034",
+          "fold": 3,
+          "n_cells": 3565,
+          "rmse": 0.19028574483281846,
+          "mae": 0.11085020524961513,
+          "predictive_95_coverage": 0.9242636746143057,
+          "predictive_95_mean_width": 0.631511822394853
+        },
+        {
+          "section": "Zhuang-ABCA-2.035",
+          "fold": 3,
+          "n_cells": 1882,
+          "rmse": 0.08779015273118808,
+          "mae": 0.06869609175210753,
+          "predictive_95_coverage": 0.9909670563230606,
+          "predictive_95_mean_width": 0.6428868931510107
+        },
+        {
+          "section": "Zhuang-ABCA-2.036",
+          "fold": 3,
+          "n_cells": 2828,
+          "rmse": 0.1271925733451032,
+          "mae": 0.07794702099584037,
+          "predictive_95_coverage": 0.9717114568599717,
+          "predictive_95_mean_width": 0.6329924114515951
+        },
+        {
+          "section": "Zhuang-ABCA-2.037",
+          "fold": 3,
+          "n_cells": 2262,
+          "rmse": 0.1090046996020871,
+          "mae": 0.06864082151336963,
+          "predictive_95_coverage": 0.9792219274977896,
+          "predictive_95_mean_width": 0.630385305735986
+        },
+        {
+          "section": "Zhuang-ABCA-2.039",
+          "fold": 4,
+          "n_cells": 3509,
+          "rmse": 0.14329518425005774,
+          "mae": 0.045348558121812085,
+          "predictive_95_coverage": 0.9618124821886578,
+          "predictive_95_mean_width": 0.7223786665501148
+        },
+        {
+          "section": "Zhuang-ABCA-2.040",
+          "fold": 4,
+          "n_cells": 2880,
+          "rmse": 0.06335584523906616,
+          "mae": 0.0219712330165556,
+          "predictive_95_coverage": 0.9920138888888889,
+          "predictive_95_mean_width": 0.730858925988828
+        },
+        {
+          "section": "Zhuang-ABCA-2.041",
+          "fold": 4,
+          "n_cells": 3079,
+          "rmse": 0.12165968135453864,
+          "mae": 0.032062313371824594,
+          "predictive_95_coverage": 0.9727184150698278,
+          "predictive_95_mean_width": 0.7447138795158877
+        },
+        {
+          "section": "Zhuang-ABCA-2.042",
+          "fold": 4,
+          "n_cells": 1999,
+          "rmse": 0.08191236761873723,
+          "mae": 0.02444545137418513,
+          "predictive_95_coverage": 0.9869934967483742,
+          "predictive_95_mean_width": 0.7530155263956408
+        },
+        {
+          "section": "Zhuang-ABCA-2.044",
+          "fold": 5,
+          "n_cells": 1608,
+          "rmse": 0.15946368081675039,
+          "mae": 0.04847591746719259,
+          "predictive_95_coverage": 0.9533582089552238,
+          "predictive_95_mean_width": 0.7831178358235323
+        },
+        {
+          "section": "Zhuang-ABCA-2.045",
+          "fold": 5,
+          "n_cells": 998,
+          "rmse": 0.18463868251099655,
+          "mae": 0.06208393261470919,
+          "predictive_95_coverage": 0.9338677354709419,
+          "predictive_95_mean_width": 0.8036095852808328
+        },
+        {
+          "section": "Zhuang-ABCA-2.046",
+          "fold": 5,
+          "n_cells": 454,
+          "rmse": 0.10147195167890909,
+          "mae": 0.02968509916175217,
+          "predictive_95_coverage": 0.9801762114537445,
+          "predictive_95_mean_width": 0.8387147627527399
+        },
+        {
+          "section": "Zhuang-ABCA-2.047",
+          "fold": 5,
+          "n_cells": 326,
+          "rmse": 0.24418711488923492,
+          "mae": 0.09938132889910833,
+          "predictive_95_coverage": 0.8987730061349694,
+          "predictive_95_mean_width": 0.841380180837272
+        }
+      ]
+    },
+    {
+      "id": "ENSMUSG00000030905",
+      "symbol": "Crym",
+      "file": "ENSMUSG00000030905.json",
+      "heldout": {
+        "n_cells": 37811,
+        "n_sections": 20,
+        "rmse": 0.17653724062170514,
+        "mae": 0.10591188661615625,
+        "predictive_95_coverage": 0.9740287218005342,
+        "predictive_95_mean_width": 0.6853101626128295,
+        "negative_predictive_probability_mean": 0.378004965023307,
+        "coverage_positive": 0.001017293997965412,
+        "coverage_zero": 1.0,
+        "n_positive": 983,
+        "interval_score_95": 1.1927552700874169,
+        "anatomy_baseline_rmse": 0.1556262088460384,
+        "knn_rmse": 0.1526356283158826,
+        "flags": [
+          "undercoverage_positive_cells",
+          "no_RMSE_improvement_over_anatomy_baseline",
+          "no_RMSE_improvement_over_knn",
+          "nonnegative_support_mismatch"
+        ],
+        "section_macro_rmse": 0.2061867337769025
+      },
+      "by_section": [
+        {
+          "section": "Zhuang-ABCA-2.025",
+          "fold": 1,
+          "n_cells": 29,
+          "rmse": 1.041694853159059,
+          "mae": 0.702804838389782,
+          "predictive_95_coverage": 0.4827586206896552,
+          "predictive_95_mean_width": 0.6747869433249094
+        },
+        {
+          "section": "Zhuang-ABCA-2.026",
+          "fold": 1,
+          "n_cells": 270,
+          "rmse": 0.15676760641120518,
+          "mae": 0.06714720507668659,
+          "predictive_95_coverage": 0.9518518518518518,
+          "predictive_95_mean_width": 0.7565476271125263
+        },
+        {
+          "section": "Zhuang-ABCA-2.027",
+          "fold": 1,
+          "n_cells": 937,
+          "rmse": 0.16680164191933533,
+          "mae": 0.05732551954546924,
+          "predictive_95_coverage": 0.9701173959445037,
+          "predictive_95_mean_width": 0.7608081316201615
+        },
+        {
+          "section": "Zhuang-ABCA-2.028",
+          "fold": 1,
+          "n_cells": 2082,
+          "rmse": 0.10663678688106663,
+          "mae": 0.04257957645599621,
+          "predictive_95_coverage": 0.9807877041306436,
+          "predictive_95_mean_width": 0.7911431588092224
+        },
+        {
+          "section": "Zhuang-ABCA-2.030",
+          "fold": 2,
+          "n_cells": 1732,
+          "rmse": 0.20665676528405105,
+          "mae": 0.18656878341269847,
+          "predictive_95_coverage": 0.9670900692840647,
+          "predictive_95_mean_width": 0.8430091138169037
+        },
+        {
+          "section": "Zhuang-ABCA-2.031",
+          "fold": 2,
+          "n_cells": 2145,
+          "rmse": 0.18572075149861783,
+          "mae": 0.1720005604822782,
+          "predictive_95_coverage": 0.9813519813519813,
+          "predictive_95_mean_width": 0.8392423737907985
+        },
+        {
+          "section": "Zhuang-ABCA-2.032",
+          "fold": 2,
+          "n_cells": 2345,
+          "rmse": 0.18172863197207761,
+          "mae": 0.17172503307650416,
+          "predictive_95_coverage": 0.9884861407249467,
+          "predictive_95_mean_width": 0.8081658024030973
+        },
+        {
+          "section": "Zhuang-ABCA-2.033",
+          "fold": 2,
+          "n_cells": 2881,
+          "rmse": 0.16658014388097553,
+          "mae": 0.16212932925421233,
+          "predictive_95_coverage": 0.992710864283235,
+          "predictive_95_mean_width": 0.7572062088268489
+        },
+        {
+          "section": "Zhuang-ABCA-2.034",
+          "fold": 3,
+          "n_cells": 3565,
+          "rmse": 0.13784871233096602,
+          "mae": 0.11383797146046182,
+          "predictive_95_coverage": 0.979523141654979,
+          "predictive_95_mean_width": 0.5997891747189477
+        },
+        {
+          "section": "Zhuang-ABCA-2.035",
+          "fold": 3,
+          "n_cells": 1882,
+          "rmse": 0.11217844382256138,
+          "mae": 0.10108683201194275,
+          "predictive_95_coverage": 0.9920297555791711,
+          "predictive_95_mean_width": 0.6105928430894497
+        },
+        {
+          "section": "Zhuang-ABCA-2.036",
+          "fold": 3,
+          "n_cells": 2828,
+          "rmse": 0.19846464447736187,
+          "mae": 0.12089546245791874,
+          "predictive_95_coverage": 0.9593352192362093,
+          "predictive_95_mean_width": 0.6011953895465237
+        },
+        {
+          "section": "Zhuang-ABCA-2.037",
+          "fold": 3,
+          "n_cells": 2262,
+          "rmse": 0.13966387152347226,
+          "mae": 0.09963268807646258,
+          "predictive_95_coverage": 0.9761273209549072,
+          "predictive_95_mean_width": 0.598719246218533
+        },
+        {
+          "section": "Zhuang-ABCA-2.039",
+          "fold": 4,
+          "n_cells": 3509,
+          "rmse": 0.2805125360241708,
+          "mae": 0.08962400623352017,
+          "predictive_95_coverage": 0.9373040752351097,
+          "predictive_95_mean_width": 0.5686188724853191
+        },
+        {
+          "section": "Zhuang-ABCA-2.040",
+          "fold": 4,
+          "n_cells": 2880,
+          "rmse": 0.1755477382146687,
+          "mae": 0.05338384377533188,
+          "predictive_95_coverage": 0.9680555555555556,
+          "predictive_95_mean_width": 0.5752940911534625
+        },
+        {
+          "section": "Zhuang-ABCA-2.041",
+          "fold": 4,
+          "n_cells": 3079,
+          "rmse": 0.16534138212699992,
+          "mae": 0.05871461169452457,
+          "predictive_95_coverage": 0.9691458265670673,
+          "predictive_95_mean_width": 0.5861999891508624
+        },
+        {
+          "section": "Zhuang-ABCA-2.042",
+          "fold": 4,
+          "n_cells": 1999,
+          "rmse": 0.10965842358489265,
+          "mae": 0.04623226228982827,
+          "predictive_95_coverage": 0.9869934967483742,
+          "predictive_95_mean_width": 0.5927346133128414
+        },
+        {
+          "section": "Zhuang-ABCA-2.044",
+          "fold": 5,
+          "n_cells": 1608,
+          "rmse": 0.13042578552940953,
+          "mae": 0.09085375080936199,
+          "predictive_95_coverage": 0.9832089552238806,
+          "predictive_95_mean_width": 0.8671157799701941
+        },
+        {
+          "section": "Zhuang-ABCA-2.045",
+          "fold": 5,
+          "n_cells": 998,
+          "rmse": 0.13071614353086058,
+          "mae": 0.1057533552641939,
+          "predictive_95_coverage": 0.9879759519038076,
+          "predictive_95_mean_width": 0.8898054934472664
+        },
+        {
+          "section": "Zhuang-ABCA-2.046",
+          "fold": 5,
+          "n_cells": 454,
+          "rmse": 0.14293791658582802,
+          "mae": 0.12340517899519299,
+          "predictive_95_coverage": 0.9889867841409692,
+          "predictive_95_mean_width": 0.9286760847581305
+        },
+        {
+          "section": "Zhuang-ABCA-2.047",
+          "fold": 5,
+          "n_cells": 326,
+          "rmse": 0.18785189678047048,
+          "mae": 0.1516988305515918,
+          "predictive_95_coverage": 0.9785276073619632,
+          "predictive_95_mean_width": 0.9316273980542771
+        }
+      ]
+    }
+  ],
+  "training_descriptive_metrics": [
+    {
+      "gene": "Tll1",
+      "n_cells": 37811,
+      "rmse": 0.10663962792969091,
+      "mae": 0.0382721507182613
+    },
+    {
+      "gene": "Fosl2",
+      "n_cells": 37811,
+      "rmse": 0.22060018127785233,
+      "mae": 0.1091273101638095
+    },
+    {
+      "gene": "Nr4a3",
+      "n_cells": 37811,
+      "rmse": 0.13468542938799336,
+      "mae": 0.04933422394600905
+    },
+    {
+      "gene": "Egr2",
+      "n_cells": 37811,
+      "rmse": 0.07960618860882969,
+      "mae": 0.02449343196428041
+    },
+    {
+      "gene": "Cpne9",
+      "n_cells": 37811,
+      "rmse": 0.3921179103289122,
+      "mae": 0.16331032458631017
+    },
+    {
+      "gene": "Egr3",
+      "n_cells": 37811,
+      "rmse": 0.11514324769654309,
+      "mae": 0.04842790958353039
+    },
+    {
+      "gene": "Hgf",
+      "n_cells": 37811,
+      "rmse": 0.08451560477355485,
+      "mae": 0.019874602264930208
+    },
+    {
+      "gene": "Bcl11b",
+      "n_cells": 37811,
+      "rmse": 0.17877301215982394,
+      "mae": 0.09644786465492539
+    },
+    {
+      "gene": "Car12",
+      "n_cells": 37811,
+      "rmse": 0.1405752049489497,
+      "mae": 0.06667333811473393
+    },
+    {
+      "gene": "Crym",
+      "n_cells": 37811,
+      "rmse": 0.1538746242521832,
+      "mae": 0.0749198770738004
+    }
+  ]
+}

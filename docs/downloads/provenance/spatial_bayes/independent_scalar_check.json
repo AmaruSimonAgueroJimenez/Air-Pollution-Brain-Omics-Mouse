@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "known_scalar_m": true,
+    "known_scalar_V": true,
+    "known_scalar_shape": true,
+    "known_scalar_scale": true,
+    "unknown_anatomy_uncertainty_widens": true,
+    "new_cell_uncertainty_widens": true
+  },
+  "passed": true,
+  "purpose": "Independent n=3 scalar conjugacy identity and unseen-anatomy/new-cell variance checks; no performance outcome selected."
+}

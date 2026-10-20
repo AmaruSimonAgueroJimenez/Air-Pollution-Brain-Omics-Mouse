@@ -152,3 +152,9 @@ The same unexposed male Zhuang-ABCA-2 reference supplies all registered cells wi
 Each cortical gene's measured imaging values are multiplied uniformly by 2 to the power of its primary cortical shrunken log₂FC. The cortical effect is restricted to ACA; hypothalamus retains its own independent bulk effect. The common reference/scenario scale is computed within each gene. A three-gene comparison reports observed detection and mean imaging counts including zeros, original regional RNA effects, BH q and annotation; it does not test between-gene exposure differences or equalize probe efficiencies.
 
 The cortical atlas donor is not an experimental control for the humanized α-synuclein animals. Spatial location of a reference transcript and a regional effect do not identify which cells respond to PM2.5. Source coordinate/volume agreement, join invariants, count ranges and all 1,122 compressed gene vectors are checked numerically. See [gene profiles](gene_profiles.qmd) and [cortical 3D methods and results](cortex_viewer.qmd).
+
+## Sectional measurement and Bayesian spatial prediction
+
+The [measured-section chapter](spatial_explorer.qmd) joins original section metadata by exact cell ID and retains all registered ACA/HY cells and raw counts. Within-section experimental coordinates remain separate from CCF coordinates. Detection is positive raw count divided by all selected measured cells, including zeros; empty spatial bins are missing. ACA labels are layers/subdivisions, while HY labels are nuclei/subregions.
+
+The [Bayesian chapter](spatial_bayes.qmd) gives the working likelihood, proper priors, section offsets, posterior targets, blocked whole-section validation, simple baselines and prior sensitivity. Model/data integrity and scientific performance are reported separately. The model is an unexposed-reference analysis and supplies no cell-type-specific pollutant effect or increase in measured acquisition resolution.

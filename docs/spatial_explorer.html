@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-10-20">
+
+<title>Measured sections, cortical layers and detection – Air pollution · brain omics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5dd942ac47374bdb5320a9bbd29a7aa4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="assets/report.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Air pollution · brain omics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Overview</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./introduction.html"> 
+<span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./methods.html"> 
+<span class="menu-text">Methods</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-results" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Results</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-results">    
+        <li>
+    <a class="dropdown-item" href="./results.html">
+ <span class="dropdown-text">Hypothalamus · PM2.5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cortex.html">
+ <span class="dropdown-text">Cingulate cortex · PM2.5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./mirna.html">
+ <span class="dropdown-text">Hippocampal miRNA · PM2.5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ozone.html">
+ <span class="dropdown-text">Hippocampus · ozone</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./enrichment.html">
+ <span class="dropdown-text">Functional enrichment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./advanced_results.html">
+ <span class="dropdown-text">Interactions &amp; molecular panels</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./replication.html">
+ <span class="dropdown-text">Original-study reproduction</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./spatial_reference.html">
+ <span class="dropdown-text">Measured spatial reference</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./gene_profiles.html"> 
+<span class="menu-text">Genes &amp; functions</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-spatial-atlas" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Spatial atlas</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-spatial-atlas">    
+        <li>
+    <a class="dropdown-item" href="./spatial_explorer.html">
+ <span class="dropdown-text">Sections, layers &amp; detection</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./spatial_bayes.html">
+ <span class="dropdown-text">Bayesian baseline &amp; validation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./viewer.html">
+ <span class="dropdown-text">Hypothalamus &amp; region selection</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cortex_viewer.html">
+ <span class="dropdown-text">Anterior cingulate cortex</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./reproducibility.html"> 
+<span class="menu-text">Data &amp; code</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./es/index.html"> 
+<span class="menu-text">Español</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Measured sections, cortical layers and detection</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead">Anatomical exploration of anterior cingulate cortex and hypothalamus</p>
+</div>
+
+
+
+<div class="quarto-title-meta column-page">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Analysis date</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">20 October 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>The three-dimensional cell cloud contains actual registered atlas coordinates. This extension makes its anatomical organization easier to inspect through original physical sections, cortical layers or hypothalamic nuclei, and maps of the fraction of measured cells in which a gene is detected. It does not rearrange cells or generate additional observations. The reference is the unexposed adult male <strong>Zhuang-ABCA-2</strong>, separate from the pollution experiments. <span class="citation" data-cites="Zhang2023_38092912">(<a href="#ref-Zhang2023_38092912" role="doc-biblioref">Zhang et al. 2023</a>)</span></p>
+<p><a href="./spatial_bayes.html" class="btn btn-outline-primary">Bayesian baseline: methods, validation and uncertainty</a> <a href="./cortex_viewer.html" class="btn btn-outline-secondary">Original cortex 3D reference/scenario</a> <a href="./viewer.html" class="btn btn-outline-secondary">Original hypothalamus 3D reference/scenario</a></p>
+<div id="efbef295" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display cell-output-markdown">
+<div class="metric-cards">
+<div>
+<span>ACA cells / sections</span><strong>14,582 / 18</strong><small>Dorsal + ventral ACA; all registered cells</small>
+</div>
+<div>
+<span>HY cells / sections</span><strong>37,811 / 20</strong><small>All registered hypothalamic cells</small>
+</div>
+<div>
+<span>Anatomical subdivisions</span><strong>10 ACA / 49 HY</strong><small>Layers/subdivisions and nuclei; no relocation</small>
+</div>
+<div>
+<span>Reference animals</span><strong>1</strong><small>Physical sections are not independent animals</small>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="explore-measured-sections" class="level2">
+<h2 class="anchored" data-anchor-id="explore-measured-sections">Explore measured sections</h2>
+<p>Select the brain region, a physical section and a gene. Within-section maps use deposited experimental coordinates; the anatomical labels come from CCF registration. The two coordinate systems are not interchangeable. In ACA, substructures identify dorsal/ventral cortex and layers 1, 2/3, 5, 6a and 6b. Hypothalamic subdivisions identify nuclei rather than cortical layers.</p>
+<iframe id="sections-frame" class="viewer-frame" src="assets/spatial-explorer/index.html?region=ACA" title="Measured section, anatomy and detection explorer" loading="lazy">
+</iframe>
+<script>
+window.addEventListener("message", function(event) {
+ const frame = document.getElementById("sections-frame");
+ if (frame && event.source === frame.contentWindow && event.origin === window.location.origin && event.data && ["omics-spatial-height", "omics-atlas-height"].includes(event.data.type)) {
+  const height = Number(event.data.height);
+  if (Number.isFinite(height)) frame.style.height = Math.min(14000, Math.max(1700, height + 30)) + "px";
+ }
+});
+</script>
+<p><a href="assets/spatial-explorer/index.html?region=ACA" class="btn btn-primary" target="_blank">Open the standalone explorer</a></p>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<p>Cell identifiers join the original section metadata to the existing regional reference without changing cell order or counts. All registered regional cells are retained. Ten fixed measured candidates per region reproduce the prior gene-priority lists; this extension does not reselect exposure discoveries using the spatial maps.</p>
+<p><strong>Detection means an original imaging count greater than zero.</strong> For each displayed anatomical group or occupied spatial bin, the numerator is the number of positive-count cells and the denominator is every selected measured cell, including zeros. Filters change both numerator and denominator. Empty bins have no denominator and remain missing; they are not painted as zero detection. This is a detection fraction among sampled cells, not cells per tissue volume, biological absence, or the fraction of cells responding to PM2.5.</p>
+<p>The same gene can be displayed as measured expression, binary detection, cell class or anatomy. Zeros are visible in a neutral color. Bin size and the number of supporting cells are explicit. Raw cell values and tables remain downloadable. A visually smooth map is not evidence of greater acquisition resolution: this donor was sampled at nominal 200 µm coronal intervals. <span class="citation" data-cites="Zhang2023_38092912">(<a href="#ref-Zhang2023_38092912" role="doc-biblioref">Zhang et al. 2023</a>)</span></p>
+</section>
+<section id="results-and-static-alternatives" class="level2">
+<h2 class="anchored" data-anchor-id="results-and-static-alternatives">Results and static alternatives</h2>
+<p>The following figures use actual cells and measured counts. Layer/nucleus summaries retain their denominators, and physical section spacing remains visible. They describe one reference donor rather than replicate exposed animals.</p>
+<div id="8dc71214" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display cell-output-markdown">
+<figure class="research-figure figure">
+<a href="assets/figures/spatial_sections/ACA_sections_evidence.svg"><img loading="lazy" width="3150" height="2205" src="assets/figures/spatial_sections/ACA_sections_evidence.png" alt="Measured ACA reference: Fosb, Egr3, S1pr1 in Zhuang-ABCA-2.023, selected solely as the slice with the most measured regional cells (n=1,940; median CCF AP 4.066 mm). Within-slice positions use the deposited experimental x/y millimeters, with y displayed downward. Gray points retain measured zeros; positive points are colored by log2(1+raw count), with an uncapped per-gene scale. Lower panels show raw-count>0 / all measured cells by deposited anatomy and each measured slice, using every regional cell. These are descriptive proportions from one unexposed donor, without cell-level tests, smoothing, intervals or exposed measurements. ACA labels are layers/subdivisions; HY labels are nuclei/subregions. Unequal group n is shown; section n can be very small and all denominators are downloadable. The anatomy heatmap is scaled 0–70% without clipping; region scales differ. Section points are not connected across gaps." class="figure-img"></a>
+<figcaption>
+Measured ACA reference: Fosb, Egr3, S1pr1 in Zhuang-ABCA-2.023, selected solely as the slice with the most measured regional cells (n=1,940; median CCF AP 4.066 mm). Within-slice positions use the deposited experimental x/y millimeters, with y displayed downward. Gray points retain measured zeros; positive points are colored by log2(1+raw count), with an uncapped per-gene scale. Lower panels show raw-count&gt;0 / all measured cells by deposited anatomy and each measured slice, using every regional cell. These are descriptive proportions from one unexposed donor, without cell-level tests, smoothing, intervals or exposed measurements. ACA labels are layers/subdivisions; HY labels are nuclei/subregions. Unequal group n is shown; section n can be very small and all denominators are downloadable. The anatomy heatmap is scaled 0–70% without clipping; region scales differ. Section points are not connected across gaps. <span class="figure-links"><a href="assets/figures/spatial_sections/ACA_sections_evidence.svg">SVG</a> · <a href="assets/figures/spatial_sections/ACA_sections_evidence.pdf">PDF</a></span>
+</figcaption>
+</figure>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<figure class="research-figure figure">
+<a href="assets/figures/spatial_sections/HY_sections_evidence.svg"><img loading="lazy" width="3780" height="2415" src="assets/figures/spatial_sections/HY_sections_evidence.png" alt="Measured HY reference: Tll1, Fosl2, Nr4a3 in Zhuang-ABCA-2.034, selected solely as the slice with the most measured regional cells (n=3,565; median CCF AP 6.117 mm). Within-slice positions use the deposited experimental x/y millimeters, with y displayed downward. Gray points retain measured zeros; positive points are colored by log2(1+raw count), with an uncapped per-gene scale. Lower panels show raw-count>0 / all measured cells by deposited anatomy and each measured slice, using every regional cell. These are descriptive proportions from one unexposed donor, without cell-level tests, smoothing, intervals or exposed measurements. ACA labels are layers/subdivisions; HY labels are nuclei/subregions. Unequal group n is shown; section n can be very small and all denominators are downloadable. The anatomy heatmap is scaled 0–20% without clipping; region scales differ. Section points are not connected across gaps." class="figure-img"></a>
+<figcaption>
+Measured HY reference: Tll1, Fosl2, Nr4a3 in Zhuang-ABCA-2.034, selected solely as the slice with the most measured regional cells (n=3,565; median CCF AP 6.117 mm). Within-slice positions use the deposited experimental x/y millimeters, with y displayed downward. Gray points retain measured zeros; positive points are colored by log2(1+raw count), with an uncapped per-gene scale. Lower panels show raw-count&gt;0 / all measured cells by deposited anatomy and each measured slice, using every regional cell. These are descriptive proportions from one unexposed donor, without cell-level tests, smoothing, intervals or exposed measurements. ACA labels are layers/subdivisions; HY labels are nuclei/subregions. Unequal group n is shown; section n can be very small and all denominators are downloadable. The anatomy heatmap is scaled 0–20% without clipping; region scales differ. Section points are not connected across gaps. <span class="figure-links"><a href="assets/figures/spatial_sections/HY_sections_evidence.svg">SVG</a> · <a href="assets/figures/spatial_sections/HY_sections_evidence.pdf">PDF</a></span>
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="1030a8ba" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display cell-output-markdown">
+<div class="table-scroll">
+<table class="dataframe table table-sm table-striped evidence-table small">
+<thead>
+<tr>
+<th>
+Region
+</th>
+<th>
+Gene
+</th>
+<th>
+Positive cells
+</th>
+<th>
+All measured cells
+</th>
+<th>
+Detection (%)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Fosb
+</td>
+<td>
+1418
+</td>
+<td>
+14582
+</td>
+<td>
+9.72
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Egr3
+</td>
+<td>
+5699
+</td>
+<td>
+14582
+</td>
+<td>
+39.1
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+S1pr1
+</td>
+<td>
+6761
+</td>
+<td>
+14582
+</td>
+<td>
+46.4
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+C730002L08Rik
+</td>
+<td>
+902
+</td>
+<td>
+14582
+</td>
+<td>
+6.19
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Fosl2
+</td>
+<td>
+2349
+</td>
+<td>
+14582
+</td>
+<td>
+16.1
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Col19a1
+</td>
+<td>
+1731
+</td>
+<td>
+14582
+</td>
+<td>
+11.9
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Pcdh8
+</td>
+<td>
+2712
+</td>
+<td>
+14582
+</td>
+<td>
+18.6
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Iqgap2
+</td>
+<td>
+3367
+</td>
+<td>
+14582
+</td>
+<td>
+23.1
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Usp43
+</td>
+<td>
+859
+</td>
+<td>
+14582
+</td>
+<td>
+5.89
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Rorb
+</td>
+<td>
+2251
+</td>
+<td>
+14582
+</td>
+<td>
+15.4
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Tll1
+</td>
+<td>
+667
+</td>
+<td>
+37811
+</td>
+<td>
+1.76
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Fosl2
+</td>
+<td>
+2461
+</td>
+<td>
+37811
+</td>
+<td>
+6.51
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Nr4a3
+</td>
+<td>
+1079
+</td>
+<td>
+37811
+</td>
+<td>
+2.85
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Egr2
+</td>
+<td>
+414
+</td>
+<td>
+37811
+</td>
+<td>
+1.09
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Cpne9
+</td>
+<td>
+3871
+</td>
+<td>
+37811
+</td>
+<td>
+10.2
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Egr3
+</td>
+<td>
+733
+</td>
+<td>
+37811
+</td>
+<td>
+1.94
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Hgf
+</td>
+<td>
+479
+</td>
+<td>
+37811
+</td>
+<td>
+1.27
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Bcl11b
+</td>
+<td>
+1681
+</td>
+<td>
+37811
+</td>
+<td>
+4.45
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Car12
+</td>
+<td>
+1443
+</td>
+<td>
+37811
+</td>
+<td>
+3.82
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Crym
+</td>
+<td>
+983
+</td>
+<td>
+37811
+</td>
+<td>
+2.6
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>ACA contributes 18 physical sections and HY contributes 20; some sections contain cells from both regions and are not additional animals. One ACA edge section contains only one registered cell. Such small denominators remain visible, and a 0% or 100% value from a small group should not be interpreted as a precise regional proportion.</p>
+</section>
+<section id="interpretation-and-the-bayesian-extension" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation-and-the-bayesian-extension">Interpretation and the Bayesian extension</h2>
+<p>Anatomical restrictions make the existing organization visible without moving a cell. The Bayesian tab estimates <strong>baseline expected log-expression</strong> at the existing cell locations and displays uncertainty separately. It does not turn a nondetection into an observed molecule. Its held-out prediction results, modeling assumptions and limitations are presented in the <a href="./spatial_bayes.html">Bayesian chapter</a>.</p>
+<p>The experimental PM2.5 comparison remains the original regional bulk analysis and uniform scenario in the separate 3D viewers. These section maps do not identify exposed single cells or cell-type-specific responses.</p>
+</section>
+<section id="source-data-and-reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="source-data-and-reproducibility">Source data and reproducibility</h2>
+<p><a href="downloads/spatial_sections/summary.json">Section summary</a> · <a href="downloads/spatial_sections/validation.json">Data and numerical checks</a> · <a href="downloads/code/build_spatial_sections.py">Source preparation</a> · <a href="./reproducibility.html">Full reproducibility chapter</a>.</p>
+<p><a href="downloads/spatial_sections/ACA/cells_with_sections.tsv.gz">ACA cells and sections</a> · <a href="downloads/spatial_sections/ACA/sections.tsv">ACA section metadata</a> · <a href="downloads/spatial_sections/ACA/detection_by_anatomy.tsv.gz">ACA layer detection</a> · <a href="downloads/spatial_sections/ACA/detection_by_bins.tsv.gz">ACA occupied-bin detection</a>.</p>
+<p><a href="downloads/spatial_sections/HY/cells_with_sections.tsv.gz">HY cells and sections</a> · <a href="downloads/spatial_sections/HY/sections.tsv">HY section metadata</a> · <a href="downloads/spatial_sections/HY/detection_by_anatomy.tsv.gz">HY nucleus detection</a> · <a href="downloads/spatial_sections/HY/detection_by_bins.tsv.gz">HY occupied-bin detection</a>.</p>
+
+
+<!-- -->
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Zhang2023_38092912" class="csl-entry" role="listitem">
+Zhang, Meng, Xingjie Pan, Won Jung, et al. 2023. <span>“Molecularly Defined and Spatially Resolved Cell Atlas of the Whole Mouse Brain.”</span> <em>Nature</em> 624: 343–54. <a href="https://doi.org/10.1038/s41586-023-06808-9">https://doi.org/10.1038/s41586-023-06808-9</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/amarusimonaguerojimenez\.github\.io\/Air-Pollution-Brain-Omics-Mouse\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Measured sections, cortical layers and detection"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Anatomical exploration of anterior cingulate cortex and hypothalamus"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">page-layout:</span><span class="co"> full</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> false</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Markdown, display</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> _report_utils <span class="im">import</span> ROOT, summary, metric_cards, figure, read_table, show_table</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> summary(<span class="st">"spatial_sections"</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>The three-dimensional cell cloud contains actual registered atlas coordinates. This extension makes its anatomical organization easier to inspect through original physical sections, cortical layers or hypothalamic nuclei, and maps of the fraction of measured cells in which a gene is detected. It does not rearrange cells or generate additional observations. The reference is the unexposed adult male **Zhuang-ABCA-2**, separate from the pollution experiments. <span class="co">[</span><span class="ot">@Zhang2023_38092912</span><span class="co">]</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Bayesian baseline: methods, validation and uncertainty</span><span class="co">](spatial_bayes.qmd)</span>{.btn .btn-outline-primary}</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Original cortex 3D reference/scenario</span><span class="co">](cortex_viewer.qmd)</span>{.btn .btn-outline-secondary}</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Original hypothalamus 3D reference/scenario</span><span class="co">](viewer.qmd)</span>{.btn .btn-outline-secondary}</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>metric_cards([</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"ACA cells / sections"</span>, <span class="ss">f"</span><span class="sc">{</span>s[<span class="st">'ACA'</span>][<span class="st">'cells'</span>]<span class="sc">:,}</span><span class="ss"> / </span><span class="sc">{</span>s[<span class="st">'ACA'</span>][<span class="st">'sections'</span>]<span class="sc">}</span><span class="ss">"</span>, <span class="st">"Dorsal + ventral ACA; all registered cells"</span>),</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"HY cells / sections"</span>, <span class="ss">f"</span><span class="sc">{</span>s[<span class="st">'HY'</span>][<span class="st">'cells'</span>]<span class="sc">:,}</span><span class="ss"> / </span><span class="sc">{</span>s[<span class="st">'HY'</span>][<span class="st">'sections'</span>]<span class="sc">}</span><span class="ss">"</span>, <span class="st">"All registered hypothalamic cells"</span>),</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Anatomical subdivisions"</span>, <span class="ss">f"</span><span class="sc">{</span>s[<span class="st">'ACA'</span>][<span class="st">'anatomical_groups'</span>]<span class="sc">}</span><span class="ss"> ACA / </span><span class="sc">{</span>s[<span class="st">'HY'</span>][<span class="st">'anatomical_groups'</span>]<span class="sc">}</span><span class="ss"> HY"</span>, <span class="st">"Layers/subdivisions and nuclei; no relocation"</span>),</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Reference animals"</span>, <span class="st">"1"</span>, <span class="st">"Physical sections are not independent animals"</span>)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## Explore measured sections</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>Select the brain region, a physical section and a gene. Within-section maps use deposited experimental coordinates; the anatomical labels come from CCF registration. The two coordinate systems are not interchangeable. In ACA, substructures identify dorsal/ventral cortex and layers 1, 2/3, 5, 6a and 6b. Hypothalamic subdivisions identify nuclei rather than cortical layers.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">iframe</span><span class="ot"> id</span><span class="op">=</span><span class="st">"sections-frame"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"viewer-frame"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"assets/spatial-explorer/index.html?region=ACA"</span><span class="ot"> title</span><span class="op">=</span><span class="st">"Measured section, anatomy and detection explorer"</span><span class="ot"> loading</span><span class="op">=</span><span class="st">"lazy"</span><span class="dt">&gt;&lt;/</span><span class="kw">iframe</span><span class="dt">&gt;</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span><span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"message"</span><span class="op">,</span> <span class="kw">function</span>(<span class="bu">event</span>) {</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a> <span class="kw">const</span> frame <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"sections-frame"</span>)<span class="op">;</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a> <span class="cf">if</span> (frame <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">source</span> <span class="op">===</span> frame<span class="op">.</span><span class="at">contentWindow</span> <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">origin</span> <span class="op">===</span> <span class="bu">window</span><span class="op">.</span><span class="at">location</span><span class="op">.</span><span class="at">origin</span> <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">data</span> <span class="op">&amp;&amp;</span> [<span class="st">"omics-spatial-height"</span><span class="op">,</span> <span class="st">"omics-atlas-height"</span>]<span class="op">.</span><span class="fu">includes</span>(<span class="bu">event</span><span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">type</span>)) {</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> height <span class="op">=</span> <span class="bu">Number</span>(<span class="bu">event</span><span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">height</span>)<span class="op">;</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="bu">Number</span><span class="op">.</span><span class="fu">isFinite</span>(height)) frame<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">height</span> <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(<span class="dv">14000</span><span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">1700</span><span class="op">,</span> height <span class="op">+</span> <span class="dv">30</span>)) <span class="op">+</span> <span class="st">"px"</span><span class="op">;</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a> }</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Open the standalone explorer</span><span class="co">](assets/spatial-explorer/index.html?region=ACA)</span>{.btn .btn-primary target="_blank"}</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="fu">## Methods</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>Cell identifiers join the original section metadata to the existing regional reference without changing cell order or counts. All registered regional cells are retained. Ten fixed measured candidates per region reproduce the prior gene-priority lists; this extension does not reselect exposure discoveries using the spatial maps.</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>**Detection means an original imaging count greater than zero.** For each displayed anatomical group or occupied spatial bin, the numerator is the number of positive-count cells and the denominator is every selected measured cell, including zeros. Filters change both numerator and denominator. Empty bins have no denominator and remain missing; they are not painted as zero detection. This is a detection fraction among sampled cells, not cells per tissue volume, biological absence, or the fraction of cells responding to PM2.5.</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>The same gene can be displayed as measured expression, binary detection, cell class or anatomy. Zeros are visible in a neutral color. Bin size and the number of supporting cells are explicit. Raw cell values and tables remain downloadable. A visually smooth map is not evidence of greater acquisition resolution: this donor was sampled at nominal 200 µm coronal intervals. <span class="co">[</span><span class="ot">@Zhang2023_38092912</span><span class="co">]</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="fu">## Results and static alternatives</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>The following figures use actual cells and measured counts. Layer/nucleus summaries retain their denominators, and physical section spacing remains visible. They describe one reference donor rather than replicate exposed animals.</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>manifest <span class="op">=</span> json.loads((ROOT <span class="op">/</span> <span class="st">"results/spatial_sections/figure_manifest.json"</span>).read_text())</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> stem, item <span class="kw">in</span> manifest.items():</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    language <span class="op">=</span> item.get(<span class="st">"language"</span>, <span class="st">"es"</span> <span class="cf">if</span> stem.endswith(<span class="st">"_es"</span>) <span class="cf">else</span> <span class="st">"en"</span>)</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> language <span class="op">==</span> <span class="st">"en"</span>:</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>        figure(<span class="st">"spatial_sections"</span>, stem, item.get(<span class="st">"caption_en"</span>, item.get(<span class="st">"caption"</span>, <span class="st">""</span>)))</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> []</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> region <span class="kw">in</span> (<span class="st">"ACA"</span>, <span class="st">"HY"</span>):</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>    info <span class="op">=</span> s[region]</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> gene <span class="kw">in</span> info[<span class="st">"genes"</span>]:</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>        positive <span class="op">=</span> info[<span class="st">"positive_cells"</span>][gene]</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>        rows.append([region, gene, positive, info[<span class="st">"cells"</span>], <span class="dv">100</span> <span class="op">*</span> positive <span class="op">/</span> info[<span class="st">"cells"</span>]])</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>show_table(pd.DataFrame(rows, columns<span class="op">=</span>[<span class="st">"Region"</span>, <span class="st">"Gene"</span>, <span class="st">"Positive cells"</span>, <span class="st">"All measured cells"</span>, <span class="st">"Detection (%)"</span>]), n<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>ACA contributes 18 physical sections and HY contributes 20; some sections contain cells from both regions and are not additional animals. One ACA edge section contains only one registered cell. Such small denominators remain visible, and a 0% or 100% value from a small group should not be interpreted as a precise regional proportion.</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interpretation and the Bayesian extension</span></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>Anatomical restrictions make the existing organization visible without moving a cell. The Bayesian tab estimates **baseline expected log-expression** at the existing cell locations and displays uncertainty separately. It does not turn a nondetection into an observed molecule. Its held-out prediction results, modeling assumptions and limitations are presented in the <span class="co">[</span><span class="ot">Bayesian chapter</span><span class="co">](spatial_bayes.qmd)</span>.</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>The experimental PM2.5 comparison remains the original regional bulk analysis and uniform scenario in the separate 3D viewers. These section maps do not identify exposed single cells or cell-type-specific responses.</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="fu">## Source data and reproducibility</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Section summary</span><span class="co">](downloads/spatial_sections/summary.json)</span> · <span class="co">[</span><span class="ot">Data and numerical checks</span><span class="co">](downloads/spatial_sections/validation.json)</span> · <span class="co">[</span><span class="ot">Source preparation</span><span class="co">](downloads/code/build_spatial_sections.py)</span> · <span class="co">[</span><span class="ot">Full reproducibility chapter</span><span class="co">](reproducibility.qmd)</span>.</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">ACA cells and sections</span><span class="co">](downloads/spatial_sections/ACA/cells_with_sections.tsv.gz)</span> · <span class="co">[</span><span class="ot">ACA section metadata</span><span class="co">](downloads/spatial_sections/ACA/sections.tsv)</span> · <span class="co">[</span><span class="ot">ACA layer detection</span><span class="co">](downloads/spatial_sections/ACA/detection_by_anatomy.tsv.gz)</span> · <span class="co">[</span><span class="ot">ACA occupied-bin detection</span><span class="co">](downloads/spatial_sections/ACA/detection_by_bins.tsv.gz)</span>.</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">HY cells and sections</span><span class="co">](downloads/spatial_sections/HY/cells_with_sections.tsv.gz)</span> · <span class="co">[</span><span class="ot">HY section metadata</span><span class="co">](downloads/spatial_sections/HY/sections.tsv)</span> · <span class="co">[</span><span class="ot">HY nucleus detection</span><span class="co">](downloads/spatial_sections/HY/detection_by_anatomy.tsv.gz)</span> · <span class="co">[</span><span class="ot">HY occupied-bin detection</span><span class="co">](downloads/spatial_sections/HY/detection_by_bins.tsv.gz)</span>.</span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Public-data reanalysis · Mus musculus</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Measured reference and simulated exposure are distinguished.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

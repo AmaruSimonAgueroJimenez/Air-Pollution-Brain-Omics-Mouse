@@ -1,0 +1,2249 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Detección bayesiana y validación de la referencia espacial – Contaminación del aire · ómica cerebral</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5dd942ac47374bdb5320a9bbd29a7aa4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../assets/report.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Contaminación del aire · ómica cerebral</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Resumen</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./introduction.html"> 
+<span class="menu-text">Introducción</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./methods.html"> 
+<span class="menu-text">Métodos</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resultados" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Resultados</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-resultados">    
+        <li>
+    <a class="dropdown-item" href="./results.html">
+ <span class="dropdown-text">Hipotálamo · PM2.5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cortex.html">
+ <span class="dropdown-text">Corteza cingulada · PM2.5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./mirna.html">
+ <span class="dropdown-text">miRNA del hipocampo · PM2.5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./ozone.html">
+ <span class="dropdown-text">Hipocampo · ozono</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./enrichment.html">
+ <span class="dropdown-text">Enriquecimiento funcional</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./advanced_results.html">
+ <span class="dropdown-text">Interacciones y paneles moleculares</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./replication.html">
+ <span class="dropdown-text">Reproducción de los artículos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./spatial_reference.html">
+ <span class="dropdown-text">Referencia espacial medida</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./gene_profiles.html"> 
+<span class="menu-text">Genes y funciones</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-atlas-espacial" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Atlas espacial</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-atlas-espacial">    
+        <li>
+    <a class="dropdown-item" href="./spatial_explorer.html">
+ <span class="dropdown-text">Cortes, capas y detección</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./spatial_bayes.html">
+ <span class="dropdown-text">Modelo bayesiano y validación</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./viewer.html">
+ <span class="dropdown-text">Hipotálamo y selección regional</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cortex_viewer.html">
+ <span class="dropdown-text">Corteza cingulada anterior</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./reproducibility.html"> 
+<span class="menu-text">Datos y código</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./../index.html"> 
+<span class="menu-text">English</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Alternar modo lector">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
+  <li><a href="#detección-bayesiana-metodología" id="toc-detección-bayesiana-metodología" class="nav-link" data-scroll-target="#detección-bayesiana-metodología">Detección bayesiana: metodología</a>
+  <ul class="collapse">
+  <li><a href="#resultados-de-detección" id="toc-resultados-de-detección" class="nav-link" data-scroll-target="#resultados-de-detección">Resultados de detección</a></li>
+  </ul></li>
+  <li><a href="#referencia-de-expresión-espacial-metodología" id="toc-referencia-de-expresión-espacial-metodología" class="nav-link" data-scroll-target="#referencia-de-expresión-espacial-metodología">Referencia de expresión espacial: metodología</a>
+  <ul class="collapse">
+  <li><a href="#datos-objetivo-e-información-anatómica" id="toc-datos-objetivo-e-información-anatómica" class="nav-link" data-scroll-target="#datos-objetivo-e-información-anatómica">Datos, objetivo e información anatómica</a></li>
+  <li><a href="#priors-propios-y-distribuciones-posteriores" id="toc-priors-propios-y-distribuciones-posteriores" class="nav-link" data-scroll-target="#priors-propios-y-distribuciones-posteriores">Priors propios y distribuciones posteriores</a></li>
+  <li><a href="#validación-por-cortes-completos" id="toc-validación-por-cortes-completos" class="nav-link" data-scroll-target="#validación-por-cortes-completos">Validación por cortes completos</a></li>
+  </ul></li>
+  <li><a href="#referencia-de-expresión-espacial-resultados" id="toc-referencia-de-expresión-espacial-resultados" class="nav-link" data-scroll-target="#referencia-de-expresión-espacial-resultados">Referencia de expresión espacial: resultados</a></li>
+  <li><a href="#explorar-las-estimaciones-posteriores" id="toc-explorar-las-estimaciones-posteriores" class="nav-link" data-scroll-target="#explorar-las-estimaciones-posteriores">Explorar las estimaciones posteriores</a></li>
+  <li><a href="#interpretación-y-límites" id="toc-interpretación-y-límites" class="nav-link" data-scroll-target="#interpretación-y-límites">Interpretación y límites</a></li>
+  <li><a href="#reproducibilidad-y-tablas-fuente" id="toc-reproducibilidad-y-tablas-fuente" class="nav-link" data-scroll-target="#reproducibilidad-y-tablas-fuente">Reproducibilidad y tablas fuente</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Detección bayesiana y validación de la referencia espacial</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+<p class="subtitle lead">Modelo anatómico de referencia evaluado en cortes físicos reservados</p>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-left">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha del análisis</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">20 octubre 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introducción" class="level2">
+<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
+<p>Dos análisis bayesianos abordan objetivos distintos para veinte pares región–gen definidos previamente. Un modelo beta-binomial jerárquico estima la <strong>probabilidad de detectar un gen</strong>, permitiendo variación entre cortes físicos. Un modelo espacial gaussiano estima la <strong>log-expresión basal esperada, ajustada por corte</strong>; sus limitaciones para conteos de RNA dispersos se evalúan explícitamente. Ambos cuantifican incertidumbre condicional y usan cortes completos reservados. Las mediciones, las estimaciones y los contrastes experimentales de contaminación permanecen diferenciados.</p>
+<p>La referencia de expresión espacial es una regresión bayesiana con funciones base desarrollada para este proyecto; no es una implementación de Tangram, BayesSpace o cell2location. Utiliza priors propios y una distribución posterior analítica. La regresión bayesiana con bases fijas aporta el fundamento metodológico; los priors, los términos de corte y los supuestos para conteos transformados se documentan junto al código. <span class="citation" data-cites="RasmussenWilliams2006 Murphy2007Conjugate">(<a href="#ref-RasmussenWilliams2006" role="doc-biblioref">Rasmussen y Williams 2006</a>; <a href="#ref-Murphy2007Conjugate" role="doc-biblioref">Murphy 2007</a>)</span></p>
+<p><a href="./spatial_explorer.html" class="btn btn-primary">Cortes medidos, capas y detección</a> <a href="./gene_profiles.html" class="btn btn-outline-secondary">Productos génicos y evidencia de exposición</a></p>
+</section>
+<section id="detección-bayesiana-metodología" class="level2">
+<h2 class="anchored" data-anchor-id="detección-bayesiana-metodología">Detección bayesiana: metodología</h2>
+<p>Para gen <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>, anatomía <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math> y corte físico <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>s</mi><annotation encoding="application/x-tex">s</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>Y</mi><mrow><mi>s</mi><mi>a</mi><mi>g</mi></mrow></msub><annotation encoding="application/x-tex">Y_{sag}</annotation></semantics></math> es el número de conteos de imagen positivos entre <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>n</mi><mrow><mi>s</mi><mi>a</mi></mrow></msub><annotation encoding="application/x-tex">n_{sa}</annotation></semantics></math> células medidas, incluidos todos los ceros en el denominador. Se utiliza</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Y</mi><mrow><mi>s</mi><mi>a</mi><mi>g</mi></mrow></msub><mo>∣</mo><msub><mi>p</mi><mrow><mi>s</mi><mi>a</mi><mi>g</mi></mrow></msub><mo>∼</mo><mrow><mi mathvariant="normal">Binomial</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>n</mi><mrow><mi>s</mi><mi>a</mi></mrow></msub><mo>,</mo><msub><mi>p</mi><mrow><mi>s</mi><mi>a</mi><mi>g</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>p</mi><mrow><mi>s</mi><mi>a</mi><mi>g</mi></mrow></msub><mo>∣</mo><msub><mi>μ</mi><mrow><mi>a</mi><mi>g</mi></mrow></msub><mo>,</mo><msub><mi>κ</mi><mrow><mi>a</mi><mi>g</mi></mrow></msub><mo>∼</mo><mrow><mi mathvariant="normal">Beta</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>μ</mi><mrow><mi>a</mi><mi>g</mi></mrow></msub><msub><mi>κ</mi><mrow><mi>a</mi><mi>g</mi></mrow></msub><mo>,</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>μ</mi><mrow><mi>a</mi><mi>g</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo><msub><mi>κ</mi><mrow><mi>a</mi><mi>g</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+Y_{sag}\mid p_{sag}\sim\operatorname{Binomial}(n_{sa},p_{sag}),\qquad
+p_{sag}\mid\mu_{ag},\kappa_{ag}\sim\operatorname{Beta}(\mu_{ag}\kappa_{ag},(1-\mu_{ag})\kappa_{ag}).
+</annotation></semantics></math></p>
+<p>La verosimilitud marginal beta-binomial admite heterogeneidad entre cortes, en lugar de tratar todas las células como réplicas independientes con una probabilidad fija común. Los priors propios e independientes son <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>∼</mo><mrow><mi mathvariant="normal">Beta</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>0.5</mn><mo>,</mo><mn>0.5</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mu\sim\operatorname{Beta}(0.5,0.5)</annotation></semantics></math> y <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">ln</mi><mo>⁡</mo></mrow><mi>κ</mi><mo>∼</mo><mi mathvariant="script">𝒩</mi><mo stretchy="false" form="prefix">(</mo><mrow><mi mathvariant="normal">ln</mi><mo>⁡</mo></mrow><mn>20</mn><mo>,</mo><msup><mn>1.5</mn><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\ln\kappa\sim\mathcal N(\ln20,1.5^2)</annotation></semantics></math>. Se fijan sin usar expresión reservada. La integración emplea una cuadrícula determinista de cuantiles previos de 64 × 48, con sensibilidad de cuadrícula documentada. Los intervalos de la hipermedia usan cuantiles ponderados de la cuadrícula discreta. Los de probabilidad de cortes conocidos y número de positivos reservado usan 8,192 muestras de mezcla con semilla fija; los de probabilidad de un nuevo corte en la referencia completa usan inversión determinista de la CDF de la mezcla Beta ponderada. Es integración numérica por cuadrícula/Monte Carlo, sin afirmar una posterior continua exacta ni convergencia MCMC. <span class="citation" data-cites="SciPyBetaBinomial">(<a href="#ref-SciPyBetaBinomial" role="doc-biblioref">SciPy developers, s.&nbsp;f.</a>)</span> Las propensiones de los cortes son intercambiables dentro de cada anatomía y gen; el modelo no separa tendencias biológicas AP de variación técnica entre cortes.</p>
+<p>Al aumentar la cuadrícula de integración de 64 × 48 a 96 × 64, las medias posteriores de probabilidad de la referencia completa cambian como máximo 0.00020 en ACA y 0.00054 en HY. Los extremos de los intervalos de probabilidad de un nuevo corte cambian como máximo 0.0026 y 0.0036; los de la hipermedia discreta pueden cambiar aproximadamente 0.020 y 0.018. La cobertura de conteos reservados pasa de 97.89% a 98.05% en ACA y permanece en 99.35% en HY. Estas comprobaciones describen la precisión numérica finita; una cobertura alta con intervalos amplios no establece utilidad predictiva.</p>
+<p>La <strong>probabilidad posterior de un corte conocido</strong> usa su numerador y denominador observados en la referencia. Es una estimación ajustada, no una predicción reservada. Su intervalo creíble difiere de la incertidumbre de la hipermedia anatómica <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math> y de la distribución distinta de la <strong>probabilidad de un nuevo corte</strong>. Los intervalos predictivos del número de positivos de un nuevo corte condicionan al denominador real <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> reservado. Son probabilidades o conteos de detección, no magnitudes de expresión ni moléculas inferidas espacialmente.</p>
+<p>Se usan los mismos cinco bloques de cortes completos y cortes vecinos de guarda del análisis siguiente. El modelo regional sin anatomía se entrena con los mismos cortes permitidos para comparar. La pérdida de Brier es una medida descriptiva de predicción ponderada por células; la cobertura del número de positivos se calcula entre grupos corte–anatomía, explicitando denominadores y grupos sostenidos solo por el prior. Una anatomía reservada ausente del entrenamiento conserva el prior especificado; no se sustituye silenciosamente por un patrón anatómico aprendido.</p>
+<p><a href="./spatial_explorer.html" class="btn btn-outline-primary">Explorar detección observada y bayesiana juntas</a></p>
+<section id="resultados-de-detección" class="level3">
+<h3 class="anchored" data-anchor-id="resultados-de-detección">Resultados de detección</h3>
+<div id="ceeca237" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><strong>ACA:</strong> la cobertura predictiva observada del número de positivos es <strong>97.9%</strong> en <strong>1,280 evaluaciones gen × corte × anatomía</strong>. El intervalo predictivo medio abarca <strong>41.9 puntos porcentuales</strong> del denominador del grupo. La pérdida de Brier ponderada por células es <strong>0.1373</strong>, frente a <strong>0.1405</strong> del modelo regional sin anatomía (menor es mejor); la anatomía mejora Brier en <strong>9/10 genes</strong>.</p>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><strong>HY:</strong> la cobertura predictiva observada del número de positivos es <strong>99.4%</strong> en <strong>1,860 evaluaciones gen × corte × anatomía</strong>. El intervalo predictivo medio abarca <strong>61.5 puntos porcentuales</strong> del denominador del grupo. La pérdida de Brier ponderada por células es <strong>0.0925</strong>, frente a <strong>0.0362</strong> del modelo regional sin anatomía (menor es mejor); la anatomía mejora Brier en <strong>0/10 genes</strong>.</p>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<div class="table-scroll">
+<table class="dataframe table table-sm table-striped evidence-table small">
+<thead>
+<tr>
+<th>
+Región
+</th>
+<th>
+Gen
+</th>
+<th>
+Brier anatómico
+</th>
+<th>
+Brier regional
+</th>
+<th>
+Cobertura predictiva de positivos (%)
+</th>
+<th>
+Grupos corte–anatomía evaluados
+</th>
+<th>
+Grupos solo prior
+</th>
+<th>
+Ancho predictivo medio (puntos porcentuales)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Fosb
+</td>
+<td>
+0.0874
+</td>
+<td>
+0.088
+</td>
+<td>
+99.2
+</td>
+<td>
+128
+</td>
+<td>
+0
+</td>
+<td>
+34.5
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Egr3
+</td>
+<td>
+0.237
+</td>
+<td>
+0.246
+</td>
+<td>
+94.5
+</td>
+<td>
+128
+</td>
+<td>
+0
+</td>
+<td>
+65.2
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+S1pr1
+</td>
+<td>
+0.244
+</td>
+<td>
+0.25
+</td>
+<td>
+99.2
+</td>
+<td>
+128
+</td>
+<td>
+0
+</td>
+<td>
+49.9
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+C730002L08Rik
+</td>
+<td>
+0.0581
+</td>
+<td>
+0.0583
+</td>
+<td>
+99.2
+</td>
+<td>
+128
+</td>
+<td>
+0
+</td>
+<td>
+26.5
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Fosl2
+</td>
+<td>
+0.135
+</td>
+<td>
+0.137
+</td>
+<td>
+97.7
+</td>
+<td>
+128
+</td>
+<td>
+0
+</td>
+<td>
+43.6
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Col19a1
+</td>
+<td>
+0.105
+</td>
+<td>
+0.106
+</td>
+<td>
+96.1
+</td>
+<td>
+128
+</td>
+<td>
+0
+</td>
+<td>
+41.7
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Pcdh8
+</td>
+<td>
+0.145
+</td>
+<td>
+0.154
+</td>
+<td>
+96.9
+</td>
+<td>
+128
+</td>
+<td>
+0
+</td>
+<td>
+41.5
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Iqgap2
+</td>
+<td>
+0.176
+</td>
+<td>
+0.178
+</td>
+<td>
+98.4
+</td>
+<td>
+128
+</td>
+<td>
+0
+</td>
+<td>
+47.5
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Usp43
+</td>
+<td>
+0.0556
+</td>
+<td>
+0.0556
+</td>
+<td>
+99.2
+</td>
+<td>
+128
+</td>
+<td>
+0
+</td>
+<td>
+29
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Rorb
+</td>
+<td>
+0.13
+</td>
+<td>
+0.131
+</td>
+<td>
+98.4
+</td>
+<td>
+128
+</td>
+<td>
+0
+</td>
+<td>
+39.8
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Tll1
+</td>
+<td>
+0.0833
+</td>
+<td>
+0.0177
+</td>
+<td>
+98.9
+</td>
+<td>
+186
+</td>
+<td>
+79
+</td>
+<td>
+60
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Fosl2
+</td>
+<td>
+0.112
+</td>
+<td>
+0.0609
+</td>
+<td>
+100
+</td>
+<td>
+186
+</td>
+<td>
+79
+</td>
+<td>
+64.2
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Nr4a3
+</td>
+<td>
+0.0887
+</td>
+<td>
+0.0279
+</td>
+<td>
+100
+</td>
+<td>
+186
+</td>
+<td>
+79
+</td>
+<td>
+60.7
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Egr2
+</td>
+<td>
+0.0773
+</td>
+<td>
+0.0109
+</td>
+<td>
+99.5
+</td>
+<td>
+186
+</td>
+<td>
+79
+</td>
+<td>
+58.3
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Cpne9
+</td>
+<td>
+0.114
+</td>
+<td>
+0.104
+</td>
+<td>
+98.4
+</td>
+<td>
+186
+</td>
+<td>
+79
+</td>
+<td>
+64.7
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Egr3
+</td>
+<td>
+0.0834
+</td>
+<td>
+0.0193
+</td>
+<td>
+99.5
+</td>
+<td>
+186
+</td>
+<td>
+79
+</td>
+<td>
+60.5
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Hgf
+</td>
+<td>
+0.0785
+</td>
+<td>
+0.0125
+</td>
+<td>
+100
+</td>
+<td>
+186
+</td>
+<td>
+79
+</td>
+<td>
+58.1
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Bcl11b
+</td>
+<td>
+0.102
+</td>
+<td>
+0.0447
+</td>
+<td>
+98.4
+</td>
+<td>
+186
+</td>
+<td>
+79
+</td>
+<td>
+64.2
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Car12
+</td>
+<td>
+0.0948
+</td>
+<td>
+0.0374
+</td>
+<td>
+99.5
+</td>
+<td>
+186
+</td>
+<td>
+79
+</td>
+<td>
+62.4
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Crym
+</td>
+<td>
+0.0901
+</td>
+<td>
+0.0263
+</td>
+<td>
+99.5
+</td>
+<td>
+186
+</td>
+<td>
+79
+</td>
+<td>
+61.9
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p><strong>Corteza e hipotálamo tienen distinto soporte.</strong> En ACA, la mejora modesta de Brier se acompaña de intervalos amplios; una cobertura superior al 95% no demuestra recuperación de alta resolución. En HY, 79 de 186 grupos corte–anatomía reservados por gen carecen de esa anatomía en entrenamiento, representando 10,416 de 37,811 células. Su media previa es 0.5 bajo el prior simétrico especificado. El modelo resulta sustancialmente peor que la referencia regional en conjunto. Esos casos se conservan sin eliminarlos silenciosamente. Entre grupos con anatomía presente en entrenamiento, Brier agrupado de HY es 0.03256 frente a 0.03288 de la referencia regional; este diagnóstico restringido no reemplaza el resultado completo. El explorador y el resumen fuente conservan ambos subconjuntos.</p>
+<p>Las evaluaciones agrupadas por gen reutilizan las mismas células y cortes físicos; no son observaciones independientes adicionales. Hay 14,582 células ACA y 37,811 HY de referencia, un animal y diez genes objetivo por región.</p>
+<div id="98a73a08" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display cell-output-markdown">
+<figure class="research-figure figure">
+<a href="../assets/figures/spatial_detection_bayes/ACA_detection_posterior_es.svg"><img loading="lazy" width="3360" height="2268" src="../assets/figures/spatial_detection_bayes/ACA_detection_posterior_es.png" alt="Detección basal Beta-Binomial jerárquica en ACA; no modela magnitud de RNA ni efectos PM2.5. Por anatomía depositada, los conteos positivos y_s entre n_s células medidas por corte físico siguen Beta-Binomial(μκ,(1−μ)κ). Priors fijadas antes del ajuste: μ~Beta(0.5,0.5), κ~LogNormal(log20,1.5); cuadratura64×48 por cuantiles previos con pesos iguales aproxima la posterior continua. A–C distinguen intervalos creíbles95% de la media anatómica μ (oscuro) de intervalos predictivos95% de propensión p de un corte nuevo (claro); puntos naranjas son fracciones medidas agrupadas, no estimaciones μ. Se muestran las10 capas/subdivisiones ACA. n=células medidas, S=cortes físicos. D–E reutilizan cinco bloques de cortes excluidos y sus cortes vecinos de guarda, sin usar conteos de prueba/guarda al entrenar. Los intervalos predictivos95% de conteos condicionan al n de prueba real e incluyen heterogeneidad entre cortes y muestreo binomial; cobertura no ponderada entre grupos corte×anatomía observados. Se conservan y cuentan anatomías de prueba solo con prior. La referencia no anatómica usa las mismas priors y agrega solo datos de entrenamiento por corte. El error absoluto de fracción no se pondera entre grupos corte×anatomía; Brier ponderado por células se tabula aparte. No se infieren animales independientes ni respuestas celulares a exposición. F compara cuadrículas fijas sin seleccionarlas por rendimiento excluido. Intervalos p de corte medido/conteos excluidos usan8192 sorteos de mezcla con semilla; p de corte nuevo con ajuste completo invierte numéricamente la CDF de mezcla Beta; μ usa cuantiles discretos ponderados. Se incluyen ceros en n. La incertidumbre depende del modelo y del muestreo de un donante; no calibra incertidumbre biológica de todo el tejido." class="figure-img"></a>
+<figcaption>
+Detección basal Beta-Binomial jerárquica en ACA; no modela magnitud de RNA ni efectos PM2.5. Por anatomía depositada, los conteos positivos y_s entre n_s células medidas por corte físico siguen Beta-Binomial(μκ,(1−μ)κ). Priors fijadas antes del ajuste: μ~Beta(0.5,0.5), κ~LogNormal(log20,1.5); cuadratura64×48 por cuantiles previos con pesos iguales aproxima la posterior continua. A–C distinguen intervalos creíbles95% de la media anatómica μ (oscuro) de intervalos predictivos95% de propensión p de un corte nuevo (claro); puntos naranjas son fracciones medidas agrupadas, no estimaciones μ. Se muestran las10 capas/subdivisiones ACA. n=células medidas, S=cortes físicos. D–E reutilizan cinco bloques de cortes excluidos y sus cortes vecinos de guarda, sin usar conteos de prueba/guarda al entrenar. Los intervalos predictivos95% de conteos condicionan al n de prueba real e incluyen heterogeneidad entre cortes y muestreo binomial; cobertura no ponderada entre grupos corte×anatomía observados. Se conservan y cuentan anatomías de prueba solo con prior. La referencia no anatómica usa las mismas priors y agrega solo datos de entrenamiento por corte. El error absoluto de fracción no se pondera entre grupos corte×anatomía; Brier ponderado por células se tabula aparte. No se infieren animales independientes ni respuestas celulares a exposición. F compara cuadrículas fijas sin seleccionarlas por rendimiento excluido. Intervalos p de corte medido/conteos excluidos usan8192 sorteos de mezcla con semilla; p de corte nuevo con ajuste completo invierte numéricamente la CDF de mezcla Beta; μ usa cuantiles discretos ponderados. Se incluyen ceros en n.&nbsp;La incertidumbre depende del modelo y del muestreo de un donante; no calibra incertidumbre biológica de todo el tejido. <span class="figure-links"><a href="../assets/figures/spatial_detection_bayes/ACA_detection_posterior_es.svg">SVG</a> · <a href="../assets/figures/spatial_detection_bayes/ACA_detection_posterior_es.pdf">PDF</a></span>
+</figcaption>
+</figure>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<figure class="research-figure figure">
+<a href="../assets/figures/spatial_detection_bayes/HY_detection_posterior_es.svg"><img loading="lazy" width="3360" height="2268" src="../assets/figures/spatial_detection_bayes/HY_detection_posterior_es.png" alt="Detección basal Beta-Binomial jerárquica en HY; no modela magnitud de RNA ni efectos PM2.5. Por anatomía depositada, los conteos positivos y_s entre n_s células medidas por corte físico siguen Beta-Binomial(μκ,(1−μ)κ). Priors fijadas antes del ajuste: μ~Beta(0.5,0.5), κ~LogNormal(log20,1.5); cuadratura64×48 por cuantiles previos con pesos iguales aproxima la posterior continua. A–C distinguen intervalos creíbles95% de la media anatómica μ (oscuro) de intervalos predictivos95% de propensión p de un corte nuevo (claro); puntos naranjas son fracciones medidas agrupadas, no estimaciones μ. Para legibilidad se muestran12 de49 núcleos/subregiones HY por mayor n medido, independientemente de expresión; se conservan los49 en tablas. n=células medidas, S=cortes físicos. D–E reutilizan cinco bloques de cortes excluidos y sus cortes vecinos de guarda, sin usar conteos de prueba/guarda al entrenar. Los intervalos predictivos95% de conteos condicionan al n de prueba real e incluyen heterogeneidad entre cortes y muestreo binomial; cobertura no ponderada entre grupos corte×anatomía observados. Se conservan y cuentan anatomías de prueba solo con prior. La referencia no anatómica usa las mismas priors y agrega solo datos de entrenamiento por corte. El error absoluto de fracción no se pondera entre grupos corte×anatomía; Brier ponderado por células se tabula aparte. No se infieren animales independientes ni respuestas celulares a exposición. F compara cuadrículas fijas sin seleccionarlas por rendimiento excluido. Intervalos p de corte medido/conteos excluidos usan8192 sorteos de mezcla con semilla; p de corte nuevo con ajuste completo invierte numéricamente la CDF de mezcla Beta; μ usa cuantiles discretos ponderados. Se incluyen ceros en n. La incertidumbre depende del modelo y del muestreo de un donante; no calibra incertidumbre biológica de todo el tejido." class="figure-img"></a>
+<figcaption>
+Detección basal Beta-Binomial jerárquica en HY; no modela magnitud de RNA ni efectos PM2.5. Por anatomía depositada, los conteos positivos y_s entre n_s células medidas por corte físico siguen Beta-Binomial(μκ,(1−μ)κ). Priors fijadas antes del ajuste: μ~Beta(0.5,0.5), κ~LogNormal(log20,1.5); cuadratura64×48 por cuantiles previos con pesos iguales aproxima la posterior continua. A–C distinguen intervalos creíbles95% de la media anatómica μ (oscuro) de intervalos predictivos95% de propensión p de un corte nuevo (claro); puntos naranjas son fracciones medidas agrupadas, no estimaciones μ. Para legibilidad se muestran12 de49 núcleos/subregiones HY por mayor n medido, independientemente de expresión; se conservan los49 en tablas. n=células medidas, S=cortes físicos. D–E reutilizan cinco bloques de cortes excluidos y sus cortes vecinos de guarda, sin usar conteos de prueba/guarda al entrenar. Los intervalos predictivos95% de conteos condicionan al n de prueba real e incluyen heterogeneidad entre cortes y muestreo binomial; cobertura no ponderada entre grupos corte×anatomía observados. Se conservan y cuentan anatomías de prueba solo con prior. La referencia no anatómica usa las mismas priors y agrega solo datos de entrenamiento por corte. El error absoluto de fracción no se pondera entre grupos corte×anatomía; Brier ponderado por células se tabula aparte. No se infieren animales independientes ni respuestas celulares a exposición. F compara cuadrículas fijas sin seleccionarlas por rendimiento excluido. Intervalos p de corte medido/conteos excluidos usan8192 sorteos de mezcla con semilla; p de corte nuevo con ajuste completo invierte numéricamente la CDF de mezcla Beta; μ usa cuantiles discretos ponderados. Se incluyen ceros en n.&nbsp;La incertidumbre depende del modelo y del muestreo de un donante; no calibra incertidumbre biológica de todo el tejido. <span class="figure-links"><a href="../assets/figures/spatial_detection_bayes/HY_detection_posterior_es.svg">SVG</a> · <a href="../assets/figures/spatial_detection_bayes/HY_detection_posterior_es.pdf">PDF</a></span>
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Las estimaciones de detección de cortes conocidos y sus intervalos creíbles aparecen bajo la tabla anatómica observada del <a href="./spatial_explorer.html">explorador de cortes</a>. Usan todas las clases celulares del grupo anatómico; al seleccionar una clase se ocultan esas estimaciones para todas las clases. Las estimaciones ajustadas condicionales no deben confundirse con las predicciones reservadas que generan las métricas anteriores.</p>
+<p><a href="../downloads/spatial_detection_bayes/summary.json">Resumen de detección</a> · <a href="../downloads/spatial_detection_bayes/validation.json">Comprobaciones de detección</a> · <a href="../downloads/code/analyze_bayesian_detection.py">Código del modelo de detección</a> · <a href="../downloads/spatial_detection_bayes/ACA/out_of_fold_predictions.tsv.gz">Predicciones de detección reservadas de ACA</a> · <a href="../downloads/spatial_detection_bayes/HY/out_of_fold_predictions.tsv.gz">Predicciones de detección reservadas de HY</a>.</p>
+</section>
+</section>
+<section id="referencia-de-expresión-espacial-metodología" class="level2">
+<h2 class="anchored" data-anchor-id="referencia-de-expresión-espacial-metodología">Referencia de expresión espacial: metodología</h2>
+<section id="datos-objetivo-e-información-anatómica" class="level3">
+<h3 class="anchored" data-anchor-id="datos-objetivo-e-información-anatómica">Datos, objetivo e información anatómica</h3>
+<p>Se conservan todas las células registradas de corteza cingulada anterior e hipotálamo del donante macho ABCA-2 sin exposición experimental. Se modelan diez genes medidos seleccionados anteriormente por región. Los conteos y coordenadas no cambian. La respuesta es el <strong>logaritmo natural del conteo de imagen transformado</strong>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mrow><mi>i</mi><mi>g</mi></mrow></msub><mo>=</mo><mrow><mi mathvariant="normal">ln</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><msub><mi>c</mi><mrow><mi>i</mi><mi>g</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">y_{ig}=\ln(1+c_{ig})</annotation></semantics></math>, incluidos los ceros. No es log₂ fold change, expresión RNA-seq normalizada ni una medición de proteínas. <span class="citation" data-cites="Zhang2023_38092912">(<a href="#ref-Zhang2023_38092912" role="doc-biblioref">Zhang et&nbsp;al. 2023</a>)</span></p>
+<p>La media espacial se describe mediante subestructuras anatómicas, coordenadas CCF estandarizadas y una expansión finita de bases radiales anisotrópicas. El modelo permite discontinuidades entre categorías anatómicas. Interceptos por corte original absorben desplazamientos compartidos por sus células. Las etiquetas de clase y subclase derivadas de expresión se excluyen de los predictores principales, evitando información del gen objetivo transmitida por la anotación de RNA del atlas. Los cortes físicos definen las particiones de validación.</p>
+</section>
+<section id="priors-propios-y-distribuciones-posteriores" class="level3">
+<h3 class="anchored" data-anchor-id="priors-propios-y-distribuciones-posteriores">Priors propios y distribuciones posteriores</h3>
+<p>Para cada gen, el modelo de trabajo es</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mrow><mi>i</mi><mi>g</mi></mrow></msub><mo>=</mo><mi>ϕ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi mathvariant="bold-italic">𝒓</mi><mi>i</mi></msub><mo>,</mo><msub><mi>a</mi><mi>i</mi></msub><msup><mo stretchy="false" form="postfix">)</mo><mi>⊤</mi></msup><msub><mi mathvariant="bold-italic">𝜷</mi><mi>g</mi></msub><mo>+</mo><msub><mi>δ</mi><mrow><mi>s</mi><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mi>g</mi></mrow></msub><mo>+</mo><msub><mi>ϵ</mi><mrow><mi>i</mi><mi>g</mi></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>ϵ</mi><mrow><mi>i</mi><mi>g</mi></mrow></msub><mo>∼</mo><mi mathvariant="script">𝒩</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><msubsup><mi>σ</mi><mi>g</mi><mn>2</mn></msubsup><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+y_{ig}=\phi(\mathbf r_i,a_i)^\top\boldsymbol\beta_g+\delta_{s(i),g}+\epsilon_{ig},
+\qquad \epsilon_{ig}\sim\mathcal N(0,\sigma_g^2).
+</annotation></semantics></math></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="bold-italic">𝒓</mi><mi>i</mi></msub><annotation encoding="application/x-tex">\mathbf r_i</annotation></semantics></math> representa la posición registrada, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mi>i</mi></msub><annotation encoding="application/x-tex">a_i</annotation></semantics></math> la categoría anatómica y <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">s(i)</annotation></semantics></math> el corte físico. Los coeficientes y efectos de corte tienen priors normales propios centrados en cero, condicionados a la varianza residual, y esta varianza tiene un prior inverso-Gamma propio. La actualización Normal–Inversa-Gamma produce distribuciones posteriores t de Student al integrar incertidumbre de coeficientes y varianza. La anisotropía, regularización, varianza de corte y número de bases se fijan para el análisis principal; ajustes de sensibilidad varían alternativas predefinidas.</p>
+<p>El mapa representa la <strong>media espacial promediando a cero el desplazamiento del corte</strong>. Se distinguen dos cantidades:</p>
+<ul>
+<li>El <strong>intervalo creíble del 95% de la media latente</strong> describe la incertidumbre sobre esa media ajustada por corte bajo el modelo.</li>
+<li>El <strong>intervalo predictivo del 95% para una nueva célula en un nuevo corte</strong> añade variación residual y el efecto de un corte no observado. Este intervalo más amplio se contrasta con las células medidas reservadas.</li>
+</ul>
+<p>La verosimilitud gaussiana es una aproximación de trabajo para conteos transformados dispersos. Puede asignar probabilidad a valores negativos, fuera del soporte físico de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">ln</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\ln(1+c)</annotation></semantics></math>. Las medias ajustadas negativas, los límites negativos y la masa predictiva bajo cero se conservan y diagnostican. No se aplica la exponencial para afirmar conteos moleculares esperados. La incertidumbre es condicional a anatomía, bases, priors y registro; no incluye toda la incertidumbre biológica ni de registro.</p>
+</section>
+<section id="validación-por-cortes-completos" class="level3">
+<h3 class="anchored" data-anchor-id="validación-por-cortes-completos">Validación por cortes completos</h3>
+<p>Se reservan sucesivamente cinco bloques contiguos de cortes físicos. Los cortes vecinos de guarda se excluyen del entrenamiento. Las categorías anatómicas, la estandarización de coordenadas y las posiciones de las bases se obtienen solo de células de entrenamiento; la expresión reservada no las determina. Cada célula de prueba permanece junto con su corte original. Los mapas finales ajustados con toda la referencia se distinguen de las predicciones fuera de muestra.</p>
+<p>Cada gen se compara con un modelo de media anatómica y una interpolación sencilla por vecinos espaciales, ambos obtenidos del entrenamiento. Se conservan RMSE, MAE, cobertura y amplitud del intervalo predictivo, examinando por separado ceros y conteos positivos. Alternativas fijas de escala espacial y regularización evalúan la dependencia de los priors. Un resultado desfavorable no se renombra como modelo validado.</p>
+<p>Un donante permite evaluar <strong>predicción espacial dentro del donante</strong>, sin aportar replicación animal independiente, rendimiento en otros donantes ni generalización a exposición. El bloqueo por cortes reduce fugas de información local, pero no elimina toda la dependencia espacial ni la especificación incorrecta del modelo.</p>
+</section>
+</section>
+<section id="referencia-de-expresión-espacial-resultados" class="level2">
+<h2 class="anchored" data-anchor-id="referencia-de-expresión-espacial-resultados">Referencia de expresión espacial: resultados</h2>
+<p>Los resultados siguientes muestran precisión predictiva y calibración, incluidos los fallos. Una comprobación de implementación/datos satisfactoria no establece calibración científica ni superioridad frente a un modelo sencillo.</p>
+<p>El modelo espacial gaussiano <strong>no estableció una reconstrucción validada del RNA celular</strong>. Su soporte predictivo negativo es físicamente incompatible con los conteos transformados, y anatomía/posición solas recuperan mal las observaciones positivas. Una respuesta con muchos ceros puede aparentar cobertura global alta mientras predice mal la cola positiva. La cobertura entre positivos es un diagnóstico descriptivo de cola; un intervalo marginal del 95% no garantiza cobertura del 95% condicionada a que la observación realizada sea positiva.</p>
+<div id="dc87e9fe" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><strong>HY:</strong> el RMSE espacial mejora la referencia de solo anatomía en <strong>1/10 genes</strong>. La mediana de cobertura predictiva global observada del 95% es <strong>97.3%</strong>, frente a <strong>0.0%</strong> entre observaciones positivas. La mediana de probabilidad predictiva asignada bajo cero es <strong>41.1%</strong>.</p>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><strong>ACA:</strong> el RMSE espacial mejora la referencia de solo anatomía en <strong>4/10 genes</strong>. La mediana de cobertura predictiva global observada del 95% es <strong>94.0%</strong>, frente a <strong>66.5%</strong> entre observaciones positivas. La mediana de probabilidad predictiva asignada bajo cero es <strong>38.2%</strong>.</p>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<div class="table-scroll">
+<table class="dataframe table table-sm table-striped evidence-table small">
+<thead>
+<tr>
+<th>
+Región
+</th>
+<th>
+Gen
+</th>
+<th>
+RMSE espacial
+</th>
+<th>
+RMSE anatómico
+</th>
+<th>
+RMSE kNN
+</th>
+<th>
+Cobertura global (%)
+</th>
+<th>
+Cobertura entre positivos (%)
+</th>
+<th>
+Probabilidad bajo cero (%)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+HY
+</td>
+<td>
+Tll1
+</td>
+<td>
+0.11
+</td>
+<td>
+0.108
+</td>
+<td>
+0.107
+</td>
+<td>
+98.2
+</td>
+<td>
+0
+</td>
+<td>
+41.2
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Fosl2
+</td>
+<td>
+0.222
+</td>
+<td>
+0.222
+</td>
+<td>
+0.227
+</td>
+<td>
+94.4
+</td>
+<td>
+13.7
+</td>
+<td>
+40.2
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Nr4a3
+</td>
+<td>
+0.137
+</td>
+<td>
+0.136
+</td>
+<td>
+0.138
+</td>
+<td>
+97.1
+</td>
+<td>
+0
+</td>
+<td>
+41.2
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Egr2
+</td>
+<td>
+0.081
+</td>
+<td>
+0.0798
+</td>
+<td>
+0.0794
+</td>
+<td>
+98.9
+</td>
+<td>
+0
+</td>
+<td>
+43.6
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Cpne9
+</td>
+<td>
+0.497
+</td>
+<td>
+0.511
+</td>
+<td>
+0.555
+</td>
+<td>
+94.4
+</td>
+<td>
+45.7
+</td>
+<td>
+44.1
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Egr3
+</td>
+<td>
+0.12
+</td>
+<td>
+0.116
+</td>
+<td>
+0.115
+</td>
+<td>
+98.1
+</td>
+<td>
+0
+</td>
+<td>
+40.9
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Hgf
+</td>
+<td>
+0.0851
+</td>
+<td>
+0.0848
+</td>
+<td>
+0.0857
+</td>
+<td>
+98.7
+</td>
+<td>
+0
+</td>
+<td>
+47
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Bcl11b
+</td>
+<td>
+0.194
+</td>
+<td>
+0.184
+</td>
+<td>
+0.181
+</td>
+<td>
+95.6
+</td>
+<td>
+0
+</td>
+<td>
+36.9
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Car12
+</td>
+<td>
+0.144
+</td>
+<td>
+0.142
+</td>
+<td>
+0.142
+</td>
+<td>
+96.2
+</td>
+<td>
+0
+</td>
+<td>
+39.6
+</td>
+</tr>
+<tr>
+<td>
+HY
+</td>
+<td>
+Crym
+</td>
+<td>
+0.177
+</td>
+<td>
+0.156
+</td>
+<td>
+0.153
+</td>
+<td>
+97.4
+</td>
+<td>
+0.102
+</td>
+<td>
+37.8
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Fosb
+</td>
+<td>
+0.298
+</td>
+<td>
+0.293
+</td>
+<td>
+0.302
+</td>
+<td>
+93.9
+</td>
+<td>
+37.1
+</td>
+<td>
+43.8
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Egr3
+</td>
+<td>
+0.719
+</td>
+<td>
+0.729
+</td>
+<td>
+0.787
+</td>
+<td>
+93.4
+</td>
+<td>
+83
+</td>
+<td>
+31.4
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+S1pr1
+</td>
+<td>
+0.94
+</td>
+<td>
+0.939
+</td>
+<td>
+0.988
+</td>
+<td>
+95.6
+</td>
+<td>
+90.5
+</td>
+<td>
+25.2
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+C730002L08Rik
+</td>
+<td>
+0.187
+</td>
+<td>
+0.186
+</td>
+<td>
+0.195
+</td>
+<td>
+93.8
+</td>
+<td>
+0
+</td>
+<td>
+43.9
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Fosl2
+</td>
+<td>
+0.349
+</td>
+<td>
+0.35
+</td>
+<td>
+0.374
+</td>
+<td>
+95.1
+</td>
+<td>
+69.4
+</td>
+<td>
+36.2
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Col19a1
+</td>
+<td>
+0.398
+</td>
+<td>
+0.398
+</td>
+<td>
+0.423
+</td>
+<td>
+94.7
+</td>
+<td>
+55.3
+</td>
+<td>
+41.4
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Pcdh8
+</td>
+<td>
+0.487
+</td>
+<td>
+0.474
+</td>
+<td>
+0.525
+</td>
+<td>
+93.2
+</td>
+<td>
+63.5
+</td>
+<td>
+37.9
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Iqgap2
+</td>
+<td>
+0.475
+</td>
+<td>
+0.475
+</td>
+<td>
+0.502
+</td>
+<td>
+93.8
+</td>
+<td>
+73.2
+</td>
+<td>
+34.2
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Usp43
+</td>
+<td>
+0.188
+</td>
+<td>
+0.187
+</td>
+<td>
+0.195
+</td>
+<td>
+94.1
+</td>
+<td>
+0
+</td>
+<td>
+43.9
+</td>
+</tr>
+<tr>
+<td>
+ACA
+</td>
+<td>
+Rorb
+</td>
+<td>
+0.335
+</td>
+<td>
+0.332
+</td>
+<td>
+0.351
+</td>
+<td>
+95.3
+</td>
+<td>
+69.8
+</td>
+<td>
+38.5
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Por ejemplo, Tll1 tiene cobertura predictiva global del 98.2%, pero cobertura del 0% entre sus 667 observaciones positivas. Fosb presenta cobertura global del 93.9% y del 37.1% entre positivos. Los mapas permanecen visibles como referencia de trabajo evaluada; no deben sustituir la expresión medida ni implicar detalle espacial recuperado.</p>
+</section>
+<section id="explorar-las-estimaciones-posteriores" class="level2">
+<h2 class="anchored" data-anchor-id="explorar-las-estimaciones-posteriores">Explorar las estimaciones posteriores</h2>
+<iframe id="bayes-frame" class="viewer-frame" src="../assets/spatial-explorer/index-es.html?region=ACA&amp;mode=bayes" title="Media basal bayesiana e incertidumbre en posiciones celulares medidas existentes" loading="lazy">
+</iframe>
+<script>
+window.addEventListener("message", function(event) {
+ const frame = document.getElementById("bayes-frame");
+ if (frame && event.source === frame.contentWindow && event.origin === window.location.origin && event.data && ["omics-spatial-height", "omics-atlas-height"].includes(event.data.type)) {
+  const height = Number(event.data.height);
+  if (Number.isFinite(height)) frame.style.height = Math.min(14000, Math.max(1700, height + 30)) + "px";
+ }
+});
+</script>
+<p><a href="../assets/spatial-explorer/index-es.html?region=ACA&amp;mode=bayes" class="btn btn-outline-primary" target="_blank">Abrir directamente la pestaña bayesiana</a></p>
+<div id="92367796" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display cell-output-markdown">
+<figure class="research-figure figure">
+<a href="../assets/figures/spatial_bayes/spatial_bayes_performance_es.svg"><img loading="lazy" width="4800" height="3240" src="../assets/figures/spatial_bayes/spatial_bayes_performance_es.png" alt="Se omiten cinco bloques contiguos de cortes físicos y se protege un corte representado vecino por lado. Los diez candidatos medidos fijos por región se evalúan una vez en cada célula original; no se ajusta el modelo con resultados omitidos. Izquierda: RMSE de Bayes espacial, media anatómica bayesiana e interpolación de 30 vecinos; centro: cobertura empírica de intervalos predictivos de NUEVA CÉLULA del 95%; derecha: su anchura media. Unidades: ln(1+conteo de imagen). No se inventan intervalos para kNN. La comparación corresponde a un donante, no a validación entre animales; se conservan mala calibración e intervalos amplios." class="figure-img"></a>
+<figcaption>
+Se omiten cinco bloques contiguos de cortes físicos y se protege un corte representado vecino por lado. Los diez candidatos medidos fijos por región se evalúan una vez en cada célula original; no se ajusta el modelo con resultados omitidos. Izquierda: RMSE de Bayes espacial, media anatómica bayesiana e interpolación de 30 vecinos; centro: cobertura empírica de intervalos predictivos de NUEVA CÉLULA del 95%; derecha: su anchura media. Unidades: ln(1+conteo de imagen). No se inventan intervalos para kNN. La comparación corresponde a un donante, no a validación entre animales; se conservan mala calibración e intervalos amplios. <span class="figure-links"><a href="../assets/figures/spatial_bayes/spatial_bayes_performance_es.svg">SVG</a> · <a href="../assets/figures/spatial_bayes/spatial_bayes_performance_es.pdf">PDF</a></span>
+</figcaption>
+</figure>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<figure class="research-figure figure">
+<a href="../assets/figures/spatial_bayes/spatial_bayes_calibration_es.svg"><img loading="lazy" width="4020" height="3060" src="../assets/figures/spatial_bayes/spatial_bayes_calibration_es.png" alt="La calibración utiliza únicamente células de cortes omitidos. Líneas finas: genes individuales; líneas gruesas: promedio de diez coberturas génicas sin suponer independencia. La diagonal representa calibración nominal. Derecha: inclusión en el intervalo marginal 95%, separada entre ceros/positivos observados, como diagnóstico de recuperación de la cola. Ninguna fracción condicional debe necesariamente igualar 95% aunque el modelo marginal esté calibrado. No se truncan los intervalos ni se recalibran con datos de prueba; no se presentan intervalos binomiales que confundan células con donantes." class="figure-img"></a>
+<figcaption>
+La calibración utiliza únicamente células de cortes omitidos. Líneas finas: genes individuales; líneas gruesas: promedio de diez coberturas génicas sin suponer independencia. La diagonal representa calibración nominal. Derecha: inclusión en el intervalo marginal 95%, separada entre ceros/positivos observados, como diagnóstico de recuperación de la cola. Ninguna fracción condicional debe necesariamente igualar 95% aunque el modelo marginal esté calibrado. No se truncan los intervalos ni se recalibran con datos de prueba; no se presentan intervalos binomiales que confundan células con donantes. <span class="figure-links"><a href="../assets/figures/spatial_bayes/spatial_bayes_calibration_es.svg">SVG</a> · <a href="../assets/figures/spatial_bayes/spatial_bayes_calibration_es.pdf">PDF</a></span>
+</figcaption>
+</figure>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<figure class="research-figure figure">
+<a href="../assets/figures/spatial_bayes/spatial_bayes_sensitivity_es.svg"><img loading="lazy" width="4320" height="3030" src="../assets/figures/spatial_bayes/spatial_bayes_sensitivity_es.png" alt="Las cinco configuraciones fijas se reajustan con los mismos bloques protegidos. Longitudes cortas/largas multiplican las longitudes RBF por 0.5/2; regularización fuerte/débil multiplica la varianza previa de coeficientes espaciales por 0.25/4. Se conserva el modelo principal cualquiera sea el resultado. No cambian las varianzas anatómica ni de corte. Izquierda: RMSE omitido dividido por el principal; derecha: cobertura predictiva 95% observada. Las escalas de color difieren explícitamente entre métricas; se entregan valores y centros exactos por ajuste." class="figure-img"></a>
+<figcaption>
+Las cinco configuraciones fijas se reajustan con los mismos bloques protegidos. Longitudes cortas/largas multiplican las longitudes RBF por 0.5/2; regularización fuerte/débil multiplica la varianza previa de coeficientes espaciales por 0.25/4. Se conserva el modelo principal cualquiera sea el resultado. No cambian las varianzas anatómica ni de corte. Izquierda: RMSE omitido dividido por el principal; derecha: cobertura predictiva 95% observada. Las escalas de color difieren explícitamente entre métricas; se entregan valores y centros exactos por ajuste. <span class="figure-links"><a href="../assets/figures/spatial_bayes/spatial_bayes_sensitivity_es.svg">SVG</a> · <a href="../assets/figures/spatial_bayes/spatial_bayes_sensitivity_es.pdf">PDF</a></span>
+</figcaption>
+</figure>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<figure class="research-figure figure">
+<a href="../assets/figures/spatial_bayes/spatial_bayes_posterior_maps_es.svg"><img loading="lazy" width="5100" height="2700" src="../assets/figures/spatial_bayes/spatial_bayes_posterior_maps_es.png" alt="Corte físico mediano según orden de adquisición de cada región, seleccionado sin observar expresión; se representan todas sus células originales en coordenadas ML/−DV registradas. Se fijaron Tll1 y Fosb como primeros candidatos medidos relevantes. Los dos primeros paneles comparten un límite de color por gen del percentil 99; se conservan valores originales. Las anchuras tienen escalas propias explícitas. Son resúmenes posteriores ajustados a toda la referencia, NO predicciones omitidas ni RNA expuesto medido. La anchura creíble corresponde a la media latente; la predictiva añade variación residual y de nuevo corte. No se pinta expresión entre células ni se afirma mayor resolución." class="figure-img"></a>
+<figcaption>
+Corte físico mediano según orden de adquisición de cada región, seleccionado sin observar expresión; se representan todas sus células originales en coordenadas ML/−DV registradas. Se fijaron Tll1 y Fosb como primeros candidatos medidos relevantes. Los dos primeros paneles comparten un límite de color por gen del percentil 99; se conservan valores originales. Las anchuras tienen escalas propias explícitas. Son resúmenes posteriores ajustados a toda la referencia, NO predicciones omitidas ni RNA expuesto medido. La anchura creíble corresponde a la media latente; la predictiva añade variación residual y de nuevo corte. No se pinta expresión entre células ni se afirma mayor resolución. <span class="figure-links"><a href="../assets/figures/spatial_bayes/spatial_bayes_posterior_maps_es.svg">SVG</a> · <a href="../assets/figures/spatial_bayes/spatial_bayes_posterior_maps_es.pdf">PDF</a></span>
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="interpretación-y-límites" class="level2">
+<h2 class="anchored" data-anchor-id="interpretación-y-límites">Interpretación y límites</h2>
+<p>Una cuadrícula más fina, un campo más suave o un intervalo creíble condicional estrecho no aumentan la resolución de adquisición. Las predicciones en posiciones existentes no crean células en los espacios de aproximadamente 200 µm entre cortes muestreados, y este modelo no genera células adicionales ni otro hemisferio. Demostrar mayor resolución exigiría mediciones independientes que acrediten la recuperación de ese detalle.</p>
+<p><strong>Aquí no se ajusta una respuesta de PM2.5 específica por tipo celular.</strong> Los priors espaciales basales y los cambios regionales de tejido completo no identifican de forma única esas respuestas. El escenario 3D original de PM2.5 conserva su multiplicador regional uniforme. La incertidumbre posterior basal no es un intervalo del efecto de exposición.</p>
+</section>
+<section id="reproducibilidad-y-tablas-fuente" class="level2">
+<h2 class="anchored" data-anchor-id="reproducibilidad-y-tablas-fuente">Reproducibilidad y tablas fuente</h2>
+<p><a href="../downloads/spatial_bayes/summary.json">Resumen del modelo</a> · <a href="../downloads/spatial_bayes/validation.json">Validación de implementación/datos</a> · <a href="../downloads/code/analyze_spatial_bayes.py">Modelo y figuras reproducibles</a> · <a href="./reproducibility.html">Capítulo completo de reproducibilidad</a>.</p>
+
+
+<!-- -->
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referencias</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Murphy2007Conjugate" class="csl-entry" role="listitem">
+Murphy, Kevin P. 2007. <em>Conjugate Bayesian analysis of the Gaussian distribution</em>. <a href="https://www.cs.ubc.ca/~murphyk/Papers/bayesGauss.pdf">https://www.cs.ubc.ca/~murphyk/Papers/bayesGauss.pdf</a>.
+</div>
+<div id="ref-RasmussenWilliams2006" class="csl-entry" role="listitem">
+Rasmussen, Carl Edward, y Christopher K. I. Williams. 2006. <em>Gaussian Processes for Machine Learning</em>. The MIT Press. <a href="https://gaussianprocess.org/gpml/chapters/RW2.pdf">https://gaussianprocess.org/gpml/chapters/RW2.pdf</a>.
+</div>
+<div id="ref-SciPyBetaBinomial" class="csl-entry" role="listitem">
+SciPy developers. s.&nbsp;f. <em>scipy.stats.betabinom: beta-binomial distribution</em>. Accedido 20 de octubre de 2026. <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.betabinom.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.betabinom.html</a>.
+</div>
+<div id="ref-Zhang2023_38092912" class="csl-entry" role="listitem">
+Zhang, Meng, Xingjie Pan, Won Jung, et&nbsp;al. 2023. <span>«Molecularly defined and spatially resolved cell atlas of the whole mouse brain»</span>. <em>Nature</em> 624: 343-54. <a href="https://doi.org/10.1038/s41586-023-06808-9">https://doi.org/10.1038/s41586-023-06808-9</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/amarusimonaguerojimenez\.github\.io\/Air-Pollution-Brain-Omics-Mouse\/es\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Detección bayesiana y validación de la referencia espacial"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Modelo anatómico de referencia evaluado en cortes físicos reservados"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">page-layout:</span><span class="co"> full</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: mathml</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Markdown, display</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> _report_utils <span class="im">import</span> ROOT, summary, metric_cards, figure, read_table, show_table</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> summary(<span class="st">"spatial_bayes"</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> summary(<span class="st">"spatial_detection_bayes"</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introducción</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>Dos análisis bayesianos abordan objetivos distintos para veinte pares región–gen definidos previamente. Un modelo beta-binomial jerárquico estima la **probabilidad de detectar un gen**, permitiendo variación entre cortes físicos. Un modelo espacial gaussiano estima la **log-expresión basal esperada, ajustada por corte**; sus limitaciones para conteos de RNA dispersos se evalúan explícitamente. Ambos cuantifican incertidumbre condicional y usan cortes completos reservados. Las mediciones, las estimaciones y los contrastes experimentales de contaminación permanecen diferenciados.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>La referencia de expresión espacial es una regresión bayesiana con funciones base desarrollada para este proyecto; no es una implementación de Tangram, BayesSpace o cell2location. Utiliza priors propios y una distribución posterior analítica. La regresión bayesiana con bases fijas aporta el fundamento metodológico; los priors, los términos de corte y los supuestos para conteos transformados se documentan junto al código. <span class="co">[</span><span class="ot">@RasmussenWilliams2006; @Murphy2007Conjugate</span><span class="co">]</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Cortes medidos, capas y detección</span><span class="co">](spatial_explorer.qmd)</span>{.btn .btn-primary}</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Productos génicos y evidencia de exposición</span><span class="co">](gene_profiles.qmd)</span>{.btn .btn-outline-secondary}</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Detección bayesiana: metodología</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>Para gen $g$, anatomía $a$ y corte físico $s$, $Y_{sag}$ es el número de conteos de imagen positivos entre $n_{sa}$ células medidas, incluidos todos los ceros en el denominador. Se utiliza</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Y_{sag}\mid p_{sag}\sim\operatorname{Binomial}(n_{sa},p_{sag}),\qquad</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>p_{sag}\mid\mu_{ag},\kappa_{ag}\sim\operatorname{Beta}(\mu_{ag}\kappa_{ag},(1-\mu_{ag})\kappa_{ag}).</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>La verosimilitud marginal beta-binomial admite heterogeneidad entre cortes, en lugar de tratar todas las células como réplicas independientes con una probabilidad fija común. Los priors propios e independientes son $\mu\sim\operatorname{Beta}(0.5,0.5)$ y $\ln\kappa\sim\mathcal N(\ln20,1.5^2)$. Se fijan sin usar expresión reservada. La integración emplea una cuadrícula determinista de cuantiles previos de 64 × 48, con sensibilidad de cuadrícula documentada. Los intervalos de la hipermedia usan cuantiles ponderados de la cuadrícula discreta. Los de probabilidad de cortes conocidos y número de positivos reservado usan 8,192 muestras de mezcla con semilla fija; los de probabilidad de un nuevo corte en la referencia completa usan inversión determinista de la CDF de la mezcla Beta ponderada. Es integración numérica por cuadrícula/Monte Carlo, sin afirmar una posterior continua exacta ni convergencia MCMC. <span class="co">[</span><span class="ot">@SciPyBetaBinomial</span><span class="co">]</span> Las propensiones de los cortes son intercambiables dentro de cada anatomía y gen; el modelo no separa tendencias biológicas AP de variación técnica entre cortes.</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>Al aumentar la cuadrícula de integración de 64 × 48 a 96 × 64, las medias posteriores de probabilidad de la referencia completa cambian como máximo 0.00020 en ACA y 0.00054 en HY. Los extremos de los intervalos de probabilidad de un nuevo corte cambian como máximo 0.0026 y 0.0036; los de la hipermedia discreta pueden cambiar aproximadamente 0.020 y 0.018. La cobertura de conteos reservados pasa de 97.89% a 98.05% en ACA y permanece en 99.35% en HY. Estas comprobaciones describen la precisión numérica finita; una cobertura alta con intervalos amplios no establece utilidad predictiva.</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>La **probabilidad posterior de un corte conocido** usa su numerador y denominador observados en la referencia. Es una estimación ajustada, no una predicción reservada. Su intervalo creíble difiere de la incertidumbre de la hipermedia anatómica $\mu$ y de la distribución distinta de la **probabilidad de un nuevo corte**. Los intervalos predictivos del número de positivos de un nuevo corte condicionan al denominador real $n$ reservado. Son probabilidades o conteos de detección, no magnitudes de expresión ni moléculas inferidas espacialmente.</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>Se usan los mismos cinco bloques de cortes completos y cortes vecinos de guarda del análisis siguiente. El modelo regional sin anatomía se entrena con los mismos cortes permitidos para comparar. La pérdida de Brier es una medida descriptiva de predicción ponderada por células; la cobertura del número de positivos se calcula entre grupos corte–anatomía, explicitando denominadores y grupos sostenidos solo por el prior. Una anatomía reservada ausente del entrenamiento conserva el prior especificado; no se sustituye silenciosamente por un patrón anatómico aprendido.</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Explorar detección observada y bayesiana juntas</span><span class="co">](spatial_explorer.qmd)</span>{.btn .btn-outline-primary}</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="fu">### Resultados de detección</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> region, info <span class="kw">in</span> d.items():</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    wins <span class="op">=</span> <span class="bu">sum</span>(x[<span class="st">"brier"</span>] <span class="op">&lt;</span> x[<span class="st">"baseline_brier"</span>] <span class="cf">for</span> x <span class="kw">in</span> info[<span class="st">"metrics_by_gene"</span>].values())</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    display(Markdown(</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"**</span><span class="sc">{</span>region<span class="sc">}</span><span class="ss">:** la cobertura predictiva observada del número de positivos es **</span><span class="sc">{</span>info[<span class="st">'count_pi_coverage'</span>]<span class="sc">:.1%}</span><span class="ss">** "</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"en **</span><span class="sc">{</span>info[<span class="st">'n_groups'</span>]<span class="sc">:,}</span><span class="ss"> evaluaciones gen × corte × anatomía**. "</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"El intervalo predictivo medio abarca **</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>info[<span class="st">'count_pi_mean_fraction_width'</span>]<span class="sc">:.1f}</span><span class="ss"> puntos porcentuales** del denominador del grupo. "</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"La pérdida de Brier ponderada por células es **</span><span class="sc">{</span>info[<span class="st">'brier'</span>]<span class="sc">:.4f}</span><span class="ss">**, frente a **</span><span class="sc">{</span>info[<span class="st">'baseline_brier'</span>]<span class="sc">:.4f}</span><span class="ss">** "</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"del modelo regional sin anatomía (menor es mejor); la anatomía mejora Brier en **</span><span class="sc">{</span>wins<span class="sc">}</span><span class="ss">/10 genes**."</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> []</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> region, info <span class="kw">in</span> d.items():</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> gene, row <span class="kw">in</span> info[<span class="st">"metrics_by_gene"</span>].items():</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>        rows.append([region, gene, row[<span class="st">"brier"</span>], row[<span class="st">"baseline_brier"</span>], <span class="dv">100</span><span class="op">*</span>row[<span class="st">"count_pi_coverage"</span>],</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>                     row[<span class="st">"n_groups"</span>], row[<span class="st">"prior_only_groups"</span>], <span class="dv">100</span><span class="op">*</span>row[<span class="st">"count_pi_mean_fraction_width"</span>]])</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>show_table(pd.DataFrame(rows, columns<span class="op">=</span>[<span class="st">"Región"</span>, <span class="st">"Gen"</span>, <span class="st">"Brier anatómico"</span>, <span class="st">"Brier regional"</span>, <span class="st">"Cobertura predictiva de positivos (%)"</span>,</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Grupos corte–anatomía evaluados"</span>, <span class="st">"Grupos solo prior"</span>, <span class="st">"Ancho predictivo medio (puntos porcentuales)"</span>]), n<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>**Corteza e hipotálamo tienen distinto soporte.** En ACA, la mejora modesta de Brier se acompaña de intervalos amplios; una cobertura superior al 95% no demuestra recuperación de alta resolución. En HY, 79 de 186 grupos corte–anatomía reservados por gen carecen de esa anatomía en entrenamiento, representando 10,416 de 37,811 células. Su media previa es 0.5 bajo el prior simétrico especificado. El modelo resulta sustancialmente peor que la referencia regional en conjunto. Esos casos se conservan sin eliminarlos silenciosamente. Entre grupos con anatomía presente en entrenamiento, Brier agrupado de HY es 0.03256 frente a 0.03288 de la referencia regional; este diagnóstico restringido no reemplaza el resultado completo. El explorador y el resumen fuente conservan ambos subconjuntos.</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>Las evaluaciones agrupadas por gen reutilizan las mismas células y cortes físicos; no son observaciones independientes adicionales. Hay 14,582 células ACA y 37,811 HY de referencia, un animal y diez genes objetivo por región.</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>manifest <span class="op">=</span> json.loads((ROOT <span class="op">/</span> <span class="st">"results/spatial_detection_bayes/figure_manifest.json"</span>).read_text())</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> stem, item <span class="kw">in</span> manifest.items():</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>    language <span class="op">=</span> item.get(<span class="st">"language"</span>, <span class="st">"es"</span> <span class="cf">if</span> stem.endswith(<span class="st">"_es"</span>) <span class="cf">else</span> <span class="st">"en"</span>)</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> language <span class="op">==</span> <span class="st">"es"</span>:</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>        figure(<span class="st">"spatial_detection_bayes"</span>, stem, item.get(<span class="st">"caption_es"</span>, item.get(<span class="st">"caption"</span>, <span class="st">""</span>)))</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>Las estimaciones de detección de cortes conocidos y sus intervalos creíbles aparecen bajo la tabla anatómica observada del <span class="co">[</span><span class="ot">explorador de cortes</span><span class="co">](spatial_explorer.qmd)</span>. Usan todas las clases celulares del grupo anatómico; al seleccionar una clase se ocultan esas estimaciones para todas las clases. Las estimaciones ajustadas condicionales no deben confundirse con las predicciones reservadas que generan las métricas anteriores.</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Resumen de detección</span><span class="co">](../downloads/spatial_detection_bayes/summary.json)</span> · <span class="co">[</span><span class="ot">Comprobaciones de detección</span><span class="co">](../downloads/spatial_detection_bayes/validation.json)</span> · <span class="co">[</span><span class="ot">Código del modelo de detección</span><span class="co">](../downloads/code/analyze_bayesian_detection.py)</span> · <span class="co">[</span><span class="ot">Predicciones de detección reservadas de ACA</span><span class="co">](../downloads/spatial_detection_bayes/ACA/out_of_fold_predictions.tsv.gz)</span> · <span class="co">[</span><span class="ot">Predicciones de detección reservadas de HY</span><span class="co">](../downloads/spatial_detection_bayes/HY/out_of_fold_predictions.tsv.gz)</span>.</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="fu">## Referencia de expresión espacial: metodología</span></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="fu">### Datos, objetivo e información anatómica</span></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>Se conservan todas las células registradas de corteza cingulada anterior e hipotálamo del donante macho ABCA-2 sin exposición experimental. Se modelan diez genes medidos seleccionados anteriormente por región. Los conteos y coordenadas no cambian. La respuesta es el **logaritmo natural del conteo de imagen transformado**, $y_{ig}=\ln(1+c_{ig})$, incluidos los ceros. No es log₂ fold change, expresión RNA-seq normalizada ni una medición de proteínas. <span class="co">[</span><span class="ot">@Zhang2023_38092912</span><span class="co">]</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>La media espacial se describe mediante subestructuras anatómicas, coordenadas CCF estandarizadas y una expansión finita de bases radiales anisotrópicas. El modelo permite discontinuidades entre categorías anatómicas. Interceptos por corte original absorben desplazamientos compartidos por sus células. Las etiquetas de clase y subclase derivadas de expresión se excluyen de los predictores principales, evitando información del gen objetivo transmitida por la anotación de RNA del atlas. Los cortes físicos definen las particiones de validación.</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="fu">### Priors propios y distribuciones posteriores</span></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>Para cada gen, el modelo de trabajo es</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>y_{ig}=\phi(\mathbf r_i,a_i)^\top\boldsymbol\beta_g+\delta_{s(i),g}+\epsilon_{ig},</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>\qquad \epsilon_{ig}\sim\mathcal N(0,\sigma_g^2).</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>$\mathbf r_i$ representa la posición registrada, $a_i$ la categoría anatómica y $s(i)$ el corte físico. Los coeficientes y efectos de corte tienen priors normales propios centrados en cero, condicionados a la varianza residual, y esta varianza tiene un prior inverso-Gamma propio. La actualización Normal–Inversa-Gamma produce distribuciones posteriores t de Student al integrar incertidumbre de coeficientes y varianza. La anisotropía, regularización, varianza de corte y número de bases se fijan para el análisis principal; ajustes de sensibilidad varían alternativas predefinidas.</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>El mapa representa la **media espacial promediando a cero el desplazamiento del corte**. Se distinguen dos cantidades:</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El **intervalo creíble del 95% de la media latente** describe la incertidumbre sobre esa media ajustada por corte bajo el modelo.</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El **intervalo predictivo del 95% para una nueva célula en un nuevo corte** añade variación residual y el efecto de un corte no observado. Este intervalo más amplio se contrasta con las células medidas reservadas.</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>La verosimilitud gaussiana es una aproximación de trabajo para conteos transformados dispersos. Puede asignar probabilidad a valores negativos, fuera del soporte físico de $\ln(1+c)$. Las medias ajustadas negativas, los límites negativos y la masa predictiva bajo cero se conservan y diagnostican. No se aplica la exponencial para afirmar conteos moleculares esperados. La incertidumbre es condicional a anatomía, bases, priors y registro; no incluye toda la incertidumbre biológica ni de registro.</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="fu">### Validación por cortes completos</span></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>Se reservan sucesivamente cinco bloques contiguos de cortes físicos. Los cortes vecinos de guarda se excluyen del entrenamiento. Las categorías anatómicas, la estandarización de coordenadas y las posiciones de las bases se obtienen solo de células de entrenamiento; la expresión reservada no las determina. Cada célula de prueba permanece junto con su corte original. Los mapas finales ajustados con toda la referencia se distinguen de las predicciones fuera de muestra.</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>Cada gen se compara con un modelo de media anatómica y una interpolación sencilla por vecinos espaciales, ambos obtenidos del entrenamiento. Se conservan RMSE, MAE, cobertura y amplitud del intervalo predictivo, examinando por separado ceros y conteos positivos. Alternativas fijas de escala espacial y regularización evalúan la dependencia de los priors. Un resultado desfavorable no se renombra como modelo validado.</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>Un donante permite evaluar **predicción espacial dentro del donante**, sin aportar replicación animal independiente, rendimiento en otros donantes ni generalización a exposición. El bloqueo por cortes reduce fugas de información local, pero no elimina toda la dependencia espacial ni la especificación incorrecta del modelo.</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a><span class="fu">## Referencia de expresión espacial: resultados</span></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>Los resultados siguientes muestran precisión predictiva y calibración, incluidos los fallos. Una comprobación de implementación/datos satisfactoria no establece calibración científica ni superioridad frente a un modelo sencillo.</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>El modelo espacial gaussiano **no estableció una reconstrucción validada del RNA celular**. Su soporte predictivo negativo es físicamente incompatible con los conteos transformados, y anatomía/posición solas recuperan mal las observaciones positivas. Una respuesta con muchos ceros puede aparentar cobertura global alta mientras predice mal la cola positiva. La cobertura entre positivos es un diagnóstico descriptivo de cola; un intervalo marginal del 95% no garantiza cobertura del 95% condicionada a que la observación realizada sea positiva.</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> region, info <span class="kw">in</span> b[<span class="st">"regions"</span>].items():</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>    rows <span class="op">=</span> info[<span class="st">"heldout_results"</span>]</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>    wins <span class="op">=</span> <span class="bu">sum</span>(row[<span class="st">"rmse"</span>] <span class="op">&lt;</span> row[<span class="st">"anatomy_baseline_rmse"</span>] <span class="cf">for</span> row <span class="kw">in</span> rows)</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>    display(Markdown(</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"**</span><span class="sc">{</span>region<span class="sc">}</span><span class="ss">:** el RMSE espacial mejora la referencia de solo anatomía en **</span><span class="sc">{</span>wins<span class="sc">}</span><span class="ss">/10 genes**. "</span></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"La mediana de cobertura predictiva global observada del 95% es **</span><span class="sc">{</span>np<span class="sc">.</span>median([r[<span class="st">'predictive_95_coverage'</span>] <span class="cf">for</span> r <span class="kw">in</span> rows])<span class="sc">:.1%}</span><span class="ss">**, "</span></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"frente a **</span><span class="sc">{</span>np<span class="sc">.</span>median([r[<span class="st">'coverage_positive'</span>] <span class="cf">for</span> r <span class="kw">in</span> rows])<span class="sc">:.1%}</span><span class="ss">** entre observaciones positivas. "</span></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"La mediana de probabilidad predictiva asignada bajo cero es **</span><span class="sc">{</span>np<span class="sc">.</span>median([r[<span class="st">'negative_predictive_probability_mean'</span>] <span class="cf">for</span> r <span class="kw">in</span> rows])<span class="sc">:.1%}</span><span class="ss">**."</span></span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> []</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> region, info <span class="kw">in</span> b[<span class="st">"regions"</span>].items():</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> info[<span class="st">"heldout_results"</span>]:</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>        rows.append([region, row[<span class="st">"gene"</span>], row[<span class="st">"rmse"</span>], row[<span class="st">"anatomy_baseline_rmse"</span>], row[<span class="st">"knn_rmse"</span>],</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>                     <span class="dv">100</span><span class="op">*</span>row[<span class="st">"predictive_95_coverage"</span>], <span class="dv">100</span><span class="op">*</span>row[<span class="st">"coverage_positive"</span>],</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>                     <span class="dv">100</span><span class="op">*</span>row[<span class="st">"negative_predictive_probability_mean"</span>]])</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>show_table(pd.DataFrame(rows, columns<span class="op">=</span>[<span class="st">"Región"</span>, <span class="st">"Gen"</span>, <span class="st">"RMSE espacial"</span>, <span class="st">"RMSE anatómico"</span>, <span class="st">"RMSE kNN"</span>,</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Cobertura global (%)"</span>, <span class="st">"Cobertura entre positivos (%)"</span>, <span class="st">"Probabilidad bajo cero (%)"</span>]), n<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>Por ejemplo, Tll1 tiene cobertura predictiva global del 98.2%, pero cobertura del 0% entre sus 667 observaciones positivas. Fosb presenta cobertura global del 93.9% y del 37.1% entre positivos. Los mapas permanecen visibles como referencia de trabajo evaluada; no deben sustituir la expresión medida ni implicar detalle espacial recuperado.</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a><span class="fu">## Explorar las estimaciones posteriores</span></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">iframe</span><span class="ot"> id</span><span class="op">=</span><span class="st">"bayes-frame"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"viewer-frame"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"../assets/spatial-explorer/index-es.html?region=ACA</span><span class="dv">&amp;amp;</span><span class="st">mode=bayes"</span><span class="ot"> title</span><span class="op">=</span><span class="st">"Media basal bayesiana e incertidumbre en posiciones celulares medidas existentes"</span><span class="ot"> loading</span><span class="op">=</span><span class="st">"lazy"</span><span class="dt">&gt;&lt;/</span><span class="kw">iframe</span><span class="dt">&gt;</span></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a><span class="bu">window</span><span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">"message"</span><span class="op">,</span> <span class="kw">function</span>(<span class="bu">event</span>) {</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a> <span class="kw">const</span> frame <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"bayes-frame"</span>)<span class="op">;</span></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a> <span class="cf">if</span> (frame <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">source</span> <span class="op">===</span> frame<span class="op">.</span><span class="at">contentWindow</span> <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">origin</span> <span class="op">===</span> <span class="bu">window</span><span class="op">.</span><span class="at">location</span><span class="op">.</span><span class="at">origin</span> <span class="op">&amp;&amp;</span> <span class="bu">event</span><span class="op">.</span><span class="at">data</span> <span class="op">&amp;&amp;</span> [<span class="st">"omics-spatial-height"</span><span class="op">,</span> <span class="st">"omics-atlas-height"</span>]<span class="op">.</span><span class="fu">includes</span>(<span class="bu">event</span><span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">type</span>)) {</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> height <span class="op">=</span> <span class="bu">Number</span>(<span class="bu">event</span><span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">height</span>)<span class="op">;</span></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="bu">Number</span><span class="op">.</span><span class="fu">isFinite</span>(height)) frame<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">height</span> <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(<span class="dv">14000</span><span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">1700</span><span class="op">,</span> height <span class="op">+</span> <span class="dv">30</span>)) <span class="op">+</span> <span class="st">"px"</span><span class="op">;</span></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a> }</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Abrir directamente la pestaña bayesiana</span><span class="co">](../assets/spatial-explorer/index-es.html?region=ACA&amp;mode=bayes)</span>{.btn .btn-outline-primary target="_blank"}</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>manifest <span class="op">=</span> json.loads((ROOT <span class="op">/</span> <span class="st">"results/spatial_bayes/figure_manifest.json"</span>).read_text())</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> stem, item <span class="kw">in</span> manifest.items():</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>    language <span class="op">=</span> item.get(<span class="st">"language"</span>, <span class="st">"es"</span> <span class="cf">if</span> stem.endswith(<span class="st">"_es"</span>) <span class="cf">else</span> <span class="st">"en"</span>)</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> language <span class="op">==</span> <span class="st">"es"</span>:</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>        figure(<span class="st">"spatial_bayes"</span>, stem, item.get(<span class="st">"caption_es"</span>, item.get(<span class="st">"caption"</span>, <span class="st">""</span>)))</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interpretación y límites</span></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>Una cuadrícula más fina, un campo más suave o un intervalo creíble condicional estrecho no aumentan la resolución de adquisición. Las predicciones en posiciones existentes no crean células en los espacios de aproximadamente 200 µm entre cortes muestreados, y este modelo no genera células adicionales ni otro hemisferio. Demostrar mayor resolución exigiría mediciones independientes que acrediten la recuperación de ese detalle.</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>**Aquí no se ajusta una respuesta de PM2.5 específica por tipo celular.** Los priors espaciales basales y los cambios regionales de tejido completo no identifican de forma única esas respuestas. El escenario 3D original de PM2.5 conserva su multiplicador regional uniforme. La incertidumbre posterior basal no es un intervalo del efecto de exposición.</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reproducibilidad y tablas fuente</span></span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Resumen del modelo</span><span class="co">](../downloads/spatial_bayes/summary.json)</span> · <span class="co">[</span><span class="ot">Validación de implementación/datos</span><span class="co">](../downloads/spatial_bayes/validation.json)</span> · <span class="co">[</span><span class="ot">Modelo y figuras reproducibles</span><span class="co">](../downloads/code/analyze_spatial_bayes.py)</span> · <span class="co">[</span><span class="ot">Capítulo completo de reproducibilidad</span><span class="co">](reproducibility.qmd)</span>.</span>
+</code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Reanálisis de datos públicos · Mus musculus</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Se distingue la referencia medida de la exposición simulada.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

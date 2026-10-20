@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "model": "Proper conjugate Normal–Inverse-Gamma spatial regression with physical-section nuisance random intercepts",
+  "response": "y=ln(1+raw MERFISH imaging count); no normalization or raw-count back-transformation",
+  "likelihood": "y = X beta + section_offset + epsilon; epsilon~N(0,sigma²), section_offset~N(0,0.25 sigma²); working Gaussian model is approximate for zero-heavy nonnegative data.",
+  "features": [
+    "global intercept",
+    "training-observed anatomical substructure intercepts",
+    "training-centered/scaled AP,DV,ML linear coordinates",
+    "36 Gaussian RBFs with anisotropic physical lengths",
+    "training-section nuisance intercepts"
+  ],
+  "celltype_predictors": false,
+  "why_no_celltype_predictors": "Atlas expression-derived class/subclass labels could leak the target transcript; they are not used to construct features.",
+  "basis": {
+    "shape": [
+      4,
+      3,
+      3
+    ],
+    "AP_quantiles": [
+      0.05,
+      0.35,
+      0.65,
+      0.95
+    ],
+    "DV_ML_quantiles": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "centers": "Cartesian product of training-coordinate quantiles only",
+    "length_mm_AP_DV_ML": [
+      0.6,
+      0.45,
+      0.45
+    ],
+    "training_only_centering": "Coordinate means/SD and mean RBF feature values are learned only from the training cells. Outcome is not centered or scaled.",
+    "random_seed": null,
+    "deterministic": true
+  },
+  "prior": {
+    "beta_mean": 0.0,
+    "beta_covariance": "sigma² * diagonal(V0)",
+    "intercept_variance_multiplier": 25.0,
+    "anatomy_variance_multiplier": 1.0,
+    "linear_coordinate_variance_multiplier": 0.25,
+    "each_RBF_variance_multiplier": 0.027777777777777776,
+    "section_variance_multiplier": 0.25,
+    "sigma2": "InverseGamma(shape=3,scale=1); density proportional to (sigma²)^(-4) exp(-1/sigma²)",
+    "proper": true
+  },
+  "posterior": {
+    "Vn": "inverse(X.T X + inverse(V0))",
+    "mn": "Vn X.T y",
+    "an": "3+n/2",
+    "bn": "1+0.5*(y.T y-mn.T inverse(Vn) mn)",
+    "solver": "Cholesky; normal-equation and residual-plus-prior quadratic checks recorded",
+    "marginal": "Student t with df=2an",
+    "latent_scale2": "bn/an * x.T Vn x, plus independent prior variance for unseen anatomy",
+    "predictive_scale2": "bn/an * (1+0.25+x.T Vn x), plus independent prior variance for unseen anatomy"
+  },
+  "target": "Section-adjusted spatial conditional mean; physical-section nuisance offset averaged to zero. New-cell predictive distribution integrates a NEW section offset, at the actual measured coordinate. No new cell is instantiated.",
+  "unseen_anatomy": "Training vocabulary only. Unknown test anatomy has zero prior mean and an added independent anatomy-prior variance; it is never silently treated as a known group.",
+  "validation": {
+    "scheme": "Five contiguous blocks of whole physical sections, ordered by acquisition AP/experimental_z",
+    "fold_assignment": "Deterministic array_split of ordered region sections; all cells in each test section held out together. No cell/section exclusion by expression.",
+    "guard": "Nearest represented region section immediately before and after each test block removed from training; guard may exceed one acquisition cut if region is absent from intervening cuts. Exact labels and AP distances recorded.",
+    "hyperparameters": "All fixed before CV; no held-out tuning or model selection. All four sensitivity variants are reported regardless of performance.",
+    "gene_selection": "Ten measured candidates per region frozen by prior bulk-results selection; no atlas-outcome selection.",
+    "donors": 1,
+    "no_independent_animal_validation": true
+  },
+  "baselines": {
+    "anatomy_constant": "Proper Bayesian global/anatomical intercept model, same prior and section nuisance structure; training cells only.",
+    "knn": "Unweighted average of30 nearest training cells in same anatomy when≥30available, otherwise all training anatomies; distances scaled by fixed primary AP/DV/ML lengths. No uncertainty interval assigned to deterministic interpolation."
+  },
+  "sensitivity": {
+    "primary": {
+      "length_factor": 1.0,
+      "spatial_prior_variance_factor": 1.0
+    },
+    "short_length": {
+      "length_factor": 0.5,
+      "spatial_prior_variance_factor": 1.0
+    },
+    "long_length": {
+      "length_factor": 2.0,
+      "spatial_prior_variance_factor": 1.0
+    },
+    "strong_shrinkage": {
+      "length_factor": 1.0,
+      "spatial_prior_variance_factor": 0.25
+    },
+    "weak_shrinkage": {
+      "length_factor": 1.0,
+      "spatial_prior_variance_factor": 4.0
+    }
+  },
+  "conditional_tail_metrics": "coverage_positive and coverage_zero condition on realized outcomes and are descriptive tail-recovery diagnostics. They need not equal the nominal marginal 95%level, even under a calibrated marginal predictive interval. The positive-tail flag is not a formal calibration test.",
+  "interval_scope": "Conditional on fixed kernel lengths, prior variances, anatomy labels and Gaussian likelihood; no residual spatial-correlation, registration-error or between-animal uncertainty model. Cell-wise calibration is descriptive; sections/donors are not independent cell replicates.",
+  "interpretation_limits": [
+    "Gaussian fitted means, latent intervals and predictive distributions can be negative on the physically nonnegative ln(1 + count) scale. Predictive negative mass is quantified; fitted quantities and intervals are never clipped or presented as raw-count predictions.",
+    "Latent-mean credible intervals are not new-cell predictive intervals; empirical coverage is assessed only for the latter.",
+    "Full-reference posterior arrays are in-sample fitted spatial summaries; held-out metrics come exclusively from refits excluding test/guard sections.",
+    "No PM response, differential expression, protein abundance, additional resolution, missing-gene expression, new positions, cell generation, mirroring or relocation is inferred."
+  ],
+  "computational_limits": {
+    "basis": "36 finite-rank RBFs, no Gaussian-process or neural-network fit",
+    "all_reference_cells_retained": true,
+    "fold_fits_total": 60,
+    "full_reference_fits_total": 2,
+    "posterior_integration": "Exact conjugate algebra; no MCMC, approximate optimization or convergence diagnostic required.",
+    "hyperparameter_uncertainty": "Length scales, anatomy/section prior variances and basis size are fixed, not integrated out.",
+    "residual_dependence": "After section nuisance effects, remaining spatial dependence and heteroscedasticity are not modeled.",
+    "resolution": "No additional spatial resolution or unmeasured-gene/cell information is created."
+  },
+  "sources": [
+    {
+      "title": "Murphy: Conjugate Bayesian analysis of the Gaussian distribution",
+      "url": "https://www.cs.ubc.ca/~murphyk/Papers/bayesGauss.pdf"
+    },
+    {
+      "title": "SciPy Student t implementation and parameterization",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.t.html"
+    },
+    {
+      "title": "Original MERFISH atlas",
+      "url": "https://doi.org/10.1038/s41586-023-06808-9"
+    }
+  ]
+}

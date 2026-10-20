@@ -8,6 +8,8 @@ toc: false
 
 [**Cortex: 76 measured primary discoveries →**](cortex_viewer.qmd){.btn .btn-primary}
 [**Gene products and functions →**](gene_profiles.qmd){.btn .btn-outline-primary}
+[**Measured sections, layers and detection →**](spatial_explorer.qmd){.btn .btn-outline-primary}
+[**Bayesian baseline and validation →**](spatial_bayes.qmd){.btn .btn-outline-secondary}
 
 The expanded report retains all eleven hypothalamic primary hits and the twenty strongest primary coding-gene findings in cortex. The function profiles distinguish proteins, noncoding RNAs and pseudogenes. In each viewer, relevant-gene shortcuts and a comparison table for up to three measured genes complement the paired 3D scenes.
 

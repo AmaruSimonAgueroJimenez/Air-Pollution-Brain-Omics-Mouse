@@ -1,0 +1,179 @@
+---
+title: "Bayesian detection and spatial baseline validation"
+subtitle: "An anatomy-aware reference model evaluated on held-out physical sections"
+page-layout: full
+toc: true
+format:
+  html:
+    html-math-method: mathml
+---
+
+```{python}
+import json
+import numpy as np
+import pandas as pd
+from IPython.display import Markdown, display
+from _report_utils import ROOT, summary, metric_cards, figure, read_table, show_table
+b = summary("spatial_bayes")
+d = summary("spatial_detection_bayes")
+```
+
+## Introduction
+
+Two Bayesian analyses address different targets for twenty fixed region–gene pairs. A hierarchical beta-binomial model estimates **gene-detection probability**, allowing physical sections to differ. A spatial Gaussian model estimates **section-adjusted expected baseline log-expression**; its limitations for sparse RNA counts are evaluated explicitly. Both quantify conditional uncertainty and use reserved whole sections. Actual measurements, model estimates and experimental pollution contrasts remain separate.
+
+The spatial-expression baseline is a project-specific Bayesian basis regression, not an implementation of Tangram, BayesSpace or cell2location. The model uses proper priors and an analytically available posterior. Fixed-basis Bayesian regression provides the methodological background; the exact priors, nuisance terms and transformed-count assumptions used here are recorded with the implementation. [@RasmussenWilliams2006]
+
+[Measured sections, layers and detection](spatial_explorer.qmd){.btn .btn-primary}
+[Gene products and exposure evidence](gene_profiles.qmd){.btn .btn-outline-secondary}
+
+## Bayesian detection: methods
+
+For gene $g$, anatomy $a$ and physical section $s$, $Y_{sag}$ is the number of positive raw imaging counts among $n_{sa}$ measured cells, including all zeros in the denominator. We use
+
+$$
+Y_{sag}\mid p_{sag}\sim\operatorname{Binomial}(n_{sa},p_{sag}),\qquad
+p_{sag}\mid\mu_{ag},\kappa_{ag}\sim\operatorname{Beta}(\mu_{ag}\kappa_{ag},(1-\mu_{ag})\kappa_{ag}).
+$$
+
+The beta-binomial marginal likelihood allows section-to-section heterogeneity, rather than treating all cells as independent replicates sharing one fixed probability. Proper independent priors are $\mu\sim\operatorname{Beta}(0.5,0.5)$ and $\ln\kappa\sim\mathcal N(\ln20,1.5^2)$. These choices are fixed; they do not use held-out expression. Integration uses a deterministic 64 × 48 prior-quantile grid, with grid sensitivity reported separately. Hypermean intervals use weighted discrete-grid quantiles. Known-section probability and held-out positive-count intervals use 8,192 fixed-seed mixture draws; full-reference new-section probability intervals use deterministic inversion of the weighted Beta-mixture CDF. This is numerical grid/Monte Carlo integration, not an exact continuous posterior or an MCMC convergence claim. [@SciPyBetaBinomial] Section propensities are exchangeable within each anatomy and gene; this model does not separate biological AP trends from technical section variation.
+
+Increasing the integration grid from 64 × 48 to 96 × 64 changes full-reference posterior mean probabilities by at most 0.00020 in ACA and 0.00054 in HY. New-section probability interval endpoints change by at most 0.0026 and 0.0036, respectively; discrete hypermean interval endpoints can move by about 0.020 and 0.018. Held-out count coverage changes from 97.89% to 98.05% in ACA and stays at 99.35% in HY. These checks describe finite numerical precision; high coverage with wide intervals does not establish predictive usefulness.
+
+The **known-section posterior probability** uses that reference section's observed numerator and denominator. It is a fitted estimate, not held-out prediction. Its credible interval differs from uncertainty in the anatomical hypermean $\mu$, and from the distinct distribution of a **new section's probability**. New-section positive-count predictive intervals condition on the actual held-out denominator $n$. These are probabilities or counts of detection, not expression magnitudes or spatially inferred molecules.
+
+The same five whole-section folds and neighboring guard sections used below provide out-of-sample evaluation. A regional nonanatomical model is trained on the same permitted sections for comparison. Brier loss is a cell-weighted descriptive prediction score; positive-count interval coverage is reported over section–anatomy groups, with denominators and prior-only groups explicit. A held-out anatomy absent from training retains the specified prior and is not silently replaced with a learned anatomical pattern.
+
+[Explore observed and Bayesian detection together](spatial_explorer.qmd){.btn .btn-outline-primary}
+
+### Detection results
+
+```{python}
+for region, info in d.items():
+    wins = sum(x["brier"] < x["baseline_brier"] for x in info["metrics_by_gene"].values())
+    display(Markdown(
+        f"**{region}:** empirical positive-count predictive coverage is **{info['count_pi_coverage']:.1%}** "
+        f"over **{info['n_groups']:,} gene × section × anatomy evaluations**. "
+        f"The average predictive interval spans **{100*info['count_pi_mean_fraction_width']:.1f} percentage points** of the group denominator. "
+        f"Cell-weighted Brier loss is **{info['brier']:.4f}**, compared with **{info['baseline_brier']:.4f}** "
+        f"for the regional nonanatomical model (lower is better); anatomy improves Brier loss for **{wins}/10 genes**."
+    ))
+rows = []
+for region, info in d.items():
+    for gene, row in info["metrics_by_gene"].items():
+        rows.append([region, gene, row["brier"], row["baseline_brier"], 100*row["count_pi_coverage"],
+                     row["n_groups"], row["prior_only_groups"], 100*row["count_pi_mean_fraction_width"]])
+show_table(pd.DataFrame(rows, columns=["Region", "Gene", "Anatomy Brier", "Regional Brier", "Count PI coverage (%)",
+                                      "Evaluated section–anatomy groups", "Prior-only groups", "Mean PI width (percentage points)"]), n=20)
+```
+
+**Cortex and hypothalamus have different support.** In ACA the modest Brier improvement accompanies broad intervals; coverage above 95% does not establish high-resolution recovery. In HY, 79 of 186 held-out section–anatomy groups per gene have no matching training anatomy, representing 10,416 of 37,811 cells. Their prior mean is 0.5 under the stated symmetric prior. The model is substantially worse than the regional baseline overall. These cases remain reported rather than silently dropped. Among trained-anatomy groups only, the pooled HY Brier loss is 0.03256 versus the regional baseline 0.03288; this restricted diagnostic does not replace the all-group result. Both subsets are available in the explorer and source summary.
+
+Pooled gene evaluations reuse the same cells and physical sections; their counts are not additional independent observations. There are 14,582 ACA and 37,811 HY reference cells, one animal, and ten target genes per region.
+
+```{python}
+manifest = json.loads((ROOT / "results/spatial_detection_bayes/figure_manifest.json").read_text())
+for stem, item in manifest.items():
+    language = item.get("language", "es" if stem.endswith("_es") else "en")
+    if language == "en":
+        figure("spatial_detection_bayes", stem, item.get("caption_en", item.get("caption", "")))
+```
+
+The known-section detection estimates and credible intervals are available below the observed anatomy table in the [section explorer](spatial_explorer.qmd). They use all classes in each anatomical group; selecting a cell class hides these all-class model estimates. Conditional fitted estimates should not be mistaken for the held-out predictions used to compute the scores above.
+
+[Detection summary](downloads/spatial_detection_bayes/summary.json) · [Detection checks](downloads/spatial_detection_bayes/validation.json) · [Detection model source](downloads/code/analyze_bayesian_detection.py) · [ACA held-out detection predictions](downloads/spatial_detection_bayes/ACA/out_of_fold_predictions.tsv.gz) · [HY held-out detection predictions](downloads/spatial_detection_bayes/HY/out_of_fold_predictions.tsv.gz).
+
+## Spatial-expression baseline: methods
+
+### Data, target and anatomical information
+
+All registered anterior-cingulate and hypothalamic cells from the unexposed male ABCA-2 donor are retained. Ten previously selected measured genes per region are modeled. Counts and coordinates remain unchanged. The response is **natural-log transformed imaging count**, $y_{ig}=\ln(1+c_{ig})$, including measured zeros. It is not log₂ fold change, RNA-seq normalized expression, or a protein measurement. [@Zhang2023_38092912]
+
+Anatomical substructures, standardized CCF coordinates and a finite anisotropic radial-basis expansion describe the spatial mean. The model can represent jumps between anatomical categories. Original section intercepts absorb slice-wide shifts. Expression-derived cell-class and subclass labels are excluded from the primary predictors, avoiding target information carried through atlas RNA-based annotations. Physical-section identities define the validation partitions.
+
+### Proper priors and posterior distributions
+
+For each gene, the working model is
+
+$$
+y_{ig}=\phi(\mathbf r_i,a_i)^\top\boldsymbol\beta_g+\delta_{s(i),g}+\epsilon_{ig},
+\qquad \epsilon_{ig}\sim\mathcal N(0,\sigma_g^2).
+$$
+
+Here $\mathbf r_i$ denotes registered position, $a_i$ anatomical category and $s(i)$ physical section. Coefficients and section effects have proper zero-centered Normal priors conditional on residual variance, with a proper inverse-Gamma prior for that variance. The Normal–Inverse-Gamma update yields Student-t posterior distributions after integrating coefficient and variance uncertainty. Anisotropy, prior strengths, nuisance variance and basis size are fixed for the primary analysis; sensitivity fits vary prespecified alternatives.
+
+The map displays the **spatial mean with the section offset averaged to zero**. Two uncertainty quantities have different meanings:
+
+- The **95% latent-mean credible interval** describes uncertainty about that section-adjusted mean under the model.
+- The **95% new-cell/new-section predictive interval** also includes residual variation and an unseen section offset. This wider interval is evaluated against held-out measured cells.
+
+The Gaussian likelihood is a working approximation for sparse transformed counts. It can assign probability below zero, outside the physical support of $\ln(1+c)$. Negative fitted means, negative bounds and predictive mass below zero are retained and diagnosed. Estimates are not exponentiated into claims of expected molecule counts. Interval uncertainty is conditional on the chosen anatomy, basis, priors and registration; it does not include all biological or registration uncertainty.
+
+### Whole-section validation
+
+Five contiguous blocks of physical sections are reserved in turn. Neighboring guard sections are excluded from training. Anatomy levels, coordinate scaling and basis locations are learned from training cells only; held-out expression does not determine them. All test cells remain together with their original section. Final maps fitted to all reference cells are clearly distinguished from these out-of-sample predictions.
+
+Each gene is compared with a training-only anatomy-mean model and simple spatial nearest-neighbor interpolation. The retained metrics include RMSE, MAE, predictive-interval coverage and width, with observed zero and positive-count behavior examined separately. Fixed alternative spatial scales and shrinkage strengths assess dependence on priors. Test results are not used to rename an unsuccessful model as validated.
+
+One donor supports **within-donor spatial prediction**, not independent animal replication, cross-donor performance or generalization to exposure. Whole-section blocking reduces local information leakage but does not eliminate all spatial dependence or model misspecification.
+
+## Spatial-expression baseline: results
+
+The following results report prediction accuracy and calibration, including failures. A successful implementation/data check does not establish scientific calibration or superiority over a baseline.
+
+The spatial Gaussian model did **not establish a validated reconstruction of cellular RNA**. Its negative predictive support is physically incompatible with transformed counts, and anatomy/spatial position alone recover positive observations poorly. A zero-heavy target can give apparently high overall coverage while missing the positive tail. Positive-only coverage below is a descriptive tail diagnostic; a marginal 95% interval does not guarantee 95% coverage conditional on the realized observation being positive.
+
+```{python}
+for region, info in b["regions"].items():
+    rows = info["heldout_results"]
+    wins = sum(row["rmse"] < row["anatomy_baseline_rmse"] for row in rows)
+    display(Markdown(
+        f"**{region}:** spatial RMSE improves on the anatomy-only baseline for **{wins}/10 genes**. "
+        f"Median empirical overall 95% predictive coverage is **{np.median([r['predictive_95_coverage'] for r in rows]):.1%}**, "
+        f"compared with **{np.median([r['coverage_positive'] for r in rows]):.1%}** among positive observations. "
+        f"Median predictive probability assigned below zero is **{np.median([r['negative_predictive_probability_mean'] for r in rows]):.1%}**."
+    ))
+rows = []
+for region, info in b["regions"].items():
+    for row in info["heldout_results"]:
+        rows.append([region, row["gene"], row["rmse"], row["anatomy_baseline_rmse"], row["knn_rmse"],
+                     100*row["predictive_95_coverage"], 100*row["coverage_positive"],
+                     100*row["negative_predictive_probability_mean"]])
+show_table(pd.DataFrame(rows, columns=["Region", "Gene", "Spatial RMSE", "Anatomy RMSE", "kNN RMSE",
+                                      "Overall coverage (%)", "Positive-observation coverage (%)", "Probability below zero (%)"]), n=20)
+```
+
+For example, Tll1 has 98.2% overall predictive coverage but 0% coverage among its 667 positive observations. Fosb has 93.9% overall coverage and 37.1% among positive observations. These maps remain visible as an evaluated working baseline; they should not replace the measured expression or imply recovered spatial detail.
+
+## Explore posterior estimates
+
+<iframe id="bayes-frame" class="viewer-frame" src="assets/spatial-explorer/index.html?region=ACA&amp;mode=bayes" title="Bayesian baseline mean and uncertainty at existing measured cell locations" loading="lazy"></iframe>
+<script>
+window.addEventListener("message", function(event) {
+ const frame = document.getElementById("bayes-frame");
+ if (frame && event.source === frame.contentWindow && event.origin === window.location.origin && event.data && ["omics-spatial-height", "omics-atlas-height"].includes(event.data.type)) {
+  const height = Number(event.data.height);
+  if (Number.isFinite(height)) frame.style.height = Math.min(14000, Math.max(1700, height + 30)) + "px";
+ }
+});
+</script>
+
+[Open the Bayesian tab directly](assets/spatial-explorer/index.html?region=ACA&mode=bayes){.btn .btn-outline-primary target="_blank"}
+
+```{python}
+manifest = json.loads((ROOT / "results/spatial_bayes/figure_manifest.json").read_text())
+for stem, item in manifest.items():
+    language = item.get("language", "es" if stem.endswith("_es") else "en")
+    if language == "en":
+        figure("spatial_bayes", stem, item.get("caption_en", item.get("caption", "")))
+```
+
+## Interpretation and limits
+
+A finer display grid, smoother field or narrow conditional credible interval does not increase the acquisition resolution. Predictions at existing positions do not create cells in the approximately 200 µm gaps between sampled sections, and this model generates no extra cells or hemisphere. Reliable resolution enhancement would require independent measurements demonstrating recovery of that additional detail.
+
+**No cell-type-specific PM2.5 response is fitted here.** Baseline spatial priors and regional bulk changes cannot uniquely identify such responses. The original PM2.5 3D scenario retains its uniform regional multiplier. Posterior baseline uncertainty is not an exposure-effect interval.
+
+## Reproducibility and source tables
+
+[Model summary](downloads/spatial_bayes/summary.json) · [Implementation/data validation](downloads/spatial_bayes/validation.json) · [Reproducible model and figures](downloads/code/analyze_spatial_bayes.py) · [Full reproducibility chapter](reproducibility.qmd).

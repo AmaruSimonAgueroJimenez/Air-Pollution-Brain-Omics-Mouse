@@ -8,6 +8,8 @@ toc: false
 
 [**Corteza: 76 hallazgos principales medidos →**](cortex_viewer.qmd){.btn .btn-primary}
 [**Qué codifican y qué función tienen →**](gene_profiles.qmd){.btn .btn-outline-primary}
+[**Cortes medidos, capas y detección →**](spatial_explorer.qmd){.btn .btn-outline-primary}
+[**Referencia bayesiana y validación →**](spatial_bayes.qmd){.btn .btn-outline-secondary}
 
 El informe ampliado conserva los once hallazgos hipotalámicos y los veinte genes codificantes de mayor evidencia primaria de corteza. Las fichas distinguen proteínas, RNA no codificantes y pseudogenes. Cada visor incorpora accesos a genes relevantes y una tabla comparativa de hasta tres genes medidos, además de las escenas 3D pareadas.
 

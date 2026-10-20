@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-10-19">
+<meta name="dcterms.date" content="2026-10-20">
 
 <title>Results · hypothalamus and PM2.5 – Air pollution · brain omics</title>
 <style>
@@ -206,10 +206,18 @@ div.csl-indent {
 <span class="menu-text">Genes &amp; functions</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-d-viewers" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">3D viewers</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-spatial-atlas" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Spatial atlas</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-d-viewers">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-spatial-atlas">    
+        <li>
+    <a class="dropdown-item" href="./spatial_explorer.html">
+ <span class="dropdown-text">Sections, layers &amp; detection</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./spatial_bayes.html">
+ <span class="dropdown-text">Bayesian baseline &amp; validation</span></a>
+  </li>  
         <li>
     <a class="dropdown-item" href="./viewer.html">
  <span class="dropdown-text">Hypothalamus &amp; region selection</span></a>
@@ -280,7 +288,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Analysis date</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">19 October 2026</p>
+      <p class="date">20 October 2026</p>
     </div>
   </div>
   
@@ -295,7 +303,7 @@ div.csl-indent {
 <section id="analysis-population" class="level2">
 <h2 class="anchored" data-anchor-id="analysis-population">Analysis population</h2>
 <p>The main contrast includes four filtered-air controls and three PM2.5-exposed animals receiving standard chow. Four high-fat-diet samples in the same deposit are not added to the control group. Gene-assigned counts are analyzed as seven independent bulk samples; the atlas contributes no exposure replicates. <span class="citation" data-cites="Rajagopalan2020_32780721">Rajagopalan et al. (<a href="#ref-Rajagopalan2020_32780721" role="doc-biblioref">2020</a>)</span></p>
-<div id="017b756e" class="cell" data-execution_count="2">
+<div id="dec0aa4a" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display cell-output-markdown">
 <div class="metric-cards">
 <div>
@@ -414,7 +422,7 @@ PM
 </section>
 <section id="quality-normalization-and-sample-relationships" class="level2">
 <h2 class="anchored" data-anchor-id="quality-normalization-and-sample-relationships">Quality, normalization, and sample relationships</h2>
-<div id="e8b3f037" class="cell" data-execution_count="3">
+<div id="03d95685" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display cell-output-markdown">
 <figure class="research-figure figure">
 <a href="assets/figures/hypothalamus/sample_quality.svg"><img loading="lazy" width="3000" height="1140" src="assets/figures/hypothalamus/sample_quality.png" alt="Gene-assigned library depth and detected genes in all seven samples. Each bar represents one animal; no sample was excluded." class="figure-img"></a>
@@ -447,7 +455,7 @@ Sample correlations and variance-stabilized distances provide complementary view
 </section>
 <section id="differential-expression" class="level2">
 <h2 class="anchored" data-anchor-id="differential-expression">Differential expression</h2>
-<div id="14505acc" class="cell" data-execution_count="4">
+<div id="f2c4fb06" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>The analysis retained <strong>19,611</strong> of <strong>50,417</strong> genes. <strong>19,452</strong> genes received a finite adjusted p-value; <strong>159</strong> were filtered from inferential reporting by Cook’s diagnostics. At FDR &lt; 0.05, <strong>11 genes</strong> differ between PM and FA: <strong>2 higher</strong> and <strong>9 lower</strong> in PM. <strong>4</strong> also have absolute shrunken log₂FC ≥ 1.</p>
 </div>
@@ -722,7 +730,7 @@ Mean expression versus effect size. Low-information and outlier-filtered hypothe
 </section>
 <section id="expression-patterns-and-individual-animals" class="level2">
 <h2 class="anchored" data-anchor-id="expression-patterns-and-individual-animals">Expression patterns and individual animals</h2>
-<div id="9e6401ab" class="cell" data-execution_count="5">
+<div id="db08c6ab" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display cell-output-markdown">
 <figure class="research-figure figure">
 <a href="assets/figures/hypothalamus/heatmap_top30.svg"><img loading="lazy" width="2100" height="2610" src="assets/figures/hypothalamus/heatmap_top30.png" alt="The 30 genes selected for the heatmap are displayed on row-standardized variance-stabilized expression. Row z-scores are descriptive and are not fold changes; selection and clustering are part of the same dataset." class="figure-img"></a>
@@ -740,7 +748,7 @@ Normalized expression in individual animals for selected genes, including Gfap a
 </figure>
 </div>
 </div>
-<div id="92be6e82" class="cell" data-execution_count="6">
+<div id="cb1d68d1" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display cell-output-markdown">
 <div class="table-scroll">
 <table class="dataframe table table-sm table-striped evidence-table small">
@@ -858,7 +866,7 @@ Gfap
 <section id="sensitivity-to-individual-samples" class="level2">
 <h2 class="anchored" data-anchor-id="sensitivity-to-individual-samples">Sensitivity to individual samples</h2>
 <p>The complete model was refitted after omitting each animal once. Every omission is reported; none was chosen to replace the primary comparison.</p>
-<div id="19d24f1d" class="cell" data-execution_count="7">
+<div id="f2b12234" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display cell-output-markdown">
 <div class="table-scroll">
 <table class="dataframe table table-sm table-striped evidence-table small">
@@ -1353,7 +1361,7 @@ Ptar1
 </div>
 </div>
 <p>All eleven primary hits retain their direction in seven of seven fits, but <strong>none remains FDR-significant in all seven fits</strong>. The total discovery count ranges from zero to 825 across omissions. This sensitivity limits the certainty of gene-level discovery and any spatial scenario derived from it. Omitting a control that increases the discovery count is not a justification for excluding that control.</p>
-<div id="295f4c1f" class="cell" data-execution_count="8">
+<div id="b8313a85" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>The independent R/DESeq2 cross-check uses the same 19,452 finite-p hypotheses and the same 159 Cook-filtered genes. All eleven primary hits remain significant in R; R additionally identifies <strong>Tnrc6c</strong>, whose FDR is 0.0399 in R and 0.0521 in Python. <strong>Tll1</strong> remains significant in both implementations (FDR 0.00330 in R; 0.00350 in Python). Effect estimates agree closely (Pearson correlation &gt;0.999999). This <a href="downloads/hypothalamus/independent_deseq2_check/summary.json">software comparison</a> does not provide biological replication or resolve sample heterogeneity. The fixed Python primary result is retained, including its threshold-sensitive genes.</p>
 </div>
@@ -1361,7 +1369,7 @@ Ptar1
 </section>
 <section id="functional-enrichment" class="level2">
 <h2 class="anchored" data-anchor-id="functional-enrichment">Functional enrichment</h2>
-<div id="c251f911" class="cell" data-execution_count="9">
+<div id="78cbebcd" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>GO Biological Process over-representation analysis found <strong>0 higher-expression</strong> and <strong>0 lower-expression</strong> significant terms after BH correction. The small, partially annotated discovery list does not support a confirmed pathway conclusion.</p>
 </div>
@@ -1370,7 +1378,7 @@ Ptar1
 </section>
 <section id="spatial-interpretation" class="level2">
 <h2 class="anchored" data-anchor-id="spatial-interpretation">Spatial interpretation</h2>
-<div id="edb01a03" class="cell" data-execution_count="10">
+<div id="fcbbcf55" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><strong>Tll1</strong> is the only primary FDR hit measured in this atlas panel. Its bulk MLE log₂FC is <strong>-1.344</strong>, its shrunken log₂FC is <strong>-1.224</strong>, and its FDR is <strong>3.50e-03</strong>. The central visualization multiplier is therefore <strong>0.428×</strong>; the pointwise group MLE interval corresponds to <strong>0.273–0.569×</strong>. These multipliers define scenarios on the measured reference; they are not per-cell exposure measurements.</p>
 </div>

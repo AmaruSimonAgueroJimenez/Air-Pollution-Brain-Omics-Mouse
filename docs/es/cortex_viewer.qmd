@@ -24,6 +24,8 @@ metric_cards([
 [Visor de hipotálamo](viewer.qmd){.btn .btn-outline-secondary}
 [Productos y funciones génicas](gene_profiles.qmd){.btn .btn-primary}
 [Análisis principal de corteza](cortex.qmd){.btn .btn-outline-secondary}
+[Cortes medidos, capas y detección](spatial_explorer.qmd){.btn .btn-outline-primary}
+[Referencia bayesiana y validación](spatial_bayes.qmd){.btn .btn-outline-secondary}
 
 ## Varios genes corticales relevantes
 

@@ -10,8 +10,8 @@
     },
     {
       "path": "advanced_results.html",
-      "bytes": 73274,
-      "sha256": "67afe842b1aba7016af56e26f91fa8f7c141b46ba250f0a94e436b65e03165c3"
+      "bytes": 73598,
+      "sha256": "09077252c7faf80cc8ca4bd3c8cd0a9ac714691b93310896c994004e21a0cb9b"
     },
     {
       "path": "assets/figures/advanced_omics/GO_multi_contrast_heatmap.pdf",
@@ -1154,6 +1154,126 @@
       "sha256": "5d9763494f47221b8c1e339a0d8d8162a6a9c9f4b099ca4be5159e2b8bf5b83c"
     },
     {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_calibration.pdf",
+      "bytes": 28677,
+      "sha256": "bed3f5bfa19daa1fb172059c9447c7ebb5a8f1dcc4f5deeab78debdcfef803f2"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_calibration.png",
+      "bytes": 653671,
+      "sha256": "ea85b2304a9a32b13c0dcd6d6996daba2506b6405f1f5df64bb3c0072cfa0f05"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_calibration.svg",
+      "bytes": 63798,
+      "sha256": "8bc4125a2ac44fbe83d5bd2a35ac5ba8a3031978e138d38ba9fa4708a22176aa"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_calibration_es.pdf",
+      "bytes": 28405,
+      "sha256": "0e5739e8ba43d1a4dd1bad5a41baf9f4af5cc0715dc9b60e40b45311f17cd712"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_calibration_es.png",
+      "bytes": 660563,
+      "sha256": "1b6f0fa3ce81afd21110af6d169fc77fe61c9ccc4f1c5e042e4b440093b27c20"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_calibration_es.svg",
+      "bytes": 63830,
+      "sha256": "45e83814e502c01e798d2bdf8cf14ba46af8a2df30b62b4f190f130edd7a5087"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_performance.pdf",
+      "bytes": 33338,
+      "sha256": "4df05e9bef8606357fbffc57049a0146c2e64ba8aae1693df634140cf8e98806"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_performance.png",
+      "bytes": 329243,
+      "sha256": "f17ef4aa167f34f2c035fe7a98dbb0a177884227b01fbfd48b81d0f9d6a0d8e3"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_performance.svg",
+      "bytes": 70087,
+      "sha256": "b49203eb2cffe9c8a1106802e99076dc2373d1d4dc7ab6ef97670dedc8489365"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_performance_es.pdf",
+      "bytes": 32324,
+      "sha256": "2e8314c3e4784f78ce2390e1a19aae21b049cb4367abf3dd35ccbe10992d5d2d"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_performance_es.png",
+      "bytes": 346107,
+      "sha256": "1fbb06ff3f8a867c80f6dd7518d51bbeda02743ac07a008b133a9e208d1c95ff"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_performance_es.svg",
+      "bytes": 70123,
+      "sha256": "e7c016bf5ffd102a014abecb645b93d225a6f74f0da404e9a32ecd566b0f2e06"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_posterior_maps.pdf",
+      "bytes": 1138931,
+      "sha256": "8647ac91a5516dfa75a54a52480250305fceca93881602fee4cb314267125d8f"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_posterior_maps.png",
+      "bytes": 2557100,
+      "sha256": "766fbe7e52fdec79c53e867aaadbfb841d0fd4fbd3e32f40f6fc58795e008682"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_posterior_maps.svg",
+      "bytes": 2247191,
+      "sha256": "81b243f8e97f76a52b2d84e9ea8e49007359b5c1f91b887531e3defc685d4de1"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_posterior_maps_es.pdf",
+      "bytes": 1139007,
+      "sha256": "e80703467d303dfe7e74cc9e41c75ebe55a5ddf9c2951b89a77eb56f25210678"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_posterior_maps_es.png",
+      "bytes": 2563448,
+      "sha256": "0bc81cc001e28efd06582150773b6960968490fa75de8dfb0302ee1273963e2b"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_posterior_maps_es.svg",
+      "bytes": 2246466,
+      "sha256": "18a69d4a9ec8897957e21f983350bbea5deb7eadd455cc483196b6446030ba5f"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_sensitivity.pdf",
+      "bytes": 67783,
+      "sha256": "9ab055653af74736943d28d9bc780e6824eed0027649a18dd1a151f6e80f5cba"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_sensitivity.png",
+      "bytes": 370701,
+      "sha256": "af6d3ef120922f4629f0c9bbb46f00b24855331a3c7f549fdbe786dc8dc7800b"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_sensitivity.svg",
+      "bytes": 110408,
+      "sha256": "68ff0e86ed70aa108985e1b0ae55fc2d3dfc0ef1f3bca32a3eebba454980d0e2"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_sensitivity_es.pdf",
+      "bytes": 68042,
+      "sha256": "bde48d66b04de5a39ba68471fc375363e7def755c1a74fad415233969d66d6af"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_sensitivity_es.png",
+      "bytes": 373141,
+      "sha256": "2e8129f444ebe0fdeded5160af61f0b96671af6f9640fcae1435bb9926ea4eea"
+    },
+    {
+      "path": "assets/figures/spatial_bayes/spatial_bayes_sensitivity_es.svg",
+      "bytes": 110389,
+      "sha256": "39f43493196bc688df6a8df29773a5aabbada9a50a7b9081cd9a6627da51e787"
+    },
+    {
       "path": "assets/figures/spatial_cortex/cortical_priority_spatial_panel.pdf",
       "bytes": 2549288,
       "sha256": "0321bca562ef96d8f9cf4a40e0e79f568acd1bce301c9a3699088ef5b13c3615"
@@ -1214,6 +1334,66 @@
       "sha256": "92488214ccd47e712261281a63f16dad6698c830e50d29fee99e349957462002"
     },
     {
+      "path": "assets/figures/spatial_detection_bayes/ACA_detection_posterior.pdf",
+      "bytes": 26843,
+      "sha256": "d587c51884b0a314dff65eb1b5a426135b2ef3ec445a4eee4653c65408eaf381"
+    },
+    {
+      "path": "assets/figures/spatial_detection_bayes/ACA_detection_posterior.png",
+      "bytes": 310776,
+      "sha256": "078992c716f263a1dba58085b6a5ec230c7ceedeac86ce43f84d1eb9edf86251"
+    },
+    {
+      "path": "assets/figures/spatial_detection_bayes/ACA_detection_posterior.svg",
+      "bytes": 78888,
+      "sha256": "473f31116ebb229df9cdeec7a3c4808af4ac6f5a284c172d46aba73a2ab8ee39"
+    },
+    {
+      "path": "assets/figures/spatial_detection_bayes/ACA_detection_posterior_es.pdf",
+      "bytes": 26451,
+      "sha256": "ed8dc8c32f64d98198cbebeccb4f10046cf7e0bba353022123ba53649f67cec6"
+    },
+    {
+      "path": "assets/figures/spatial_detection_bayes/ACA_detection_posterior_es.png",
+      "bytes": 321934,
+      "sha256": "35e8179d0f4754790d12e71fe2c4c8745755bc7c90373ccf0da48d529a2b8c65"
+    },
+    {
+      "path": "assets/figures/spatial_detection_bayes/ACA_detection_posterior_es.svg",
+      "bytes": 76410,
+      "sha256": "4f46a155239a1c7d7949705975b0f57f7b6933e8ba7aaf46c5becf92de4483dd"
+    },
+    {
+      "path": "assets/figures/spatial_detection_bayes/HY_detection_posterior.pdf",
+      "bytes": 27311,
+      "sha256": "9d22f52600476a4c414f6f4e7fa0a7899f327d567d8f834ffd7f0d4b5ac9d02d"
+    },
+    {
+      "path": "assets/figures/spatial_detection_bayes/HY_detection_posterior.png",
+      "bytes": 298065,
+      "sha256": "afcfaf3e7bb8cbe71a18a66bd431d1d908201ade998c7b62fdb1e617125daac8"
+    },
+    {
+      "path": "assets/figures/spatial_detection_bayes/HY_detection_posterior.svg",
+      "bytes": 81032,
+      "sha256": "de97431d09d507e1fc91425bff084e6293406fef722b80a5e1dcaf34f67f053b"
+    },
+    {
+      "path": "assets/figures/spatial_detection_bayes/HY_detection_posterior_es.pdf",
+      "bytes": 27408,
+      "sha256": "68ed6506706360551a171e5ac2f68e2bd9b02215888d74bb746a542b77379e3f"
+    },
+    {
+      "path": "assets/figures/spatial_detection_bayes/HY_detection_posterior_es.png",
+      "bytes": 307708,
+      "sha256": "bc661f9c9161250fd15ec0d4f16b43be791059432788dd54f8d3f0851050f304"
+    },
+    {
+      "path": "assets/figures/spatial_detection_bayes/HY_detection_posterior_es.svg",
+      "bytes": 81311,
+      "sha256": "ad192b5e1b71a6965d906d622419d0f33a64b0424616b10462288a6926bf63f7"
+    },
+    {
       "path": "assets/figures/spatial_reference/Tll1_detection_by_class.pdf",
       "bytes": 17492,
       "sha256": "8755fb918397fc7f48985a0034655d73274be260e186b31152be4316b1b4c473"
@@ -1259,6 +1439,66 @@
       "sha256": "07ca9de9dd9013a0d9d8c9c8cb298a88fc39c846096c7649071761ee225b5b53"
     },
     {
+      "path": "assets/figures/spatial_sections/ACA_sections_evidence.pdf",
+      "bytes": 438978,
+      "sha256": "8bc45faee73e9a61c116a81de9c10d180436e3197163a2e1e552199a8c3feb8d"
+    },
+    {
+      "path": "assets/figures/spatial_sections/ACA_sections_evidence.png",
+      "bytes": 790893,
+      "sha256": "90043e0593012eea08fa457f35eb1a08f4a6a62555cc2138bd806327b31bc226"
+    },
+    {
+      "path": "assets/figures/spatial_sections/ACA_sections_evidence.svg",
+      "bytes": 648074,
+      "sha256": "eba815b818b4a6213e47974006b914038bac0c6e33456f4bdab8b2c03167076b"
+    },
+    {
+      "path": "assets/figures/spatial_sections/ACA_sections_evidence_es.pdf",
+      "bytes": 440350,
+      "sha256": "ac1f2be5bd7df26a20a34f7e0cd201eebafec6e759eb9e65ef4ba98cb066b7a0"
+    },
+    {
+      "path": "assets/figures/spatial_sections/ACA_sections_evidence_es.png",
+      "bytes": 802867,
+      "sha256": "3a26d8b8a8076fb9076f176f7d678e0b154aa523f0606f37f6abf06c4ac2bbe1"
+    },
+    {
+      "path": "assets/figures/spatial_sections/ACA_sections_evidence_es.svg",
+      "bytes": 648370,
+      "sha256": "5ff6beca65ce2667402ae98e618c71aabf5e2e8076dddbb6901800bc2521c2a6"
+    },
+    {
+      "path": "assets/figures/spatial_sections/HY_sections_evidence.pdf",
+      "bytes": 535343,
+      "sha256": "659ccb90a010e967cbef3106be89c76452aa39dafe2eca39557f5c4791368014"
+    },
+    {
+      "path": "assets/figures/spatial_sections/HY_sections_evidence.png",
+      "bytes": 861258,
+      "sha256": "dba09207114f7df52951385ee63facbbb36ab57189458c30de43aaa573c0bee3"
+    },
+    {
+      "path": "assets/figures/spatial_sections/HY_sections_evidence.svg",
+      "bytes": 818167,
+      "sha256": "6a067ea21e4d91e791f6c70987fa27ab22f84b9e44ba7302fecfa0e884c603ad"
+    },
+    {
+      "path": "assets/figures/spatial_sections/HY_sections_evidence_es.pdf",
+      "bytes": 534533,
+      "sha256": "56279dad4e4249ee8aad6c1837626911d62105aaa3cfb469819b6922a0cc5278"
+    },
+    {
+      "path": "assets/figures/spatial_sections/HY_sections_evidence_es.png",
+      "bytes": 874377,
+      "sha256": "e4ad83d8faef74defdc8ec9df44d47e9506ada7edf4bdd3ea2e977c146f05c07"
+    },
+    {
+      "path": "assets/figures/spatial_sections/HY_sections_evidence_es.svg",
+      "bytes": 818449,
+      "sha256": "f04410287b6c256d1c6f509d251d8f96cc73818fa22a1ae6858f2a4fbad89d92"
+    },
+    {
       "path": "assets/figures/spatial_viewer/reference_vs_simulation.pdf",
       "bytes": 289322,
       "sha256": "b43eb23b99c79c5581242f21e64d1ab29e6edb0aa04d8d6adbec2f39122202d8"
@@ -1277,6 +1517,261 @@
       "path": "assets/report.css",
       "bytes": 3545,
       "sha256": "6951c18f892af40a48a9975fddcbcd37480c66604c8a2040b0f11e8442522243"
+    },
+    {
+      "path": "assets/spatial-bayes/ACA/ENSMUSG00000003545.json",
+      "bytes": 599436,
+      "sha256": "a189301f8cf1a488634652f7669e37b40b1eb6b75ae15005ab52ef8ee6e7f7a4"
+    },
+    {
+      "path": "assets/spatial-bayes/ACA/ENSMUSG00000020905.json",
+      "bytes": 601422,
+      "sha256": "129d43b8ea5a9023f3547dd158add2bb42392f87d1c2e54a090c1092f3d4be60"
+    },
+    {
+      "path": "assets/spatial-bayes/ACA/ENSMUSG00000021676.json",
+      "bytes": 593929,
+      "sha256": "b87017cebb5f1798dbe082e8cecdb3dd66626c1af0c2099d0ff7e07219c795aa"
+    },
+    {
+      "path": "assets/spatial-bayes/ACA/ENSMUSG00000026141.json",
+      "bytes": 598033,
+      "sha256": "2b3f3334c9ef4cb7024c031cc6595c4a826923fa8d870c56be56b542cf8a585c"
+    },
+    {
+      "path": "assets/spatial-bayes/ACA/ENSMUSG00000029135.json",
+      "bytes": 596367,
+      "sha256": "de73cebb3e20a82afc3a0184c10d4639244ae8ac4a6b8ceb93b67da290ed0eb2"
+    },
+    {
+      "path": "assets/spatial-bayes/ACA/ENSMUSG00000033730.json",
+      "bytes": 592331,
+      "sha256": "2803126803494255d741573896404eda26807079d95df02d9d30e51fe6619a27"
+    },
+    {
+      "path": "assets/spatial-bayes/ACA/ENSMUSG00000036192.json",
+      "bytes": 595733,
+      "sha256": "4d3e3d0ed402e24786c3fa5a014984d5a6ad93aa6c44755bc9f560a968e696fe"
+    },
+    {
+      "path": "assets/spatial-bayes/ACA/ENSMUSG00000036422.json",
+      "bytes": 597334,
+      "sha256": "f31a4a2cb98af49bc1a4296af90a755afe5a68195f897a55ec4ddabf1f3be8ce"
+    },
+    {
+      "path": "assets/spatial-bayes/ACA/ENSMUSG00000045092.json",
+      "bytes": 590692,
+      "sha256": "6ca372d098feb139dcd577558d801b7b70b1b51a5a50871a686f1a03a73c7ed5"
+    },
+    {
+      "path": "assets/spatial-bayes/ACA/ENSMUSG00000114469.json",
+      "bytes": 601406,
+      "sha256": "3ae26180249e5bb5b77f121424846e260b301c858713d0b3aa503750822f4f37"
+    },
+    {
+      "path": "assets/spatial-bayes/ACA/metadata.json",
+      "bytes": 65745,
+      "sha256": "052cfdfb8be726e9b63fffa9203b0c875bf4eddf94ebe02f4857102d7a28fdcc"
+    },
+    {
+      "path": "assets/spatial-bayes/HY/ENSMUSG00000028341.json",
+      "bytes": 1560365,
+      "sha256": "dad3d8644d96859185dcb7d6e3d27076f6f7c9eeabcacbc4c4b796763da4c58a"
+    },
+    {
+      "path": "assets/spatial-bayes/HY/ENSMUSG00000028864.json",
+      "bytes": 1568475,
+      "sha256": "11d4557a7e734962be46cb0f92ecf0b3b6d5eef577246af684b52762ce8607bf"
+    },
+    {
+      "path": "assets/spatial-bayes/HY/ENSMUSG00000029135.json",
+      "bytes": 1549949,
+      "sha256": "03ec52f59bc99789d491b3225805a7228a860f7545b59f628fcf0b03c71ed9ef"
+    },
+    {
+      "path": "assets/spatial-bayes/HY/ENSMUSG00000030270.json",
+      "bytes": 1571130,
+      "sha256": "cdf0d053c6f35eba48a2fdcaa17f2570f0e8f40edbc10aa214b41bb540570c96"
+    },
+    {
+      "path": "assets/spatial-bayes/HY/ENSMUSG00000030905.json",
+      "bytes": 1549931,
+      "sha256": "910723fb56351bf036e24fdca31d468018224daae355cc64d4848f6a1135ef81"
+    },
+    {
+      "path": "assets/spatial-bayes/HY/ENSMUSG00000032373.json",
+      "bytes": 1543827,
+      "sha256": "da3805f6b6a625780b0a40d4f9acf5417ef9d0ca718494253f4f0db96986962f"
+    },
+    {
+      "path": "assets/spatial-bayes/HY/ENSMUSG00000033730.json",
+      "bytes": 1546932,
+      "sha256": "c8475b8a8f4c4a5ab0cbb8febcd0ba7401d4331ca43635e1f13d48ccc645a597"
+    },
+    {
+      "path": "assets/spatial-bayes/HY/ENSMUSG00000037868.json",
+      "bytes": 1561728,
+      "sha256": "6ec85910531bbde75ebf67f94e593d98255924bd1202cd24aaa4c07d3dd5cd7b"
+    },
+    {
+      "path": "assets/spatial-bayes/HY/ENSMUSG00000048251.json",
+      "bytes": 1545492,
+      "sha256": "ea54cc89b5da359410922280b6de5cb4d32c25c0ff3dce339eee8894d2e37755"
+    },
+    {
+      "path": "assets/spatial-bayes/HY/ENSMUSG00000053626.json",
+      "bytes": 1552927,
+      "sha256": "0ed78fccdaa00d6dbcaa1297e47855dfce8b30d67074cd2ef732ed1fc650c279"
+    },
+    {
+      "path": "assets/spatial-bayes/HY/metadata.json",
+      "bytes": 72790,
+      "sha256": "4cd89ba0a5e99260aac726cc4c00ad3fe682b16dc50bbedb76643399d8a59978"
+    },
+    {
+      "path": "assets/spatial-bayes/manifest.json",
+      "bytes": 464,
+      "sha256": "9c848a61f4037837da0b803000988e988c83a748b3e2bb6280d07aa49c602152"
+    },
+    {
+      "path": "assets/spatial-detection-bayes/data-ACA.js",
+      "bytes": 470017,
+      "sha256": "2ed4556d0a8ab5b77cd75d0a3e3a2c51d6dab90df424d254e6ebbe26b2f1396f"
+    },
+    {
+      "path": "assets/spatial-detection-bayes/data-HY.js",
+      "bytes": 857819,
+      "sha256": "f75dc5f043f76d2a38143dc61078e9b139c7fc089a511bde4bcaf9c076feef84"
+    },
+    {
+      "path": "assets/spatial-explorer/explorer.css",
+      "bytes": 5729,
+      "sha256": "da547d4810289e8536b2fb3bc559347f30873a08a4b3c34a911473cc6802d01a"
+    },
+    {
+      "path": "assets/spatial-explorer/explorer.js",
+      "bytes": 45514,
+      "sha256": "80f6546ab755d09f513b04761621bd02d1ff693fdea675eccb95d2c7335c2575"
+    },
+    {
+      "path": "assets/spatial-explorer/index-es.html",
+      "bytes": 10500,
+      "sha256": "5995c214f973c16ff3c7782ed407855c8806e83444744ff7d0d9cc4934030a19"
+    },
+    {
+      "path": "assets/spatial-explorer/index.html",
+      "bytes": 10111,
+      "sha256": "25923866b290726a063b036e303668021de41bb922e7b720b6a9d8865a40ceac"
+    },
+    {
+      "path": "assets/spatial-sections/data-ACA.js",
+      "bytes": 2424623,
+      "sha256": "0696bf727d10bc2509985665c47cb7b4bf66b76d6a5e8ca257b58e5dffdff15b"
+    },
+    {
+      "path": "assets/spatial-sections/data-HY.js",
+      "bytes": 6297442,
+      "sha256": "26b23439a46c128d0d28f4d1413906be1bd59347a6e2c58d5e47042e3ae098a0"
+    },
+    {
+      "path": "assets/spatial-sections/genes-ACA/ENSMUSG00000003545.js",
+      "bytes": 79741,
+      "sha256": "151c128bdd7b00c2dbdcaebc09dffdaaadeac941fa8017edb416dd861489aa8c"
+    },
+    {
+      "path": "assets/spatial-sections/genes-ACA/ENSMUSG00000020905.js",
+      "bytes": 75286,
+      "sha256": "1d080dc55cde8a09d31b47ac89f23ccec69d498d4f5e157908e5839d3f210491"
+    },
+    {
+      "path": "assets/spatial-sections/genes-ACA/ENSMUSG00000021676.js",
+      "bytes": 86054,
+      "sha256": "a0fd68f58ba05e4b1203e0e76b4306aca8b40be38920c3264f890c6e740e8b1f"
+    },
+    {
+      "path": "assets/spatial-sections/genes-ACA/ENSMUSG00000026141.js",
+      "bytes": 79387,
+      "sha256": "7dea4852ab7430333c0fbec373bc3f42db4dabaee53cc5f03cea3a28de47e7b9"
+    },
+    {
+      "path": "assets/spatial-sections/genes-ACA/ENSMUSG00000029135.js",
+      "bytes": 83875,
+      "sha256": "ae0ce85b5522c06fbf8f8863c1b79e39ac360ffb74661ba210b43ab59cd58189"
+    },
+    {
+      "path": "assets/spatial-sections/genes-ACA/ENSMUSG00000033730.js",
+      "bytes": 88132,
+      "sha256": "e18ea76555e79265128775fff550185c4483fce6c454e43c5df4c718ccfcb6b5"
+    },
+    {
+      "path": "assets/spatial-sections/genes-ACA/ENSMUSG00000036192.js",
+      "bytes": 84950,
+      "sha256": "3c9df65e511bc8e574379bb597df093730d0b0a3cb0527f06dc8c2badccb1770"
+    },
+    {
+      "path": "assets/spatial-sections/genes-ACA/ENSMUSG00000036422.js",
+      "bytes": 81846,
+      "sha256": "5359b6a5bc16ee5fcab54773fd7c36bc1fcf523600fd8d43dc14d48d519d133c"
+    },
+    {
+      "path": "assets/spatial-sections/genes-ACA/ENSMUSG00000045092.js",
+      "bytes": 91028,
+      "sha256": "acf21e05aa1312bcaeba7c6d13f74aff474a1a2c9c2d371dd9eeb4c284d91719"
+    },
+    {
+      "path": "assets/spatial-sections/genes-ACA/ENSMUSG00000114469.js",
+      "bytes": 75636,
+      "sha256": "b5c2ccc362bca2bb6a7c830d90dcf61ae735dd70af200b1c667208249399f270"
+    },
+    {
+      "path": "assets/spatial-sections/genes-HY/ENSMUSG00000028341.js",
+      "bytes": 167336,
+      "sha256": "e52b7a8b83130dfa6c075862f0ac98cca025857e0f22b75cc6bb714133f93ba5"
+    },
+    {
+      "path": "assets/spatial-sections/genes-HY/ENSMUSG00000028864.js",
+      "bytes": 159421,
+      "sha256": "5602b8801bec95459bd8e79914401b4552e280f17217888df90e5f412ca82a2a"
+    },
+    {
+      "path": "assets/spatial-sections/genes-HY/ENSMUSG00000029135.js",
+      "bytes": 183019,
+      "sha256": "a5efeab302aaf1f18598afc4ecd7afb94f92cf0f363d80fbe59186d68899be8f"
+    },
+    {
+      "path": "assets/spatial-sections/genes-HY/ENSMUSG00000030270.js",
+      "bytes": 182880,
+      "sha256": "451d740deb3834cf08552662d9cbdcbbd280de1ede1d9f83cb0747289839aaa3"
+    },
+    {
+      "path": "assets/spatial-sections/genes-HY/ENSMUSG00000030905.js",
+      "bytes": 164003,
+      "sha256": "058bd3a0e4be696cce31ba8ea6533594dccfd91276bc92ce0d98ca77d68f32cc"
+    },
+    {
+      "path": "assets/spatial-sections/genes-HY/ENSMUSG00000032373.js",
+      "bytes": 173656,
+      "sha256": "58cb46f2d769eeb0eab44b91345e13901892f55ea3cf825893ea6fb484873e34"
+    },
+    {
+      "path": "assets/spatial-sections/genes-HY/ENSMUSG00000033730.js",
+      "bytes": 163343,
+      "sha256": "3c0df26a312f98867cf1d29dfe368a03f8cd52f07a720021a11dff7be71f5f9a"
+    },
+    {
+      "path": "assets/spatial-sections/genes-HY/ENSMUSG00000037868.js",
+      "bytes": 157663,
+      "sha256": "8cc277caf8cd7f48709db2758132696fa5c8b4eba78fff3d073dddea2dbdd072"
+    },
+    {
+      "path": "assets/spatial-sections/genes-HY/ENSMUSG00000048251.js",
+      "bytes": 173179,
+      "sha256": "53f407491a564b1e5602f8dbebceb0328dce0a7c4b638657cf59de59e3ca20e7"
+    },
+    {
+      "path": "assets/spatial-sections/genes-HY/ENSMUSG00000053626.js",
+      "bytes": 161387,
+      "sha256": "8b2a482aec177200f74c64fd7fc9915e5af9bf393d5514be5787ccf3f71d8208"
     },
     {
       "path": "assets/viewer/annotations.js",
@@ -6900,13 +7395,13 @@
     },
     {
       "path": "assets/viewer/index-es.html",
-      "bytes": 9427,
-      "sha256": "eeea3811d85c35b9cf947d9abda5ea85c8f5a25302a16ad4f631b6d6038c11da"
+      "bytes": 9568,
+      "sha256": "29cade084644323ccb9681925b023e2e7548807d410403bd6af86354692b382e"
     },
     {
       "path": "assets/viewer/index.html",
-      "bytes": 8741,
-      "sha256": "1c36f117f13d5c3e9d2fcadd46d52ff3d3a00baa1656b130528da04f934c4c77"
+      "bytes": 8886,
+      "sha256": "ac0ee1d21894450947c5ab438c2f5951973817ac6034590f5d85e21e6bd73758"
     },
     {
       "path": "assets/viewer/plotly.min.js",
@@ -6915,8 +7410,8 @@
     },
     {
       "path": "assets/viewer/viewer.css",
-      "bytes": 6524,
-      "sha256": "4f6a6a9e3e1fe8975a7854ee1a437ddde467493d7bb69b16df7009f3d06d5095"
+      "bytes": 6628,
+      "sha256": "861b0ae75007cac97aea292fb4f58c829cb777c0a6b3f4ecb4ebe6e069d41add"
     },
     {
       "path": "assets/viewer/viewer.js",
@@ -12540,28 +13035,28 @@
     },
     {
       "path": "assets/viewer-cortex/index-es.html",
-      "bytes": 9454,
-      "sha256": "67224ee62bb34e9f30c61429a3b7beb62b1c512bf5fbe7a152ea71c0686ea532"
+      "bytes": 9596,
+      "sha256": "71df8733a0800ae0cf255721e9b52599411c70faca2cfbada868a95c27a45b0e"
     },
     {
       "path": "assets/viewer-cortex/index.html",
-      "bytes": 8813,
-      "sha256": "184e30cbf1c8cc70a58208102074edf4c15ab956d7dda1802e0f970be13aef43"
+      "bytes": 8959,
+      "sha256": "4b5122066ba9b48500e1a9737acaf30a998d477a34caca62c38c1b2822907a3c"
     },
     {
       "path": "assets/viewer-cortex/viewer.css",
-      "bytes": 6524,
-      "sha256": "4f6a6a9e3e1fe8975a7854ee1a437ddde467493d7bb69b16df7009f3d06d5095"
+      "bytes": 6628,
+      "sha256": "861b0ae75007cac97aea292fb4f58c829cb777c0a6b3f4ecb4ebe6e069d41add"
     },
     {
       "path": "cortex.html",
-      "bytes": 82247,
-      "sha256": "0866835eb5247015f74b31d1ba73f7ca6aea13a025f1dc0f2a9cd4c0ecffaf35"
+      "bytes": 82571,
+      "sha256": "017f43350bdf072d2c715ed4a581d7115e16e6d1402b9ba665a0f34bd4ccac2d"
     },
     {
       "path": "cortex_viewer.html",
-      "bytes": 55927,
-      "sha256": "65180b0a4e651ba463e64ae795ba2bf9a55f823b223b2ec018d0d081864e1467"
+      "bytes": 56941,
+      "sha256": "c6bb7f8cd561fcdcd7334279f7a355c3b4805761ca11061c5908e0ec34b257d6"
     },
     {
       "path": "downloads/advanced_omics/GO_heatmap_term_selection.tsv",
@@ -12719,6 +13214,11 @@
       "sha256": "cd65d3b2b5ec945568b591df76bdf5062b2e7d7b7605b5dae1e34da3c90624aa"
     },
     {
+      "path": "downloads/code/analyze_bayesian_detection.py",
+      "bytes": 50696,
+      "sha256": "077cdf70180c9b47fc73894cb05df4ef5ccd885fe65ea83e4fb8603645906821"
+    },
+    {
       "path": "downloads/code/analyze_cortex.py",
       "bytes": 19586,
       "sha256": "ae9a3ce28fbd3a7ac70d89e47fee07ecaadd8b1103d7b6dee3dc1d870c119b8c"
@@ -12754,6 +13254,11 @@
       "sha256": "86d606f2fdc983a73df9465d32a4795c774e7f455c8d12532818a1f88a63fb99"
     },
     {
+      "path": "downloads/code/analyze_spatial_bayes.py",
+      "bytes": 47493,
+      "sha256": "a18b9829215d29eb3093e61341b9112d054b13d5334b06a79f8eae94042350e6"
+    },
+    {
       "path": "downloads/code/analyze_spatial_reference.py",
       "bytes": 15613,
       "sha256": "628df022098b7d1027042cab73e8f2e18a2c86b4b1c6502008b52074e590f487"
@@ -12767,6 +13272,11 @@
       "path": "downloads/code/build_gene_annotation_assets.py",
       "bytes": 3814,
       "sha256": "ddc1d1422261205d59d11452c8e6c24ffe1410bd5438ebfed5225d67bd95caf8"
+    },
+    {
+      "path": "downloads/code/build_spatial_sections.py",
+      "bytes": 37569,
+      "sha256": "1ac97ca054ad728a03f0f55e01c5fc3f4243ac8c9d95bf59de0fb57019848c15"
     },
     {
       "path": "downloads/code/build_spatial_viewer.py",
@@ -12810,8 +13320,8 @@
     },
     {
       "path": "downloads/code/render_docs.py",
-      "bytes": 9211,
-      "sha256": "9707a5ebdf274429211e0a82f8a23f7ae82b1b188e07df87ff57bb2b85e0881c"
+      "bytes": 9385,
+      "sha256": "ffdff93208c5d13233550dd22a462bf69b99b02194efb165c6f3b63c98ac12f3"
     },
     {
       "path": "downloads/code/replicate_mirna_ozone.R",
@@ -12860,8 +13370,8 @@
     },
     {
       "path": "downloads/code/validate_report.py",
-      "bytes": 8956,
-      "sha256": "f05a8b5c4608c6571cc54d4e4fabe47670d5b043449ab69a3906903b0d1b82f6"
+      "bytes": 9990,
+      "sha256": "1be9015b9d4dcdc6e39afb4128c7b1a0914fe9058c6c397a9deeb3721601a4a7"
     },
     {
       "path": "downloads/code/verify_repository.py",
@@ -14544,6 +15054,21 @@
       "sha256": "8d09e9e691ef70b6b1e7f57d855ac9fa50ae7d1c2f6d658623c9306363be7fd1"
     },
     {
+      "path": "downloads/provenance/spatial_bayes/independent_scalar_check.json",
+      "bytes": 384,
+      "sha256": "91d2339f75e6b949c6b5d2879da0ba16968e4d79d63f3cdffa69b05ac0f393a9"
+    },
+    {
+      "path": "downloads/provenance/spatial_bayes/methods.json",
+      "bytes": 7176,
+      "sha256": "bbc3fd5699a06bd2d02327f878d58ab56d2dac69ff97244c628835c0acb5d46a"
+    },
+    {
+      "path": "downloads/provenance/spatial_bayes/source_manifest.json",
+      "bytes": 2325,
+      "sha256": "494cfb31c5f5fc0f358e13cbf4785c58bcb479763c51c98cfe6781f0e1afcb28"
+    },
+    {
       "path": "downloads/provenance/spatial_cortex/ACA_parcellation_selection.csv",
       "bytes": 435,
       "sha256": "c5f39a87724d194befabbdb051a51ec4e1f85f37a5f48cd10298acde91f27bf9"
@@ -14557,6 +15082,31 @@
       "path": "downloads/provenance/spatial_cortex/source_manifest.json",
       "bytes": 3381,
       "sha256": "0d3bd48bbc3204abc33e42c72f3d681f80883b37ce3ac23f56322e164d1648ba"
+    },
+    {
+      "path": "downloads/provenance/spatial_detection_bayes/methods.json",
+      "bytes": 4926,
+      "sha256": "0b9c41b549240b607fe5888078e3970ccdd601bce3c022d8097262c31afad704"
+    },
+    {
+      "path": "downloads/provenance/spatial_detection_bayes/source_manifest.json",
+      "bytes": 1629,
+      "sha256": "a25915ade63bc869853af658a9b63510eeab9c2fb8156cfbe91d93ffc776440f"
+    },
+    {
+      "path": "downloads/provenance/spatial_sections/all_brain_sections.tsv",
+      "bytes": 3242,
+      "sha256": "bbded7795789ae6bb11f2b94e353207571a2a781d15f28813e5be154be98a995"
+    },
+    {
+      "path": "downloads/provenance/spatial_sections/methods.json",
+      "bytes": 2836,
+      "sha256": "3a3cfb46f70a483ec192af1d28b8a2cdbee4badaff49d771a3d6eee58c34ab81"
+    },
+    {
+      "path": "downloads/provenance/spatial_sections/source_manifest.json",
+      "bytes": 3103,
+      "sha256": "fb9a318f2695032d34f364ae9e850e2f9ee95d3be9dd8025ab857aaf3a0a2511"
     },
     {
       "path": "downloads/provenance/validation_report.json",
@@ -14925,8 +15475,8 @@
     },
     {
       "path": "downloads/report-source.zip",
-      "bytes": 215786,
-      "sha256": "df8f3c1689a342e631b14bec2579c708332b783fb767025e94e760402b6830a3"
+      "bytes": 262265,
+      "sha256": "e71ff3ffd19fda98191f629e4119c942106f7d86b6a75347c53a3e7e8faf02c5"
     },
     {
       "path": "downloads/report_validation/browser_checks.json",
@@ -14940,8 +15490,8 @@
     },
     {
       "path": "downloads/report_validation/compiled_report_checks.json",
-      "bytes": 506,
-      "sha256": "527343289e44e40f4a8b393e911508d99b8ae2309cd8a9fdce9184051d213c63"
+      "bytes": 614,
+      "sha256": "e38695f0b8f7c436f787a489bc9b5eb5f53da611c431f728f35fd74a8b5b8c56"
     },
     {
       "path": "downloads/report_validation/experimental_design_review.json",
@@ -14952,6 +15502,11 @@
       "path": "downloads/report_validation/gene_annotation_assets.json",
       "bytes": 530,
       "sha256": "de713421366ee70f15039ba80e344f619ac2edb0bf478027970d97ef04d7c452"
+    },
+    {
+      "path": "downloads/report_validation/gene_cortex_publication_checks.json",
+      "bytes": 4287,
+      "sha256": "9a2b918612afcd7d6724f5a30b75d5aa6ef5213d8a773300646747f82f15e180"
     },
     {
       "path": "downloads/report_validation/gene_viewer_UI_browser_checks.json",
@@ -14975,8 +15530,8 @@
     },
     {
       "path": "downloads/report_validation/published_report_checks.json",
-      "bytes": 500,
-      "sha256": "692a2071fabd35bace823bd72e3735e64fc09072426564a7cd026312de7c283f"
+      "bytes": 608,
+      "sha256": "d8aaefbf4998dcad2acecaa67f9210fb0ea5fe53195297fbe5b93859818510f6"
     },
     {
       "path": "downloads/report_validation/significant_gene_panel_match.json",
@@ -14989,6 +15544,16 @@
       "sha256": "9d25110c0b75b015e6398cb07ddc97a4f216409881b713b6bb8b14dd8a674a88"
     },
     {
+      "path": "downloads/report_validation/spatial_upgrade_primary_integrity.json",
+      "bytes": 1329,
+      "sha256": "1cba7d5c0823b605b0dcdf548fcf71b200c02c9d4e6e306cd7a5083ac43f9252"
+    },
+    {
+      "path": "downloads/report_validation/spatial_upgrade_review.json",
+      "bytes": 2270,
+      "sha256": "9976ef3ea30054c8d027407cbead27afc6228dab02f090b8440614012780ab64"
+    },
+    {
       "path": "downloads/report_validation/viewer_camera_sync_checks.json",
       "bytes": 889,
       "sha256": "5b700a77600cf2f2b6995f9b9baa0c3e56059ccfdaeee4efd824335e1e4f1224"
@@ -14997,6 +15562,101 @@
       "path": "downloads/requirements-analysis.txt",
       "bytes": 319,
       "sha256": "1cb5170051054d9f0dfc3f528e0f4392dd26098a212fd5cf4e77633d82782651"
+    },
+    {
+      "path": "downloads/spatial_bayes/ACA/calibration.tsv",
+      "bytes": 21916,
+      "sha256": "19c85f9e4c7d0a459e5c9d63d5327c4917f0f12195a74a08df1a272be50205b9"
+    },
+    {
+      "path": "downloads/spatial_bayes/ACA/fit_audit.json",
+      "bytes": 244355,
+      "sha256": "9817d596d48215a253b1c17910c7aea5e2d43b0c40bed8b407cad2c710f1218c"
+    },
+    {
+      "path": "downloads/spatial_bayes/ACA/fold_audit.json",
+      "bytes": 1977,
+      "sha256": "3faea10af6547dfdd145446249ccff8e1f2e54cb780f8fc3e2af9b6775e437a2"
+    },
+    {
+      "path": "downloads/spatial_bayes/ACA/heldout_metrics.tsv",
+      "bytes": 13562,
+      "sha256": "fdb6935ca28f5714c62dd9a0d96d46c03cbdcfdf8dfb1429b7263ff3514d34cb"
+    },
+    {
+      "path": "downloads/spatial_bayes/ACA/heldout_section_metrics.tsv",
+      "bytes": 66514,
+      "sha256": "da314b4dd7e72ced953462a21bd77f75165fb5f896ea7aba4d3fbbc60aa9aaaf"
+    },
+    {
+      "path": "downloads/spatial_bayes/ACA/section_folds.tsv",
+      "bytes": 852,
+      "sha256": "51c5b62d7209a9f28fcbc41dd363e5a0dbad1589835896a4c019df941eb1246a"
+    },
+    {
+      "path": "downloads/spatial_bayes/ACA/summary.json",
+      "bytes": 7783,
+      "sha256": "69cba4894151ea77d779fc40db2317c84dee7fecec3401dfbd001baf0010a756"
+    },
+    {
+      "path": "downloads/spatial_bayes/HY/calibration.tsv",
+      "bytes": 21098,
+      "sha256": "244ea9ff106b328817d14fe099ebda6fbb1a6503bbebb35c8a350f89dab83a61"
+    },
+    {
+      "path": "downloads/spatial_bayes/HY/fit_audit.json",
+      "bytes": 273325,
+      "sha256": "25fbe2e398f2ee74d5343a1fd81ade775bb4d32fa3e19036d7783723fd6b8515"
+    },
+    {
+      "path": "downloads/spatial_bayes/HY/fold_audit.json",
+      "bytes": 2061,
+      "sha256": "2b5748b0badfaf9a2b6074659272e8099fc7995320c10e56718c7dbf652b46d3"
+    },
+    {
+      "path": "downloads/spatial_bayes/HY/heldout_metrics.tsv",
+      "bytes": 13055,
+      "sha256": "a9a9d9354f33c1bff87d760b1ff85fb0d4b4fa8807960ebfc4f9a59600802c07"
+    },
+    {
+      "path": "downloads/spatial_bayes/HY/heldout_section_metrics.tsv",
+      "bytes": 71158,
+      "sha256": "79e2104ffcfddbcf6255c447f3acbd10efd24a8d0a785df4db0ca47093f3b66c"
+    },
+    {
+      "path": "downloads/spatial_bayes/HY/section_folds.tsv",
+      "bytes": 942,
+      "sha256": "d6a54edc68f673e3224a6408e61eb1a0b6adb9d90d5a9d1754891d8641c02ed2"
+    },
+    {
+      "path": "downloads/spatial_bayes/HY/summary.json",
+      "bytes": 8238,
+      "sha256": "d3e640f640155e7d3b76f9fdeb10db360e438d906f20aac23bc9a4cdfac21ae1"
+    },
+    {
+      "path": "downloads/spatial_bayes/figure_manifest.json",
+      "bytes": 20307,
+      "sha256": "54d307f5a63e393c38439073b4bcd22e84c6b6f389453f1086ea2d9a72c790cd"
+    },
+    {
+      "path": "downloads/spatial_bayes/independent_input_review.json",
+      "bytes": 486,
+      "sha256": "f57c7d9e396f0df52d4a9feb42ebf92dd74303287aef7a4430459a24d5915067"
+    },
+    {
+      "path": "downloads/spatial_bayes/summary.json",
+      "bytes": 18271,
+      "sha256": "952c30daac2e0d9ea97c9e2c469d19d89f9c20ec85063e31d43ab62898790131"
+    },
+    {
+      "path": "downloads/spatial_bayes/validation.json",
+      "bytes": 1485,
+      "sha256": "8b72d9e1ce15eab07441955e832b9f92b8d9612c1149ac8fad67c1b55434a4a0"
+    },
+    {
+      "path": "downloads/spatial_bayes/visual_QA.json",
+      "bytes": 6814,
+      "sha256": "62ec51771bc1716e852c0971f9abc1abef9bfac166a8c64e16f6273c5a6a3692"
     },
     {
       "path": "downloads/spatial_cortex/figure_manifest.json",
@@ -15032,6 +15692,146 @@
       "path": "downloads/spatial_cortex/visual_QA.json",
       "bytes": 1645,
       "sha256": "08be959fb4207d79d4ae04f3112b8146b5fe7f9b9592130d5a8d338ddd5b3f2d"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/ACA/anatomy_posterior.tsv.gz",
+      "bytes": 11127,
+      "sha256": "9b1010abf33520fd4937622e18a33603cf29c7ca6a8d19d9fd593cee26eb39a5"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/ACA/fold_audit.json",
+      "bytes": 1795,
+      "sha256": "6c25efff4a889d5e1cf617c125688e352491f52d671cc5206aac3f4b0980461c"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/ACA/gene_metrics.tsv",
+      "bytes": 2924,
+      "sha256": "37e5cd76c90a2aab4316685ca0cf351983179f0650736c503cc9b70a30c55b85"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/ACA/gene_metrics_trained_anatomy.tsv",
+      "bytes": 2924,
+      "sha256": "37e5cd76c90a2aab4316685ca0cf351983179f0650736c503cc9b70a30c55b85"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/ACA/grid_sensitivity.tsv.gz",
+      "bytes": 34475,
+      "sha256": "92e06f5c9b54908c20dbbe4ee03a590fa2afe8a47baa60b845e54aac334df47d"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/ACA/known_section_posterior.tsv.gz",
+      "bytes": 52205,
+      "sha256": "312c212fcd043c5047abf87987aaa80007cbe9317ee97df16727166b6982c25f"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/ACA/oof_grid_sensitivity.tsv.gz",
+      "bytes": 64529,
+      "sha256": "87715a18acf46b20c22b1eba610ae54db021140ac09565c545d35aa6ad1ebebc"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/ACA/out_of_fold_predictions.tsv.gz",
+      "bytes": 122741,
+      "sha256": "2edccfe5ed0d3eb9390ccc40b01a619b7bd2c89369f043c824a954e6caf256ee"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/ACA/section_folds.tsv",
+      "bytes": 852,
+      "sha256": "51c5b62d7209a9f28fcbc41dd363e5a0dbad1589835896a4c019df941eb1246a"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/ACA/summary.json",
+      "bytes": 15200,
+      "sha256": "54cb12dab63c4e195776ef53c12cf1a784913d01bb9173d3135157905a7c3402"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/ACA/training_hyperparameters.tsv.gz",
+      "bytes": 30785,
+      "sha256": "3492e46f03ce405deeb7f1d42903dffb8eac2d41c67edeb7092cfd57febad23b"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/HY/anatomy_posterior.tsv.gz",
+      "bytes": 45920,
+      "sha256": "197104701f350092c89cf51bece3b0d48afe61c156a7ceb187d6ddb8efb5db7f"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/HY/fold_audit.json",
+      "bytes": 1865,
+      "sha256": "11a13cfdcd3cee3f03abf53fbc25c4df232282c79fa42baf0f58803144263e9a"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/HY/gene_metrics.tsv",
+      "bytes": 2950,
+      "sha256": "6e1085280361c827ad73fe8c919d99ef8b4a86a659dfd07e3de608b701a91f48"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/HY/gene_metrics_trained_anatomy.tsv",
+      "bytes": 2943,
+      "sha256": "a411c896321c0d675819a76cded15175dce81289234fac4462651ef14cdbb794"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/HY/grid_sensitivity.tsv.gz",
+      "bytes": 161598,
+      "sha256": "cc7c21fad1a116be38aaac2cb09d180a5bc48d58f2f04f230e7cd0ddeffa1edb"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/HY/known_section_posterior.tsv.gz",
+      "bytes": 76183,
+      "sha256": "f9438dab5dd96dc92e4ff0ad2f127347c0258061ef12b9b0aabb3e1d63982cb0"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/HY/oof_grid_sensitivity.tsv.gz",
+      "bytes": 79690,
+      "sha256": "2bc30474f44a3800362c32daf7b0fa410b086a2db64634c805134b87ed9128c4"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/HY/out_of_fold_predictions.tsv.gz",
+      "bytes": 152346,
+      "sha256": "bbb335bd90e0003d163a39f08bd4b41c70e72ad254c5265c4e6b190babc4e2c4"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/HY/section_folds.tsv",
+      "bytes": 942,
+      "sha256": "d6a54edc68f673e3224a6408e61eb1a0b6adb9d90d5a9d1754891d8641c02ed2"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/HY/summary.json",
+      "bytes": 15295,
+      "sha256": "e8fc69d75ea7ead13d4b106ef988537ca221255f88957c0cec3d04aae849e31f"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/HY/training_hyperparameters.tsv.gz",
+      "bytes": 27313,
+      "sha256": "278fc01590844d51b32139f2f009473de19c17cd9a5be7846a4e09c4dc66446e"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/figure_manifest.json",
+      "bytes": 19420,
+      "sha256": "daaa231dd29eb6b4ffb1e1a4b73a9fc8757b860dcf4df4346c4b6ca4bf109fe5"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/scientific_diagnostics.json",
+      "bytes": 31691,
+      "sha256": "c1570aa2eec4b008cc5d3b8c6942d69b942e955e4ed5d70f5bb425c6f57ad083"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/summary.json",
+      "bytes": 30508,
+      "sha256": "c6ee2a9098c84e031388dd53fd5d7090c2b420df18703a269b848c5cc1ae2538"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/validation.json",
+      "bytes": 1028,
+      "sha256": "354e6b534def08297bb09decedaf0c1ef25dfa736d67f11aa390d3a0f74e2bf7"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/validation_independent.json",
+      "bytes": 519,
+      "sha256": "5ae622d8fee0403a3f1f779b31824312c62bc853a032776013cc50df37f5905c"
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/visual_QA.json",
+      "bytes": 1665,
+      "sha256": "e5ef04d9bde78406771d257ee6ffa1e1f899f6a7fc1b2c4a33b965f7e0400671"
     },
     {
       "path": "downloads/spatial_reference/Tll1_by_class.tsv",
@@ -15094,6 +15894,131 @@
       "sha256": "a9e84a38602c0961a7f8052bf05c8059682d6da0cc4f58942af05a60349c21d9"
     },
     {
+      "path": "downloads/spatial_sections/ACA/cells_with_sections.tsv.gz",
+      "bytes": 911036,
+      "sha256": "a7bbe306e2c1465cba0a1b493fcf1680cf216ef5507fab800729df111c665e18"
+    },
+    {
+      "path": "downloads/spatial_sections/ACA/detection_by_anatomy.tsv.gz",
+      "bytes": 2863,
+      "sha256": "e8dd4630ebbf765990028cfa8692085e017db07bc93de6676e9cc3d04dcf8b77"
+    },
+    {
+      "path": "downloads/spatial_sections/ACA/detection_by_bins.tsv.gz",
+      "bytes": 208278,
+      "sha256": "24a9fa98aa80d3621a2ff8d97f8a2e0a19f7da7ed50e1ac985e64954b118c1da"
+    },
+    {
+      "path": "downloads/spatial_sections/ACA/detection_by_section.tsv.gz",
+      "bytes": 4409,
+      "sha256": "096ef2eb16c2fa0f611f643d5c278dc676a0b8af8c54f04d0ac55593cc25b96f"
+    },
+    {
+      "path": "downloads/spatial_sections/ACA/detection_by_section_anatomy.tsv.gz",
+      "bytes": 25348,
+      "sha256": "76bcee09dec7b00971d9492d4adf05e268cf2b1f67dd434e3ffa1dbfed1b9475"
+    },
+    {
+      "path": "downloads/spatial_sections/ACA/genes.tsv",
+      "bytes": 7151,
+      "sha256": "c041bf2d8703f0721978478ac6e30e7170baaf5b7463f6c6e5eb316a00e91366"
+    },
+    {
+      "path": "downloads/spatial_sections/ACA/occupied_bins.tsv.gz",
+      "bytes": 8058,
+      "sha256": "01ae49f2ceb8e24435949d1a1f05120458b661b3d4ed63e7b677e5572ee64231"
+    },
+    {
+      "path": "downloads/spatial_sections/ACA/section_anatomy_groups.tsv",
+      "bytes": 1045,
+      "sha256": "59497b531e749a5f1fb699abafffd7ccbdf6acb069bbff42d0597b9348b28e75"
+    },
+    {
+      "path": "downloads/spatial_sections/ACA/sections.tsv",
+      "bytes": 2337,
+      "sha256": "4168fdfde7ef25c64ecdb05abb4cea2d5a5da7532821d7a8d17a6a219a155d26"
+    },
+    {
+      "path": "downloads/spatial_sections/ACA/summary.json",
+      "bytes": 2261,
+      "sha256": "aecb10d19abb3eb3e28fff90f7dcfb8e2851696d7a9c18ef22bf16035ab69e70"
+    },
+    {
+      "path": "downloads/spatial_sections/HY/cells_with_sections.tsv.gz",
+      "bytes": 2377755,
+      "sha256": "4df20fd09adfe38a22d51d2d4526460356a6c19a3239a0a173823c4e4e284af2"
+    },
+    {
+      "path": "downloads/spatial_sections/HY/detection_by_anatomy.tsv.gz",
+      "bytes": 9323,
+      "sha256": "eaa890e2b2a8a0b3d1c60dc05ccf20554f321b176101e820b7cb2eb1a06f9891"
+    },
+    {
+      "path": "downloads/spatial_sections/HY/detection_by_bins.tsv.gz",
+      "bytes": 424530,
+      "sha256": "78e660df78b8f1c93bdc3c425cdcd963e3be237cbce4fb7a79e4b33b3ab436e7"
+    },
+    {
+      "path": "downloads/spatial_sections/HY/detection_by_section.tsv.gz",
+      "bytes": 5031,
+      "sha256": "c59096f17dfbed5b84c708acc97c002d6c4b7de0ddba94f3baeb5a23c1380981"
+    },
+    {
+      "path": "downloads/spatial_sections/HY/detection_by_section_anatomy.tsv.gz",
+      "bytes": 34513,
+      "sha256": "7752662732f1cb12d1b48881fa1dbaa1cf9b3791ce560bc1f0da707bd246ccba"
+    },
+    {
+      "path": "downloads/spatial_sections/HY/genes.tsv",
+      "bytes": 7685,
+      "sha256": "f0339c05ebcbcefb59a4efd2340f5a27c5e73790286a03035a1a838ee0c47771"
+    },
+    {
+      "path": "downloads/spatial_sections/HY/occupied_bins.tsv.gz",
+      "bytes": 18102,
+      "sha256": "e87e1768e9f4bb149f5e9d64d0c8b94fc6add140f4887d22001142278d93e001"
+    },
+    {
+      "path": "downloads/spatial_sections/HY/section_anatomy_groups.tsv",
+      "bytes": 1670,
+      "sha256": "16ce84091d501daa3d02bb1e18b4c5e8effcd4c925674571a458e74363171731"
+    },
+    {
+      "path": "downloads/spatial_sections/HY/sections.tsv",
+      "bytes": 2613,
+      "sha256": "6ffeb4773d5f2350cd0b7d9523ef1c64641f3d9215d366126f62053d36295d5d"
+    },
+    {
+      "path": "downloads/spatial_sections/HY/summary.json",
+      "bytes": 2280,
+      "sha256": "61bcaedad164b72d528d145abddd2850b3b7caf8afea408fe47eae85ba8c5c9a"
+    },
+    {
+      "path": "downloads/spatial_sections/figure_manifest.json",
+      "bytes": 11634,
+      "sha256": "115382e274d229c1d9a68c116f8cd8296f400d340454c2aabf84a413fb8acc73"
+    },
+    {
+      "path": "downloads/spatial_sections/summary.json",
+      "bytes": 4554,
+      "sha256": "e9ae205209f8a19c2e64c71d5852fc2dc4c768b615d9e4799889c90caad3ef9b"
+    },
+    {
+      "path": "downloads/spatial_sections/validation.json",
+      "bytes": 806,
+      "sha256": "cb7b96bfa3d3f70925b425891ac5ec402a5b0e1a63e736eaba4fa7d96412104d"
+    },
+    {
+      "path": "downloads/spatial_sections/validation_independent.json",
+      "bytes": 577,
+      "sha256": "53b61f58400f9c4fc6b8890789109565a0f32db428e8928e412a77ec85e2bb40"
+    },
+    {
+      "path": "downloads/spatial_sections/visual_QA.json",
+      "bytes": 1774,
+      "sha256": "dd2e59da6f04e6110923a540c19432a9b371b857ed23e7cbfba24429c273e8ad"
+    },
+    {
       "path": "downloads/spatial_viewer/gene_panel_coverage.tsv",
       "bytes": 46353,
       "sha256": "517b61bdee5ba42513b4388be5598d6ba6dcdcc804e0e60677f2a3ba81627b10"
@@ -15115,73 +16040,73 @@
     },
     {
       "path": "enrichment.html",
-      "bytes": 138757,
-      "sha256": "c4995c63b0e3088e51180dfc010e9c8873352ce7e9d657ce44c120ab805cd0b0"
+      "bytes": 139081,
+      "sha256": "eb6b4dcfd863d2ae8b8c248f7bfea3364380f5485245bec8232badb8bfd308da"
     },
     {
       "path": "es/advanced_results.html",
-      "bytes": 75355,
-      "sha256": "283a80801432ba09fb71421d3f27776e5791c8e5cf485006c082d5946c550652"
+      "bytes": 75670,
+      "sha256": "ff98b3e7ada09af5135a42f261a80037afae4e9c9f41f2099d65a692617598a2"
     },
     {
       "path": "es/cortex.html",
-      "bytes": 85630,
-      "sha256": "a8ae82eaa9d2beb2ea05671b8b365633fdd9590c0b1b79d9828d26a8e0349e4a"
+      "bytes": 85945,
+      "sha256": "2515a0df952ce3419404b4d4c21a326bb9c366b435b9559d4160c00aec8866f7"
     },
     {
       "path": "es/cortex_viewer.html",
-      "bytes": 56743,
-      "sha256": "4a718077d6272c2db2163f8687e8d9a10800d9e0ab183d233c13efd595789746"
+      "bytes": 57742,
+      "sha256": "d6e70af7ed235637e5c4a8ed8e442853594a2b53a98b66b8e41213d78bb3be78"
     },
     {
       "path": "es/enrichment.html",
-      "bytes": 148655,
-      "sha256": "d234c0927d1f633ccab6e6fe5f5a412a540290e4bf3487f1a120251525e5bd88"
+      "bytes": 148970,
+      "sha256": "8667f275d2952b549c661cec3cf2b25d2e9d57c94063b77af6347ce17921c24d"
     },
     {
       "path": "es/gene_profiles.html",
-      "bytes": 99228,
-      "sha256": "9c597f0b6dc9e28c13984c5c99f18bb8c416c0fa6425a618bc64cd12da860039"
+      "bytes": 99543,
+      "sha256": "ad645eb81999f57b335808352956c9d5b8111d7dbba029fc1b437b10ac1124a4"
     },
     {
       "path": "es/index.html",
-      "bytes": 68302,
-      "sha256": "8745fe19fad4c8a04f60511fec581c9f5a2b884e4dbfdd90d78e99ce27f7ef98"
+      "bytes": 70764,
+      "sha256": "ac3f624964c1c2f4382c51dae924c1da9a1d3a41e64c364dc87341887ef9250f"
     },
     {
       "path": "es/introduction.html",
-      "bytes": 56760,
-      "sha256": "7ea215ada0fd67af8c4d20e580c5ab18642260f185c2ccaa420a1dbaa5aa0b86"
+      "bytes": 57075,
+      "sha256": "aa316e3d4ceb6e6e39def91d25c5338ef75e2eb3ca1e49de10121c7abb596571"
     },
     {
       "path": "es/methods.html",
-      "bytes": 105295,
-      "sha256": "fa4b876d062b31de74eb12f22ea4cc26d1a993fcb5bb3d9abe96ff8c377aaf46"
+      "bytes": 108812,
+      "sha256": "9a89891ae39c2e4f93a2130c4452f71e32edccd69458b093990dedb06f902e49"
     },
     {
       "path": "es/mirna.html",
-      "bytes": 96644,
-      "sha256": "250529f81304eb20b853c5626339363660258f1f390f64eb26c222e21d3bb59c"
+      "bytes": 96959,
+      "sha256": "5715f85da299f84e247bea2d6a45a8dfd4a16b103dec57a31ece38c1b09e40fe"
     },
     {
       "path": "es/ozone.html",
-      "bytes": 144837,
-      "sha256": "fb13a89ecde2713db764a3031da247009138d7743456b9c69e94d17edc8d76c1"
+      "bytes": 145152,
+      "sha256": "94c791189b4114e3a57589c4bda94aaedfd4463020b17e687e5d8076adb89631"
     },
     {
       "path": "es/replication.html",
-      "bytes": 85549,
-      "sha256": "236f161be9093f6c643144e3156e62642ab13f2e97b77083bc41d8362de36a70"
+      "bytes": 85864,
+      "sha256": "92f82e45d20a8b80618ff219a366cb8cb34d08812e82a4628b5633bd97e050bf"
     },
     {
       "path": "es/reproducibility.html",
-      "bytes": 128321,
-      "sha256": "d4cb2f1656f307933848cc48f36b549374c815448b33d1209a56f6b2f6a28feb"
+      "bytes": 134309,
+      "sha256": "b7f89bc2503cd9eb2bb53b0beac6a776983e2993acdf68b15ae538a185dbffdd"
     },
     {
       "path": "es/results.html",
-      "bytes": 85934,
-      "sha256": "02112bdae6f6766e1b42a2fd9a14c41516eb487594ea89844b1d9c415b9f8f8e"
+      "bytes": 86249,
+      "sha256": "c43e046f7a34d8292c9f6a0f69d85f026148e1f680be5e6627eb215ea0420a04"
     },
     {
       "path": "es/robots.txt",
@@ -15190,8 +16115,8 @@
     },
     {
       "path": "es/search.json",
-      "bytes": 273945,
-      "sha256": "5b521aee0490b9b263579b11ad534b9052e6a563a6f0a989ea2c65313b938d43"
+      "bytes": 315934,
+      "sha256": "779beb037535a5a6de50ff519fc26cf5003344da7a9a7ccbd6f9c712aaae103a"
     },
     {
       "path": "es/site_libs/bootstrap/bootstrap-5dd942ac47374bdb5320a9bbd29a7aa4.min.css",
@@ -15280,63 +16205,73 @@
     },
     {
       "path": "es/sitemap.xml",
-      "bytes": 2703,
-      "sha256": "b5e7bf962aa5c94e002049ac7137a9bb33df706263dafbcc02f7b85de1332e6e"
+      "bytes": 3058,
+      "sha256": "87aafe1d12d69ee293a42911a098892ba36c40e3022025dbd0e99c8e867bb27c"
+    },
+    {
+      "path": "es/spatial_bayes.html",
+      "bytes": 122904,
+      "sha256": "526e83a46bb7c65491cafc12804bbd4de3b4300f6bdbafdeff4c8a9450a0ce71"
+    },
+    {
+      "path": "es/spatial_explorer.html",
+      "bytes": 67406,
+      "sha256": "9272cd05d88b154b524f355107901b4fac551e1fbb9192493dc2b15e87df4e37"
     },
     {
       "path": "es/spatial_reference.html",
-      "bytes": 69396,
-      "sha256": "3597f094e4cc72ab4b0819454a8e6378028f392a383d39590e64f33f0f9d4f5c"
+      "bytes": 69711,
+      "sha256": "e8b9683890b9ee078d5ff98f91e3bab9c3d03496402417b56abe96655efca794"
     },
     {
       "path": "es/viewer.html",
-      "bytes": 53809,
-      "sha256": "18d0573d12abd2a429b31db31ae88a847be439c979f37829fb33d8efb597d2f3"
+      "bytes": 54866,
+      "sha256": "474597ac1741fa476de582971ab59eb3c12acafe4847d9d42b45e93da1af977d"
     },
     {
       "path": "gene_profiles.html",
-      "bytes": 97738,
-      "sha256": "57e6dd7230adf7d2b69b47cce28f27b81c8bc49bbbfe4175af72308632fd0bf7"
+      "bytes": 98062,
+      "sha256": "cee177717f5c3646f7aec8b8c32c4aa9a122d6d6e3990235c10b3804666885b5"
     },
     {
       "path": "index.html",
-      "bytes": 66105,
-      "sha256": "e5455f6287d980dade1495266088f6a4f159098747be9eb5ee994673a55a05b0"
+      "bytes": 68476,
+      "sha256": "9d586c121819acf286a3971954ccd2e70370452685d4c1bb83d7b867e938c951"
     },
     {
       "path": "introduction.html",
-      "bytes": 54774,
-      "sha256": "1c97d66da93a5009ebb73e71887c4debd148e124d2a66116e489757130331b3d"
+      "bytes": 55098,
+      "sha256": "1ee9c1b37ea0d20b7e28beb35cecb0021aff16eed3fc6992d5fb3c1f08d7265d"
     },
     {
       "path": "methods.html",
-      "bytes": 98644,
-      "sha256": "f23d180b8f63653718dd94688f3b9aa6b54fd415b0e70382da4c345c0c99a5e3"
+      "bytes": 101960,
+      "sha256": "90ba0dccaeace2feff89e3543e214645765f751ec1d8c86c965e00888977d152"
     },
     {
       "path": "mirna.html",
-      "bytes": 92265,
-      "sha256": "600ba60fc4248e5f43ab2d3f2cfd4d5e67057e96fae875bf272287ec3733dee0"
+      "bytes": 92589,
+      "sha256": "cd90d6619b95ce71759750b634f271bd61bf3382ed0e22990de16178b161590b"
     },
     {
       "path": "ozone.html",
-      "bytes": 136718,
-      "sha256": "a102907acdc4aeb5aacba614689a397a0e35b694c87659c32793b71f93e21a55"
+      "bytes": 137042,
+      "sha256": "3380f0a900105d925c3e3a0f507b6af4852c61a0ae68d0f8fd3c0acd59cb3fb6"
     },
     {
       "path": "replication.html",
-      "bytes": 84303,
-      "sha256": "53512b5f6f8748c2d06f78bb88e43e5a1c8247cc53ba959d600084971d8bdaad"
+      "bytes": 84627,
+      "sha256": "849b3686179192c7165d4bf552efa23c420fe392855b8255204eca08ac7c3220"
     },
     {
       "path": "reproducibility.html",
-      "bytes": 116786,
-      "sha256": "ea17fc35814faca5db9ea8cb964cc262ebdbcdd559e2ea115bd950e67c7c2235"
+      "bytes": 122440,
+      "sha256": "acec20c56f676d4f1bf02a9260608ec493be615d5fe07b057619a5fdbf13d949"
     },
     {
       "path": "results.html",
-      "bytes": 82881,
-      "sha256": "6a5565ea610e2f5d469602fb74bf768829648c8c54e0934a4df3f70259d91fdc"
+      "bytes": 83205,
+      "sha256": "dbb76d2ae039188399bda2baf3481f986523b5c6862a971df99405e55d38c4fe"
     },
     {
       "path": "robots.txt",
@@ -15345,8 +16280,8 @@
     },
     {
       "path": "search.json",
-      "bytes": 244203,
-      "sha256": "dc985c864455de1cae0962ac815e7dd233a90d82a28755496b926538b0e79b13"
+      "bytes": 283586,
+      "sha256": "2c8eb400e6f5b7a029d40f67f49438b3de7e38b02a34e880cd3f3e69e92ee48b"
     },
     {
       "path": "site_libs/bootstrap/bootstrap-5dd942ac47374bdb5320a9bbd29a7aa4.min.css",
@@ -15435,21 +16370,31 @@
     },
     {
       "path": "sitemap.xml",
-      "bytes": 2658,
-      "sha256": "eae3ef68a72a6f18e512370a1b6fc5ead5b4656803d165d45720240c7bc5af9a"
+      "bytes": 3007,
+      "sha256": "8560d73f9c44ea87cf06077ec4c4dec3f53e3075d6b9b40e137ac26ffe47ea7e"
+    },
+    {
+      "path": "spatial_bayes.html",
+      "bytes": 119194,
+      "sha256": "0720c7482b16ab7f59104cf7e572478a9c2f26750676eb57861e173107eebca6"
+    },
+    {
+      "path": "spatial_explorer.html",
+      "bytes": 66062,
+      "sha256": "3249b5c05e077f4e60444ced9f6c3a271a37f3dc3018e8e736f7f8df1bf88ea7"
     },
     {
       "path": "spatial_reference.html",
-      "bytes": 66931,
-      "sha256": "e63211ca69cad5b80ff9db3e40b686d6cf3994cf8cc233480eeb0f4ac2de9d07"
+      "bytes": 67255,
+      "sha256": "180dcbf007bc49dd70a0a2233b7743d5247c0462277ee5885f1ab9fdee8a0dad"
     },
     {
       "path": "viewer.html",
-      "bytes": 52272,
-      "sha256": "cf6622916e1accf3ef0e709f17cbf3c168231d6bb4f0c2754e37ac3a326fffdb"
+      "bytes": 53344,
+      "sha256": "1c4c948cbe8574c3abf9069e77991f8cfa7ae5f263c909f3bab896e997af2e2e"
     }
   ],
-  "total_bytes": 411018218,
+  "total_bytes": 477127499,
   "excludes": [
     "original FASTQ/H5AD",
     "reference genomes",

@@ -1,0 +1,237 @@
+{
+  "reviewed_on": "2026-10-20",
+  "review": "All eight EN/ES PNG figure variants manually opened and inspected. Statistical points and all gene labels retained; whole-section performance, calibration, fixed sensitivity and real-coordinate posterior maps are labeled. Conditional-tail95%targetline removed; zero/positive legends moved below data. No point or gene is covered by a legend. Calibration caption explicitly distinguishes outcome-conditioned inclusion from a nominal marginal coverage requirement. Final figures are a descriptive website/research deliverable; no target-journal or accessibility certification asserted.",
+  "checks": {
+    "all24_exports": true,
+    "manifest_hashes_exact": true,
+    "all_PNG_opaque": true,
+    "all_PDF_single_page_searchable": true,
+    "all_SVG_searchable": true
+  },
+  "files": {
+    "spatial_bayes_performance.png": {
+      "sha256": "f17ef4aa167f34f2c035fe7a98dbb0a177884227b01fbfd48b81d0f9d6a0d8e3",
+      "bytes": 329243,
+      "dimensions_px": [
+        4800,
+        3240
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "opaque": true
+    },
+    "spatial_bayes_performance.svg": {
+      "sha256": "b49203eb2cffe9c8a1106802e99076dc2373d1d4dc7ab6ef97670dedc8489365",
+      "bytes": 70087,
+      "text_elements": 77
+    },
+    "spatial_bayes_performance.pdf": {
+      "sha256": "4df05e9bef8606357fbffc57049a0146c2e64ba8aae1693df634140cf8e98806",
+      "bytes": 33338,
+      "pages": 1,
+      "searchable_text_chars": 677,
+      "size_points": [
+        1152.0,
+        777.6
+      ]
+    },
+    "spatial_bayes_calibration.png": {
+      "sha256": "ea85b2304a9a32b13c0dcd6d6996daba2506b6405f1f5df64bb3c0072cfa0f05",
+      "bytes": 653671,
+      "dimensions_px": [
+        4020,
+        3060
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "opaque": true
+    },
+    "spatial_bayes_calibration.svg": {
+      "sha256": "8bc4125a2ac44fbe83d5bd2a35ac5ba8a3031978e138d38ba9fa4708a22176aa",
+      "bytes": 63798,
+      "text_elements": 75
+    },
+    "spatial_bayes_calibration.pdf": {
+      "sha256": "bed3f5bfa19daa1fb172059c9447c7ebb5a8f1dcc4f5deeab78debdcfef803f2",
+      "bytes": 28677,
+      "pages": 1,
+      "searchable_text_chars": 707,
+      "size_points": [
+        964.8,
+        734.4
+      ]
+    },
+    "spatial_bayes_sensitivity.png": {
+      "sha256": "af6d3ef120922f4629f0c9bbb46f00b24855331a3c7f549fdbe786dc8dc7800b",
+      "bytes": 370701,
+      "dimensions_px": [
+        4320,
+        3030
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "opaque": true
+    },
+    "spatial_bayes_sensitivity.svg": {
+      "sha256": "68ff0e86ed70aa108985e1b0ae55fc2d3dfc0ef1f3bca32a3eebba454980d0e2",
+      "bytes": 110408,
+      "text_elements": 95
+    },
+    "spatial_bayes_sensitivity.pdf": {
+      "sha256": "9ab055653af74736943d28d9bc780e6824eed0027649a18dd1a151f6e80f5cba",
+      "bytes": 67783,
+      "pages": 1,
+      "searchable_text_chars": 803,
+      "size_points": [
+        1036.8,
+        727.2
+      ]
+    },
+    "spatial_bayes_posterior_maps.png": {
+      "sha256": "766fbe7e52fdec79c53e867aaadbfb841d0fd4fbd3e32f40f6fc58795e008682",
+      "bytes": 2557100,
+      "dimensions_px": [
+        5100,
+        2700
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "opaque": true
+    },
+    "spatial_bayes_posterior_maps.svg": {
+      "sha256": "81b243f8e97f76a52b2d84e9ea8e49007359b5c1f91b887531e3defc685d4de1",
+      "bytes": 2247191,
+      "text_elements": 162
+    },
+    "spatial_bayes_posterior_maps.pdf": {
+      "sha256": "8647ac91a5516dfa75a54a52480250305fceca93881602fee4cb314267125d8f",
+      "bytes": 1138931,
+      "pages": 1,
+      "searchable_text_chars": 1154,
+      "size_points": [
+        1224.0,
+        648.0
+      ]
+    },
+    "spatial_bayes_performance_es.png": {
+      "sha256": "1fbb06ff3f8a867c80f6dd7518d51bbeda02743ac07a008b133a9e208d1c95ff",
+      "bytes": 346107,
+      "dimensions_px": [
+        4800,
+        3240
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "opaque": true
+    },
+    "spatial_bayes_performance_es.svg": {
+      "sha256": "e7c016bf5ffd102a014abecb645b93d225a6f74f0da404e9a32ecd566b0f2e06",
+      "bytes": 70123,
+      "text_elements": 77
+    },
+    "spatial_bayes_performance_es.pdf": {
+      "sha256": "2e8314c3e4784f78ce2390e1a19aae21b049cb4367abf3dd35ccbe10992d5d2d",
+      "bytes": 32324,
+      "pages": 1,
+      "searchable_text_chars": 711,
+      "size_points": [
+        1152.0,
+        777.6
+      ]
+    },
+    "spatial_bayes_calibration_es.png": {
+      "sha256": "1b6f0fa3ce81afd21110af6d169fc77fe61c9ccc4f1c5e042e4b440093b27c20",
+      "bytes": 660563,
+      "dimensions_px": [
+        4020,
+        3060
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "opaque": true
+    },
+    "spatial_bayes_calibration_es.svg": {
+      "sha256": "45e83814e502c01e798d2bdf8cf14ba46af8a2df30b62b4f190f130edd7a5087",
+      "bytes": 63830,
+      "text_elements": 75
+    },
+    "spatial_bayes_calibration_es.pdf": {
+      "sha256": "0e5739e8ba43d1a4dd1bad5a41baf9f4af5cc0715dc9b60e40b45311f17cd712",
+      "bytes": 28405,
+      "pages": 1,
+      "searchable_text_chars": 722,
+      "size_points": [
+        964.8,
+        734.4
+      ]
+    },
+    "spatial_bayes_sensitivity_es.png": {
+      "sha256": "2e8129f444ebe0fdeded5160af61f0b96671af6f9640fcae1435bb9926ea4eea",
+      "bytes": 373141,
+      "dimensions_px": [
+        4320,
+        3030
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "opaque": true
+    },
+    "spatial_bayes_sensitivity_es.svg": {
+      "sha256": "39f43493196bc688df6a8df29773a5aabbada9a50a7b9081cd9a6627da51e787",
+      "bytes": 110389,
+      "text_elements": 95
+    },
+    "spatial_bayes_sensitivity_es.pdf": {
+      "sha256": "bde48d66b04de5a39ba68471fc375363e7def755c1a74fad415233969d66d6af",
+      "bytes": 68042,
+      "pages": 1,
+      "searchable_text_chars": 817,
+      "size_points": [
+        1036.8,
+        727.2
+      ]
+    },
+    "spatial_bayes_posterior_maps_es.png": {
+      "sha256": "0bc81cc001e28efd06582150773b6960968490fa75de8dfb0302ee1273963e2b",
+      "bytes": 2563448,
+      "dimensions_px": [
+        5100,
+        2700
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "opaque": true
+    },
+    "spatial_bayes_posterior_maps_es.svg": {
+      "sha256": "18a69d4a9ec8897957e21f983350bbea5deb7eadd455cc483196b6446030ba5f",
+      "bytes": 2246466,
+      "text_elements": 162
+    },
+    "spatial_bayes_posterior_maps_es.pdf": {
+      "sha256": "e80703467d303dfe7e74cc9e41c75ebe55a5ddf9c2951b89a77eb56f25210678",
+      "bytes": 1139007,
+      "pages": 1,
+      "searchable_text_chars": 1189,
+      "size_points": [
+        1224.0,
+        648.0
+      ]
+    }
+  }
+}

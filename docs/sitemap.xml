@@ -2,11 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/reproducibility.html</loc>
-    <lastmod>2026-10-20T01:50:03.422Z</lastmod>
+    <lastmod>2026-10-20T16:21:30.162Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/spatial_explorer.html</loc>
+    <lastmod>2026-10-20T16:12:37.668Z</lastmod>
   </url>
   <url>
     <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/viewer.html</loc>
-    <lastmod>2026-10-20T01:48:24.339Z</lastmod>
+    <lastmod>2026-10-20T16:08:37.417Z</lastmod>
   </url>
   <url>
     <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/spatial_reference.html</loc>
@@ -26,11 +30,11 @@
   </url>
   <url>
     <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/methods.html</loc>
-    <lastmod>2026-10-20T01:50:29.116Z</lastmod>
+    <lastmod>2026-10-20T16:13:54.698Z</lastmod>
   </url>
   <url>
     <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/index.html</loc>
-    <lastmod>2026-10-20T01:48:24.339Z</lastmod>
+    <lastmod>2026-10-20T16:13:54.698Z</lastmod>
   </url>
   <url>
     <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/introduction.html</loc>
@@ -58,6 +62,10 @@
   </url>
   <url>
     <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/cortex_viewer.html</loc>
-    <lastmod>2026-10-20T01:50:29.115Z</lastmod>
+    <lastmod>2026-10-20T16:08:37.418Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/spatial_bayes.html</loc>
+    <lastmod>2026-10-20T16:35:42.156Z</lastmod>
   </url>
 </urlset>

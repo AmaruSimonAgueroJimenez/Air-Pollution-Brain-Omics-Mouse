@@ -1,0 +1,96 @@
+---
+title: "Measured sections, cortical layers and detection"
+subtitle: "Anatomical exploration of anterior cingulate cortex and hypothalamus"
+page-layout: full
+toc: false
+---
+
+```{python}
+import json
+import pandas as pd
+from IPython.display import Markdown, display
+from _report_utils import ROOT, summary, metric_cards, figure, read_table, show_table
+s = summary("spatial_sections")
+```
+
+## Introduction
+
+The three-dimensional cell cloud contains actual registered atlas coordinates. This extension makes its anatomical organization easier to inspect through original physical sections, cortical layers or hypothalamic nuclei, and maps of the fraction of measured cells in which a gene is detected. It does not rearrange cells or generate additional observations. The reference is the unexposed adult male **Zhuang-ABCA-2**, separate from the pollution experiments. [@Zhang2023_38092912]
+
+[Bayesian baseline: methods, validation and uncertainty](spatial_bayes.qmd){.btn .btn-outline-primary}
+[Original cortex 3D reference/scenario](cortex_viewer.qmd){.btn .btn-outline-secondary}
+[Original hypothalamus 3D reference/scenario](viewer.qmd){.btn .btn-outline-secondary}
+
+
+```{python}
+metric_cards([
+    ("ACA cells / sections", f"{s['ACA']['cells']:,} / {s['ACA']['sections']}", "Dorsal + ventral ACA; all registered cells"),
+    ("HY cells / sections", f"{s['HY']['cells']:,} / {s['HY']['sections']}", "All registered hypothalamic cells"),
+    ("Anatomical subdivisions", f"{s['ACA']['anatomical_groups']} ACA / {s['HY']['anatomical_groups']} HY", "Layers/subdivisions and nuclei; no relocation"),
+    ("Reference animals", "1", "Physical sections are not independent animals")
+])
+```
+
+## Explore measured sections
+
+Select the brain region, a physical section and a gene. Within-section maps use deposited experimental coordinates; the anatomical labels come from CCF registration. The two coordinate systems are not interchangeable. In ACA, substructures identify dorsal/ventral cortex and layers 1, 2/3, 5, 6a and 6b. Hypothalamic subdivisions identify nuclei rather than cortical layers.
+
+<iframe id="sections-frame" class="viewer-frame" src="assets/spatial-explorer/index.html?region=ACA" title="Measured section, anatomy and detection explorer" loading="lazy"></iframe>
+<script>
+window.addEventListener("message", function(event) {
+ const frame = document.getElementById("sections-frame");
+ if (frame && event.source === frame.contentWindow && event.origin === window.location.origin && event.data && ["omics-spatial-height", "omics-atlas-height"].includes(event.data.type)) {
+  const height = Number(event.data.height);
+  if (Number.isFinite(height)) frame.style.height = Math.min(14000, Math.max(1700, height + 30)) + "px";
+ }
+});
+</script>
+
+[Open the standalone explorer](assets/spatial-explorer/index.html?region=ACA){.btn .btn-primary target="_blank"}
+
+## Methods
+
+Cell identifiers join the original section metadata to the existing regional reference without changing cell order or counts. All registered regional cells are retained. Ten fixed measured candidates per region reproduce the prior gene-priority lists; this extension does not reselect exposure discoveries using the spatial maps.
+
+**Detection means an original imaging count greater than zero.** For each displayed anatomical group or occupied spatial bin, the numerator is the number of positive-count cells and the denominator is every selected measured cell, including zeros. Filters change both numerator and denominator. Empty bins have no denominator and remain missing; they are not painted as zero detection. This is a detection fraction among sampled cells, not cells per tissue volume, biological absence, or the fraction of cells responding to PM2.5.
+
+The same gene can be displayed as measured expression, binary detection, cell class or anatomy. Zeros are visible in a neutral color. Bin size and the number of supporting cells are explicit. Raw cell values and tables remain downloadable. A visually smooth map is not evidence of greater acquisition resolution: this donor was sampled at nominal 200 µm coronal intervals. [@Zhang2023_38092912]
+
+## Results and static alternatives
+
+The following figures use actual cells and measured counts. Layer/nucleus summaries retain their denominators, and physical section spacing remains visible. They describe one reference donor rather than replicate exposed animals.
+
+```{python}
+manifest = json.loads((ROOT / "results/spatial_sections/figure_manifest.json").read_text())
+for stem, item in manifest.items():
+    language = item.get("language", "es" if stem.endswith("_es") else "en")
+    if language == "en":
+        figure("spatial_sections", stem, item.get("caption_en", item.get("caption", "")))
+```
+
+
+```{python}
+rows = []
+for region in ("ACA", "HY"):
+    info = s[region]
+    for gene in info["genes"]:
+        positive = info["positive_cells"][gene]
+        rows.append([region, gene, positive, info["cells"], 100 * positive / info["cells"]])
+show_table(pd.DataFrame(rows, columns=["Region", "Gene", "Positive cells", "All measured cells", "Detection (%)"]), n=20)
+```
+
+ACA contributes 18 physical sections and HY contributes 20; some sections contain cells from both regions and are not additional animals. One ACA edge section contains only one registered cell. Such small denominators remain visible, and a 0% or 100% value from a small group should not be interpreted as a precise regional proportion.
+
+## Interpretation and the Bayesian extension
+
+Anatomical restrictions make the existing organization visible without moving a cell. The Bayesian tab estimates **baseline expected log-expression** at the existing cell locations and displays uncertainty separately. It does not turn a nondetection into an observed molecule. Its held-out prediction results, modeling assumptions and limitations are presented in the [Bayesian chapter](spatial_bayes.qmd).
+
+The experimental PM2.5 comparison remains the original regional bulk analysis and uniform scenario in the separate 3D viewers. These section maps do not identify exposed single cells or cell-type-specific responses.
+
+## Source data and reproducibility
+
+[Section summary](downloads/spatial_sections/summary.json) · [Data and numerical checks](downloads/spatial_sections/validation.json) · [Source preparation](downloads/code/build_spatial_sections.py) · [Full reproducibility chapter](reproducibility.qmd).
+
+[ACA cells and sections](downloads/spatial_sections/ACA/cells_with_sections.tsv.gz) · [ACA section metadata](downloads/spatial_sections/ACA/sections.tsv) · [ACA layer detection](downloads/spatial_sections/ACA/detection_by_anatomy.tsv.gz) · [ACA occupied-bin detection](downloads/spatial_sections/ACA/detection_by_bins.tsv.gz).
+
+[HY cells and sections](downloads/spatial_sections/HY/cells_with_sections.tsv.gz) · [HY section metadata](downloads/spatial_sections/HY/sections.tsv) · [HY nucleus detection](downloads/spatial_sections/HY/detection_by_anatomy.tsv.gz) · [HY occupied-bin detection](downloads/spatial_sections/HY/detection_by_bins.tsv.gz).

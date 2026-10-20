@@ -1,0 +1,16 @@
+{
+  "checks": {
+    "HY": {
+      "source_response_exact": true,
+      "coordinate_feature_training_only": true,
+      "base_viewer_cell_order_exact": true
+    },
+    "ACA": {
+      "source_response_exact": true,
+      "coordinate_feature_training_only": true,
+      "base_viewer_cell_order_exact": true
+    }
+  },
+  "passed": true,
+  "scope": "Read-back response equality, direct training-feature mean verification against excluded section labels, exact existing viewer cell order."
+}

@@ -210,3 +210,18 @@ Gene products and functions use frozen source retrieval records under metadata/g
 [Annotation table](downloads/gene_priorities/annotations.tsv) · [Priorities and original statistics](downloads/gene_priorities/prioritized_genes.tsv) · [Cortex validation](downloads/spatial_cortex/validation_checks.json) · [Cortex source manifest](downloads/provenance/spatial_cortex/source_manifest.json).
 
 The repository also includes Node regression tests for camera synchronization and scientific gene-guide behavior: tests/test_viewer_camera_sync.cjs and tests/test_viewer_gene_guide.cjs. These verify interface logic; they are separate from source-data and numerical validation.
+
+## Rebuild sectional and Bayesian spatial outputs
+
+These commands use the existing downloaded atlas and measured regional count caches. They retain original cell ordering and counts. The model fits the fixed measured shortlists and runs blocked whole-section validation before writing final reference maps. Web rendering reads saved results; it does not refit the model.
+
+```bash
+.venv-analysis/bin/python scripts/build_spatial_sections.py
+.venv-analysis/bin/python scripts/analyze_spatial_bayes.py
+.venv-analysis/bin/python scripts/analyze_bayesian_detection.py
+.venv-analysis/bin/python scripts/render_docs.py
+.venv-analysis/bin/python scripts/validate_report.py
+.venv-analysis/bin/python scripts/validate_report.py --published
+```
+
+[Measured-section checks](downloads/spatial_sections/validation.json) and [Bayesian implementation checks](downloads/spatial_bayes/validation.json) concern data and calculations. [Scientific validation results](spatial_bayes.qmd) separately report prediction error, interval coverage and dependence on priors. All twenty region–gene pairs remain visible regardless of performance.

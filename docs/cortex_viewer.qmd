@@ -24,6 +24,8 @@ metric_cards([
 [Hypothalamus viewer](viewer.qmd){.btn .btn-outline-secondary}
 [Gene products and functions](gene_profiles.qmd){.btn .btn-primary}
 [Primary cortex analysis](cortex.qmd){.btn .btn-outline-secondary}
+[Measured sections, layers and detection](spatial_explorer.qmd){.btn .btn-outline-primary}
+[Bayesian baseline and validation](spatial_bayes.qmd){.btn .btn-outline-secondary}
 
 ## Several relevant cortical genes
 

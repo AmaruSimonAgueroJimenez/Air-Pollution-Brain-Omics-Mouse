@@ -17,6 +17,8 @@ project:
   - gene_profiles.qmd
   - viewer.qmd
   - cortex_viewer.qmd
+  - spatial_explorer.qmd
+  - spatial_bayes.qmd
   - reproducibility.qmd
   resources:
   - assets/**
@@ -58,8 +60,12 @@ website:
         text: Measured spatial reference
     - href: gene_profiles.qmd
       text: Genes & functions
-    - text: 3D viewers
+    - text: Spatial atlas
       menu:
+      - href: spatial_explorer.qmd
+        text: Sections, layers & detection
+      - href: spatial_bayes.qmd
+        text: Bayesian baseline & validation
       - href: viewer.qmd
         text: Hypothalamus & region selection
       - href: cortex_viewer.qmd
@@ -97,7 +103,7 @@ format:
 lang: en
 language:
   title-block-published: Analysis date
-date: '2026-10-19'
+date: '2026-10-20'
 date-format: D MMMM YYYY
 bibliography: references.bib
 link-citations: true

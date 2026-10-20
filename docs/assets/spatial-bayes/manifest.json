@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "units": "ln(1+raw imaging count)",
+  "regions": {
+    "HY": {
+      "metadata": "HY/metadata.json",
+      "cell_count": 37811,
+      "cell_ids_sha256": "cf4a8bc0c5f254e2e0b607e7647789e2a6f5de7bf00f59adb44a55594f222c07"
+    },
+    "ACA": {
+      "metadata": "ACA/metadata.json",
+      "cell_count": 14582,
+      "cell_ids_sha256": "c939d9b6e657e95a928ff1f40653f6bea98b926bd4c3e608607c1e958847661c"
+    }
+  },
+  "exposure_model": false
+}
