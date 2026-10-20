@@ -1655,13 +1655,13 @@
     },
     {
       "path": "assets/spatial-explorer/index-es.html",
-      "bytes": 10500,
-      "sha256": "5995c214f973c16ff3c7782ed407855c8806e83444744ff7d0d9cc4934030a19"
+      "bytes": 10522,
+      "sha256": "dd9a0efee13d21e05324b7bbd282a649116819ff52f8c08ed6e640b1980475e1"
     },
     {
       "path": "assets/spatial-explorer/index.html",
-      "bytes": 10111,
-      "sha256": "25923866b290726a063b036e303668021de41bb922e7b720b6a9d8865a40ceac"
+      "bytes": 10126,
+      "sha256": "6a7c37c224e0331e2f7a091b54def0e4ba1131b12c22645bffdd0426a502af99"
     },
     {
       "path": "assets/spatial-sections/data-ACA.js",
@@ -15475,8 +15475,8 @@
     },
     {
       "path": "downloads/report-source.zip",
-      "bytes": 262265,
-      "sha256": "e71ff3ffd19fda98191f629e4119c942106f7d86b6a75347c53a3e7e8faf02c5"
+      "bytes": 262277,
+      "sha256": "318d3740099199ae3dca7ad387a37a523f35229908379e46a267da2f84a936d8"
     },
     {
       "path": "downloads/report_validation/browser_checks.json",
@@ -15547,6 +15547,11 @@
       "path": "downloads/report_validation/spatial_upgrade_primary_integrity.json",
       "bytes": 1329,
       "sha256": "1cba7d5c0823b605b0dcdf548fcf71b200c02c9d4e6e306cd7a5083ac43f9252"
+    },
+    {
+      "path": "downloads/report_validation/spatial_upgrade_publication.json",
+      "bytes": 6863,
+      "sha256": "84b9eecf78dbb1662f94d3c4f17b392661064af8ad78580e172b321e7d90f7f4"
     },
     {
       "path": "downloads/report_validation/spatial_upgrade_review.json",
@@ -16394,7 +16399,7 @@
       "sha256": "1c4c948cbe8574c3abf9069e77991f8cfa7ae5f263c909f3bab896e997af2e2e"
     }
   ],
-  "total_bytes": 477127499,
+  "total_bytes": 477134411,
   "excludes": [
     "original FASTQ/H5AD",
     "reference genomes",

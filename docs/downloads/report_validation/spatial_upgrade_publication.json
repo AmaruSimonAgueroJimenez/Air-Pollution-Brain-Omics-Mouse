@@ -1,0 +1,211 @@
+{
+  "date": "2026-10-20",
+  "content_commit": "62eee75c2f34b86169fd582036b5af54bbd37104",
+  "deployment_run": "https://github.com/AmaruSimonAgueroJimenez/Air-Pollution-Brain-Omics-Mouse/actions/runs/39459141097",
+  "deployment_conclusion": "success",
+  "public_base_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/",
+  "critical_assets_checked": 26,
+  "passed": true,
+  "checks": [
+    {
+      "path": "spatial_explorer.html",
+      "status": 200,
+      "bytes": 66062,
+      "sha256": "3249b5c05e077f4e60444ced9f6c3a271a37f3dc3018e8e736f7f8df1bf88ea7",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "es/spatial_explorer.html",
+      "status": 200,
+      "bytes": 67406,
+      "sha256": "9272cd05d88b154b524f355107901b4fac551e1fbb9192493dc2b15e87df4e37",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "spatial_bayes.html",
+      "status": 200,
+      "bytes": 119194,
+      "sha256": "0720c7482b16ab7f59104cf7e572478a9c2f26750676eb57861e173107eebca6",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "es/spatial_bayes.html",
+      "status": 200,
+      "bytes": 122904,
+      "sha256": "526e83a46bb7c65491cafc12804bbd4de3b4300f6bdbafdeff4c8a9450a0ce71",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "viewer.html",
+      "status": 200,
+      "bytes": 53344,
+      "sha256": "1c4c948cbe8574c3abf9069e77991f8cfa7ae5f263c909f3bab896e997af2e2e",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "es/viewer.html",
+      "status": 200,
+      "bytes": 54866,
+      "sha256": "474597ac1741fa476de582971ab59eb3c12acafe4847d9d42b45e93da1af977d",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "cortex_viewer.html",
+      "status": 200,
+      "bytes": 56941,
+      "sha256": "c6bb7f8cd561fcdcd7334279f7a355c3b4805761ca11061c5908e0ec34b257d6",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "es/cortex_viewer.html",
+      "status": 200,
+      "bytes": 57742,
+      "sha256": "d6e70af7ed235637e5c4a8ed8e442853594a2b53a98b66b8e41213d78bb3be78",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "assets/spatial-explorer/index.html",
+      "status": 200,
+      "bytes": 10111,
+      "sha256": "25923866b290726a063b036e303668021de41bb922e7b720b6a9d8865a40ceac",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "assets/spatial-explorer/index-es.html",
+      "status": 200,
+      "bytes": 10500,
+      "sha256": "5995c214f973c16ff3c7782ed407855c8806e83444744ff7d0d9cc4934030a19",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "assets/spatial-explorer/explorer.js",
+      "status": 200,
+      "bytes": 45514,
+      "sha256": "80f6546ab755d09f513b04761621bd02d1ff693fdea675eccb95d2c7335c2575",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "assets/spatial-explorer/explorer.css",
+      "status": 200,
+      "bytes": 5729,
+      "sha256": "da547d4810289e8536b2fb3bc559347f30873a08a4b3c34a911473cc6802d01a",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "assets/spatial-sections/data-ACA.js",
+      "status": 200,
+      "bytes": 2424623,
+      "sha256": "0696bf727d10bc2509985665c47cb7b4bf66b76d6a5e8ca257b58e5dffdff15b",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "assets/spatial-sections/data-HY.js",
+      "status": 200,
+      "bytes": 6297442,
+      "sha256": "26b23439a46c128d0d28f4d1413906be1bd59347a6e2c58d5e47042e3ae098a0",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "assets/spatial-bayes/ACA/metadata.json",
+      "status": 200,
+      "bytes": 65745,
+      "sha256": "052cfdfb8be726e9b63fffa9203b0c875bf4eddf94ebe02f4857102d7a28fdcc",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "assets/spatial-bayes/HY/metadata.json",
+      "status": 200,
+      "bytes": 72790,
+      "sha256": "4cd89ba0a5e99260aac726cc4c00ad3fe682b16dc50bbedb76643399d8a59978",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "assets/spatial-detection-bayes/data-ACA.js",
+      "status": 200,
+      "bytes": 470017,
+      "sha256": "2ed4556d0a8ab5b77cd75d0a3e3a2c51d6dab90df424d254e6ebbe26b2f1396f",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "assets/spatial-detection-bayes/data-HY.js",
+      "status": 200,
+      "bytes": 857819,
+      "sha256": "f75dc5f043f76d2a38143dc61078e9b139c7fc089a511bde4bcaf9c076feef84",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "downloads/spatial_bayes/validation.json",
+      "status": 200,
+      "bytes": 1485,
+      "sha256": "8b72d9e1ce15eab07441955e832b9f92b8d9612c1149ac8fad67c1b55434a4a0",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "downloads/spatial_detection_bayes/validation.json",
+      "status": 200,
+      "bytes": 1028,
+      "sha256": "354e6b534def08297bb09decedaf0c1ef25dfa736d67f11aa390d3a0f74e2bf7",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "downloads/code/analyze_bayesian_detection.py",
+      "status": 200,
+      "bytes": 50696,
+      "sha256": "077cdf70180c9b47fc73894cb05df4ef5ccd885fe65ea83e4fb8603645906821",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "downloads/code/analyze_spatial_bayes.py",
+      "status": 200,
+      "bytes": 47493,
+      "sha256": "a18b9829215d29eb3093e61341b9112d054b13d5334b06a79f8eae94042350e6",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "downloads/code/build_spatial_sections.py",
+      "status": 200,
+      "bytes": 37569,
+      "sha256": "1ac97ca054ad728a03f0f55e01c5fc3f4243ac8c9d95bf59de0fb57019848c15",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "pages-manifest.json",
+      "status": 200,
+      "bytes": 595269,
+      "sha256": "d306e331b31f2d24cccdfbc7f8b1278f8407353ad2a0b98131e14f97d19ebc73",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "assets/spatial-bayes/ACA/ENSMUSG00000003545.json",
+      "status": 200,
+      "bytes": 599436,
+      "sha256": "a189301f8cf1a488634652f7669e37b40b1eb6b75ae15005ab52ef8ee6e7f7a4",
+      "matches_committed_docs": true
+    },
+    {
+      "path": "assets/spatial-bayes/HY/ENSMUSG00000028341.json",
+      "status": 200,
+      "bytes": 1560365,
+      "sha256": "dad3d8644d96859185dcb7d6e3d27076f6f7c9eeabcacbc4c4b796763da4c58a",
+      "matches_committed_docs": true
+    }
+  ],
+  "public_browser_review": {
+    "Spanish_report": "passed",
+    "ACA_layers_and_detection_maps": "passed",
+    "ACA_Fosb_Beta_Brier": [
+      0.0874,
+      0.088
+    ],
+    "HY_Tll1_Beta_Brier": [
+      0.0833,
+      0.0177
+    ],
+    "HY_prior_only_groups_and_unique_cells": [
+      79,
+      10416
+    ],
+    "screenshot": "results/report_validation/quality_audit/spatial_upgrade_published_layers_es.png",
+    "note": "Screenshot records original content commit before the final count-mode caption clarification."
+  }
+}
