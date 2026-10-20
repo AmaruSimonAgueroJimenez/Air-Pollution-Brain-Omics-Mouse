@@ -201,3 +201,21 @@ Para regenerar figuras desde tablas numéricas guardadas, se omite `--refit` en 
 La página pública se genera directamente en **docs/** desde fuentes QMD en Python, con índice bilingüe y `.nojekyll`. GitHub Pages utiliza **main → /docs**. La compilación intermedia está en `docs/_site/`; `scripts/render_docs.py` compila ambos idiomas y copia su salida estática. Para actualizar solo recursos estáticos, `--refresh-static` actualiza una compilación existente sin ejecutar de nuevo los bloques numéricos QMD. El [manifiesto de recursos](../pages-manifest.json) registra tamaños y hashes SHA256.
 
 Enlaces públicos: [English](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/) · [Español](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/) · [Repositorio](https://github.com/AmaruSimonAgueroJimenez/Air-Pollution-Brain-Omics-Mouse).
+
+## Reconstruir los perfiles génicos y el atlas cortical
+
+Con los datos originales y las tablas de efectos principales disponibles:
+
+```bash
+.venv-analysis/bin/python scripts/analyze_gene_priorities.py
+.venv-analysis/bin/python scripts/build_cortex_spatial_viewer.py
+.venv-analysis/bin/python scripts/build_gene_annotation_assets.py
+.venv-analysis/bin/python scripts/render_docs.py
+.venv-analysis/bin/python scripts/validate_report.py --published
+```
+
+Los productos y funciones utilizan registros congelados de obtención de fuentes en metadata/gene_priorities. El sitio sirve esas anotaciones localmente, sin consultar servicios génicos durante su uso. La extracción cortical guarda una matriz de caché local y publica un vector comprimido por gen medido, identificadores celulares, reglas y comprobaciones numéricas.
+
+[Tabla de anotaciones](../downloads/gene_priorities/annotations.tsv) · [Prioridades y estadísticas originales](../downloads/gene_priorities/prioritized_genes.tsv) · [Validación cortical](../downloads/spatial_cortex/validation_checks.json) · [Procedencia cortical](../downloads/provenance/spatial_cortex/source_manifest.json).
+
+El repositorio también contiene pruebas Node de sincronización de cámaras y comportamiento científico de las fichas: tests/test_viewer_camera_sync.cjs y tests/test_viewer_gene_guide.cjs. Verifican lógica de interfaz y se distinguen de la validación de fuentes y cálculos.

@@ -1,0 +1,123 @@
+---
+title: "Priority genes and their encoded products"
+subtitle: "Hypothalamus and anterior cingulate cortex: evidence, molecular functions, and spatial coverage"
+---
+
+```{python}
+import json
+import html
+import pandas as pd
+from IPython.display import Markdown, display
+from _report_utils import ROOT, read_table, figure, show_table
+p = read_table("gene_priorities", "prioritized_genes.tsv")
+a = read_table("gene_priorities", "annotations.tsv").fillna("")
+def gene_table(group, language):
+    part = p.loc[p.selection_group.eq(group)].sort_values("selection_rank").copy()
+    spanish = language == "es"
+    headers = ["Gen y fuente", "Qué codifica", "Función molecular", "Efecto regional PM", "q de BH", "Panel espacial"] if spanish else ["Gene and source", "Encoded product", "Molecular function", "Regional PM effect", "BH q", "Spatial panel"]
+    rows = []
+    for r in part.to_dict("records"):
+        e = lambda x: html.escape(str(x), quote=True)
+        official = str(r.get("official_symbol", r["gene"]))
+        gene = '<a href="' + e(r["source_url"]) + '" target="_blank" rel="noopener">' + e(r["gene"]) + '</a>'
+        if official != str(r["gene"]):
+            gene += '<br><small>' + ("Símbolo actual: " if spanish else "Current symbol: ") + e(official) + '</small>'
+        product = e(r["protein_name_" + language])
+        if pd.notna(r.get("uniprot_url")) and str(r["uniprot_url"]).startswith("https://"):
+            product += '<br><a href="' + e(r["uniprot_url"]) + '" target="_blank" rel="noopener">UniProt</a>'
+        role = e(r["function_" + language])
+        effect = f'{r["log2FoldChange"]:+.2f}<br><small>' + ('IC 95%' if spanish else '95% CI') + f' [{r["CI95_lower"]:+.2f}, {r["CI95_upper"]:+.2f}]</small>'
+        q = float(r["padj"])
+        qtext = f"{q:.2e}" if q < .01 else f"{q:.3f}"
+        measured = bool(r["atlas_measured"])
+        spatial = ("Medido" if measured else "No medido") if spanish else ("Measured" if measured else "Not measured")
+        if not bool(r["primary_significant"]):
+            spatial += '<br><small>' + ("Efecto exploratorio" if spanish else "Exploratory effect") + '</small>'
+        rows.append("<tr>" + "".join("<td>" + str(x) + "</td>" for x in [gene, product, role, effect, qtext, spatial]) + "</tr>")
+    display(Markdown('<div class="table-scroll"><table class="table table-sm table-striped evidence-table gene-evidence-table"><thead><tr>' + "".join("<th>" + e(x) + "</th>" for x in headers) + "</tr></thead><tbody>" + "".join(rows) + "</tbody></table></div>"))
+```
+
+## Scientific priorities beyond one atlas gene
+
+The analysis contains many regional expression findings. A gene's availability in a targeted spatial panel is a separate property from its statistical evidence. We retain **all 11 primary hypothalamic discoveries**, the **20 strongest primary protein-coding cortex discoveries**, and explicitly defined measured-panel shortlists. No gene is removed from the report because it lacks spatial measurements.
+
+These are transparent, post-analysis priorities for interpretation and follow-up. Ranking by BH q does not establish biological importance, a therapeutic target, or a causal mechanism. The primary results and gene-level tests are unchanged. @Rajagopalan2020_32780721 @Zhang2025_40906862
+
+## How genes were selected and annotated
+
+The hypothalamic discovery list is the complete original Python BH < 0.05 set. Cortex priorities are the first 20 protein-coding genes ordered by primary BH q, then the documented tie-breaks. The spatial shortlists select the ten strongest eligible genes actually measured by MERFISH within each region. Hypothalamic measured genes after *Tll1* remain **exploratory**; they are not relabeled as discoveries.
+
+Official mouse gene annotations distinguish the original assay symbol, current official symbol, gene type and encoded product. Gene names link to the corresponding NCBI source; available protein records link to UniProt. A molecular function describes the annotated gene product. Differential RNA abundance does not itself measure protein abundance, enzyme activity, or a pathway's activation.
+
+Effects in the tables are **unshrunken regional MLE log₂FC with pointwise 95% Wald intervals**. BH q refers to the original primary test. The 3D central scenario uses the separately saved shrunken coefficient; the two estimates are not interchangeable.
+
+## Hypothalamus: all eleven primary findings
+
+```{python}
+gene_table("hypothalamus_primary_FDR", "en")
+```
+
+*Hipk3, Ksr2, Tll1, Pcnx, Fzd3, Gm13423, B230312C02Rik, Fstl4, Ptar1, Mmp16,* and *Lmbrd2* comprise the complete primary list. All nine protein-coding hypothalamic primary hits have lower regional RNA; the two higher hits are currently annotated as pseudogene/noncoding RNA. This does not measure their protein products. The source symbol **Pcnx** resolves to current **Pcnx1**; both are retained in the annotation record. **Gm13423 is annotated as a pseudogene**, and **B230312C02Rik as a noncoding RNA**. Neither is assigned an invented protein.
+
+These genes span distinct molecular functions, rather than one uniform pathway. All eleven retain their effect direction in seven leave-one-out fits, but none remains significant in every fit. The [hypothalamus results](results.qmd) retain the full sensitivity analysis. Functional annotation does not remove that uncertainty.
+
+### Measured hypothalamic genes available for spatial exploration
+
+```{python}
+gene_table("hypothalamus_measured_top10", "en")
+```
+
+Only *Tll1* is both a primary hypothalamic FDR discovery and a measured gene in this panel. Other shortlisted measured genes—such as *Fosl2, Nr4a3, Egr2,* and *Egr3*—can be examined with clearly labeled exploratory regional estimates. The ten unmeasured primary hits retain their bulk results and annotations; no spatial expression is imputed for them.
+
+For six exploratory measured genes—*Egr2, Egr3, Hgf, Bcl11b, Car12,* and *Crym*—the saved shrunken estimate is strongly contracted relative to the MLE. Their central spatial scenarios can therefore remain close to the reference. This is regularization under limited regional evidence; it does not establish an unchanged biological response. The figure reports MLE intervals and shrunken effects separately.
+
+## Cortex: the twenty strongest primary coding-gene findings
+
+The cortex data compare four PM2.5 animals with four PBS controls. The primary eight-animal model remains distinct from the reproduced original 20-animal model. The following priorities come from the primary model, rather than switching between models to select preferred genes. @Zhang2025_40906862
+
+```{python}
+gene_table("cortex_primary_top20", "en")
+```
+
+The shortlist includes protein-quality and endoplasmic-reticulum stress genes such as **Hspa5, Pdia4, and Xbp1**, together with transcriptional-response genes including **Fosb and Egr3**. Their annotated functions provide biological context for follow-up; the RNA comparison does not establish that these proteins mediate a pollution effect. The [cortex analysis](cortex.qmd) and [original-study reproduction](replication.qmd) retain the model differences and unresolved sample-quality questions.
+
+Several of the strongest bulk genes, including *Hspa5, Pdia4,* and *Xbp1*, are absent from the measured MERFISH panel. Their absence limits spatial visualization, rather than reducing their bulk statistical priority.
+
+
+Gene-level counts also do not isolate **ΔFosB**, **Homer1a**, or spliced **XBP1s**. These isoform-specific interpretations require transcript/splicing or protein measurements beyond the current gene-level result.
+
+### Measured cortical priorities and anterior cingulate anatomy
+
+```{python}
+gene_table("cortex_measured_top10", "en")
+```
+
+The atlas provides **14,582 registered anterior cingulate cells** from the same male reference donor, spanning dorsal and ventral ACA and their layers. **76 primary cortical FDR discoveries** are measured in the panel. The strongest is *Fosb*, followed by genes including *Egr3* and *S1pr1*. **C730002L08Rik is noncoding** and is shown without assigning a protein.
+
+This spatial extension uses ACA as an anatomical proxy for the reported anterior cingulate dissection; exact surgical boundaries were not deposited. The cortex regional effect is applied only within that anatomical reference; it is not transferred throughout the whole cerebral cortex or the entire brain.
+
+## Read the gene-centered evidence visually
+
+```{python}
+manifest = json.loads((ROOT / "results/gene_priorities/figure_manifest.json").read_text())
+for stem in ["gene_priority_evidence", "spatial_candidate_evidence"]:
+    figure("gene_priorities", stem, manifest[stem]["caption"])
+```
+
+## Explore several genes in the viewer
+
+[Open the hypothalamus and cortex 3D viewer](viewer.qmd){.btn .btn-primary}
+
+The viewer now offers relevant-gene shortcuts, an encoded-product/function card, and a comparative evidence table for up to three measured genes. That comparison reports measured detection and expression separately from bulk effect estimates. Each selected 3D view preserves the same measured cells and coordinates between reference and scenario.
+
+A significant result in cortex and a nonsignificant result in hypothalamus do not establish a statistically significant tissue difference. These are different experiments, animals and exposure protocols. A shared annotation likewise does not show that the same cell type responds in both regions.
+
+## Source tables and reproducibility
+
+[All prioritized rows](downloads/gene_priorities/prioritized_genes.tsv) ·
+[Gene products and functional annotations](downloads/gene_priorities/annotations.tsv) ·
+[Selection rules](downloads/gene_priorities/selection_rules.json) · [Annotation methods](downloads/provenance/gene_priorities/methods.json) · [Summary](downloads/gene_priorities/summary.json) ·
+[Source retrieval and figure script](downloads/code/analyze_gene_priorities.py)
+
+The original data symbols, current annotation match, source URLs, statistical fields, panel coverage and selection rules remain inspectable. Uncharacterized functions are left unresolved. No new single-cell exposure experiment or protein assay is inferred.
+

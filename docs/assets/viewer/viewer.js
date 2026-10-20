@@ -14,6 +14,15 @@ if(spanish) Plotly.register({moduleType:"locale",name:"es",dictionary:{
   "Compare data on hover":"Comparar datos al pasar el cursor","Produced with Plotly.js":"Creado con Plotly.js"
 },format:{decimal:".",thousands:",",grouping:[3]}});
 const D = window.ATLAS_DATA;
+const REGION = D.region_key || D.region || "HY";
+const isCortex = REGION === "ACA";
+const regionName = tr(D.region_label_en || "Hypothalamus", D.region_label_es || "Hipotálamo");
+const controlLabel = D.control_label || "FA", exposureLabel = D.exposure_label || "PM";
+const nControl = D.n_control ?? D.control_n ?? 4, nPM = D.n_PM ?? D.PM_n ?? 3;
+const nBulk = D.bulk_sample_n ?? (nControl + nPM);
+const annotations = window.GENE_ANNOTATIONS || {};
+const priorityGroups = window.GENE_PRIORITIES || {};
+let comparisonGenes = [], comparisonVersion = 0, lastReportedHeight = null;
 const geneBySymbol = new Map(D.genes.map(g => [g.symbol.toLowerCase(), g]));
 const geneById = new Map(D.genes.map(g => [g.id, g]));
 const pending = new Map(), cache = new Map(), inFlight = new Map();
@@ -21,9 +30,9 @@ let currentGene = null, currentCounts = null, renderVersion = 0, sceneVersion = 
 let cameraSyncRunning = false, queuedCamera = null, activeCameraTarget = null;
 const cameraEchoes = new Map();
 let lastCamera = {eye:{x:1.2,y:1.2,z:.9},up:{x:0,y:0,z:1}};
-const config = {responsive:true,displaylogo:false,toImageButtonOptions:{format:"png",filename:"hypothalamus_reference_scenario",scale:2},modeBarButtonsToRemove:["lasso2d","select2d"]};
+const config = {responsive:true,displaylogo:false,toImageButtonOptions:{format:"png",filename:(isCortex?"cingulate_cortex":"hypothalamus")+"_reference_scenario",scale:2},modeBarButtonsToRemove:["lasso2d","select2d"]};
 if(spanish) config.locale="es";
-const colors = {FA:"#0d7475",PM:"#c05b23"};
+const colors = {[controlLabel]:"#0d7475",[exposureLabel]:"#c05b23"};
 const fnum = (v,d=3) => Number.isFinite(v) ? Number(v).toLocaleString(numberLocale,{maximumFractionDigits:d}) : tr("not estimable","no estimable");
 const fp = v => !Number.isFinite(v) ? tr("unavailable","no disponible") : v < .01 ? v.toExponential(2) : v.toFixed(3);
 
@@ -65,7 +74,7 @@ function meshes(){
   if(!$('anatomy').checked)return [];
   return [
     {...D.meshes.brain,type:"mesh3d",name:tr("Whole-brain anatomy","Anatomía del cerebro completo"),color:"#b6c5ca",opacity:.075,flatshading:false,hoverinfo:"skip",showscale:false,lighting:{ambient:.8,diffuse:.6}},
-    {...D.meshes.hypothalamus,type:"mesh3d",name:tr("Hypothalamus anatomy","Anatomía del hipotálamo"),color:"#6a969a",opacity:.095,flatshading:false,hoverinfo:"skip",showscale:false,lighting:{ambient:.8,diffuse:.6}}
+    {...(D.meshes.region || D.meshes.hypothalamus),type:"mesh3d",name:regionName+tr(" anatomy"," · anatomía"),color:"#6a969a",opacity:.095,flatshading:false,hoverinfo:"skip",showscale:false,lighting:{ambient:.8,diffuse:.6}}
   ];
 }
 
@@ -100,14 +109,14 @@ function exponent(gene){
 function pointTrace(indices,values,scaleMax,simulated,available){
   const choose=a=>indices.map(i=>a[i]);
   const custom=indices.map(i=>[D.cell_ids[i],D.type_labels[D.type_codes[i]],D.region_labels[D.region_codes[i]],currentCounts[i],values[i]]);
-  return {type:"scatter3d",mode:"markers",name:simulated?tr("Simulated HY cells","Células HY simuladas"):tr("Measured HY cells","Células HY medidas"),x:choose(D.x),y:choose(D.y),z:choose(D.z),customdata:custom,
+  return {type:"scatter3d",mode:"markers",name:simulated?tr("Simulated ","Células simuladas · ")+REGION:tr("Measured ","Células medidas · ")+REGION,x:choose(D.x),y:choose(D.y),z:choose(D.z),customdata:custom,
     marker:{size:2.3,opacity:.86,color:simulated&&!available?"#b8c3c8":choose(values).map(v=>Math.log2(1+v)),colorscale:"Viridis",cmin:0,cmax:scaleMax,showscale:!simulated||available,colorbar:{title:{text:tr("log₂(1 + count)","log₂(1 + conteo)"),font:{size:10}},thickness:10,len:.6,tickfont:{size:9},x:.96}},
     hovertemplate:"%{customdata[1]}<br>"+tr("Region: ","Región: ")+"%{customdata[2]}<br>"+(simulated?(available?tr("Simulated value: %{customdata[4]:.3f}","Valor simulado: %{customdata[4]:.3f}"):tr("Exposure fit unavailable","Estimación de exposición no disponible")):tr("Measured molecules: %{customdata[3]:.0f}","Moléculas medidas: %{customdata[3]:.0f}"))+"<br>"+tr("Cell ","Célula ")+"%{customdata[0]}<extra></extra>"};
 }
 
 function updateMetrics(gene,indices,ratio){
   $('gene-name').textContent=gene.symbol;
-  $('evidence').textContent=gene.significant?tr("Primary bulk FDR < 0.05 · small-n sensitive","FDR primaria regional < 0.05 · sensible a animales individuales"):gene.estimable?tr("Exploratory · not FDR-significant","Exploratorio · no significativo por FDR"):tr("Reference only · no eligible matched effect","Solo referencia · sin efecto coincidente válido");
+  $('evidence').textContent=gene.significant?(isCortex?tr("Primary cortical bulk FDR < 0.05","FDR primaria de corteza < 0.05"):tr("Primary bulk FDR < 0.05 · small-n sensitive","FDR primaria regional < 0.05 · sensible a animales individuales")):gene.estimable?tr("Exploratory · not FDR-significant","Exploratorio · no significativo por FDR"):tr("Reference only · no eligible matched effect","Solo referencia · sin efecto coincidente válido");
   $('effect').textContent=gene.estimable?fnum(gene.effect.log2FoldChange_shrunk)+" log₂FC":tr("Not estimable","No estimable");
   $('fdr').textContent=tr("Bulk Wald FDR: ","FDR de Wald regional: ")+fp(gene.effect.padj);
   $('scenario-label').textContent=tr('SCENARIO MULTIPLIER · ','MULTIPLICADOR DEL ESCENARIO · ')+(gene.estimable?{central:tr('CENTRAL','CENTRAL'),lower:tr('LOWER BOUND','LÍMITE INFERIOR'),upper:tr('UPPER BOUND','LÍMITE SUPERIOR')}[$('scenario').value]:tr('UNAVAILABLE','NO DISPONIBLE'));
@@ -116,24 +125,30 @@ function updateMetrics(gene,indices,ratio){
   $('cells').textContent=indices.length.toLocaleString(numberLocale);
   $('selection-note').hidden=indices.length>0;
   const detected=indices.reduce((n,i)=>n+(currentCounts[i]>0?1:0),0);
-  $('coverage').textContent=tr("of ","de ")+D.cell_count.toLocaleString(numberLocale)+tr(" HY cells · "," células HY · ")+detected.toLocaleString(numberLocale)+tr(" shown with measured count > 0"," mostradas con conteo medido > 0");
+  $('coverage').textContent=tr("of ","de ")+D.cell_count.toLocaleString(numberLocale)+tr(" "," células ")+REGION+tr(" cells · "," · ")+detected.toLocaleString(numberLocale)+tr(" shown with measured count > 0"," mostradas con conteo medido > 0");
   $('scenario').disabled=!gene.estimable;
   $('simulation-title').innerHTML=gene.estimable?tr('PM2.5 scenario <span class="sim-label">SIMULATED</span>','Escenario PM2.5 <span class="sim-label">SIMULADO</span>'):tr('Exposure fit unavailable <span>Reference cells in gray</span>','Estimación de exposición no disponible <span>Células de referencia en gris</span>');
+  updateGeneAnnotation(gene);
+  refreshGeneButtons();
   const s=gene.leave_one_out;
-  $('stability').textContent=s?tr("Sensitivity analysis: ","Análisis de sensibilidad: ")+gene.symbol+tr(" retains its effect direction in "," conserva la dirección del efecto en ")+s.runs_same_lfc_direction+tr("/7 leave-one-out fits and FDR < 0.05 in ","/7 ajustes omitiendo un animal cada vez y FDR < 0.05 en ")+s.runs_fdr_below_0_05+tr("/7. No animal was selectively removed from the primary analysis.","/7. No se retiró selectivamente ningún animal del análisis primario."):gene.estimable?tr("Exploratory genes are shown without evidence of a significant bulk exposure effect. The primary hypothesis test uses seven animals, not the atlas cells.","Los genes exploratorios se muestran sin evidencia de un efecto regional de exposición significativo. La prueba primaria utiliza siete animales, no las células del atlas."):tr("No reliable bulk exposure test is available for this gene. The measured reference is retained; no exposure effect is assigned.","No se dispone de una prueba regional de exposición fiable para este gen. Se conserva la referencia medida y no se asigna un efecto de exposición.");
+  $('stability').textContent=s?tr("Sensitivity analysis: ","Análisis de sensibilidad: ")+gene.symbol+tr(" retains its effect direction in "," conserva la dirección del efecto en ")+s.runs_same_lfc_direction+"/"+nBulk+tr(" leave-one-out fits and FDR < 0.05 in "," ajustes omitiendo un animal cada vez y FDR < 0.05 en ")+s.runs_fdr_below_0_05+"/"+nBulk+tr(". No animal was selectively removed from the primary analysis.",". No se retiró selectivamente ningún animal del análisis primario."):gene.estimable?(gene.significant?tr("The regional exposure association uses ","La asociación regional de exposición utiliza ")+nBulk+tr(" independent animals, not atlas cells. This uniform scenario does not identify a responding cell type."," animales independientes, no las células del atlas. Este escenario uniforme no identifica qué tipo celular responde."):tr("Exploratory gene: no FDR-significant bulk exposure association. The test uses ","Gen exploratorio: sin asociación regional de exposición significativa por FDR. La prueba utiliza ")+nBulk+tr(" animals, not atlas cells."," animales, no las células del atlas.")):tr("No reliable bulk exposure test is available for this gene. The measured reference is retained; no exposure effect is assigned.","No se dispone de una prueba regional de exposición fiable para este gen. Se conserva la referencia medida y no se asigna un efecto de exposición.");
 }
 
 function bulkPanel(gene){
-  const traces=["FA","PM"].map(condition=>{
-    const rows=gene.bulk_values.map((v,i)=>({...v,index:i})).filter(v=>v.condition===condition);
-    return {type:"scatter",mode:"markers",name:condition==="FA"?tr("Filtered air (n=4)","Aire filtrado (n=4)"):"PM2.5 (n=3)",x:rows.map(v=>v.label),y:rows.map(v=>v.count),marker:{color:colors[condition],size:10,symbol:condition==="FA"?"circle":"diamond"},text:rows.map(v=>v.sample),hovertemplate:tr("%{x}<br>%{text}<br>Normalized count: %{y:.2f}<extra></extra>","%{x}<br>%{text}<br>Conteo normalizado: %{y:.2f}<extra></extra>")};
+  const values = gene.bulk_values || [];
+  const label = row => row.label || row.sample;
+  const traces=[controlLabel,exposureLabel].map(condition=>{
+    const rows=values.filter(v=>v.condition===condition), control=condition===controlLabel;
+    const title=control?(controlLabel==="FA"?tr("Filtered air","Aire filtrado"):controlLabel):"PM2.5";
+    return {type:"scatter",mode:"markers",name:title+" (n="+rows.length+")",x:rows.map(label),y:rows.map(v=>v.count),marker:{color:colors[condition],size:10,symbol:control?"circle":"diamond"},text:rows.map(v=>v.sample),hovertemplate:tr("%{x}<br>%{text}<br>Normalized count: %{y:.2f}<extra></extra>","%{x}<br>%{text}<br>Conteo normalizado: %{y:.2f}<extra></extra>")};
   });
-  Plotly.react('bulk',traces,{margin:{t:15,l:65,b:45,r:15},height:280,font:{family:"Arial,sans-serif",size:11,color:"#173239"},paper_bgcolor:"white",plot_bgcolor:"white",xaxis:{title:tr("Independent bulk animal","Animal independiente"),categoryorder:"array",categoryarray:["FA1","FA2","FA3","FA4","PM1","PM2","PM3"]},yaxis:{title:tr("DESeq2-normalized counts","Conteos normalizados por DESeq2"),rangemode:"tozero",gridcolor:"#e8eff0"},legend:{orientation:"h",y:1.18}},config);
+  Plotly.react('bulk',traces,{margin:{t:15,l:65,b:45,r:15},height:280,font:{family:"Arial,sans-serif",size:11,color:"#173239"},paper_bgcolor:"white",plot_bgcolor:"white",xaxis:{title:tr("Independent bulk animal","Animal independiente"),categoryorder:"array",categoryarray:values.map(label)},yaxis:{title:tr("DESeq2-normalized counts","Conteos normalizados por DESeq2"),rangemode:"tozero",gridcolor:"#e8eff0"},legend:{orientation:"h",y:1.18}},config);
   const table=document.createElement('table');
   table.innerHTML=tr('<thead><tr><th>Animal</th><th>Group</th><th>Normalized count</th></tr></thead>','<thead><tr><th>Animal</th><th>Grupo</th><th>Conteo normalizado</th></tr></thead>');
   const body=document.createElement('tbody');
-  for(const v of gene.bulk_values){const tr=document.createElement('tr');for(const text of [v.label,v.condition,fnum(v.count,2)]){const td=document.createElement('td');td.textContent=text;tr.appendChild(td);}body.appendChild(tr);}
+  for(const v of values){const row=document.createElement('tr');for(const text of [label(v),v.condition,fnum(v.count,2)]){const td=document.createElement('td');td.textContent=text;row.appendChild(td);}body.appendChild(row);}
   table.appendChild(body);$('bulk-table').replaceChildren(table);
+  if(!values.length)$('bulk-table').textContent=tr("No matched bulk values are available for this measured gene.","No hay valores regionales coincidentes disponibles para este gen medido.");
 }
 
 async function render(){
@@ -152,9 +167,9 @@ async function render(){
   const common=meshes();
   await Promise.all([Plotly.react('reference',[...common,pointTrace(indices,currentCounts,scaleMax,false,true)],layout(),config),Plotly.react('simulation',[...common,pointTrace(indices,predicted,scaleMax,true,gene.estimable)],layout(),config)]);
   if(gene!==currentGene||revision!==sceneVersion)return;
-  $('scale-note').textContent=tr("Common color scale: log₂(1 + imaging count), 0–","Escala de color común: log₂(1 + conteo de imagen), 0–")+fnum(scaleMax)+". "+($('clip').checked?clipped.toLocaleString(numberLocale)+tr(" values across the full HY reference/scenario exceed the common positive-value 99th-percentile cap; values are retained in hover and exports."," valores en la referencia y el escenario HY completos superan el límite común del percentil 99 de valores positivos; los valores se conservan al pasar el cursor y en las exportaciones."):tr("Full reference/scenario range; no color capping.","Rango completo de la referencia y el escenario; sin límite de color."))+tr(" Geometry is unchanged."," La geometría no cambia.");
+  $('scale-note').textContent=tr("Common color scale: log₂(1 + imaging count), 0–","Escala de color común: log₂(1 + conteo de imagen), 0–")+fnum(scaleMax)+". "+($('clip').checked?clipped.toLocaleString(numberLocale)+tr(" values across the full "," valores en la referencia y escenario completos de ")+REGION+tr(" reference/scenario exceed the common positive-value 99th-percentile cap; values are retained in hover and exports."," superan el límite común del percentil 99 de valores positivos; los valores se conservan al pasar el cursor y en las exportaciones."):tr("Full reference/scenario range; no color capping.","Rango completo de la referencia y el escenario; sin límite de color."))+tr(" Geometry is unchanged."," La geometría no cambia.");
   if(!gene.estimable)$('scale-note').textContent=tr("Reference color scale: log₂(1 + imaging count), 0–","Escala de color de referencia: log₂(1 + conteo de imagen), 0–")+fnum(scaleMax)+tr(". The right panel shows reference positions in gray; no exposure simulation is available.",". El panel derecho muestra las posiciones de referencia en gris; no se dispone de una simulación de exposición.");
-  if(window.parent!==window)window.parent.postMessage({type:"omics-atlas-height",height:document.documentElement.scrollHeight},"*");
+  notifyParentHeight();
 }
 
 async function applyGene(){
@@ -168,9 +183,150 @@ async function applyGene(){
     currentGene=gene;currentCounts=counts;$('gene').value=gene.symbol;
     await render();
     if(version!==renderVersion)return;
-    bulkPanel(gene);$('loading').textContent=gene.estimable?tr("Ready · measured panel / explicit scenario","Listo · panel medido / escenario explícito"):tr("Ready · measured reference only","Listo · solo referencia medida");
+    bulkPanel(gene);
+    updateComparisonButton();
+    notifyParentHeight();$('loading').textContent=gene.estimable?tr("Ready · measured panel / explicit scenario","Listo · panel medido / escenario explícito"):tr("Ready · measured reference only","Listo · solo referencia medida");
   }catch(error){$('loading').textContent=error.message;$('loading').classList.add('error');console.error(error);}
   finally{if(version===renderVersion)$('apply').disabled=false;}
+}
+
+function notifyParentHeight(){
+  if(window.parent===window)return;
+  const main=document.querySelector('main');
+  if(!main)return;
+  const height=Math.ceil(main.getBoundingClientRect().height);
+  if(height>0&&height!==lastReportedHeight){
+    lastReportedHeight=height;
+    window.parent.postMessage({type:'omics-atlas-height',height},'*');
+  }
+}
+
+function annotationFor(symbol){
+  return annotations[symbol] || annotations[geneBySymbol.get(symbol.toLowerCase())?.symbol] || {};
+}
+
+function proteinDescription(gene){
+  const a=annotationFor(gene.symbol), type=a.biotype || gene.biotype || gene.gene_biotype || "";
+  if(/(?:non.?coding|lncRNA|ncRNA|pseudogene)/i.test(type) && !/protein.coding/i.test(type))
+    return tr("Non-coding annotation; no protein product assigned","Anotación no codificante; sin proteína asignada");
+  return (spanish?a.protein_name_es:a.protein_name_en) || a.protein_name_en || gene.name || tr("Product annotation unavailable","Anotación del producto no disponible");
+}
+
+function priorityEntries(){
+  const supplied=priorityGroups[REGION];
+  if(Array.isArray(supplied)&&supplied.length)return supplied.map(entry=>typeof entry==='string'?{symbol:entry}:entry);
+  return [...D.genes].filter(g=>g.estimable).sort((a,b)=>a.effect.padj-b.effect.padj).slice(0,10).map(g=>({symbol:g.symbol,measured:true,padj:g.effect.padj,significant:g.significant}));
+}
+
+function measuredPriorities(){
+  const selected=[],seen=new Set();
+  for(const p of priorityEntries()){
+    const g=geneBySymbol.get(String(p.symbol).toLowerCase());
+    if(g&&!seen.has(g.id)){selected.push(g);seen.add(g.id);}
+  }
+  // Always offer several real panel genes, even when only one regional hit was measured.
+  for(const g of [...D.genes].filter(g=>g.estimable).sort((a,b)=>a.effect.padj-b.effect.padj)){
+    if(selected.length>=10)break;
+    if(!seen.has(g.id)){selected.push(g);seen.add(g.id);}
+  }
+  return selected.slice(0,10);
+}
+
+function evidenceLabel(gene){
+  return gene?.significant?tr("Primary FDR hit","Hallazgo primario por FDR"):gene?.estimable?tr("Exploratory · FDR ≥ 0.05","Exploratorio · FDR ≥ 0.05"):tr("Reference only","Solo referencia");
+}
+
+function updateGeneAnnotation(gene){
+  const a=annotationFor(gene.symbol);
+  $('protein-name').textContent=proteinDescription(gene);
+  $('gene-biotype').textContent=(a.biotype || gene.gene_biotype || tr("Gene type not curated here","Tipo génico no curado aquí"));
+  $('gene-function').textContent=(spanish?a.function_es:a.function_en) || a.function_en || tr("A curated molecular-function summary is not available for this gene in the current guide. Its original atlas description is shown above.","No hay un resumen curado de función molecular para este gen en la guía actual. Arriba se conserva la descripción original del atlas.");
+  const source=$('annotation-source');
+  const url=a.source_url || a.ncbi_url || (Array.isArray(a.sources)?a.sources[0]?.url:null);
+  source.hidden=!url || !/^https:\/\//i.test(url);
+  if(!source.hidden)source.href=url;
+}
+
+function refreshGeneButtons(){
+  for(const button of $('featured-genes').querySelectorAll('button'))button.setAttribute('aria-pressed',String(button.dataset.gene===currentGene?.symbol));
+}
+
+function updateComparisonButton(){
+  $('compare-add').disabled=!currentGene || comparisonGenes.includes(currentGene.symbol) || comparisonGenes.length>=3;
+}
+
+function initializeStudyUI(){
+  $('region-title').textContent=tr("MOUSE BRAIN ATLAS · ","ATLAS CEREBRAL DE RATÓN · ")+regionName.toLocaleUpperCase(spanish?'es':'en');
+  $('substructure-label').textContent=tr("Regional substructure","Subestructura regional");
+  $('focus-region').textContent=tr("Focus ","Centrar en ")+regionName.toLocaleLowerCase(spanish?'es':'en');
+  $('bulk-effect-label').textContent=tr("BULK PM / ","PM / ")+controlLabel+tr(" · SHRUNKEN"," REGIONAL · REGULARIZADO");
+  const controlDescription=controlLabel==='FA'?tr("filtered-air controls","controles de aire filtrado"):tr(controlLabel+" controls","controles "+controlLabel);
+  $('bulk-description').textContent=nBulk+tr(" independent "," bibliotecas independientes de ")+regionName+tr(" bulk libraries support this contrast: "," sustentan este contraste: ")+nControl+" "+controlDescription+tr(" and "," y ")+nPM+tr(" PM2.5 animals. Normalized RNA-seq counts and imaging counts have different units."," animales PM2.5. Los conteos normalizados de RNA-seq y de imagen tienen unidades diferentes.");
+  $('bulk').setAttribute('aria-label',tr("Normalized expression in ","Expresión normalizada en ")+nBulk+tr(" independent animals"," animales independientes"));
+  $('regional-model').textContent=tr("Only within ","Solo dentro de ")+REGION+tr(": E_scenario = E_reference × 2^(bulk log₂FC). The central scenario uses the shrunken coefficient.",": E_escenario = E_referencia × 2^(log₂FC regional). El escenario central utiliza el coeficiente regularizado.");
+  $('outside-model').textContent=tr("Outside ","Fuera de ")+regionName+tr(", anatomical surfaces are context only. No exposure effect is assigned there.",", las superficies anatómicas son solo contexto. No se asigna allí un efecto de exposición.");
+  $('study-limit').textContent=isCortex?tr("The unexposed atlas donor is not a matched control for the eight humanized α-synuclein cortex animals. Regional tissue composition and source sample-quality questions remain unresolved; see the reproduction audit.","El donante del atlas sin exposición no es un control emparejado de los ocho animales corticales humanizados para α-sinucleína. Persisten incertidumbres de composición tisular y calidad muestral; consulte la auditoría de reproducción."):tr("The atlas donor is not a matched control for the seven bulk animals. The hypothalamic primary result is sensitive to individual animals; exploratory genes remain labeled.","El donante del atlas no es un control emparejado de los siete animales regionales. El resultado primario de hipotálamo es sensible a animales individuales; se identifican los genes exploratorios.");
+  for(const a of document.querySelectorAll('[data-atlas-region]'))if(a.dataset.atlasRegion===REGION)a.setAttribute('aria-current','page');
+}
+
+function buildGeneGuide(){
+  const featured=$('featured-genes');
+  for(const gene of measuredPriorities()){
+    const button=document.createElement('button');button.type='button';button.dataset.gene=gene.symbol;button.className='gene-chip';
+    button.textContent=gene.symbol;button.title=evidenceLabel(gene)+" · q="+fp(gene.effect?.padj);
+    button.addEventListener('click',()=>{$('gene').value=gene.symbol;void applyGene();});featured.appendChild(button);
+  }
+  const priorities=priorityEntries();
+  const table=document.createElement('table');
+  table.innerHTML=tr('<thead><tr><th>Gene</th><th>Encoded product / annotation</th><th>Bulk FDR</th><th>Measured atlas</th><th>Explore</th></tr></thead>','<thead><tr><th>Gen</th><th>Producto / anotación</th><th>FDR regional</th><th>Atlas medido</th><th>Explorar</th></tr></thead>');
+  const body=document.createElement('tbody');
+  for(const entry of priorities){
+    const gene=geneBySymbol.get(String(entry.symbol).toLowerCase()), candidate=gene || entry;
+    const row=document.createElement('tr');
+    const q=gene?.effect?.padj ?? entry.padj ?? entry.q ?? entry.primary_padj;
+    for(const value of [entry.symbol,proteinDescription(candidate),fp(q),gene?tr("Measured","Medido"):tr("Not measured","No medido")]){const td=document.createElement('td');td.textContent=value;row.appendChild(td);}
+    const action=document.createElement('td');
+    if(gene){const button=document.createElement('button');button.type='button';button.className='secondary';button.textContent='3D';button.setAttribute('aria-label',tr('Show ','Mostrar ')+gene.symbol+' · 3D');button.addEventListener('click',()=>{$('gene').value=gene.symbol;void applyGene();});action.appendChild(button);}
+    else{const link=document.createElement('a');link.href=tr('../../gene_profiles.html','../../es/gene_profiles.html');link.target='_top';link.textContent=tr('Gene profile','Ficha del gen');action.appendChild(link);}
+    row.appendChild(action);body.appendChild(row);
+  }
+  table.appendChild(body);$('priority-table').replaceChildren(table);
+  const measured=priorities.filter(p=>geneBySymbol.has(String(p.symbol).toLowerCase())).length;
+  $('priority-coverage').textContent=priorities.length+tr(" prioritized regional genes; "," genes regionales priorizados; ")+measured+tr(" are directly measured by this MERFISH panel. Genes absent from the panel remain in the biological analysis and are not assigned invented spatial expression."," están medidos directamente en este panel MERFISH. Los ausentes permanecen en el análisis biológico y no reciben expresión espacial inventada.");
+}
+
+function summarizeReference(counts){
+  let positive=0,total=0;
+  for(const value of counts){if(value>0)positive++;total+=value;}
+  return {cells:counts.length,positive,detection:counts.length?100*positive/counts.length:null,mean:counts.length?total/counts.length:null};
+}
+
+async function renderComparison(){
+  const revision=++comparisonVersion;
+  const genes=comparisonGenes.map(s=>geneBySymbol.get(s.toLowerCase())).filter(Boolean);
+  $('comparison-status').textContent=tr("Loading measured gene summaries…","Cargando resúmenes de genes medidos…");
+  updateComparisonButton();
+  try{
+    const loaded=await Promise.all(genes.map(async gene=>({gene,summary:summarizeReference(await loadCounts(gene))})));
+    if(revision!==comparisonVersion)return;
+    const table=document.createElement('table');
+    table.innerHTML=tr('<thead><tr><th>Gene / product</th><th>Bulk evidence</th><th>Shrunken log₂FC</th><th>Bulk BH q</th><th>Measured detection</th><th>Mean imaging count</th><th>Actions</th></tr></thead>','<thead><tr><th>Gen / producto</th><th>Evidencia regional</th><th>log₂FC regularizado</th><th>q BH regional</th><th>Detección medida</th><th>Conteo de imagen medio</th><th>Acciones</th></tr></thead>');
+    const body=document.createElement('tbody');
+    for(const {gene,summary} of loaded){
+      const row=document.createElement('tr');
+      for(const value of [gene.symbol+' · '+proteinDescription(gene),evidenceLabel(gene),gene.estimable?fnum(gene.effect.log2FoldChange_shrunk):tr('Unavailable','No disponible'),fp(gene.effect?.padj),fnum(summary.detection,2)+'%',fnum(summary.mean,3)]){const td=document.createElement('td');td.textContent=value;row.appendChild(td);}
+      const action=document.createElement('td'),show=document.createElement('button'),remove=document.createElement('button');
+      show.type=remove.type='button';show.className=remove.className='secondary';show.textContent='3D';remove.textContent=tr('Remove','Retirar');
+      show.setAttribute('aria-label',tr('Show ','Mostrar ')+gene.symbol+' · 3D');remove.setAttribute('aria-label',tr('Remove ','Retirar ')+gene.symbol);
+      show.addEventListener('click',()=>{$('gene').value=gene.symbol;void applyGene();});
+      remove.addEventListener('click',()=>{comparisonGenes=comparisonGenes.filter(s=>s!==gene.symbol);void renderComparison();});
+      action.append(show,remove);row.appendChild(action);body.appendChild(row);
+    }
+    table.appendChild(body);$('comparison-table').replaceChildren(table);
+    $('comparison-status').textContent=genes.length?genes.length+tr(' of 3 selected genes. Statistics use every registered regional reference cell, including zeros; display filters do not change these summaries.',' de 3 genes seleccionados. Las estadísticas usan todas las células regionales registradas, incluidos los ceros; los filtros visuales no alteran estos resúmenes.'):tr('No genes selected. Add the current measured gene.','No hay genes seleccionados. Agregue el gen medido actual.');
+    updateComparisonButton();
+    notifyParentHeight();
+  }catch(error){if(revision===comparisonVersion)$('comparison-status').textContent=error.message;}
 }
 
 function sameCamera(a,b){
@@ -213,6 +369,12 @@ function linkCameras(source,target){
 }
 
 async function init(){
+  initializeStudyUI();
+  buildGeneGuide();
+  // Observe intrinsic main content, not the iframe-dependent document height.
+  const main=document.querySelector('main');
+  if(main && window.ResizeObserver)new window.ResizeObserver(notifyParentHeight).observe(main);
+  for(const detail of document.querySelectorAll('details'))detail.addEventListener('toggle',notifyParentHeight);
   for(const g of [...D.genes].sort((a,b)=>a.symbol.localeCompare(b.symbol))){const option=document.createElement('option');option.value=g.symbol;option.textContent=g.id+(g.significant?tr(" · primary FDR hit"," · hallazgo primario por FDR"):"");$('gene-list').appendChild(option);}
   for(const [id,labels] of [['cell-type',D.type_labels],['region',D.region_labels]])labels.forEach((label,i)=>{const o=document.createElement('option');o.value=i;o.textContent=label;$(id).appendChild(o);});
   $('gene').value=D.default_gene;
@@ -223,5 +385,12 @@ async function init(){
   $('reset').addEventListener('click',()=>{lastCamera={eye:{x:1.2,y:1.2,z:.9},up:{x:0,y:0,z:1}};render();});
   await applyGene();
   linkCameras('reference','simulation');linkCameras('simulation','reference');
+  comparisonGenes = measuredPriorities().slice(0,3).map(g=>g.symbol);
+  await renderComparison();
+  $('compare-add').addEventListener('click',()=>{
+    if(!currentGene || comparisonGenes.includes(currentGene.symbol))return;
+    if(comparisonGenes.length>=3){$('comparison-status').textContent=tr("Remove a comparison gene before adding another (maximum 3).","Retire un gen de la comparación antes de agregar otro (máximo 3).");return;}
+    comparisonGenes.push(currentGene.symbol);void renderComparison();
+  });
 }
 init().catch(error=>{$('loading').textContent=error.message;$('loading').classList.add('error');console.error(error);});

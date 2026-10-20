@@ -1,0 +1,2692 @@
+{
+  "header": {
+    "type": "esummary",
+    "version": "0.3"
+  },
+  "result": {
+    "uids": [
+      "11639",
+      "320485",
+      "58208",
+      "320155",
+      "76459",
+      "12398",
+      "229599",
+      "12823",
+      "211232",
+      "76737",
+      "12971",
+      "13654",
+      "13655",
+      "57778",
+      "14282",
+      "14284",
+      "320027",
+      "14365",
+      "100416062",
+      "15234",
+      "15259",
+      "26556",
+      "14828",
+      "544963",
+      "333050",
+      "320506",
+      "66274",
+      "74840",
+      "109154",
+      "17389",
+      "217166",
+      "18124",
+      "18451",
+      "18530",
+      "54604",
+      "12304",
+      "71853",
+      "72351",
+      "225998",
+      "13609",
+      "52850",
+      "21892",
+      "216835",
+      "22433",
+      "230848",
+      "210162"
+    ],
+    "11639": {
+      "uid": "11639",
+      "name": "Ak4",
+      "description": "adenylate kinase 4",
+      "status": "",
+      "currentid": "",
+      "chromosome": "4",
+      "geneticsource": "genomic",
+      "maplocation": "4 46.84 cM",
+      "otheraliases": "AK 4, Ak-3, Ak-4, Ak3, Ak3l1, D4Ertd274e",
+      "otherdesignations": "adenylate kinase 4, mitochondrial|ATP-AMP transphosphorylase|GTP:AMP phosphotransferase AK4, mitochondrial|adenylate kinase 3 alpha-like 1|adenylate kinase 3-like 1|adenylate kinase isoenzyme 4, mitochondrial",
+      "nomenclaturesymbol": "Ak4",
+      "nomenclaturename": "adenylate kinase 4",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "4",
+          "chraccver": "NC_000070.7",
+          "chrstart": 101273674,
+          "chrstop": 101324967,
+          "exoncount": 7
+        }
+      ],
+      "geneweight": 505,
+      "summary": "Predicted to enable AMP kinase activity; nucleoside diphosphate kinase activity; and nucleoside triphosphate adenylate kinase activity. Predicted to be involved in nucleoside phosphate metabolic process and regulation of oxidative phosphorylation. Located in mitochondrial matrix. Is expressed in several structures, including alimentary system; genitourinary system; nervous system; respiratory system; and sensory organ. Orthologous to several human genes including AK4 (adenylate kinase 4). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "04",
+      "chrstart": 101273674,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000070.7",
+          "chrstart": 101273674,
+          "chrstop": 101324967
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000070.7",
+          "chrstart": 101273674,
+          "chrstop": 101324967
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000070.6",
+          "chrstart": 101416477,
+          "chrstop": 101467770
+        }
+      ]
+    },
+    "320485": {
+      "uid": "320485",
+      "name": "B230312C02Rik",
+      "description": "RIKEN cDNA B230312C02 gene",
+      "status": "",
+      "currentid": "",
+      "chromosome": "2",
+      "geneticsource": "genomic",
+      "maplocation": "2 102.9 cM",
+      "otheraliases": "",
+      "otherdesignations": "",
+      "nomenclaturesymbol": "B230312C02Rik",
+      "nomenclaturename": "RIKEN cDNA B230312C02 gene",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "2",
+          "chraccver": "NC_000068.8",
+          "chrstart": 180027677,
+          "chrstop": 180012650,
+          "exoncount": 7
+        }
+      ],
+      "geneweight": 111,
+      "summary": "",
+      "chrsort": "02",
+      "chrstart": 180012650,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000068.8",
+          "chrstart": 180027677,
+          "chrstop": 180012650
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000068.8",
+          "chrstart": 180027677,
+          "chrstop": 180012650
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000068.7",
+          "chrstart": 180385884,
+          "chrstop": 180370857
+        }
+      ]
+    },
+    "58208": {
+      "uid": "58208",
+      "name": "Bcl11b",
+      "description": "B cell leukemia/lymphoma 11B",
+      "status": "",
+      "currentid": "",
+      "chromosome": "12",
+      "geneticsource": "genomic",
+      "maplocation": "12 59.1 cM",
+      "otheraliases": "9130430L19Rik, B630002E05Rik, BCL-11B, Ctip2, Rit1",
+      "otherdesignations": "B-cell lymphoma/leukemia 11B|B-cell CLL/lymphoma 11B|B-cell lymphoma/leukaemia 11B|COUP-TF-interacting protein 2|mRit1|radiation-induced tumor suppressor gene 1 protein",
+      "nomenclaturesymbol": "Bcl11b",
+      "nomenclaturename": "B cell leukemia/lymphoma 11B",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "12",
+          "chraccver": "NC_000078.7",
+          "chrstart": 107970403,
+          "chrstop": 107876661,
+          "exoncount": 9
+        }
+      ],
+      "geneweight": 21050,
+      "summary": "Enables DNA-binding transcription activator activity, RNA polymerase II-specific and RNA polymerase II cis-regulatory region sequence-specific DNA binding activity. Acts upstream of or within several processes, including T cell differentiation; epithelial cell development; and neuron differentiation. Located in neuron projection and nucleus. Part of SWI/SNF complex. Is expressed in several structures, including alimentary system; central nervous system; cranium; nose; and skin. Human ortholog(s) of this gene implicated in immunodeficiency 49. Orthologous to human BCL11B (BCL11 transcription factor B). [provided by Alliance of Genome Resources, Jul 2025]",
+      "chrsort": "12",
+      "chrstart": 107876661,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000078.7",
+          "chrstart": 107970403,
+          "chrstop": 107876661
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000078.7",
+          "chrstart": 107970403,
+          "chrstop": 107876661
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000078.6",
+          "chrstart": 108004144,
+          "chrstop": 107910402
+        }
+      ]
+    },
+    "320155": {
+      "uid": "320155",
+      "name": "C730002L08Rik",
+      "description": "RIKEN cDNA C730002L08 gene",
+      "status": "",
+      "currentid": "",
+      "chromosome": "19",
+      "geneticsource": "genomic",
+      "maplocation": "19 13.89 cM",
+      "otheraliases": "",
+      "otherdesignations": "",
+      "nomenclaturesymbol": "C730002L08Rik",
+      "nomenclaturename": "RIKEN cDNA C730002L08 gene",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "19",
+          "chraccver": "NC_000085.7",
+          "chrstart": 20529693,
+          "chrstop": 20511890,
+          "exoncount": 3
+        }
+      ],
+      "geneweight": 104,
+      "summary": "",
+      "chrsort": "19",
+      "chrstart": 20511890,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000085.7",
+          "chrstart": 20529693,
+          "chrstop": 20511890
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000085.7",
+          "chrstart": 20529693,
+          "chrstop": 20511890
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000085.6",
+          "chrstart": 20552329,
+          "chrstop": 20534526
+        }
+      ]
+    },
+    "76459": {
+      "uid": "76459",
+      "name": "Ca12",
+      "description": "carbonic anhydrase 12",
+      "status": "",
+      "currentid": "",
+      "chromosome": "9",
+      "geneticsource": "genomic",
+      "maplocation": "9 36.09 cM",
+      "otheraliases": "2310047E01Rik, CA-XII, Car12",
+      "otherdesignations": "carbonic anhydrase 12|CA XII|carbonate dehydratase XII|carbonic anhydrase XII",
+      "nomenclaturesymbol": "Ca12",
+      "nomenclaturename": "carbonic anhydrase 12",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "9",
+          "chraccver": "NC_000075.7",
+          "chrstart": 66619025,
+          "chrstop": 66674126,
+          "exoncount": 11
+        }
+      ],
+      "geneweight": 697,
+      "summary": "This gene encodes a membrane-bound member of the alpha carbonic anhydrase family of enzymes that catalyze the reversible hydration of carbon dioxide to bicarbonate. These proteins participate in a variety of biological processes, including respiration, calcification, acid-base balance, bone resorption, and the formation of aqueous humor, cerebrospinal fluid, saliva, and gastric acid. Alternative splicing results in multiple transcript variants. [provided by RefSeq, Apr 2015]",
+      "chrsort": "09",
+      "chrstart": 66619025,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000075.7",
+          "chrstart": 66619025,
+          "chrstop": 66674126
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000075.7",
+          "chrstart": 66619025,
+          "chrstop": 66674126
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000075.6",
+          "chrstart": 66712295,
+          "chrstop": 66766844
+        }
+      ]
+    },
+    "12398": {
+      "uid": "12398",
+      "name": "Cbfa2t3",
+      "description": "CBFA2/RUNX1 translocation partner 3",
+      "status": "",
+      "currentid": "",
+      "chromosome": "8",
+      "geneticsource": "genomic",
+      "maplocation": "8 71.93 cM",
+      "otheraliases": "A630044F12Rik, Cbfa2t3h, ETO-2, Eto2, MTGR2",
+      "otherdesignations": "transcriptional corepressor CBFA2T3|ETO/MTG8-related protein ETO-2|MTG8-related protein 2|eight twenty one protein 2|myeloid translocation gene-related protein 2|protein CBFA2T3",
+      "nomenclaturesymbol": "Cbfa2t3",
+      "nomenclaturename": "CBFA2/RUNX1 translocation partner 3",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "8",
+          "chraccver": "NC_000074.7",
+          "chrstart": 123426068,
+          "chrstop": 123351874,
+          "exoncount": 15
+        }
+      ],
+      "geneweight": 1361,
+      "summary": "Enables chromatin binding activity. Acts upstream of or within negative regulation of transcription by RNA polymerase II. Predicted to be located in nucleoplasm. Predicted to be active in nucleus. Is expressed in several structures, including 2-cell stage conceptus; central nervous system; genitourinary system; retina; and spleen. Orthologous to human CBFA2T3 (CBFA2/RUNX1 partner transcriptional co-repressor 3). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "08",
+      "chrstart": 123351874,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000074.7",
+          "chrstart": 123426068,
+          "chrstop": 123351874
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000074.7",
+          "chrstart": 123426068,
+          "chrstop": 123351874
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000074.6",
+          "chrstart": 122699331,
+          "chrstop": 122625135
+        }
+      ]
+    },
+    "229599": {
+      "uid": "229599",
+      "name": "Ciart",
+      "description": "circadian associated repressor of transcription",
+      "status": "",
+      "currentid": "",
+      "chromosome": "3",
+      "geneticsource": "genomic",
+      "maplocation": "3 41.42 cM",
+      "otheraliases": "Chrono, Gm129",
+      "otherdesignations": "circadian-associated transcriptional repressor|chIP-derived repressor of network oscillator|computationally highlighted repressor of the network oscillator",
+      "nomenclaturesymbol": "Ciart",
+      "nomenclaturename": "circadian associated repressor of transcription",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "3",
+          "chraccver": "NC_000069.7",
+          "chrstart": 95790011,
+          "chrstop": 95785811,
+          "exoncount": 9
+        }
+      ],
+      "geneweight": 347,
+      "summary": "Enables E-box binding activity. Involved in circadian regulation of gene expression; locomotor rhythm; and negative regulation of DNA-templated transcription. Located in nucleus. Orthologous to human CIART (circadian associated repressor of transcription). [provided by Alliance of Genome Resources, Jul 2025]",
+      "chrsort": "03",
+      "chrstart": 95785811,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000069.7",
+          "chrstart": 95790011,
+          "chrstop": 95785811
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000069.7",
+          "chrstart": 95790011,
+          "chrstop": 95785811
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000069.6",
+          "chrstart": 95882256,
+          "chrstop": 95878499
+        }
+      ]
+    },
+    "12823": {
+      "uid": "12823",
+      "name": "Col19a1",
+      "description": "collagen, type XIX, alpha 1",
+      "status": "",
+      "currentid": "",
+      "chromosome": "1",
+      "geneticsource": "genomic",
+      "maplocation": "1 9.99 cM",
+      "otheraliases": "",
+      "otherdesignations": "collagen alpha-1(XIX) chain|collagen alpha-1(Y) chain|procollagen, type XIX, alpha 1",
+      "nomenclaturesymbol": "Col19a1",
+      "nomenclaturename": "collagen, type XIX, alpha 1",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "1",
+          "chraccver": "NC_000067.7",
+          "chrstart": 24627869,
+          "chrstop": 24296763,
+          "exoncount": 51
+        }
+      ],
+      "geneweight": 776,
+      "summary": "Predicted to be an extracellular matrix structural constituent conferring tensile strength. Acts upstream of or within extracellular matrix organization and skeletal muscle tissue development. Predicted to be part of collagen type XIX trimer. Predicted to be active in extracellular matrix. Is expressed in several structures, including bone; brain; genitourinary system; musculature; and sensory organ. Orthologous to human COL19A1 (collagen type XIX alpha 1 chain). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "01",
+      "chrstart": 24296763,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000067.7",
+          "chrstart": 24627869,
+          "chrstop": 24296763
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000067.7",
+          "chrstart": 24627869,
+          "chrstop": 24296763
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000067.6",
+          "chrstart": 24587921,
+          "chrstop": 24257682
+        }
+      ]
+    },
+    "211232": {
+      "uid": "211232",
+      "name": "Cpne9",
+      "description": "copine family member IX",
+      "status": "",
+      "currentid": "",
+      "chromosome": "6",
+      "geneticsource": "genomic",
+      "maplocation": "6 52.75 cM",
+      "otheraliases": "A730016F12Rik, mKIAA4217",
+      "otherdesignations": "copine-9|copine IX",
+      "nomenclaturesymbol": "Cpne9",
+      "nomenclaturename": "copine family member IX",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "6",
+          "chraccver": "NC_000072.7",
+          "chrstart": 113259243,
+          "chrstop": 113282531,
+          "exoncount": 22
+        }
+      ],
+      "geneweight": 288,
+      "summary": "Predicted to enable calcium-dependent phospholipid binding activity. Predicted to be involved in cellular response to calcium ion and positive regulation of dendrite extension. Predicted to be active in plasma membrane. Orthologous to human CPNE9 (copine family member 9). [provided by Alliance of Genome Resources, Jul 2025]",
+      "chrsort": "06",
+      "chrstart": 113259243,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000072.7",
+          "chrstart": 113259243,
+          "chrstop": 113282531
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000072.7",
+          "chrstart": 113259243,
+          "chrstop": 113282531
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000072.6",
+          "chrstart": 113282282,
+          "chrstop": 113305570
+        }
+      ]
+    },
+    "76737": {
+      "uid": "76737",
+      "name": "Creld2",
+      "description": "cysteine-rich with EGF-like domains 2",
+      "status": "",
+      "currentid": "",
+      "chromosome": "15",
+      "geneticsource": "genomic",
+      "maplocation": "15 44.31 cM",
+      "otheraliases": "5730592L21Rik",
+      "otherdesignations": "protein disulfide isomerase Creld2|cysteine-rich with EGF-like domain protein 2",
+      "nomenclaturesymbol": "Creld2",
+      "nomenclaturename": "cysteine-rich with EGF-like domains 2",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "15",
+          "chraccver": "NC_000081.7",
+          "chrstart": 88703848,
+          "chrstop": 88710883,
+          "exoncount": 10
+        }
+      ],
+      "geneweight": 773,
+      "summary": "Predicted to enable calcium ion binding activity and protein disulfide isomerase activity. Predicted to be an extracellular matrix structural constituent. Acts upstream of or within several processes, including bone mineralization; endochondral ossification; and non-canonical Wnt signaling pathway. Located in Golgi apparatus; endoplasmic reticulum; and extracellular region. Is expressed in several structures, including alimentary system; brain; genitourinary system; long bone; and respiratory system. Orthologous to human CRELD2 (CRELD disulfide isomerase 2). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "15",
+      "chrstart": 88703848,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000081.7",
+          "chrstart": 88703848,
+          "chrstop": 88710883
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000081.7",
+          "chrstart": 88703848,
+          "chrstop": 88710883
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000081.6",
+          "chrstart": 88819645,
+          "chrstop": 88826680
+        }
+      ]
+    },
+    "12971": {
+      "uid": "12971",
+      "name": "Crym",
+      "description": "crystallin, mu",
+      "status": "",
+      "currentid": "",
+      "chromosome": "7",
+      "geneticsource": "genomic",
+      "maplocation": "7 64.47 cM",
+      "otheraliases": "",
+      "otherdesignations": "ketimine reductase mu-crystallin|1-piperideine-2-carboxylate/1-pyrroline-2-carboxylate reductase|NADP-regulated thyroid-hormone-binding protein|P2C/Pyr2C reductase|mu-crystallin homolog|thiomorpholine-carboxylate dehydrogenase",
+      "nomenclaturesymbol": "Crym",
+      "nomenclaturename": "crystallin, mu",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "7",
+          "chraccver": "NC_000073.7",
+          "chrstart": 119801211,
+          "chrstop": 119785602,
+          "exoncount": 8
+        }
+      ],
+      "geneweight": 2007,
+      "summary": "Enables delta1-piperideine-2-carboxylate reductase activity and hormone binding activity. Acts upstream of or within thyroid hormone metabolic process. Located in mitochondrion and nucleus. Is active in peroxisomal matrix. Is expressed in several structures, including brain; genitourinary system; respiratory system; sensory organ; and tooth. Human ortholog(s) of this gene implicated in autosomal dominant nonsyndromic deafness 40. Orthologous to human CRYM (crystallin mu). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "07",
+      "chrstart": 119785602,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000073.7",
+          "chrstart": 119801211,
+          "chrstop": 119785602
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000073.7",
+          "chrstart": 119801211,
+          "chrstop": 119785602
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000073.6",
+          "chrstart": 120201988,
+          "chrstop": 120186379
+        }
+      ]
+    },
+    "13654": {
+      "uid": "13654",
+      "name": "Egr2",
+      "description": "early growth response 2",
+      "status": "",
+      "currentid": "",
+      "chromosome": "10",
+      "geneticsource": "genomic",
+      "maplocation": "10 34.96 cM",
+      "otheraliases": "Egr-2, Krox-20, Krox20, NGF1-B, Zfp-25, Zfp-6",
+      "otherdesignations": "E3 SUMO-protein ligase EGR2|E3 SUMO-protein transferase ERG2|early growth response protein 2|zinc finger protein Krox-20",
+      "nomenclaturesymbol": "Egr2",
+      "nomenclaturename": "early growth response 2",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "10",
+          "chraccver": "NC_000076.7",
+          "chrstart": 67370333,
+          "chrstop": 67383353,
+          "exoncount": 8
+        }
+      ],
+      "geneweight": 19191,
+      "summary": "Enables several functions, including DNA-binding transcription activator activity, RNA polymerase II-specific; RNA polymerase II cis-regulatory region sequence-specific DNA binding activity; and SUMO ligase activity. Involved in several processes, including facial nerve structural organization; regulation of nervous system development; and rhombomere structural organization. Acts upstream of or within with a negative effect on gene expression. Acts upstream of or within several processes, including nervous system development; positive regulation of transcription by RNA polymerase II; and skeletal muscle cell differentiation. Located in cytoplasm and nucleus. Is expressed in genitourinary system; head mesenchyme derived from neural crest; nervous system; neural ectoderm; and vibrissa. Used to study congenital hypomyelinating neuropathy 1. Human ortholog(s) of this gene implicated in Charcot-Marie-Tooth disease type 1D; Charcot-Marie-Tooth disease type 3; congenital hypomyelinating neuropathy 1; and motor peripheral neuropathy. Orthologous to human EGR2 (early growth response 2). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "10",
+      "chrstart": 67370333,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000076.7",
+          "chrstart": 67370333,
+          "chrstop": 67383353
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000076.7",
+          "chrstart": 67370333,
+          "chrstop": 67383353
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000076.6",
+          "chrstart": 67534468,
+          "chrstop": 67542187
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NW_019168511.1",
+          "chrstart": 307214,
+          "chrstop": 313903
+        }
+      ]
+    },
+    "13655": {
+      "uid": "13655",
+      "name": "Egr3",
+      "description": "early growth response 3",
+      "status": "",
+      "currentid": "",
+      "chromosome": "14",
+      "geneticsource": "genomic",
+      "maplocation": "14 36.2 cM",
+      "otheraliases": "EGR-3, Pilot",
+      "otherdesignations": "early growth response protein 3",
+      "nomenclaturesymbol": "Egr3",
+      "nomenclaturename": "early growth response 3",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "14",
+          "chraccver": "NC_000080.7",
+          "chrstart": 70314765,
+          "chrstop": 70320061,
+          "exoncount": 4
+        }
+      ],
+      "geneweight": 4288,
+      "summary": "Enables DNA-binding transcription activator activity, RNA polymerase II-specific and sequence-specific DNA binding activity. Involved in positive regulation of transcription by RNA polymerase II. Acts upstream of or within neuromuscular synaptic transmission; peripheral nervous system development; and regulation of T cell differentiation. Predicted to be located in nucleoplasm. Predicted to be active in nucleus. Is expressed in several structures, including ganglionic eminence; genitourinary system; limb musculature; tooth; and vibrissa. Orthologous to human EGR3 (early growth response 3). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "14",
+      "chrstart": 70314765,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000080.7",
+          "chrstart": 70314765,
+          "chrstop": 70320061
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000080.7",
+          "chrstart": 70314765,
+          "chrstop": 70320061
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000080.6",
+          "chrstart": 70077316,
+          "chrstop": 70082612
+        }
+      ]
+    },
+    "57778": {
+      "uid": "57778",
+      "name": "Fmnl1",
+      "description": "formin-like 1",
+      "status": "",
+      "currentid": "",
+      "chromosome": "11",
+      "geneticsource": "genomic",
+      "maplocation": "11 66.71 cM",
+      "otheraliases": "8030453N10Rik, Fmnl, Fnrl, Frls",
+      "otherdesignations": "formin-like protein 1|formin-related gene in leukocytes|formin-related protein|lymphocyte specific formin related protein",
+      "nomenclaturesymbol": "Fmnl1",
+      "nomenclaturename": "formin-like 1",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "11",
+          "chraccver": "NC_000077.7",
+          "chrstart": 103061400,
+          "chrstop": 103089726,
+          "exoncount": 28
+        }
+      ],
+      "geneweight": 847,
+      "summary": "Enables several functions, including GTPase activating protein binding activity; profilin binding activity; and small GTPase binding activity. Involved in actin filament severing. Acts upstream of or within substrate-dependent cell migration. Located in cytosol; phagocytic vesicle; and plasma membrane. Is expressed in several structures, including gut; heart; immune system; liver; and lung. Orthologous to human FMNL1 (formin like 1). [provided by Alliance of Genome Resources, Jul 2025]",
+      "chrsort": "11",
+      "chrstart": 103061400,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000077.7",
+          "chrstart": 103061400,
+          "chrstop": 103089726
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000077.7",
+          "chrstart": 103061400,
+          "chrstop": 103089726
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000077.6",
+          "chrstart": 103171003,
+          "chrstop": 103198901
+        }
+      ]
+    },
+    "14282": {
+      "uid": "14282",
+      "name": "Fosb",
+      "description": "Fos B proto-oncogene, AP-1 transcription factor subunit",
+      "status": "",
+      "currentid": "",
+      "chromosome": "7",
+      "geneticsource": "genomic",
+      "maplocation": "7 9.56 cM",
+      "otheraliases": "",
+      "otherdesignations": "protein FosB|FBJ osteosarcoma oncogene B|osteosarcoma oncoprotein B FosB|protein fosB|transcription factor AP-1 subunit FosB",
+      "nomenclaturesymbol": "Fosb",
+      "nomenclaturename": "Fos B proto-oncogene, AP-1 transcription factor subunit",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "7",
+          "chraccver": "NC_000073.7",
+          "chrstart": 19043969,
+          "chrstop": 19036620,
+          "exoncount": 4
+        }
+      ],
+      "geneweight": 10863,
+      "summary": "Enables DNA-binding transcription activator activity, RNA polymerase II-specific and RNA polymerase II cis-regulatory region sequence-specific DNA binding activity. Involved in positive regulation of transcription by RNA polymerase II. Acts upstream of or within cellular response to calcium ion. Predicted to be located in cytosol and nucleoplasm. Predicted to be active in nucleus. Is expressed in several structures, including alimentary system; central nervous system; male reproductive gland or organ; skeleton; and skin. Orthologous to human FOSB (FosB proto-oncogene, AP-1 transcription factor subunit). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "07",
+      "chrstart": 19036620,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000073.7",
+          "chrstart": 19043969,
+          "chrstop": 19036620
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000073.7",
+          "chrstart": 19043969,
+          "chrstop": 19036620
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000073.6",
+          "chrstart": 19310117,
+          "chrstop": 19302695
+        }
+      ]
+    },
+    "14284": {
+      "uid": "14284",
+      "name": "Fosl2",
+      "description": "fos-like antigen 2",
+      "status": "",
+      "currentid": "",
+      "chromosome": "5",
+      "geneticsource": "genomic",
+      "maplocation": "5 17.33 cM",
+      "otheraliases": "Fra-2",
+      "otherdesignations": "fos-related antigen 2",
+      "nomenclaturesymbol": "Fosl2",
+      "nomenclaturename": "fos-like antigen 2",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "5",
+          "chraccver": "NC_000071.7",
+          "chrstart": 32292598,
+          "chrstop": 32315183,
+          "exoncount": 4
+        }
+      ],
+      "geneweight": 5513,
+      "summary": "Enables RNA polymerase II cis-regulatory region sequence-specific DNA binding activity and chromatin binding activity. Involved in positive regulation of DNA-templated transcription. Acts upstream of or within several processes, including cartilage development; leukocyte differentiation; and lung development. Located in nucleus. Is expressed in several structures, including alimentary system; genitourinary system; skeleton; skin; and telencephalon. Used to study idiopathic pulmonary fibrosis and systemic scleroderma. Orthologous to human FOSL2 (FOS like 2, AP-1 transcription factor subunit). [provided by Alliance of Genome Resources, Jul 2025]",
+      "chrsort": "05",
+      "chrstart": 32292598,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000071.7",
+          "chrstart": 32292598,
+          "chrstop": 32315183
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000071.7",
+          "chrstart": 32292598,
+          "chrstop": 32315183
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000071.6",
+          "chrstart": 32136471,
+          "chrstop": 32157839
+        }
+      ]
+    },
+    "320027": {
+      "uid": "320027",
+      "name": "Fstl4",
+      "description": "follistatin-like 4",
+      "status": "",
+      "currentid": "",
+      "chromosome": "11",
+      "geneticsource": "genomic",
+      "maplocation": "11 31.86 cM",
+      "otheraliases": "B230374F23Rik, SPIG1, mKIAA1061",
+      "otherdesignations": "follistatin-related protein 4|follistatin-like protein 4|m-D/Bsp120I 1-1",
+      "nomenclaturesymbol": "Fstl4",
+      "nomenclaturename": "follistatin-like 4",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "11",
+          "chraccver": "NC_000077.7",
+          "chrstart": 52655319,
+          "chrstop": 53083276,
+          "exoncount": 16
+        }
+      ],
+      "geneweight": 633,
+      "summary": "Enables brain-derived neurotrophic factor binding activity. Acts upstream of or within negative regulation of brain-derived neurotrophic factor receptor signaling pathway; negative regulation of collateral sprouting; and negative regulation of dendritic spine development. Located in secretory granule. Is expressed in medulla oblongata basal plate mantle layer; neural retina; olfactory cortex mantle layer; pons mantle layer; and telencephalon mantle layer. Orthologous to human FSTL4 (follistatin like 4). [provided by Alliance of Genome Resources, Jul 2025]",
+      "chrsort": "11",
+      "chrstart": 52655319,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000077.7",
+          "chrstart": 52655319,
+          "chrstop": 53083276
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000077.7",
+          "chrstart": 52655319,
+          "chrstop": 53083276
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000077.6",
+          "chrstart": 52764488,
+          "chrstop": 53192449
+        }
+      ]
+    },
+    "14365": {
+      "uid": "14365",
+      "name": "Fzd3",
+      "description": "frizzled class receptor 3",
+      "status": "",
+      "currentid": "",
+      "chromosome": "14",
+      "geneticsource": "genomic",
+      "maplocation": "14 34.09 cM",
+      "otheraliases": "D930050A07Rik, Fz3, fz-3, mFz3",
+      "otherdesignations": "frizzled-3|frizzled homolog 3",
+      "nomenclaturesymbol": "Fzd3",
+      "nomenclaturename": "frizzled class receptor 3",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "14",
+          "chraccver": "NC_000080.7",
+          "chrstart": 65499911,
+          "chrstop": 65429889,
+          "exoncount": 7
+        }
+      ],
+      "geneweight": 3041,
+      "summary": "Enables Wnt receptor activity. Involved in several processes, including axon guidance; positive regulation of neuroblast proliferation; and sympathetic ganglion development. Acts upstream of or within several processes, including inner ear morphogenesis; nervous system development; and post-anal tail morphogenesis. Located in several cellular components, including apical plasma membrane; filopodium tip; and lateral plasma membrane. Is active in glutamatergic synapse and presynaptic active zone membrane. Colocalizes with presynaptic active zone. Is expressed in several structures, including alimentary system; embryo mesenchyme; genitourinary system; nervous system; and sensory organ. Human ortholog(s) of this gene implicated in Williams-Beuren syndrome and schizophrenia. Orthologous to human FZD3 (frizzled class receptor 3). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "14",
+      "chrstart": 65429889,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000080.7",
+          "chrstart": 65499911,
+          "chrstop": 65429889
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000080.7",
+          "chrstart": 65499911,
+          "chrstop": 65429889
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000080.6",
+          "chrstart": 65262462,
+          "chrstop": 65192440
+        }
+      ]
+    },
+    "100416062": {
+      "uid": "100416062",
+      "name": "Gm13423",
+      "description": "nucleophosmin 1 pseudogene",
+      "status": "",
+      "currentid": "",
+      "chromosome": "2",
+      "geneticsource": "genomic",
+      "maplocation": "2 15.25 cM",
+      "otheraliases": "",
+      "otherdesignations": "",
+      "nomenclaturesymbol": "Gm13423",
+      "nomenclaturename": "predicted gene 13423",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "2",
+          "chraccver": "NC_000068.8",
+          "chrstart": 23091951,
+          "chrstop": 23092923,
+          "exoncount": ""
+        }
+      ],
+      "geneweight": 64,
+      "summary": "",
+      "chrsort": "02",
+      "chrstart": 23091951,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000068.8",
+          "chrstart": 23091951,
+          "chrstop": 23092923
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000068.8",
+          "chrstart": 23091951,
+          "chrstop": 23092923
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000068.7",
+          "chrstart": 23201939,
+          "chrstop": 23202911
+        }
+      ]
+    },
+    "15234": {
+      "uid": "15234",
+      "name": "Hgf",
+      "description": "hepatocyte growth factor",
+      "status": "",
+      "currentid": "",
+      "chromosome": "5",
+      "geneticsource": "genomic",
+      "maplocation": "5 7.07 cM",
+      "otheraliases": "C230052L06Rik, HGF/SF, NK1, NK2, SF, SF/HGF",
+      "otherdesignations": "hepatocyte growth factor|hepatopoietin-A|scatter factor",
+      "nomenclaturesymbol": "Hgf",
+      "nomenclaturename": "hepatocyte growth factor",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "5",
+          "chraccver": "NC_000071.7",
+          "chrstart": 16758492,
+          "chrstop": 16827447,
+          "exoncount": 19
+        }
+      ],
+      "geneweight": 12229,
+      "summary": "This gene encodes a protein that binds to the hepatocyte growth factor receptor to regulate cell growth, cell motility and morphogenesis in numerous cell and tissue types. The encoded preproprotein is proteolytically processed to generate multiple protein products, including the hepatocyte growth factor alpha and beta chains, which heterodimerize to form the mature active protein. Although this protein is a member of the peptidase S1 family of serine proteases, it lacks peptidase activity. Homozygous knockout mice for this gene exhibit embryonic lethality due to impaired development of the placenta and liver. Alternative splicing results in multiple transcript variants encoding different isoforms. [provided by RefSeq, Sep 2015]",
+      "chrsort": "05",
+      "chrstart": 16758492,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000071.7",
+          "chrstart": 16758492,
+          "chrstop": 16827447
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000071.7",
+          "chrstart": 16758492,
+          "chrstop": 16827447
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000071.6",
+          "chrstart": 16553494,
+          "chrstop": 16619438
+        }
+      ]
+    },
+    "15259": {
+      "uid": "15259",
+      "name": "Hipk3",
+      "description": "homeodomain interacting protein kinase 3",
+      "status": "",
+      "currentid": "",
+      "chromosome": "2",
+      "geneticsource": "genomic",
+      "maplocation": "2 54.74 cM",
+      "otheraliases": "DYRK6, FIST3, PKY, mir-1902",
+      "otherdesignations": "homeodomain-interacting protein kinase 3|ANPK|FIST|HCMV-interacting protein|androgen receptor-interacting nuclear protein kinase|fas-interacting serine/threonine-protein kinase|nbak3|nuclear body-associated kinase 3",
+      "nomenclaturesymbol": "Hipk3",
+      "nomenclaturename": "homeodomain interacting protein kinase 3",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "2",
+          "chraccver": "NC_000068.8",
+          "chrstart": 104324833,
+          "chrstop": 104256825,
+          "exoncount": 16
+        }
+      ],
+      "geneweight": 865,
+      "summary": "Enables protein serine/threonine kinase activity. Involved in negative regulation of JUN kinase activity; peptidyl-serine phosphorylation; and peptidyl-threonine phosphorylation. Located in PML body and cytoplasm. Is expressed in diaphragm; heart; limb segment; paraxial mesenchyme; and skeletal musculature. Orthologous to human HIPK3 (homeodomain interacting protein kinase 3). [provided by Alliance of Genome Resources, Jul 2025]",
+      "chrsort": "02",
+      "chrstart": 104256825,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000068.8",
+          "chrstart": 104324833,
+          "chrstop": 104256825
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000068.8",
+          "chrstart": 104324833,
+          "chrstop": 104256825
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000068.7",
+          "chrstart": 104494488,
+          "chrstop": 104426480
+        }
+      ]
+    },
+    "26556": {
+      "uid": "26556",
+      "name": "Homer1",
+      "description": "homer scaffolding protein 1",
+      "status": "",
+      "currentid": "",
+      "chromosome": "13",
+      "geneticsource": "genomic",
+      "maplocation": "13 47.83 cM",
+      "otheraliases": "PSD-Zip45, SYN47, Ves-1, homer-1, vesl-1",
+      "otherdesignations": "homer protein homolog 1|VASP/Ena-related gene up-regulated during seizure and LTP 1|homer homolog 1|homer, neuronal immediate early gene, 1|immediate early gene protein Homer1A",
+      "nomenclaturesymbol": "Homer1",
+      "nomenclaturename": "homer scaffolding protein 1",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "13",
+          "chraccver": "NC_000079.7",
+          "chrstart": 93440264,
+          "chrstop": 93549470,
+          "exoncount": 12
+        }
+      ],
+      "geneweight": 5948,
+      "summary": "Predicted to enable several functions, including scaffold protein binding activity; transmembrane transporter binding activity; and type 5 metabotropic glutamate receptor binding activity. Predicted to be a structural constituent of postsynapse. Involved in regulation of calcium ion import and regulation of store-operated calcium entry. Acts upstream of or within several processes, including behavioral response to cocaine; skeletal muscle contraction; and skeletal muscle fiber development. Located in several cellular components, including apical part of cell; myofibril; and postsynapse. Is active in glutamatergic synapse; postsynaptic cytosol; and postsynaptic density. Is expressed in several structures, including alimentary system; central nervous system; genitourinary system; respiratory system; and sensory organ. Human ortholog(s) of this gene implicated in cocaine dependence. Orthologous to human HOMER1 (homer scaffold protein 1). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "13",
+      "chrstart": 93440264,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000079.7",
+          "chrstart": 93440264,
+          "chrstop": 93549470
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000079.7",
+          "chrstart": 93440264,
+          "chrstop": 93549470
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000079.6",
+          "chrstart": 93303756,
+          "chrstop": 93405128
+        }
+      ]
+    },
+    "14828": {
+      "uid": "14828",
+      "name": "Hspa5",
+      "description": "heat shock protein family A (Hsp70) member 5",
+      "status": "",
+      "currentid": "",
+      "chromosome": "2",
+      "geneticsource": "genomic",
+      "maplocation": "2 22.94 cM",
+      "otheraliases": "Bip, D2Wsu141e, D2Wsu17e, Grp78, Hsce70, SEZ-7, Sez7, baffled, mBiP",
+      "otherdesignations": "endoplasmic reticulum chaperone BiP|78 kDa glucose-regulated protein|GRP-78|HSP70 family protein 5|XAP-1 antigen|binding-immunoglobulin protein|glucose regulated protein, 78 kDa|heat shock 70 kDa protein 5|heat shock 70kD protein 5 (glucose-regulated protein, 78kD)|heat shock protein 5|heat shock protein 70 family protein 5|heat shock protein family A member 5|immunoglobulin heavy chain-binding protein",
+      "nomenclaturesymbol": "Hspa5",
+      "nomenclaturename": "heat shock protein family A (Hsp70) member 5",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "2",
+          "chraccver": "NC_000068.8",
+          "chrstart": 34662101,
+          "chrstop": 34666540,
+          "exoncount": 9
+        }
+      ],
+      "geneweight": 78948,
+      "summary": "Enables misfolded protein binding activity; protein folding chaperone; and ribosome binding activity. Involved in IRE1-mediated unfolded protein response; cerebellum development; and positive regulation of protein metabolic process. Acts upstream of or within ER overload response; cellular response to interleukin-4; and negative regulation of transforming growth factor beta receptor signaling pathway. Located in several cellular components, including cell surface; endoplasmic reticulum; and endoplasmic reticulum-Golgi intermediate compartment. Part of endoplasmic reticulum chaperone complex. Is expressed in several structures, including alimentary system; brain; eye; genitourinary system; and long bone. Human ortholog(s) of this gene implicated in dopamine beta-hydroxylase deficiency. Orthologous to human HSPA5 (heat shock protein family A (Hsp70) member 5). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "02",
+      "chrstart": 34662101,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000068.8",
+          "chrstart": 34662101,
+          "chrstop": 34666540
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000068.8",
+          "chrstart": 34662101,
+          "chrstop": 34666540
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000068.7",
+          "chrstart": 34772089,
+          "chrstop": 34776528
+        }
+      ]
+    },
+    "544963": {
+      "uid": "544963",
+      "name": "Iqgap2",
+      "description": "IQ motif containing GTPase activating protein 2",
+      "status": "",
+      "currentid": "",
+      "chromosome": "13",
+      "geneticsource": "genomic",
+      "maplocation": "13 50.26 cM",
+      "otheraliases": "4933417J23Rik, A630053O10",
+      "otherdesignations": "ras GTPase-activating-like protein IQGAP2",
+      "nomenclaturesymbol": "Iqgap2",
+      "nomenclaturename": "IQ motif containing GTPase activating protein 2",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "13",
+          "chraccver": "NC_000079.7",
+          "chrstart": 96028787,
+          "chrstop": 95763684,
+          "exoncount": 37
+        }
+      ],
+      "geneweight": 1007,
+      "summary": "Predicted to enable several functions, including Arp2/3 complex binding activity; GTPase activator activity; and calmodulin binding activity. Predicted to be involved in actin filament organization; regulation of actin cytoskeleton organization; and thrombin-activated receptor signaling pathway. Located in microvillus. Is expressed in several structures, including 4-8 cell stage conceptus; alimentary system; axial skeleton; central nervous system; and genitourinary system. Used to study hepatocellular carcinoma. Orthologous to human IQGAP2 (IQ motif containing GTPase activating protein 2). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "13",
+      "chrstart": 95763684,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000079.7",
+          "chrstart": 96028787,
+          "chrstop": 95763684
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000079.7",
+          "chrstart": 96028787,
+          "chrstop": 95763684
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000079.6",
+          "chrstart": 95892279,
+          "chrstop": 95627176
+        }
+      ]
+    },
+    "333050": {
+      "uid": "333050",
+      "name": "Ksr2",
+      "description": "kinase suppressor of ras 2",
+      "status": "",
+      "currentid": "",
+      "chromosome": "5",
+      "geneticsource": "genomic",
+      "maplocation": "5 56.88 cM",
+      "otheraliases": "",
+      "otherdesignations": "kinase suppressor of Ras 2",
+      "nomenclaturesymbol": "Ksr2",
+      "nomenclaturename": "kinase suppressor of ras 2",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "5",
+          "chraccver": "NC_000071.7",
+          "chrstart": 117552066,
+          "chrstop": 117906060,
+          "exoncount": 22
+        }
+      ],
+      "geneweight": 693,
+      "summary": "Enables MAP kinase scaffold activity and mitogen-activated protein kinase kinase binding activity. Involved in positive regulation of cold-induced thermogenesis. Acts upstream of or within calcium-mediated signaling and positive regulation of MAPK cascade. Located in cytosol and plasma membrane. Orthologous to human KSR2 (kinase suppressor of ras 2). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "05",
+      "chrstart": 117552066,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000071.7",
+          "chrstart": 117552066,
+          "chrstop": 117906060
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000071.7",
+          "chrstart": 117552066,
+          "chrstop": 117906060
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000071.6",
+          "chrstart": 117414001,
+          "chrstop": 117767995
+        }
+      ]
+    },
+    "320506": {
+      "uid": "320506",
+      "name": "Lmbrd2",
+      "description": "LMBR1 domain containing 2",
+      "status": "",
+      "currentid": "",
+      "chromosome": "15",
+      "geneticsource": "genomic",
+      "maplocation": "15 3.86 cM",
+      "otheraliases": "9930036E21Rik",
+      "otherdesignations": "G protein-coupled receptor-associated protein LMBRD2|G-protein coupled receptor-associated protein LMBRD2|LMBR1 domain-containing protein 2",
+      "nomenclaturesymbol": "Lmbrd2",
+      "nomenclaturename": "LMBR1 domain containing 2",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "15",
+          "chraccver": "NC_000081.7",
+          "chrstart": 9140621,
+          "chrstop": 9202563,
+          "exoncount": 20
+        }
+      ],
+      "geneweight": 239,
+      "summary": "Predicted to be involved in adrenergic receptor signaling pathway. Predicted to be located in plasma membrane. Predicted to be active in membrane. Is expressed in Meckel's cartilage; cranial ganglion; hindlimb long bone; and tarsus. Orthologous to human LMBRD2 (LMBR1 domain containing 2). [provided by Alliance of Genome Resources, Jul 2025]",
+      "chrsort": "15",
+      "chrstart": 9140621,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000081.7",
+          "chrstart": 9140621,
+          "chrstop": 9202563
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000081.7",
+          "chrstart": 9140621,
+          "chrstop": 9202563
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000081.6",
+          "chrstart": 9140527,
+          "chrstop": 9202482
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NW_016097321.1",
+          "chrstart": 85797,
+          "chrstop": 142677
+        }
+      ]
+    },
+    "66274": {
+      "uid": "66274",
+      "name": "Lyrm9",
+      "description": "LYR motif containing 9",
+      "status": "",
+      "currentid": "",
+      "chromosome": "11",
+      "geneticsource": "genomic",
+      "maplocation": "11 46.74 cM",
+      "otheraliases": "1810012P15Rik",
+      "otherdesignations": "LYR motif-containing protein 9|UPF0631 protein C17orf108 homolog",
+      "nomenclaturesymbol": "Lyrm9",
+      "nomenclaturename": "LYR motif containing 9",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "11",
+          "chraccver": "NC_000077.7",
+          "chrstart": 78717420,
+          "chrstop": 78734724,
+          "exoncount": 4
+        }
+      ],
+      "geneweight": 213,
+      "summary": "Orthologous to human LYRM9 (LYR motif containing 9). [provided by Alliance of Genome Resources, Jul 2025]",
+      "chrsort": "11",
+      "chrstart": 78717420,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000077.7",
+          "chrstart": 78717420,
+          "chrstop": 78734724
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000077.7",
+          "chrstart": 78717420,
+          "chrstop": 78734724
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000077.6",
+          "chrstart": 78826594,
+          "chrstop": 78843898
+        }
+      ]
+    },
+    "74840": {
+      "uid": "74840",
+      "name": "Manf",
+      "description": "mesencephalic astrocyte-derived neurotrophic factor",
+      "status": "",
+      "currentid": "",
+      "chromosome": "9",
+      "geneticsource": "genomic",
+      "maplocation": "9 57.98 cM",
+      "otheraliases": "3230402M22Rik, Armet, D18Mgi17",
+      "otherdesignations": "mesencephalic astrocyte-derived neurotrophic factor|arginine-rich protein|arginine-rich, mutated in early stage tumors",
+      "nomenclaturesymbol": "Manf",
+      "nomenclaturename": "mesencephalic astrocyte-derived neurotrophic factor",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "9",
+          "chraccver": "NC_000075.7",
+          "chrstart": 106769136,
+          "chrstop": 106765951,
+          "exoncount": 4
+        }
+      ],
+      "geneweight": 4890,
+      "summary": "Predicted to enable sulfatide binding activity. Acts upstream of or within vasoconstriction of artery involved in ischemic response to lowering of systemic arterial blood pressure. Predicted to be located in endoplasmic reticulum lumen; extracellular region; and perinuclear region of cytoplasm. Is expressed in several structures, including alimentary system; hemolymphoid system gland; nervous system; sensory organ; and testis. Human ortholog(s) of this gene implicated in Parkinsonism; breast cancer; carcinoma (multiple); and pancreatic cancer. Orthologous to human MANF (mesencephalic astrocyte derived neurotrophic factor). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "09",
+      "chrstart": 106765951,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000075.7",
+          "chrstart": 106769136,
+          "chrstop": 106765951
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000075.7",
+          "chrstart": 106769136,
+          "chrstop": 106765951
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000075.6",
+          "chrstart": 106891937,
+          "chrstop": 106888752
+        }
+      ]
+    },
+    "109154": {
+      "uid": "109154",
+      "name": "Mlec",
+      "description": "malectin",
+      "status": "",
+      "currentid": "",
+      "chromosome": "5",
+      "geneticsource": "genomic",
+      "maplocation": "5 55.99 cM",
+      "otheraliases": "2410014A08Rik, ESTM19, mKIAA0152",
+      "otherdesignations": "malectin",
+      "nomenclaturesymbol": "Mlec",
+      "nomenclaturename": "malectin",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "5",
+          "chraccver": "NC_000071.7",
+          "chrstart": 115296234,
+          "chrstop": 115281039,
+          "exoncount": 5
+        }
+      ],
+      "geneweight": 390,
+      "summary": "Predicted to enable carbohydrate binding activity and enzyme binding activity. Predicted to be located in endoplasmic reticulum. Predicted to be part of oligosaccharyltransferase complex. Is expressed in clavicle; craniocervical region bone; inner ear; lung; and submandibular gland primordium. Orthologous to human MLEC (malectin). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "05",
+      "chrstart": 115281039,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000071.7",
+          "chrstart": 115296234,
+          "chrstop": 115281039
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000071.7",
+          "chrstart": 115296234,
+          "chrstop": 115281039
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000071.6",
+          "chrstart": 115158175,
+          "chrstop": 115142980
+        }
+      ]
+    },
+    "17389": {
+      "uid": "17389",
+      "name": "Mmp16",
+      "description": "matrix metallopeptidase 16",
+      "status": "",
+      "currentid": "",
+      "chromosome": "4",
+      "geneticsource": "genomic",
+      "maplocation": "4 7.08 cM",
+      "otheraliases": "MT-MMP 3, MT3-MMP, Mt3mmp",
+      "otherdesignations": "matrix metalloproteinase-16|Membrane type 3-MMP|membrane-type matrix metalloproteinase 3",
+      "nomenclaturesymbol": "Mmp16",
+      "nomenclaturename": "matrix metallopeptidase 16",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "4",
+          "chraccver": "NC_000070.7",
+          "chrstart": 17853071,
+          "chrstop": 18117478,
+          "exoncount": 13
+        }
+      ],
+      "geneweight": 892,
+      "summary": "This gene encodes a member of the matrix metalloproteinase family of extracellular matrix-degrading enzymes that are involved in tissue remodeling, wound repair, progression of atherosclerosis and tumor invasion. The encoded preproprotein undergoes proteolytic processing to generate a mature, zinc-dependent endopeptidase enzyme. Mice lacking the encoded protein exhibit retarded growth of the skeleton, especially in the cranium and long bones. Alternative splicing results in multiple transcript variants. [provided by RefSeq, Feb 2016]",
+      "chrsort": "04",
+      "chrstart": 17853071,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000070.7",
+          "chrstart": 17853071,
+          "chrstop": 18117478
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000070.7",
+          "chrstart": 17853071,
+          "chrstop": 18117478
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000070.6",
+          "chrstart": 17853071,
+          "chrstop": 18117478
+        }
+      ]
+    },
+    "217166": {
+      "uid": "217166",
+      "name": "Nr1d1",
+      "description": "nuclear receptor subfamily 1, group D, member 1",
+      "status": "",
+      "currentid": "",
+      "chromosome": "11",
+      "geneticsource": "genomic",
+      "maplocation": "11 62.66 cM",
+      "otheraliases": "A530070C09Rik",
+      "otherdesignations": "nuclear receptor subfamily 1 group D member 1|EAR-1|REV-ERBalpha|Rev-ErbA-alpha protein|V-erbA-related protein 1|nuclear receptor protein|orphan nuclear receptor|rev-erb alpha|rev-erbA alpha",
+      "nomenclaturesymbol": "Nr1d1",
+      "nomenclaturename": "nuclear receptor subfamily 1, group D, member 1",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "11",
+          "chraccver": "NC_000077.7",
+          "chrstart": 98666232,
+          "chrstop": 98658757,
+          "exoncount": 8
+        }
+      ],
+      "geneweight": 12858,
+      "summary": "This gene encodes a transcription factor that is a member of the nuclear receptor subfamily 1. The encoded protein is a ligand-sensitive transcription factor that negatively regulates the expression of core clock proteins. In particular this protein represses the circadian clock transcription factor aryl hydrocarbon receptor nuclear translocator-like protein 1 (Arntl). This protein may also be involved in regulating genes that function in metabolic, inflammatory and cardiovascular processes. [provided by RefSeq, Feb 2014]",
+      "chrsort": "11",
+      "chrstart": 98658757,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000077.7",
+          "chrstart": 98666232,
+          "chrstop": 98658757
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000077.7",
+          "chrstart": 98666232,
+          "chrstop": 98658757
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000077.6",
+          "chrstart": 98775376,
+          "chrstop": 98767931
+        }
+      ]
+    },
+    "18124": {
+      "uid": "18124",
+      "name": "Nr4a3",
+      "description": "nuclear receptor subfamily 4, group A, member 3",
+      "status": "",
+      "currentid": "",
+      "chromosome": "4",
+      "geneticsource": "genomic",
+      "maplocation": "4 26.07 cM",
+      "otheraliases": "CHN, CSMF, MINOR, NOR-1, Nor1, TEC",
+      "otherdesignations": "nuclear receptor subfamily 4 group A member 3|neural orphan receptor 1|orphan nuclear receptor TEC|translocated in extraskeletal chondrosarcoma",
+      "nomenclaturesymbol": "Nr4a3",
+      "nomenclaturename": "nuclear receptor subfamily 4, group A, member 3",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "4",
+          "chraccver": "NC_000070.7",
+          "chrstart": 48045097,
+          "chrstop": 48086445,
+          "exoncount": 12
+        }
+      ],
+      "geneweight": 5286,
+      "summary": "This gene encodes a member of the NR4A subfamily of nuclear hormone receptors that bind to DNA and modulate gene expression. The encoded protein has been implicated in T and B lymphocyte apoptosis, and immune cell proliferation. Mice lacking the encoded protein exhibit partial bidirectional circling behavior and inner ear dysfunction. Disruption of this gene in mice also results in defective hippocampal axonal growth and postnatal neuronal cell death. Alternative splicing results in multiple transcript variants encoding different isoforms. [provided by RefSeq, Apr 2015]",
+      "chrsort": "04",
+      "chrstart": 48045097,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000070.7",
+          "chrstart": 48045097,
+          "chrstop": 48086445
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000070.7",
+          "chrstart": 48045097,
+          "chrstop": 48086445
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000070.6",
+          "chrstart": 48045077,
+          "chrstop": 48086446
+        }
+      ]
+    },
+    "18451": {
+      "uid": "18451",
+      "name": "P4ha1",
+      "description": "procollagen-proline, 2-oxoglutarate 4-dioxygenase (proline 4-hydroxylase), alpha 1 polypeptide",
+      "status": "",
+      "currentid": "",
+      "chromosome": "10",
+      "geneticsource": "genomic",
+      "maplocation": "10 29.52 cM",
+      "otheraliases": "P4ha",
+      "otherdesignations": "prolyl 4-hydroxylase subunit alpha-1|4-PH alpha-1|procollagen-proline,2-oxoglutarate-4-dioxygenase subunit alpha-1",
+      "nomenclaturesymbol": "P4ha1",
+      "nomenclaturename": "procollagen-proline, 2-oxoglutarate 4-dioxygenase (proline 4-hydroxylase), alpha 1 polypeptide",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "10",
+          "chraccver": "NC_000076.7",
+          "chrstart": 59159018,
+          "chrstop": 59209125,
+          "exoncount": 16
+        }
+      ],
+      "geneweight": 1048,
+      "summary": "Enables procollagen-proline 4-dioxygenase activity. Acts upstream of or within collagen fibril organization and peptidyl-proline hydroxylation to 4-hydroxy-L-proline. Part of procollagen-proline 4-dioxygenase complex. Is expressed in several structures, including genitourinary system; jaw; limb; sensory organ; and skeleton. Orthologous to human P4HA1 (prolyl 4-hydroxylase subunit alpha 1). [provided by Alliance of Genome Resources, Jul 2025]",
+      "chrsort": "10",
+      "chrstart": 59159018,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000076.7",
+          "chrstart": 59159018,
+          "chrstop": 59209125
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000076.7",
+          "chrstart": 59159018,
+          "chrstop": 59209125
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000076.6",
+          "chrstart": 59323196,
+          "chrstop": 59373303
+        }
+      ]
+    },
+    "18530": {
+      "uid": "18530",
+      "name": "Pcdh8",
+      "description": "protocadherin 8",
+      "status": "",
+      "currentid": "",
+      "chromosome": "14",
+      "geneticsource": "genomic",
+      "maplocation": "14 42.76 cM",
+      "otheraliases": "1700080P15Rik, Papc",
+      "otherdesignations": "protocadherin-8|arcadlin|paraxial protocadherin",
+      "nomenclaturesymbol": "Pcdh8",
+      "nomenclaturename": "protocadherin 8",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "14",
+          "chraccver": "NC_000080.7",
+          "chrstart": 80008751,
+          "chrstop": 80004223,
+          "exoncount": 3
+        }
+      ],
+      "geneweight": 1110,
+      "summary": "This gene belongs to the protocadherin gene family, a subfamily of the cadherin superfamily. The gene encodes a type I transmembrane protein composed of an extracellular domain including 6 cadherin ectodomains, a single-pass transmembrane domain and a cytoplasmic tail. Unlike classical cadherins, which are generally encoded by 15-17 exons, this gene includes only 3 exons with the first large exon encoding the extracellular and transmembrane region. Although this gene product is capable of homophilic interaction, it appears to affect cell-cell adhesion indirectly by initiating signaling events that regulate classical cadherin-mediated adhesion. Based on studies on this protein and its orthologs, this protocadherin mainly functions in developing embryos and the central nervous system, but can also function as a tumor suppressor. Alternative splicing yielding isoforms with unique cytoplasmic tails has been reported. [provided by RefSeq, Sep 2009]",
+      "chrsort": "14",
+      "chrstart": 80004223,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000080.7",
+          "chrstart": 80008751,
+          "chrstop": 80004223
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000080.7",
+          "chrstart": 80008751,
+          "chrstop": 80004223
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000080.6",
+          "chrstart": 79771311,
+          "chrstop": 79766771
+        }
+      ]
+    },
+    "54604": {
+      "uid": "54604",
+      "name": "Pcnx1",
+      "description": "pecanex 1",
+      "status": "",
+      "currentid": "",
+      "chromosome": "12",
+      "geneticsource": "genomic",
+      "maplocation": "12 37.98 cM",
+      "otheraliases": "2900024E21Rik, 3526401J03Rik, Pcnx, Pcnxl1",
+      "otherdesignations": "pecanex-like protein 1|pecanex homolog protein 1",
+      "nomenclaturesymbol": "Pcnx1",
+      "nomenclaturename": "pecanex 1",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "12",
+          "chraccver": "NC_000078.7",
+          "chrstart": 81906687,
+          "chrstop": 82047697,
+          "exoncount": 36
+        }
+      ],
+      "geneweight": 226,
+      "summary": "Predicted to be located in membrane. Is expressed in brain. Orthologous to human PCNX1 (pecanex 1). [provided by Alliance of Genome Resources, Jul 2025]",
+      "chrsort": "12",
+      "chrstart": 81906687,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000078.7",
+          "chrstart": 81906687,
+          "chrstop": 82047697
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000078.7",
+          "chrstart": 81906687,
+          "chrstop": 82047697
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000078.6",
+          "chrstart": 81859912,
+          "chrstop": 82000923
+        }
+      ]
+    },
+    "12304": {
+      "uid": "12304",
+      "name": "Pdia4",
+      "description": "protein disulfide isomerase associated 4",
+      "status": "",
+      "currentid": "",
+      "chromosome": "6",
+      "geneticsource": "genomic",
+      "maplocation": "6 22.94 cM",
+      "otheraliases": "Cai, ERp-72, Erp72",
+      "otherdesignations": "protein disulfide-isomerase A4|ER protein 72|calcium binding protein, intestinal|endoplasmic reticulum protein 72|endoplasmic reticulum resident protein 72",
+      "nomenclaturesymbol": "Pdia4",
+      "nomenclaturename": "protein disulfide isomerase associated 4",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "6",
+          "chraccver": "NC_000072.7",
+          "chrstart": 47790445,
+          "chrstop": 47773074,
+          "exoncount": 11
+        }
+      ],
+      "geneweight": 1351,
+      "summary": "Enables integrin binding activity and protein disulfide isomerase activity. Acts upstream of or within blood coagulation, fibrin clot formation and platelet aggregation. Located in cell surface and endoplasmic reticulum. Part of endoplasmic reticulum chaperone complex. Is expressed in heart; medulla oblongata basal plate; olfactory cortex ventricular layer; and telencephalon ventricular layer. Orthologous to human PDIA4 (protein disulfide isomerase family A member 4). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "06",
+      "chrstart": 47773074,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000072.7",
+          "chrstart": 47790445,
+          "chrstop": 47773074
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000072.7",
+          "chrstart": 47790445,
+          "chrstop": 47773074
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000072.6",
+          "chrstart": 47813511,
+          "chrstop": 47796140
+        }
+      ]
+    },
+    "71853": {
+      "uid": "71853",
+      "name": "Pdia6",
+      "description": "protein disulfide isomerase associated 6",
+      "status": "",
+      "currentid": "",
+      "chromosome": "12",
+      "geneticsource": "genomic",
+      "maplocation": "12 8.06 cM",
+      "otheraliases": "1700015E05Rik, CaBP5, P5, Txndc7",
+      "otherdesignations": "protein disulfide-isomerase A6|protein disulfide isomerase-related protein|thioredoxin domain containing 7|thioredoxin domain-containing protein 7",
+      "nomenclaturesymbol": "Pdia6",
+      "nomenclaturename": "protein disulfide isomerase associated 6",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "12",
+          "chraccver": "NC_000078.7",
+          "chrstart": 17316589,
+          "chrstop": 17334785,
+          "exoncount": 13
+        }
+      ],
+      "geneweight": 1059,
+      "summary": "Enables protein-disulfide reductase activity. Involved in negative regulation of IRE1-mediated unfolded protein response. Part of endoplasmic reticulum chaperone complex. Is expressed in heart; liver; lung epithelium; and pancreas epithelium. Orthologous to human PDIA6 (protein disulfide isomerase family A member 6). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "12",
+      "chrstart": 17316589,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000078.7",
+          "chrstart": 17316589,
+          "chrstop": 17334785
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000078.7",
+          "chrstart": 17316589,
+          "chrstop": 17334785
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000078.6",
+          "chrstart": 17266588,
+          "chrstop": 17284784
+        }
+      ]
+    },
+    "72351": {
+      "uid": "72351",
+      "name": "Ptar1",
+      "description": "protein prenyltransferase alpha subunit repeat containing 1",
+      "status": "",
+      "currentid": "",
+      "chromosome": "19",
+      "geneticsource": "genomic",
+      "maplocation": "19 18.45 cM",
+      "otheraliases": "1700084D09Rik, 2010013L17Rik, 4930428J16Rik",
+      "otherdesignations": "protein prenyltransferase alpha subunit repeat-containing protein 1",
+      "nomenclaturesymbol": "Ptar1",
+      "nomenclaturename": "protein prenyltransferase alpha subunit repeat containing 1",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "19",
+          "chraccver": "NC_000085.7",
+          "chrstart": 23664727,
+          "chrstop": 23710248,
+          "exoncount": 8
+        }
+      ],
+      "geneweight": 245,
+      "summary": "Predicted to enable protein prenyltransferase activity. Predicted to contribute to Rab geranylgeranyltransferase activity. Predicted to be active in cytoplasm. Orthologous to human PTAR1 (protein prenyltransferase alpha subunit repeat containing 1). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "19",
+      "chrstart": 23664727,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000085.7",
+          "chrstart": 23664727,
+          "chrstop": 23710248
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000085.7",
+          "chrstart": 23664727,
+          "chrstop": 23710248
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000085.6",
+          "chrstart": 23687360,
+          "chrstop": 23732884
+        }
+      ]
+    },
+    "225998": {
+      "uid": "225998",
+      "name": "Rorb",
+      "description": "RAR-related orphan receptor beta",
+      "status": "",
+      "currentid": "",
+      "chromosome": "19",
+      "geneticsource": "genomic",
+      "maplocation": "19 13.28 cM",
+      "otheraliases": "Nr1f2, RZR-beta, RZRB, Rorbeta, hstp",
+      "otherdesignations": "nuclear receptor ROR-beta|nuclear receptor RZR-beta|nuclear receptor subfamily 1 group F member 2|retinoid-related orphan receptor-beta",
+      "nomenclaturesymbol": "Rorb",
+      "nomenclaturename": "RAR-related orphan receptor beta",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "19",
+          "chraccver": "NC_000085.7",
+          "chrstart": 19088559,
+          "chrstop": 18907965,
+          "exoncount": 12
+        }
+      ],
+      "geneweight": 4921,
+      "summary": "The protein encoded by this gene is a member of the NR1 subfamily of nuclear hormone receptors. It is a DNA-binding protein that can bind as a monomer or as a homodimer to hormone response elements upstream of several genes to enhance the expression of those genes. The encoded protein has been shown to interact with NM23-2, a nucleoside diphosphate kinase involved in organogenesis and differentiation, and to help regulate the expression of some genes involved in circadian rhythm. Three transcript variants encoding different isoforms have been found for this gene. [provided by RefSeq, Feb 2014]",
+      "chrsort": "19",
+      "chrstart": 18907965,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000085.7",
+          "chrstart": 19088559,
+          "chrstop": 18907965
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000085.7",
+          "chrstart": 19088559,
+          "chrstop": 18907965
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000085.6",
+          "chrstart": 19111195,
+          "chrstop": 18930608
+        }
+      ]
+    },
+    "13609": {
+      "uid": "13609",
+      "name": "S1pr1",
+      "description": "sphingosine-1-phosphate receptor 1",
+      "status": "",
+      "currentid": "",
+      "chromosome": "3",
+      "geneticsource": "genomic",
+      "maplocation": "3 50.0 cM",
+      "otheraliases": "Edg1, Lpb1, S1p, S1p1",
+      "otherdesignations": "sphingosine 1-phosphate receptor 1|S1P receptor 1|S1P receptor Edg-1|endothelial differentiation G-protein coupled receptor 1|endothelial differentiation sphingolipid G-protein-coupled receptor 1|lysophospholipid receptor B1|sphingosine 1-phosphate receptor Edg-1",
+      "nomenclaturesymbol": "S1pr1",
+      "nomenclaturename": "sphingosine-1-phosphate receptor 1",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "3",
+          "chraccver": "NC_000069.7",
+          "chrstart": 115508703,
+          "chrstop": 115504081,
+          "exoncount": 2
+        }
+      ],
+      "geneweight": 15829,
+      "summary": "This gene encodes a G-protein-coupled receptor bound by the lysophospholipid, sphingosine 1-phosphate. The gene product functions in endothelial cells and is involved in vascular and heart development. This receptor is highly expressed in T and B lymphocytes, and it plays a role in T cell and B cell export from peripheral lymphoid organs. This protein is bound and downregulated by FTY720, an exogenous immunosuppressant drug studied in mouse disease models for multiple sclerosis in humans. [provided by RefSeq, Jan 2010]",
+      "chrsort": "03",
+      "chrstart": 115504081,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000069.7",
+          "chrstart": 115508703,
+          "chrstop": 115504081
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000069.7",
+          "chrstart": 115508703,
+          "chrstop": 115504081
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000069.6",
+          "chrstart": 115715054,
+          "chrstop": 115710432
+        }
+      ]
+    },
+    "52850": {
+      "uid": "52850",
+      "name": "Sgsm1",
+      "description": "small G protein signaling modulator 1",
+      "status": "",
+      "currentid": "",
+      "chromosome": "5",
+      "geneticsource": "genomic",
+      "maplocation": "5 55.45 cM",
+      "otheraliases": "2410098H20Rik, D5Bwg1524e, E130107M15, NuIP, Rutbc2",
+      "otherdesignations": "small G protein signaling modulator 1|RUN and TBC1 domain containing 2|RUN and TBC1 domain-containing protein 2|nurr1-interacting protein",
+      "nomenclaturesymbol": "Sgsm1",
+      "nomenclaturename": "small G protein signaling modulator 1",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "5",
+          "chraccver": "NC_000071.7",
+          "chrstart": 113458653,
+          "chrstop": 113391085,
+          "exoncount": 27
+        }
+      ],
+      "geneweight": 571,
+      "summary": "Enables small GTPase binding activity. Acts upstream of or within positive regulation of transcription by RNA polymerase II. Located in cytoplasmic vesicle membrane. Is expressed in brain and metanephros. Orthologous to human SGSM1 (small G protein signaling modulator 1). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "05",
+      "chrstart": 113391085,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000071.7",
+          "chrstart": 113458653,
+          "chrstop": 113391085
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000071.7",
+          "chrstart": 113458653,
+          "chrstop": 113391085
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000071.6",
+          "chrstart": 113310787,
+          "chrstop": 113243219
+        }
+      ]
+    },
+    "21892": {
+      "uid": "21892",
+      "name": "Tll1",
+      "description": "tolloid-like",
+      "status": "",
+      "currentid": "",
+      "chromosome": "8",
+      "geneticsource": "genomic",
+      "maplocation": "8 32.19 cM",
+      "otheraliases": "Tll, Tll-1, b2b2476Clo",
+      "otherdesignations": "tolloid-like protein 1",
+      "nomenclaturesymbol": "Tll1",
+      "nomenclaturename": "tolloid-like",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "8",
+          "chraccver": "NC_000074.7",
+          "chrstart": 64659042,
+          "chrstop": 64466131,
+          "exoncount": 23
+        }
+      ],
+      "geneweight": 1099,
+      "summary": "Enables collagen binding activity. Predicted to be involved in dorsal/ventral pattern formation and protein processing. Predicted to be active in extracellular region. Is expressed in several structures, including brain; cardiovascular system; gut; sclerotome condensation; and trachea mesenchyme. Human ortholog(s) of this gene implicated in atrial heart septal defect 6; congenital heart disease; and coronary artery disease. Orthologous to human TLL1 (tolloid like 1). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "08",
+      "chrstart": 64466131,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000074.7",
+          "chrstart": 64659042,
+          "chrstop": 64466131
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000074.7",
+          "chrstart": 64659041,
+          "chrstop": 64466131
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000074.6",
+          "chrstart": 64206007,
+          "chrstop": 64013097
+        }
+      ]
+    },
+    "216835": {
+      "uid": "216835",
+      "name": "Usp43",
+      "description": "ubiquitin specific peptidase 43",
+      "status": "",
+      "currentid": "",
+      "chromosome": "11",
+      "geneticsource": "genomic",
+      "maplocation": "11 41.13 cM",
+      "otheraliases": "",
+      "otherdesignations": "ubiquitin carboxyl-terminal hydrolase 43|deubiquitinating enzyme 43|ubiquitin thioesterase 43|ubiquitin thiolesterase 43|ubiquitin-specific-processing protease 43",
+      "nomenclaturesymbol": "Usp43",
+      "nomenclaturename": "ubiquitin specific peptidase 43",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "11",
+          "chraccver": "NC_000077.7",
+          "chrstart": 67812978,
+          "chrstop": 67745348,
+          "exoncount": 17
+        }
+      ],
+      "geneweight": 193,
+      "summary": "Predicted to enable cysteine-type deubiquitinase activity. Predicted to be involved in protein deubiquitination. Predicted to be located in nucleus. Orthologous to human USP43 (ubiquitin specific peptidase 43). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "11",
+      "chrstart": 67745348,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000077.7",
+          "chrstart": 67812978,
+          "chrstop": 67745348
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000077.7",
+          "chrstart": 67812978,
+          "chrstop": 67745348
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000077.6",
+          "chrstart": 67922152,
+          "chrstop": 67854522
+        }
+      ]
+    },
+    "22433": {
+      "uid": "22433",
+      "name": "Xbp1",
+      "description": "X-box binding protein 1",
+      "status": "",
+      "currentid": "",
+      "chromosome": "11",
+      "geneticsource": "genomic",
+      "maplocation": "11 3.61 cM",
+      "otheraliases": "D11Ertd39e, TREB-5, TREB5, XBP-1",
+      "otherdesignations": "X-box-binding protein 1|tax-responsive element-binding protein 5 homolog",
+      "nomenclaturesymbol": "Xbp1",
+      "nomenclaturename": "X-box binding protein 1",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "11",
+          "chraccver": "NC_000077.7",
+          "chrstart": 5470640,
+          "chrstop": 5475992,
+          "exoncount": 6
+        }
+      ],
+      "geneweight": 26836,
+      "summary": "Enables several functions, including DNA-binding transcription activator activity, RNA polymerase II-specific; enzyme binding activity; and phosphatidylinositol 3-kinase regulatory subunit binding activity. Involved in several processes, including cellular response to hexose stimulus; intracellular signal transduction; and regulation of gene expression. Acts upstream of or within several processes, including cellular response to leukemia inhibitory factor; exocrine system development; and positive regulation of proteasomal protein catabolic process. Located in cytoplasm and nucleus. Is expressed in several structures, including alimentary system; brain; genitourinary system; sensory organ; and skeletal system. Used to study inflammatory bowel disease. Orthologous to human XBP1 (X-box binding protein 1). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "11",
+      "chrstart": 5470640,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000077.7",
+          "chrstart": 5470640,
+          "chrstop": 5475992
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000077.7",
+          "chrstart": 5470640,
+          "chrstop": 5475992
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000077.6",
+          "chrstart": 5520640,
+          "chrstop": 5525992
+        }
+      ]
+    },
+    "230848": {
+      "uid": "230848",
+      "name": "Zbtb40",
+      "description": "zinc finger and BTB domain containing 40",
+      "status": "",
+      "currentid": "",
+      "chromosome": "4",
+      "geneticsource": "genomic",
+      "maplocation": "4 69.05 cM",
+      "otheraliases": "C230087D24, Gm571, mKIAA0478",
+      "otherdesignations": "zinc finger and BTB domain-containing protein 40",
+      "nomenclaturesymbol": "Zbtb40",
+      "nomenclaturename": "zinc finger and BTB domain containing 40",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "4",
+          "chraccver": "NC_000070.7",
+          "chrstart": 136776128,
+          "chrstop": 136707042,
+          "exoncount": 20
+        }
+      ],
+      "geneweight": 396,
+      "summary": "Predicted to enable DNA-binding transcription factor activity, RNA polymerase II-specific. Predicted to be involved in DNA damage response and regulation of transcription by RNA polymerase II. Predicted to be active in nucleus. Is expressed in genitourinary system. Orthologous to human ZBTB40 (zinc finger and BTB domain containing 40). [provided by Alliance of Genome Resources, Jul 2025]",
+      "chrsort": "04",
+      "chrstart": 136707042,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000070.7",
+          "chrstart": 136776128,
+          "chrstop": 136707042
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000070.7",
+          "chrstart": 136776128,
+          "chrstop": 136707042
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000070.6",
+          "chrstart": 137048819,
+          "chrstop": 136979731
+        }
+      ]
+    },
+    "210162": {
+      "uid": "210162",
+      "name": "Zkscan2",
+      "description": "zinc finger with KRAB and SCAN domains 2",
+      "status": "",
+      "currentid": "",
+      "chromosome": "7",
+      "geneticsource": "genomic",
+      "maplocation": "7 67.42 cM",
+      "otheraliases": "9430065N20Rik, Zfp694",
+      "otherdesignations": "zinc finger protein with KRAB and SCAN domains 2|zinc finger protein 694",
+      "nomenclaturesymbol": "Zkscan2",
+      "nomenclaturename": "zinc finger with KRAB and SCAN domains 2",
+      "nomenclaturestatus": "Official",
+      "mim": [],
+      "genomicinfo": [
+        {
+          "chrloc": "7",
+          "chraccver": "NC_000073.7",
+          "chrstart": 123105684,
+          "chrstop": 123074606,
+          "exoncount": 9
+        }
+      ],
+      "geneweight": 376,
+      "summary": "Predicted to enable DNA-binding transcription factor activity, RNA polymerase II-specific and RNA polymerase II cis-regulatory region sequence-specific DNA binding activity. Predicted to be involved in regulation of transcription by RNA polymerase II. Predicted to be active in nucleus. Is expressed in central nervous system and genitourinary system. Orthologous to human ZKSCAN2 (zinc finger with KRAB and SCAN domains 2). [provided by Alliance of Genome Resources, Jun 2026]",
+      "chrsort": "07",
+      "chrstart": 123074606,
+      "organism": {
+        "scientificname": "Mus musculus",
+        "commonname": "house mouse",
+        "taxid": 10090
+      },
+      "locationhist": [
+        {
+          "annotationrelease": "RS_2024_02",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000073.7",
+          "chrstart": 123105684,
+          "chrstop": 123074606
+        },
+        {
+          "annotationrelease": "RS_2023_04",
+          "assemblyaccver": "GCF_000001635.27",
+          "chraccver": "NC_000073.7",
+          "chrstart": 123105684,
+          "chrstop": 123074606
+        },
+        {
+          "annotationrelease": "108.20200622",
+          "assemblyaccver": "GCF_000001635.26",
+          "chraccver": "NC_000073.6",
+          "chrstart": 123505076,
+          "chrstop": 123475383
+        }
+      ]
+    }
+  }
+}

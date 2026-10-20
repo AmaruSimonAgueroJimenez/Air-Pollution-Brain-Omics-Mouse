@@ -1,0 +1,81 @@
+{
+  "hypothalamus_primary_FDR": {
+    "region": "hypothalamus",
+    "n": 11,
+    "genes": [
+      "Hipk3",
+      "Ksr2",
+      "Pcnx",
+      "Tll1",
+      "Fzd3",
+      "Gm13423",
+      "B230312C02Rik",
+      "Fstl4",
+      "Ptar1",
+      "Lmbrd2",
+      "Mmp16"
+    ],
+    "rule": "All primary hypothalamus BH q<0.05 genes, sorted by q then source symbol; no atlas restriction."
+  },
+  "hypothalamus_measured_top10": {
+    "region": "hypothalamus",
+    "n": 10,
+    "genes": [
+      "Tll1",
+      "Fosl2",
+      "Nr4a3",
+      "Egr2",
+      "Cpne9",
+      "Egr3",
+      "Hgf",
+      "Bcl11b",
+      "Car12",
+      "Crym"
+    ],
+    "rule": "Ten lowest finite primary BH q among exact-symbol measured genes with finite MLE/SE/shrunken effects. Only primary q<0.05 is significant; remaining rows are exploratory."
+  },
+  "cortex_primary_top20": {
+    "region": "cortex",
+    "n": 20,
+    "genes": [
+      "Hspa5",
+      "Pdia4",
+      "Xbp1",
+      "Fosb",
+      "Zbtb40",
+      "Nr1d1",
+      "Homer1",
+      "Pdia6",
+      "Egr3",
+      "Ciart",
+      "Ak4",
+      "Sgsm1",
+      "Creld2",
+      "Fmnl1",
+      "Mlec",
+      "P4ha1",
+      "Lyrm9",
+      "Manf",
+      "Cbfa2t3",
+      "Zkscan2"
+    ],
+    "rule": "Twenty lowest primary BH q among protein-coding cortex genes with q<0.05, tie source symbol; no atlas restriction."
+  },
+  "cortex_measured_top10": {
+    "region": "cortex",
+    "n": 10,
+    "genes": [
+      "Fosb",
+      "Egr3",
+      "S1pr1",
+      "C730002L08Rik",
+      "Fosl2",
+      "Col19a1",
+      "Pcdh8",
+      "Iqgap2",
+      "Usp43",
+      "Rorb"
+    ],
+    "rule": "Ten lowest primary BH q among q<0.05 cortex genes with exact Ensembl measured-panel matches and finite effects; includes noncoding genes."
+  }
+}

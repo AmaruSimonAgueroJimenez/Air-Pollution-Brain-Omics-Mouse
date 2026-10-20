@@ -1,0 +1,24 @@
+{
+  "url": "https://ftp.ncbi.nlm.nih.gov/gene/DATA/GENE_INFO/Mammalia/Mus_musculus.gene_info.gz",
+  "sha256": "f77a7ff46282e19d9b854838ec5c46911408afb4ec314d9a9a0a972ad2079f83",
+  "download_bytes": 3934656,
+  "selected_records": 46,
+  "source_columns": [
+    "#tax_id",
+    "GeneID",
+    "Symbol",
+    "LocusTag",
+    "Synonyms",
+    "dbXrefs",
+    "chromosome",
+    "map_location",
+    "description",
+    "type_of_gene",
+    "Symbol_from_nomenclature_authority",
+    "Full_name_from_nomenclature_authority",
+    "Nomenclature_status",
+    "Other_designations",
+    "Modification_date",
+    "Feature_type"
+  ]
+}

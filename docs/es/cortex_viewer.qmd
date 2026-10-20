@@ -1,0 +1,85 @@
+---
+title: "Visor 3D de corteza y genes prioritarios"
+subtitle: "Referencia cingulada anterior medida y escenario regional de PM2.5"
+page-layout: full
+toc: false
+---
+
+```{python}
+import json
+from IPython.display import Markdown, display
+from _report_utils import ROOT, summary, metric_cards, figure, read_table, show_table
+v = summary("spatial_cortex")
+aca_captions = json.loads((ROOT / "results/spatial_cortex/figure_manifest.json").read_text())
+def aca_panel(stem):
+    figure("spatial_cortex", stem, aca_captions[stem]["caption_es"])
+metric_cards([
+    ("Células ACA registradas", f"{v['anterior_cingulate_cells']:,}", "ACAd + ACAv; diez subestructuras completas"),
+    ("Genes medidos del panel", f"{v['measured_genes']:,}", "Sin imputar expresión"),
+    ("Hallazgos FDR medidos", f"{v['measured_FDR_hits']:,}", "Contraste principal PM/PBS de ocho animales"),
+    ("Animales independientes", "4 PBS / 4 PM", "El atlas es una referencia separada")
+])
+```
+
+[Visor de hipotálamo](viewer.qmd){.btn .btn-outline-secondary}
+[Productos y funciones génicas](gene_profiles.qmd){.btn .btn-primary}
+[Análisis principal de corteza](cortex.qmd){.btn .btn-outline-secondary}
+
+## Varios genes corticales relevantes
+
+La corteza tiene ahora su propia referencia anatómica y estimaciones de exposición. **Fosb, Egr3, S1pr1, Fosl2, Col19a1, Pcdh8, Iqgap2, Usp43 y Rorb**, junto al no codificante **C730002L08Rik**, conforman las diez prioridades medibles elegibles de mayor evidencia. El visor incorpora accesos a genes, qué codifica cada gen curado, su función molecular y enlaces oficiales. Una tabla permite comparar hasta tres genes medidos.
+
+```{python}
+display(Markdown(
+    f"El multiplicador regional central predeterminado de **{v['default_gene']}** es **{v['default_multiplier']:.3f}×**. "
+    f"Tiene conteo medido positivo en **{v['default_reference_nonzero_cells']:,} de {v['anterior_cingulate_cells']:,}** células de referencia. "
+    "La detección describe este donante del atlas; no identifica qué células responden a la exposición."
+))
+```
+
+::: {.model-note}
+**Referencia medida junto a un escenario regional simulado.** Ambas escenas conservan las mismas posiciones celulares y anatomía. El multiplicador procede del modelo principal de ocho animales de GSE297423, no de células expuestas del atlas. El donante no es un control emparejado para los ratones humanizados para α-sinucleína.
+:::
+
+<iframe id="atlas-frame" class="viewer-frame" src="../assets/viewer-cortex/index-es.html" title="Corteza cingulada anterior medida y expresión regional de PM2.5 simulada" loading="lazy"></iframe>
+
+<script>
+window.addEventListener("message", function(event) {
+  const frame = document.getElementById("atlas-frame");
+  if (frame && event.source === frame.contentWindow && (event.origin === window.location.origin || event.origin === "null") && event.data && event.data.type === "omics-atlas-height") {
+    frame.style.height = Math.min(9000, Math.max(1750, Number(event.data.height) + 30)) + "px";
+  }
+});
+</script>
+
+[Abrir el visor independiente de corteza](../assets/viewer-cortex/index-es.html){.btn .btn-outline-primary target="_blank"}
+
+## Qué codifican y cómo compararlos
+
+Los [perfiles génicos](gene_profiles.qmd) conservan los genes de mayor evidencia de tejido completo aunque no estén medidos por MERFISH. En particular, **Hspa5, Pdia4 y Xbp1** siguen siendo prioridades regionales; no se inventa su expresión espacial. Los genes no codificantes se identifican como productos de RNA, sin asignarles una proteína.
+
+Seleccione un acceso génico, consulte su producto y función y agréguelo a la comparación de tres genes. El porcentaje de detección y el conteo de imagen medio incluyen todas las células, incluidos los ceros. Son magnitudes distintas de los conteos RNA-seq normalizados y de los cambios regionales de expresión. Las eficiencias de las sondas y las distribuciones biológicas limitan comparar directamente los niveles de conteo entre genes.
+
+Un efecto regional positivo indica más RNA en PM que en PBS bajo ese modelo. No establece mayor abundancia de proteína, un tipo celular que responde ni un papel causal. Las cuestiones de calidad muestral se conservan en la [auditoría de reproducción](replication.qmd).
+
+## Alcance anatómico y estadístico
+
+La máscara comprende **ACAd y ACAv con todas sus capas**, restringidas a corteza cingulada anterior registrada. Incluye 7,784 células de ACA dorsal y 6,798 de ventral, sin submuestreo ni reflejo del hemisferio. No representa todas las áreas corticales. Es una aproximación anatómica ACA a la disección informada; no se depositaron sus límites quirúrgicos exactos.
+
+Los identificadores Ensembl exactos emparejan 960 de los 1,122 genes medidos con efectos corticales principales. De ellos, 916 cumplen la regla de estimación del visor y 76 tienen q BH primaria < 0.05. Los efectos ausentes o no fiables permiten solo la referencia. El escenario central utiliza el coeficiente regularizado; los escenarios alternativos corresponden a MLE ± 1.96 EE del efecto grupal.
+
+## Alternativas estáticas con varios genes
+
+```{python}
+aca_panel("cortical_priority_spatial_panel_es")
+aca_panel("reference_vs_simulation_es")
+```
+
+[Células ACA registradas](../downloads/spatial_cortex/registered_cortex_cells.tsv.gz) ·
+[Cobertura del panel](../downloads/spatial_cortex/gene_panel_coverage.tsv) ·
+[Definición anatómica y modelo](../downloads/spatial_cortex/summary.json) ·
+[Validación](../downloads/spatial_cortex/validation_checks.json) ·
+[Extracción reproducible](../downloads/code/build_cortex_spatial_viewer.py)
+
+La superficie del cerebro completo orienta la anatomía. No se aplica el efecto cortical al hipotálamo, a otras áreas ni al hemisferio opuesto. El modelo no estima pérdida celular, migración ni vulnerabilidad específica por célula.
+

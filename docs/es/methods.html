@@ -201,9 +201,24 @@ div.csl-indent {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./viewer.html"> 
-<span class="menu-text">Visor 3D</span></a>
+    <a class="nav-link" href="./gene_profiles.html"> 
+<span class="menu-text">Genes y funciones</span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-visores-3d" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Visores 3D</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-visores-3d">    
+        <li>
+    <a class="dropdown-item" href="./viewer.html">
+ <span class="dropdown-text">Hipotálamo y selección regional</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cortex_viewer.html">
+ <span class="dropdown-text">Corteza cingulada anterior</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./reproducibility.html"> 
 <span class="menu-text">Datos y código</span></a>
@@ -255,6 +270,8 @@ div.csl-indent {
   </ul></li>
   <li><a href="#reproducibilidad" id="toc-reproducibilidad" class="nav-link" data-scroll-target="#reproducibilidad">Reproducibilidad</a></li>
   <li><a href="#análisis-ampliados-y-recuperación-de-los-métodos-originales" id="toc-análisis-ampliados-y-recuperación-de-los-métodos-originales" class="nav-link" data-scroll-target="#análisis-ampliados-y-recuperación-de-los-métodos-originales">Análisis ampliados y recuperación de los métodos originales</a></li>
+  <li><a href="#prioridades-génicas-y-anotación-del-producto-codificado" id="toc-prioridades-génicas-y-anotación-del-producto-codificado" class="nav-link" data-scroll-target="#prioridades-génicas-y-anotación-del-producto-codificado">Prioridades génicas y anotación del producto codificado</a></li>
+  <li><a href="#extensión-espacial-a-corteza-cingulada-anterior" id="toc-extensión-espacial-a-corteza-cingulada-anterior" class="nav-link" data-scroll-target="#extensión-espacial-a-corteza-cingulada-anterior">Extensión espacial a corteza cingulada anterior</a></li>
   </ul>
 </nav>
     </div>
@@ -421,7 +438,7 @@ div.csl-indent {
 <section id="referencia-3d-medida-y-escenario-modelado-de-pm2.5" class="level2">
 <h2 class="anchored" data-anchor-id="referencia-3d-medida-y-escenario-modelado-de-pm2.5">Referencia 3D medida y escenario modelado de PM2.5</h2>
 <p>La referencia espacial utiliza <strong>Zhuang-ABCA-2</strong>, un donante macho adulto. Las células se seleccionan según las asignaciones de parcelación CCF depositadas para la división hipotalámica, se vinculan mediante identificadores celulares exactos de tipo texto con la matriz H5AD medida y se anotan mediante la taxonomía del atlas. <span class="citation" data-cites="Zhang2023_38092912">Zhang et&nbsp;al. (<a href="#ref-Zhang2023_38092912" role="doc-biblioref">2023</a>)</span></p>
-<div id="884f98ca" class="cell" data-execution_count="3">
+<div id="cda68cd1" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>Esta selección contiene <strong>37,811 células</strong>, <strong>26 clases celulares</strong> y <strong>49 subestructuras hipotalámicas</strong>. Se puede acceder a los <strong>1,122 genes medidos</strong>; <strong>1,003</strong> tienen estimaciones fiables del efecto en tejido completo. Las células no se submuestrean, reflejan ni interpolan.</p>
 </div>
@@ -445,6 +462,17 @@ div.csl-indent {
 <section id="análisis-ampliados-y-recuperación-de-los-métodos-originales" class="level2">
 <h2 class="anchored" data-anchor-id="análisis-ampliados-y-recuperación-de-los-métodos-originales">Análisis ampliados y recuperación de los métodos originales</h2>
 <p>El <a href="./advanced_results.html">capítulo de análisis secundarios</a> define los modelos anidados de interacción, contrastes de coeficientes, familias de corrección, reglas de selección visual e intervalos que incorporan covarianzas. El <a href="./replication.html">capítulo de reproducción</a> reconstruye por separado el modelo original de cinco grupos de corteza, la sensibilidad metodológica de hipotálamo, candidatos ANOVA/LSD de miRNA y la selección y ajustes candidatos de ozono. No reemplazan los ajustes principales. Se exportan sesiones de R 4.5.2, DESeq2 1.50.2, limma 3.66.0 y edgeR 4.8.2 con sus resultados. Las descargas originales conservan hashes y URL; el texto y las imágenes editoriales de los artículos se excluyen de la página pública.</p>
+</section>
+<section id="prioridades-génicas-y-anotación-del-producto-codificado" class="level2">
+<h2 class="anchored" data-anchor-id="prioridades-génicas-y-anotación-del-producto-codificado">Prioridades génicas y anotación del producto codificado</h2>
+<p>Se conservan todos los hallazgos FDR principales del hipotálamo. Las prioridades codificantes de corteza proceden del resultado principal fijo de ocho animales, ordenado por q de BH sin redondear y con desempates declarados. Las listas espaciales de diez genes requieren medición MERFISH y estimaciones originales elegibles. Los grupos se distinguen: solo un candidato medido hipotalámico es un hallazgo principal, mientras los diez corticales medidos son significativos. La selección posterior al análisis permite describir y plantear seguimiento, sin confirmación independiente.</p>
+<p>Los registros oficiales NCBI de ratón y UniProt revisados aportan símbolo actual, tipo génico, producto y función. Se conservan los símbolos de los ensayos. Las correspondencias confirmadas se documentan; los alias ambiguos no se sustituyen. Los RNA no codificantes y pseudogenes no reciben una proteína. Una función inferida por similitud no se presenta como ensayo enzimático en estos ratones. Los resultados RNA no distinguen abundancia proteica ni isoformas como ΔFosB, Homer1a y XBP1s.</p>
+</section>
+<section id="extensión-espacial-a-corteza-cingulada-anterior" class="level2">
+<h2 class="anchored" data-anchor-id="extensión-espacial-a-corteza-cingulada-anterior">Extensión espacial a corteza cingulada anterior</h2>
+<p>La misma referencia macho no expuesta Zhuang-ABCA-2 aporta todas las células registradas con división Isocortex y estructura ACAd o ACAv, conservando diez capas/subestructuras. ACA aproxima anatómicamente la disección informada, cuyos límites quirúrgicos exactos no se depositaron. Los identificadores celulares exactos enlazan coordenadas y matriz H5AD medida. La referencia de 14,582 células no se submuestrea ni refleja ni imputa expresión. Los Ensembl exactos emparejan genes medidos y resultado cortical; las diferencias de símbolo quedan en la procedencia, sin sustituciones inventadas.</p>
+<p>Los conteos de imagen de cada gen cortical se multiplican uniformemente por 2 elevado al log₂FC cortical principal regularizado. El efecto se restringe a ACA; el hipotálamo conserva su efecto regional independiente. La escala común referencia/escenario se calcula dentro de cada gen. La comparación de tres genes informa detección y conteo medio con ceros, efecto regional RNA, q de BH y anotación; no prueba diferencias de exposición entre genes ni iguala eficiencias de sondas.</p>
+<p>El donante del atlas no es un control experimental de los animales humanizados para α-sinucleína. Localizar un transcrito basal y disponer de un efecto regional no identifica qué células responden a PM2.5. Se verifican concordancia coordenadas/volumen, uniones, rangos y los 1,122 vectores comprimidos. Véanse los <a href="./gene_profiles.html">perfiles génicos</a> y los <a href="./cortex_viewer.html">métodos y resultados 3D corticales</a>.</p>
 
 
 <!-- -->
@@ -1094,6 +1122,20 @@ Zhu, Anqi, Joseph G. Ibrahim, y Michael I. Love. 2019. <span>«Heavy-tailed prio
 <span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a><span class="fu">## Análisis ampliados y recuperación de los métodos originales</span></span>
 <span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>El <span class="co">[</span><span class="ot">capítulo de análisis secundarios</span><span class="co">](advanced_results.qmd)</span> define los modelos anidados de interacción, contrastes de coeficientes, familias de corrección, reglas de selección visual e intervalos que incorporan covarianzas. El <span class="co">[</span><span class="ot">capítulo de reproducción</span><span class="co">](replication.qmd)</span> reconstruye por separado el modelo original de cinco grupos de corteza, la sensibilidad metodológica de hipotálamo, candidatos ANOVA/LSD de miRNA y la selección y ajustes candidatos de ozono. No reemplazan los ajustes principales. Se exportan sesiones de R 4.5.2, DESeq2 1.50.2, limma 3.66.0 y edgeR 4.8.2 con sus resultados. Las descargas originales conservan hashes y URL; el texto y las imágenes editoriales de los artículos se excluyen de la página pública.</span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a><span class="fu">## Prioridades génicas y anotación del producto codificado</span></span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>Se conservan todos los hallazgos FDR principales del hipotálamo. Las prioridades codificantes de corteza proceden del resultado principal fijo de ocho animales, ordenado por q de BH sin redondear y con desempates declarados. Las listas espaciales de diez genes requieren medición MERFISH y estimaciones originales elegibles. Los grupos se distinguen: solo un candidato medido hipotalámico es un hallazgo principal, mientras los diez corticales medidos son significativos. La selección posterior al análisis permite describir y plantear seguimiento, sin confirmación independiente.</span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>Los registros oficiales NCBI de ratón y UniProt revisados aportan símbolo actual, tipo génico, producto y función. Se conservan los símbolos de los ensayos. Las correspondencias confirmadas se documentan; los alias ambiguos no se sustituyen. Los RNA no codificantes y pseudogenes no reciben una proteína. Una función inferida por similitud no se presenta como ensayo enzimático en estos ratones. Los resultados RNA no distinguen abundancia proteica ni isoformas como ΔFosB, Homer1a y XBP1s.</span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a><span class="fu">## Extensión espacial a corteza cingulada anterior</span></span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>La misma referencia macho no expuesta Zhuang-ABCA-2 aporta todas las células registradas con división Isocortex y estructura ACAd o ACAv, conservando diez capas/subestructuras. ACA aproxima anatómicamente la disección informada, cuyos límites quirúrgicos exactos no se depositaron. Los identificadores celulares exactos enlazan coordenadas y matriz H5AD medida. La referencia de 14,582 células no se submuestrea ni refleja ni imputa expresión. Los Ensembl exactos emparejan genes medidos y resultado cortical; las diferencias de símbolo quedan en la procedencia, sin sustituciones inventadas.</span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a>Los conteos de imagen de cada gen cortical se multiplican uniformemente por 2 elevado al log₂FC cortical principal regularizado. El efecto se restringe a ACA; el hipotálamo conserva su efecto regional independiente. La escala común referencia/escenario se calcula dentro de cada gen. La comparación de tres genes informa detección y conteo medio con ceros, efecto regional RNA, q de BH y anotación; no prueba diferencias de exposición entre genes ni iguala eficiencias de sondas.</span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a>El donante del atlas no es un control experimental de los animales humanizados para α-sinucleína. Localizar un transcrito basal y disponer de un efecto regional no identifica qué células responden a PM2.5. Se verifican concordancia coordenadas/volumen, uniones, rangos y los 1,122 vectores comprimidos. Véanse los <span class="co">[</span><span class="ot">perfiles génicos</span><span class="co">](gene_profiles.qmd)</span> y los <span class="co">[</span><span class="ot">métodos y resultados 3D corticales</span><span class="co">](cortex_viewer.qmd)</span>.</span>
 </code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -1,0 +1,41 @@
+{
+  "purpose": "Transparent ranked candidates and gene-product annotation; descriptive context for regional RNA and spatial reference visualization.",
+  "audience": "Bilingual scientific website and downloadable research figures; no journal submission specification asserted.",
+  "sample_units": {
+    "hypothalamus": {
+      "control_FA": 4,
+      "exposed_PM": 3,
+      "replicate": "animal"
+    },
+    "cortex": {
+      "control_PBS": 4,
+      "exposed_PM": 4,
+      "replicate": "animal"
+    }
+  },
+  "source_DE": "Unchanged primary regional results; cortex author20 reanalysis is not the ranking input.",
+  "ranking": "BH q then source gene symbol; finite MLE, SE and shrunken coefficient required for measured-panel lists.",
+  "interval": "Pointwise normal approximation: MLE log2FC ± 1.959963984540054 * original lfcSE. Not simultaneous or selection-adjusted; diamonds show separate shrunken coefficients.",
+  "atlas_mapping": {
+    "hypothalamus": "Exact original source symbol against MERFISH panel; source matrix does not provide original Ensembl IDs. Official current aliases are displayed separately.",
+    "cortex": "Exact source Ensembl gene ID against MERFISH panel; source IDs retained."
+  },
+  "annotation_identity": "Current exact NCBI mouse symbol preferred; unique official alias explicitly disclosed. UniProt exact primary mouse gene name preferred to historical synonyms; only unique reviewed records assigned.",
+  "functional_group_semantics": "Descriptive manual summaries from linked official records; not enrichment, pathway activation, cell identity, protein quantification or exposure-specific mechanism.",
+  "cautions": [
+    "All primary hypothalamic coding hits decrease; both increases are noncoding or pseudogene signals under current annotation.",
+    "Nine of ten measured hypothalamic candidates are exploratory (q≥0.05); six show strong coefficient shrinkage.",
+    "All11 hypothalamic primary hits retain direction in7of7 leave-one-animal-out runs, but none retains q<0.05 in all7.",
+    "Cortex sex/identity metadata require verification; this study-level flag does not mean that every selected gene is sex-linked.",
+    "Regional RNA does not resolve cell composition, protein abundance, enzyme activity or transcript isoforms.",
+    "Ak4 mouse functional annotation is by similarity to human AK4; reviewed human annotation records conflicting in-vitro catalytic findings.",
+    "Ksr2 is interpreted as a scaffold; very low in-vitro kinase activity in reviewed annotation does not establish active catalysis in these data."
+  ],
+  "software": {
+    "python": "3.14.3",
+    "pandas": "2.3.3",
+    "numpy": "2.4.3",
+    "matplotlib": "3.10.8"
+  },
+  "rebuild": "./.venv-analysis/bin/python scripts/analyze_gene_priorities.py; use --refresh-annotations only to change the frozen annotation snapshot."
+}

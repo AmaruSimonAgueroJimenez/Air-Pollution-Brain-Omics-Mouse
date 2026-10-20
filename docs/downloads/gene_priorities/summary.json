@@ -1,0 +1,108 @@
+{
+  "complete": true,
+  "annotation_date_UTC": "2026-10-20T01:50:30.767413+00:00",
+  "unique_genes": 46,
+  "selected_rows": 51,
+  "protein_coding_genes": 43,
+  "groups": {
+    "hypothalamus_primary_FDR": {
+      "rows": 11,
+      "primary_FDR": 11,
+      "atlas_measured": 1,
+      "genes": [
+        "Hipk3",
+        "Ksr2",
+        "Pcnx",
+        "Tll1",
+        "Fzd3",
+        "Gm13423",
+        "B230312C02Rik",
+        "Fstl4",
+        "Ptar1",
+        "Lmbrd2",
+        "Mmp16"
+      ]
+    },
+    "hypothalamus_measured_top10": {
+      "rows": 10,
+      "primary_FDR": 1,
+      "atlas_measured": 10,
+      "genes": [
+        "Tll1",
+        "Fosl2",
+        "Nr4a3",
+        "Egr2",
+        "Cpne9",
+        "Egr3",
+        "Hgf",
+        "Bcl11b",
+        "Car12",
+        "Crym"
+      ]
+    },
+    "cortex_primary_top20": {
+      "rows": 20,
+      "primary_FDR": 20,
+      "atlas_measured": 2,
+      "genes": [
+        "Hspa5",
+        "Pdia4",
+        "Xbp1",
+        "Fosb",
+        "Zbtb40",
+        "Nr1d1",
+        "Homer1",
+        "Pdia6",
+        "Egr3",
+        "Ciart",
+        "Ak4",
+        "Sgsm1",
+        "Creld2",
+        "Fmnl1",
+        "Mlec",
+        "P4ha1",
+        "Lyrm9",
+        "Manf",
+        "Cbfa2t3",
+        "Zkscan2"
+      ]
+    },
+    "cortex_measured_top10": {
+      "rows": 10,
+      "primary_FDR": 10,
+      "atlas_measured": 10,
+      "genes": [
+        "Fosb",
+        "Egr3",
+        "S1pr1",
+        "C730002L08Rik",
+        "Fosl2",
+        "Col19a1",
+        "Pcdh8",
+        "Iqgap2",
+        "Usp43",
+        "Rorb"
+      ]
+    }
+  },
+  "not_protein_coding": [
+    {
+      "gene": "B230312C02Rik",
+      "biotype": "ncRNA",
+      "protein_name_en": "Noncoding RNA; no annotated protein product"
+    },
+    {
+      "gene": "C730002L08Rik",
+      "biotype": "ncRNA",
+      "protein_name_en": "Noncoding RNA; no annotated protein product"
+    },
+    {
+      "gene": "Gm13423",
+      "biotype": "pseudogene",
+      "protein_name_en": "No confirmed functional protein: Npm1 pseudogene"
+    }
+  ],
+  "ranking_is_not_causal_relevance": true,
+  "no_primary_analysis_refitted": true,
+  "no_exposed_single_cells_inferred": true
+}

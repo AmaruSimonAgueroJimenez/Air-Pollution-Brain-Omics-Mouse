@@ -165,3 +165,18 @@ To refit the expanded analyses from locally downloaded source data:
 Reanalysis requires the local source datasets and recorded dependencies. Rebuilding the website alone uses the committed result tables. Public hosting does not redistribute restricted article copies or the hundreds of gigabytes of downloaded source reads.
 
 For changes limited to viewer assets or downloadable artifacts, `scripts/render_docs.py --refresh-static` refreshes an existing bilingual render and its Pages manifest without reexecuting the QMD pages. Numerical analysis results are unchanged.
+
+## Gene products, functions and cortical 3D extension
+
+[Gene profiles](docs/gene_profiles.qmd) now cover 46 source-checked gene identities: all 11 primary hypothalamic hits, top 20 primary cortex coding genes, and separate measured-panel top-ten lists. Original assay symbols and current official names are distinguished; three noncoding/pseudogene records are not assigned proteins. Effects remain the original RNA estimates, not protein measurements or causal-function tests.
+
+The [cortex 3D viewer](docs/cortex_viewer.qmd) uses 14,582 actual registered anterior cingulate cells (ACAd/ACAv) and the primary PM/PBS effects from eight independent animals. 76 primary significant genes are measured in the panel. The default Fosb multiplier is 1.996×; Egr3 and S1pr1 are among the spatial priorities. Relevant-gene shortcuts, product/function cards, and a comparison for up to 3 measured genes are available in both regions and languages. No expression is imputed for absent genes.
+
+```bash
+.venv-analysis/bin/python scripts/analyze_gene_priorities.py
+.venv-analysis/bin/python scripts/build_cortex_spatial_viewer.py
+.venv-analysis/bin/python scripts/build_gene_annotation_assets.py
+.venv-analysis/bin/python scripts/render_docs.py
+```
+
+Full provenance and selection rules accompany the result tables. The 3D comparisons preserve measured positions and apply a uniform regional scenario; they do not identify exposed single cells.

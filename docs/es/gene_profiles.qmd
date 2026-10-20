@@ -1,0 +1,123 @@
+---
+title: "Genes prioritarios y qué codifican"
+subtitle: "Hipotálamo y corteza cingulada anterior: evidencia, función molecular y cobertura espacial"
+---
+
+```{python}
+import json
+import html
+import pandas as pd
+from IPython.display import Markdown, display
+from _report_utils import ROOT, read_table, figure, show_table
+p = read_table("gene_priorities", "prioritized_genes.tsv")
+a = read_table("gene_priorities", "annotations.tsv").fillna("")
+def gene_table(group, language):
+    part = p.loc[p.selection_group.eq(group)].sort_values("selection_rank").copy()
+    spanish = language == "es"
+    headers = ["Gen y fuente", "Qué codifica", "Función molecular", "Efecto regional PM", "q de BH", "Panel espacial"] if spanish else ["Gene and source", "Encoded product", "Molecular function", "Regional PM effect", "BH q", "Spatial panel"]
+    rows = []
+    for r in part.to_dict("records"):
+        e = lambda x: html.escape(str(x), quote=True)
+        official = str(r.get("official_symbol", r["gene"]))
+        gene = '<a href="' + e(r["source_url"]) + '" target="_blank" rel="noopener">' + e(r["gene"]) + '</a>'
+        if official != str(r["gene"]):
+            gene += '<br><small>' + ("Símbolo actual: " if spanish else "Current symbol: ") + e(official) + '</small>'
+        product = e(r["protein_name_" + language])
+        if pd.notna(r.get("uniprot_url")) and str(r["uniprot_url"]).startswith("https://"):
+            product += '<br><a href="' + e(r["uniprot_url"]) + '" target="_blank" rel="noopener">UniProt</a>'
+        role = e(r["function_" + language])
+        effect = f'{r["log2FoldChange"]:+.2f}<br><small>' + ('IC 95%' if spanish else '95% CI') + f' [{r["CI95_lower"]:+.2f}, {r["CI95_upper"]:+.2f}]</small>'
+        q = float(r["padj"])
+        qtext = f"{q:.2e}" if q < .01 else f"{q:.3f}"
+        measured = bool(r["atlas_measured"])
+        spatial = ("Medido" if measured else "No medido") if spanish else ("Measured" if measured else "Not measured")
+        if not bool(r["primary_significant"]):
+            spatial += '<br><small>' + ("Efecto exploratorio" if spanish else "Exploratory effect") + '</small>'
+        rows.append("<tr>" + "".join("<td>" + str(x) + "</td>" for x in [gene, product, role, effect, qtext, spatial]) + "</tr>")
+    display(Markdown('<div class="table-scroll"><table class="table table-sm table-striped evidence-table gene-evidence-table"><thead><tr>' + "".join("<th>" + e(x) + "</th>" for x in headers) + "</tr></thead><tbody>" + "".join(rows) + "</tbody></table></div>"))
+```
+
+## Genes relevantes más allá de uno en el atlas
+
+El análisis contiene numerosos hallazgos regionales. Que un gen esté disponible en un panel espacial dirigido es una propiedad distinta de su evidencia estadística. Se conservan **los 11 hallazgos principales de hipotálamo**, los **20 genes codificantes con mayor evidencia primaria de corteza** y listas espaciales definidas explícitamente. Ningún gen se elimina del informe por carecer de mediciones espaciales.
+
+Son prioridades transparentes, seleccionadas después del análisis, para interpretar y plantear seguimientos. Ordenar por q de BH no demuestra importancia biológica, una diana terapéutica ni un mecanismo causal. Los resultados principales y las pruebas génicas no cambian. @Rajagopalan2020_32780721 @Zhang2025_40906862
+
+## Cómo se seleccionaron y anotaron
+
+La lista de hipotálamo contiene todos los genes del análisis principal en Python con BH < 0.05. En corteza se seleccionan los primeros 20 genes codificantes por q primaria y los criterios de desempate documentados. Las listas espaciales seleccionan los diez genes elegibles de mayor evidencia realmente medidos por MERFISH en cada región. En hipotálamo, los genes medidos después de *Tll1* siguen siendo **exploratorios**; no se reclasifican como descubrimientos.
+
+Las anotaciones oficiales de ratón distinguen símbolo original, símbolo oficial actual, tipo de gen y producto codificado. Cada nombre enlaza NCBI y las proteínas disponibles enlazan UniProt. La función molecular describe el producto anotado; una diferencia de RNA no mide por sí misma abundancia proteica, actividad enzimática ni activación de una vía.
+
+Los efectos de las tablas corresponden a **MLE regional log₂FC sin regularizar e intervalos puntuales de Wald del 95%**. La q de BH es la de la prueba principal. El escenario central 3D utiliza el coeficiente regularizado guardado por separado; ambas estimaciones no son intercambiables.
+
+## Hipotálamo: los once hallazgos principales
+
+```{python}
+gene_table("hypothalamus_primary_FDR", "es")
+```
+
+La lista completa contiene *Hipk3, Ksr2, Tll1, Pcnx, Fzd3, Gm13423, B230312C02Rik, Fstl4, Ptar1, Mmp16* y *Lmbrd2*. Los nueve hallazgos hipotalámicos codificantes tienen menos RNA regional; los dos aumentados están anotados actualmente como pseudogén/RNA no codificante. No se están midiendo sus productos proteicos. El símbolo original **Pcnx** corresponde al actual **Pcnx1**; se conservan ambos. **Gm13423 está anotado como pseudogén** y **B230312C02Rik como RNA no codificante**. No se les asigna una proteína inventada.
+
+Sus funciones moleculares son diversas; no representan una única vía uniforme. Los once conservan la dirección del efecto en los siete ajustes omitiendo un animal, pero ninguno mantiene significación en todos ellos. Los [resultados de hipotálamo](results.qmd) conservan esa sensibilidad completa. La anotación funcional no elimina esta incertidumbre.
+
+### Genes hipotalámicos medidos disponibles en 3D
+
+```{python}
+gene_table("hypothalamus_measured_top10", "es")
+```
+
+Solo *Tll1* combina un hallazgo primario FDR del hipotálamo con medición en este panel. Otros genes medidos seleccionados —como *Fosl2, Nr4a3, Egr2* y *Egr3*— permiten explorar estimaciones regionales identificadas como exploratorias. Los diez hallazgos principales no medidos conservan sus resultados y anotaciones de tejido completo; no se imputa su expresión espacial.
+
+En seis genes medidos exploratorios —*Egr2, Egr3, Hgf, Bcl11b, Car12* y *Crym*— la estimación regularizada se contrae marcadamente respecto de la MLE. Sus escenarios centrales pueden quedar próximos a la referencia. Es regularización bajo evidencia regional limitada; no demuestra que la respuesta biológica permanezca inalterada. La figura muestra por separado los intervalos de MLE y los efectos regularizados.
+
+## Corteza: los veinte genes codificantes con mayor evidencia primaria
+
+Los datos de corteza comparan cuatro animales PM2.5 con cuatro controles PBS. El modelo principal de ocho animales se mantiene separado de la reproducción original de 20 animales. Las prioridades siguientes proceden del modelo principal; no se alternan modelos para seleccionar genes preferidos. @Zhang2025_40906862
+
+```{python}
+gene_table("cortex_primary_top20", "es")
+```
+
+La selección incluye genes de control de calidad proteica y estrés del retículo endoplasmático, como **Hspa5, Pdia4 y Xbp1**, y de respuesta transcripcional, como **Fosb y Egr3**. Sus funciones anotadas aportan contexto para investigar; el contraste de RNA no demuestra que esas proteínas medien un efecto de contaminación. Los [resultados de corteza](cortex.qmd) y la [reproducción de los autores](replication.qmd) conservan las diferencias de modelo y las cuestiones de calidad muestral pendientes.
+
+Varios genes de mayor evidencia regional —incluidos *Hspa5, Pdia4* y *Xbp1*— no están medidos por MERFISH. Esto limita su visualización espacial, sin disminuir su prioridad estadística en tejido completo.
+
+
+Los conteos por gen tampoco aíslan **ΔFosB**, **Homer1a** ni **XBP1s** producido por corte y empalme. Esas interpretaciones de isoformas requieren mediciones de transcritos, procesamiento o proteínas más allá de este resultado génico.
+
+### Prioridades corticales medidas y anatomía cingulada anterior
+
+```{python}
+gene_table("cortex_measured_top10", "es")
+```
+
+El atlas aporta **14,582 células registradas de corteza cingulada anterior** del mismo donante macho, incluyendo ACA dorsal y ventral y sus capas. Hay **76 hallazgos FDR corticales principales** medidos en el panel. El de mayor evidencia es *Fosb*, seguido por genes como *Egr3* y *S1pr1*. **C730002L08Rik es no codificante** y se presenta sin asignarle una proteína.
+
+Esta extensión utiliza ACA como aproximación anatómica a la disección cingulada anterior informada; no se depositaron los límites quirúrgicos exactos. El efecto regional cortical se aplica únicamente dentro de esa referencia anatómica; no se transfiere a toda la corteza cerebral ni a todo el cerebro.
+
+## Evidencia centrada en genes
+
+```{python}
+manifest = json.loads((ROOT / "results/gene_priorities/figure_manifest.json").read_text())
+for stem in ["gene_priority_evidence_es", "spatial_candidate_evidence_es"]:
+    figure("gene_priorities", stem, manifest[stem]["caption"])
+```
+
+## Explorar varios genes en el visor
+
+[Abrir el visor 3D de hipotálamo y corteza](viewer.qmd){.btn .btn-primary}
+
+El visor incorpora accesos a genes prioritarios, una ficha del producto y su función y una tabla comparativa de hasta tres genes medidos. La comparación distingue detección y expresión medida de los efectos regionales estimados. Las vistas 3D conservan las mismas células y coordenadas entre referencia y escenario.
+
+Un resultado significativo en corteza y no significativo en hipotálamo no establece una diferencia estadística entre tejidos. Son experimentos, animales y protocolos diferentes. Compartir una anotación tampoco demuestra que responda el mismo tipo celular en ambas regiones.
+
+## Tablas fuente y reproducibilidad
+
+[Todas las prioridades](../downloads/gene_priorities/prioritized_genes.tsv) ·
+[Productos y anotaciones funcionales](../downloads/gene_priorities/annotations.tsv) ·
+[Reglas de selección](../downloads/gene_priorities/selection_rules.json) · [Métodos de anotación](../downloads/provenance/gene_priorities/methods.json) · [Resumen](../downloads/gene_priorities/summary.json) ·
+[Obtención de fuentes y figuras](../downloads/code/analyze_gene_priorities.py)
+
+Se conservan símbolos originales, correspondencias actuales, URL, campos estadísticos, cobertura espacial y reglas de selección. Las funciones no caracterizadas permanecen sin resolver. No se infiere un experimento nuevo de exposición unicelular ni una medición de proteínas.
+

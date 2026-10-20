@@ -201,9 +201,24 @@ div.csl-indent {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./viewer.html"> 
-<span class="menu-text">Visor 3D</span></a>
+    <a class="nav-link" href="./gene_profiles.html"> 
+<span class="menu-text">Genes y funciones</span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-visores-3d" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Visores 3D</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-visores-3d">    
+        <li>
+    <a class="dropdown-item" href="./viewer.html">
+ <span class="dropdown-text">Hipotálamo y selección regional</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cortex_viewer.html">
+ <span class="dropdown-text">Corteza cingulada anterior</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./reproducibility.html"> 
 <span class="menu-text">Datos y código</span></a>
@@ -318,7 +333,7 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="corteza-recuperación-exacta-de-los-cuatro-conjuntos-originales">Corteza: recuperación exacta de los cuatro conjuntos originales</h2>
 <p>El <a href="https://doi.org/10.5281/zenodo.15374632">depósito original de Zenodo</a> de Zhang et al.&nbsp;contiene código y resultados del estudio de Science. La matriz de conteos coincide exactamente con GEO tras emparejar identificadores y bibliotecas. Se reproducen <strong>20 muestras de cinco grupos</strong>, incluidos los brazos con PFF, mediante el diseño original <code>~group</code>. <span class="citation" data-cites="Zhang2025_40906862">Zhang et&nbsp;al. (<a href="#ref-Zhang2025_40906862" role="doc-biblioref">2025</a>)</span></p>
 <p>El código conserva genes con al menos diez conteos en cuatro muestras, con 21,388 genes retenidos. El comportamiento original de <code>results()</code> de DESeq2 utiliza alpha = 0.1 para filtrado independiente y después selecciona <strong>p ajustado &lt; 0.05</strong>. Esa distinción es necesaria para reproducir el resultado.</p>
-<div id="3c927481" class="cell" data-execution_count="2">
+<div id="3522bb42" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display cell-output-markdown">
 <div class="table-scroll">
 <table class="dataframe table table-sm table-striped evidence-table small">
@@ -425,7 +440,7 @@ Reproducción basada en conteos del modelo cortical original de cinco condicione
 </div>
 <p>Se recuperan <strong>109, 1,205, 1,222 y 639 genes</strong>, con <strong>cero genes significativos discordantes</strong> en los cuatro contrastes. La mayor diferencia absoluta entre MLE log₂FC es aproximadamente 8.12 × 10⁻⁵ y entre valores p nominales es 1.94 × 10⁻⁶. Todos los ajustes convergen. La igualdad corresponde a la inferencia desde los conteos depositados; no implica reconstruir independientemente el alineamiento ni todas las figuras.</p>
 <p>El PCA del código original utiliza 500 genes de mayor varianza en TMM log₂CPM, con escalado de la varianza génica. Recupera PC1 = <strong>29.2014%</strong> y PC2 = <strong>9.7606%</strong>, concordantes con 29.2% y 9.8% publicados. El manuscrito menciona una función de filtrado preliminar distinta; se sigue el código depositado y se documenta la discrepancia.</p>
-<div id="05b11e2c" class="cell" data-execution_count="3">
+<div id="e7999177" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display cell-output-markdown">
 <figure class="research-figure figure">
 <a href="../assets/figures/replication_pm/cortex_multicondition_signature.svg"><img loading="lazy" width="4140" height="2700" src="../assets/figures/replication_pm/cortex_multicondition_signature.png" alt="A: unión de los ocho genes con menor FDR de los autores en cada condición. Los colores muestran efectos log2 recalculados y regularizados con apeglm; los puntos negros indican FDR de BH de Wald original <0.05. Los genes ligados al cromosoma Y tienen MLE grandes y efectos regularizados próximos a cero; consulte el diagnóstico de marcadores antes de interpretar mecanismos. B: intersecciones exactas de los conjuntos reproducidos, con 582 genes exclusivos de PM y 323 exclusivos del par PM/PM–PFF. C: ocho genes de menor FDR de los autores en el núcleo de enriquecimiento depositado de GO:0002443 (inmunidad mediada por leucocitos). Los intervalos puntuales corresponden a MLE ±1.96 EE del modelo original y no ajustan por selección de genes. Todos los contrastes comparten cuatro animales PBS. La pertenencia a GO se verificó en la tabla de los autores; el enriquecimiento no se recalculó independientemente. Texto interno de la figura conservado en inglés." class="figure-img"></a>
@@ -436,7 +451,7 @@ A: unión de los ocho genes con menor FDR de los autores en cada condición. Los
 </div>
 </div>
 <p><strong>Reproducir el ajuste no demuestra un mecanismo de exposición.</strong> Los primeros genes incluyen <em>Ddx3y, Uty</em> y <em>Kdm5d</em>, ligados al cromosoma Y. Los cuatro controles PBS tienen conteo cero para estos genes, mientras otros grupos de tratamiento contienen conteos heterogéneos. Esto plantea una posible diferencia en composición por sexo o identidad muestral. Los metadatos disponibles no establecen el sexo, y el modelo original no lo ajusta. Se conserva el resultado numérico junto con esta incertidumbre; no se asigna sexo a partir de tres genes ni se atribuyen todos los cambios a PM2.5.</p>
-<div id="8d2ffacf" class="cell" data-execution_count="4">
+<div id="e195276a" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display cell-output-markdown">
 <figure class="research-figure figure">
 <a href="../assets/figures/replication_pm/cortex_marker_qc.svg"><img loading="lazy" width="4020" height="1500" src="../assets/figures/replication_pm/cortex_marker_qc.png" alt="Conteos originales observados de Ddx3y, Uty, Kdm5d y Xist en todos los animales de corteza. A: expresión normalizada con etiquetas de condición; no se omiten animales. B: Xist frente a la suma de tres marcadores ligados al cromosoma Y, sin clasificación ni prueba de efecto de exposición. Los cuatro animales PBS tienen cero conteos originales en cada marcador Y; las otras condiciones muestran heterogeneidad. Estos genes están entre los primeros de las tablas FDR de Wald originales, pero apeglm regulariza sus efectos hacia cero. Es una señal diagnóstica para verificar sexo, identidad y explicaciones técnicas con metadatos independientes. La figura por sí sola no permite asignar sexo ni demostrar confusión. Se conserva el modelo original ajustado solo por grupo. Texto interno de la figura conservado en inglés." class="figure-img"></a>
@@ -453,7 +468,7 @@ Conteos originales observados de Ddx3y, Uty, Kdm5d y Xist en todos los animales 
 <h2 class="anchored" data-anchor-id="hipotálamo-un-flujo-ruvg-insuficientemente-especificado">Hipotálamo: un flujo RUVg insuficientemente especificado</h2>
 <p>Rajagopalan et al.&nbsp;describen normalización por carril, genes de control empíricos y RUVg antes del análisis limma/edgeR. No se dispone de las identidades exactas de los 5,000 controles ni del número de factores no deseados. La descripción de la selección de controles también es ambigua. Esos parámetros no se deducen de forma única de los conteos. <span class="citation" data-cites="Rajagopalan2020_32780721">Rajagopalan et&nbsp;al. (<a href="#ref-Rajagopalan2020_32780721" role="doc-biblioref">2020</a>)</span></p>
 <p>La sensibilidad transparente incluye 11 bibliotecas FA/PM/HFD y 50,417 características comunes. Se excluyen 91 filas exclusivas de HFD, sin inventar ceros. La anotación codificante GENCODE M13 y un filtro CPM explícito retienen 13,398 genes. El modelo TMM/voom <strong>sin RUVg</strong> identifica cero genes PM y 3,600 HFD con los criterios reconstruidos de abundancia, |log₂FC| &gt; 0.8 y BH &lt; 0.05. El diagrama suplementario de hipotálamo implica 17 genes PM y 761 HFD.</p>
-<div id="46f745a5" class="cell" data-execution_count="5">
+<div id="8df62cbb" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display cell-output-markdown">
 <figure class="research-figure figure">
 <a href="../assets/figures/replication_pm/hypothalamus_method_sensitivity.svg"><img loading="lazy" width="3720" height="2880" src="../assets/figures/replication_pm/hypothalamus_method_sensitivity.png" alt="Reconstrucción metodológica parcial explícita; no se recuperaron los controles RUVg ni el número de factores no deseados originales. Incluye los 11 animales: FA=4, PM=3, HFD=4. Se restringieron los genes comunes a símbolos codificantes de GENCODE M13, con CPM >2 en al menos tres muestras, TMM/voom y pruebas moderadas de limma. El umbral declarado es FDR de BH <0.05, |log2FC| >0.8 y AveExpr >1. A: PCA de 500 genes logCPM variables sin ajuste, centrados sin escalar. B: dieta y exposición son contrastes separados; naranja indica superar los umbrales en cualquiera. C: unión de diez genes de menor FDR por contraste; los valores z por fila describen patrones. D: los 17 genes PM publicados, 11 de PyDESeq2 principal, 12 de DESeq2 en R y 0 de limma sin RUVg usan modelos y universos distintos. Estas diferencias no demuestran falta de replicación biológica ni validan el ajuste original no disponible. Texto interno de la figura conservado en inglés." class="figure-img"></a>
@@ -468,7 +483,7 @@ Reconstrucción metodológica parcial explícita; no se recuperaron los controle
 <section id="mirna-dirección-de-la-diana-frente-a-multiplicidad" class="level2">
 <h2 class="anchored" data-anchor-id="mirna-dirección-de-la-diana-frente-a-multiplicidad">miRNA: dirección de la diana frente a multiplicidad</h2>
 <p>La Figura 6 de Ku et al.&nbsp;destaca miR-574-5p. En los nueve microarreglos su señal disminuye con ambas dosis. A 5 mg/kg, la diferencia es <strong>−0.26945 unidades de señal originales</strong>. La comparación LSD no moderada da p nominal = <strong>0.0368</strong>, y el análisis principal limma da p = <strong>0.0253</strong>, pero q BH = <strong>0.312</strong>. <span class="citation" data-cites="Ku2017_28851397">Ku et&nbsp;al. (<a href="#ref-Ku2017_28851397" role="doc-biblioref">2017</a>)</span></p>
-<div id="59fd99e4" class="cell" data-execution_count="6">
+<div id="8ec928d8" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display cell-output-markdown">
 <figure class="research-figure figure">
 <a href="../assets/figures/replication_mirna_ozone/mirna_author_reproduction_es.svg"><img loading="lazy" width="3000" height="2375" src="../assets/figures/replication_mirna_ozone/mirna_author_reproduction_es.png" alt="Auditoría del microarreglo en cuatro paneles. A: los nueve animales de origen para miR-574-5p; las marcas negras indican media ± EE. B: diferencias de señal con intervalos puntuales del 95% de limma y LSD no moderada. C: hallazgos nominales y con ajuste BH entre 1.245 características fijas; ajuste separado de cada contraste. D: nuevo mapa descriptivo de control/dosis alta con las 20 características de mayor varianza más la diana original, puntuaciones z por fila y orden jerárquico (enlace promedio, distancia euclídea); C1–C3 = control, H1–H3 = dosis alta. No se describe la selección de filas de la Figura 6a original. qPCR y experimentos funcionales son ensayos separados." class="figure-img"></a>
@@ -485,7 +500,7 @@ Auditoría del microarreglo en cuatro paneles. A: los nueve animales de origen p
 <h2 class="anchored" data-anchor-id="ozono-reconstruir-la-selección-y-comparar-efectos-equivalentes">Ozono: reconstruir la selección y comparar efectos equivalentes</h2>
 <p>El CSV E4 frente a E3 depositado es una <strong>tabla de resultados de genotipo</strong>, no una matriz de conteos de exposición. La regla original p nominal &lt; 0.05 y |log₂FC| &gt; 0.3 recupera exactamente <strong>1,490 genes aumentados y 1,011 disminuidos</strong>, coincidentes con S2. Otras comparaciones utilizan |log₂FC| &gt; 0.1; se respeta el umbral de cada contraste. <span class="citation" data-cites="Nakamya2025_40141051">Nakamya et&nbsp;al. (<a href="#ref-Nakamya2025_40141051" role="doc-biblioref">2025</a>)</span></p>
 <p>La nueva cuantificación desde lecturas usa Salmon/tximport frente a HISAT2/featureCounts original. Los modelos candidatos conservan el filtro de 18,537 genes y los factores de longitud efectiva, pero reestiman dispersiones por diseño/subconjunto. Se restaura el reemplazo predeterminado de valores atípicos de DESeq2 en grupos suficientemente replicados para estos candidatos, separado del modelo factorial principal.</p>
-<div id="11a41918" class="cell" data-execution_count="7">
+<div id="83f1c42d" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display cell-output-markdown">
 <figure class="research-figure figure">
 <a href="../assets/figures/replication_mirna_ozone/ozone_author_concordance_es.svg"><img loading="lazy" width="3000" height="2500" src="../assets/figures/replication_mirna_ozone/ozone_author_concordance_es.png" alt="Candidatos de reproducción frente a resultados originales. A: efectos de genotipo finitos y con símbolos exactos en ambas fuentes. B: efectos E4/E3 a los 17 meses bajo O3, condicionados a la selección publicada S3. C: dianas preespecificadas, estimaciones publicadas e intervalos puntuales candidatos MLE ± 1,96 EE. D: conteos nominales completos de universos de cuantificación y filtro distintos; los conteos no miden por sí solos la reproducción. Genotipo global: p nominal < 0,05 y |log2FC| > 0,3; subgrupo de 17 meses bajo O3: p < 0,05 y |log2FC| > 0,1. Salmon difiere del flujo HISAT2/featureCounts original. Se comparan los mismos animales, no una cohorte independiente." class="figure-img"></a>
@@ -498,7 +513,7 @@ Candidatos de reproducción frente a resultados originales. A: efectos de genoti
 <p>En el candidato de genotipo agrupado, <strong>15,559 efectos finitos comunes</strong> tienen ρ de Spearman = <strong>0.865</strong>. Selecciona 2,362 genes nominales frente a 2,501 originales. En el universo analizable común se solapan 1,527 genes seleccionados, con Jaccard aproximado <strong>0.612</strong>.</p>
 <p>Para E4 frente a E3 a 17 meses bajo ozono, <strong>858 de 959</strong> genes publicados en S3 tienen estimaciones finitas y símbolo exacto. La correlación de efectos es <strong>0.962</strong>, con <strong>98.8%</strong> de concordancia direccional; 543 mantienen la selección nominal candidata y 71 mantienen BH &lt; 0.05. Esta correlación está condicionada a la lista seleccionada por los autores y a los mismos animales; no es una estimación independiente ni imparcial de todo el transcriptoma.</p>
 <p>Los cuatro genes de hemoglobina destacados conservan efectos E4/E3 negativos y significación BH. Otras dianas conservan dirección sin igual soporte estadístico. La expresión de hemoglobina en tejido completo no distingue función de barrera hematoencefálica, material vascular residual, composición celular y regulación sin mediciones adicionales.</p>
-<div id="eb02f240" class="cell" data-execution_count="8">
+<div id="b62c0970" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display cell-output-markdown">
 <figure class="research-figure figure">
 <a href="../assets/figures/replication_mirna_ozone/ozone_factor_upset_reproduction_es.svg"><img loading="lazy" width="3000" height="2000" src="../assets/figures/replication_mirna_ozone/ozone_factor_upset_reproduction_es.png" alt="Comparación de intersecciones inspirada en la Figura 1 original, restringida a los mismos 15,661 genes con símbolos exactos y pruebas válidas en los tres modelos candidatos. Listas S2 originales y modelos marginales candidatos, con aumentos y disminuciones separados y escalas verticales comunes dentro de cada dirección. Se muestran los siete patrones de pertenencia a genotipo/edad/exposición, incluidos los conteos cero. Genotipo y edad globales: p nominal < 0,05 y |log2FC| > 0,3; exposición: p < 0,05 y |log2FC| > 0,1. Estas pertenencias correlacionadas no son pruebas de interacción ni evidencias de toxicidad relativa." class="figure-img"></a>

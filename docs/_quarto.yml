@@ -14,7 +14,9 @@ project:
   - advanced_results.qmd
   - replication.qmd
   - spatial_reference.qmd
+  - gene_profiles.qmd
   - viewer.qmd
+  - cortex_viewer.qmd
   - reproducibility.qmd
   resources:
   - assets/**
@@ -54,8 +56,14 @@ website:
         text: Original-study reproduction
       - href: spatial_reference.qmd
         text: Measured spatial reference
-    - href: viewer.qmd
-      text: 3D Viewer
+    - href: gene_profiles.qmd
+      text: Genes & functions
+    - text: 3D viewers
+      menu:
+      - href: viewer.qmd
+        text: Hypothalamus & region selection
+      - href: cortex_viewer.qmd
+        text: Anterior cingulate cortex
     - href: reproducibility.qmd
       text: Data & code
     right:

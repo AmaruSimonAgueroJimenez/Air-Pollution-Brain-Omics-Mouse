@@ -1,0 +1,114 @@
+{
+  "gene_priority_evidence": {
+    "caption": "All 11 hypothalamic hits and the 20 lowest-q cortex protein-coding genes are displayed. The two higher hypothalamic signals correspond to a pseudogene and a noncoding RNA in current annotation; no functional proteins are assigned to them. Circles: regional RNA MLE and pointwise±1.96SE interval; diamonds: separate shrunken effects. Horizontal scales vary between panels; intervals do not adjust for selection or multiplicity. †:measured by MERFISH. Functional categories are descriptive annotations, not demonstrated mechanisms. Atlas cells are not experimental exposure replicates.",
+    "language": "en",
+    "source_table": "results/gene_priorities/prioritized_genes.tsv",
+    "groups": [
+      "hypothalamus_primary_FDR",
+      "cortex_primary_top20"
+    ],
+    "size_inches": [
+      15.5,
+      11.5
+    ],
+    "dpi": 300,
+    "files": {
+      "png": {
+        "path": "results/gene_priorities/figures/gene_priority_evidence.png",
+        "sha256": "5340d12cca86e5568b1e23605d88583bb183681c094462db595311f23874c26f"
+      },
+      "svg": {
+        "path": "results/gene_priorities/figures/gene_priority_evidence.svg",
+        "sha256": "052e38060def2854a206477983e2bb7595d5ddf52020ceaebb249b0090d16b50"
+      },
+      "pdf": {
+        "path": "results/gene_priorities/figures/gene_priority_evidence.pdf",
+        "sha256": "d9e85eb164e4b6dda03ec68460cad60ba1487d2fcc1093d8499b889d79ef8878"
+      }
+    }
+  },
+  "spatial_candidate_evidence": {
+    "caption": "The ten lowest-q measured genes per region are displayed; only Tll1 passes q<0.05 in hypothalamus and the other nine are exploratory. Cortex retains its ten measured hits, including one noncoding RNA. Circles: regional RNA MLE and pointwise±1.96SE interval; diamonds: separate shrunken effects. Horizontal scales vary between panels; intervals do not adjust for selection or multiplicity. †:measured by MERFISH. Functional categories are descriptive annotations, not demonstrated mechanisms. Atlas cells are not experimental exposure replicates.",
+    "language": "en",
+    "source_table": "results/gene_priorities/prioritized_genes.tsv",
+    "groups": [
+      "hypothalamus_measured_top10",
+      "cortex_measured_top10"
+    ],
+    "size_inches": [
+      15.5,
+      8.8
+    ],
+    "dpi": 300,
+    "files": {
+      "png": {
+        "path": "results/gene_priorities/figures/spatial_candidate_evidence.png",
+        "sha256": "b7d9a618c29e0a3204c6cca5b90e15d81c49ccfbac54020f1faf66e171f822cc"
+      },
+      "svg": {
+        "path": "results/gene_priorities/figures/spatial_candidate_evidence.svg",
+        "sha256": "97aecf40c47b15d6cc7b666319f8e050f5f771df1725aeca5a8f301a748c8bc1"
+      },
+      "pdf": {
+        "path": "results/gene_priorities/figures/spatial_candidate_evidence.pdf",
+        "sha256": "ff9180f5c65622adc6d49c818c46e4cbc1eb26670ad72b0564b24a5ea1d2415c"
+      }
+    }
+  },
+  "gene_priority_evidence_es": {
+    "caption": "Se muestran todos los 11 hallazgos hipotalámicos y los 20 genes codificantes corticales de menor q. Los dos aumentos hipotalámicos corresponden a un pseudogén y un RNA no codificante según anotación actual; no se les asignan proteínas funcionales. Círculos: MLE de RNA regional e IC puntual±1.96EE; diamantes: efectos regularizados separados. Las escalas horizontales varían entre paneles; los intervalos no ajustan por selección o multiplicidad. †:medido en MERFISH. Las categorías funcionales son anotaciones descriptivas, no mecanismos demostrados. Las células del atlas no son réplicas experimentales.",
+    "language": "es",
+    "source_table": "results/gene_priorities/prioritized_genes.tsv",
+    "groups": [
+      "hypothalamus_primary_FDR",
+      "cortex_primary_top20"
+    ],
+    "size_inches": [
+      15.5,
+      11.5
+    ],
+    "dpi": 300,
+    "files": {
+      "png": {
+        "path": "results/gene_priorities/figures/gene_priority_evidence_es.png",
+        "sha256": "367e0b17cf7d5ea094241e75d08e2fb89275b8496c3087f0d7231132964847f5"
+      },
+      "svg": {
+        "path": "results/gene_priorities/figures/gene_priority_evidence_es.svg",
+        "sha256": "f12d73185b68c3ce4360511f7d6da601da21417c5317a46172f99558f3a94f31"
+      },
+      "pdf": {
+        "path": "results/gene_priorities/figures/gene_priority_evidence_es.pdf",
+        "sha256": "b1657b93706a714604be70c60d98302f06afd6b6cd032280264d8477b4dac968"
+      }
+    }
+  },
+  "spatial_candidate_evidence_es": {
+    "caption": "Se muestran los diez genes medidos con menor q por región; solo Tll1 supera q<0.05 en hipotálamo y los otros nueve son exploratorios. Corteza conserva sus diez hallazgos medidos, incluido un RNA no codificante. Círculos: MLE de RNA regional e IC puntual±1.96EE; diamantes: efectos regularizados separados. Las escalas horizontales varían entre paneles; los intervalos no ajustan por selección o multiplicidad. †:medido en MERFISH. Las categorías funcionales son anotaciones descriptivas, no mecanismos demostrados. Las células del atlas no son réplicas experimentales.",
+    "language": "es",
+    "source_table": "results/gene_priorities/prioritized_genes.tsv",
+    "groups": [
+      "hypothalamus_measured_top10",
+      "cortex_measured_top10"
+    ],
+    "size_inches": [
+      15.5,
+      8.8
+    ],
+    "dpi": 300,
+    "files": {
+      "png": {
+        "path": "results/gene_priorities/figures/spatial_candidate_evidence_es.png",
+        "sha256": "631a9485397aa4cf8a6101e370e3d1413e6d1c4284970e4e08d60f441aa936d5"
+      },
+      "svg": {
+        "path": "results/gene_priorities/figures/spatial_candidate_evidence_es.svg",
+        "sha256": "7e80e28ead32b5290fd487758ed326971a70a8d90a8593e615031cc758ddd869"
+      },
+      "pdf": {
+        "path": "results/gene_priorities/figures/spatial_candidate_evidence_es.pdf",
+        "sha256": "2c689abfaa19da467f74f064ab1e0be2957df6a876b91a562262ec07afa2b8e5"
+      }
+    }
+  }
+}

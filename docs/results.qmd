@@ -148,3 +148,7 @@ Bulk-to-panel matching uses exact mouse gene symbols. An additional [identifier 
 - [Primary-hit stability](downloads/hypothalamus/leave_one_out_primary_hits.tsv)
 - [Methods and parameters](downloads/hypothalamus/methods.json)
 - [Executed Python analysis](downloads/code/analyze_hypothalamus.py)
+
+## Gene products, functions, and spatial priorities
+
+The new [gene profiles](gene_profiles.qmd) preserve the complete selected discovery list with encoded products, current biotypes, molecular functions, official source links, effect estimates and panel coverage. The [cortex 3D viewer](cortex_viewer.qmd) provides a separate ACA reference and cortical effects; the [hypothalamus viewer](viewer.qmd) adds measured-gene shortcuts and a three-gene comparison. Unmeasured genes remain in the bulk report without imputed spatial values.

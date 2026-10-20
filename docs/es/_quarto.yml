@@ -14,7 +14,9 @@ project:
   - advanced_results.qmd
   - replication.qmd
   - spatial_reference.qmd
+  - gene_profiles.qmd
   - viewer.qmd
+  - cortex_viewer.qmd
   - reproducibility.qmd
 website:
   title: Contaminación del aire · ómica cerebral
@@ -51,8 +53,14 @@ website:
         text: Reproducción de los artículos
       - href: spatial_reference.qmd
         text: Referencia espacial medida
-    - href: viewer.qmd
-      text: Visor 3D
+    - href: gene_profiles.qmd
+      text: Genes y funciones
+    - text: Visores 3D
+      menu:
+      - href: viewer.qmd
+        text: Hipotálamo y selección regional
+      - href: cortex_viewer.qmd
+        text: Corteza cingulada anterior
     - href: reproducibility.qmd
       text: Datos y código
     right:

@@ -1,9 +1,21 @@
 ---
-title: "3D viewer · hypothalamus"
+title: "3D viewers · hypothalamus and cortex"
 subtitle: "Measured MERFISH reference beside a regional PM2.5 scenario"
 page-layout: full
 toc: false
 ---
+## Select the region and explore priority genes
+
+[**Cortex: 76 measured primary discoveries →**](cortex_viewer.qmd){.btn .btn-primary}
+[**Gene products and functions →**](gene_profiles.qmd){.btn .btn-outline-primary}
+
+The expanded report retains all eleven hypothalamic primary hits and the twenty strongest primary coding-gene findings in cortex. The function profiles distinguish proteins, noncoding RNAs and pseudogenes. In each viewer, relevant-gene shortcuts and a comparison table for up to three measured genes complement the paired 3D scenes.
+
+The hypothalamus has one measured primary hit, Tll1, plus clearly labeled exploratory measured candidates. The anterior cingulate reference has 76 measured primary cortical hits; its default is Fosb, with Egr3 and S1pr1 among the leading candidates. Unmeasured genes remain in the biological report and are never spatially imputed.
+
+## Hypothalamus reference and regional scenario
+
+
 
 ```{python}
 from pathlib import Path
@@ -30,7 +42,7 @@ The left view shows measured expression from the reference atlas. The right view
 window.addEventListener("message", function(event) {
   const frame = document.getElementById("atlas-frame");
   if (frame && event.source === frame.contentWindow && (event.origin === window.location.origin || event.origin === "null") && event.data && event.data.type === "omics-atlas-height") {
-    frame.style.height = Math.min(4200, Math.max(1350, Number(event.data.height) + 30)) + "px";
+    frame.style.height = Math.min(9000, Math.max(1750, Number(event.data.height) + 30)) + "px";
   }
 });
 </script>

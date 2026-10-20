@@ -1,0 +1,170 @@
+{
+  "reviewed_on": "2026-10-19",
+  "manual_review": "All four bilingual PNG exports opened and inspected. Gene labels, all points and intervals, axis units, footer and marker legend visible without overlap. Filled and hollow circles distinguish BH-significant and exploratory effects independently of panel color; shrunken estimates use black diamonds. Caption discloses independent panel scales and pointwise intervals. Source rows retained without clipping or removal.",
+  "review_limitations": "Manual visual and file-metadata review, not accessibility certification or target-journal compliance. The parent site must still verify readability at its rendered width.",
+  "figures": {
+    "gene_priority_evidence.pdf": {
+      "sha256": "d9e85eb164e4b6dda03ec68460cad60ba1487d2fcc1093d8499b889d79ef8878",
+      "bytes": 35548,
+      "pages": 1,
+      "size_points": [
+        1116.0,
+        828.0
+      ],
+      "fonts": [
+        "/EVICAO+DejaVuSans-Bold",
+        "/BMQQDV+DejaVuSans"
+      ],
+      "searchable_text_chars": 793
+    },
+    "gene_priority_evidence.png": {
+      "sha256": "5340d12cca86e5568b1e23605d88583bb183681c094462db595311f23874c26f",
+      "bytes": 373471,
+      "dimensions_px": [
+        4650,
+        3450
+      ],
+      "mode": "RGBA",
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "alpha_fully_opaque": true
+    },
+    "gene_priority_evidence.svg": {
+      "sha256": "052e38060def2854a206477983e2bb7595d5ddf52020ceaebb249b0090d16b50",
+      "bytes": 46447,
+      "svg_dimensions": {
+        "width": "1116pt",
+        "height": "828pt",
+        "viewBox": "0 0 1116 828",
+        "version": "1.1"
+      },
+      "text_elements": 52
+    },
+    "gene_priority_evidence_es.pdf": {
+      "sha256": "b1657b93706a714604be70c60d98302f06afd6b6cd032280264d8477b4dac968",
+      "bytes": 35077,
+      "pages": 1,
+      "size_points": [
+        1116.0,
+        828.0
+      ],
+      "fonts": [
+        "/EVICAO+DejaVuSans-Bold",
+        "/BMQQDV+DejaVuSans"
+      ],
+      "searchable_text_chars": 805
+    },
+    "gene_priority_evidence_es.png": {
+      "sha256": "367e0b17cf7d5ea094241e75d08e2fb89275b8496c3087f0d7231132964847f5",
+      "bytes": 372397,
+      "dimensions_px": [
+        4650,
+        3450
+      ],
+      "mode": "RGBA",
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "alpha_fully_opaque": true
+    },
+    "gene_priority_evidence_es.svg": {
+      "sha256": "f12d73185b68c3ce4360511f7d6da601da21417c5317a46172f99558f3a94f31",
+      "bytes": 46496,
+      "svg_dimensions": {
+        "width": "1116pt",
+        "height": "828pt",
+        "viewBox": "0 0 1116 828",
+        "version": "1.1"
+      },
+      "text_elements": 52
+    },
+    "spatial_candidate_evidence.pdf": {
+      "sha256": "ff9180f5c65622adc6d49c818c46e4cbc1eb26670ad72b0564b24a5ea1d2415c",
+      "bytes": 32343,
+      "pages": 1,
+      "size_points": [
+        1116.0,
+        633.6
+      ],
+      "fonts": [
+        "/EVICAO+DejaVuSans-Bold",
+        "/BMQQDV+DejaVuSans"
+      ],
+      "searchable_text_chars": 720
+    },
+    "spatial_candidate_evidence.png": {
+      "sha256": "b7d9a618c29e0a3204c6cca5b90e15d81c49ccfbac54020f1faf66e171f822cc",
+      "bytes": 304796,
+      "dimensions_px": [
+        4650,
+        2640
+      ],
+      "mode": "RGBA",
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "alpha_fully_opaque": true
+    },
+    "spatial_candidate_evidence.svg": {
+      "sha256": "97aecf40c47b15d6cc7b666319f8e050f5f771df1725aeca5a8f301a748c8bc1",
+      "bytes": 35386,
+      "svg_dimensions": {
+        "width": "1116pt",
+        "height": "633.6pt",
+        "viewBox": "0 0 1116 633.6",
+        "version": "1.1"
+      },
+      "text_elements": 40
+    },
+    "spatial_candidate_evidence_es.pdf": {
+      "sha256": "2c689abfaa19da467f74f064ab1e0be2957df6a876b91a562262ec07afa2b8e5",
+      "bytes": 32150,
+      "pages": 1,
+      "size_points": [
+        1116.0,
+        633.6
+      ],
+      "fonts": [
+        "/EVICAO+DejaVuSans-Bold",
+        "/BMQQDV+DejaVuSans"
+      ],
+      "searchable_text_chars": 720
+    },
+    "spatial_candidate_evidence_es.png": {
+      "sha256": "631a9485397aa4cf8a6101e370e3d1413e6d1c4284970e4e08d60f441aa936d5",
+      "bytes": 302418,
+      "dimensions_px": [
+        4650,
+        2640
+      ],
+      "mode": "RGBA",
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "alpha_fully_opaque": true
+    },
+    "spatial_candidate_evidence_es.svg": {
+      "sha256": "7e80e28ead32b5290fd487758ed326971a70a8d90a8593e615031cc758ddd869",
+      "bytes": 35364,
+      "svg_dimensions": {
+        "width": "1116pt",
+        "height": "633.6pt",
+        "viewBox": "0 0 1116 633.6",
+        "version": "1.1"
+      },
+      "text_elements": 40
+    }
+  },
+  "source_table_sha256": "e40c5c43105a9370fb0f4f83d8bf60222d03907b51a425cb45423c93f103b62d",
+  "checks": {
+    "all12exports_exist": true,
+    "all_png_opaque": true,
+    "all_pdf_single_page": true,
+    "all_svg_text_searchable": true
+  }
+}

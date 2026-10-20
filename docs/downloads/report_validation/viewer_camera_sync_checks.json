@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-19T14:54:36.456142+00:00",
+  "viewer_sha256": "bad1e22017a71c8c6563cd9e88c5eb336f069ad6fa0d27b3e52a982e66292c88",
+  "regression_suite": "tests/test_viewer_camera_sync.cjs",
+  "tests_passed": 6,
+  "tests_failed": 0,
+  "cases": [
+    "Rapid same-source zoom retains latest gesture",
+    "Programmatic target echoes do not loop",
+    "Reverse direction after completion",
+    "Reverse gesture while an older write is pending",
+    "Latest gesture supersedes a pending repair",
+    "Rejected write releases queue and preserves newer intent"
+  ],
+  "local_browser_prefix": "http://127.0.0.1:8830/Air-Pollution-Brain-Omics-Mouse/",
+  "browser_fast_zoom_scenes_match": true,
+  "measured_positive_cells": 667,
+  "scenario_multiplier": 0.428,
+  "image": "results/report_validation/viewer_camera_sync_browser_proof.png",
+  "numerical_expression_results_unchanged": true
+}

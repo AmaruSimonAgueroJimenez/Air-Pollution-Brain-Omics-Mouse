@@ -201,9 +201,24 @@ div.csl-indent {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./viewer.html"> 
-<span class="menu-text">Visor 3D</span></a>
+    <a class="nav-link" href="./gene_profiles.html"> 
+<span class="menu-text">Genes y funciones</span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-visores-3d" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Visores 3D</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-visores-3d">    
+        <li>
+    <a class="dropdown-item" href="./viewer.html">
+ <span class="dropdown-text">Hipotálamo y selección regional</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cortex_viewer.html">
+ <span class="dropdown-text">Corteza cingulada anterior</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./reproducibility.html"> 
 <span class="menu-text">Datos y código</span></a>
@@ -243,6 +258,7 @@ div.csl-indent {
   <li><a href="#enriquecimiento-funcional" id="toc-enriquecimiento-funcional" class="nav-link" data-scroll-target="#enriquecimiento-funcional">Enriquecimiento funcional</a></li>
   <li><a href="#interpretación-espacial" id="toc-interpretación-espacial" class="nav-link" data-scroll-target="#interpretación-espacial">Interpretación espacial</a></li>
   <li><a href="#tablas-de-origen-y-código" id="toc-tablas-de-origen-y-código" class="nav-link" data-scroll-target="#tablas-de-origen-y-código">Tablas de origen y código</a></li>
+  <li><a href="#productos-funciones-y-prioridades-espaciales" id="toc-productos-funciones-y-prioridades-espaciales" class="nav-link" data-scroll-target="#productos-funciones-y-prioridades-espaciales">Productos, funciones y prioridades espaciales</a></li>
   </ul>
 </nav>
     </div>
@@ -278,7 +294,7 @@ div.csl-indent {
 <section id="población-analizada" class="level2">
 <h2 class="anchored" data-anchor-id="población-analizada">Población analizada</h2>
 <p>El contraste principal incluye cuatro controles con aire filtrado y tres animales expuestos a PM2.5 que recibieron dieta estándar. Las cuatro muestras con dieta rica en grasas del mismo depósito no se añaden al grupo control. Los conteos asignados a genes se analizan como siete muestras independientes de tejido completo; el atlas no aporta réplicas de exposición. <span class="citation" data-cites="Rajagopalan2020_32780721">Rajagopalan et&nbsp;al. (<a href="#ref-Rajagopalan2020_32780721" role="doc-biblioref">2020</a>)</span></p>
-<div id="55177ec1" class="cell" data-execution_count="2">
+<div id="8976e742" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display cell-output-markdown">
 <div class="metric-cards">
 <div>
@@ -397,7 +413,7 @@ PM
 </section>
 <section id="calidad-normalización-y-relaciones-entre-muestras" class="level2">
 <h2 class="anchored" data-anchor-id="calidad-normalización-y-relaciones-entre-muestras">Calidad, normalización y relaciones entre muestras</h2>
-<div id="174aeeca" class="cell" data-execution_count="3">
+<div id="161c814d" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display cell-output-markdown">
 <figure class="research-figure figure">
 <a href="../assets/figures/hypothalamus/sample_quality.svg"><img loading="lazy" width="3000" height="1140" src="../assets/figures/hypothalamus/sample_quality.png" alt="Profundidad de biblioteca asignada a genes y genes detectados en las siete muestras. Cada barra representa un animal; no se excluyó ninguna muestra." class="figure-img"></a>
@@ -430,7 +446,7 @@ Las correlaciones entre muestras y las distancias tras estabilizar la varianza a
 </section>
 <section id="expresión-diferencial" class="level2">
 <h2 class="anchored" data-anchor-id="expresión-diferencial">Expresión diferencial</h2>
-<div id="4313becb" class="cell" data-execution_count="4">
+<div id="11e9cfab" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>El análisis conservó <strong>19,611</strong> de <strong>50,417</strong> genes. <strong>19,452</strong> genes recibieron un valor p ajustado finito; <strong>159</strong> se excluyeron de la presentación inferencial mediante los diagnósticos de Cook. Con FDR &lt; 0.05, <strong>11 genes</strong> difieren entre PM y FA: <strong>2 con mayor</strong> y <strong>9 con menor</strong> expresión en PM. <strong>4</strong> también presentan |log₂FC regularizado| ≥ 1.</p>
 </div>
@@ -705,7 +721,7 @@ Expresión media frente al tamaño del efecto. Las hipótesis de baja informaci�
 </section>
 <section id="patrones-de-expresión-y-animales-individuales" class="level2">
 <h2 class="anchored" data-anchor-id="patrones-de-expresión-y-animales-individuales">Patrones de expresión y animales individuales</h2>
-<div id="fb5cb536" class="cell" data-execution_count="5">
+<div id="fbbd03d0" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display cell-output-markdown">
 <figure class="research-figure figure">
 <a href="../assets/figures/hypothalamus/heatmap_top30.svg"><img loading="lazy" width="2100" height="2610" src="../assets/figures/hypothalamus/heatmap_top30.png" alt="Los 30 genes seleccionados para el mapa de calor se muestran mediante expresión estabilizada por varianza y estandarizada por fila. Las puntuaciones z por fila son descriptivas y no cambios de expresión; la selección y el agrupamiento pertenecen al mismo conjunto de datos." class="figure-img"></a>
@@ -723,7 +739,7 @@ Expresión normalizada en animales individuales para genes seleccionados, inclui
 </figure>
 </div>
 </div>
-<div id="0d7f2404" class="cell" data-execution_count="6">
+<div id="26948cff" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display cell-output-markdown">
 <div class="table-scroll">
 <table class="dataframe table table-sm table-striped evidence-table small">
@@ -841,7 +857,7 @@ Gfap
 <section id="sensibilidad-a-las-muestras-individuales" class="level2">
 <h2 class="anchored" data-anchor-id="sensibilidad-a-las-muestras-individuales">Sensibilidad a las muestras individuales</h2>
 <p>El modelo completo se volvió a ajustar omitiendo cada animal una vez. Se informa cada omisión; ninguna se eligió para sustituir la comparación principal.</p>
-<div id="27cac73c" class="cell" data-execution_count="7">
+<div id="1bbc631a" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display cell-output-markdown">
 <div class="table-scroll">
 <table class="dataframe table table-sm table-striped evidence-table small">
@@ -1336,7 +1352,7 @@ Ptar1
 </div>
 </div>
 <p>Los once hallazgos principales conservan su dirección en siete de siete ajustes, pero <strong>ninguno mantiene significación según FDR en los siete ajustes</strong>. El número total de hallazgos oscila entre cero y 825 según la muestra omitida. Esta sensibilidad limita la certeza de los hallazgos por gen y de cualquier escenario espacial derivado de ellos. Omitir un control que aumenta el número de hallazgos no justifica excluir ese control.</p>
-<div id="76672fe1" class="cell" data-execution_count="8">
+<div id="51504dba" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>La comprobación independiente con R/DESeq2 utiliza las mismas 19,452 hipótesis con p finito y los mismos 159 genes filtrados por Cook. Los once hallazgos principales siguen siendo significativos en R; R identifica además <strong>Tnrc6c</strong>, cuya FDR es 0.0399 en R y 0.0521 en Python. <strong>Tll1</strong> mantiene significación en ambas implementaciones (FDR 0.00330 en R; 0.00350 en Python). Las estimaciones de efecto concuerdan estrechamente (correlación de Pearson &gt;0.999999). Esta <a href="../downloads/hypothalamus/independent_deseq2_check/summary.json">comparación de software</a> no aporta replicación biológica ni resuelve la heterogeneidad de las muestras. Se conserva el resultado principal fijado en Python, incluidos sus genes sensibles al umbral.</p>
 </div>
@@ -1344,7 +1360,7 @@ Ptar1
 </section>
 <section id="enriquecimiento-funcional" class="level2">
 <h2 class="anchored" data-anchor-id="enriquecimiento-funcional">Enriquecimiento funcional</h2>
-<div id="d4d3dace" class="cell" data-execution_count="9">
+<div id="758cedc1" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>El análisis de sobrerrepresentación de procesos biológicos de GO encontró <strong>0 términos significativos de mayor expresión</strong> y <strong>0 de menor expresión</strong> tras la corrección BH. La lista pequeña y parcialmente anotada de hallazgos no respalda una conclusión confirmada sobre vías.</p>
 </div>
@@ -1353,7 +1369,7 @@ Ptar1
 </section>
 <section id="interpretación-espacial" class="level2">
 <h2 class="anchored" data-anchor-id="interpretación-espacial">Interpretación espacial</h2>
-<div id="5cbdf722" class="cell" data-execution_count="10">
+<div id="15056303" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><strong>Tll1</strong> es el único hallazgo principal según FDR medido en este panel del atlas. Su log₂FC de máxima verosimilitud en tejido completo es <strong>-1.344</strong>, su log₂FC regularizado es <strong>-1.224</strong> y su FDR es <strong>3.50e-03</strong>. El multiplicador central de la visualización es, por tanto, <strong>0.428×</strong>; el intervalo puntual grupal de máxima verosimilitud corresponde a <strong>0.273–0.569×</strong>. Estos multiplicadores definen escenarios sobre la referencia medida; no son mediciones de exposición por célula.</p>
 </div>
@@ -1373,6 +1389,10 @@ Ptar1
 <li><a href="../downloads/hypothalamus/methods.json">Métodos y parámetros</a></li>
 <li><a href="../downloads/code/analyze_hypothalamus.py">Análisis de Python ejecutado</a></li>
 </ul>
+</section>
+<section id="productos-funciones-y-prioridades-espaciales" class="level2">
+<h2 class="anchored" data-anchor-id="productos-funciones-y-prioridades-espaciales">Productos, funciones y prioridades espaciales</h2>
+<p>Los <a href="./gene_profiles.html">perfiles génicos</a> conservan los hallazgos seleccionados con producto, tipo génico actual, función molecular, fuente oficial, efecto y cobertura espacial. El <a href="./cortex_viewer.html">visor 3D de corteza</a> aporta una referencia ACA y efectos corticales propios; el <a href="./viewer.html">visor de hipotálamo</a> agrega accesos a genes medidos y comparación de tres genes. Los no medidos mantienen su resultado regional sin valores espaciales imputados.</p>
 
 
 <!-- -->
@@ -1990,6 +2010,10 @@ Rajagopalan, Sanjay, Bongsoo Park, Rengasamy Palanivel, et&nbsp;al. 2020. <span>
 <span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Estabilidad de los hallazgos principales</span><span class="co">](../downloads/hypothalamus/leave_one_out_primary_hits.tsv)</span></span>
 <span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Métodos y parámetros</span><span class="co">](../downloads/hypothalamus/methods.json)</span></span>
 <span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Análisis de Python ejecutado</span><span class="co">](../downloads/code/analyze_hypothalamus.py)</span></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a><span class="fu">## Productos, funciones y prioridades espaciales</span></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>Los <span class="co">[</span><span class="ot">perfiles génicos</span><span class="co">](gene_profiles.qmd)</span> conservan los hallazgos seleccionados con producto, tipo génico actual, función molecular, fuente oficial, efecto y cobertura espacial. El <span class="co">[</span><span class="ot">visor 3D de corteza</span><span class="co">](cortex_viewer.qmd)</span> aporta una referencia ACA y efectos corticales propios; el <span class="co">[</span><span class="ot">visor de hipotálamo</span><span class="co">](viewer.qmd)</span> agrega accesos a genes medidos y comparación de tres genes. Los no medidos mantienen su resultado regional sin valores espaciales imputados.</span>
 </code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

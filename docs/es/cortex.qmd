@@ -142,3 +142,7 @@ La comparación respalda una diferencia de expresión a nivel tisular en este mo
 - [Metadatos de las muestras](../downloads/cortex/sample_metadata.tsv), [resúmenes de calidad](../downloads/cortex/sample_qc.tsv) y [correlaciones entre muestras](../downloads/cortex/sample_correlation.tsv)
 - [Decisiones del filtro de genes](../downloads/cortex/gene_filter.tsv)
 - [Métodos y procedencia del software](../downloads/cortex/methods.json) y [registro de validación](../downloads/cortex/validation.json)
+
+## Productos, funciones y prioridades espaciales
+
+Los [perfiles génicos](gene_profiles.qmd) conservan los hallazgos seleccionados con producto, tipo génico actual, función molecular, fuente oficial, efecto y cobertura espacial. El [visor 3D de corteza](cortex_viewer.qmd) aporta una referencia ACA y efectos corticales propios; el [visor de hipotálamo](viewer.qmd) agrega accesos a genes medidos y comparación de tres genes. Los no medidos mantienen su resultado regional sin valores espaciales imputados.

@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "reviewed_figures": {
+    "reference_vs_simulation": {
+      "dimensions": [
+        3008,
+        2003
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "f7d066cbd00134cada049d1e3554ff30a6f79a1857701fac53e5806e07a08bf5",
+      "visual_review": "Manually inspected final render; XYZ limited to3-4 ticks, no crowding, title/footer/colorbars clear"
+    },
+    "cortical_priority_spatial_panel": {
+      "dimensions": [
+        3104,
+        4889
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "6a946199d757e49473c360d9e581d5076d1ddb659a2bc1eca2aac794c5a5e5a7",
+      "visual_review": "Manually inspected final render; XYZ limited to3-4 ticks, no crowding, title/footer/colorbars clear"
+    },
+    "reference_vs_simulation_es": {
+      "dimensions": [
+        3009,
+        2003
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "1fd176987527c46c84aeb3edcdeed5f03c84f54c436d638e6d97c82305939838",
+      "visual_review": "Manually inspected final render; XYZ limited to3-4 ticks, no crowding, title/footer/colorbars clear"
+    },
+    "cortical_priority_spatial_panel_es": {
+      "dimensions": [
+        3105,
+        4889
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "sha256": "30fa43840237455f361f6abd846dc35133be40d8255a087d0f015702dc047dfb",
+      "visual_review": "Manually inspected final render; XYZ limited to3-4 ticks, no crowding, title/footer/colorbars clear"
+    }
+  },
+  "scope": "Manual PNG review plus SVG parse/PDF signatures and export integrity; not biological validation"
+}

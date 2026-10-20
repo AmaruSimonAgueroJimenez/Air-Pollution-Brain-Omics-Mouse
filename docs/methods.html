@@ -202,9 +202,24 @@ div.csl-indent {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./viewer.html"> 
-<span class="menu-text">3D Viewer</span></a>
+    <a class="nav-link" href="./gene_profiles.html"> 
+<span class="menu-text">Genes &amp; functions</span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-d-viewers" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">3D viewers</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-d-viewers">    
+        <li>
+    <a class="dropdown-item" href="./viewer.html">
+ <span class="dropdown-text">Hypothalamus &amp; region selection</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cortex_viewer.html">
+ <span class="dropdown-text">Anterior cingulate cortex</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./reproducibility.html"> 
 <span class="menu-text">Data &amp; code</span></a>
@@ -256,6 +271,8 @@ div.csl-indent {
   </ul></li>
   <li><a href="#reproducibility" id="toc-reproducibility" class="nav-link" data-scroll-target="#reproducibility">Reproducibility</a></li>
   <li><a href="#expanded-analyses-and-original-method-recovery" id="toc-expanded-analyses-and-original-method-recovery" class="nav-link" data-scroll-target="#expanded-analyses-and-original-method-recovery">Expanded analyses and original-method recovery</a></li>
+  <li><a href="#gene-centered-priorities-and-encoded-product-annotation" id="toc-gene-centered-priorities-and-encoded-product-annotation" class="nav-link" data-scroll-target="#gene-centered-priorities-and-encoded-product-annotation">Gene-centered priorities and encoded-product annotation</a></li>
+  <li><a href="#anterior-cingulate-cortex-spatial-extension" id="toc-anterior-cingulate-cortex-spatial-extension" class="nav-link" data-scroll-target="#anterior-cingulate-cortex-spatial-extension">Anterior cingulate cortex spatial extension</a></li>
   </ul>
 </nav>
     </div>
@@ -422,7 +439,7 @@ div.csl-indent {
 <section id="measured-3d-reference-and-modeled-pm2.5-scenario" class="level2">
 <h2 class="anchored" data-anchor-id="measured-3d-reference-and-modeled-pm2.5-scenario">Measured 3D reference and modeled PM2.5 scenario</h2>
 <p>The spatial reference uses <strong>Zhuang-ABCA-2</strong>, an adult male donor. Cells are selected by the deposited CCF parcellation assignments to the hypothalamic division, matched by exact string cell identifiers to the measured H5AD matrix, and annotated by the atlas taxonomy. <span class="citation" data-cites="Zhang2023_38092912">Zhang et al. (<a href="#ref-Zhang2023_38092912" role="doc-biblioref">2023</a>)</span></p>
-<div id="ed22d6d3" class="cell" data-execution_count="3">
+<div id="c1626952" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>This selection contains <strong>37,811 cells</strong>, <strong>26 cell classes</strong>, and <strong>49 hypothalamic substructures</strong>. All <strong>1,122 measured genes</strong> are accessible; <strong>1,003</strong> have reliable bulk effect estimates. Cells are not subsampled, mirrored, or interpolated.</p>
 </div>
@@ -446,6 +463,17 @@ div.csl-indent {
 <section id="expanded-analyses-and-original-method-recovery" class="level2">
 <h2 class="anchored" data-anchor-id="expanded-analyses-and-original-method-recovery">Expanded analyses and original-method recovery</h2>
 <p>The <a href="./advanced_results.html">secondary-analysis chapter</a> defines the nested interaction models, coefficient contrasts, correction families, figure-selection rules, and covariance-aware intervals. The <a href="./replication.html">reproduction chapter</a> separately reconstructs the cortex five-group author model, hypothalamus method sensitivity, miRNA ANOVA/LSD candidates, and ozone author-table selection and candidate fits. These models do not replace the primary fits above. R 4.5.2, DESeq2 1.50.2, limma 3.66.0, and edgeR 4.8.2 sessions are exported with the corresponding results. Author-data downloads retain source hashes and URLs; publisher article text and artwork are excluded from the public site.</p>
+</section>
+<section id="gene-centered-priorities-and-encoded-product-annotation" class="level2">
+<h2 class="anchored" data-anchor-id="gene-centered-priorities-and-encoded-product-annotation">Gene-centered priorities and encoded-product annotation</h2>
+<p>Primary hypothalamic FDR discoveries are retained in full. Cortex coding-gene priorities are selected from the fixed primary eight-animal result, ordered by unrounded BH q with declared tie-breaks. Separate top-ten lists require a measured MERFISH gene and eligible original effect estimates. Those selection groups remain distinct: only one hypothalamic measured candidate is a primary discovery, whereas the ten cortical measured priorities are significant. Selection after analysis supports description and follow-up, not independent confirmation.</p>
+<p>Official NCBI mouse gene records and reviewed UniProt entries provide current symbols, gene type, protein products and molecular roles. Original assay symbols remain in the report. Confirmed aliases are documented separately; ambiguous aliases are not substituted. Noncoding RNA and pseudogene records do not receive a protein. A function inferred by similarity is not presented as an enzyme assay in these mice. RNA results do not distinguish unmeasured protein abundance or gene isoforms such as ΔFosB, Homer1a and XBP1s.</p>
+</section>
+<section id="anterior-cingulate-cortex-spatial-extension" class="level2">
+<h2 class="anchored" data-anchor-id="anterior-cingulate-cortex-spatial-extension">Anterior cingulate cortex spatial extension</h2>
+<p>The same unexposed male Zhuang-ABCA-2 reference supplies all registered cells with division Isocortex and structure ACAd or ACAv, retaining all ten layer/substructure labels. ACA is an anatomical proxy for the reported dissection, whose exact surgical boundaries were not deposited. Exact cell IDs link coordinates and the raw measured H5AD matrix. The 14,582-cell reference is not subsampled, mirrored, or expression-imputed. Exact Ensembl identifiers map measured genes to the primary cortical result; a symbol difference is retained in provenance rather than resolved by invented substitution.</p>
+<p>Each cortical gene’s measured imaging values are multiplied uniformly by 2 to the power of its primary cortical shrunken log₂FC. The cortical effect is restricted to ACA; hypothalamus retains its own independent bulk effect. The common reference/scenario scale is computed within each gene. A three-gene comparison reports observed detection and mean imaging counts including zeros, original regional RNA effects, BH q and annotation; it does not test between-gene exposure differences or equalize probe efficiencies.</p>
+<p>The cortical atlas donor is not an experimental control for the humanized α-synuclein animals. Spatial location of a reference transcript and a regional effect do not identify which cells respond to PM2.5. Source coordinate/volume agreement, join invariants, count ranges and all 1,122 compressed gene vectors are checked numerically. See <a href="./gene_profiles.html">gene profiles</a> and <a href="./cortex_viewer.html">cortical 3D methods and results</a>.</p>
 
 
 <!-- -->
@@ -1096,6 +1124,20 @@ Zhu, Anqi, Joseph G. Ibrahim, and Michael I. Love. 2019. <span>“Heavy-Tailed P
 <span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a><span class="fu">## Expanded analyses and original-method recovery</span></span>
 <span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">secondary-analysis chapter</span><span class="co">](advanced_results.qmd)</span> defines the nested interaction models, coefficient contrasts, correction families, figure-selection rules, and covariance-aware intervals. The <span class="co">[</span><span class="ot">reproduction chapter</span><span class="co">](replication.qmd)</span> separately reconstructs the cortex five-group author model, hypothalamus method sensitivity, miRNA ANOVA/LSD candidates, and ozone author-table selection and candidate fits. These models do not replace the primary fits above. R 4.5.2, DESeq2 1.50.2, limma 3.66.0, and edgeR 4.8.2 sessions are exported with the corresponding results. Author-data downloads retain source hashes and URLs; publisher article text and artwork are excluded from the public site.</span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a><span class="fu">## Gene-centered priorities and encoded-product annotation</span></span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>Primary hypothalamic FDR discoveries are retained in full. Cortex coding-gene priorities are selected from the fixed primary eight-animal result, ordered by unrounded BH q with declared tie-breaks. Separate top-ten lists require a measured MERFISH gene and eligible original effect estimates. Those selection groups remain distinct: only one hypothalamic measured candidate is a primary discovery, whereas the ten cortical measured priorities are significant. Selection after analysis supports description and follow-up, not independent confirmation.</span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>Official NCBI mouse gene records and reviewed UniProt entries provide current symbols, gene type, protein products and molecular roles. Original assay symbols remain in the report. Confirmed aliases are documented separately; ambiguous aliases are not substituted. Noncoding RNA and pseudogene records do not receive a protein. A function inferred by similarity is not presented as an enzyme assay in these mice. RNA results do not distinguish unmeasured protein abundance or gene isoforms such as ΔFosB, Homer1a and XBP1s.</span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a><span class="fu">## Anterior cingulate cortex spatial extension</span></span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>The same unexposed male Zhuang-ABCA-2 reference supplies all registered cells with division Isocortex and structure ACAd or ACAv, retaining all ten layer/substructure labels. ACA is an anatomical proxy for the reported dissection, whose exact surgical boundaries were not deposited. Exact cell IDs link coordinates and the raw measured H5AD matrix. The 14,582-cell reference is not subsampled, mirrored, or expression-imputed. Exact Ensembl identifiers map measured genes to the primary cortical result; a symbol difference is retained in provenance rather than resolved by invented substitution.</span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>Each cortical gene's measured imaging values are multiplied uniformly by 2 to the power of its primary cortical shrunken log₂FC. The cortical effect is restricted to ACA; hypothalamus retains its own independent bulk effect. The common reference/scenario scale is computed within each gene. A three-gene comparison reports observed detection and mean imaging counts including zeros, original regional RNA effects, BH q and annotation; it does not test between-gene exposure differences or equalize probe efficiencies.</span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a>The cortical atlas donor is not an experimental control for the humanized α-synuclein animals. Spatial location of a reference transcript and a regional effect do not identify which cells respond to PM2.5. Source coordinate/volume agreement, join invariants, count ranges and all 1,122 compressed gene vectors are checked numerically. See <span class="co">[</span><span class="ot">gene profiles</span><span class="co">](gene_profiles.qmd)</span> and <span class="co">[</span><span class="ot">cortical 3D methods and results</span><span class="co">](cortex_viewer.qmd)</span>.</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -94,6 +94,9 @@ def main():
         "results/advanced_omics/validation.json",
         "results/replication_pm/validation.json",
         "results/replication_mirna_ozone/validation.json",
+        "results/spatial_cortex/validation_checks.json",
+        "results/gene_priorities/validation.json",
+        "results/report_validation/gene_annotation_assets.json",
     ]
     for relative in expected:
         if not (ROOT / relative).exists():
@@ -111,6 +114,12 @@ def main():
         audit = ROOT / "results" / name / "validation.json"
         if audit.exists() and not json.loads(audit.read_text()).get("passed", False):
             errors.append("Expanded analysis validation has not passed: " + name)
+    for relative, key in (("results/spatial_cortex/validation_checks.json", "all_checks_passed"),
+                          ("results/gene_priorities/validation.json", "passed"),
+                          ("results/report_validation/gene_annotation_assets.json", "passed")):
+        audit = ROOT / relative
+        if audit.exists() and not json.loads(audit.read_text()).get(key, False):
+            errors.append("Regional gene-profile audit has not passed: " + relative)
     if args.published:
         if not (SITE / ".nojekyll").exists():
             errors.append("Public /docs is missing .nojekyll")

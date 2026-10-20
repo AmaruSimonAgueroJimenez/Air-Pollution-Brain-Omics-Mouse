@@ -1,0 +1,275 @@
+{
+  "header": {
+    "type": "esummary",
+    "version": "0.3"
+  },
+  "result": {
+    "uids": [
+      "19130895",
+      "19766732"
+    ],
+    "19130895": {
+      "uid": "19130895",
+      "pubdate": "2009 Jun",
+      "epubdate": "2008 Dec 14",
+      "source": "Int J Biochem Cell Biol",
+      "authors": [
+        {
+          "name": "Liu R",
+          "authtype": "Author",
+          "clusterid": ""
+        },
+        {
+          "name": "Str\u00f6m AL",
+          "authtype": "Author",
+          "clusterid": ""
+        },
+        {
+          "name": "Zhai J",
+          "authtype": "Author",
+          "clusterid": ""
+        },
+        {
+          "name": "Gal J",
+          "authtype": "Author",
+          "clusterid": ""
+        },
+        {
+          "name": "Bao S",
+          "authtype": "Author",
+          "clusterid": ""
+        },
+        {
+          "name": "Gong W",
+          "authtype": "Author",
+          "clusterid": ""
+        },
+        {
+          "name": "Zhu H",
+          "authtype": "Author",
+          "clusterid": ""
+        }
+      ],
+      "lastauthor": "Zhu H",
+      "title": "Enzymatically inactive adenylate kinase 4 interacts with mitochondrial ADP/ATP translocase.",
+      "sorttitle": "enzymatically inactive adenylate kinase 4 interacts with mitochondrial adp atp translocase",
+      "volume": "41",
+      "issue": "6",
+      "pages": "1371-80",
+      "lang": [
+        "eng"
+      ],
+      "nlmuniqueid": "9508482",
+      "issn": "1357-2725",
+      "essn": "1878-5875",
+      "pubtype": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "recordstatus": "PubMed - indexed for MEDLINE",
+      "pubstatus": "256",
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "idtypen": 1,
+          "value": "19130895"
+        },
+        {
+          "idtype": "mid",
+          "idtypen": 8,
+          "value": "NIHMS103955"
+        },
+        {
+          "idtype": "pmc",
+          "idtypen": 8,
+          "value": "PMC2676352"
+        },
+        {
+          "idtype": "pmcid",
+          "idtypen": 5,
+          "value": "pmc-id: PMC2676352;manuscript-id: NIHMS103955;"
+        },
+        {
+          "idtype": "doi",
+          "idtypen": 3,
+          "value": "10.1016/j.biocel.2008.12.002"
+        },
+        {
+          "idtype": "pii",
+          "idtypen": 4,
+          "value": "S1357-2725(08)00487-1"
+        }
+      ],
+      "history": [
+        {
+          "pubstatus": "received",
+          "date": "2008/08/20 00:00"
+        },
+        {
+          "pubstatus": "revised",
+          "date": "2008/12/03 00:00"
+        },
+        {
+          "pubstatus": "accepted",
+          "date": "2008/12/08 00:00"
+        },
+        {
+          "pubstatus": "entrez",
+          "date": "2009/01/10 09:00"
+        },
+        {
+          "pubstatus": "pubmed",
+          "date": "2009/01/10 09:00"
+        },
+        {
+          "pubstatus": "medline",
+          "date": "2009/10/27 06:00"
+        },
+        {
+          "pubstatus": "pmc-release",
+          "date": "2010/06/01 00:00"
+        }
+      ],
+      "references": [],
+      "attributes": [
+        "Has Abstract"
+      ],
+      "pmcrefcount": 47,
+      "fulljournalname": "The international journal of biochemistry & cell biology",
+      "elocationid": "doi: 10.1016/j.biocel.2008.12.002",
+      "doctype": "citation",
+      "srccontriblist": [],
+      "booktitle": "",
+      "medium": "",
+      "edition": "",
+      "publisherlocation": "",
+      "publishername": "",
+      "srcdate": "",
+      "reportnumber": "",
+      "availablefromurl": "",
+      "locationlabel": "",
+      "doccontriblist": [],
+      "docdate": "",
+      "bookname": "",
+      "chapter": "",
+      "sortpubdate": "2009/06/01 00:00",
+      "sortfirstauthor": "Liu R",
+      "vernaculartitle": ""
+    },
+    "19766732": {
+      "uid": "19766732",
+      "pubdate": "2010 Jan",
+      "epubdate": "2009 Sep 18",
+      "source": "Int J Biochem Cell Biol",
+      "authors": [
+        {
+          "name": "Panayiotou C",
+          "authtype": "Author",
+          "clusterid": ""
+        },
+        {
+          "name": "Solaroli N",
+          "authtype": "Author",
+          "clusterid": ""
+        },
+        {
+          "name": "Johansson M",
+          "authtype": "Author",
+          "clusterid": ""
+        },
+        {
+          "name": "Karlsson A",
+          "authtype": "Author",
+          "clusterid": ""
+        }
+      ],
+      "lastauthor": "Karlsson A",
+      "title": "Evidence of an intact N-terminal translocation sequence of human mitochondrial adenylate kinase 4.",
+      "sorttitle": "evidence of an intact n terminal translocation sequence of human mitochondrial adenylate kinase 4",
+      "volume": "42",
+      "issue": "1",
+      "pages": "62-9",
+      "lang": [
+        "eng"
+      ],
+      "nlmuniqueid": "9508482",
+      "issn": "1357-2725",
+      "essn": "1878-5875",
+      "pubtype": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "recordstatus": "PubMed - indexed for MEDLINE",
+      "pubstatus": "256",
+      "articleids": [
+        {
+          "idtype": "pubmed",
+          "idtypen": 1,
+          "value": "19766732"
+        },
+        {
+          "idtype": "doi",
+          "idtypen": 3,
+          "value": "10.1016/j.biocel.2009.09.007"
+        },
+        {
+          "idtype": "pii",
+          "idtypen": 4,
+          "value": "S1357-2725(09)00250-7"
+        }
+      ],
+      "history": [
+        {
+          "pubstatus": "received",
+          "date": "2009/07/08 00:00"
+        },
+        {
+          "pubstatus": "revised",
+          "date": "2009/09/08 00:00"
+        },
+        {
+          "pubstatus": "accepted",
+          "date": "2009/09/11 00:00"
+        },
+        {
+          "pubstatus": "entrez",
+          "date": "2009/09/22 06:00"
+        },
+        {
+          "pubstatus": "pubmed",
+          "date": "2009/09/22 06:00"
+        },
+        {
+          "pubstatus": "medline",
+          "date": "2010/02/26 06:00"
+        }
+      ],
+      "references": [],
+      "attributes": [
+        "Has Abstract"
+      ],
+      "pmcrefcount": "",
+      "fulljournalname": "The international journal of biochemistry & cell biology",
+      "elocationid": "doi: 10.1016/j.biocel.2009.09.007",
+      "doctype": "citation",
+      "srccontriblist": [],
+      "booktitle": "",
+      "medium": "",
+      "edition": "",
+      "publisherlocation": "",
+      "publishername": "",
+      "srcdate": "",
+      "reportnumber": "",
+      "availablefromurl": "",
+      "locationlabel": "",
+      "doccontriblist": [],
+      "docdate": "",
+      "bookname": "",
+      "chapter": "",
+      "sortpubdate": "2010/01/01 00:00",
+      "sortfirstauthor": "Panayiotou C",
+      "vernaculartitle": ""
+    }
+  }
+}

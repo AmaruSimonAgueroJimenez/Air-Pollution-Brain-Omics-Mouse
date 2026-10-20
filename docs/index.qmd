@@ -16,6 +16,7 @@ h = summary("hypothalamus")
 c = summary("cortex")
 m = summary("mirna")
 v = summary("spatial_viewer")
+aca = summary("spatial_cortex")
 o = summary("ozone") if (ROOT / "results/ozone/summary.json").exists() else {}
 ozone_ready = o.get("complete", False)
 ```
@@ -31,7 +32,7 @@ metric_cards([
     ("Exposure studies", "4", "Three PM2.5 studies and one ozone study"),
     ("Primary study samples", "48", "Contrasts are fitted within each study"),
     ("Measured spatial genes", f"{v['measured_genes']:,}", "MERFISH panel; no imputed genes"),
-    ("Registered HY cells", f"{v['hypothalamus_cells']:,}", "One male atlas donor; spatial reference")
+    ("Registered spatial cells", f"{v['hypothalamus_cells']+aca['anterior_cingulate_cells']:,}", "Hypothalamus + anterior cingulate; one donor")
 ])
 if not ozone_ready:
     display(Markdown("> **Analysis in progress:** the three PM2.5 analyses and spatial viewer are complete. "
@@ -101,6 +102,14 @@ Original paired-end reads are quantified against a fixed mouse reference. Age-, 
 [Explore the ozone results →](ozone.qmd)
 :::
 :::
+
+## Priority genes: encoded products, functions, and two spatial regions
+
+[**Explore gene products and functions →**](gene_profiles.qmd) presents all 11 primary hypothalamic findings, the top 20 primary coding-gene cortex results, and measured spatial shortlists, with 46 source-checked gene annotations. The profiles distinguish protein-coding genes from noncoding RNAs and pseudogenes.
+
+[**Cortex 3D: 76 measured significant genes →**](cortex_viewer.qmd) adds 14,582 measured anterior cingulate cells and the region's own PM/PBS effects. Fosb, Egr3 and S1pr1 can be examined alongside other priorities; a three-gene evidence comparison complements the paired reference/scenario scenes. Hypothalamic genes beyond Tll1 remain available with explicit exploratory labels.
+
+[![Three measured cortical gene references and their regional PM2.5 scenarios. Each gene has a separate common reference/scenario expression scale.](assets/figures/spatial_cortex/cortical_priority_spatial_panel.png){.site-overview-image}](cortex_viewer.qmd)
 
 ## Reproduce the papers, then examine the response structure
 

@@ -1,0 +1,85 @@
+---
+title: "3D cortex viewer and priority genes"
+subtitle: "Measured anterior cingulate reference and a regional PM2.5 scenario"
+page-layout: full
+toc: false
+---
+
+```{python}
+import json
+from IPython.display import Markdown, display
+from _report_utils import ROOT, summary, metric_cards, figure, read_table, show_table
+v = summary("spatial_cortex")
+aca_captions = json.loads((ROOT / "results/spatial_cortex/figure_manifest.json").read_text())
+def aca_panel(stem):
+    figure("spatial_cortex", stem, aca_captions[stem]["caption"])
+metric_cards([
+    ("Registered ACA cells", f"{v['anterior_cingulate_cells']:,}", "ACAd + ACAv; all ten substructures"),
+    ("Measured panel genes", f"{v['measured_genes']:,}", "No expression imputation"),
+    ("Measured primary FDR hits", f"{v['measured_FDR_hits']:,}", "Primary eight-animal PM/PBS contrast"),
+    ("Independent bulk animals", "4 PBS / 4 PM", "Atlas cells are a separate reference")
+])
+```
+
+[Hypothalamus viewer](viewer.qmd){.btn .btn-outline-secondary}
+[Gene products and functions](gene_profiles.qmd){.btn .btn-primary}
+[Primary cortex analysis](cortex.qmd){.btn .btn-outline-secondary}
+
+## Several relevant cortical genes
+
+The cortex now has its own anatomical reference and its own exposure-effect estimates. **Fosb, Egr3, S1pr1, Fosl2, Col19a1, Pcdh8, Iqgap2, Usp43, and Rorb**, together with the noncoding **C730002L08Rik**, form the ten strongest eligible measured priorities. The viewer provides gene shortcuts, what each curated gene encodes, its molecular function and official source links. A comparison table can retain up to three measured genes at once.
+
+```{python}
+display(Markdown(
+    f"The default **{v['default_gene']}** central regional multiplier is **{v['default_multiplier']:.3f}×**. "
+    f"It has a positive measured count in **{v['default_reference_nonzero_cells']:,} of {v['anterior_cingulate_cells']:,}** reference cells. "
+    "Detection describes this atlas donor; it does not identify exposure-responsive cells."
+))
+```
+
+::: {.model-note}
+**Measured reference beside a simulated regional scenario.** Both scenes preserve the same cell positions and anatomy. The regional multiplier comes from GSE297423's primary eight-animal model, not from exposed atlas cells. The current atlas donor is not a matched control for the humanized α-synuclein mice.
+:::
+
+<iframe id="atlas-frame" class="viewer-frame" src="assets/viewer-cortex/index.html" title="Measured anterior cingulate cortex and simulated regional PM2.5 expression" loading="lazy"></iframe>
+
+<script>
+window.addEventListener("message", function(event) {
+  const frame = document.getElementById("atlas-frame");
+  if (frame && event.source === frame.contentWindow && (event.origin === window.location.origin || event.origin === "null") && event.data && event.data.type === "omics-atlas-height") {
+    frame.style.height = Math.min(9000, Math.max(1750, Number(event.data.height) + 30)) + "px";
+  }
+});
+</script>
+
+[Open standalone cortex viewer](assets/viewer-cortex/index.html){.btn .btn-outline-primary target="_blank"}
+
+## What the genes encode and how to compare them
+
+The [gene profiles](gene_profiles.qmd) retain the strongest bulk genes even if they are absent from MERFISH. In particular, **Hspa5, Pdia4 and Xbp1** remain priorities in the bulk analysis; their spatial expression is not invented. Noncoding genes are identified as RNA products rather than assigned a protein.
+
+Select a gene shortcut, inspect its product/function card, and add it to the three-gene comparison. Detection percentage and mean imaging count include all measured cells, including zeros. Those counts are separate from RNA-seq normalized counts and from regional fold changes. Different probe efficiencies and biological distributions limit direct comparisons of count levels between genes.
+
+A positive bulk estimate means higher regional RNA in PM than PBS under that model. It does not establish higher protein abundance, a responding cell type, or a causal role. The primary results retain sample-quality concerns documented in the [reproduction audit](replication.qmd).
+
+## Anatomical and statistical scope
+
+The mask is **ACAd and ACAv with all their layers**, restricted to the registered anterior cingulate cortex. It contains 7,784 dorsal and 6,798 ventral ACA cells, with no cell subsampling or mirrored hemisphere. It does not represent every cortical area. This is an anatomical ACA proxy for the reported dissection; exact surgical boundaries were not deposited.
+
+Exact Ensembl identifiers match 960 of the 1,122 measured panel genes to primary cortex effects. Of these, 916 meet the viewer's estimability rule; 76 have primary BH q < 0.05. Missing or unreliable effects remain reference-only. The central scene uses the saved shrunken coefficient, while alternative interval scenarios use MLE ± 1.96 SE at group level.
+
+## Static multi-gene alternatives
+
+```{python}
+aca_panel("cortical_priority_spatial_panel")
+aca_panel("reference_vs_simulation")
+```
+
+[Registered ACA cells](downloads/spatial_cortex/registered_cortex_cells.tsv.gz) ·
+[Panel coverage](downloads/spatial_cortex/gene_panel_coverage.tsv) ·
+[Anatomical definition and model](downloads/spatial_cortex/summary.json) ·
+[Validation](downloads/spatial_cortex/validation_checks.json) ·
+[Reproducible extraction](downloads/code/build_cortex_spatial_viewer.py)
+
+The full-brain surface provides orientation. No cortical effect is applied to the hypothalamus, other cortical areas, or the opposite hemisphere. The simulation does not estimate cell loss, migration or cell-specific vulnerability.
+

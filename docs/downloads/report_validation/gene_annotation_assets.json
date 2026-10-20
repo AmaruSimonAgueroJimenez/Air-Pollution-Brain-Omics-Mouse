@@ -1,0 +1,17 @@
+{
+  "annotation_rows": 46,
+  "viewer_entries": {
+    "HY": 20,
+    "ACA": 28
+  },
+  "measured_shortlist_genes": {
+    "HY": 10,
+    "ACA": 10
+  },
+  "source_annotation_sha256": "a936fca03e81510abb0cabdca1cfe737a79a39962864ab03cdd4b1c8f2017c7e",
+  "source_priority_sha256": "e40c5c43105a9370fb0f4f83d8bf60222d03907b51a425cb45423c93f103b62d",
+  "viewer_annotation_sha256": "b375aea35f8a6c61fec1b5a075103b4c68709fcf92bf8eeb418b7f6bce5f0ab5",
+  "no_expression_imputation": true,
+  "source_symbols_preserved": true,
+  "passed": true
+}

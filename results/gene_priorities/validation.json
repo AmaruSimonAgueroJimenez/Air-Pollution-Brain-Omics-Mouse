@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "checks": {
+    "all11_hypothalamus_hits_retained": true,
+    "cortex_top20_rank_recomputed": true,
+    "both_measured_groups_have10": true,
+    "hypothalamus_measured_only_Tll1_primary": true,
+    "no_protein_assigned_to_noncoding_or_pseudogene": true,
+    "all_gene_identities_unique": true,
+    "all_NCBI_source_links": true,
+    "Pcnx_alias_disclosed": true,
+    "Fzd3_not_merged_with_Fzd9": true,
+    "source_statistics_unchanged": true,
+    "selected_effects_are_finite": true
+  },
+  "scope": "Selection, identity, annotation-type and numeric invariants; manual source/figure review separately recorded."
+}

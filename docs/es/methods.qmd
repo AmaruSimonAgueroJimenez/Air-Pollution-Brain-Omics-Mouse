@@ -137,3 +137,17 @@ Se conservan en el repositorio los scripts de Python, los cuadernos QMD, los reg
 ## Análisis ampliados y recuperación de los métodos originales
 
 El [capítulo de análisis secundarios](advanced_results.qmd) define los modelos anidados de interacción, contrastes de coeficientes, familias de corrección, reglas de selección visual e intervalos que incorporan covarianzas. El [capítulo de reproducción](replication.qmd) reconstruye por separado el modelo original de cinco grupos de corteza, la sensibilidad metodológica de hipotálamo, candidatos ANOVA/LSD de miRNA y la selección y ajustes candidatos de ozono. No reemplazan los ajustes principales. Se exportan sesiones de R 4.5.2, DESeq2 1.50.2, limma 3.66.0 y edgeR 4.8.2 con sus resultados. Las descargas originales conservan hashes y URL; el texto y las imágenes editoriales de los artículos se excluyen de la página pública.
+
+## Prioridades génicas y anotación del producto codificado
+
+Se conservan todos los hallazgos FDR principales del hipotálamo. Las prioridades codificantes de corteza proceden del resultado principal fijo de ocho animales, ordenado por q de BH sin redondear y con desempates declarados. Las listas espaciales de diez genes requieren medición MERFISH y estimaciones originales elegibles. Los grupos se distinguen: solo un candidato medido hipotalámico es un hallazgo principal, mientras los diez corticales medidos son significativos. La selección posterior al análisis permite describir y plantear seguimiento, sin confirmación independiente.
+
+Los registros oficiales NCBI de ratón y UniProt revisados aportan símbolo actual, tipo génico, producto y función. Se conservan los símbolos de los ensayos. Las correspondencias confirmadas se documentan; los alias ambiguos no se sustituyen. Los RNA no codificantes y pseudogenes no reciben una proteína. Una función inferida por similitud no se presenta como ensayo enzimático en estos ratones. Los resultados RNA no distinguen abundancia proteica ni isoformas como ΔFosB, Homer1a y XBP1s.
+
+## Extensión espacial a corteza cingulada anterior
+
+La misma referencia macho no expuesta Zhuang-ABCA-2 aporta todas las células registradas con división Isocortex y estructura ACAd o ACAv, conservando diez capas/subestructuras. ACA aproxima anatómicamente la disección informada, cuyos límites quirúrgicos exactos no se depositaron. Los identificadores celulares exactos enlazan coordenadas y matriz H5AD medida. La referencia de 14,582 células no se submuestrea ni refleja ni imputa expresión. Los Ensembl exactos emparejan genes medidos y resultado cortical; las diferencias de símbolo quedan en la procedencia, sin sustituciones inventadas.
+
+Los conteos de imagen de cada gen cortical se multiplican uniformemente por 2 elevado al log₂FC cortical principal regularizado. El efecto se restringe a ACA; el hipotálamo conserva su efecto regional independiente. La escala común referencia/escenario se calcula dentro de cada gen. La comparación de tres genes informa detección y conteo medio con ceros, efecto regional RNA, q de BH y anotación; no prueba diferencias de exposición entre genes ni iguala eficiencias de sondas.
+
+El donante del atlas no es un control experimental de los animales humanizados para α-sinucleína. Localizar un transcrito basal y disponer de un efecto regional no identifica qué células responden a PM2.5. Se verifican concordancia coordenadas/volumen, uniones, rangos y los 1,122 vectores comprimidos. Véanse los [perfiles génicos](gene_profiles.qmd) y los [métodos y resultados 3D corticales](cortex_viewer.qmd).

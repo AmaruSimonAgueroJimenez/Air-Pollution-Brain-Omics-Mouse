@@ -1,0 +1,84 @@
+{
+  "checked_at": "2026-10-19",
+  "scope": "Live in-app browser UI checks of current source assets; rendered report and production hosting checked by parent task.",
+  "local_source_base": "http://127.0.0.1:8841",
+  "files": {
+    "javascript": "docs/assets/viewer/viewer.js",
+    "javascript_sha256": "27ad837a7474296e044786ef1cd9f64db726b4efa80110527dd4ba642715e91b",
+    "css": "docs/assets/viewer/viewer.css",
+    "css_sha256": "4f6a6a9e3e1fe8975a7854ee1a437ddde467493d7bb69b16df7009f3d06d5095"
+  },
+  "checks": [
+    {
+      "name": "HY relevant gene guide",
+      "passed": true,
+      "observed": "10 named measured-gene buttons; Tll1 primary FDR, Fosl2 and Nr4a3 correctly exploratory."
+    },
+    {
+      "name": "HY unmeasured primary hits",
+      "passed": true,
+      "observed": "Expanded table: 20 priorities, 10 measured; Hipk3, Ksr2 and other absent genes have profile links and no 3D action. All 11 primary HY FDR hits visible."
+    },
+    {
+      "name": "Gene annotation switching",
+      "passed": true,
+      "observed": "Tll1, Fosl2, Egr2, Fosb and C730002L08Rik display distinct curated products/functions and NCBI links."
+    },
+    {
+      "name": "Noncoding annotation",
+      "passed": true,
+      "observed": "C730002L08Rik explicitly ncRNA, no protein assigned; function unknown is stated."
+    },
+    {
+      "name": "Three-gene comparison",
+      "passed": true,
+      "observed": "Removed Nr4a3, added Egr2; table returns to three genes and Add disabled at maximum. Includes primary/exploratory evidence, BH q, shrunken effect, all-cell detection and mean."
+    },
+    {
+      "name": "ACA source region and effect",
+      "passed": true,
+      "observed": "ACA navigation loads 14,582 cells. Fosb default: q=2.27e-19, shrunken log2FC=0.997, multiplier=1.996, 1,418 detected cells."
+    },
+    {
+      "name": "ACA independent animals",
+      "passed": true,
+      "observed": "4 PBS and 4 PM; source samples Control5, Control6, Control7, Control8, PMA2775, PMA2776, PMA2778, PMA2779 all present with values."
+    },
+    {
+      "name": "Bilingual navigation",
+      "passed": true,
+      "observed": "Spanish HY→ACA and ACA→English use correct local paths. English ACA text, product, n=8 and PBS n=4/PM n=4 correct."
+    },
+    {
+      "name": "Anatomical focus and camera",
+      "passed": true,
+      "observed": "Whole-brain focus and ACA focus/reset work. A real reference-scene drag visibly rotates both panels together. Numerical camera queue races additionally covered by six unit tests."
+    },
+    {
+      "name": "Zero filter and scale",
+      "passed": true,
+      "observed": "Hide-zero changes displayed Fosb cells to 1,418 while three-gene regional summaries remain unchanged. Both 3D panels use same gene-specific color scale and explicit simulation label."
+    },
+    {
+      "name": "Iframe height computation",
+      "passed": true,
+      "method": "Unit test plus code inspection",
+      "observed": "Intrinsic main rect height, repeated equal heights deduplicated, no document scrollHeight or accumulating iframe offset. Main ResizeObserver and details/comparison changes report updated intrinsic height."
+    },
+    {
+      "name": "Browser logs",
+      "passed": true,
+      "observed": "No warnings or errors returned for ACA after interaction."
+    }
+  ],
+  "automated_tests": {
+    "command": "node --test tests/test_viewer_gene_guide.cjs tests/test_viewer_camera_sync.cjs",
+    "passed": 15,
+    "failed": 0
+  },
+  "screenshots": [
+    "gene_viewer_UI_browser_proof.png",
+    "gene_viewer_UI_comparison_browser_proof.png",
+    "gene_viewer_UI_ncRNA_browser_proof.png"
+  ]
+}

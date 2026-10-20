@@ -1,0 +1,72 @@
+{
+  "retrieved_on": "2026-10-19",
+  "sources": [
+    {
+      "url": "https://ftp.ncbi.nlm.nih.gov/gene/DATA/GENE_INFO/Mammalia/Mus_musculus.gene_info.gz",
+      "sha256": "f77a7ff46282e19d9b854838ec5c46911408afb4ec314d9a9a0a972ad2079f83",
+      "download_bytes": 3934656,
+      "selected_records": 46,
+      "source_columns": [
+        "#tax_id",
+        "GeneID",
+        "Symbol",
+        "LocusTag",
+        "Synonyms",
+        "dbXrefs",
+        "chromosome",
+        "map_location",
+        "description",
+        "type_of_gene",
+        "Symbol_from_nomenclature_authority",
+        "Full_name_from_nomenclature_authority",
+        "Nomenclature_status",
+        "Other_designations",
+        "Modification_date",
+        "Feature_type"
+      ]
+    },
+    {
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=gene&id=11639%2C320485%2C58208%2C320155%2C76459%2C12398%2C229599%2C12823%2C211232%2C76737%2C12971%2C13654%2C13655%2C57778%2C14282%2C14284%2C320027%2C14365%2C100416062%2C15234%2C15259%2C26556%2C14828%2C544963%2C333050%2C320506%2C66274%2C74840%2C109154%2C17389%2C217166%2C18124%2C18451%2C18530%2C54604%2C12304%2C71853%2C72351%2C225998%2C13609%2C52850%2C21892%2C216835%2C22433%2C230848%2C210162&retmode=json&retmax=100",
+      "sha256": "c1d0fc92f309969989016f66e90a9a6ec28dcfe05c1ff52806ca69d01a9d3bcc",
+      "bytes": 78190
+    },
+    {
+      "url": "https://rest.uniprot.org/uniprotkb/search?query=%28organism_id%3A10090%29+AND+%28gene_exact%3AAk4+OR+gene_exact%3ABcl11b+OR+gene_exact%3ACa12+OR+gene_exact%3ACbfa2t3+OR+gene_exact%3ACiart+OR+gene_exact%3ACol19a1+OR+gene_exact%3ACpne9+OR+gene_exact%3ACreld2+OR+gene_exact%3ACrym+OR+gene_exact%3AEgr2+OR+gene_exact%3AEgr3+OR+gene_exact%3AFmnl1+OR+gene_exact%3AFosb+OR+gene_exact%3AFosl2+OR+gene_exact%3AFstl4+OR+gene_exact%3AFzd3+OR+gene_exact%3AHgf+OR+gene_exact%3AHipk3+OR+gene_exact%3AHomer1+OR+gene_exact%3AHspa5+OR+gene_exact%3AIqgap2+OR+gene_exact%3AKsr2+OR+gene_exact%3ALmbrd2+OR+gene_exact%3ALyrm9+OR+gene_exact%3AManf+OR+gene_exact%3AMlec+OR+gene_exact%3AMmp16+OR+gene_exact%3ANr1d1+OR+gene_exact%3ANr4a3+OR+gene_exact%3AP4ha1+OR+gene_exact%3APcdh8+OR+gene_exact%3APcnx1+OR+gene_exact%3APdia4+OR+gene_exact%3APdia6+OR+gene_exact%3APtar1+OR+gene_exact%3ARorb+OR+gene_exact%3AS1pr1+OR+gene_exact%3ASgsm1+OR+gene_exact%3ATll1+OR+gene_exact%3AUsp43+OR+gene_exact%3AXbp1+OR+gene_exact%3AZbtb40+OR+gene_exact%3AZkscan2%29&format=json&size=500&fields=accession%2Cid%2Cgene_names%2Cprotein_name%2Ccc_function%2Corganism_name",
+      "sha256": "49514afb1fdfa438c1d33b289fcccaba9f545b01fc5d9684487e99e860e81829",
+      "bytes": 252858
+    },
+    {
+      "url": "https://rest.uniprot.org/uniprotkb/P27144.json",
+      "retrieved_on": "2026-10-19",
+      "sha256": "f9cdc6123f2aeb404c6f6f4a73c864da04d3e2fa214db3638fcf312d9bffae7f",
+      "bytes": 62479,
+      "reason": "Human record is the explicit by-similarity source for reviewed mouse Ak4 Q9WUR9; human activity reports cannot be asserted as an assay in mouse cortex."
+    },
+    {
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=19130895,19766732&retmode=json",
+      "retrieved_on": "2026-10-19",
+      "bytes": 4261,
+      "sha256": "3a1a77f5ff7e499483cdc6ff451db778ac6ff308acdc9016d4f466439b5f5373"
+    }
+  ],
+  "frozen_local_record_files": {
+    "ak4_human_reviewed_uniprot.json": "6e8ba73fcc972e74172bf10db4216efa16da427cb2b6cf4806d90a79846c044a",
+    "uniprot_mouse_candidates.json": "0913e8a83e8bff72bc1f8e0a0e5bf076be0abeff7280c58458e82e3237d973b5",
+    "ak4_primary_papers_source.json": "0c4d160e3ca6fc296e0ca9de728eb65bb1e9a5557b4e11f8039a915556f68672",
+    "ak4_human_reviewed_source.json": "43bba9e0afc29f0b453bcc77a145b28279560c19901340290083da6d9be7d9c7",
+    "uniprot_mouse_source.json": "8223901139dd38bb0951261de09becbce6cf0817ba976a22bbc8ae05cb54829c",
+    "ncbi_gene_summaries_source.json": "28115d3f558e6c166c200be6d63c4568e2555f04525c54d7f7e122a1627e2d59",
+    "ncbi_gene_info_source.json": "64937601afcb91855bbd4c7dab1eba5890c6c478ee6943199383e17c9361e842",
+    "methods.json": "1d9cd6ec88dcb7e567738ff5ff757d4e07a8f8b370aecbe225643886649955bb",
+    "ak4_primary_papers.json": "1c72b12ebf83c1187386ddd2650d81c66bb52f5087fb4c35adcc3738d1d8178a",
+    "ncbi_gene_info_selected.json": "b48f8667cb195ffd5ffa16b3515318696e1a60b971ae1dc697613b7816721aca",
+    "ncbi_gene_summaries.json": "59b331b13193c088b777cc64a1228d19be15ccc59c13dec6a08267652cc3911f"
+  },
+  "primary_input_hashes": {
+    "results/hypothalamus/differential_expression.tsv": "4c6809b0b2abe171c9e4eb0b3d5488a73b3e0a8cd8d97ffe1f362b06a4b30806",
+    "results/cortex/DE_PM_vs_PBS.tsv": "83f4a885a8ff58b69203f7f035dda49ef06eae747089a3f521ad736e44aedc4a",
+    "results/hypothalamus/leave_one_out_primary_hits.tsv": "4eeeb7cd532dea6bd59ae165bf35f30165d320f3ae2443552792c3243fb40c7b",
+    "results/spatial_viewer/gene_panel_coverage.tsv": "517b61bdee5ba42513b4388be5598d6ba6dcdcc804e0e60677f2a3ba81627b10"
+  },
+  "annotation_identity_policy": "NCBI current exact symbol wins; a unique official alias is disclosed. UniProt exact primary gene name wins over historical synonyms; only unique reviewed mouse records are assigned."
+}

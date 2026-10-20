@@ -201,9 +201,24 @@ div.csl-indent {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./viewer.html"> 
-<span class="menu-text">Visor 3D</span></a>
+    <a class="nav-link" href="./gene_profiles.html"> 
+<span class="menu-text">Genes y funciones</span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-visores-3d" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Visores 3D</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-visores-3d">    
+        <li>
+    <a class="dropdown-item" href="./viewer.html">
+ <span class="dropdown-text">Hipotálamo y selección regional</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cortex_viewer.html">
+ <span class="dropdown-text">Corteza cingulada anterior</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./reproducibility.html"> 
 <span class="menu-text">Datos y código</span></a>
@@ -249,6 +264,7 @@ div.csl-indent {
   <li><a href="#interpretación-y-limitaciones" id="toc-interpretación-y-limitaciones" class="nav-link" data-scroll-target="#interpretación-y-limitaciones">Interpretación y limitaciones</a></li>
   </ul></li>
   <li><a href="#resultados-descargables" id="toc-resultados-descargables" class="nav-link" data-scroll-target="#resultados-descargables">Resultados descargables</a></li>
+  <li><a href="#productos-funciones-y-prioridades-espaciales" id="toc-productos-funciones-y-prioridades-espaciales" class="nav-link" data-scroll-target="#productos-funciones-y-prioridades-espaciales">Productos, funciones y prioridades espaciales</a></li>
   </ul>
 </nav>
     </div>
@@ -1320,6 +1336,10 @@ Los 30 primeros genes ordenados por valor p ajustado de Wald, representados medi
 <li><a href="../downloads/cortex/gene_filter.tsv">Decisiones del filtro de genes</a></li>
 <li><a href="../downloads/cortex/methods.json">Métodos y procedencia del software</a> y <a href="../downloads/cortex/validation.json">registro de validación</a></li>
 </ul>
+</section>
+<section id="productos-funciones-y-prioridades-espaciales" class="level2">
+<h2 class="anchored" data-anchor-id="productos-funciones-y-prioridades-espaciales">Productos, funciones y prioridades espaciales</h2>
+<p>Los <a href="./gene_profiles.html">perfiles génicos</a> conservan los hallazgos seleccionados con producto, tipo génico actual, función molecular, fuente oficial, efecto y cobertura espacial. El <a href="./cortex_viewer.html">visor 3D de corteza</a> aporta una referencia ACA y efectos corticales propios; el <a href="./viewer.html">visor de hipotálamo</a> agrega accesos a genes medidos y comparación de tres genes. Los no medidos mantienen su resultado regional sin valores espaciales imputados.</p>
 
 
 <!-- -->
@@ -1944,6 +1964,10 @@ Zhu, Anqi, Joseph G. Ibrahim, y Michael I. Love. 2019. <span>«Heavy-tailed prio
 <span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Metadatos de las muestras</span><span class="co">](../downloads/cortex/sample_metadata.tsv)</span>, <span class="co">[</span><span class="ot">resúmenes de calidad</span><span class="co">](../downloads/cortex/sample_qc.tsv)</span> y <span class="co">[</span><span class="ot">correlaciones entre muestras</span><span class="co">](../downloads/cortex/sample_correlation.tsv)</span></span>
 <span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Decisiones del filtro de genes</span><span class="co">](../downloads/cortex/gene_filter.tsv)</span></span>
 <span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Métodos y procedencia del software</span><span class="co">](../downloads/cortex/methods.json)</span> y <span class="co">[</span><span class="ot">registro de validación</span><span class="co">](../downloads/cortex/validation.json)</span></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a><span class="fu">## Productos, funciones y prioridades espaciales</span></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>Los <span class="co">[</span><span class="ot">perfiles génicos</span><span class="co">](gene_profiles.qmd)</span> conservan los hallazgos seleccionados con producto, tipo génico actual, función molecular, fuente oficial, efecto y cobertura espacial. El <span class="co">[</span><span class="ot">visor 3D de corteza</span><span class="co">](cortex_viewer.qmd)</span> aporta una referencia ACA y efectos corticales propios; el <span class="co">[</span><span class="ot">visor de hipotálamo</span><span class="co">](viewer.qmd)</span> agrega accesos a genes medidos y comparación de tres genes. Los no medidos mantienen su resultado regional sin valores espaciales imputados.</span>
 </code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

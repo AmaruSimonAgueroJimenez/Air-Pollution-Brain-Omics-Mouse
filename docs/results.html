@@ -202,9 +202,24 @@ div.csl-indent {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./viewer.html"> 
-<span class="menu-text">3D Viewer</span></a>
+    <a class="nav-link" href="./gene_profiles.html"> 
+<span class="menu-text">Genes &amp; functions</span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-d-viewers" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">3D viewers</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-d-viewers">    
+        <li>
+    <a class="dropdown-item" href="./viewer.html">
+ <span class="dropdown-text">Hypothalamus &amp; region selection</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cortex_viewer.html">
+ <span class="dropdown-text">Anterior cingulate cortex</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./reproducibility.html"> 
 <span class="menu-text">Data &amp; code</span></a>
@@ -244,6 +259,7 @@ div.csl-indent {
   <li><a href="#functional-enrichment" id="toc-functional-enrichment" class="nav-link" data-scroll-target="#functional-enrichment">Functional enrichment</a></li>
   <li><a href="#spatial-interpretation" id="toc-spatial-interpretation" class="nav-link" data-scroll-target="#spatial-interpretation">Spatial interpretation</a></li>
   <li><a href="#source-tables-and-code" id="toc-source-tables-and-code" class="nav-link" data-scroll-target="#source-tables-and-code">Source tables and code</a></li>
+  <li><a href="#gene-products-functions-and-spatial-priorities" id="toc-gene-products-functions-and-spatial-priorities" class="nav-link" data-scroll-target="#gene-products-functions-and-spatial-priorities">Gene products, functions, and spatial priorities</a></li>
   </ul>
 </nav>
     </div>
@@ -279,7 +295,7 @@ div.csl-indent {
 <section id="analysis-population" class="level2">
 <h2 class="anchored" data-anchor-id="analysis-population">Analysis population</h2>
 <p>The main contrast includes four filtered-air controls and three PM2.5-exposed animals receiving standard chow. Four high-fat-diet samples in the same deposit are not added to the control group. Gene-assigned counts are analyzed as seven independent bulk samples; the atlas contributes no exposure replicates. <span class="citation" data-cites="Rajagopalan2020_32780721">Rajagopalan et al. (<a href="#ref-Rajagopalan2020_32780721" role="doc-biblioref">2020</a>)</span></p>
-<div id="39308fb7" class="cell" data-execution_count="2">
+<div id="017b756e" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display cell-output-markdown">
 <div class="metric-cards">
 <div>
@@ -398,7 +414,7 @@ PM
 </section>
 <section id="quality-normalization-and-sample-relationships" class="level2">
 <h2 class="anchored" data-anchor-id="quality-normalization-and-sample-relationships">Quality, normalization, and sample relationships</h2>
-<div id="14e7f25e" class="cell" data-execution_count="3">
+<div id="e8b3f037" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display cell-output-markdown">
 <figure class="research-figure figure">
 <a href="assets/figures/hypothalamus/sample_quality.svg"><img loading="lazy" width="3000" height="1140" src="assets/figures/hypothalamus/sample_quality.png" alt="Gene-assigned library depth and detected genes in all seven samples. Each bar represents one animal; no sample was excluded." class="figure-img"></a>
@@ -431,7 +447,7 @@ Sample correlations and variance-stabilized distances provide complementary view
 </section>
 <section id="differential-expression" class="level2">
 <h2 class="anchored" data-anchor-id="differential-expression">Differential expression</h2>
-<div id="54536417" class="cell" data-execution_count="4">
+<div id="14505acc" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>The analysis retained <strong>19,611</strong> of <strong>50,417</strong> genes. <strong>19,452</strong> genes received a finite adjusted p-value; <strong>159</strong> were filtered from inferential reporting by Cook’s diagnostics. At FDR &lt; 0.05, <strong>11 genes</strong> differ between PM and FA: <strong>2 higher</strong> and <strong>9 lower</strong> in PM. <strong>4</strong> also have absolute shrunken log₂FC ≥ 1.</p>
 </div>
@@ -706,7 +722,7 @@ Mean expression versus effect size. Low-information and outlier-filtered hypothe
 </section>
 <section id="expression-patterns-and-individual-animals" class="level2">
 <h2 class="anchored" data-anchor-id="expression-patterns-and-individual-animals">Expression patterns and individual animals</h2>
-<div id="09f12daf" class="cell" data-execution_count="5">
+<div id="9e6401ab" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display cell-output-markdown">
 <figure class="research-figure figure">
 <a href="assets/figures/hypothalamus/heatmap_top30.svg"><img loading="lazy" width="2100" height="2610" src="assets/figures/hypothalamus/heatmap_top30.png" alt="The 30 genes selected for the heatmap are displayed on row-standardized variance-stabilized expression. Row z-scores are descriptive and are not fold changes; selection and clustering are part of the same dataset." class="figure-img"></a>
@@ -724,7 +740,7 @@ Normalized expression in individual animals for selected genes, including Gfap a
 </figure>
 </div>
 </div>
-<div id="89688c6e" class="cell" data-execution_count="6">
+<div id="92be6e82" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display cell-output-markdown">
 <div class="table-scroll">
 <table class="dataframe table table-sm table-striped evidence-table small">
@@ -842,7 +858,7 @@ Gfap
 <section id="sensitivity-to-individual-samples" class="level2">
 <h2 class="anchored" data-anchor-id="sensitivity-to-individual-samples">Sensitivity to individual samples</h2>
 <p>The complete model was refitted after omitting each animal once. Every omission is reported; none was chosen to replace the primary comparison.</p>
-<div id="fcf0d192" class="cell" data-execution_count="7">
+<div id="19d24f1d" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display cell-output-markdown">
 <div class="table-scroll">
 <table class="dataframe table table-sm table-striped evidence-table small">
@@ -1337,7 +1353,7 @@ Ptar1
 </div>
 </div>
 <p>All eleven primary hits retain their direction in seven of seven fits, but <strong>none remains FDR-significant in all seven fits</strong>. The total discovery count ranges from zero to 825 across omissions. This sensitivity limits the certainty of gene-level discovery and any spatial scenario derived from it. Omitting a control that increases the discovery count is not a justification for excluding that control.</p>
-<div id="70a89822" class="cell" data-execution_count="8">
+<div id="295f4c1f" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>The independent R/DESeq2 cross-check uses the same 19,452 finite-p hypotheses and the same 159 Cook-filtered genes. All eleven primary hits remain significant in R; R additionally identifies <strong>Tnrc6c</strong>, whose FDR is 0.0399 in R and 0.0521 in Python. <strong>Tll1</strong> remains significant in both implementations (FDR 0.00330 in R; 0.00350 in Python). Effect estimates agree closely (Pearson correlation &gt;0.999999). This <a href="downloads/hypothalamus/independent_deseq2_check/summary.json">software comparison</a> does not provide biological replication or resolve sample heterogeneity. The fixed Python primary result is retained, including its threshold-sensitive genes.</p>
 </div>
@@ -1345,7 +1361,7 @@ Ptar1
 </section>
 <section id="functional-enrichment" class="level2">
 <h2 class="anchored" data-anchor-id="functional-enrichment">Functional enrichment</h2>
-<div id="71a0cef5" class="cell" data-execution_count="9">
+<div id="c251f911" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>GO Biological Process over-representation analysis found <strong>0 higher-expression</strong> and <strong>0 lower-expression</strong> significant terms after BH correction. The small, partially annotated discovery list does not support a confirmed pathway conclusion.</p>
 </div>
@@ -1354,7 +1370,7 @@ Ptar1
 </section>
 <section id="spatial-interpretation" class="level2">
 <h2 class="anchored" data-anchor-id="spatial-interpretation">Spatial interpretation</h2>
-<div id="739a0d0b" class="cell" data-execution_count="10">
+<div id="edb01a03" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><strong>Tll1</strong> is the only primary FDR hit measured in this atlas panel. Its bulk MLE log₂FC is <strong>-1.344</strong>, its shrunken log₂FC is <strong>-1.224</strong>, and its FDR is <strong>3.50e-03</strong>. The central visualization multiplier is therefore <strong>0.428×</strong>; the pointwise group MLE interval corresponds to <strong>0.273–0.569×</strong>. These multipliers define scenarios on the measured reference; they are not per-cell exposure measurements.</p>
 </div>
@@ -1374,6 +1390,10 @@ Ptar1
 <li><a href="downloads/hypothalamus/methods.json">Methods and parameters</a></li>
 <li><a href="downloads/code/analyze_hypothalamus.py">Executed Python analysis</a></li>
 </ul>
+</section>
+<section id="gene-products-functions-and-spatial-priorities" class="level2">
+<h2 class="anchored" data-anchor-id="gene-products-functions-and-spatial-priorities">Gene products, functions, and spatial priorities</h2>
+<p>The new <a href="./gene_profiles.html">gene profiles</a> preserve the complete selected discovery list with encoded products, current biotypes, molecular functions, official source links, effect estimates and panel coverage. The <a href="./cortex_viewer.html">cortex 3D viewer</a> provides a separate ACA reference and cortical effects; the <a href="./viewer.html">hypothalamus viewer</a> adds measured-gene shortcuts and a three-gene comparison. Unmeasured genes remain in the bulk report without imputed spatial values.</p>
 
 
 <!-- -->
@@ -1992,6 +2012,10 @@ Rajagopalan, Sanjay, Bongsoo Park, Rengasamy Palanivel, et al. 2020. <span>“Me
 <span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Primary-hit stability</span><span class="co">](downloads/hypothalamus/leave_one_out_primary_hits.tsv)</span></span>
 <span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Methods and parameters</span><span class="co">](downloads/hypothalamus/methods.json)</span></span>
 <span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Executed Python analysis</span><span class="co">](downloads/code/analyze_hypothalamus.py)</span></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a><span class="fu">## Gene products, functions, and spatial priorities</span></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>The new <span class="co">[</span><span class="ot">gene profiles</span><span class="co">](gene_profiles.qmd)</span> preserve the complete selected discovery list with encoded products, current biotypes, molecular functions, official source links, effect estimates and panel coverage. The <span class="co">[</span><span class="ot">cortex 3D viewer</span><span class="co">](cortex_viewer.qmd)</span> provides a separate ACA reference and cortical effects; the <span class="co">[</span><span class="ot">hypothalamus viewer</span><span class="co">](viewer.qmd)</span> adds measured-gene shortcuts and a three-gene comparison. Unmeasured genes remain in the bulk report without imputed spatial values.</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -147,3 +147,7 @@ La correspondencia entre el tejido completo y el panel utiliza símbolos génico
 - [Estabilidad de los hallazgos principales](../downloads/hypothalamus/leave_one_out_primary_hits.tsv)
 - [Métodos y parámetros](../downloads/hypothalamus/methods.json)
 - [Análisis de Python ejecutado](../downloads/code/analyze_hypothalamus.py)
+
+## Productos, funciones y prioridades espaciales
+
+Los [perfiles génicos](gene_profiles.qmd) conservan los hallazgos seleccionados con producto, tipo génico actual, función molecular, fuente oficial, efecto y cobertura espacial. El [visor 3D de corteza](cortex_viewer.qmd) aporta una referencia ACA y efectos corticales propios; el [visor de hipotálamo](viewer.qmd) agrega accesos a genes medidos y comparación de tres genes. Los no medidos mantienen su resultado regional sin valores espaciales imputados.

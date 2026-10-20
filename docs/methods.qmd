@@ -138,3 +138,17 @@ Python source scripts, QMD notebooks, version records, original sample annotatio
 ## Expanded analyses and original-method recovery
 
 The [secondary-analysis chapter](advanced_results.qmd) defines the nested interaction models, coefficient contrasts, correction families, figure-selection rules, and covariance-aware intervals. The [reproduction chapter](replication.qmd) separately reconstructs the cortex five-group author model, hypothalamus method sensitivity, miRNA ANOVA/LSD candidates, and ozone author-table selection and candidate fits. These models do not replace the primary fits above. R 4.5.2, DESeq2 1.50.2, limma 3.66.0, and edgeR 4.8.2 sessions are exported with the corresponding results. Author-data downloads retain source hashes and URLs; publisher article text and artwork are excluded from the public site.
+
+## Gene-centered priorities and encoded-product annotation
+
+Primary hypothalamic FDR discoveries are retained in full. Cortex coding-gene priorities are selected from the fixed primary eight-animal result, ordered by unrounded BH q with declared tie-breaks. Separate top-ten lists require a measured MERFISH gene and eligible original effect estimates. Those selection groups remain distinct: only one hypothalamic measured candidate is a primary discovery, whereas the ten cortical measured priorities are significant. Selection after analysis supports description and follow-up, not independent confirmation.
+
+Official NCBI mouse gene records and reviewed UniProt entries provide current symbols, gene type, protein products and molecular roles. Original assay symbols remain in the report. Confirmed aliases are documented separately; ambiguous aliases are not substituted. Noncoding RNA and pseudogene records do not receive a protein. A function inferred by similarity is not presented as an enzyme assay in these mice. RNA results do not distinguish unmeasured protein abundance or gene isoforms such as ΔFosB, Homer1a and XBP1s.
+
+## Anterior cingulate cortex spatial extension
+
+The same unexposed male Zhuang-ABCA-2 reference supplies all registered cells with division Isocortex and structure ACAd or ACAv, retaining all ten layer/substructure labels. ACA is an anatomical proxy for the reported dissection, whose exact surgical boundaries were not deposited. Exact cell IDs link coordinates and the raw measured H5AD matrix. The 14,582-cell reference is not subsampled, mirrored, or expression-imputed. Exact Ensembl identifiers map measured genes to the primary cortical result; a symbol difference is retained in provenance rather than resolved by invented substitution.
+
+Each cortical gene's measured imaging values are multiplied uniformly by 2 to the power of its primary cortical shrunken log₂FC. The cortical effect is restricted to ACA; hypothalamus retains its own independent bulk effect. The common reference/scenario scale is computed within each gene. A three-gene comparison reports observed detection and mean imaging counts including zeros, original regional RNA effects, BH q and annotation; it does not test between-gene exposure differences or equalize probe efficiencies.
+
+The cortical atlas donor is not an experimental control for the humanized α-synuclein animals. Spatial location of a reference transcript and a regional effect do not identify which cells respond to PM2.5. Source coordinate/volume agreement, join invariants, count ranges and all 1,122 compressed gene vectors are checked numerically. See [gene profiles](gene_profiles.qmd) and [cortical 3D methods and results](cortex_viewer.qmd).

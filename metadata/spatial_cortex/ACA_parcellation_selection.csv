@@ -1,0 +1,11 @@
+parcellation_index,organ,category,division,structure,substructure
+204,brain,grey,Isocortex,ACAd,ACAd2/3
+286,brain,grey,Isocortex,ACAv,ACAv2/3
+578,brain,grey,Isocortex,ACAv,ACAv1
+762,brain,grey,Isocortex,ACAv,ACAv5
+800,brain,grey,Isocortex,ACAv,ACAv6a
+809,brain,grey,Isocortex,ACAv,ACAv6b
+909,brain,grey,Isocortex,ACAd,ACAd6a
+917,brain,grey,Isocortex,ACAd,ACAd6b
+925,brain,grey,Isocortex,ACAd,ACAd1
+1004,brain,grey,Isocortex,ACAd,ACAd5

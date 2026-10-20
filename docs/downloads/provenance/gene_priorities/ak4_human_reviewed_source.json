@@ -1,0 +1,7 @@
+{
+  "url": "https://rest.uniprot.org/uniprotkb/P27144.json",
+  "retrieved_on": "2026-10-19",
+  "sha256": "f9cdc6123f2aeb404c6f6f4a73c864da04d3e2fa214db3638fcf312d9bffae7f",
+  "bytes": 62479,
+  "reason": "Human record is the explicit by-similarity source for reviewed mouse Ak4 Q9WUR9; human activity reports cannot be asserted as an assay in mouse cortex."
+}

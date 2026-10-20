@@ -15,6 +15,7 @@ h = summary("hypothalamus")
 c = summary("cortex")
 m = summary("mirna")
 v = summary("spatial_viewer")
+aca = summary("spatial_cortex")
 o = summary("ozone") if (ROOT / "results/ozone/summary.json").exists() else {}
 ozone_ready = o.get("complete", False)
 ```
@@ -30,7 +31,7 @@ metric_cards([
     ("Estudios de exposición", "4", "Tres estudios de PM2.5 y uno de ozono"),
     ("Muestras del análisis principal", "48", "Los contrastes se ajustan dentro de cada estudio"),
     ("Genes espaciales medidos", f"{v['measured_genes']:,}", "Panel MERFISH; sin genes imputados"),
-    ("Células HY registradas", f"{v['hypothalamus_cells']:,}", "Un donante macho del atlas; referencia espacial")
+    ("Células espaciales registradas", f"{v['hypothalamus_cells']+aca['anterior_cingulate_cells']:,}", "Hipotálamo + cingulada anterior; un donante")
 ])
 if not ozone_ready:
     display(Markdown("> **Análisis en curso:** los tres análisis de PM2.5 y el visor espacial están completos. "
@@ -100,6 +101,14 @@ Las lecturas pareadas originales se cuantifican frente a una referencia fija de 
 [Explorar los resultados de ozono →](ozone.qmd)
 :::
 :::
+
+## Genes prioritarios: qué codifican, qué hacen y dónde se miden
+
+[**Explorar productos y funciones génicas →**](gene_profiles.qmd) presenta los 11 hallazgos hipotalámicos, los 20 genes codificantes principales de corteza y listas espaciales seleccionadas, con 46 anotaciones verificadas en fuentes oficiales. Las fichas distinguen genes codificantes, RNA no codificantes y pseudogenes.
+
+[**Corteza 3D: 76 genes significativos medidos →**](cortex_viewer.qmd) incorpora 14,582 células medidas de corteza cingulada anterior y efectos regionales PM/PBS propios. Se pueden explorar Fosb, Egr3, S1pr1 y otros candidatos, además de comparar hasta tres genes en una tabla de evidencia. En hipotálamo hay opciones medidas más allá de Tll1, con etiquetas exploratorias explícitas.
+
+[![Referencias medidas de tres genes corticales y sus escenarios regionales de PM2.5. Cada gen utiliza una escala común propia entre referencia y escenario.](../assets/figures/spatial_cortex/cortical_priority_spatial_panel_es.png){.site-overview-image}](cortex_viewer.qmd)
 
 ## Reproducir los artículos y examinar la estructura de la respuesta
 

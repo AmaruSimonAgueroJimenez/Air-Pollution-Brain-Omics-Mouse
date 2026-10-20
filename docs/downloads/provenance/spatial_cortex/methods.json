@@ -1,0 +1,35 @@
+{
+  "source_reference": "Zhuang-ABCA-2, unexposed male, measured MERFISH raw matrix",
+  "anatomical_proxy": "Anterior cingulate cortex ACAd+ACAv as registered anatomical proxy for the source bulk anterior-cingulate dissection; exact surgical boundaries are unavailable",
+  "region_selection": "division=Isocortex and structure in {ACAd,ACAv}; all ten substructures",
+  "cells": 14582,
+  "cells_subsampled": false,
+  "hemisphere_mirrored": false,
+  "interpolated_or_imputed_genes": false,
+  "bulk_population": "Primary GSE297423 eight animals: four PBS controls, four PM2.5 animals, without PFF",
+  "bulk_primary_model_not_refit_here": true,
+  "bulk_source_table": "results/cortex/DE_PM_vs_PBS.tsv",
+  "effect_mapping": "Exact unique Ensembl gene identifier, not a substituted family member or ambiguous gene symbol",
+  "default_gene_rule": "All measured genes with finite primary inference/shrunk effect and BH<.05, ranked by unrounded primary BH q then exact gene ID; first10",
+  "cache": "results/spatial_cortex/reference_counts.npz (local, not public)",
+  "transport": "All1122 full cell vectors, float32 little-endian +gzip +base64; every serialized vector independently decoded and compared exactly",
+  "positions": "Source CCF AP,DV,ML mm plotted ML,AP,-DV; no centered NIfTI RAS transform",
+  "volume_coordinate_agreement": 0.9353998079824442,
+  "coordinate_check_denominator": 14582,
+  "surface_decimation_mm": {
+    "brain": 0.15,
+    "ACA": 0.05
+  },
+  "scenario": "E_scenario(c,g)=E_reference(c,g)*2**primary_cortex_shrunken_log2FC(g), restricted to ACA",
+  "uncertainty": "Primary unshrunken Wald MLE +/-1.96SE defines alternative group-level scenarios; not per-cell confidence intervals",
+  "color_cap": "Combined positive reference/scenario order statistic at floor((n-1)*.99), identical to viewer; one shared cap per gene, different genes have separate scales",
+  "figure_gene_selection": "First3 measured primaryFDR hits by full precision q then EnsemblID: Fosb,Egr3,S1pr1",
+  "limitations": [
+    "One unexposed registered male reference donor is not a control for the humanized-alpha-synuclein experimental animals",
+    "Regional bulk effects cannot separate regulation, cell composition, or other source-quality effects; original sex metadata remain unresolved",
+    "Uniform regional multiplier cannot identify responding cell types, cell loss, or migration",
+    "Only the 1122 physically measured MERFISH panel genes are available; absent genes are not imputed or substituted",
+    "Only ACA is modeled, not the entire cortex or brain; no mirrored hemisphere is created"
+  ],
+  "coordinate_tick_locator": "Matplotlib MaxNLocator(nbins=3,min_n_ticks=3) on allthree axes; coordinates/counts unchanged"
+}

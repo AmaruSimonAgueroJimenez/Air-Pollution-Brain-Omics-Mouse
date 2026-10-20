@@ -202,9 +202,24 @@ div.csl-indent {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./viewer.html"> 
-<span class="menu-text">3D Viewer</span></a>
+    <a class="nav-link" href="./gene_profiles.html"> 
+<span class="menu-text">Genes &amp; functions</span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-d-viewers" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">3D viewers</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-d-viewers">    
+        <li>
+    <a class="dropdown-item" href="./viewer.html">
+ <span class="dropdown-text">Hypothalamus &amp; region selection</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cortex_viewer.html">
+ <span class="dropdown-text">Anterior cingulate cortex</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./reproducibility.html"> 
 <span class="menu-text">Data &amp; code</span></a>
@@ -250,6 +265,7 @@ div.csl-indent {
   <li><a href="#interpretation-and-limits" id="toc-interpretation-and-limits" class="nav-link" data-scroll-target="#interpretation-and-limits">Interpretation and limits</a></li>
   </ul></li>
   <li><a href="#downloadable-results" id="toc-downloadable-results" class="nav-link" data-scroll-target="#downloadable-results">Downloadable results</a></li>
+  <li><a href="#gene-products-functions-and-spatial-priorities" id="toc-gene-products-functions-and-spatial-priorities" class="nav-link" data-scroll-target="#gene-products-functions-and-spatial-priorities">Gene products, functions, and spatial priorities</a></li>
   </ul>
 </nav>
     </div>
@@ -1321,6 +1337,10 @@ The 30 leading genes ranked by adjusted Wald p value, displayed as within-gene z
 <li><a href="downloads/cortex/gene_filter.tsv">Gene filter decisions</a></li>
 <li><a href="downloads/cortex/methods.json">Methods and software provenance</a> and <a href="downloads/cortex/validation.json">validation record</a></li>
 </ul>
+</section>
+<section id="gene-products-functions-and-spatial-priorities" class="level2">
+<h2 class="anchored" data-anchor-id="gene-products-functions-and-spatial-priorities">Gene products, functions, and spatial priorities</h2>
+<p>The new <a href="./gene_profiles.html">gene profiles</a> preserve the complete selected discovery list with encoded products, current biotypes, molecular functions, official source links, effect estimates and panel coverage. The <a href="./cortex_viewer.html">cortex 3D viewer</a> provides a separate ACA reference and cortical effects; the <a href="./viewer.html">hypothalamus viewer</a> adds measured-gene shortcuts and a three-gene comparison. Unmeasured genes remain in the bulk report without imputed spatial values.</p>
 
 
 <!-- -->
@@ -1944,6 +1964,10 @@ Zhu, Anqi, Joseph G. Ibrahim, and Michael I. Love. 2019. <span>“Heavy-Tailed P
 <span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Sample metadata</span><span class="co">](downloads/cortex/sample_metadata.tsv)</span>, <span class="co">[</span><span class="ot">quality summaries</span><span class="co">](downloads/cortex/sample_qc.tsv)</span>, and <span class="co">[</span><span class="ot">sample correlations</span><span class="co">](downloads/cortex/sample_correlation.tsv)</span></span>
 <span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Gene filter decisions</span><span class="co">](downloads/cortex/gene_filter.tsv)</span></span>
 <span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Methods and software provenance</span><span class="co">](downloads/cortex/methods.json)</span> and <span class="co">[</span><span class="ot">validation record</span><span class="co">](downloads/cortex/validation.json)</span></span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a><span class="fu">## Gene products, functions, and spatial priorities</span></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>The new <span class="co">[</span><span class="ot">gene profiles</span><span class="co">](gene_profiles.qmd)</span> preserve the complete selected discovery list with encoded products, current biotypes, molecular functions, official source links, effect estimates and panel coverage. The <span class="co">[</span><span class="ot">cortex 3D viewer</span><span class="co">](cortex_viewer.qmd)</span> provides a separate ACA reference and cortical effects; the <span class="co">[</span><span class="ot">hypothalamus viewer</span><span class="co">](viewer.qmd)</span> adds measured-gene shortcuts and a three-gene comparison. Unmeasured genes remain in the bulk report without imputed spatial values.</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

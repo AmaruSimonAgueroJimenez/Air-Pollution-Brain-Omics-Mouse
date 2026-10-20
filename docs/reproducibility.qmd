@@ -192,3 +192,21 @@ For figure regeneration from the saved numeric result tables, omit `--refit` for
 The public site is generated directly in **docs/** from Python QMD sources, with a bilingual index and `.nojekyll`. GitHub Pages uses **main → /docs**. The compiled staging copy is `docs/_site/`; `scripts/render_docs.py` renders both languages and promotes their static output. For asset-only updates, `--refresh-static` refreshes an existing render without reexecuting numerical QMD chunks. [The asset manifest](pages-manifest.json) records compiled file sizes and SHA256 hashes.
 
 Public links: [English](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/) · [Español](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/) · [Repository](https://github.com/AmaruSimonAgueroJimenez/Air-Pollution-Brain-Omics-Mouse).
+
+## Rebuild gene profiles and the cortex atlas
+
+After the original data and primary effect tables are available:
+
+```bash
+.venv-analysis/bin/python scripts/analyze_gene_priorities.py
+.venv-analysis/bin/python scripts/build_cortex_spatial_viewer.py
+.venv-analysis/bin/python scripts/build_gene_annotation_assets.py
+.venv-analysis/bin/python scripts/render_docs.py
+.venv-analysis/bin/python scripts/validate_report.py --published
+```
+
+Gene products and functions use frozen source retrieval records under metadata/gene_priorities. The public site serves those annotations locally; it does not contact a gene service at runtime. The cortex extraction stores its small matrix cache locally and publishes one compressed vector per measured gene, registered-cell identifiers, selection rules and numerical checks.
+
+[Annotation table](downloads/gene_priorities/annotations.tsv) · [Priorities and original statistics](downloads/gene_priorities/prioritized_genes.tsv) · [Cortex validation](downloads/spatial_cortex/validation_checks.json) · [Cortex source manifest](downloads/provenance/spatial_cortex/source_manifest.json).
+
+The repository also includes Node regression tests for camera synchronization and scientific gene-guide behavior: tests/test_viewer_camera_sync.cjs and tests/test_viewer_gene_guide.cjs. These verify interface logic; they are separate from source-data and numerical validation.
