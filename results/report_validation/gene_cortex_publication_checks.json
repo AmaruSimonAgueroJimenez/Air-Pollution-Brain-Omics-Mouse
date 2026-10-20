@@ -1,0 +1,128 @@
+{
+  "checked_at": "2026-10-20T01:58:15.453173+00:00",
+  "source_commit": "1d7518dfbfd64564ea5825935529c49d3a03f75c",
+  "base_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/",
+  "deployment": {
+    "id": 39356212725,
+    "head_sha": "1d7518dfbfd64564ea5825935529c49d3a03f75c",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/AmaruSimonAgueroJimenez/Air-Pollution-Brain-Omics-Mouse/actions/runs/39356212725"
+  },
+  "checks": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 66105,
+      "sha256": "e5455f6287d980dade1495266088f6a4f159098747be9eb5ee994673a55a05b0",
+      "matches_published_folder": true
+    },
+    {
+      "path": "es/index.html",
+      "status": 200,
+      "bytes": 68302,
+      "sha256": "8745fe19fad4c8a04f60511fec581c9f5a2b884e4dbfdd90d78e99ce27f7ef98",
+      "matches_published_folder": true
+    },
+    {
+      "path": "gene_profiles.html",
+      "status": 200,
+      "bytes": 97738,
+      "sha256": "57e6dd7230adf7d2b69b47cce28f27b81c8bc49bbbfe4175af72308632fd0bf7",
+      "matches_published_folder": true
+    },
+    {
+      "path": "es/gene_profiles.html",
+      "status": 200,
+      "bytes": 99228,
+      "sha256": "9c597f0b6dc9e28c13984c5c99f18bb8c416c0fa6425a618bc64cd12da860039",
+      "matches_published_folder": true
+    },
+    {
+      "path": "cortex_viewer.html",
+      "status": 200,
+      "bytes": 55927,
+      "sha256": "65180b0a4e651ba463e64ae795ba2bf9a55f823b223b2ec018d0d081864e1467",
+      "matches_published_folder": true
+    },
+    {
+      "path": "es/cortex_viewer.html",
+      "status": 200,
+      "bytes": 56743,
+      "sha256": "4a718077d6272c2db2163f8687e8d9a10800d9e0ab183d233c13efd595789746",
+      "matches_published_folder": true
+    },
+    {
+      "path": "assets/viewer/index.html",
+      "status": 200,
+      "bytes": 8741,
+      "sha256": "1c36f117f13d5c3e9d2fcadd46d52ff3d3a00baa1656b130528da04f934c4c77",
+      "matches_published_folder": true
+    },
+    {
+      "path": "assets/viewer/index-es.html",
+      "status": 200,
+      "bytes": 9427,
+      "sha256": "eeea3811d85c35b9cf947d9abda5ea85c8f5a25302a16ad4f631b6d6038c11da",
+      "matches_published_folder": true
+    },
+    {
+      "path": "assets/viewer-cortex/index.html",
+      "status": 200,
+      "bytes": 8813,
+      "sha256": "184e30cbf1c8cc70a58208102074edf4c15ab956d7dda1802e0f970be13aef43",
+      "matches_published_folder": true
+    },
+    {
+      "path": "assets/viewer-cortex/index-es.html",
+      "status": 200,
+      "bytes": 9454,
+      "sha256": "67224ee62bb34e9f30c61429a3b7beb62b1c512bf5fbe7a152ea71c0686ea532",
+      "matches_published_folder": true
+    },
+    {
+      "path": "assets/viewer/viewer.js",
+      "status": 200,
+      "bytes": 32896,
+      "sha256": "27ad837a7474296e044786ef1cd9f64db726b4efa80110527dd4ba642715e91b",
+      "matches_published_folder": true
+    },
+    {
+      "path": "assets/viewer/annotations.js",
+      "status": 200,
+      "bytes": 148323,
+      "sha256": "b375aea35f8a6c61fec1b5a075103b4c68709fcf92bf8eeb418b7f6bce5f0ab5",
+      "matches_published_folder": true
+    },
+    {
+      "path": "assets/viewer-cortex/data.js",
+      "status": 200,
+      "bytes": 5173275,
+      "sha256": "e90efdb7a69cd695ff16251784640b8fef9d886dd0b9231848048a2434fd76fa",
+      "matches_published_folder": true
+    },
+    {
+      "path": "assets/viewer-cortex/genes/ENSMUSG00000003545.js",
+      "status": 200,
+      "bytes": 3412,
+      "sha256": "05fd071ee4aec7c065870d134a93b5d16cc92ef7bdaa0ed668fda7eac0f806d2",
+      "matches_published_folder": true
+    },
+    {
+      "path": "downloads/gene_priorities/prioritized_genes.tsv",
+      "status": 200,
+      "bytes": 58292,
+      "sha256": "e40c5c43105a9370fb0f4f83d8bf60222d03907b51a425cb45423c93f103b62d",
+      "matches_published_folder": true
+    },
+    {
+      "path": "downloads/spatial_cortex/validation_checks.json",
+      "status": 200,
+      "bytes": 703,
+      "sha256": "03e67bb687c4ef4ce5fc824248e107b66e88c5988563e3318dc327366fa13560",
+      "matches_published_folder": true
+    }
+  ],
+  "passed": true,
+  "scope": "16 public pages and critical assets compared byte-for-byte with committed docs output; full local report link and gene/data validity checks recorded separately."
+}
