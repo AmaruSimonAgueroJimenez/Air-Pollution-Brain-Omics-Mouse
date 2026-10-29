@@ -41,7 +41,7 @@ if not ozone_ready:
 
 ## Presentación para defensa
 
-La presentación HTML detalla diseños, reconstrucción de resultados originales, ecuaciones, validación y resultados nuevos del proyecto. Incluye 85 diapositivas por idioma, notas del presentador y apéndice técnico.
+La presentación HTML detalla diseños, reconstrucción de resultados originales, ecuaciones, validación y resultados nuevos del proyecto. Incluye 100 diapositivas por idioma, explicaciones visibles de los modelos y de cómo leer las figuras, notas del presentador y apéndice técnico. Tres vistas 3D anatómicas y de referencia–escenario enlazan a los mapas interactivos completos.
 
 [Abrir las diapositivas en español](defense.qmd){.btn .btn-primary}
 [Open in English](../defense.html){.btn .btn-outline-primary}

@@ -237,7 +237,7 @@ Las [comprobaciones de cortes medidos](../downloads/spatial_sections/validation.
 
 ## Presentación para defensa
 
-Las [diapositivas en español](defense.qmd) y [en inglés](../defense.html) comparten 85 diapositivas, notas del presentador y apéndice técnico. Cada HTML incluye figuras, estilos, fórmulas y runtime. El [ZIP bilingüe](../downloads/defense-slides-bilingual.zip) permite cambiar idioma sin conexión; los enlaces de evidencia necesitan internet.
+Las [diapositivas en español](defense.qmd) y [en inglés](../defense.html) comparten 100 diapositivas, notas del presentador y apéndice técnico. Cada HTML incluye figuras, estilos, fórmulas y runtime. El [ZIP bilingüe](../downloads/defense-slides-bilingual.zip) permite cambiar idioma sin conexión; los enlaces de evidencia necesitan internet.
 
     .venv-analysis/bin/python scripts/build_defense_slides.py --figures
     .venv-analysis/bin/python scripts/render_docs.py
@@ -246,3 +246,5 @@ Las [diapositivas en español](defense.qmd) y [en inglés](../defense.html) comp
     .venv-analysis/bin/python scripts/render_docs.py --refresh-static
 
 Los constructores leen tablas congeladas y no reajustan modelos biológicos. Los hashes y la auditoría de presentación están en downloads/defense_slides/.
+
+Las vistas 3D conservan todas las células medidas y comparten cámara y escala entre referencia y escenario. Se registran los conteos, las coordenadas y los ajustes gráficos; no se reajusta ningún modelo biológico.

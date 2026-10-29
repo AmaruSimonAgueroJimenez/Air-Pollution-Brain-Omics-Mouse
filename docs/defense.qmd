@@ -198,7 +198,7 @@ No pooled pollutant dose, cross-study effect or independent-cell exposure test i
 This slide prevents pseudoreplication. Thousands of cells do not replace independent exposed and control animals. The spatial folds are useful for checking prediction at unsampled reference sections, but they cannot validate across donors or exposures. A repeated gene–cell evaluation in a ten-gene pooled score is not ten new cells. Similarly, fitting another software implementation to the same seven animals does not create a new experiment.
 :::
 
-## Project workflow and provenance {#workflow .figure-slide}
+## Bulk contrasts and spatial cells answer different questions {#explain-bulk-spatial .explanation-slide}
 
 
 
@@ -206,11 +206,41 @@ This slide prevents pseudoreplication. Thousands of cells do not replace indepen
 01  /  Context
 :::
 
-![](assets/figures/defense_slides/context_workflow.png){fig-alt="Four experimental studies and a separate spatial reference feed explicitly labeled analytical branches." width=100%}
+**Exposure comparison.** Bulk RNA-seq combines RNA from many cells in each sampled region. The animal supplies the independent replicate. A regional difference can reflect expression within cells, changes in cellular composition, or both.
+
+**Spatial reference.** MERFISH counts a targeted gene panel at measured cell positions in one unexposed donor. It shows where a transcript is detected in that reference.
+
+**Connection.** We map regional candidates onto the measured panel. The atlas supplies anatomical context, while the separate exposure experiment supplies the regional contrast.
+
+
+
+::: {.source}
+<span class="analysis-tag">Scientific references</span>[Rajagopalan et al., JCI 2020](https://doi.org/10.1172/JCI137315) · [Zhang et al., Science 2025](https://doi.org/10.1126/science.adu4132) · [Zhang et al., Nature 2023](https://doi.org/10.1038/s41586-023-06808-9)
+:::
+
+
+::: {.notes}
+The atlas and exposure studies have different animals, assays and estimands. Spatial cells cannot be assigned the pollution label of an animal from another experiment. Increasing the number of reference cells improves description within the donor but does not increase the number of exposed biological replicates. The measured panel also limits which regional candidates can appear on a spatial map. Missing panel genes remain missing rather than receiving invented coordinates or expression.
+:::
+
+## Project workflow and provenance {#workflow .figure-slide .figure-interpretation}
+
+
+
+::: {.slide-eyebrow}
+01  /  Context
+:::
+
+![](assets/figures/defense_slides/context_workflow.png){fig-alt="Follow the upper branch from exposure data to author reproduction and new study-specific analyses. The lower branch starts with an independent, unexposed MERFISH donor. Its measured anatomy supports reference modeling. The dashed regional bulk-effect transfer enters only the illustrative scenario, so the diagram does not imply measured cellular exposure responses." width=100%}
 
 
 ::: {.figure-caption}
-Four experimental studies and a separate spatial reference feed explicitly labeled analytical branches.
+Follow the upper branch from exposure data to author reproduction and new study-specific analyses. The lower branch starts with an independent, unexposed MERFISH donor. Its measured anatomy supports reference modeling. The dashed regional bulk-effect transfer enters only the illustrative scenario, so the diagram does not imply measured cellular exposure responses.
+:::
+
+
+::: {.viewer-links}
+[Explore the hypothalamus in 3D](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/viewer.html){target="_blank"} · [Explore the cortex in 3D](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/cortex_viewer.html){target="_blank"}
 :::
 
 
@@ -221,6 +251,31 @@ Four experimental studies and a separate spatial reference feed explicitly label
 
 ::: {.notes}
 Inputs, sample mappings, models and results have retained identifiers, hashes and downloadable tables. The ozone branch begins with original reads; PM bulk starts with supplied counts and miRNA with deposited normalized arrays. Author reproduction and primary reanalysis remain distinct. Gene prioritization connects regional results to measured panel coverage, and the atlas supports observed sections, illustrative scaling and baseline models. The arrows describe processing order, not a biological causal diagram.
+:::
+
+## Fosb across the experimental and spatial analyses {#explain-gene-trace .explanation-slide}
+
+
+
+::: {.slide-eyebrow}
+01  /  Context
+:::
+
+**Regional evidence.** The eight-animal ACA comparison estimates higher Fosb RNA after PM exposure. Its shrunken log₂ fold change is +0.99711, corresponding to a 1.996-fold multiplier.
+
+**Measured reference.** The separate atlas detects Fosb in 1,418 of 14,582 ACA cells. Original coordinates place these detections within the registered anatomy.
+
+**Illustrative display.** Multiplying every reference value by 1.996 changes the color and magnitude while preserving positions and measured zeros. This assumption illustrates the regional estimate without identifying the cells that actually respond to PM.
+
+
+
+::: {.source}
+<span class="analysis-tag">Scientific references</span>[Zhang et al., Science 2025](https://doi.org/10.1126/science.adu4132) · [Zhang et al., Nature 2023](https://doi.org/10.1038/s41586-023-06808-9) · [Love et al., Genome Biol. 2014](https://doi.org/10.1186/s13059-014-0550-8)
+:::
+
+
+::: {.notes}
+Fosb is a concrete example linking the project's primary count analysis, measured panel and viewer. The primary model uses four PBS and four PM animals. The atlas denominator is all measured ACA cells, including measured zeros, and comes from one unexposed donor. A positive bulk coefficient does not imply activation in every Fosb-positive cell. Protein abundance, AP-1 activity, isoform-specific FosB versus ΔFosB effects and causal mechanisms are outside what the gene-level RNA measurement establishes.
 :::
 
 ## Methods {#methods .section-slide data-background-color="#103d49"}
@@ -263,6 +318,31 @@ The next block defines what each model estimates before showing results. Detaile
 
 ::: {.notes}
 The analysis distinguishes exact output reconstruction from a transparent substitute workflow. Exact recovery applies only to the output layer actually checked. It does not imply recovery of raw-read alignment, histology, protein experiments or every figure. Missing parameters are not selected after inspecting which setting maximizes agreement. This project preserves disagreements and source-quality questions alongside successful numerical reconstruction.
+:::
+
+## Numerical recovery and independent biological validation {#explain-reproduction .explanation-slide}
+
+
+
+::: {.slide-eyebrow}
+02  /  Methods
+:::
+
+**Numerical recovery** asks whether the same deposited inputs and analysis rules recover the authors' effects, probabilities and selected genes. Cortex recovers all four tested significant-gene sets exactly.
+
+**Methodological sensitivity** asks what changes when a model, filter or analytical population changes. Hypothalamic reconstruction remains incomplete because key RUVg specifications are unavailable.
+
+**Independent biological validation** would require additional animals or experiments. Reanalyzing the source animals, even with another software package, checks computation and assumptions while leaving the biological sample size unchanged.
+
+
+
+::: {.source}
+<span class="analysis-tag">Scientific references</span>[Zhang et al., Science 2025](https://doi.org/10.1126/science.adu4132) · [Rajagopalan et al., JCI 2020](https://doi.org/10.1172/JCI137315)
+:::
+
+
+::: {.notes}
+Identical gene counts alone are a weak reproduction criterion because different sets can have the same size. The cortex comparison also checks identities, effect estimates, p values and selected-set Jaccard. This is strong evidence for recovery of the checked count-level output, not validation of every experiment in the source article. Source metadata concerns remain relevant even when calculations match. Transparent nonagreement and explicit missing specifications are scientific results of a reproduction audit rather than reasons to tune an analysis until it matches.
 :::
 
 ## Cortex author-aligned count analysis {#cortex-author-method .small}
@@ -410,6 +490,31 @@ $$\log\mu_{gi}=\log o_{gi}+\mathbf x_i^\top\boldsymbol\beta_g$$
 This slide uses the usual natural-log GLM notation. Reported DESeq2 coefficients and effects are converted to log2 units. For the two simple PM contrasts, o_gi reduces to a sample size factor estimated from the retained counts. For ozone, DESeqDataSetFromTximport constructs gene/sample normalization from effective lengths plus depth, so treating every offset as only library size would misdescribe the implemented model. The likelihood accommodates overdispersion but does not automatically control unmeasured confounding or infer cell composition.
 :::
 
+## Normalization and dispersion in the count model {#explain-count-model .explanation-slide}
+
+
+
+::: {.slide-eyebrow}
+02  /  Methods
+:::
+
+**Normalization** accounts for technical differences in the amount of RNA sequenced. Otherwise, a deeply sequenced library could appear higher for many genes even without a biological change. Ozone also uses effective-length information from transcript quantification.
+
+**Dispersion** describes variation among animals beyond ordinary count noise. A variable gene needs a larger, more consistent group difference to supply strong evidence.
+
+**The coefficient** estimates the chosen regional comparison after these adjustments. Neither normalization nor dispersion estimation creates biological replicates or removes an unmeasured source of confounding.
+
+
+
+::: {.source}
+<span class="analysis-tag">Scientific references</span>[Love et al., Genome Biol. 2014](https://doi.org/10.1186/s13059-014-0550-8) · [Muzellec et al. 2023](https://doi.org/10.1093/bioinformatics/btad547) · [Soneson et al. 2015](https://doi.org/10.12688/f1000research.7563.2)
+:::
+
+
+::: {.notes}
+DESeq2 and PyDESeq2 use negative-binomial count models with gene-specific dispersion estimation and information sharing. For the simple PM comparisons the normalization factor reduces to sample-specific size factors. The tximport ozone workflow adds gene/sample normalization from effective lengths, so a single library-size description would be incomplete. These count procedures do not apply to the signed, deposited miRNA continuous signals, which use limma. Low counts generally limit precision, and a retained zero remains an observation rather than a missing value filled by normalization.
+:::
+
 ## Count filtering and normalization populations {#filters}
 
 
@@ -470,6 +575,31 @@ $$q_{(i)}=\min\!\left(1,\min_{j\ge i}\frac{m\,p_{(j)}}{j}\right)$$
 
 ::: {.notes}
 The BH expression describes the monotone adjusted p value among the finite valid tests in that family. A shrunken mode is not substituted into the original Wald statistic. Primary PM PyDESeq2 uses its documented apeGLM-style adaptive prior, whereas ozone and author-aligned R workflows use apeglm in R. These implementations are described separately rather than claimed identical. A nominal interval excluding zero can coexist with BH q>.05. Increasing or changing the family can change the correction in nontrivial ways; the across-family outputs remain separate analyses.
+:::
+
+## Effect size, uncertainty and the discovery threshold {#explain-testing .explanation-slide}
+
+
+
+::: {.slide-eyebrow}
+02  /  Methods
+:::
+
+**Effect size** describes direction and magnitude. A log₂ fold change of +1 corresponds to twice the regional RNA level, while −1 corresponds to half, under the fitted contrast.
+
+**The standard error and Wald test** compare the estimated effect with its sampling uncertainty. A large fold change from inconsistent animals may have weak evidence.
+
+**BH adjustment** evaluates many genes as a declared testing family. A nominal p < 0.05 can become q ≥ 0.05. Shrinkage stabilizes displayed effect estimates, while the stated inferential model determines the reported tests.
+
+
+
+::: {.source}
+<span class="analysis-tag">Scientific references</span>[Love et al., Genome Biol. 2014](https://doi.org/10.1186/s13059-014-0550-8) · [Zhu et al. 2019](https://doi.org/10.1093/bioinformatics/bty895)
+:::
+
+
+::: {.notes}
+BH q values should not be described as the posterior probability that an individual gene is false. Under its assumptions, the procedure controls the expected false-discovery proportion among rejections at the chosen level. A pointwise 95% Wald interval is an approximate interval for one model coefficient, not a simultaneous interval for all genes or a per-cell interval. Different filtering populations and multiplicity families can change the discovery list even when underlying effects are similar. The MLE and shrunken effects are retained separately throughout the project.
 :::
 
 ## Quality control and animal sensitivity {#qc}
@@ -702,6 +832,31 @@ Separate BH families are reported, plus supplementary pooled-family corrections.
 The global ozone LRT asks whether any exposure-associated coefficient is needed. The three secondary LRTs ask narrower response-heterogeneity questions. Their hypotheses, degrees of freedom and multiplicity families differ. A significant response in one stratum and a nonsignificant response in another do not demonstrate interaction. The signed single-contrast Wald tests answer different alternatives from multi-parameter LRTs and therefore need not yield nested discovery sets.
 :::
 
+## Interaction tests compare exposure effects directly {#explain-interaction .explanation-slide}
+
+
+
+::: {.slide-eyebrow}
+02  /  Methods
+:::
+
+**Within a stratum**, the model compares ozone with filtered air at one starting age and APOE genotype. Each stratum has only three animals per exposure group.
+
+**An interaction** asks whether the ozone effect itself differs between ages or genotypes, using coefficient differences and their covariance. One significant stratum and one nonsignificant stratum do not answer that question.
+
+**Here**, the joint age-dependent exposure LRT identifies eight genes under its own BH family, and one under BH pooled across the three joint heterogeneity tests. The conclusion depends on the stated test and family.
+
+
+
+::: {.source}
+<span class="analysis-tag">Scientific references</span>[Nakamya et al., IJMS 2025](https://doi.org/10.3390/ijms26062407) · [Love et al., Genome Biol. 2014](https://doi.org/10.1186/s13059-014-0550-8)
+:::
+
+
+::: {.notes}
+The 24 RNA-seq samples form the eight age×genotype×exposure combinations with three animals each. The full factorial design has eight parameters and estimates all groups jointly. The four-degree-of-freedom exposure LRT and the two-degree-of-freedom age-dependent exposure LRT test different null hypotheses. Signed individual interaction contrasts also differ from the joint LRTs. Starting ages of three and seventeen months are source design labels at exposure onset. These labels should not be relabeled as terminal sampling ages.
+:::
+
 ## GO over-representation uses a testable universe {#ora .formula-slide .layout-equation}
 
 
@@ -779,6 +934,31 @@ $$RS(t)=
 The displayed formula gives the weight1 running enrichment score before sign-dependent extremum selection and normalization. Original p values must be finite even when a Wald statistic remains finite, to exclude Cook-filtered unreliable tests. Genes with a finite original p but missing adjusted p from independent filtering can remain in the rank. These are gene-set/label permutations, not phenotype permutations, and do not propagate full sample-level uncertainty or preserve gene–gene correlation. Permutation q=0 is a finite-simulation estimate, not a zero probability of error. Enrichment supports exploratory ranked associations, not demonstrated pathway activation or suppression.
 :::
 
+## ORA and GSEA use different evidence from the same contrast {#explain-enrichment .explanation-slide}
+
+
+
+::: {.slide-eyebrow}
+02  /  Methods
+:::
+
+**ORA** starts with genes passing a declared discovery gate and asks whether an annotation contains more selected genes than expected from the tested background. Its answer depends on the foreground and universe.
+
+**GSEA** uses the signed gene ranking and can detect coordinated shifts even when few individual genes pass BH. The analysis uses the frozen ranked-test procedure and algorithmic FDR.
+
+**Interpretation** concerns enrichment of annotated genes. A positive score follows the positive rank direction, while shared genes make related GO terms correlated. RNA enrichment alone does not measure pathway activity.
+
+
+
+::: {.source}
+<span class="analysis-tag">Scientific references</span>[Gene Ontology Consortium](https://geneontology.org/docs/go-enrichment-analysis/) · [Subramanian et al., PNAS 2005](https://doi.org/10.1073/pnas.0506580102)
+:::
+
+
+::: {.notes}
+The project's ORA universe consists of mapped genes with finite adjusted p values and retains genes lacking a propagated biological-process annotation in the background. GSEA retains finite original p values and signed Wald statistics, including finite-p genes excluded by independent filtering from adjusted-p reporting. These universes and null procedures differ. Algorithmic preranked GSEA FDR is neither BH q nor a phenotype-permutation result. No enrichment result here establishes causal regulation, protein activity, spatial connectivity or an independent mechanism for each correlated GO term.
+:::
+
 ## A measured spatial reference from one donor {#atlas}
 
 
@@ -834,6 +1014,36 @@ Nominal coronal spacing is about 200 µm. Surface mesh steps of 50–150 µm des
 
 ::: {.notes}
 Experimental x/y are not interchangeable with CCF ML/DV. The 3D mesh derives from the Allen CCF25µm annotation via marching cubes, with rendering steps wholebrain.15mm,HY.075mm,ACA.05mm. Increasing mesh density does not add measured RNA resolution. Cell coordinates do not use the centered RAS NIfTI affine when computing source CCF distances. Coordinate-parcellation agreement is94.05% in10,000 HY diagnostic cells and93.54% acrossACA; this is a consistency diagnostic, not ground-truth registration accuracy. No missing hemisphere is mirrored.
+:::
+
+## The measured regions in the 3D brain reference {#anatomy-3d .figure-slide .figure-interpretation .map3d-slide}
+
+
+
+::: {.slide-eyebrow}
+02  /  Methods
+:::
+
+![](assets/figures/defense_slides/spatial_3d_anatomy.png){fig-alt="The gray whole-brain surface supplies anatomical context. Rust marks 14,582 ACA cells and teal marks 37,811 HY cells at their registered CCF positions. These 52,393 cells come from one unexposed donor and one registered hemisphere. The reference locates measured cells without filling unsampled regions or mirroring cells into the opposite hemisphere." width=100%}
+
+
+::: {.figure-caption}
+The gray whole-brain surface supplies anatomical context. Rust marks 14,582 ACA cells and teal marks 37,811 HY cells at their registered CCF positions. These 52,393 cells come from one unexposed donor and one registered hemisphere. The reference locates measured cells without filling unsampled regions or mirroring cells into the opposite hemisphere.
+:::
+
+
+::: {.viewer-links}
+[Explore the hypothalamus in 3D](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/viewer.html){target="_blank"} · [Explore the cortex in 3D](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/cortex_viewer.html){target="_blank"}
+:::
+
+
+::: {.source}
+<span class="analysis-tag">Analysis: this project</span>[Zhang et al., Nature 2023](https://doi.org/10.1038/s41586-023-06808-9) · [Allen CCF, 2020 annotation](https://alleninstitute.github.io/abc_atlas_access/descriptions/Allen-CCF-2020.html)
+:::
+
+
+::: {.notes}
+Registered positions of all 14,582 ACA and 37,811 HY cells from the same Zhuang-ABCA-2 donor. CCF coordinates come from registered sections rather than direct isotropic 3D acquisition. Gray is the previously exported whole-brain anatomical mesh from the CCF annotation, with 0.15-mm surface step. That surface does not represent expression coverage. Colored points are actually measured cells from the registered hemisphere. Gaps are not filled, cells are not reflected to the opposite hemisphere, and no expression values or donors are added. Colors identify regions only and do not encode a PM₂.₅ response. The two text links open the full hypothalamus and cortex viewers online. The static anatomy preview remains available offline. The gray full-brain mesh supplies anatomical context, while measured cells occupy the source's registered hemisphere only. No reference cells are mirrored into the other hemisphere.
 :::
 
 ## Gene priorities and measured-panel coverage {#gene-selection}
@@ -941,6 +1151,31 @@ This is an illustrative propagation of a regional effect into an unexposed refer
 Uniform scaling is underidentified biologically: the same bulk effect could arise from cell-specific regulation or composition. This display does not estimate which cells respond, cell loss, migration or a causal mechanism. Wald MLE±1.96SE provides alternative group-level scenarios, separate from the shrunken default, not per-cell confidence intervals. A shared optional99th-percentile color cap affects the display only; numeric values are retained. An arbitrary smoother or mirrored hemisphere would add assumptions, not observations. The atlas donor is not a matched experimental control.
 :::
 
+## The assumption behind the reference–PM comparison {#explain-scenario .explanation-slide}
+
+
+
+::: {.slide-eyebrow}
+02  /  Methods
+:::
+
+**Measured input.** Each cell has its original coordinate and reference expression value. These measurements come from an unexposed animal.
+
+**Scenario rule.** Apply one gene-specific regional multiplier to all reference values. Fosb receives approximately ×2 in ACA. Tll1 receives ×0.428 in HY. Measured zeros stay zero and no cells move, appear or disappear.
+
+**Scientific meaning.** This makes a regional estimate visible in anatomical space. Many cellular response patterns could produce the same bulk effect, so the rule cannot recover cell-specific pollution responses or add spatial resolution.
+
+
+
+::: {.source}
+<span class="analysis-tag">Scientific references</span>[Zhang et al., Science 2025](https://doi.org/10.1126/science.adu4132) · [Rajagopalan et al., JCI 2020](https://doi.org/10.1172/JCI137315) · [Zhang et al., Nature 2023](https://doi.org/10.1038/s41586-023-06808-9)
+:::
+
+
+::: {.notes}
+The scenario uses the shrunken bulk coefficient as its default multiplier. Alternative group-level scenarios can use the pointwise MLE Wald coefficient limits, but those are not confidence intervals for each atlas cell. Uniform scaling preserves the reference's detection pattern exactly, so it cannot predict newly expressing or silenced cells. The atlas donor is not an experimental control matched to the pollution animals. Shared per-gene color scales and camera settings are necessary for comparison, and the captions identify the second view as a modeled illustration.
+:::
+
 ## Gaussian baseline with fixed spatial basis functions {#gaussian-features .formula-slide .layout-equation .wide-equation}
 
 
@@ -1014,6 +1249,31 @@ Cholesky computation checks the normal equations and posterior scale.
 The inverse-Gamma convention uses shape a and scale b in a density proportional to (sigma²)^(-a-1)exp(-b/sigma²). Section random effects are represented as proper Gaussian-prior coefficients with variance .25sigma². All priors are modeling assumptions, not empirically validated neural priors. The implementation checks the residual-plus-prior quadratic representation of b_n to reduce numerical cancellation concerns. It also checks covariance symmetry/inversion. Posterior integration is analytic conditional on this model, not proof that the Gaussian likelihood fits sparse nonnegative counts.
 :::
 
+## How the prior and reference measurements form a posterior {#explain-bayes .explanation-slide}
+
+
+
+::: {.slide-eyebrow}
+02  /  Methods
+:::
+
+**Before the observations**, a proper prior constrains coefficient magnitudes and unexplained variation. It regularizes sparse anatomical groups and spatial basis functions without supplying new measurements.
+
+**The likelihood** describes how measured reference expression would vary for a given coefficient set. Combining it with the prior gives a posterior distribution of plausible reference parameters.
+
+**Prediction** then propagates that distribution to a defined target. A smooth posterior mean is only a conditional estimate. Its scientific usefulness still requires held-out comparisons, interval checks and sensitivity to the stated assumptions.
+
+
+
+::: {.source}
+<span class="analysis-tag">Scientific references</span>[Murphy, 2007, Gaussian conjugacy](https://www.cs.ubc.ca/~murphyk/Papers/bayesGauss.pdf) · [Rasmussen & Williams, 2006, ch. 2](https://gaussianprocess.org/gpml/chapters/RW2.pdf) · [SciPy, beta-binomial distribution](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.betabinom.html)
+:::
+
+
+::: {.notes}
+The Gaussian implementation is finite-basis regression with fixed length scales and a conjugate normal–inverse-gamma prior. It is not a fitted full Gaussian process. Prior settings were fixed before held-out evaluation, and numerical sensitivity analyses do not select a setting to maximize test performance. Where anatomy is absent from training, the model must fall back to its stated prior handling. The separate beta-binomial model changes both the observation target and distribution: it models positive/all-cell detection probabilities rather than RNA magnitude.
+:::
+
 ## Credible and new-section predictive intervals {#gaussian-intervals .formula-slide .layout-equation .wide-equation}
 
 
@@ -1053,7 +1313,7 @@ Maps show the full-reference fit at measured locations. Held-out prediction is e
 Latent maps average the nuisance section offset to zero rather than reporting each fitted section shift. The predictive1.25 combines residual variance1 and independent new-section variance.25. An unseen test anatomy adds prior variance1 and mean0, explicitly rather than silently substituting a known anatomy. Negative means, bounds and predictive support are retained as diagnostics of the Gaussian working approximation. Estimates are not exponentiated into expected molecule counts. Uncertainty is conditional on the basis, priors, anatomy and registration and omits unmodeled donor and registration uncertainty.
 :::
 
-## Whole-section validation with neighboring guards {#guarded-cv .figure-slide}
+## Whole-section validation with neighboring guards {#guarded-cv .figure-slide .figure-interpretation}
 
 
 
@@ -1061,11 +1321,11 @@ Latent maps average the nuisance section offset to zero rather than reporting ea
 02  /  Methods
 :::
 
-![](assets/figures/defense_slides/spatial_guarded_folds.png){fig-alt="Five contiguous test blocks. Adjacent represented sections are guards, and every measured cell is tested once." width=100%}
+![](assets/figures/defense_slides/spatial_guarded_folds.png){fig-alt="Each row marks one validation fold along the ordered physical sections. Teal sections supply the held-out test, rust sections are excluded neighbors, and pale sections train the model. Every measured cell is tested once. Reserving whole sections reduces local leakage, while all folds still describe the same donor." width=100%}
 
 
 ::: {.figure-caption}
-Five contiguous test blocks. Adjacent represented sections are guards, and every measured cell is tested once.
+Each row marks one validation fold along the ordered physical sections. Teal sections supply the held-out test, rust sections are excluded neighbors, and pale sections train the model. Every measured cell is tested once. Reserving whole sections reduces local leakage, while all folds still describe the same donor.
 :::
 
 
@@ -1076,6 +1336,31 @@ Five contiguous test blocks. Adjacent represented sections are guards, and every
 
 ::: {.notes}
 Sections are ordered by experimental acquisition AP, while the Gaussian predictors use registered CCF coordinates. The nearest represented section on each side of a test block is removed from training. If the region is absent from intervening acquisition cuts, this guard can span more than one physical acquisition step. Anatomy vocabulary, scales and basis centers are learned only from remaining training cells. Fixed priors and basis lengths are not selected from test performance. Both Bayesian models use these identical folds. This is within-donor reference prediction, not exposure or cross-donor validation.
+:::
+
+## Why validation reserves sections and their neighbors {#explain-validation .explanation-slide}
+
+
+
+::: {.slide-eyebrow}
+02  /  Methods
+:::
+
+**The prediction question** is how the model performs at a physical section it has not seen. Randomly splitting nearby cells could leave very similar local information in training and testing.
+
+**The guard** removes the represented sections adjacent to the test block from training. Feature standardization, anatomical vocabularies and spatial basis preparation use the remaining training data only.
+
+**The comparison** uses identical folds for spatial and simpler baseline models. Better fit to the complete atlas cannot replace better held-out prediction. These folds assess transfer within one donor, while cross-donor and exposure transfer remain untested.
+
+
+
+::: {.source}
+<span class="analysis-tag">Scientific references</span>[Zhang et al., Nature 2023](https://doi.org/10.1038/s41586-023-06808-9) · [Murphy, 2007, Gaussian conjugacy](https://www.cs.ubc.ca/~murphyk/Papers/bayesGauss.pdf) · [SciPy, beta-binomial distribution](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.betabinom.html)
+:::
+
+
+::: {.notes}
+The five test blocks contain contiguous whole physical sections ordered by acquisition position. Adjacent represented sections are guards, which does not imply filling an unobserved intermediate section. Every measured cell appears in a test fold once. Unknown test anatomy remains visible in scoring, with the specified prior-only handling rather than post hoc exclusion. Multiple genes evaluated in the same cell are correlated evaluations. Cross-validation protects against selected routes of leakage but cannot create independent donors or validate the uniform pollutant scenario.
 :::
 
 ## Hierarchical model of bounded detection probability {#beta-model .formula-slide .layout-equation}
@@ -1173,6 +1458,31 @@ A fitted known-section interval is not a held-out prediction.
 The three intervals estimate different random quantities. Do not assert that a new-section interval is always numerically wider than a known-section interval, since location and parameter mixtures can differ. Held-out positive-count coverage refers to Y at its observed n, not to coverage of an unobserved true cell probability or a latent Gaussian intensity. In the interface, selecting a cell class suppresses this all-class fit because it has not estimated class-specific probabilities. Prior-only mu has mean.5 under the fixed symmetric prior, which can perform poorly for rare genes; that failure is scored rather than hidden.
 :::
 
+## Different intervals answer different detection questions {#explain-uncertainty .explanation-slide}
+
+
+
+::: {.slide-eyebrow}
+02  /  Methods
+:::
+
+**A known section:** after observing its positives and all-cell denominator, estimate that section's underlying detection probability. Its credible interval conditions on those observations.
+
+**An anatomical mean:** combine the exchangeable section information to estimate the typical propensity for that anatomy. This hypermean has its own credible interval.
+
+**A new section:** predict its propensity before seeing its counts, or predict a positive-cell count at a specified denominator. Section heterogeneity and, for counts, sampling variation enter this prediction. Always read the target before comparing interval widths or coverage.
+
+
+
+::: {.source}
+<span class="analysis-tag">Scientific references</span>[Zhang et al., Nature 2023](https://doi.org/10.1038/s41586-023-06808-9) · [SciPy, beta-binomial distribution](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.betabinom.html)
+:::
+
+
+::: {.notes}
+The anatomy hypermean is the mean of the exchangeable section propensities rather than necessarily the pooled-cell detection fraction. The probability of a known section and the propensity of a new section both lie in [0,1], but the new positive count has integer support from zero to the chosen denominator. Credible intervals for fitted quantities are not held-out count predictions. The observed group fraction is also noisy, especially when its denominator is small. There is no universal ordering that requires every new-section propensity interval to be wider than every hypermean interval.
+:::
+
 ## Prediction metrics and baseline comparisons {#metrics .formula-slide .layout-equation}
 
 
@@ -1231,7 +1541,7 @@ Exact output recovery, partial methodological sensitivity and conditional concor
 This results block uses the authors' original source animals. Each slide names the level of reproduction rather than grouping all forms of agreement under biological replication.
 :::
 
-## Exact cortex significant-gene sets are recovered {#cortex-reproduction .figure-slide}
+## Exact cortex significant-gene sets are recovered {#cortex-reproduction .figure-slide .figure-interpretation}
 
 
 
@@ -1239,11 +1549,11 @@ This results block uses the authors' original source animals. Each slide names t
 03  /  Author reproduction
 :::
 
-![](assets/figures/defense_slides/rep_cortex_reproduction.png){fig-alt="Four author-aligned contrasts recover 109 / 1,205 / 1,222 / 639 genes. Every FDR-set Jaccard equals 1." width=100%}
+![](assets/figures/defense_slides/rep_cortex_reproduction.png){fig-alt="Matching bars recover 109 / 1,205 / 1,222 / 639 significant genes in the four author-aligned contrasts. The effect comparison lies on the identity line. Every significant-set Jaccard equals 1, confirming numerical recovery at the deposited-count level. The same source animals are reused, so this agreement does not add independent biological replication." width=100%}
 
 
 ::: {.figure-caption}
-Four author-aligned contrasts recover 109 / 1,205 / 1,222 / 639 genes. Every FDR-set Jaccard equals 1.
+Matching bars recover 109 / 1,205 / 1,222 / 639 significant genes in the four author-aligned contrasts. The effect comparison lies on the identity line. Every significant-set Jaccard equals 1, confirming numerical recovery at the deposited-count level. The same source animals are reused, so this agreement does not add independent biological replication.
 :::
 
 
@@ -1256,7 +1566,7 @@ Four author-aligned contrasts recover 109 / 1,205 / 1,222 / 639 genes. Every FDR
 The contrast order is PFF, PM, PM-PFF and PM-PFF plus nasal PM, each versus PBS. There are zero discordant significant genes in every comparison. The maximum MLE effect discrepancy across contrasts is about 8.12×10⁻⁵, and the maximum nominal-p discrepancy is 1.94×10⁻⁶. All coefficient fits converge. Code-defined PCA recovers 29.2014% and 9.7606%, matching the rounded values 29.2% and 9.8%. Also recovered are 582 PM-exclusive genes and 323 genes exclusive to the PM/PM-PFF pair. Original GO table row counts were checked, without independently recomputing the original GSEA. This reconstructs count-based inference and selected outputs, rather than raw-read alignment or every experiment in the paper.
 :::
 
-## Reproducible output retains a source-quality question {#cortex-source-quality .figure-slide}
+## Reproducible output retains a source-quality question {#cortex-source-quality .figure-slide .figure-interpretation}
 
 
 
@@ -1264,11 +1574,11 @@ The contrast order is PFF, PM, PM-PFF and PM-PFF plus nasal PM, each versus PBS.
 03  /  Author reproduction
 :::
 
-![](assets/figures/defense_slides/rep_cortex_y_markers.png){fig-alt="All four PBS controls have zero raw Ddx3y, Uty and Kdm5d counts. Other treatment groups are heterogeneous." width=100%}
+![](assets/figures/defense_slides/rep_cortex_y_markers.png){fig-alt="Points retain all 20 source animals. All four PBS controls have zero raw Ddx3y, Uty and Kdm5d counts, whereas other treatment groups vary. The Xist comparison provides another descriptive marker view. These patterns motivate checking source sex and sample identity, without assigning sex or proving confounding from expression alone." width=100%}
 
 
 ::: {.figure-caption}
-All four PBS controls have zero raw Ddx3y, Uty and Kdm5d counts. Other treatment groups are heterogeneous.
+Points retain all 20 source animals. All four PBS controls have zero raw Ddx3y, Uty and Kdm5d counts, whereas other treatment groups vary. The Xist comparison provides another descriptive marker view. These patterns motivate checking source sex and sample identity, without assigning sex or proving confounding from expression alone.
 :::
 
 
@@ -1281,7 +1591,7 @@ All four PBS controls have zero raw Ddx3y, Uty and Kdm5d counts. Other treatment
 The plot preserves all 20 animals and their source treatment labels. These Y-linked markers raise a possible sex-composition or sample-identity question, while the source RNA-seq sex metadata remain unreported. They do not establish sex assignments or complete confounding by themselves. No animals were relabeled or removed, and no invented sex covariate entered the reproduction. Exact numerical agreement can coexist with an unresolved source-design concern. Independent metadata verification is the appropriate next step, rather than post hoc omission of inconvenient samples.
 :::
 
-## Hypothalamus comparison remains method-sensitive {#hy-reproduction .figure-slide}
+## Hypothalamus comparison remains method-sensitive {#hy-reproduction .figure-slide .figure-interpretation}
 
 
 
@@ -1289,11 +1599,11 @@ The plot preserves all 20 animals and their source treatment labels. These Y-lin
 03  /  Author reproduction
 :::
 
-![](assets/figures/defense_slides/rep_hypothalamus_sensitivity.png){fig-alt="Paper HY lists imply 17 PM and 761 HFD genes. The declared non-RUVg sensitivity yields 0 and 3,600 under its stated gates." width=100%}
+![](assets/figures/defense_slides/rep_hypothalamus_sensitivity.png){fig-alt="The original lists contain 17 PM and 761 HFD genes. The declared TMM/voom sensitivity returns 0 and 3,600 under different specified gates. The primary seven-animal analysis and its R implementation check are shown separately. Missing RUVg specifications prevent exact reconstruction, so these counts describe methodological sensitivity rather than biological nonreplication." width=100%}
 
 
 ::: {.figure-caption}
-Paper HY lists imply 17 PM and 761 HFD genes. The declared non-RUVg sensitivity yields 0 and 3,600 under its stated gates.
+The original lists contain 17 PM and 761 HFD genes. The declared TMM/voom sensitivity returns 0 and 3,600 under different specified gates. The primary seven-animal analysis and its R implementation check are shown separately. Missing RUVg specifications prevent exact reconstruction, so these counts describe methodological sensitivity rather than biological nonreplication.
 :::
 
 
@@ -1306,7 +1616,7 @@ Paper HY lists imply 17 PM and 761 HFD genes. The declared non-RUVg sensitivity 
 The different numbers cannot be attributed uniquely to the unavailable RUVg adjustment. The empirical controls, number of factors, abundance-gate details and complete executable analysis are underdetermined. The project's independent primary analysis uses only 7 chow-fed FA/PM animals and returns 11 BH discoveries, without the author sensitivity analysis's coding/effect gates. These are different estimands and testing families. The defensible claim is transparent methodological sensitivity with unresolved reconstruction, rather than proof of biological nonreplication.
 :::
 
-## miR-574-5p direction agrees but BH confirmation does not {#mirna-reproduction .figure-slide}
+## miR-574-5p direction agrees but BH confirmation does not {#mirna-reproduction .figure-slide .figure-interpretation}
 
 
 
@@ -1314,11 +1624,11 @@ The different numbers cannot be attributed uniquely to the unavailable RUVg adju
 03  /  Author reproduction
 :::
 
-![](assets/figures/defense_slides/rep_mirna574.png){fig-alt="High-dose difference −0.26945 signal units. limma p = 0.0253, BH q = 0.312. ANOVA p = 0.0788 prevents protected LSD." width=100%}
+![](assets/figures/defense_slides/rep_mirna574.png){fig-alt="Animal points show lower miR-574-5p signal at high dose. Its estimated difference is −0.26945 deposited signal units. The nominal limma interval excludes zero, but p = 0.0253 becomes BH q = 0.312 across the array. ANOVA p = 0.0788 also prevents protected LSD. Directional agreement therefore exceeds the supported multiplicity-adjusted claim." width=100%}
 
 
 ::: {.figure-caption}
-High-dose difference −0.26945 signal units. limma p = 0.0253, BH q = 0.312. ANOVA p = 0.0788 prevents protected LSD.
+Animal points show lower miR-574-5p signal at high dose. Its estimated difference is −0.26945 deposited signal units. The nominal limma interval excludes zero, but p = 0.0253 becomes BH q = 0.312 across the array. ANOVA p = 0.0788 also prevents protected LSD. Directional agreement therefore exceeds the supported multiplicity-adjusted claim.
 :::
 
 
@@ -1331,7 +1641,7 @@ High-dose difference −0.26945 signal units. limma p = 0.0253, BH q = 0.312. AN
 Unprotected high-dose LSD gives p = .0368, and nominal intervals exclude zero, while array-wide BH does not confirm this target. Protected LSD requires a significant omnibus test, which fails at .05. These statements are compatible because they use different gates and multiplicity rules. The target's lower signal at both doses reproduces direction, without reproducing independent qPCR or a mechanistic rescue result. The new descriptive heatmap has a disclosed selection rule and does not claim the unknown original row order or selection.
 :::
 
-## Ozone genotype effects show conditional concordance {#ozone-reproduction .figure-slide}
+## Ozone genotype effects show conditional concordance {#ozone-reproduction .figure-slide .figure-interpretation}
 
 
 
@@ -1339,11 +1649,11 @@ Unprotected high-dose LSD gives p = .0368, and nominal intervals exclude zero, w
 03  /  Author reproduction
 :::
 
-![](assets/figures/defense_slides/rep_ozone_concordance.png){fig-alt="Published genotype selection: 2,501 genes. Whole-effect comparison ρ = 0.865; selected S3 comparison ρ = 0.962 with 98.8% direction agreement." width=100%}
+![](assets/figures/defense_slides/rep_ozone_concordance.png){fig-alt="The deposited genotype threshold recovers 2,501 genes exactly. Across common finite effects, correlation is ρ = 0.865. The author-selected S3 subset gives ρ = 0.962 and 98.8% directional agreement among matched effects. Because the subset was selected and the source animals are reused, its stronger agreement cannot establish unbiased transcriptome-wide replication." width=100%}
 
 
 ::: {.figure-caption}
-Published genotype selection: 2,501 genes. Whole-effect comparison ρ = 0.865; selected S3 comparison ρ = 0.962 with 98.8% direction agreement.
+The deposited genotype threshold recovers 2,501 genes exactly. Across common finite effects, correlation is ρ = 0.865. The author-selected S3 subset gives ρ = 0.962 and 98.8% directional agreement among matched effects. Because the subset was selected and the source animals are reused, its stronger agreement cannot establish unbiased transcriptome-wide replication.
 :::
 
 
@@ -1398,7 +1708,7 @@ Primary reanalysis, response heterogeneity, gene sets and spatial-reference mode
 These results add analyses to the repository, not new animals. “New” denotes project contribution and does not assert publication novelty or a confirmed biological mechanism.
 :::
 
-## Primary HY analysis identifies 11 BH discoveries {#hy-primary .figure-slide}
+## Primary HY analysis identifies 11 BH discoveries {#hy-primary .figure-slide .figure-interpretation}
 
 
 
@@ -1406,11 +1716,11 @@ These results add analyses to the repository, not new animals. “New” denotes
 04  /  Project results
 :::
 
-![](assets/figures/defense_slides/rep_hypothalamus_primary.png){fig-alt="4 FA versus 3 PM animals. Two higher and nine lower genes at BH q &lt; 0.05. Intervals are pointwise MLE Wald intervals." width=100%}
+![](assets/figures/defense_slides/rep_hypothalamus_primary.png){fig-alt="For 4 filtered-air and 3 PM animals, the primary model identifies 11 BH discoveries: two higher and nine lower. Points show MLE log₂ fold changes, and bars are pointwise Wald 95% intervals. Direction indicates the regional contrast. These intervals are neither simultaneous confidence bands nor evidence that each spatial cell changes similarly." width=100%}
 
 
 ::: {.figure-caption}
-4 FA versus 3 PM animals. Two higher and nine lower genes at BH q < 0.05. Intervals are pointwise MLE Wald intervals.
+For 4 filtered-air and 3 PM animals, the primary model identifies 11 BH discoveries: two higher and nine lower. Points show MLE log₂ fold changes, and bars are pointwise Wald 95% intervals. Direction indicates the regional contrast. These intervals are neither simultaneous confidence bands nor evidence that each spatial cell changes similarly.
 :::
 
 
@@ -1423,7 +1733,7 @@ These results add analyses to the repository, not new animals. “New” denotes
 The primary analysis retains 19,611 genes and has 19,452 finite Wald p values after 159 Cook-filtered tests. Tll1 has MLE −1.343708, q = .003497 and shrunken effect −1.224053. All coding primary hits decrease under the frozen current annotation, while the two increases are noncoding/pseudogene features. Leave-one-out produces 0–825 BH discoveries and preserves the direction of all 11 primary hits, but not significance in every fit. Tll1 retains q < .05 in 5/7 omissions. This small-n regional association does not identify a cell-specific or protein result.
 :::
 
-## Primary cortex analysis uses eight PM/PBS animals {#aca-primary .figure-slide}
+## Primary cortex analysis uses eight PM/PBS animals {#aca-primary .figure-slide .figure-interpretation}
 
 
 
@@ -1431,11 +1741,11 @@ The primary analysis retains 19,611 genes and has 19,452 finite Wald p values af
 04  /  Project results
 :::
 
-![](assets/figures/defense_slides/rep_cortex_primary.png){fig-alt="1,167 BH discoveries: 658 higher and 509 lower. This population and model differ from the 20-animal, 1,205-gene author reconstruction." width=100%}
+![](assets/figures/defense_slides/rep_cortex_primary.png){fig-alt="The volcano separates effect magnitude from nominal Wald evidence, while colors identify BH discoveries. The seven smallest-q genes have pointwise MLE intervals. The eight-animal primary comparison yields 1,167 discoveries, 658 higher and 509 lower. Its population and model differ from the 20-animal reconstruction that recovered 1,205 PM genes." width=100%}
 
 
 ::: {.figure-caption}
-1,167 BH discoveries: 658 higher and 509 lower. This population and model differ from the 20-animal, 1,205-gene author reconstruction.
+The volcano separates effect magnitude from nominal Wald evidence, while colors identify BH discoveries. The seven smallest-q genes have pointwise MLE intervals. The eight-animal primary comparison yields 1,167 discoveries, 658 higher and 509 lower. Its population and model differ from the 20-animal reconstruction that recovered 1,205 PM genes.
 :::
 
 
@@ -1486,7 +1796,7 @@ The low-dose discovery is mmu-miR-5119. Lower detection flags remain visible, an
 There are 823 low-detection features and 7722 negative signal values retained. The lower-bound pile-up near −3.3 and small n of 3/group caution against treating every continuous value as a precise abundance measurement. The absence of clear PCA separation does not justify reselecting animals. No high-dose BH discoveries does not establish equivalence or a monotonic dose-response reversal. Pairwise and omnibus families are corrected separately and have different null hypotheses. No miRNA-target network or mRNA GO analysis is inferred from names alone.
 :::
 
-## Ozone discovery counts depend on stratum and test {#ozone-primary .figure-slide}
+## Ozone discovery counts depend on stratum and test {#ozone-primary .figure-slide .figure-interpretation}
 
 
 
@@ -1494,11 +1804,11 @@ There are 823 low-detection features and 7722 negative signal values retained. T
 04  /  Project results
 :::
 
-![](assets/figures/defense_slides/rep_ozone_primary.png){fig-alt="Within-stratum BH discoveries: 0 / 399 / 2 / 3. The separate 4-df global exposure LRT identifies 24 genes." width=100%}
+![](assets/figures/defense_slides/rep_ozone_primary.png){fig-alt="Separate within-stratum BH procedures yield 0 / 399 / 2 / 3 genes in starting-age/APOE order 3M/E3, 3M/E4, 17M/E3 and 17M/E4. The joint 4-df exposure LRT finds 24 genes in another testing family. Unequal discovery counts reflect evidence and precision together, and cannot by themselves establish an interaction." width=100%}
 
 
 ::: {.figure-caption}
-Within-stratum BH discoveries: 0 / 399 / 2 / 3. The separate 4-df global exposure LRT identifies 24 genes.
+Separate within-stratum BH procedures yield 0 / 399 / 2 / 3 genes in starting-age/APOE order 3M/E3, 3M/E4, 17M/E3 and 17M/E4. The joint 4-df exposure LRT finds 24 genes in another testing family. Unequal discovery counts reflect evidence and precision together, and cannot by themselves establish an interaction.
 :::
 
 
@@ -1549,7 +1859,7 @@ Age-response genes: Ryr3, Rps24, Pkig, Rpl26, Inpp5d, Stk11, Rpl34 and Gm21586.
 All secondary LRTs preserve the original 18537-gene universe, fitted dispersions and length offsets. The age LRT tests AE and AGE jointly. Its 8 within-family hits reduce to 1 under the supplementary BH family across three LRTs. Signed genotype-response differences give 6 hits at 3M and 4 at 17M. Age-response differences give 2 in E3 and 4 in E4, while the triple signed contrast gives 0. These tests use different contrasts, validity masks and multiplicity families, so their discoveries need not agree with the joint LRTs. Zero discoveries in another family do not prove identical effects.
 :::
 
-## Animal-level profiles contextualize response differences {#interaction-animals .figure-slide}
+## Animal-level profiles contextualize response differences {#interaction-animals .figure-slide .figure-interpretation}
 
 
 
@@ -1557,11 +1867,11 @@ All secondary LRTs preserve the original 18537-gene universe, fitted dispersions
 04  /  Project results
 :::
 
-![](assets/figures/defense_slides/context_ozone_animals.png){fig-alt="All 24 animals remain visible for each gene. Points encode animals and short horizontal segments show descriptive means." width=100%}
+![](assets/figures/defense_slides/context_ozone_animals.png){fig-alt="Each gene retains all 24 sequenced animals, grouped by starting age, APOE and exposure. Points show log₂(1 + normalized count), and short segments give descriptive means. Ryr3 and Rps24 belong to the eight age-dependent LRT discoveries. Fixed horizontal offsets only separate symbols, while the factorial model supplies the interaction test." width=100%}
 
 
 ::: {.figure-caption}
-All 24 animals remain visible for each gene. Points encode animals and short horizontal segments show descriptive means.
+Each gene retains all 24 sequenced animals, grouped by starting age, APOE and exposure. Points show log₂(1 + normalized count), and short segments give descriptive means. Ryr3 and Rps24 belong to the eight age-dependent LRT discoveries. Fixed horizontal offsets only separate symbols, while the factorial model supplies the interaction test.
 :::
 
 
@@ -1603,7 +1913,7 @@ These correlated terms are not counts of independent biological mechanisms.
 HY has no ORA terms but 916 ranked GSEA terms because a thresholded foreground and coordinated ranks ask different questions. The large count does not imply 916 independent pathways or resolve the seven-animal uncertainty. ACA has 86 up and 2 down ORA terms. All ozone ORA families are empty at their thresholds, while GSEA finds 4, 368, 85 and 23 terms. Mapping, finite-test universes, propagated ancestry and algorithmic GSEA FDR rather than BH all matter. Enrichment is exploratory and inherits source-design limitations.
 :::
 
-## Selected GO patterns across the six RNA contrasts {#go-patterns .figure-slide}
+## Selected GO patterns across the six RNA contrasts {#go-patterns .figure-slide .figure-interpretation}
 
 
 
@@ -1611,11 +1921,11 @@ HY has no ORA terms but 916 ranked GSEA terms because a thresholded foreground a
 04  /  Project results
 :::
 
-![](assets/figures/defense_slides/context_go_patterns.png){fig-alt="Fixed display selection, shared NES scale. Dot: algorithmic GSEA FDR &lt; 0.05. Gray: ineligible or unavailable." width=100%}
+![](assets/figures/defense_slides/context_go_patterns.png){fig-alt="Color gives the signed normalized enrichment score on a common scale, and dots mark algorithmic GSEA FDR &lt; 0.05. Gray cells are ineligible or unavailable. These are the first eight terms of a fixed 22-term display selection. Correlated annotations and selected display terms prevent reading the matrix as independent mechanisms or exhaustive pathway activity." width=100%}
 
 
 ::: {.figure-caption}
-Fixed display selection, shared NES scale. Dot: algorithmic GSEA FDR < 0.05. Gray: ineligible or unavailable.
+Color gives the signed normalized enrichment score on a common scale, and dots mark algorithmic GSEA FDR < 0.05. Gray cells are ineligible or unavailable. These are the first eight terms of a fixed 22-term display selection. Correlated annotations and selected display terms prevent reading the matrix as independent mechanisms or exhaustive pathway activity.
 :::
 
 
@@ -1656,7 +1966,7 @@ The presentation redraws the first 8 terms from the existing 22-term project dis
 Product definitions summarize the frozen NCBI/UniProt evidence, with qualifiers preserved in the full annotation table. RNA expression does not establish enzymatic activity, protein abundance or an exposure mechanism. Fosb gene-level RNA cannot resolve FosB versus ΔFosB isoforms. Ksr2 is interpreted as a scaffold: reported low in-vitro kinase activity does not establish active catalysis here. Noncoding C730002L08Rik has no established protein product. Hspa5 and Ksr2 remain useful bulk candidates even though no measured spatial map is available. No absent gene is replaced with a similarly named atlas gene.
 :::
 
-## Measured cortical layers organize the reference cells {#aca-sections .figure-slide}
+## Measured cortical layers organize the reference cells {#aca-sections .figure-slide .figure-interpretation}
 
 
 
@@ -1664,11 +1974,11 @@ Product definitions summarize the frozen NCBI/UniProt evidence, with qualifiers 
 04  /  Project results
 :::
 
-![](assets/figures/defense_slides/spatial_aca_measured.png){fig-alt="Largest ACA section selected by cell count: 1,940 cells. Anatomy colors and measured Fosb detection use the deposited experimental plane." width=100%}
+![](assets/figures/defense_slides/spatial_aca_measured.png){fig-alt="The largest ACA section contains 1,940 measured cells. Left, deposited positions and anatomical labels reveal cortical layers. Right, each occupied 100-µm bin shows measured Fosb-positive cells divided by all measured cells, including zeros. Empty bins remain unobserved. The pattern describes one unexposed donor and does not estimate a layer-specific PM effect." width=100%}
 
 
 ::: {.figure-caption}
-Largest ACA section selected by cell count: 1,940 cells. Anatomy colors and measured Fosb detection use the deposited experimental plane.
+The largest ACA section contains 1,940 measured cells. Left, deposited positions and anatomical labels reveal cortical layers. Right, each occupied 100-µm bin shows measured Fosb-positive cells divided by all measured cells, including zeros. Empty bins remain unobserved. The pattern describes one unexposed donor and does not estimate a layer-specific PM effect.
 :::
 
 
@@ -1681,7 +1991,7 @@ Largest ACA section selected by cell count: 1,940 cells. Anatomy colors and meas
 The section is Zhuang-ABCA-2.023, selected by maximal regional n independently of expression. All measured cells, including zeros, contribute to bin denominators. Layer structure follows the original spatial positions and CCF annotations, without random placement or a simulated point cloud. Empty bins remain unobserved. The complete 18-section ACA reference includes 14582 cells and 10 layers/subdivisions, with the one-cell edge section preserved. These observations describe one unexposed male donor, without identifying layer-specific PM effects.
 :::
 
-## Measured hypothalamic nuclei and Tll1 detection {#hy-sections .figure-slide}
+## Measured hypothalamic nuclei and Tll1 detection {#hy-sections .figure-slide .figure-interpretation}
 
 
 
@@ -1689,11 +1999,11 @@ The section is Zhuang-ABCA-2.023, selected by maximal regional n independently o
 04  /  Project results
 :::
 
-![](assets/figures/defense_slides/spatial_hy_measured.png){fig-alt="Largest HY section: 3,565 cells. Tll1 is positive in 667 of 37,811 cells across the complete reference HY region." width=100%}
+![](assets/figures/defense_slides/spatial_hy_measured.png){fig-alt="The largest HY section contains 3,565 measured cells. Anatomical labels organize the deposited cell positions, and occupied bins display positive/all-cell detection. Across the complete reference HY, Tll1 is detected in 667 of 37,811 cells, or 1.764%. Sparse detection can reflect biology and assay sensitivity, without resolving either explanation from these data alone." width=100%}
 
 
 ::: {.figure-caption}
-Largest HY section: 3,565 cells. Tll1 is positive in 667 of 37,811 cells across the complete reference HY region.
+The largest HY section contains 3,565 measured cells. Anatomical labels organize the deposited cell positions, and occupied bins display positive/all-cell detection. Across the complete reference HY, Tll1 is detected in 667 of 37,811 cells, or 1.764%. Sparse detection can reflect biology and assay sensitivity, without resolving either explanation from these data alone.
 :::
 
 
@@ -1737,7 +2047,7 @@ The interactive side-by-side display is a project deliverable, without independe
 [Full reference/scenario figure](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/assets/figures/spatial_cortex/reference_vs_simulation.png).
 :::
 
-## Spatial Gaussian regression rarely improves the baseline {#gaussian-rmse .figure-slide}
+## Hypothalamus / Tll1: measured reference and PM₂.₅ scenario {#hy-3d .figure-slide .figure-interpretation .map3d-slide}
 
 
 
@@ -1745,11 +2055,71 @@ The interactive side-by-side display is a project deliverable, without independe
 04  /  Project results
 :::
 
-![](assets/figures/defense_slides/spatial_gaussian_rmse.png){fig-alt="RMSE improves over anatomy-only prediction for 4/10 ACA genes and 1/10 HY genes under the same guarded section folds." width=100%}
+[![](assets/figures/defense_slides/spatial_3d_hy_tll1.png){fig-alt="Left shows measured Tll1 counts. Right multiplies every value by 0.42808, carrying the regional shrunken effect into an illustrative scenario. Both panels retain 37,811 positions and the same 667 positive cells. A common color scale reveals the magnitude change. The display does not identify cell-specific exposure responses or infer cell loss." width=100%}](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/viewer.html){target="_blank"}
 
 
 ::: {.figure-caption}
-RMSE improves over anatomy-only prediction for 4/10 ACA genes and 1/10 HY genes under the same guarded section folds.
+Left shows measured Tll1 counts. Right multiplies every value by 0.42808, carrying the regional shrunken effect into an illustrative scenario. Both panels retain 37,811 positions and the same 667 positive cells. A common color scale reveals the magnitude change. The display does not identify cell-specific exposure responses or infer cell loss.
+:::
+
+
+::: {.viewer-links}
+[Open the interactive Tll1 map](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/viewer.html){target="_blank"}
+:::
+
+
+::: {.source}
+<span class="analysis-tag">Analysis: this project</span>[Rajagopalan et al., JCI 2020](https://doi.org/10.1172/JCI137315) · [Zhang et al., Nature 2023](https://doi.org/10.1038/s41586-023-06808-9)
+:::
+
+
+::: {.notes}
+Hypothalamus, Tll1. Left: actually measured MERFISH imaging counts from the unexposed male Zhuang-ABCA-2 donor. Right: those same counts uniformly multiplied by 2^(-1.224053)=0.42807853, using the regional shrunken bulk effect. All 37,811 cells appear in each panel, without resampling, jitter, interpolation or mirroring. There are 667 measured positive cells; scaling preserves detection and measured zeros. Cameras, axis limits and the log₂(1+count) color scale are identical, with the full joint maximum and no value clipping. Positions belong to the registered hemisphere and are plotted ML, AP, −DV in CCF mm. These coordinates derive from registered sections rather than direct isotropic 3D acquisition. The right panel is an illustration, not a measurement of exposed cells or a Bayesian prediction. The preview and text link open the full interactive viewer online. Drag the 3D scene to rotate it, and use the gene selector to inspect other measured candidates. The static preview uses the full color range and remains available offline. The interactive viewer also offers a clearly labeled optional 99th-percentile color cap, which changes the display only.
+:::
+
+## Cortex / Fosb: measured reference and PM₂.₅ scenario {#aca-3d .figure-slide .figure-interpretation .map3d-slide}
+
+
+
+::: {.slide-eyebrow}
+04  /  Project results
+:::
+
+[![](assets/figures/defense_slides/spatial_3d_aca_fosb.png){fig-alt="Left shows measured Fosb counts. Right applies the regional 1.996-fold multiplier to the same reference. The 14,582 positions and 1,418 positive cells remain fixed, with a shared full color scale. The brighter scenario illustrates a bulk effect. It does not establish which cortical layers or cell types respond to PM₂.₅." width=100%}](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/cortex_viewer.html){target="_blank"}
+
+
+::: {.figure-caption}
+Left shows measured Fosb counts. Right applies the regional 1.996-fold multiplier to the same reference. The 14,582 positions and 1,418 positive cells remain fixed, with a shared full color scale. The brighter scenario illustrates a bulk effect. It does not establish which cortical layers or cell types respond to PM₂.₅.
+:::
+
+
+::: {.viewer-links}
+[Open the interactive Fosb map](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/cortex_viewer.html){target="_blank"}
+:::
+
+
+::: {.source}
+<span class="analysis-tag">Analysis: this project</span>[Zhang et al., Science 2025](https://doi.org/10.1126/science.adu4132) · [Zhang et al., Nature 2023](https://doi.org/10.1038/s41586-023-06808-9)
+:::
+
+
+::: {.notes}
+Anterior cingulate cortex, Fosb. Left: actually measured MERFISH imaging counts from the unexposed male Zhuang-ABCA-2 donor. Right: those same counts uniformly multiplied by 2^(0.997109)=1.99599627, using the regional shrunken bulk effect. All 14,582 cells appear in each panel, without resampling, jitter, interpolation or mirroring. There are 1,418 measured positive cells; scaling preserves detection and measured zeros. Cameras, axis limits and the log₂(1+count) color scale are identical, with the full joint maximum and no value clipping. Positions belong to the registered hemisphere and are plotted ML, AP, −DV in CCF mm. These coordinates derive from registered sections rather than direct isotropic 3D acquisition. The right panel is an illustration, not a measurement of exposed cells or a Bayesian prediction. The preview and text link open the full interactive viewer online. Drag the 3D scene to rotate it, and use the gene selector to inspect other measured candidates. The static preview uses the full color range and remains available offline. The interactive viewer also offers a clearly labeled optional 99th-percentile color cap, which changes the display only.
+:::
+
+## Spatial Gaussian regression rarely improves the baseline {#gaussian-rmse .figure-slide .figure-interpretation}
+
+
+
+::: {.slide-eyebrow}
+04  /  Project results
+:::
+
+![](assets/figures/defense_slides/spatial_gaussian_rmse.png){fig-alt="Each point compares spatial-model RMSE with anatomy-only RMSE on identical held-out sections. A ratio below 1 favors the spatial model, which improves 4/10 ACA genes and 1/10 HY genes. Added coordinates and basis functions therefore provide limited benefit here. A smooth full-reference map alone would not reveal this prediction failure." width=100%}
+
+
+::: {.figure-caption}
+Each point compares spatial-model RMSE with anatomy-only RMSE on identical held-out sections. A ratio below 1 favors the spatial model, which improves 4/10 ACA genes and 1/10 HY genes. Added coordinates and basis functions therefore provide limited benefit here. A smooth full-reference map alone would not reveal this prediction failure.
 :::
 
 
@@ -1762,7 +2132,7 @@ RMSE improves over anatomy-only prediction for 4/10 ACA genes and 1/10 HY genes 
 Tll1 RMSE is .109713 for the spatial model, .107582 for anatomy only and .107175 for kNN. Fosb RMSE is .297687, .293223 and .301802, respectively. All losses use natural ln(1 + raw imaging count). Ratios below 1 favor the spatial model, but these are descriptive comparisons within one donor, without a significance test assuming independent cells. Four prespecified sensitivity configurations inspect length and prior choices without test-selected tuning. Smooth maps alone do not establish predictive gain.
 :::
 
-## Overall coverage hides important Gaussian limitations {#gaussian-diagnostics .figure-slide}
+## Overall coverage hides important Gaussian limitations {#gaussian-diagnostics .figure-slide .figure-interpretation}
 
 
 
@@ -1770,11 +2140,11 @@ Tll1 RMSE is .109713 for the spatial model, .107582 for anatomy only and .107175
 04  /  Project results
 :::
 
-![](assets/figures/defense_slides/spatial_gaussian_diagnostics.png){fig-alt="Overall coverage, positive-only inclusion and impossible negative predictive support are different diagnostics." width=100%}
+![](assets/figures/defense_slides/spatial_gaussian_diagnostics.png){fig-alt="Left, overall interval inclusion can be high while inclusion among positive observations is poor. Positive-only inclusion is a conditional diagnostic, without a nominal 95% target. Right, the Gaussian predictive distribution assigns mass below zero on log(1 + count), an impossible range. Together these checks expose limitations hidden by marginal coverage alone." width=100%}
 
 
 ::: {.figure-caption}
-Overall coverage, positive-only inclusion and impossible negative predictive support are different diagnostics.
+Left, overall interval inclusion can be high while inclusion among positive observations is poor. Positive-only inclusion is a conditional diagnostic, without a nominal 95% target. Right, the Gaussian predictive distribution assigns mass below zero on log(1 + count), an impossible range. Together these checks expose limitations hidden by marginal coverage alone.
 :::
 
 
@@ -1787,7 +2157,7 @@ Overall coverage, positive-only inclusion and impossible negative predictive sup
 Median marginal coverage is 97.27% in HY and 94.00% in ACA. Positive-tail inclusion medians are 0% and 66.46%; the 95% nominal marginal target does not apply after conditioning on a positive realized outcome. Nevertheless, median predictive mass below zero is 41.06% in HY and 38.19% in ACA, which is physically impossible for ln(1 + count). Tll1 overall coverage of 98.24% coexists with 0/667 positive inclusion and 41.24% negative predictive mass. These findings and limited baseline gains prevent a validated cellular RNA reconstruction claim. Negative means and bounds remain visible rather than being clipped.
 :::
 
-## Bounded detection improves modestly in ACA but fails in HY {#beta-performance .figure-slide}
+## Bounded detection improves modestly in ACA but fails in HY {#beta-performance .figure-slide .figure-interpretation}
 
 
 
@@ -1795,11 +2165,11 @@ Median marginal coverage is 97.27% in HY and 94.00% in ACA. Positive-tail inclus
 04  /  Project results
 :::
 
-![](assets/figures/defense_slides/spatial_beta_performance.png){fig-alt="ACA Brier 0.13725 versus 0.14051 regional. HY Brier 0.09246 versus 0.03621. High count-interval coverage accompanies wide intervals." width=100%}
+![](assets/figures/defense_slides/spatial_beta_performance.png){fig-alt="Lower Brier loss favors the model. ACA improves modestly, 0.13725 versus 0.14051, while HY worsens, 0.09246 versus 0.03621. The coverage–width plot shows that high predictive count coverage accompanies wide intervals. These held-out comparisons retain prior-only anatomical groups, so bounded probabilities alone do not establish accurate or transferable prediction." width=100%}
 
 
 ::: {.figure-caption}
-ACA Brier 0.13725 versus 0.14051 regional. HY Brier 0.09246 versus 0.03621. High count-interval coverage accompanies wide intervals.
+Lower Brier loss favors the model. ACA improves modestly, 0.13725 versus 0.14051, while HY worsens, 0.09246 versus 0.03621. The coverage–width plot shows that high predictive count coverage accompanies wide intervals. These held-out comparisons retain prior-only anatomical groups, so bounded probabilities alone do not establish accurate or transferable prediction.
 :::
 
 
@@ -1812,7 +2182,7 @@ ACA Brier 0.13725 versus 0.14051 regional. HY Brier 0.09246 versus 0.03621. High
 Pooled ten-gene count PI coverage is 1253/1280 = 97.89% for ACA and 1848/1860 = 99.35% for HY. Mean count PI width divided by n is 41.9 and 61.5 percentage points. These are gene×section×anatomy evaluations, without independent animals. In HY, 79/186 unique groups per gene and 10416/37811 actual cells are prior-only under the held-out folds. The fixed symmetric prior can predict detection poorly for rare genes. Trained-anatomy-only HY Brier of .032557 versus .032877 is a small restricted improvement and does not replace full-support failure. The model targets detection, rather than count magnitude.
 :::
 
-## ACA posterior detection separates uncertainty targets {#beta-aca .figure-slide}
+## Prediction quality depends on error, coverage and support {#explain-model-failure .explanation-slide}
 
 
 
@@ -1820,11 +2190,36 @@ Pooled ten-gene count PI coverage is 1253/1280 = 97.89% for ACA and 1848/1860 = 
 04  /  Project results
 :::
 
-![](assets/figures/defense_slides/spatial_beta_aca_posterior.png){fig-alt="Fosb: observed fractions, fitted known-section probabilities and anatomy/new-section uncertainty remain separately labeled." width=100%}
+**Prediction error.** The bounded model has slightly lower Brier loss than the regional baseline in ACA. In HY, its full evaluation is worse than the baseline.
+
+**Training support.** In each HY gene evaluation, 79 of 186 reserved section–anatomy groups contain anatomical labels unavailable in training. Their predictions depend only on the stated prior and remain in the score.
+
+**Uncertainty.** Wide intervals can cover many outcomes while providing little precision. Bounded probabilities, stable numerical integration and visually plausible maps do not by themselves demonstrate useful prediction or higher spatial resolution.
+
+
+
+::: {.source}
+<span class="analysis-tag">Analysis: this project</span>[Zhang et al., Nature 2023](https://doi.org/10.1038/s41586-023-06808-9) · [Murphy, 2007, Gaussian conjugacy](https://www.cs.ubc.ca/~murphyk/Papers/bayesGauss.pdf) · [SciPy, beta-binomial distribution](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.betabinom.html)
+:::
+
+
+::: {.notes}
+Brier loss is the mean squared error of predicted detection probabilities against cell detection outcomes, here using the specified cell weighting. Lower values are better only for the same evaluation target and cells. The 79/186 figures are unique HY section×anatomy groups per gene, and 10,416 of 37,811 actual reference cells fall in prior-only groups. Repeating evaluation across ten genes does not create new cells. The restricted trained-anatomy HY comparison improves slightly, but excluding unsupported groups would answer a narrower question and cannot replace the full reported failure.
+:::
+
+## ACA posterior detection separates uncertainty targets {#beta-aca .figure-slide .figure-interpretation}
+
+
+
+::: {.slide-eyebrow}
+04  /  Project results
+:::
+
+![](assets/figures/defense_slides/spatial_beta_aca_posterior.png){fig-alt="For Fosb, the left panel compares observed fractions with known-section posterior probabilities. The right panel separates anatomy-mean credible intervals from new-section propensity predictions. The pale interval expresses section-to-section uncertainty, and its target differs from the dark hypermean interval. These full-reference estimates describe the unexposed donor, while held-out performance is evaluated separately." width=100%}
 
 
 ::: {.figure-caption}
-Fosb: observed fractions, fitted known-section probabilities and anatomy/new-section uncertainty remain separately labeled.
+For Fosb, the left panel compares observed fractions with known-section posterior probabilities. The right panel separates anatomy-mean credible intervals from new-section propensity predictions. The pale interval expresses section-to-section uncertainty, and its target differs from the dark hypermean interval. These full-reference estimates describe the unexposed donor, while held-out performance is evaluated separately.
 :::
 
 
@@ -1837,7 +2232,7 @@ Fosb: observed fractions, fitted known-section probabilities and anatomy/new-sec
 At the selected known section, p conditioned on its own observed counts is a fitted summary, without being an out-of-fold prediction. Anatomy μ is a mean over exchangeable section propensities, whereas the measured pooled fraction weights actual cells. The new-section p distribution models section heterogeneity and differs from a count prediction with denominator n. Small layers can have wider or differently shaped uncertainty, without resolving exposure effects. ACA/Fosb held-out Brier of .08745 versus .08803 shows only a small gain, with count PI coverage of 99.2% and width fraction .345.
 :::
 
-## HY fitted anatomy does not guarantee held-out prediction {#beta-hy .figure-slide}
+## HY fitted anatomy does not guarantee held-out prediction {#beta-hy .figure-slide .figure-interpretation}
 
 
 
@@ -1845,11 +2240,11 @@ At the selected known section, p conditioned on its own observed counts is a fit
 04  /  Project results
 :::
 
-![](assets/figures/defense_slides/spatial_beta_hy_posterior.png){fig-alt="Tll1: fitted probabilities stay bounded, while unseen held-out anatomies expose dependence on the stated prior." width=100%}
+![](assets/figures/defense_slides/spatial_beta_hy_posterior.png){fig-alt="For Tll1, fitted section probabilities remain within 0–1 despite sparse detections. The anatomy mean and new-section propensity carry different uncertainty. A fitted map can still look plausible when held-out anatomical labels lack training support. The full HY evaluation retains those groups, making the resulting prior dependence visible in the reported prediction error." width=100%}
 
 
 ::: {.figure-caption}
-Tll1: fitted probabilities stay bounded, while unseen held-out anatomies expose dependence on the stated prior.
+For Tll1, fitted section probabilities remain within 0–1 despite sparse detections. The anatomy mean and new-section propensity carry different uncertainty. A fitted map can still look plausible when held-out anatomical labels lack training support. The full HY evaluation retains those groups, making the resulting prior dependence visible in the reported prediction error.
 :::
 
 

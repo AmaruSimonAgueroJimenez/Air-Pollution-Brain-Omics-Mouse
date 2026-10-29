@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-29",
+  "scope": "Read-only review against frozen study outputs and measured reference tables. No models refitted.",
+  "visible_explanation_slides": 12,
+  "new_bilingual_3D_figure_families": 3,
+  "checked": [
+    "Sample units, numerical reproduction, normalization/dispersion, Wald/BH and effect shrinkage",
+    "Ozone interaction tests and multiplicity families, ORA/GSEA interpretation",
+    "Proper priors, posterior estimates, held-out guards, uncertainty targets and prior-only HY groups",
+    "All 52,393 measured ACA/HY cells retained; shared reference/scenario scales and cameras",
+    "CCF registered coordinates distinguished from direct isotropic 3D measurement",
+    "Gray full-brain context distinguished from one-hemisphere cellular observations",
+    "Active same-language links to correct default gene viewers"
+  ],
+  "repairs": [
+    "Clarified normalization size factors as sample-specific library-size factors rather than animal sample size",
+    "Clarified no mirroring of cells, while gray anatomical context spans the whole brain",
+    "Clarified anatomy text links versus linked gene-map images",
+    "Documented optional interactive percentile color cap versus full static scale"
+  ],
+  "remaining_actionable_issues": []
+}

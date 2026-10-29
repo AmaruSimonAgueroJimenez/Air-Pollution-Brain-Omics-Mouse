@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-29",
+  "scope": "Figure export integrity and manual visual review only; no new model fitting or certification of exposure response.",
+  "manifest_sha256": "9b20501024442d9810d1214494ebfe8a391bcbd75a37016e791b604d848f39c3",
+  "figure_families": [
+    "spatial_3d_anatomy",
+    "spatial_3d_hy_tll1",
+    "spatial_3d_aca_fosb"
+  ],
+  "languages": [
+    "en",
+    "es"
+  ],
+  "reviewed_manually": [
+    "All three families in each language were opened as rendered PNGs",
+    "Cortical ML/AP and DV ticks were reduced and axis-label padding increased after an initial overlap was caught",
+    "No annotation, colorbar, axis label or footer clipping in final outputs",
+    "Reference/scenario panels use matching cameras, limits and the full joint color maximum",
+    "Measured zeros are explicitly distinguished as faint gray; full-brain mesh is anatomy only",
+    "Final compact scenario figures omit duplicate titles and count footers; registered-coordinate terminology is preserved."
+  ],
+  "automatic_checks": {
+    "all_6_final_figures_have_no_canvas_text_overflow": true,
+    "output_hashes_match": true,
+    "source_hashes_match": true
+  },
+  "all_observations_retained": {
+    "HY_cells": 37811,
+    "ACA_cells": 14582,
+    "donors": 1,
+    "HY_Tll1_measured_positive_cells": 667,
+    "ACA_Fosb_measured_positive_cells": 1418
+  },
+  "no_interpolation_mirroring_or_subsampling": true
+}

@@ -3,23 +3,28 @@
   "analysis_snapshot": "Completed project analyses, 18–20 October 2026",
   "scientific_models_refitted": false,
   "same_source_animals_not_independent_replication": true,
-  "slides_per_language": 85,
+  "slides_per_language": 100,
   "explicit_ids": [
     "scope",
     "intro",
     "studies-rna",
     "studies-hippocampus",
     "units",
+    "explain-bulk-spatial",
     "workflow",
+    "explain-gene-trace",
     "methods",
     "reproduction-criteria",
+    "explain-reproduction",
     "cortex-author-method",
     "hypothalamus-author-method",
     "mirna-author-method",
     "ozone-author-method",
     "count-model",
+    "explain-count-model",
     "filters",
     "testing",
+    "explain-testing",
     "qc",
     "mirna-model",
     "ozone-raw-qc",
@@ -27,20 +32,27 @@
     "ozone-factorial",
     "ozone-contrasts",
     "ozone-lrt",
+    "explain-interaction",
     "ora",
     "gsea",
+    "explain-enrichment",
     "atlas",
     "coordinates",
+    "anatomy-3d",
     "gene-selection",
     "detection-method",
     "scenario-method",
+    "explain-scenario",
     "gaussian-features",
     "gaussian-priors",
+    "explain-bayes",
     "gaussian-intervals",
     "guarded-cv",
+    "explain-validation",
     "beta-model",
     "beta-integration",
     "beta-targets",
+    "explain-uncertainty",
     "metrics",
     "replicated-results",
     "cortex-reproduction",
@@ -62,9 +74,12 @@
     "aca-sections",
     "hy-sections",
     "scenario-results",
+    "hy-3d",
+    "aca-3d",
     "gaussian-rmse",
     "gaussian-diagnostics",
     "beta-performance",
+    "explain-model-failure",
     "beta-aca",
     "beta-hy",
     "numerics",
@@ -91,8 +106,16 @@
     "a-rebuild"
   ],
   "title_slide_id": "title-slide",
-  "main_content_slides": 68,
+  "main_content_slides": 83,
   "source_files": [
+    {
+      "path": "docs/assets/viewer-cortex/data.js",
+      "sha256": "e90efdb7a69cd695ff16251784640b8fef9d886dd0b9231848048a2434fd76fa"
+    },
+    {
+      "path": "docs/assets/viewer/data.js",
+      "sha256": "0512df48fb54d2995aad96fe70383690e5912f7150ce3f50bbe74ff17d7dfa42"
+    },
     {
       "path": "metadata/advanced_omics/methods.json",
       "sha256": "861e6b4ca8e7743269f8ad9da8ff726c9216cde1826f6571779ebf484f96f2a6"
@@ -152,6 +175,10 @@
     {
       "path": "results/cortex/summary.json",
       "sha256": "6a47f9951cafdf466d660ccae1b164a1f1ad52d5b3f1032b28c32bd8d7c901f8"
+    },
+    {
+      "path": "results/defense_slides/three_dimensional_figure_manifest.json",
+      "sha256": "9b20501024442d9810d1214494ebfe8a391bcbd75a37016e791b604d848f39c3"
     },
     {
       "path": "results/enrichment/methods.json",
@@ -278,6 +305,14 @@
       "sha256": "8b72d9e1ce15eab07441955e832b9f92b8d9612c1149ac8fad67c1b55434a4a0"
     },
     {
+      "path": "results/spatial_cortex/reference_counts.npz",
+      "sha256": "7702331190e327f0befb47323f40c96fd2631ca5c585f77864b211b764f5bb0e"
+    },
+    {
+      "path": "results/spatial_cortex/registered_cortex_cells.tsv.gz",
+      "sha256": "06e12ebd2a8d44f96b8935d3097a139c76edcad54d82f5f91b3c2a6796ed50d5"
+    },
+    {
       "path": "results/spatial_cortex/summary.json",
       "sha256": "05bbb34320bbcf1f75db93cae5b1d7b02a2a55498441d79db1a749d27a824581"
     },
@@ -324,6 +359,14 @@
     {
       "path": "results/spatial_sections/summary.json",
       "sha256": "e9ae205209f8a19c2e64c71d5852fc2dc4c768b615d9e4799889c90caad3ef9b"
+    },
+    {
+      "path": "results/spatial_viewer/reference_counts.npz",
+      "sha256": "ea701f768b446ac00ddf2dd289fdb0e44de80b1cdcd85900f79f2eb649b6c3a0"
+    },
+    {
+      "path": "results/spatial_viewer/registered_hypothalamus_cells.tsv.gz",
+      "sha256": "2de9b2265c3f66f9f167d8304c6a86d8a96ea0e161603b22ded1726180af5c01"
     },
     {
       "path": "results/spatial_viewer/summary.json",
@@ -389,6 +432,22 @@
       "cls": ""
     },
     {
+      "id": "explain-bulk-spatial",
+      "en_title": "Bulk contrasts and spatial cells answer different questions",
+      "es_title": "El contraste bulk y las células espaciales responden preguntas distintas",
+      "sources": [
+        "HY",
+        "ACA",
+        "atlas"
+      ],
+      "cls": "explanation-slide",
+      "citation_keys": [
+        "HY",
+        "ACA",
+        "atlas"
+      ]
+    },
+    {
       "id": "workflow",
       "en_title": "Project workflow and provenance",
       "es_title": "Flujo del proyecto y procedencia",
@@ -397,10 +456,40 @@
         "results/replication_pm/methods.json",
         "metadata/spatial_sections/methods.json"
       ],
-      "cls": "figure-slide",
+      "cls": "figure-slide figure-interpretation",
       "figure": "context_workflow",
-      "en_caption": "Four experimental studies and a separate spatial reference feed explicitly labeled analytical branches.",
-      "es_caption": "Cuatro estudios experimentales y una referencia espacial independiente alimentan ramas analíticas explícitas."
+      "en_caption": "Follow the upper branch from exposure data to author reproduction and new study-specific analyses. The lower branch starts with an independent, unexposed MERFISH donor. Its measured anatomy supports reference modeling. The dashed regional bulk-effect transfer enters only the illustrative scenario, so the diagram does not imply measured cellular exposure responses.",
+      "es_caption": "La rama superior sigue los datos de exposición hasta la reproducción y los análisis nuevos por estudio. La inferior parte de un donante MERFISH independiente sin exposición. Su anatomía medida sustenta modelos de referencia. La transferencia bulk discontinua entra solo al escenario ilustrativo, sin implicar respuestas celulares medidas a la exposición.",
+      "viewer_links": [
+        {
+          "en_label": "Explore the hypothalamus in 3D",
+          "es_label": "Explorar el hipotálamo en 3D",
+          "en_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/viewer.html",
+          "es_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/viewer.html"
+        },
+        {
+          "en_label": "Explore the cortex in 3D",
+          "es_label": "Explorar la corteza en 3D",
+          "en_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/cortex_viewer.html",
+          "es_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/cortex_viewer.html"
+        }
+      ]
+    },
+    {
+      "id": "explain-gene-trace",
+      "en_title": "Fosb across the experimental and spatial analyses",
+      "es_title": "Fosb a través de los análisis experimental y espacial",
+      "sources": [
+        "ACA",
+        "atlas",
+        "DESeq2"
+      ],
+      "cls": "explanation-slide",
+      "citation_keys": [
+        "ACA",
+        "atlas",
+        "DESeq2"
+      ]
     },
     {
       "id": "methods",
@@ -418,6 +507,20 @@
         "results/replication_mirna_ozone/paper_replication_audit.csv"
       ],
       "cls": ""
+    },
+    {
+      "id": "explain-reproduction",
+      "en_title": "Numerical recovery and independent biological validation",
+      "es_title": "Recuperación numérica y validación biológica independiente",
+      "sources": [
+        "ACA",
+        "HY"
+      ],
+      "cls": "explanation-slide",
+      "citation_keys": [
+        "ACA",
+        "HY"
+      ]
     },
     {
       "id": "cortex-author-method",
@@ -472,6 +575,22 @@
       "cls": "formula-slide"
     },
     {
+      "id": "explain-count-model",
+      "en_title": "Normalization and dispersion in the count model",
+      "es_title": "Normalización y dispersión en el modelo de conteos",
+      "sources": [
+        "DESeq2",
+        "PyDESeq2",
+        "tximport"
+      ],
+      "cls": "explanation-slide",
+      "citation_keys": [
+        "DESeq2",
+        "PyDESeq2",
+        "tximport"
+      ]
+    },
+    {
       "id": "filters",
       "en_title": "Count filtering and normalization populations",
       "es_title": "Filtrado de conteos y poblaciones de normalización",
@@ -493,6 +612,20 @@
         "results/hypothalamus/methods.json"
       ],
       "cls": "formula-slide"
+    },
+    {
+      "id": "explain-testing",
+      "en_title": "Effect size, uncertainty and the discovery threshold",
+      "es_title": "Magnitud del efecto, incertidumbre y umbral de hallazgo",
+      "sources": [
+        "DESeq2",
+        "apeglm"
+      ],
+      "cls": "explanation-slide",
+      "citation_keys": [
+        "DESeq2",
+        "apeglm"
+      ]
     },
     {
       "id": "qc",
@@ -569,6 +702,20 @@
       "cls": "formula-slide"
     },
     {
+      "id": "explain-interaction",
+      "en_title": "Interaction tests compare exposure effects directly",
+      "es_title": "Las pruebas de interacción comparan directamente efectos de exposición",
+      "sources": [
+        "O3",
+        "DESeq2"
+      ],
+      "cls": "explanation-slide",
+      "citation_keys": [
+        "O3",
+        "DESeq2"
+      ]
+    },
+    {
       "id": "ora",
       "en_title": "GO over-representation uses a testable universe",
       "es_title": "La sobrerrepresentación GO utiliza un universo evaluable",
@@ -585,6 +732,20 @@
         "results/enrichment/methods.json"
       ],
       "cls": "formula-slide"
+    },
+    {
+      "id": "explain-enrichment",
+      "en_title": "ORA and GSEA use different evidence from the same contrast",
+      "es_title": "ORA y GSEA utilizan evidencia distinta del mismo contraste",
+      "sources": [
+        "GO",
+        "GSEA"
+      ],
+      "cls": "explanation-slide",
+      "citation_keys": [
+        "GO",
+        "GSEA"
+      ]
     },
     {
       "id": "atlas",
@@ -607,6 +768,43 @@
         "results/spatial_cortex/summary.json"
       ],
       "cls": ""
+    },
+    {
+      "id": "anatomy-3d",
+      "en_title": "The measured regions in the 3D brain reference",
+      "es_title": "Las regiones medidas en la referencia cerebral 3D",
+      "en_caption": "The gray whole-brain surface supplies anatomical context. Rust marks 14,582 ACA cells and teal marks 37,811 HY cells at their registered CCF positions. These 52,393 cells come from one unexposed donor and one registered hemisphere. The reference locates measured cells without filling unsampled regions or mirroring cells into the opposite hemisphere.",
+      "es_caption": "El contorno gris del cerebro completo aporta contexto anatómico. El rojizo ubica 14,582 células ACA y el verdeazulado, 37,811 HY en posiciones CCF registradas. Son 52,393 células de un donante sin exposición y un hemisferio registrado. Se localizan células sin rellenar regiones no muestreadas ni reflejar células al hemisferio opuesto.",
+      "figure": "spatial_3d_anatomy",
+      "cls": "figure-slide figure-interpretation map3d-slide",
+      "sources": [
+        "results/spatial_viewer/registered_hypothalamus_cells.tsv.gz",
+        "results/spatial_viewer/reference_counts.npz",
+        "results/spatial_viewer/summary.json",
+        "docs/assets/viewer/data.js",
+        "results/spatial_cortex/registered_cortex_cells.tsv.gz",
+        "results/spatial_cortex/reference_counts.npz",
+        "results/spatial_cortex/summary.json",
+        "docs/assets/viewer-cortex/data.js"
+      ],
+      "citation_keys": [
+        "atlas",
+        "Allen"
+      ],
+      "viewer_links": [
+        {
+          "en_label": "Explore the hypothalamus in 3D",
+          "es_label": "Explorar el hipotálamo en 3D",
+          "en_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/viewer.html",
+          "es_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/viewer.html"
+        },
+        {
+          "en_label": "Explore the cortex in 3D",
+          "es_label": "Explorar la corteza en 3D",
+          "en_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/cortex_viewer.html",
+          "es_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/cortex_viewer.html"
+        }
+      ]
     },
     {
       "id": "gene-selection",
@@ -638,6 +836,22 @@
       "cls": "formula-slide"
     },
     {
+      "id": "explain-scenario",
+      "en_title": "The assumption behind the reference–PM comparison",
+      "es_title": "El supuesto detrás de la comparación referencia–PM",
+      "sources": [
+        "ACA",
+        "HY",
+        "atlas"
+      ],
+      "cls": "explanation-slide",
+      "citation_keys": [
+        "ACA",
+        "HY",
+        "atlas"
+      ]
+    },
+    {
       "id": "gaussian-features",
       "en_title": "Gaussian baseline with fixed spatial basis functions",
       "es_title": "Referencia gaussiana con bases espaciales fijas",
@@ -657,6 +871,22 @@
       "cls": "formula-slide"
     },
     {
+      "id": "explain-bayes",
+      "en_title": "How the prior and reference measurements form a posterior",
+      "es_title": "Cómo el prior y las mediciones forman una posterior",
+      "sources": [
+        "Murphy",
+        "GPML",
+        "Beta"
+      ],
+      "cls": "explanation-slide",
+      "citation_keys": [
+        "Murphy",
+        "GPML",
+        "Beta"
+      ]
+    },
+    {
       "id": "gaussian-intervals",
       "en_title": "Credible and new-section predictive intervals",
       "es_title": "Intervalos creíbles y predictivos de un corte nuevo",
@@ -673,10 +903,26 @@
         "results/spatial_bayes/ACA/section_folds.tsv",
         "results/spatial_bayes/HY/section_folds.tsv"
       ],
-      "cls": "figure-slide",
+      "cls": "figure-slide figure-interpretation",
       "figure": "spatial_guarded_folds",
-      "en_caption": "Five contiguous test blocks. Adjacent represented sections are guards, and every measured cell is tested once.",
-      "es_caption": "Cinco bloques contiguos de prueba. Cortes representados vecinos actúan como separación y cada célula se evalúa una vez."
+      "en_caption": "Each row marks one validation fold along the ordered physical sections. Teal sections supply the held-out test, rust sections are excluded neighbors, and pale sections train the model. Every measured cell is tested once. Reserving whole sections reduces local leakage, while all folds still describe the same donor.",
+      "es_caption": "Cada fila muestra un bloque de validación sobre cortes físicos ordenados. Los cortes verdeazulados forman la evaluación, los rojizos son vecinos excluidos y los claros entrenan el modelo. Cada célula medida se evalúa una vez. Reservar cortes completos reduce filtración local, aunque todos los bloques siguen perteneciendo al mismo donante."
+    },
+    {
+      "id": "explain-validation",
+      "en_title": "Why validation reserves sections and their neighbors",
+      "es_title": "Por qué la validación reserva cortes y sus vecinos",
+      "sources": [
+        "atlas",
+        "Murphy",
+        "Beta"
+      ],
+      "cls": "explanation-slide",
+      "citation_keys": [
+        "atlas",
+        "Murphy",
+        "Beta"
+      ]
     },
     {
       "id": "beta-model",
@@ -707,6 +953,20 @@
       "cls": "formula-slide"
     },
     {
+      "id": "explain-uncertainty",
+      "en_title": "Different intervals answer different detection questions",
+      "es_title": "Distintos intervalos responden distintas preguntas de detección",
+      "sources": [
+        "atlas",
+        "Beta"
+      ],
+      "cls": "explanation-slide",
+      "citation_keys": [
+        "atlas",
+        "Beta"
+      ]
+    },
+    {
       "id": "metrics",
       "en_title": "Prediction metrics and baseline comparisons",
       "es_title": "Métricas predictivas y comparación con referencias",
@@ -732,10 +992,10 @@
         "results/replication_pm/cortex_gene_level_metrics.csv",
         "results/replication_pm/cortex_refit_summary.json"
       ],
-      "cls": "figure-slide",
+      "cls": "figure-slide figure-interpretation",
       "figure": "rep_cortex_reproduction",
-      "en_caption": "Four author-aligned contrasts recover 109 / 1,205 / 1,222 / 639 genes. Every FDR-set Jaccard equals 1.",
-      "es_caption": "Cuatro contrastes alineados recuperan 109 / 1,205 / 1,222 / 639 genes. Todos los Jaccard de conjuntos FDR son 1."
+      "en_caption": "Matching bars recover 109 / 1,205 / 1,222 / 639 significant genes in the four author-aligned contrasts. The effect comparison lies on the identity line. Every significant-set Jaccard equals 1, confirming numerical recovery at the deposited-count level. The same source animals are reused, so this agreement does not add independent biological replication.",
+      "es_caption": "Las barras recuperan 109 / 1,205 / 1,222 / 639 genes significativos en los cuatro contrastes originales. Los efectos coinciden con la línea de identidad. Todos los Jaccard son 1: se recuperan las salidas numéricas desde conteos depositados. Se reutilizan los animales fuente, por lo que la concordancia no añade replicación biológica independiente."
     },
     {
       "id": "cortex-source-quality",
@@ -745,10 +1005,10 @@
         "results/replication_pm/cortex_marker_expression_by_animal.csv",
         "results/replication_pm/paper_claim_audit.csv"
       ],
-      "cls": "figure-slide",
+      "cls": "figure-slide figure-interpretation",
       "figure": "rep_cortex_y_markers",
-      "en_caption": "All four PBS controls have zero raw Ddx3y, Uty and Kdm5d counts. Other treatment groups are heterogeneous.",
-      "es_caption": "Los cuatro controles PBS tienen cero conteos Ddx3y, Uty y Kdm5d. Los otros grupos son heterogéneos."
+      "en_caption": "Points retain all 20 source animals. All four PBS controls have zero raw Ddx3y, Uty and Kdm5d counts, whereas other treatment groups vary. The Xist comparison provides another descriptive marker view. These patterns motivate checking source sex and sample identity, without assigning sex or proving confounding from expression alone.",
+      "es_caption": "Los puntos conservan los 20 animales fuente. Los cuatro controles PBS tienen cero conteos Ddx3y, Uty y Kdm5d, mientras los otros grupos varían. La comparación con Xist añade otra vista descriptiva. El patrón motiva verificar sexo e identidad originales, sin asignar sexo ni demostrar confusión solo mediante expresión."
     },
     {
       "id": "hy-reproduction",
@@ -758,10 +1018,10 @@
         "HY",
         "results/replication_pm/hypothalamus_refit_summary.json"
       ],
-      "cls": "figure-slide",
+      "cls": "figure-slide figure-interpretation",
       "figure": "rep_hypothalamus_sensitivity",
-      "en_caption": "Paper HY lists imply 17 PM and 761 HFD genes. The declared non-RUVg sensitivity yields 0 and 3,600 under its stated gates.",
-      "es_caption": "Las listas HY implican 17 genes PM y 761 HFD. La sensibilidad declarada sin RUVg produce 0 y 3,600 bajo sus criterios."
+      "en_caption": "The original lists contain 17 PM and 761 HFD genes. The declared TMM/voom sensitivity returns 0 and 3,600 under different specified gates. The primary seven-animal analysis and its R implementation check are shown separately. Missing RUVg specifications prevent exact reconstruction, so these counts describe methodological sensitivity rather than biological nonreplication.",
+      "es_caption": "Las listas originales contienen 17 genes PM y 761 HFD. La sensibilidad TMM/voom devuelve 0 y 3,600 bajo otros criterios declarados. Se muestran aparte el análisis principal de siete animales y su comprobación en R. Faltan especificaciones RUVg para reconstruir exactamente: los conteos describen sensibilidad metodológica, sin demostrar ausencia de replicación biológica."
     },
     {
       "id": "mirna-reproduction",
@@ -771,10 +1031,10 @@
         "miRNA",
         "results/replication_mirna_ozone/mirna_author_targets.csv"
       ],
-      "cls": "figure-slide",
+      "cls": "figure-slide figure-interpretation",
       "figure": "rep_mirna574",
-      "en_caption": "High-dose difference −0.26945 signal units. limma p = 0.0253, BH q = 0.312. ANOVA p = 0.0788 prevents protected LSD.",
-      "es_caption": "Diferencia a dosis alta −0.26945 unidades. limma p = 0.0253, BH q = 0.312. ANOVA p = 0.0788 impide LSD protegido."
+      "en_caption": "Animal points show lower miR-574-5p signal at high dose. Its estimated difference is −0.26945 deposited signal units. The nominal limma interval excludes zero, but p = 0.0253 becomes BH q = 0.312 across the array. ANOVA p = 0.0788 also prevents protected LSD. Directional agreement therefore exceeds the supported multiplicity-adjusted claim.",
+      "es_caption": "Los puntos muestran menor señal miR-574-5p a dosis alta, con diferencia de −0.26945 unidades depositadas. El intervalo limma nominal excluye cero, pero p = 0.0253 pasa a BH q = 0.312 en el array. ANOVA p = 0.0788 impide LSD protegido. La coincidencia direccional no alcanza confirmación con ajuste de multiplicidad."
     },
     {
       "id": "ozone-reproduction",
@@ -784,10 +1044,10 @@
         "O3",
         "results/replication_mirna_ozone/summary.json"
       ],
-      "cls": "figure-slide",
+      "cls": "figure-slide figure-interpretation",
       "figure": "rep_ozone_concordance",
-      "en_caption": "Published genotype selection: 2,501 genes. Whole-effect comparison ρ = 0.865; selected S3 comparison ρ = 0.962 with 98.8% direction agreement.",
-      "es_caption": "Selección publicada de genotipo: 2,501 genes. Comparación global de efectos ρ = 0.865; lista S3 seleccionada ρ = 0.962 y 98.8% de dirección concordante."
+      "en_caption": "The deposited genotype threshold recovers 2,501 genes exactly. Across common finite effects, correlation is ρ = 0.865. The author-selected S3 subset gives ρ = 0.962 and 98.8% directional agreement among matched effects. Because the subset was selected and the source animals are reused, its stronger agreement cannot establish unbiased transcriptome-wide replication.",
+      "es_caption": "El umbral depositado de genotipo recupera exactamente 2,501 genes. La correlación de efectos finitos comunes es ρ = 0.865. La lista S3 seleccionada alcanza ρ = 0.962 y 98.8% de concordancia direccional entre efectos cotejados. Su selección previa y los mismos animales impiden interpretar esa mayor concordancia como replicación transcriptómica global no sesgada."
     },
     {
       "id": "reproduction-summary",
@@ -814,10 +1074,10 @@
         "results/hypothalamus/summary.json",
         "results/hypothalamus/leave_one_out_primary_hits.tsv"
       ],
-      "cls": "figure-slide",
+      "cls": "figure-slide figure-interpretation",
       "figure": "rep_hypothalamus_primary",
-      "en_caption": "4 FA versus 3 PM animals. Two higher and nine lower genes at BH q < 0.05. Intervals are pointwise MLE Wald intervals.",
-      "es_caption": "4 animales FA frente a 3 PM. Dos genes mayores y nueve menores con BH q < 0.05. Intervalos Wald MLE puntuales."
+      "en_caption": "For 4 filtered-air and 3 PM animals, the primary model identifies 11 BH discoveries: two higher and nine lower. Points show MLE log₂ fold changes, and bars are pointwise Wald 95% intervals. Direction indicates the regional contrast. These intervals are neither simultaneous confidence bands nor evidence that each spatial cell changes similarly.",
+      "es_caption": "Con 4 animales de aire filtrado y 3 PM, el modelo identifica 11 hallazgos BH: dos mayores y nueve menores. Los puntos son log₂ fold changes MLE y las barras, intervalos Wald puntuales del 95%. La dirección corresponde al contraste regional, sin intervalos simultáneos ni evidencia de un cambio equivalente en cada célula espacial."
     },
     {
       "id": "aca-primary",
@@ -827,10 +1087,10 @@
         "results/cortex/summary.json",
         "results/cortex/DE_PM_vs_PBS_MLE.tsv"
       ],
-      "cls": "figure-slide",
+      "cls": "figure-slide figure-interpretation",
       "figure": "rep_cortex_primary",
-      "en_caption": "1,167 BH discoveries: 658 higher and 509 lower. This population and model differ from the 20-animal, 1,205-gene author reconstruction.",
-      "es_caption": "1,167 hallazgos BH: 658 mayores y 509 menores. La población y el modelo difieren de la reconstrucción de autores con 20 animales y 1,205 genes."
+      "en_caption": "The volcano separates effect magnitude from nominal Wald evidence, while colors identify BH discoveries. The seven smallest-q genes have pointwise MLE intervals. The eight-animal primary comparison yields 1,167 discoveries, 658 higher and 509 lower. Its population and model differ from the 20-animal reconstruction that recovered 1,205 PM genes.",
+      "es_caption": "El volcán separa magnitud del efecto y evidencia Wald nominal. Los colores identifican hallazgos BH. Los siete genes con menor q tienen intervalos MLE puntuales. El contraste principal de ocho animales produce 1,167 hallazgos: 658 mayores y 509 menores. Su población y modelo difieren de la reconstrucción de 20 animales con 1,205 genes PM."
     },
     {
       "id": "mirna-primary",
@@ -849,10 +1109,10 @@
       "sources": [
         "results/ozone/summary.json"
       ],
-      "cls": "figure-slide",
+      "cls": "figure-slide figure-interpretation",
       "figure": "rep_ozone_primary",
-      "en_caption": "Within-stratum BH discoveries: 0 / 399 / 2 / 3. The separate 4-df global exposure LRT identifies 24 genes.",
-      "es_caption": "Hallazgos BH por estrato: 0 / 399 / 2 / 3. El LRT global separado de exposición, con 4 gl, identifica 24 genes."
+      "en_caption": "Separate within-stratum BH procedures yield 0 / 399 / 2 / 3 genes in starting-age/APOE order 3M/E3, 3M/E4, 17M/E3 and 17M/E4. The joint 4-df exposure LRT finds 24 genes in another testing family. Unequal discovery counts reflect evidence and precision together, and cannot by themselves establish an interaction.",
+      "es_caption": "BH por estrato produce 0 / 399 / 2 / 3 genes en el orden edad inicial/APOE 3M/E3, 3M/E4, 17M/E3 y 17M/E4. El LRT conjunto de exposición con 4 grados de libertad encuentra 24 genes en otra familia de pruebas. Los conteos reflejan evidencia y precisión, sin establecer por sí solos una interacción."
     },
     {
       "id": "interaction-results",
@@ -871,10 +1131,10 @@
       "sources": [
         "results/advanced_omics/ozone_interaction_animal_profiles.tsv"
       ],
-      "cls": "figure-slide",
+      "cls": "figure-slide figure-interpretation",
       "figure": "context_ozone_animals",
-      "en_caption": "All 24 animals remain visible for each gene. Points encode animals and short horizontal segments show descriptive means.",
-      "es_caption": "Se muestran los 24 animales por gen. Los puntos representan animales y los segmentos cortos muestran medias descriptivas."
+      "en_caption": "Each gene retains all 24 sequenced animals, grouped by starting age, APOE and exposure. Points show log₂(1 + normalized count), and short segments give descriptive means. Ryr3 and Rps24 belong to the eight age-dependent LRT discoveries. Fixed horizontal offsets only separate symbols, while the factorial model supplies the interaction test.",
+      "es_caption": "Cada gen conserva los 24 animales secuenciados, agrupados por edad inicial, APOE y exposición. Los puntos representan log₂(1 + conteo normalizado) y los segmentos, medias descriptivas. Ryr3 y Rps24 pertenecen a los ocho hallazgos LRT dependientes de edad. El desplazamiento horizontal separa símbolos, mientras el modelo factorial aporta la prueba de interacción."
     },
     {
       "id": "enrichment-results",
@@ -894,10 +1154,10 @@
         "results/advanced_omics/GO_multi_contrast_NES_source.tsv",
         "metadata/advanced_omics/methods.json"
       ],
-      "cls": "figure-slide",
+      "cls": "figure-slide figure-interpretation",
       "figure": "context_go_patterns",
-      "en_caption": "Fixed display selection, shared NES scale. Dot: algorithmic GSEA FDR < 0.05. Gray: ineligible or unavailable.",
-      "es_caption": "Selección gráfica fija y escala NES común. Punto: FDR algorítmica de GSEA < 0.05. Gris: no elegible o no disponible."
+      "en_caption": "Color gives the signed normalized enrichment score on a common scale, and dots mark algorithmic GSEA FDR < 0.05. Gray cells are ineligible or unavailable. These are the first eight terms of a fixed 22-term display selection. Correlated annotations and selected display terms prevent reading the matrix as independent mechanisms or exhaustive pathway activity.",
+      "es_caption": "El color muestra NES con signo en una escala común y los puntos indican FDR algorítmica GSEA < 0.05. Gris significa no elegible o no disponible. Son los primeros ocho términos de una selección gráfica de 22. La correlación y selección de anotaciones impiden leer la matriz como mecanismos independientes o actividad exhaustiva de vías."
     },
     {
       "id": "gene-products",
@@ -917,10 +1177,10 @@
         "results/spatial_sections/ACA/sections.tsv",
         "results/spatial_sections/ACA/detection_by_bins.tsv.gz"
       ],
-      "cls": "figure-slide",
+      "cls": "figure-slide figure-interpretation",
       "figure": "spatial_aca_measured",
-      "en_caption": "Largest ACA section selected by cell count: 1,940 cells. Anatomy colors and measured Fosb detection use the deposited experimental plane.",
-      "es_caption": "Corte ACA de mayor n: 1,940 células. Los colores anatómicos y la detección de Fosb usan el plano experimental depositado."
+      "en_caption": "The largest ACA section contains 1,940 measured cells. Left, deposited positions and anatomical labels reveal cortical layers. Right, each occupied 100-µm bin shows measured Fosb-positive cells divided by all measured cells, including zeros. Empty bins remain unobserved. The pattern describes one unexposed donor and does not estimate a layer-specific PM effect.",
+      "es_caption": "El mayor corte ACA contiene 1,940 células medidas. A la izquierda, posiciones depositadas y etiquetas anatómicas muestran capas corticales. A la derecha, cada casilla ocupada de 100 µm divide células Fosb positivas por todas las medidas, incluidos ceros. Las casillas vacías siguen sin observarse. Describe un donante sin exposición, sin estimar efectos PM por capa."
     },
     {
       "id": "hy-sections",
@@ -930,10 +1190,10 @@
         "results/spatial_sections/HY/sections.tsv",
         "results/spatial_reference/summary.json"
       ],
-      "cls": "figure-slide",
+      "cls": "figure-slide figure-interpretation",
       "figure": "spatial_hy_measured",
-      "en_caption": "Largest HY section: 3,565 cells. Tll1 is positive in 667 of 37,811 cells across the complete reference HY region.",
-      "es_caption": "Corte HY de mayor n: 3,565 células. Tll1 es positivo en 667 de las 37,811 células de la región HY completa."
+      "en_caption": "The largest HY section contains 3,565 measured cells. Anatomical labels organize the deposited cell positions, and occupied bins display positive/all-cell detection. Across the complete reference HY, Tll1 is detected in 667 of 37,811 cells, or 1.764%. Sparse detection can reflect biology and assay sensitivity, without resolving either explanation from these data alone.",
+      "es_caption": "El mayor corte HY contiene 3,565 células medidas. Las etiquetas anatómicas organizan posiciones depositadas y las casillas ocupadas muestran positivas/todas. En HY completo, Tll1 se detecta en 667 de 37,811 células: 1.764%. La detección escasa puede reflejar biología y sensibilidad del ensayo, sin distinguir ambas explicaciones con estos datos solos."
     },
     {
       "id": "scenario-results",
@@ -947,16 +1207,74 @@
       "demo_figure": "spatial_cortex/reference_vs_simulation"
     },
     {
+      "id": "hy-3d",
+      "en_title": "Hypothalamus / Tll1: measured reference and PM₂.₅ scenario",
+      "es_title": "Hipotálamo / Tll1: referencia medida y escenario PM₂.₅",
+      "en_caption": "Left shows measured Tll1 counts. Right multiplies every value by 0.42808, carrying the regional shrunken effect into an illustrative scenario. Both panels retain 37,811 positions and the same 667 positive cells. A common color scale reveals the magnitude change. The display does not identify cell-specific exposure responses or infer cell loss.",
+      "es_caption": "La izquierda muestra conteos Tll1 medidos. La derecha multiplica cada valor por 0.42808 e ilustra el efecto regional regularizado. Ambos paneles conservan 37,811 posiciones y las mismas 667 células positivas. La escala común muestra el cambio de magnitud. El gráfico no identifica respuestas celulares específicas a la exposición ni infiere pérdida celular.",
+      "figure": "spatial_3d_hy_tll1",
+      "cls": "figure-slide figure-interpretation map3d-slide",
+      "sources": [
+        "results/spatial_viewer/registered_hypothalamus_cells.tsv.gz",
+        "results/spatial_viewer/reference_counts.npz",
+        "results/spatial_viewer/summary.json",
+        "docs/assets/viewer/data.js"
+      ],
+      "citation_keys": [
+        "HY",
+        "atlas"
+      ],
+      "viewer_links": [
+        {
+          "en_label": "Open the interactive Tll1 map",
+          "es_label": "Abrir el mapa interactivo de Tll1",
+          "en_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/viewer.html",
+          "es_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/viewer.html"
+        }
+      ],
+      "viewer_url_en": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/viewer.html",
+      "viewer_url_es": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/viewer.html"
+    },
+    {
+      "id": "aca-3d",
+      "en_title": "Cortex / Fosb: measured reference and PM₂.₅ scenario",
+      "es_title": "Corteza / Fosb: referencia medida y escenario PM₂.₅",
+      "en_caption": "Left shows measured Fosb counts. Right applies the regional 1.996-fold multiplier to the same reference. The 14,582 positions and 1,418 positive cells remain fixed, with a shared full color scale. The brighter scenario illustrates a bulk effect. It does not establish which cortical layers or cell types respond to PM₂.₅.",
+      "es_caption": "La izquierda muestra conteos Fosb medidos. La derecha aplica el multiplicador regional de 1.996 a esa referencia. Se mantienen 14,582 posiciones y 1,418 células positivas, con escala de color común completa. El escenario más intenso ilustra un efecto bulk, sin establecer qué capas o tipos celulares corticales responden a PM₂.₅.",
+      "figure": "spatial_3d_aca_fosb",
+      "cls": "figure-slide figure-interpretation map3d-slide",
+      "sources": [
+        "results/spatial_cortex/registered_cortex_cells.tsv.gz",
+        "results/spatial_cortex/reference_counts.npz",
+        "results/spatial_cortex/summary.json",
+        "docs/assets/viewer-cortex/data.js"
+      ],
+      "citation_keys": [
+        "ACA",
+        "atlas"
+      ],
+      "viewer_links": [
+        {
+          "en_label": "Open the interactive Fosb map",
+          "es_label": "Abrir el mapa interactivo de Fosb",
+          "en_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/cortex_viewer.html",
+          "es_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/cortex_viewer.html"
+        }
+      ],
+      "viewer_url_en": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/cortex_viewer.html",
+      "viewer_url_es": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/cortex_viewer.html"
+    },
+    {
       "id": "gaussian-rmse",
       "en_title": "Spatial Gaussian regression rarely improves the baseline",
       "es_title": "La regresión gaussiana espacial mejora pocas veces la referencia",
       "sources": [
         "results/spatial_bayes/summary.json"
       ],
-      "cls": "figure-slide",
+      "cls": "figure-slide figure-interpretation",
       "figure": "spatial_gaussian_rmse",
-      "en_caption": "RMSE improves over anatomy-only prediction for 4/10 ACA genes and 1/10 HY genes under the same guarded section folds.",
-      "es_caption": "El RMSE mejora respecto a solo anatomía en 4/10 genes ACA y 1/10 HY, con los mismos bloques de cortes."
+      "en_caption": "Each point compares spatial-model RMSE with anatomy-only RMSE on identical held-out sections. A ratio below 1 favors the spatial model, which improves 4/10 ACA genes and 1/10 HY genes. Added coordinates and basis functions therefore provide limited benefit here. A smooth full-reference map alone would not reveal this prediction failure.",
+      "es_caption": "Cada punto compara RMSE del modelo espacial con RMSE anatómico en los mismos cortes reservados. Una razón menor que 1 favorece al modelo espacial: mejora 4/10 genes ACA y 1/10 HY. Coordenadas y bases aportan beneficio limitado. Un mapa suavizado ajustado con toda la referencia no mostraría por sí solo esta limitación predictiva."
     },
     {
       "id": "gaussian-diagnostics",
@@ -965,10 +1283,10 @@
       "sources": [
         "results/spatial_bayes/summary.json"
       ],
-      "cls": "figure-slide",
+      "cls": "figure-slide figure-interpretation",
       "figure": "spatial_gaussian_diagnostics",
-      "en_caption": "Overall coverage, positive-only inclusion and impossible negative predictive support are different diagnostics.",
-      "es_caption": "La cobertura global, la inclusión solo en positivos y el soporte predictivo negativo imposible son diagnósticos distintos."
+      "en_caption": "Left, overall interval inclusion can be high while inclusion among positive observations is poor. Positive-only inclusion is a conditional diagnostic, without a nominal 95% target. Right, the Gaussian predictive distribution assigns mass below zero on log(1 + count), an impossible range. Together these checks expose limitations hidden by marginal coverage alone.",
+      "es_caption": "A la izquierda, la inclusión global puede ser alta con mala inclusión entre observaciones positivas. La inclusión solo en positivas es un diagnóstico condicional, sin objetivo nominal del 95%. A la derecha, la predicción gaussiana asigna masa bajo cero en log(1 + conteo), un rango imposible. Ambos diagnósticos revelan límites ocultos por la cobertura marginal."
     },
     {
       "id": "beta-performance",
@@ -977,10 +1295,26 @@
       "sources": [
         "results/spatial_detection_bayes/summary.json"
       ],
-      "cls": "figure-slide",
+      "cls": "figure-slide figure-interpretation",
       "figure": "spatial_beta_performance",
-      "en_caption": "ACA Brier 0.13725 versus 0.14051 regional. HY Brier 0.09246 versus 0.03621. High count-interval coverage accompanies wide intervals.",
-      "es_caption": "Brier ACA de 0.13725 frente a 0.14051 regional. HY de 0.09246 frente a 0.03621. La cobertura alta de conteos acompaña intervalos amplios."
+      "en_caption": "Lower Brier loss favors the model. ACA improves modestly, 0.13725 versus 0.14051, while HY worsens, 0.09246 versus 0.03621. The coverage–width plot shows that high predictive count coverage accompanies wide intervals. These held-out comparisons retain prior-only anatomical groups, so bounded probabilities alone do not establish accurate or transferable prediction.",
+      "es_caption": "Menor Brier favorece al modelo. ACA mejora modestamente: 0.13725 frente a 0.14051. HY empeora: 0.09246 frente a 0.03621. El gráfico cobertura–amplitud muestra cobertura predictiva alta con intervalos amplios. Se conservan grupos anatómicos sostenidos solo por el prior, de modo que acotar probabilidades no establece precisión ni transferencia predictiva."
+    },
+    {
+      "id": "explain-model-failure",
+      "en_title": "Prediction quality depends on error, coverage and support",
+      "es_title": "La calidad predictiva depende de error, cobertura y soporte",
+      "sources": [
+        "atlas",
+        "Murphy",
+        "Beta"
+      ],
+      "cls": "explanation-slide",
+      "citation_keys": [
+        "atlas",
+        "Murphy",
+        "Beta"
+      ]
     },
     {
       "id": "beta-aca",
@@ -990,10 +1324,10 @@
         "results/spatial_detection_bayes/ACA/known_section_posterior.tsv.gz",
         "results/spatial_detection_bayes/ACA/anatomy_posterior.tsv.gz"
       ],
-      "cls": "figure-slide",
+      "cls": "figure-slide figure-interpretation",
       "figure": "spatial_beta_aca_posterior",
-      "en_caption": "Fosb: observed fractions, fitted known-section probabilities and anatomy/new-section uncertainty remain separately labeled.",
-      "es_caption": "Fosb: fracciones observadas, probabilidades del corte conocido e incertidumbre anatómica/de un corte nuevo, rotuladas por separado."
+      "en_caption": "For Fosb, the left panel compares observed fractions with known-section posterior probabilities. The right panel separates anatomy-mean credible intervals from new-section propensity predictions. The pale interval expresses section-to-section uncertainty, and its target differs from the dark hypermean interval. These full-reference estimates describe the unexposed donor, while held-out performance is evaluated separately.",
+      "es_caption": "Para Fosb, el panel izquierdo compara fracciones observadas y probabilidades posteriores del corte conocido. El derecho separa intervalos creíbles de la media anatómica y predicciones de propensión de un corte nuevo. El intervalo claro expresa variación entre cortes y estima otro objetivo que el oscuro. Describen un donante sin exposición. La validación reserva cortes."
     },
     {
       "id": "beta-hy",
@@ -1003,10 +1337,10 @@
         "results/spatial_detection_bayes/HY/known_section_posterior.tsv.gz",
         "results/spatial_detection_bayes/HY/gene_metrics.tsv"
       ],
-      "cls": "figure-slide",
+      "cls": "figure-slide figure-interpretation",
       "figure": "spatial_beta_hy_posterior",
-      "en_caption": "Tll1: fitted probabilities stay bounded, while unseen held-out anatomies expose dependence on the stated prior.",
-      "es_caption": "Tll1: probabilidades ajustadas acotadas. Las anatomías reservadas no vistas revelan dependencia del prior."
+      "en_caption": "For Tll1, fitted section probabilities remain within 0–1 despite sparse detections. The anatomy mean and new-section propensity carry different uncertainty. A fitted map can still look plausible when held-out anatomical labels lack training support. The full HY evaluation retains those groups, making the resulting prior dependence visible in the reported prediction error.",
+      "es_caption": "Para Tll1, las probabilidades ajustadas permanecen entre 0 y 1 pese a detecciones escasas. La media anatómica y la propensión de corte nuevo tienen incertidumbres distintas. Un mapa puede parecer plausible aunque falte anatomía en entrenamiento. La evaluación HY conserva esos grupos y hace visible la dependencia del prior mediante el error predictivo."
     },
     {
       "id": "numerics",
@@ -1224,10 +1558,12 @@
     }
   ],
   "presentation_code_sha256": {
-    "scripts/build_defense_slides.py": "d5e178c6de50d04180ab70c5b9a0a491252dcfe8073892b8e2312787d5b763af",
+    "scripts/build_defense_slides.py": "97fb06e51ac90ec853d57be7e32beff909c3509bc0a469b3479d027901c93491",
     "scripts/build_defense_context_figures.py": "c0bb0d01372edc125bdf86791a86c04b3e755de153165e53d1ebc6195d59ac83",
     "scripts/build_defense_replication_figures.py": "62c4d0d41a6df22f4dc0fa24696841969de4abce9f32222285f1ae160ce5a819",
-    "scripts/build_defense_spatial_figures.py": "4a318245dfeb2e30d88f30cc9083c8d050101223dae8822220dab0d8ef23d2b7"
+    "scripts/build_defense_spatial_figures.py": "4a318245dfeb2e30d88f30cc9083c8d050101223dae8822220dab0d8ef23d2b7",
+    "scripts/build_defense_3d_figures.py": "6db06e5b7c5c9f3442ae72b1cd2ef70509eeedabeabb6f83339205684efc2b2d",
+    "scripts/defense_explanatory_content.py": "6a5c82b2a3280ee59fb20edd6ce7a68003a0005ce229c49d40d35cb01893628d"
   },
-  "source_commit_before_presentation": "6194a0df9292d747d3c8434e66130f41a258fcc5"
+  "source_commit_before_presentation": "c879437eb5c92cc1a31edbf00c93a9293fac4c26"
 }

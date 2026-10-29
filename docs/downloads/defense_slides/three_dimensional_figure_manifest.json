@@ -1,0 +1,412 @@
+{
+  "spatial_3d_hy_tll1": {
+    "stem": "spatial_3d_hy_tll1",
+    "language": "en",
+    "caption": "Hypothalamus, Tll1. Left: actually measured MERFISH imaging counts from the unexposed male Zhuang-ABCA-2 donor. Right: those same counts uniformly multiplied by 2^(-1.224053)=0.42807853, using the regional shrunken bulk effect. All 37,811 cells appear in each panel, without resampling, jitter, interpolation or mirroring. There are 667 measured positive cells; scaling preserves detection and measured zeros. Cameras, axis limits and the log₂(1+count) color scale are identical, with the full joint maximum and no value clipping. Positions belong to the registered hemisphere and are plotted ML, AP, −DV in CCF mm. These coordinates derive from registered sections rather than direct isotropic 3D acquisition. The right panel is an illustration, not a measurement of exposed cells or a Bayesian prediction.",
+    "files": {
+      "png": "results/defense_slides/figures/spatial_3d_hy_tll1.png",
+      "svg": "results/defense_slides/figures/spatial_3d_hy_tll1.svg",
+      "pdf": "results/defense_slides/figures/spatial_3d_hy_tll1.pdf"
+    },
+    "sha256": {
+      "png": "c2142bba6fdbe059bd1a0076144c0233ac804ab2b87dc4352e61ae1dc881cb9c",
+      "svg": "c71dbb07098a6a1a502f1deb5bb5fa05e085ae0e2ff5e89647d97c1599076a71",
+      "pdf": "c6f244dfd6b01ffb7bae4b9e08c29ad5f850ff910f16e3a93d07f47612c3701b"
+    },
+    "source_files": [
+      {
+        "path": "results/spatial_viewer/registered_hypothalamus_cells.tsv.gz",
+        "sha256": "2de9b2265c3f66f9f167d8304c6a86d8a96ea0e161603b22ded1726180af5c01"
+      },
+      {
+        "path": "results/spatial_viewer/reference_counts.npz",
+        "sha256": "ea701f768b446ac00ddf2dd289fdb0e44de80b1cdcd85900f79f2eb649b6c3a0"
+      },
+      {
+        "path": "results/spatial_viewer/summary.json",
+        "sha256": "b44a3825becb2e5a44f47554fc6cd9577142bebbd9c77368c9578e1f2cf252dd"
+      },
+      {
+        "path": "docs/assets/viewer/data.js",
+        "sha256": "0512df48fb54d2995aad96fe70383690e5912f7150ce3f50bbe74ff17d7dfa42"
+      }
+    ],
+    "figure_size_inches": [
+      16.0,
+      6.2
+    ],
+    "png_dimensions": [
+      2560,
+      992
+    ],
+    "text_overflow": [],
+    "no_model_refit": true,
+    "region": "HY",
+    "gene": "Tll1",
+    "cells_per_panel": 37811,
+    "measured_positive_cells": 667,
+    "shrunken_bulk_log2FC": -1.224052614,
+    "scenario_multiplier": 0.4280785302874267,
+    "coordinates": "ML=cell.z, AP=cell.x, vertical=-DV=-cell.y; CCF millimetres",
+    "display_transformation": "log2(1+count); same full-joint-maximum scale; no clipping",
+    "shared_color_min": 0,
+    "shared_color_max": 3.0,
+    "camera_elevation": 22,
+    "camera_azimuth": -58,
+    "projection": "orthographic",
+    "cell_subsampling": false,
+    "mirroring": false,
+    "interpolation": false,
+    "zero_encoding": "all measured zeros retained, faint gray glyphs",
+    "point_sizes": {
+      "zero": 1.2,
+      "positive": 12
+    },
+    "point_opacity": {
+      "zero": 0.055,
+      "positive": 0.97
+    }
+  },
+  "spatial_3d_aca_fosb": {
+    "stem": "spatial_3d_aca_fosb",
+    "language": "en",
+    "caption": "Anterior cingulate cortex, Fosb. Left: actually measured MERFISH imaging counts from the unexposed male Zhuang-ABCA-2 donor. Right: those same counts uniformly multiplied by 2^(0.997109)=1.99599627, using the regional shrunken bulk effect. All 14,582 cells appear in each panel, without resampling, jitter, interpolation or mirroring. There are 1,418 measured positive cells; scaling preserves detection and measured zeros. Cameras, axis limits and the log₂(1+count) color scale are identical, with the full joint maximum and no value clipping. Positions belong to the registered hemisphere and are plotted ML, AP, −DV in CCF mm. These coordinates derive from registered sections rather than direct isotropic 3D acquisition. The right panel is an illustration, not a measurement of exposed cells or a Bayesian prediction.",
+    "files": {
+      "png": "results/defense_slides/figures/spatial_3d_aca_fosb.png",
+      "svg": "results/defense_slides/figures/spatial_3d_aca_fosb.svg",
+      "pdf": "results/defense_slides/figures/spatial_3d_aca_fosb.pdf"
+    },
+    "sha256": {
+      "png": "f9e291eb5da7333e860483124c0f684718049de30a02b78d899e3283b2c10b34",
+      "svg": "e8320910e4fd9fbc999a2679e2a7bc23870d4faddceaaa647c3c68b7057e9fa7",
+      "pdf": "6eae82c7559ae0111e4176508c50f1d2773c9cefec5ff662aa187c1375c3d8ee"
+    },
+    "source_files": [
+      {
+        "path": "results/spatial_cortex/registered_cortex_cells.tsv.gz",
+        "sha256": "06e12ebd2a8d44f96b8935d3097a139c76edcad54d82f5f91b3c2a6796ed50d5"
+      },
+      {
+        "path": "results/spatial_cortex/reference_counts.npz",
+        "sha256": "7702331190e327f0befb47323f40c96fd2631ca5c585f77864b211b764f5bb0e"
+      },
+      {
+        "path": "results/spatial_cortex/summary.json",
+        "sha256": "05bbb34320bbcf1f75db93cae5b1d7b02a2a55498441d79db1a749d27a824581"
+      },
+      {
+        "path": "docs/assets/viewer-cortex/data.js",
+        "sha256": "e90efdb7a69cd695ff16251784640b8fef9d886dd0b9231848048a2434fd76fa"
+      }
+    ],
+    "figure_size_inches": [
+      16.0,
+      6.2
+    ],
+    "png_dimensions": [
+      2560,
+      992
+    ],
+    "text_overflow": [],
+    "no_model_refit": true,
+    "region": "ACA",
+    "gene": "Fosb",
+    "cells_per_panel": 14582,
+    "measured_positive_cells": 1418,
+    "shrunken_bulk_log2FC": 0.9971090256346716,
+    "scenario_multiplier": 1.995996271356271,
+    "coordinates": "ML=cell.z, AP=cell.x, vertical=-DV=-cell.y; CCF millimetres",
+    "display_transformation": "log2(1+count); same full-joint-maximum scale; no clipping",
+    "shared_color_min": 0,
+    "shared_color_max": 5.489026428817127,
+    "camera_elevation": 22,
+    "camera_azimuth": -58,
+    "projection": "orthographic",
+    "cell_subsampling": false,
+    "mirroring": false,
+    "interpolation": false,
+    "zero_encoding": "all measured zeros retained, faint gray glyphs",
+    "point_sizes": {
+      "zero": 1.2,
+      "positive": 12
+    },
+    "point_opacity": {
+      "zero": 0.055,
+      "positive": 0.97
+    }
+  },
+  "spatial_3d_anatomy": {
+    "stem": "spatial_3d_anatomy",
+    "language": "en",
+    "caption": "Registered positions of all 14,582 ACA and 37,811 HY cells from the same Zhuang-ABCA-2 donor. CCF coordinates come from registered sections rather than direct isotropic 3D acquisition. Gray is the previously exported whole-brain anatomical mesh from the CCF annotation, with 0.15-mm surface step. That surface does not represent expression coverage. Colored points are actually measured cells from the registered hemisphere. Gaps are not filled, cells are not reflected to the opposite hemisphere, and no expression values or donors are added. Colors identify regions only and do not encode a PM₂.₅ response.",
+    "files": {
+      "png": "results/defense_slides/figures/spatial_3d_anatomy.png",
+      "svg": "results/defense_slides/figures/spatial_3d_anatomy.svg",
+      "pdf": "results/defense_slides/figures/spatial_3d_anatomy.pdf"
+    },
+    "sha256": {
+      "png": "4a01e39fbc29c3f0ae3cd8314d43942dfcdae99d7e2e49f501b96db4358e42c2",
+      "svg": "ebd1d634fdc75c59dce5464c72cb5b1c056b5e8743def241a5a432af25be3154",
+      "pdf": "b2f572793d6689ee183a34c1836cdcbd0aedcb46fde189ab6d1feabd0e47c15c"
+    },
+    "source_files": [
+      {
+        "path": "results/spatial_viewer/registered_hypothalamus_cells.tsv.gz",
+        "sha256": "2de9b2265c3f66f9f167d8304c6a86d8a96ea0e161603b22ded1726180af5c01"
+      },
+      {
+        "path": "results/spatial_viewer/reference_counts.npz",
+        "sha256": "ea701f768b446ac00ddf2dd289fdb0e44de80b1cdcd85900f79f2eb649b6c3a0"
+      },
+      {
+        "path": "results/spatial_viewer/summary.json",
+        "sha256": "b44a3825becb2e5a44f47554fc6cd9577142bebbd9c77368c9578e1f2cf252dd"
+      },
+      {
+        "path": "docs/assets/viewer/data.js",
+        "sha256": "0512df48fb54d2995aad96fe70383690e5912f7150ce3f50bbe74ff17d7dfa42"
+      },
+      {
+        "path": "results/spatial_cortex/registered_cortex_cells.tsv.gz",
+        "sha256": "06e12ebd2a8d44f96b8935d3097a139c76edcad54d82f5f91b3c2a6796ed50d5"
+      },
+      {
+        "path": "results/spatial_cortex/reference_counts.npz",
+        "sha256": "7702331190e327f0befb47323f40c96fd2631ca5c585f77864b211b764f5bb0e"
+      },
+      {
+        "path": "results/spatial_cortex/summary.json",
+        "sha256": "05bbb34320bbcf1f75db93cae5b1d7b02a2a55498441d79db1a749d27a824581"
+      },
+      {
+        "path": "docs/assets/viewer-cortex/data.js",
+        "sha256": "e90efdb7a69cd695ff16251784640b8fef9d886dd0b9231848048a2434fd76fa"
+      }
+    ],
+    "figure_size_inches": [
+      16.0,
+      7.2
+    ],
+    "png_dimensions": [
+      2560,
+      1152
+    ],
+    "text_overflow": [],
+    "no_model_refit": true,
+    "total_measured_cells": 52393,
+    "ACA_cells": 14582,
+    "HY_cells": 37811,
+    "one_unexposed_donor": "Zhuang-ABCA-2",
+    "surface_step_mm": 0.15,
+    "surface": "existing whole-brain CCF annotation mesh; anatomical context only",
+    "cell_subsampling": false,
+    "mirroring": false,
+    "interpolation": false,
+    "coordinate_frame": "ML,AP,-DV in CCF millimetres"
+  },
+  "spatial_3d_hy_tll1_es": {
+    "stem": "spatial_3d_hy_tll1_es",
+    "language": "es",
+    "caption": "Hipotálamo, gen Tll1. Izquierda: conteos de imagen MERFISH realmente medidos del macho Zhuang-ABCA-2 sin exposición. Derecha: esos mismos conteos multiplicados uniformemente por 2^(-1.224053)=0.42807853, usando el efecto bulk regional regularizado. Se muestran las 37,811 células en ambos paneles, sin remuestreo, desplazamiento, interpolación ni espejo. Hay 667 células con conteo medido positivo; el escalamiento conserva la detección y los ceros. Las cámaras, los límites de ejes y la escala de color log₂(1+conteo) son iguales; se usa el máximo conjunto completo y no se recortan valores. Las posiciones corresponden al hemisferio registrado y se grafican ML, AP, −DV en mm CCF. Estas coordenadas derivan del registro de los cortes, no de una adquisición 3D isotrópica directa. El panel derecho es una ilustración, no una medición de células expuestas ni una predicción bayesiana.",
+    "files": {
+      "png": "results/defense_slides/figures/spatial_3d_hy_tll1_es.png",
+      "svg": "results/defense_slides/figures/spatial_3d_hy_tll1_es.svg",
+      "pdf": "results/defense_slides/figures/spatial_3d_hy_tll1_es.pdf"
+    },
+    "sha256": {
+      "png": "a61139bd55bdb36467e430f890a3a4a8c52031b7057b2e0f97108ca55208576c",
+      "svg": "7680d0dacbcfa555cba1deb4a88b2582ddf7c1c962213670267cdd660a9502a4",
+      "pdf": "01aae02506041058825266a40946fe6336bbe0bd7f37ef798076ddb9450519fa"
+    },
+    "source_files": [
+      {
+        "path": "results/spatial_viewer/registered_hypothalamus_cells.tsv.gz",
+        "sha256": "2de9b2265c3f66f9f167d8304c6a86d8a96ea0e161603b22ded1726180af5c01"
+      },
+      {
+        "path": "results/spatial_viewer/reference_counts.npz",
+        "sha256": "ea701f768b446ac00ddf2dd289fdb0e44de80b1cdcd85900f79f2eb649b6c3a0"
+      },
+      {
+        "path": "results/spatial_viewer/summary.json",
+        "sha256": "b44a3825becb2e5a44f47554fc6cd9577142bebbd9c77368c9578e1f2cf252dd"
+      },
+      {
+        "path": "docs/assets/viewer/data.js",
+        "sha256": "0512df48fb54d2995aad96fe70383690e5912f7150ce3f50bbe74ff17d7dfa42"
+      }
+    ],
+    "figure_size_inches": [
+      16.0,
+      6.2
+    ],
+    "png_dimensions": [
+      2560,
+      992
+    ],
+    "text_overflow": [],
+    "no_model_refit": true,
+    "region": "HY",
+    "gene": "Tll1",
+    "cells_per_panel": 37811,
+    "measured_positive_cells": 667,
+    "shrunken_bulk_log2FC": -1.224052614,
+    "scenario_multiplier": 0.4280785302874267,
+    "coordinates": "ML=cell.z, AP=cell.x, vertical=-DV=-cell.y; CCF millimetres",
+    "display_transformation": "log2(1+count); same full-joint-maximum scale; no clipping",
+    "shared_color_min": 0,
+    "shared_color_max": 3.0,
+    "camera_elevation": 22,
+    "camera_azimuth": -58,
+    "projection": "orthographic",
+    "cell_subsampling": false,
+    "mirroring": false,
+    "interpolation": false,
+    "zero_encoding": "all measured zeros retained, faint gray glyphs",
+    "point_sizes": {
+      "zero": 1.2,
+      "positive": 12
+    },
+    "point_opacity": {
+      "zero": 0.055,
+      "positive": 0.97
+    }
+  },
+  "spatial_3d_aca_fosb_es": {
+    "stem": "spatial_3d_aca_fosb_es",
+    "language": "es",
+    "caption": "Corteza cingulada anterior, gen Fosb. Izquierda: conteos de imagen MERFISH realmente medidos del macho Zhuang-ABCA-2 sin exposición. Derecha: esos mismos conteos multiplicados uniformemente por 2^(0.997109)=1.99599627, usando el efecto bulk regional regularizado. Se muestran las 14,582 células en ambos paneles, sin remuestreo, desplazamiento, interpolación ni espejo. Hay 1,418 células con conteo medido positivo; el escalamiento conserva la detección y los ceros. Las cámaras, los límites de ejes y la escala de color log₂(1+conteo) son iguales; se usa el máximo conjunto completo y no se recortan valores. Las posiciones corresponden al hemisferio registrado y se grafican ML, AP, −DV en mm CCF. Estas coordenadas derivan del registro de los cortes, no de una adquisición 3D isotrópica directa. El panel derecho es una ilustración, no una medición de células expuestas ni una predicción bayesiana.",
+    "files": {
+      "png": "results/defense_slides/figures/spatial_3d_aca_fosb_es.png",
+      "svg": "results/defense_slides/figures/spatial_3d_aca_fosb_es.svg",
+      "pdf": "results/defense_slides/figures/spatial_3d_aca_fosb_es.pdf"
+    },
+    "sha256": {
+      "png": "30eeb8c04fb97430ab23da1742bd33a8d52efd3fb01d4967333243637a98f004",
+      "svg": "bfc6cd0e949e77efd1e8a20a2cefe71204ac52a2b7f5b6cd7fe72b787e565b28",
+      "pdf": "b828f8539eb6c5c464d59a410ba4c68c6bd254f25b36bdfcaa08d385dced43a2"
+    },
+    "source_files": [
+      {
+        "path": "results/spatial_cortex/registered_cortex_cells.tsv.gz",
+        "sha256": "06e12ebd2a8d44f96b8935d3097a139c76edcad54d82f5f91b3c2a6796ed50d5"
+      },
+      {
+        "path": "results/spatial_cortex/reference_counts.npz",
+        "sha256": "7702331190e327f0befb47323f40c96fd2631ca5c585f77864b211b764f5bb0e"
+      },
+      {
+        "path": "results/spatial_cortex/summary.json",
+        "sha256": "05bbb34320bbcf1f75db93cae5b1d7b02a2a55498441d79db1a749d27a824581"
+      },
+      {
+        "path": "docs/assets/viewer-cortex/data.js",
+        "sha256": "e90efdb7a69cd695ff16251784640b8fef9d886dd0b9231848048a2434fd76fa"
+      }
+    ],
+    "figure_size_inches": [
+      16.0,
+      6.2
+    ],
+    "png_dimensions": [
+      2560,
+      992
+    ],
+    "text_overflow": [],
+    "no_model_refit": true,
+    "region": "ACA",
+    "gene": "Fosb",
+    "cells_per_panel": 14582,
+    "measured_positive_cells": 1418,
+    "shrunken_bulk_log2FC": 0.9971090256346716,
+    "scenario_multiplier": 1.995996271356271,
+    "coordinates": "ML=cell.z, AP=cell.x, vertical=-DV=-cell.y; CCF millimetres",
+    "display_transformation": "log2(1+count); same full-joint-maximum scale; no clipping",
+    "shared_color_min": 0,
+    "shared_color_max": 5.489026428817127,
+    "camera_elevation": 22,
+    "camera_azimuth": -58,
+    "projection": "orthographic",
+    "cell_subsampling": false,
+    "mirroring": false,
+    "interpolation": false,
+    "zero_encoding": "all measured zeros retained, faint gray glyphs",
+    "point_sizes": {
+      "zero": 1.2,
+      "positive": 12
+    },
+    "point_opacity": {
+      "zero": 0.055,
+      "positive": 0.97
+    }
+  },
+  "spatial_3d_anatomy_es": {
+    "stem": "spatial_3d_anatomy_es",
+    "language": "es",
+    "caption": "Posiciones registradas de todas las 14,582 células ACA y 37,811 células HY del mismo donante Zhuang-ABCA-2. Las coordenadas CCF proceden del registro de los cortes, no de una adquisición 3D isotrópica directa. El gris es una malla anatómica de cerebro completo previamente exportada de la anotación CCF, con paso superficial de 0.15 mm. Esa superficie no representa cobertura de expresión. Los puntos coloreados son células realmente medidas del hemisferio registrado. No se rellenan huecos, no se reflejan células al hemisferio opuesto y no se añaden valores de expresión ni donantes. Los colores solo distinguen regiones, sin codificar una respuesta a PM₂.₅.",
+    "files": {
+      "png": "results/defense_slides/figures/spatial_3d_anatomy_es.png",
+      "svg": "results/defense_slides/figures/spatial_3d_anatomy_es.svg",
+      "pdf": "results/defense_slides/figures/spatial_3d_anatomy_es.pdf"
+    },
+    "sha256": {
+      "png": "553c18a0c2dfc658d708136a1921cdd3c8a173dcc624362a1e64019e5c9e6c38",
+      "svg": "73e9579f8530610bf4c36b14df0e03e87d7d5d76589541846cfb8375eb558518",
+      "pdf": "000f2c2449d87f59db2de37ee282325fdb4bd06973473aeb35db245c5f653aeb"
+    },
+    "source_files": [
+      {
+        "path": "results/spatial_viewer/registered_hypothalamus_cells.tsv.gz",
+        "sha256": "2de9b2265c3f66f9f167d8304c6a86d8a96ea0e161603b22ded1726180af5c01"
+      },
+      {
+        "path": "results/spatial_viewer/reference_counts.npz",
+        "sha256": "ea701f768b446ac00ddf2dd289fdb0e44de80b1cdcd85900f79f2eb649b6c3a0"
+      },
+      {
+        "path": "results/spatial_viewer/summary.json",
+        "sha256": "b44a3825becb2e5a44f47554fc6cd9577142bebbd9c77368c9578e1f2cf252dd"
+      },
+      {
+        "path": "docs/assets/viewer/data.js",
+        "sha256": "0512df48fb54d2995aad96fe70383690e5912f7150ce3f50bbe74ff17d7dfa42"
+      },
+      {
+        "path": "results/spatial_cortex/registered_cortex_cells.tsv.gz",
+        "sha256": "06e12ebd2a8d44f96b8935d3097a139c76edcad54d82f5f91b3c2a6796ed50d5"
+      },
+      {
+        "path": "results/spatial_cortex/reference_counts.npz",
+        "sha256": "7702331190e327f0befb47323f40c96fd2631ca5c585f77864b211b764f5bb0e"
+      },
+      {
+        "path": "results/spatial_cortex/summary.json",
+        "sha256": "05bbb34320bbcf1f75db93cae5b1d7b02a2a55498441d79db1a749d27a824581"
+      },
+      {
+        "path": "docs/assets/viewer-cortex/data.js",
+        "sha256": "e90efdb7a69cd695ff16251784640b8fef9d886dd0b9231848048a2434fd76fa"
+      }
+    ],
+    "figure_size_inches": [
+      16.0,
+      7.2
+    ],
+    "png_dimensions": [
+      2560,
+      1152
+    ],
+    "text_overflow": [],
+    "no_model_refit": true,
+    "total_measured_cells": 52393,
+    "ACA_cells": 14582,
+    "HY_cells": 37811,
+    "one_unexposed_donor": "Zhuang-ABCA-2",
+    "surface_step_mm": 0.15,
+    "surface": "existing whole-brain CCF annotation mesh; anatomical context only",
+    "cell_subsampling": false,
+    "mirroring": false,
+    "interpolation": false,
+    "coordinate_frame": "ML,AP,-DV in CCF millimetres"
+  }
+}

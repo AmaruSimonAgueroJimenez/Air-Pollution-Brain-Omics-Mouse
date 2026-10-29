@@ -42,7 +42,7 @@ if not ozone_ready:
 
 ## Defense presentation
 
-The detailed HTML presentation covers study designs, original-result reconstruction, model equations, validation and new project results. It includes 85 slides in each language, detailed presenter notes and a technical appendix.
+The detailed HTML presentation covers study designs, original-result reconstruction, model equations, validation and new project results. It includes 100 slides in each language, visible explanations of the models and figure interpretation, detailed presenter notes and a technical appendix. Three 3D anatomical/reference–scenario views link to the full interactive maps.
 
 [Open the English slides](defense.qmd){.btn .btn-primary}
 [Abrir en español](es/defense.html){.btn .btn-outline-primary}

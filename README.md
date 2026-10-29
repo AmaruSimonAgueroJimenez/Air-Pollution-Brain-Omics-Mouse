@@ -199,7 +199,7 @@ A separate hierarchical beta-binomial detection model uses section–anatomy pos
 
 ## Bilingual defense presentation
 
-The detailed HTML deck contains 85 slides per language, including a technical appendix, 54 native MathML expressions, 19 projected figures and detailed presenter notes. Replicated author results and new project analyses form separate blocks.
+The detailed HTML deck contains 100 slides per language, including a technical appendix, 54 native MathML expressions, 22 projected figures and detailed presenter notes. Replicated author results and new project analyses form separate blocks. Twelve additional explanation slides unpack the workflow, models, uncertainty and interpretation. Three measured-coordinate 3D views show anatomical context and HY/Tll1 and ACA/Fosb reference–scenario comparisons, with active links to the same-language interactive viewers. The static previews work offline; interactive viewer links require internet.
 
 - [English presentation](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/defense.html)
 - [Presentación en español](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/defense.html)

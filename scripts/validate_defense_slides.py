@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Validate bilingual presentation structure and provenance, apart from visual QA."""
 from pathlib import Path
+import base64
 import hashlib
 import json
 import re
@@ -34,6 +35,29 @@ def main():
         images=soup.select(".reveal .slides img")
         if any(not (i.get("src") or i.get("data-src","")).startswith("data:") for i in images):
             errors.append(f"{lang}: figure requires an external asset")
+        figure_specs=[s for s in manifest["slides"] if s.get("figure")]
+        if len(images)!=len(figure_specs):
+            errors.append(f"{lang}: figure count differs from the slide specification")
+        for element,spec in zip(images,figure_specs):
+            uri=element.get("src") or element.get("data-src", "")
+            stem=spec["figure"]+("_es" if lang=="es" else "")
+            original=ROOT/"results/defense_slides/figures"/(stem+".png")
+            if not uri.startswith("data:image/png;base64,") or hashlib.sha256(base64.b64decode(uri.split(",",1)[1])).digest()!=hashlib.sha256(original.read_bytes()).digest():
+                errors.append(f"{lang}: embedded scientific figure differs from saved output: {stem}")
+        explanations=[s for s in slides if (s.get("id") or "").startswith("explain-")]
+        if len(explanations)!=12:
+            errors.append(f"{lang}: expected twelve visible explanation slides")
+        for slide in explanations:
+            visible=" ".join(p.get_text(" ",strip=True) for p in slide.find_all("p",recursive=False))
+            if len(visible.split())<45:
+                errors.append(f"{lang}: explanation lacks visible detail: {slide['id']}")
+        for sid,page in (("hy-3d","viewer.html"),("aca-3d","cortex_viewer.html")):
+            slide=soup.find("section",id=sid)
+            target=BASE+("es/" if lang=="es" else "")+page
+            image_link=slide.select_one("a:has(img)") if slide else None
+            text_links=slide.select(".viewer-links a") if slide else []
+            if image_link is None or image_link.get("href")!=target or not any(a.get("href")==target for a in text_links):
+                errors.append(f"{lang}: missing linked 3D image or viewer text link: {sid}")
         resources=[s.get("src","") for s in soup.find_all("script",src=True)]
         resources += [s.get("href","") for s in soup.select("link[rel=stylesheet]")]
         external=[u for u in resources if not u.startswith("data:")]
@@ -69,6 +93,7 @@ def main():
             if not all(t in found for t in tokens): errors.append(f"{lang}: missing result anchors in {sid}")
         checks[lang]={"slides":len(slides),"notes":len(notes),"native_mathml_expressions":len(math),
                       "embedded_figures":len(images),"embedded_runtime":not external,
+                      "visible_explanation_slides":len(explanations),"linked_gene_3d_maps":2,
                       "published_evidence_links":source_links,"scholarly_citations":len(scholarly),"bytes":p.stat().st_size,
                       "sha256":hashlib.sha256(p.read_bytes()).hexdigest()}
     for item in manifest["source_files"]:

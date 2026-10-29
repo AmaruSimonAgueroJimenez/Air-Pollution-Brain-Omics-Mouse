@@ -32,6 +32,7 @@ PAPERS = {
     "miRNA": ("Ku et al. 2017", "https://doi.org/10.1186/s12989-017-0215-3"),
     "O3": ("Nakamya et al. 2025", "https://doi.org/10.3390/ijms26062407"),
     "atlas": ("Zhang et al. 2023", "https://doi.org/10.1038/s41586-023-06808-9"),
+    "Allen": ("Allen CCF, 2020 annotation", "https://alleninstitute.github.io/abc_atlas_access/descriptions/Allen-CCF-2020.html"),
     "DESeq2": ("Love et al. 2014", "https://doi.org/10.1186/s13059-014-0550-8"),
     "limma": ("Ritchie et al. 2015", "https://doi.org/10.1093/nar/gkv007"),
     "Salmon": ("Patro et al. 2017", "https://doi.org/10.1038/nmeth.4197"),
@@ -1480,9 +1481,68 @@ def source_url(source, lang):
     label="/".join(p.parts[-2:])
     return label,target
 
+def prepare_content():
+    """Keep the explanatory HTML and its linked measured 3D maps together."""
+    from defense_explanatory_content import augment
+    SLIDES.clear()
+    SOURCES.clear()
+    content()
+    augment(SLIDES)
+    manifest=J("results/defense_slides/three_dimensional_figure_manifest.json")
+
+    def viewer_link(en_label,es_label,page):
+        return dict(en_label=en_label,es_label=es_label,en_url=BASE+page,
+                    es_url=BASE+"es/"+page)
+
+    def map_slide(sid,en_title,es_title,stem,en_caption,es_caption,citation_keys,links):
+        en_record=manifest[stem]
+        es_record=manifest[stem+"_es"]
+        sources=[entry["path"] for entry in en_record["source_files"]]
+        result=dict(id=sid,en_title=en_title,es_title=es_title,en="",es="",
+            en_notes=en_record["caption"]+" The preview and text link open the full interactive viewer online. Drag the 3D scene to rotate it, and use the gene selector to inspect other measured candidates. The static preview uses the full color range and remains available offline. The interactive viewer also offers a clearly labeled optional 99th-percentile color cap, which changes the display only.",
+            es_notes=es_record["caption"]+" La imagen y el enlace abren el visor interactivo completo con conexión. Arrastre la escena para rotarla y use el selector génico para explorar otros candidatos medidos. La vista estática usa el rango de color completo y permanece disponible sin conexión. El visor interactivo también ofrece un límite opcional y rotulado de color al percentil 99, que solo cambia la visualización.",
+            en_caption=en_caption,es_caption=es_caption,figure=stem,
+            cls="figure-slide figure-interpretation map3d-slide",sources=sources,
+            citation_keys=citation_keys,viewer_links=links)
+        if len(links)==1:
+            result["viewer_url_en"]=links[0]["en_url"]
+            result["viewer_url_es"]=links[0]["es_url"]
+        return result
+
+    anatomy=map_slide("anatomy-3d","The measured regions in the 3D brain reference",
+        "Las regiones medidas en la referencia cerebral 3D","spatial_3d_anatomy",
+        "The gray whole-brain surface supplies anatomical context. Rust marks 14,582 ACA cells and teal marks 37,811 HY cells at their registered CCF positions. These 52,393 cells come from one unexposed donor and one registered hemisphere. The reference locates measured cells without filling unsampled regions or mirroring cells into the opposite hemisphere.",
+        "El contorno gris del cerebro completo aporta contexto anatómico. El rojizo ubica 14,582 células ACA y el verdeazulado, 37,811 HY en posiciones CCF registradas. Son 52,393 células de un donante sin exposición y un hemisferio registrado. Se localizan células sin rellenar regiones no muestreadas ni reflejar células al hemisferio opuesto.",
+        ["atlas","Allen"],[viewer_link("Explore the hypothalamus in 3D","Explorar el hipotálamo en 3D","viewer.html"),
+                   viewer_link("Explore the cortex in 3D","Explorar la corteza en 3D","cortex_viewer.html")])
+    anatomy["en_notes"]=manifest["spatial_3d_anatomy"]["caption"]+" The two text links open the full hypothalamus and cortex viewers online. The static anatomy preview remains available offline. The gray full-brain mesh supplies anatomical context, while measured cells occupy the source's registered hemisphere only. No reference cells are mirrored into the other hemisphere."
+    anatomy["es_notes"]=manifest["spatial_3d_anatomy_es"]["caption"]+" Los dos enlaces de texto abren los visores completos de hipotálamo y corteza con conexión. La anatomía estática permanece disponible sin conexión. La malla gris de cerebro completo aporta contexto, mientras las células medidas ocupan solo el hemisferio registrado de la fuente. No se reflejan células de referencia al otro hemisferio."
+    hy=map_slide("hy-3d","Hypothalamus / Tll1: measured reference and PM₂.₅ scenario",
+        "Hipotálamo / Tll1: referencia medida y escenario PM₂.₅","spatial_3d_hy_tll1",
+        "Left shows measured Tll1 counts. Right multiplies every value by 0.42808, carrying the regional shrunken effect into an illustrative scenario. Both panels retain 37,811 positions and the same 667 positive cells. A common color scale reveals the magnitude change. The display does not identify cell-specific exposure responses or infer cell loss.",
+        "La izquierda muestra conteos Tll1 medidos. La derecha multiplica cada valor por 0.42808 e ilustra el efecto regional regularizado. Ambos paneles conservan 37,811 posiciones y las mismas 667 células positivas. La escala común muestra el cambio de magnitud. El gráfico no identifica respuestas celulares específicas a la exposición ni infiere pérdida celular.",
+        ["HY","atlas"],[viewer_link("Open the interactive Tll1 map","Abrir el mapa interactivo de Tll1","viewer.html")])
+    aca=map_slide("aca-3d","Cortex / Fosb: measured reference and PM₂.₅ scenario",
+        "Corteza / Fosb: referencia medida y escenario PM₂.₅","spatial_3d_aca_fosb",
+        "Left shows measured Fosb counts. Right applies the regional 1.996-fold multiplier to the same reference. The 14,582 positions and 1,418 positive cells remain fixed, with a shared full color scale. The brighter scenario illustrates a bulk effect. It does not establish which cortical layers or cell types respond to PM₂.₅.",
+        "La izquierda muestra conteos Fosb medidos. La derecha aplica el multiplicador regional de 1.996 a esa referencia. Se mantienen 14,582 posiciones y 1,418 células positivas, con escala de color común completa. El escenario más intenso ilustra un efecto bulk, sin establecer qué capas o tipos celulares corticales responden a PM₂.₅.",
+        ["ACA","atlas"],[viewer_link("Open the interactive Fosb map","Abrir el mapa interactivo de Fosb","cortex_viewer.html")])
+    for anchor,items in (("coordinates",[anatomy]),("scenario-results",[hy,aca])):
+        index=next(i for i,s in enumerate(SLIDES) if s["id"]==anchor)+1
+        SLIDES[index:index]=items
+    next(s for s in SLIDES if s["id"]=="workflow")["viewer_links"]=anatomy["viewer_links"]
+    for s in SLIDES:
+        if s["id"].startswith("explain-"):
+            s["citation_keys"]=[key for key in s["sources"] if key in PAPERS]
+        for path in s["sources"]:
+            if path not in PAPERS and not path.startswith("http"):
+                SOURCES.add(path)
+
 def scholarly_references(s):
     """Scientific citations are publications/resources, never internal JSON logs."""
     sid=s["id"]
+    if s.get("citation_keys"):
+        return s["citation_keys"]
     if sid in {"discussion","a-rebuild","future","a-outstanding"}: return []
     if "gaussian" in sid:
         return ["atlas","Murphy","GPML"][:2 if "diagnostics" in sid or "rmse" in sid else 3]
@@ -1554,6 +1614,7 @@ def composition(s,lang):
     }
     if s["id"] in hero:
         number,en,es=hero[s["id"]]
+        if s["id"]=="future" and lang=="es": number="SIGUE"
         label=en if lang=="en" else es
         left=f'<div class="statement-number">{number}</div><div class="statement-label">{label}</div>'
         return block(block(left,"statement-metric")+block(body,"statement-copy"),"statement-grid"),["layout-statement"]
@@ -1622,10 +1683,17 @@ execute:
         if s.get("figure"):
             stem=s["figure"]+("_es" if lang=="es" else "")
             image_path=f"{prefix}assets/figures/defense_slides/{stem}.png"
-            chunks.append(f'![]({image_path}){{fig-alt="{html.escape(s[lang+"_caption"],quote=True)}" width=100%}}\n')
+            image=f'![]({image_path}){{fig-alt="{html.escape(s[lang+"_caption"],quote=True)}" width=100%}}'
+            viewer=s.get("viewer_url_"+lang)
+            chunks.append((f'[{image}]({viewer}){{target="_blank"}}' if viewer else image)+"\n")
             chunks.append(block(s[lang+"_caption"],"figure-caption"))
         else:
             chunks.append(body+"\n\n")
+        if s.get("viewer_links"):
+            labels=[]
+            for item in s["viewer_links"]:
+                labels.append(f'[{item[lang+"_label"]}]({item[lang+"_url"]}){{target="_blank"}}')
+            chunks.append(block(" · ".join(labels),"viewer-links"))
         links=[]
         for src in scholarly_references(s):
             label,url=PAPERS[src]
@@ -1666,9 +1734,9 @@ def main():
     parser.add_argument("--package",action="store_true")
     args=parser.parse_args()
     if args.figures:
-        for script in ("build_defense_context_figures.py","build_defense_replication_figures.py","build_defense_spatial_figures.py"):
+        for script in ("build_defense_context_figures.py","build_defense_replication_figures.py","build_defense_spatial_figures.py","build_defense_3d_figures.py"):
             subprocess.run([str(ROOT/".venv-analysis/bin/python"),str(ROOT/"scripts"/script)],check=True)
-    content()
+    prepare_content()
     ids=[s["id"] for s in SLIDES]
     if len(ids)!=len(set(ids)):
         raise ValueError("Duplicate slide IDs")
@@ -1684,7 +1752,7 @@ def main():
              "slides_per_language":len(SLIDES)+1,"explicit_ids":ids,"title_slide_id":"title-slide",
              "main_content_slides":next(i+1 for i,s in enumerate(SLIDES) if s["id"]=="appendix"),
              "source_files":source_files,"slides":[{k:v for k,v in s.items() if k not in {"en","es","en_notes","es_notes"}} for s in SLIDES],
-             "presentation_code_sha256":{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [ROOT/"scripts"/name for name in ("build_defense_slides.py","build_defense_context_figures.py","build_defense_replication_figures.py","build_defense_spatial_figures.py")]},
+             "presentation_code_sha256":{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [ROOT/"scripts"/name for name in ("build_defense_slides.py","build_defense_context_figures.py","build_defense_replication_figures.py","build_defense_spatial_figures.py","build_defense_3d_figures.py","defense_explanatory_content.py")]},
              "source_commit_before_presentation":subprocess.check_output(["git","rev-parse","HEAD"],cwd=ROOT,text=True).strip()}
     (OUT/"presentation_manifest.json").write_text(json.dumps(receipt,indent=2,ensure_ascii=False)+"\n")
     print(f"{len(SLIDES)+1} slides per language, including cover and technical appendix")

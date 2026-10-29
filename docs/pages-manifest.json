@@ -11,12 +11,12 @@
     {
       "path": "advanced_results.html",
       "bytes": 73730,
-      "sha256": "2473621738b86382b03431919a4b4dac6b4ef2462faacbf0f3531469dde043c5"
+      "sha256": "caf5d0dbb97767820bc48971e5e162d6d34bbc27e6654d7a2dc96e40c0d83e50"
     },
     {
       "path": "assets/defense-slides/defense.css",
-      "bytes": 18497,
-      "sha256": "648417c3844049224d90fd04d8aee908c397573db2f75a920fc8a3d08211f634"
+      "bytes": 19354,
+      "sha256": "3e3dc31c552f54f9cf31dc6a45d8426dfa4e2597f9889ccb39ca583f3b72bdb3"
     },
     {
       "path": "assets/defense-slides/defense.js",
@@ -592,6 +592,96 @@
       "path": "assets/figures/defense_slides/rep_ozone_primary_es.svg",
       "bytes": 15985,
       "sha256": "a987fb440639a10496ce4acef6a72becab8dff5fbc19666c83c98d66efe6e339"
+    },
+    {
+      "path": "assets/figures/defense_slides/spatial_3d_aca_fosb.pdf",
+      "bytes": 303268,
+      "sha256": "6eae82c7559ae0111e4176508c50f1d2773c9cefec5ff662aa187c1375c3d8ee"
+    },
+    {
+      "path": "assets/figures/defense_slides/spatial_3d_aca_fosb.png",
+      "bytes": 520607,
+      "sha256": "f9e291eb5da7333e860483124c0f684718049de30a02b78d899e3283b2c10b34"
+    },
+    {
+      "path": "assets/figures/defense_slides/spatial_3d_aca_fosb.svg",
+      "bytes": 513346,
+      "sha256": "e8320910e4fd9fbc999a2679e2a7bc23870d4faddceaaa647c3c68b7057e9fa7"
+    },
+    {
+      "path": "assets/figures/defense_slides/spatial_3d_aca_fosb_es.pdf",
+      "bytes": 301763,
+      "sha256": "b828f8539eb6c5c464d59a410ba4c68c6bd254f25b36bdfcaa08d385dced43a2"
+    },
+    {
+      "path": "assets/figures/defense_slides/spatial_3d_aca_fosb_es.png",
+      "bytes": 519230,
+      "sha256": "30eeb8c04fb97430ab23da1742bd33a8d52efd3fb01d4967333243637a98f004"
+    },
+    {
+      "path": "assets/figures/defense_slides/spatial_3d_aca_fosb_es.svg",
+      "bytes": 513347,
+      "sha256": "bfc6cd0e949e77efd1e8a20a2cefe71204ac52a2b7f5b6cd7fe72b787e565b28"
+    },
+    {
+      "path": "assets/figures/defense_slides/spatial_3d_anatomy.pdf",
+      "bytes": 207066,
+      "sha256": "b2f572793d6689ee183a34c1836cdcbd0aedcb46fde189ab6d1feabd0e47c15c"
+    },
+    {
+      "path": "assets/figures/defense_slides/spatial_3d_anatomy.png",
+      "bytes": 610477,
+      "sha256": "4a01e39fbc29c3f0ae3cd8314d43942dfcdae99d7e2e49f501b96db4358e42c2"
+    },
+    {
+      "path": "assets/figures/defense_slides/spatial_3d_anatomy.svg",
+      "bytes": 328816,
+      "sha256": "ebd1d634fdc75c59dce5464c72cb5b1c056b5e8743def241a5a432af25be3154"
+    },
+    {
+      "path": "assets/figures/defense_slides/spatial_3d_anatomy_es.pdf",
+      "bytes": 206480,
+      "sha256": "000f2c2449d87f59db2de37ee282325fdb4bd06973473aeb35db245c5f653aeb"
+    },
+    {
+      "path": "assets/figures/defense_slides/spatial_3d_anatomy_es.png",
+      "bytes": 622907,
+      "sha256": "553c18a0c2dfc658d708136a1921cdd3c8a173dcc624362a1e64019e5c9e6c38"
+    },
+    {
+      "path": "assets/figures/defense_slides/spatial_3d_anatomy_es.svg",
+      "bytes": 328986,
+      "sha256": "73e9579f8530610bf4c36b14df0e03e87d7d5d76589541846cfb8375eb558518"
+    },
+    {
+      "path": "assets/figures/defense_slides/spatial_3d_hy_tll1.pdf",
+      "bytes": 269427,
+      "sha256": "c6f244dfd6b01ffb7bae4b9e08c29ad5f850ff910f16e3a93d07f47612c3701b"
+    },
+    {
+      "path": "assets/figures/defense_slides/spatial_3d_hy_tll1.png",
+      "bytes": 570672,
+      "sha256": "c2142bba6fdbe059bd1a0076144c0233ac804ab2b87dc4352e61ae1dc881cb9c"
+    },
+    {
+      "path": "assets/figures/defense_slides/spatial_3d_hy_tll1.svg",
+      "bytes": 469334,
+      "sha256": "c71dbb07098a6a1a502f1deb5bb5fa05e085ae0e2ff5e89647d97c1599076a71"
+    },
+    {
+      "path": "assets/figures/defense_slides/spatial_3d_hy_tll1_es.pdf",
+      "bytes": 267922,
+      "sha256": "01aae02506041058825266a40946fe6336bbe0bd7f37ef798076ddb9450519fa"
+    },
+    {
+      "path": "assets/figures/defense_slides/spatial_3d_hy_tll1_es.png",
+      "bytes": 569384,
+      "sha256": "a61139bd55bdb36467e430f890a3a4a8c52031b7057b2e0f97108ca55208576c"
+    },
+    {
+      "path": "assets/figures/defense_slides/spatial_3d_hy_tll1_es.svg",
+      "bytes": 469335,
+      "sha256": "7680d0dacbcfa555cba1deb4a88b2582ddf7c1c962213670267cdd660a9502a4"
     },
     {
       "path": "assets/figures/defense_slides/spatial_aca_measured.pdf",
@@ -13636,12 +13726,12 @@
     {
       "path": "cortex_viewer.html",
       "bytes": 57073,
-      "sha256": "19f801e49f072d983fda65d9fd44e27b2757684d0f4320c3d9b81e4657bd0619"
+      "sha256": "eb8adac496c704e65ddb51f7a49163a0ae1ebf91d9e0f91524839cb39404fe53"
     },
     {
       "path": "defense.html",
-      "bytes": 7665896,
-      "sha256": "46413205aba64de09c55a79d47f8a8e2400c9361195fe1e7a58918a59ec5d79b"
+      "bytes": 9985331,
+      "sha256": "49265268f011640a87c5af9abac8a3d3dede0e88321b0994759743d15fd5d079"
     },
     {
       "path": "downloads/advanced_omics/GO_heatmap_term_selection.tsv",
@@ -13854,6 +13944,11 @@
       "sha256": "516be83342e6523d63ff60455f2e6eb48800f8f1910b133ecce89c1728b8e141"
     },
     {
+      "path": "downloads/code/build_defense_3d_figures.py",
+      "bytes": 14523,
+      "sha256": "6db06e5b7c5c9f3442ae72b1cd2ef70509eeedabeabb6f83339205684efc2b2d"
+    },
+    {
       "path": "downloads/code/build_defense_context_figures.py",
       "bytes": 13363,
       "sha256": "c0bb0d01372edc125bdf86791a86c04b3e755de153165e53d1ebc6195d59ac83"
@@ -13865,8 +13960,8 @@
     },
     {
       "path": "downloads/code/build_defense_slides.py",
-      "bytes": 188420,
-      "sha256": "d5e178c6de50d04180ab70c5b9a0a491252dcfe8073892b8e2312787d5b763af"
+      "bytes": 195654,
+      "sha256": "97fb06e51ac90ec853d57be7e32beff909c3509bc0a469b3479d027901c93491"
     },
     {
       "path": "downloads/code/build_defense_spatial_figures.py",
@@ -13887,6 +13982,11 @@
       "path": "downloads/code/build_spatial_viewer.py",
       "bytes": 14318,
       "sha256": "a63bee45a79daf14037f60ebe7a8c22c4cdf7349fd24d5687445c00475bb7379"
+    },
+    {
+      "path": "downloads/code/defense_explanatory_content.py",
+      "bytes": 47883,
+      "sha256": "6a5c82b2a3280ee59fb20edd6ce7a68003a0005ce229c49d40d35cb01893628d"
     },
     {
       "path": "downloads/code/download_data.py",
@@ -13965,8 +14065,8 @@
     },
     {
       "path": "downloads/code/validate_defense_slides.py",
-      "bytes": 5497,
-      "sha256": "cf4d4ca057dd410eb2b77c158d9ad32e1c16db460bf24f95d0f9d151fafe686b"
+      "bytes": 7359,
+      "sha256": "90efad5cb54046bf9a392bfeeedb3e346edbec34369c2d76e87415c104d2b1b9"
     },
     {
       "path": "downloads/code/validate_hypothalamus_deseq2.R",
@@ -14075,8 +14175,8 @@
     },
     {
       "path": "downloads/defense-slides-bilingual.zip",
-      "bytes": 9517370,
-      "sha256": "22db0ecbba288a7c04a82d646a4ce527924bb8e293e36ed7610f490522c242b3"
+      "bytes": 12941470,
+      "sha256": "f53ceab13b3bd8c0bb232e456898002423c9467e1ae78d41c8e114acf636791c"
     },
     {
       "path": "downloads/defense_slides/context_figure_manifest.json",
@@ -14085,8 +14185,8 @@
     },
     {
       "path": "downloads/defense_slides/presentation_manifest.json",
-      "bytes": 45035,
-      "sha256": "956853524ff5ac15486aa955b796986274bed1002563eea296499b5778f349a9"
+      "bytes": 67586,
+      "sha256": "f0dd6728c5705bec6b4b9cb86398e85b56595e8a516e68665c2c93c40c798add"
     },
     {
       "path": "downloads/defense_slides/replication_figure_manifest.json",
@@ -14099,9 +14199,14 @@
       "sha256": "c7e984d7d00114fd41b26fab32943fc30a5706813cd33a035eb9a77eab35714e"
     },
     {
+      "path": "downloads/defense_slides/three_dimensional_figure_manifest.json",
+      "bytes": 18803,
+      "sha256": "9b20501024442d9810d1214494ebfe8a391bcbd75a37016e791b604d848f39c3"
+    },
+    {
       "path": "downloads/defense_slides/validation.json",
-      "bytes": 928,
-      "sha256": "2050170ddd6961a721943998ca8ebffdf2e0aba54cd5f502a2cf5ee9aee079ab"
+      "bytes": 1078,
+      "sha256": "29e5f8c1af6905e2bb0f391e572d5f440e6cfccd0fe38a7af032d3c1d2338c50"
     },
     {
       "path": "downloads/enrichment/cortex/GSEA_all_terms.tsv",
@@ -16115,8 +16220,8 @@
     },
     {
       "path": "downloads/report-source.zip",
-      "bytes": 337891,
-      "sha256": "8ff62af6a675b70a635da2744c96ad71a36a3d0fffa9c427789ae69016bfcd4e"
+      "bytes": 355934,
+      "sha256": "d66c5e3dc93c86c984cdfff58bbbaacc2c88a0dccadb6ca5c769f7b21e8581aa"
     },
     {
       "path": "downloads/report_validation/browser_checks.json",
@@ -16131,7 +16236,7 @@
     {
       "path": "downloads/report_validation/compiled_report_checks.json",
       "bytes": 614,
-      "sha256": "5c4f402a8007b3b8e3a69eb48eedc386229ee5bad39645d80fba12c92d777a1c"
+      "sha256": "285721c3b7901a094a52e37cd5175af454c8074ec463ab5884b71f3085d97588"
     },
     {
       "path": "downloads/report_validation/experimental_design_review.json",
@@ -16171,7 +16276,7 @@
     {
       "path": "downloads/report_validation/published_report_checks.json",
       "bytes": 608,
-      "sha256": "321897a61b2637b50e6f7a4f3bf8818f972556a1bcff6b8df6fd3fac7283a22f"
+      "sha256": "6c58b04d4aa06036d75ea3db4dd326f8b6250ee36e498ec6782bd49f1215da72"
     },
     {
       "path": "downloads/report_validation/significant_gene_panel_match.json",
@@ -16691,7 +16796,7 @@
     {
       "path": "es/advanced_results.html",
       "bytes": 75800,
-      "sha256": "0297ff51090920724baec338fb796c7f70f5f0882583a6d52742afefbfe2b1d7"
+      "sha256": "d48043b41fa8da4742d2e1f024c2f7cb4533fc6cf9360c821628f9a35e4e6e2e"
     },
     {
       "path": "es/cortex.html",
@@ -16701,12 +16806,12 @@
     {
       "path": "es/cortex_viewer.html",
       "bytes": 57872,
-      "sha256": "be0092f1ebad81a2bce22d9b2524a42aa1ee02ca2883f7d9203d2cf9fe378050"
+      "sha256": "06c089ac52094b7dad9fceb5d1ff7d4c9963e0d0ef235fef3e855950378298bd"
     },
     {
       "path": "es/defense.html",
-      "bytes": 7786012,
-      "sha256": "9bc5446f37a921dce247a6ebb02827c4fea6e111b7f6919e931cccf266828ae4"
+      "bytes": 10118079,
+      "sha256": "7d3d406fa22c1961755b7ad70438b32b74a6df034803013b9ccf7d6b976348d4"
     },
     {
       "path": "es/enrichment.html",
@@ -16716,12 +16821,12 @@
     {
       "path": "es/gene_profiles.html",
       "bytes": 99673,
-      "sha256": "ec4a2f114734a75b0e30ffa63e70493913b2e8c370c2fe21f802de54fc5b8b19"
+      "sha256": "1f88810217b6c7d5d5202e04746f1550c6f9cbe72dd5dc40491223ad372f3573"
     },
     {
       "path": "es/index.html",
-      "bytes": 72965,
-      "sha256": "e7cd7ca15b84c1fb6054bddc036a2c7202aa398a8e2670f72bab6e83b101fe44"
+      "bytes": 73299,
+      "sha256": "8326f30a0457ce8701d3d12ce46fb6545e7b0e4ca668a084aafd6ff2c9bade2e"
     },
     {
       "path": "es/introduction.html",
@@ -16731,7 +16836,7 @@
     {
       "path": "es/methods.html",
       "bytes": 108942,
-      "sha256": "bfcb399efee9742857be2f4fb2eab615503036b9b1769cbd1615006bd3f73092"
+      "sha256": "e0789018c27fbf36504bcb7e7fd587667a0ba4ab740bf838a5a5743a778c4103"
     },
     {
       "path": "es/mirna.html",
@@ -16746,17 +16851,17 @@
     {
       "path": "es/replication.html",
       "bytes": 85994,
-      "sha256": "7c2d8ac9db117afb3cd99913f4860a2e74a6ae7c0eb3422b4af384258034eb31"
+      "sha256": "4131408009ca21b1fa081ac3477ec7fcca9cb6136085e3916dda47b040fbba4c"
     },
     {
       "path": "es/reproducibility.html",
-      "bytes": 137920,
-      "sha256": "6477bd68ca3b6184fe33bf70e11d6cb5172ba430bec4a2ddc0127467921f325b"
+      "bytes": 138536,
+      "sha256": "a8c51e085ec1912df1a6c2ba510e9c697739e417434c9d2649e8ac9922bba7d7"
     },
     {
       "path": "es/results.html",
       "bytes": 86379,
-      "sha256": "cb952c962af853c92d7eed4765b938f8175742d2b300f7b19d03d4705ddb8a98"
+      "sha256": "a63435d44937d632e1f6dc1206d61ff65d7b9864dea803cd57e42288255a01ce"
     },
     {
       "path": "es/robots.txt",
@@ -16765,8 +16870,8 @@
     },
     {
       "path": "es/search.json",
-      "bytes": 427776,
-      "sha256": "9331d45edde3af222cd52f7d9caf3a487175f0a6ffafcef8c341356b05fd55c8"
+      "bytes": 457922,
+      "sha256": "c5570a9c6f78e6b48539fc79d19ece5328dc5a5d714d7047f9266399c2055aba"
     },
     {
       "path": "es/site_libs/bootstrap/bootstrap-5dd942ac47374bdb5320a9bbd29a7aa4.min.css",
@@ -17181,17 +17286,17 @@
     {
       "path": "es/sitemap.xml",
       "bytes": 3228,
-      "sha256": "13a76ebd066175563cd95e9f6e818afff057a1f22ef6d14b0b46c34ade206423"
+      "sha256": "241177d7bf47f60a3431ab8e3c3f50f6d008200e761a197e99529b41bd9c4e3c"
     },
     {
       "path": "es/spatial_bayes.html",
       "bytes": 123034,
-      "sha256": "294f4e6315002130dca4b5608b0b74e2a86a6e0592f2c7a967af9cbc98daab50"
+      "sha256": "519a314f5c11f2b9a8433b1f7ed1d2a89ae2bbaec6dc24c1d6935398dda8b186"
     },
     {
       "path": "es/spatial_explorer.html",
       "bytes": 67536,
-      "sha256": "e11bb80a89878725663a032f2e8fc6cb1e178a2fcf99feeac3c1c9019b1f5049"
+      "sha256": "56042f81d00f28556dd2cac9195671030f9a3227b98b7c76a7d84425ff72ea93"
     },
     {
       "path": "es/spatial_reference.html",
@@ -17201,17 +17306,17 @@
     {
       "path": "es/viewer.html",
       "bytes": 54996,
-      "sha256": "9389fe27887d66216d1b1a8c812c0af7c125f2b61da5ecf9f0fe47b8d0a57619"
+      "sha256": "693ecd877a577f1aaa855c0103185e52a3cb536e51a4ab70b69ce6bcda8ef2fc"
     },
     {
       "path": "gene_profiles.html",
       "bytes": 98194,
-      "sha256": "a19566c2adf2b63dac82fcbefc65c054b31299ad32cd172cd2d3c721241cddcf"
+      "sha256": "02134dfb674686dd21129562b5a6e284ae521802721c348895ee5d598e98ebe8"
     },
     {
       "path": "index.html",
-      "bytes": 70639,
-      "sha256": "3587996fff8d9fa0942c5cc800db5e66e99e2225d6c28db0167400eb4ee323e0"
+      "bytes": 70929,
+      "sha256": "bd07648b37d0e49771c1c0b16c9eb17ae9b2e8b4b57e50ca89b1df22362205ba"
     },
     {
       "path": "introduction.html",
@@ -17221,7 +17326,7 @@
     {
       "path": "methods.html",
       "bytes": 102092,
-      "sha256": "2d5120f9fdd1d65ef20f8b498dfd4ae350fbff49960f81b4cc6151bebbfccbe2"
+      "sha256": "cf7866feb9e6550686c11397f10babcb40f1c52d691c80820cf0927ebda59765"
     },
     {
       "path": "mirna.html",
@@ -17236,17 +17341,17 @@
     {
       "path": "replication.html",
       "bytes": 84759,
-      "sha256": "03da964a364154a0a4dcacbfe4b9b08b68b15ed09e10f67c61ef61f467f1d5e9"
+      "sha256": "0c6782efc488099ff434a18d14717aba3ea6e174fc690e2d423a737348b702c6"
     },
     {
       "path": "reproducibility.html",
-      "bytes": 126035,
-      "sha256": "06a8e23d02888e9fd27e096ed5a08d177f7eee6da7e8310c39097f5ed046c1c4"
+      "bytes": 126677,
+      "sha256": "d1cffd33a4e19e86ee708a7f9bcba109979ce53a54f6b17f7c67a0d616bcdc21"
     },
     {
       "path": "results.html",
       "bytes": 83337,
-      "sha256": "8e33e2d4b9f0e653c62d27aca675911f69707be7f57ed7c0b9ce69c632c3f3f7"
+      "sha256": "3fbccc2e7bdb19ec8d67489db6bd25af3367a97f6ca5fe03753f0814c4e93e39"
     },
     {
       "path": "robots.txt",
@@ -17255,8 +17360,8 @@
     },
     {
       "path": "search.json",
-      "bytes": 392351,
-      "sha256": "db12ed4346f65308f912fd92e2bff1efe5d8d80dc7f9fffe162404ea427a8aa9"
+      "bytes": 422274,
+      "sha256": "7606bee226cf90c25cb64d0cad7fddafc6f23f1ac9169d782f4dd7871c3f4bee"
     },
     {
       "path": "site_libs/bootstrap/bootstrap-5dd942ac47374bdb5320a9bbd29a7aa4.min.css",
@@ -17671,17 +17776,17 @@
     {
       "path": "sitemap.xml",
       "bytes": 3174,
-      "sha256": "6728688b58e888dff2d1336c2384ad689d258f134eb966e4977b7162f32bd769"
+      "sha256": "8231575218e34f3436e6becfd5f8f4f251a82f60d63e8d56f8df83182a23baf1"
     },
     {
       "path": "spatial_bayes.html",
       "bytes": 119326,
-      "sha256": "ee2468b977e149c29a0d2972e96904db0b79bf8caec8a387212179e70af8b567"
+      "sha256": "6dccf268c607c32d90117dd5533bfa3fe60cec6f2a50fcac5fd5e3cf84470526"
     },
     {
       "path": "spatial_explorer.html",
       "bytes": 66194,
-      "sha256": "50cffe3a213c8da1412486f43e359749c044cb0857d8039ee03cfec53d4140ae"
+      "sha256": "d29deff2495c242974b69956e898cbd490537d9c82e14cd86d4f86f7562ecafb"
     },
     {
       "path": "spatial_reference.html",
@@ -17691,10 +17796,10 @@
     {
       "path": "viewer.html",
       "bytes": 53476,
-      "sha256": "316c5e5b4dd9aae6018a3944a30c1dd3ae68578cc346fb4794a93fc81dcdd34a"
+      "sha256": "2c9bd520f6ad28f3a139f03d153d9508e4afab554d9c4782204fda8181fbbf41"
     }
   ],
-  "total_bytes": 522004039,
+  "total_bytes": 537865865,
   "excludes": [
     "original FASTQ/H5AD",
     "reference genomes",
