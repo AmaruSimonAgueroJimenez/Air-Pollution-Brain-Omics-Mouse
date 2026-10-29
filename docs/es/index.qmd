@@ -39,6 +39,14 @@ if not ozone_ready:
                      "no se infiere ningún resultado diferencial de ozono a partir de la tabla depositada que solo compara genotipos."))
 ```
 
+## Presentación para defensa
+
+La presentación HTML detalla diseños, reconstrucción de resultados originales, ecuaciones, validación y resultados nuevos del proyecto. Incluye 85 diapositivas por idioma, notas del presentador y apéndice técnico.
+
+[Abrir las diapositivas en español](defense.qmd){.btn .btn-primary}
+[Open in English](../defense.html){.btn .btn-outline-primary}
+[Descargar las dos versiones HTML](../downloads/defense-slides-bilingual.zip){.btn .btn-outline-primary}
+
 ## Anatomía espacial y predicción
 
 Explore **cortes físicos, capas de ACA y núcleos hipotalámicos**, junto con mapas de detección medida cuyos denominadores incluyen los ceros. El nuevo capítulo bayesiano evalúa predicciones espaciales en cortes completos reservados y distingue incertidumbre de la media latente y de una nueva célula en un nuevo corte. La referencia sigue siendo un donante sin exposición experimental.

@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-29",
+  "scope": "Read-only claim and scholarly-citation audit against frozen project outputs. Does not establish biological validity.",
+  "reviewed": [
+    "Four source-study computational reproductions and independent primary analyses",
+    "Gaussian and beta-binomial definitions, uncertainty targets, guarded validation and model failures",
+    "Ozone interaction and GO results",
+    "Bilingual agreement of model equations and major reported numbers",
+    "Per-gene NCBI annotations and scholarly references distinct from internal provenance records"
+  ],
+  "repairs": [
+    "Removed duplicate section intercept from Gaussian displayed regression equation; augmented design retains section nuisance coefficients",
+    "Added per-gene official NCBI source links and atlas citation to product/panel table",
+    "Scientific reference footers cite publications or primary methods/resources, not internal JSON files"
+  ],
+  "remaining_actionable_issues": []
+}

@@ -196,3 +196,23 @@ The [Bayesian baseline chapter](docs/spatial_bayes.qmd) evaluates an anatomy-awa
 ```
 
 A separate hierarchical beta-binomial detection model uses section–anatomy positive/all-cell counts, proper fixed priors, whole-section held-out count prediction and an explicit regional baseline. It keeps probabilities within[0,1] and distinguishes known-section p, anatomical μ and new-section uncertainty. ACA shows a modest Brier improvement; HY fails to improve the regional baseline overall because many held-out anatomical groups lack training support. These failures, prior-only groups, predictive interval widths and numerical grid sensitivity are retained. Detection modeling does not reconstruct RNA magnitude or create cells.
+
+## Bilingual defense presentation
+
+The detailed HTML deck contains 85 slides per language, including a technical appendix, 54 native MathML expressions, 19 projected figures and detailed presenter notes. Replicated author results and new project analyses form separate blocks.
+
+- [English presentation](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/defense.html)
+- [Presentación en español](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/defense.html)
+- [Portable bilingual HTML download](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/downloads/defense-slides-bilingual.zip)
+
+Arrow keys navigate, Esc opens overview, and Notes/Notas opens the current slide explanation. Each HTML embeds its presentation runtime, figures, styling and formulas. Online evidence links require internet. Keep the ZIP folder structure for the language switch.
+
+To redraw the presentation figures and regenerate its QMD sources without refitting the scientific models:
+
+    .venv-analysis/bin/python scripts/build_defense_slides.py --figures
+    .venv-analysis/bin/python scripts/render_docs.py
+    .venv-analysis/bin/python scripts/build_defense_slides.py --package
+    .venv-analysis/bin/python scripts/validate_defense_slides.py
+    .venv-analysis/bin/python scripts/render_docs.py --refresh-static
+
+Presentation source and figure provenance are retained under scripts/ and results/defense_slides/.

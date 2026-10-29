@@ -20,6 +20,7 @@ project:
   - spatial_explorer.qmd
   - spatial_bayes.qmd
   - reproducibility.qmd
+  - defense.qmd
 website:
   title: Contaminación del aire · ómica cerebral
   description: Reanálisis reproducible de datos públicos de ómica cerebral de ratón, con una referencia espacial
@@ -69,6 +70,8 @@ website:
         text: Corteza cingulada anterior
     - href: reproducibility.qmd
       text: Datos y código
+    - href: defense.qmd
+      text: Diapositivas
     right:
     - href: ../index.html
       text: English

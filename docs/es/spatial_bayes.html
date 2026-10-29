@@ -231,6 +231,10 @@ div.csl-indent {
     <a class="nav-link" href="./reproducibility.html"> 
 <span class="menu-text">Datos y código</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./defense.html"> 
+<span class="menu-text">Diapositivas</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
@@ -325,7 +329,7 @@ p_{sag}\mid\mu_{ag},\kappa_{ag}\sim\operatorname{Beta}(\mu_{ag}\kappa_{ag},(1-\m
 <p><a href="./spatial_explorer.html" class="btn btn-outline-primary">Explorar detección observada y bayesiana juntas</a></p>
 <section id="resultados-de-detección" class="level3">
 <h3 class="anchored" data-anchor-id="resultados-de-detección">Resultados de detección</h3>
-<div id="ceeca237" class="cell" data-execution_count="2">
+<div id="1590866e" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><strong>ACA:</strong> la cobertura predictiva observada del número de positivos es <strong>97.9%</strong> en <strong>1,280 evaluaciones gen × corte × anatomía</strong>. El intervalo predictivo medio abarca <strong>41.9 puntos porcentuales</strong> del denominador del grupo. La pérdida de Brier ponderada por células es <strong>0.1373</strong>, frente a <strong>0.1405</strong> del modelo regional sin anatomía (menor es mejor); la anatomía mejora Brier en <strong>9/10 genes</strong>.</p>
 </div>
@@ -891,7 +895,7 @@ Crym
 </div>
 <p><strong>Corteza e hipotálamo tienen distinto soporte.</strong> En ACA, la mejora modesta de Brier se acompaña de intervalos amplios; una cobertura superior al 95% no demuestra recuperación de alta resolución. En HY, 79 de 186 grupos corte–anatomía reservados por gen carecen de esa anatomía en entrenamiento, representando 10,416 de 37,811 células. Su media previa es 0.5 bajo el prior simétrico especificado. El modelo resulta sustancialmente peor que la referencia regional en conjunto. Esos casos se conservan sin eliminarlos silenciosamente. Entre grupos con anatomía presente en entrenamiento, Brier agrupado de HY es 0.03256 frente a 0.03288 de la referencia regional; este diagnóstico restringido no reemplaza el resultado completo. El explorador y el resumen fuente conservan ambos subconjuntos.</p>
 <p>Las evaluaciones agrupadas por gen reutilizan las mismas células y cortes físicos; no son observaciones independientes adicionales. Hay 14,582 células ACA y 37,811 HY de referencia, un animal y diez genes objetivo por región.</p>
-<div id="98a73a08" class="cell" data-execution_count="3">
+<div id="677d625f" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display cell-output-markdown">
 <figure class="research-figure figure">
 <a href="../assets/figures/spatial_detection_bayes/ACA_detection_posterior_es.svg"><img loading="lazy" width="3360" height="2268" src="../assets/figures/spatial_detection_bayes/ACA_detection_posterior_es.png" alt="Detección basal Beta-Binomial jerárquica en ACA; no modela magnitud de RNA ni efectos PM2.5. Por anatomía depositada, los conteos positivos y_s entre n_s células medidas por corte físico siguen Beta-Binomial(μκ,(1−μ)κ). Priors fijadas antes del ajuste: μ~Beta(0.5,0.5), κ~LogNormal(log20,1.5); cuadratura64×48 por cuantiles previos con pesos iguales aproxima la posterior continua. A–C distinguen intervalos creíbles95% de la media anatómica μ (oscuro) de intervalos predictivos95% de propensión p de un corte nuevo (claro); puntos naranjas son fracciones medidas agrupadas, no estimaciones μ. Se muestran las10 capas/subdivisiones ACA. n=células medidas, S=cortes físicos. D–E reutilizan cinco bloques de cortes excluidos y sus cortes vecinos de guarda, sin usar conteos de prueba/guarda al entrenar. Los intervalos predictivos95% de conteos condicionan al n de prueba real e incluyen heterogeneidad entre cortes y muestreo binomial; cobertura no ponderada entre grupos corte×anatomía observados. Se conservan y cuentan anatomías de prueba solo con prior. La referencia no anatómica usa las mismas priors y agrega solo datos de entrenamiento por corte. El error absoluto de fracción no se pondera entre grupos corte×anatomía; Brier ponderado por células se tabula aparte. No se infieren animales independientes ni respuestas celulares a exposición. F compara cuadrículas fijas sin seleccionarlas por rendimiento excluido. Intervalos p de corte medido/conteos excluidos usan8192 sorteos de mezcla con semilla; p de corte nuevo con ajuste completo invierte numéricamente la CDF de mezcla Beta; μ usa cuantiles discretos ponderados. Se incluyen ceros en n. La incertidumbre depende del modelo y del muestreo de un donante; no calibra incertidumbre biológica de todo el tejido." class="figure-img"></a>
@@ -946,7 +950,7 @@ y_{ig}=\phi(\mathbf r_i,a_i)^\top\boldsymbol\beta_g+\delta_{s(i),g}+\epsilon_{ig
 <h2 class="anchored" data-anchor-id="referencia-de-expresión-espacial-resultados">Referencia de expresión espacial: resultados</h2>
 <p>Los resultados siguientes muestran precisión predictiva y calibración, incluidos los fallos. Una comprobación de implementación/datos satisfactoria no establece calibración científica ni superioridad frente a un modelo sencillo.</p>
 <p>El modelo espacial gaussiano <strong>no estableció una reconstrucción validada del RNA celular</strong>. Su soporte predictivo negativo es físicamente incompatible con los conteos transformados, y anatomía/posición solas recuperan mal las observaciones positivas. Una respuesta con muchos ceros puede aparentar cobertura global alta mientras predice mal la cola positiva. La cobertura entre positivos es un diagnóstico descriptivo de cola; un intervalo marginal del 95% no garantiza cobertura del 95% condicionada a que la observación realizada sea positiva.</p>
-<div id="dc87e9fe" class="cell" data-execution_count="4">
+<div id="72db32f2" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><strong>HY:</strong> el RMSE espacial mejora la referencia de solo anatomía en <strong>1/10 genes</strong>. La mediana de cobertura predictiva global observada del 95% es <strong>97.3%</strong>, frente a <strong>0.0%</strong> entre observaciones positivas. La mediana de probabilidad predictiva asignada bajo cero es <strong>41.1%</strong>.</p>
 </div>
@@ -1526,7 +1530,7 @@ window.addEventListener("message", function(event) {
 });
 </script>
 <p><a href="../assets/spatial-explorer/index-es.html?region=ACA&amp;mode=bayes" class="btn btn-outline-primary" target="_blank">Abrir directamente la pestaña bayesiana</a></p>
-<div id="92367796" class="cell" data-execution_count="5">
+<div id="fc1e250e" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display cell-output-markdown">
 <figure class="research-figure figure">
 <a href="../assets/figures/spatial_bayes/spatial_bayes_performance_es.svg"><img loading="lazy" width="4800" height="3240" src="../assets/figures/spatial_bayes/spatial_bayes_performance_es.png" alt="Se omiten cinco bloques contiguos de cortes físicos y se protege un corte representado vecino por lado. Los diez candidatos medidos fijos por región se evalúan una vez en cada célula original; no se ajusta el modelo con resultados omitidos. Izquierda: RMSE de Bayes espacial, media anatómica bayesiana e interpolación de 30 vecinos; centro: cobertura empírica de intervalos predictivos de NUEVA CÉLULA del 95%; derecha: su anchura media. Unidades: ln(1+conteo de imagen). No se inventan intervalos para kNN. La comparación corresponde a un donante, no a validación entre animales; se conservan mala calibración e intervalos amplios." class="figure-img"></a>

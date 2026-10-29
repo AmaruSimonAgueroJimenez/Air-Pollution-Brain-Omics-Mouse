@@ -1,0 +1,445 @@
+/* Academic Reveal.js theme. All fonts and assets resolve locally. */
+:root {
+  --def-ink: #173b43;
+  --def-teal: #123d46;
+  --def-accent: #0b7475;
+  --def-rust: #a64720;
+  --def-gold: #987126;
+  --def-muted: #536b71;
+  --def-line: #d4e0e1;
+  --def-paper: #fafbf8;
+  --r-background-color: var(--def-paper);
+  --r-main-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --r-heading-font: var(--r-main-font);
+  --r-main-font-size: 28px;
+  --r-main-color: var(--def-ink);
+  --r-heading-color: var(--def-teal);
+  --r-heading-text-transform: none;
+  --r-heading-letter-spacing: -.025em;
+  --r-heading-font-weight: 700;
+  --r-heading1-size: 2.1em;
+  --r-heading2-size: 1.72em;
+  --r-heading3-size: 1.16em;
+  --r-link-color: var(--def-accent);
+  --r-link-color-hover: #07585b;
+  --r-selection-background-color: #dcebea;
+  --r-selection-color: var(--def-ink);
+}
+
+.reveal {
+  font-family: var(--r-main-font);
+  font-size: 28px;
+  line-height: 1.38;
+}
+
+.reveal .slides { text-align: left; }
+.reveal .slides section { box-sizing: border-box; }
+.reveal h1, .reveal h2, .reveal h3 { font-family: var(--r-main-font); }
+.reveal h1 { font-weight: 750; line-height: 1.08; }
+.reveal h2 {
+  font-size: 48px;
+  line-height: 1.14;
+  font-weight: 720;
+  margin: 0 0 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--def-line);
+}
+.reveal h3 { margin: 18px 0 12px; font-weight: 680; }
+.reveal p { margin: 0 0 20px; }
+.reveal strong, .reveal b { font-weight: 720; }
+.reveal a { text-underline-offset: .16em; }
+.reveal a:hover { text-decoration: underline; }
+.reveal ul, .reveal ol { display: block; margin: 12px 0 22px 1.05em; }
+.reveal li { margin-bottom: 13px; padding-left: 4px; }
+.reveal li:last-child { margin-bottom: 0; }
+.reveal ul ul, .reveal ol ol { margin-top: 8px; font-size: .92em; }
+.reveal hr { border: 0; border-top: 1px solid var(--def-line); margin: 25px 0; }
+.reveal blockquote {
+  width: auto;
+  margin: 25px 0;
+  padding: 0 0 0 23px;
+  border-left: 4px solid var(--def-accent);
+  background: none;
+  box-shadow: none;
+  font-style: normal;
+}
+
+/* Use columns for parallel evidence or definitions, rather than repeated cards. */
+.reveal .columns { gap: 54px; align-items: start; }
+.reveal .column { min-width: 0; }
+.reveal .two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 54px;
+  align-items: start;
+}
+.reveal .two-col.wide-left { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); }
+.reveal .two-col.wide-right { grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr); }
+.reveal .two-col > * { min-width: 0; }
+.reveal .definition-list { margin: 18px 0; }
+.reveal .definition-list dt { font-weight: 700; margin-top: 14px; }
+.reveal .definition-list dd { margin: 4px 0 10px; color: var(--def-muted); }
+
+/* Native HTML tables remain selectable and readable in exported HTML. */
+.reveal table {
+  width: 100%;
+  margin: 16px 0 22px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 24px;
+  line-height: 1.28;
+  font-variant-numeric: tabular-nums;
+}
+.reveal table th, .reveal table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 12px 13px;
+  border-bottom: 1px solid var(--def-line);
+}
+.reveal table th {
+  color: var(--def-teal);
+  font-weight: 720;
+  border-top: 2px solid var(--def-teal);
+  border-bottom: 1.5px solid var(--def-teal);
+  background: transparent;
+}
+.reveal table tr:last-child td { border-bottom: 1.5px solid var(--def-teal); }
+.reveal table p { margin: 0; }
+.reveal .numeric { text-align: right; font-variant-numeric: tabular-nums; }
+.reveal .small table { font-size: 23px; }
+.reveal .tiny table { font-size: 20px; }
+
+/* Figures preserve all axes, labels and legends. */
+.reveal figure { margin: 0; }
+.reveal img {
+  margin: 0;
+  border: 0;
+  box-shadow: none;
+  max-width: 100%;
+  max-height: 620px;
+  object-fit: contain;
+}
+.reveal .figure-slide img, .reveal .figure-slide svg { max-height: 610px; }
+.reveal .figure-slide figure { text-align: center; }
+.reveal .figure-slide .quarto-figure { margin: 0; }
+.reveal .figure-slide figcaption,
+.reveal .figure-caption {
+  font-size: 21px;
+  line-height: 1.35;
+  color: var(--def-muted);
+  margin-top: 12px;
+  text-align: left;
+}
+.reveal .figure-slide .source { margin-top: 12px; }
+.reveal .image-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 36px;
+}
+.reveal .image-pair img { max-height: 520px; }
+.reveal .diagram-slide img, .reveal .diagram-slide svg { max-height: 610px; }
+
+/* Math uses the browser's native MathML renderer, with no network dependency. */
+.reveal .math.display { margin: 22px 0; }
+.reveal math { font-size: 1.05em; }
+.reveal .formula-slide math[display="block"] { font-size: 1.1em; }
+.reveal .formula-slide .math.display { margin: 24px 0 28px; }
+.reveal .formula-slide .definitions {
+  font-size: 25px;
+  line-height: 1.38;
+  color: var(--def-muted);
+}
+.reveal code {
+  color: var(--def-teal);
+  background: #eaf0ef;
+  padding: .06em .17em;
+  border-radius: 2px;
+  font-size: .82em;
+}
+.reveal pre {
+  width: 100%;
+  margin: 18px 0;
+  font-size: 22px;
+  line-height: 1.38;
+  box-shadow: none;
+}
+.reveal pre code { max-height: 520px; padding: 18px 22px; }
+
+.reveal .small { font-size: 25px; }
+.reveal .small li { margin-bottom: 11px; }
+.reveal .tiny { font-size: 22px; }
+.reveal .tiny li { margin-bottom: 9px; }
+.reveal .muted { color: var(--def-muted); }
+.reveal .accent { color: var(--def-accent); }
+.reveal .rust { color: var(--def-rust); }
+.reveal .takeaway {
+  margin: 24px 0 0;
+  padding: 15px 0 0;
+  border-top: 2px solid var(--def-accent);
+  color: var(--def-teal);
+  font-weight: 650;
+  font-size: 27px;
+}
+.reveal .warning {
+  margin: 22px 0;
+  padding: 8px 0 8px 22px;
+  border-left: 4px solid var(--def-rust);
+  color: #753819;
+  background: none;
+}
+.reveal .source {
+  font-size: 18px;
+  line-height: 1.35;
+  color: var(--def-muted);
+  margin-top: 24px;
+  overflow-wrap: anywhere;
+}
+.reveal .source p { margin: 0 0 5px; }
+.reveal .source a { color: inherit; text-decoration: underline; }
+.reveal .source code { background: none; padding: 0; font-size: .96em; }
+.reveal .appendix .source { font-size: 17px; }
+.reveal .study-label { color: var(--def-accent); font-weight: 650; font-size: 25px; }
+.reveal .method-table th, .reveal .method-table td { padding: 13px 14px; }
+.reveal .stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px 55px;
+  border-top: 1px solid var(--def-line);
+  border-bottom: 1px solid var(--def-line);
+  padding: 22px 0;
+  margin: 26px 0;
+}
+.reveal .stat-row > div { flex: 1 1 180px; }
+.reveal .stat-row strong { display: block; font-size: 46px; color: var(--def-teal); line-height: 1.14; }
+.reveal .stat-row span { display: block; font-size: 23px; color: var(--def-muted); margin-top: 7px; }
+
+/* Section slides are quiet visual breaks, not content panels. */
+.reveal .section-slide { color: #fff; }
+.reveal .section-slide h1, .reveal .section-slide h2, .reveal .section-slide h3 {
+  color: #fff;
+  border: 0;
+  padding: 0;
+}
+.reveal .section-slide h2 { font-size: 64px; line-height: 1.08; max-width: 1200px; }
+.reveal .section-slide p { max-width: 1150px; color: #e2efed; font-size: 31px; }
+.reveal .section-slide .source, .reveal .section-slide a { color: #e2efed; }
+.reveal .title-slide, .reveal #title-slide { text-align: left; }
+.reveal .title-slide h1, .reveal #title-slide h1.title { max-width: 1320px; font-size: 68px; margin-bottom: 30px; }
+.reveal .title-slide .subtitle, .reveal #title-slide .subtitle { font-size: 31px; max-width: 1240px; line-height: 1.35; }
+.reveal .title-slide .date, .reveal #title-slide .date { color: var(--def-muted); font-size: 23px; margin-top: 35px; }
+
+/* Editable workflow HTML can use this class for a restrained horizontal sequence. */
+.reveal .workflow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+  margin: 30px 0;
+  counter-reset: work-step;
+}
+.reveal .workflow > div {
+  position: relative;
+  border-top: 3px solid var(--def-accent);
+  padding-top: 18px;
+  font-size: 25px;
+  line-height: 1.35;
+}
+.reveal .workflow > div::before {
+  counter-increment: work-step;
+  content: counter(work-step, decimal-leading-zero);
+  display: block;
+  color: var(--def-accent);
+  font-size: 21px;
+  font-weight: 720;
+  margin-bottom: 12px;
+}
+.reveal .workflow strong { display: block; margin-bottom: 8px; }
+
+.reveal .progress { color: var(--def-accent); height: 4px; }
+.reveal .controls { color: var(--def-accent); }
+.reveal .slide-number {
+  left: 61px;
+  right: auto;
+  bottom: 16px;
+  background: transparent;
+  color: var(--def-muted);
+  font-family: var(--r-main-font);
+  font-size: 15px;
+}
+.defense-language-switch {
+  position: fixed;
+  z-index: 50;
+  top: 12px;
+  right: 17px;
+  padding: 4px 7px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.2;
+  color: var(--def-teal);
+  text-decoration: none;
+  background: var(--def-paper);
+  border-bottom: 1px solid var(--def-line);
+}
+.defense-language-switch:hover, .defense-language-switch:focus-visible {
+  color: #07585b;
+  outline: 2px solid var(--def-accent);
+  outline-offset: 3px;
+}
+.defense-notes-toggle {
+  position: fixed;
+  z-index: 51;
+  top: 12px;
+  right: 110px;
+  padding: 4px 7px;
+  font: 15px/1.2 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--def-teal);
+  background: var(--def-paper);
+  border: 0;
+  border-bottom: 1px solid var(--def-line);
+  cursor: pointer;
+}
+.defense-notes-toggle:hover, .defense-notes-toggle:focus-visible {
+  outline: 2px solid var(--def-accent);
+  outline-offset: 3px;
+}
+.defense-notes {
+  position: fixed;
+  z-index: 60;
+  top: 56px;
+  right: 22px;
+  bottom: 25px;
+  width: min(710px, calc(100vw - 44px));
+  padding: 27px 30px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  background: #fff;
+  color: var(--def-ink);
+  border: 1px solid #99b2b7;
+  box-shadow: 0 8px 35px rgb(18 61 70 / 20%);
+  font: 18px/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.defense-notes[hidden] { display: none !important; }
+.defense-notes h2 { font-size: 24px; line-height: 1.25; margin: 5px 35px 20px 0; color: var(--def-teal); }
+.defense-notes h3 { font-size: 20px; line-height: 1.35; }
+.defense-notes p { margin: 0 0 18px; }
+.defense-notes li { margin-bottom: 9px; }
+.defense-notes a { color: var(--def-accent); }
+.defense-notes code { font-size: .88em; overflow-wrap: anywhere; }
+.defense-notes table { font-size: 16px; width: 100%; border-collapse: collapse; }
+.defense-notes th, .defense-notes td { padding: 6px; border-bottom: 1px solid var(--def-line); text-align: left; vertical-align: top; }
+.defense-notes-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: var(--def-teal);
+  background: #eef4f3;
+  border: 1px solid var(--def-line);
+  font: 16px/1.3 system-ui, sans-serif;
+  padding: 5px 9px;
+  cursor: pointer;
+}
+.defense-notes :focus-visible { outline: 2px solid var(--def-accent); outline-offset: 2px; }
+body[data-defense-dark="true"] .defense-language-switch {
+  color: #fff;
+  background: var(--def-teal);
+  border-color: #94b3b8;
+}
+body[data-defense-dark="true"] .defense-notes-toggle { color: #fff; background: var(--def-teal); border-color: #94b3b8; }
+
+@media print {
+  .defense-language-switch, .defense-notes-toggle, .defense-notes, .reveal .controls, .reveal .progress { display: none !important; }
+  .reveal { color: var(--def-ink); }
+  .reveal .slides section { overflow: visible !important; }
+  .reveal .source { font-size: 18px; }
+  .reveal img, .reveal svg { break-inside: avoid; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal .slides section, .reveal .progress span { transition: none !important; }
+}
+
+/* 2026-10-28 editorial redesign: large evidence, explicit hierarchy and varied layouts. */
+:root {
+ --def-ink:#142c35; --def-teal:#103d49; --def-accent:#0b6971;
+ --def-rust:#b65531; --def-muted:#52636b; --def-line:#cbd3d1;
+ --def-paper:#f6f4ee; --r-main-font-size:32px; --r-background-color:var(--def-paper);
+}
+.reveal {font-size:32px; line-height:1.36; color:var(--def-ink);}
+.reveal .slides > section {padding:34px 14px 64px;}
+.reveal h2 {font-size:52px; line-height:1.06; font-weight:760; letter-spacing:-.015em; border:0; padding:0; margin:0 0 36px; max-width:1380px;}
+.reveal h3 {font-size:32px; letter-spacing:-.02em;}
+.reveal p {margin:0 0 24px;}
+.reveal ul,.reveal ol {margin:16px 0 24px 1.1em;}
+.reveal li {margin-bottom:18px; padding-left:7px;}
+.reveal li::marker {color:var(--def-rust); font-weight:700;}
+.reveal .slide-eyebrow {position:absolute; top:0; left:14px; font-size:16px; font-weight:750; letter-spacing:.16em; color:var(--def-accent); text-transform:uppercase;}
+.reveal .source {position:absolute; bottom:9px; left:14px; right:14px; font-size:18px; line-height:1.35; padding-top:12px; margin:0; border-top:1px solid var(--def-line); color:var(--def-muted);}
+.reveal .source a {text-decoration:none; border-bottom:1px solid #9caeaf;}
+.reveal .source .analysis-tag {font-weight:750; color:var(--def-rust); margin-right:15px;}
+.reveal .source .cite-link {white-space:normal;}
+.reveal table {font-size:26px; line-height:1.25; margin:20px 0 28px; width:100%;}
+.reveal table th {font-size:20px; letter-spacing:.04em; text-transform:uppercase; border-top:0; border-bottom:2px solid var(--def-ink); padding:14px 14px 17px; color:var(--def-accent);}
+.reveal table td {padding:16px 14px; border-bottom:1px solid #d5dcda;}
+.reveal table tr:last-child td {border-bottom:0;}
+.reveal table tbody td:first-child {font-weight:670; color:var(--def-teal);}
+.reveal .small {font-size:28px;}
+.reveal .small table {font-size:24px;}
+.reveal .tiny {font-size:25px;}
+.reveal .tiny table {font-size:22px;}
+.reveal .tiny table td {padding:11px 13px;}
+.reveal .layout-equation .equation-grid {display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); gap:70px; align-items:center; min-height:560px;}
+.reveal .equation-core {border-left:5px solid var(--def-rust); padding:18px 0 18px 30px;}
+.reveal .equation-core p {margin:0 0 26px;}
+.reveal .equation-core p:last-child {margin-bottom:0;}
+.reveal .equation-core .math.display {margin:22px 0;}
+.reveal .layout-equation math {font-size:1.12em;}
+.reveal .equation-detail {font-size:29px;line-height:1.37;}
+.reveal .equation-detail li {margin-bottom:19px;}
+.reveal .equation-detail p {margin-bottom:22px;}
+.reveal .wide-equation .equation-core {border-left:0; border-bottom:3px solid var(--def-rust); padding:0 0 24px; margin:10px 0 30px;}
+.reveal .wide-equation .equation-core .math.display {margin:17px 0;}
+.reveal .wide-equation .equation-detail {font-size:29px;}
+.reveal .wide-equation .equation-detail ul {columns:2; column-gap:65px;}
+.reveal .wide-equation .equation-detail li {break-inside:avoid; margin-bottom:17px;}
+.reveal .wide-equation .equation-detail table {font-size:25px;}
+.reveal .figure-slide h2 {margin-bottom:16px; font-size:48px;}
+.reveal .figure-slide .quarto-figure {margin:0;}
+.reveal .figure-slide figure {margin:0; text-align:center;}
+.reveal .figure-slide img {max-height:555px; width:auto; max-width:100%; object-fit:contain;}
+.reveal .figure-slide .figure-caption {font-size:26px;line-height:1.27;color:var(--def-ink);margin:16px 0 0;max-width:1410px;}
+.reveal .figure-slide .figure-caption strong {color:var(--def-rust);}
+.reveal .layout-study h2 {max-width:1270px;}
+.reveal .layout-study table tbody tr:nth-child(2n) {background:#eaf0ec;}
+.reveal .layout-result table tbody tr:last-child {background:#e8efea;}
+.reveal .statement-grid {display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:70px;align-items:center;min-height:570px;}
+.reveal .statement-number {font-size:146px;font-weight:760;line-height:.95;letter-spacing:-.035em;color:var(--def-teal);}
+.reveal .statement-label {font-size:28px;line-height:1.25;margin-top:22px;color:var(--def-muted);}
+.reveal .statement-copy {font-size:31px;line-height:1.42;border-left:3px solid var(--def-rust);padding-left:44px;}
+.reveal .section-slide.present {display:flex !important;flex-direction:column;justify-content:center; color:#f6f4ee; padding:70px 50px !important;}
+.reveal .section-slide h2 {font-size:86px;line-height:1.03;max-width:1220px;letter-spacing:-.02em;margin-bottom:40px;}
+.reveal .section-slide p {font-size:34px;max-width:1130px;line-height:1.4;color:#d8e8e3;}
+.reveal .section-slide .slide-eyebrow {position:static;color:#d6ae77;margin:0 0 45px;font-size:18px;}
+.reveal .section-slide .source {display:none;}
+.reveal #title-slide.present {text-align:left;display:flex !important;flex-direction:column;justify-content:center;padding:70px 70px 110px !important; color:#f6f4ee;}
+.reveal #title-slide h1.title {font-size:91px;line-height:1.02;max-width:1190px;letter-spacing:-.025em;color:#f6f4ee;font-weight:770; margin:0 0 42px;}
+.reveal #title-slide .subtitle {font-size:34px;line-height:1.35;max-width:1120px;color:#d8e8e3;font-weight:400;}
+.reveal #title-slide .date {font-size:23px;color:#d6ae77;margin-top:65px;}
+.reveal #title-slide::before {content:'AIR POLLUTION / BRAIN OMICS';font-size:17px;font-weight:730;letter-spacing:.2em;color:#d6ae77;margin-bottom:42px;}
+html[lang^=es] .reveal #title-slide::before {content:'CONTAMINACIÓN / ÓMICA CEREBRAL';}
+.reveal .appendix h2 {font-size:46px;margin-bottom:28px;}
+.reveal .appendix .source {font-size:17px;}
+.reveal .appendix.layout-equation .equation-grid {min-height:530px;gap:45px;}
+.reveal .progress {height:4px;}
+.reveal .slide-number {left:61px;font-size:17px;color:#53666a;}
+.reveal .controls {font-size:19px;bottom:18px;}
+.defense-language-switch,.defense-notes-toggle {font-size:14px;top:9px;background:var(--def-paper);}
+body[data-defense-dark=true] .defense-language-switch,body[data-defense-dark=true] .defense-notes-toggle {background:#103d49;color:#f6f4ee;}
+@media print { .reveal .source{position:static;margin-top:18px;} .reveal #title-slide{background:#103d49;} }
+
+/* Keep stage controls quiet and away from the evidence canvas. */
+.reveal .controls {inset:auto 14px 12px auto;width:90px;height:45px;font-size:10px;}
+.reveal .controls button.navigate-right {right:0;top:0;}
+.reveal .controls button.navigate-left {right:48px;left:auto;top:0;}
+.reveal .controls button.navigate-up,.reveal .controls button.navigate-down {display:none;}
+.reveal .slide-menu-button .fa-bars {color:var(--def-accent);}
+body[data-defense-dark=true] .reveal .slide-number {color:#bfd3ce;}
+body[data-defense-dark=true] .reveal .slide-menu-button .fa-bars {color:#bfd3ce;}

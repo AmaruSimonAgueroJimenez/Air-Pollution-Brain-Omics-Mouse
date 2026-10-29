@@ -1,0 +1,864 @@
+{
+  "date": "2026-10-29",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "scope": "All 85 slides in each language checked in browser for content overflow and loaded images. Representative scientific figures, cover, workflow, equations and tables inspected visually. This does not certify model validity.",
+  "same_tab_language_switch_preserves_slide": true,
+  "notes_drawer_open_close_pass": true,
+  "en": [
+    {
+      "id": "title-slide",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "scope",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "intro",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "studies-rna",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "studies-hippocampus",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "units",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "workflow",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "methods",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "reproduction-criteria",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "cortex-author-method",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "hypothalamus-author-method",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "mirna-author-method",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "ozone-author-method",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "count-model",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "filters",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "testing",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "qc",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "mirna-model",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "ozone-raw-qc",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "ozone-quant",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "ozone-factorial",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "ozone-contrasts",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "ozone-lrt",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "ora",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "gsea",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "atlas",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "coordinates",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "gene-selection",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "detection-method",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "scenario-method",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "gaussian-features",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "gaussian-priors",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "gaussian-intervals",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "guarded-cv",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "beta-model",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "beta-integration",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "beta-targets",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "metrics",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "replicated-results",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "cortex-reproduction",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "cortex-source-quality",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "hy-reproduction",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "mirna-reproduction",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "ozone-reproduction",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "reproduction-summary",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "new-results",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "hy-primary",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "aca-primary",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "mirna-primary",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "ozone-primary",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "interaction-results",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "interaction-animals",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "enrichment-results",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "go-patterns",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "gene-products",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "aca-sections",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "hy-sections",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "scenario-results",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "gaussian-rmse",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "gaussian-diagnostics",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "beta-performance",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "beta-aca",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "beta-hy",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "numerics",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "limits",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "conclusions",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "future",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "discussion",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "appendix",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-pm-protocols",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-ozone-protocol",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-normalization",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-limma",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-multiplicity",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-software-loo",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-genes-hy",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-genes-aca",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-gaussian-assumptions",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-beta-marginal",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-coverage",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-outstanding",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-primary-refs",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-method-refs",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-bayes-refs",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-rebuild",
+      "images": true,
+      "overflow": []
+    }
+  ],
+  "es": [
+    {
+      "id": "title-slide",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "scope",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "intro",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "studies-rna",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "studies-hippocampus",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "units",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "workflow",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "methods",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "reproduction-criteria",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "cortex-author-method",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "hypothalamus-author-method",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "mirna-author-method",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "ozone-author-method",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "count-model",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "filters",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "testing",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "qc",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "mirna-model",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "ozone-raw-qc",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "ozone-quant",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "ozone-factorial",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "ozone-contrasts",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "ozone-lrt",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "ora",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "gsea",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "atlas",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "coordinates",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "gene-selection",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "detection-method",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "scenario-method",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "gaussian-features",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "gaussian-priors",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "gaussian-intervals",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "guarded-cv",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "beta-model",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "beta-integration",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "beta-targets",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "metrics",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "replicated-results",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "cortex-reproduction",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "cortex-source-quality",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "hy-reproduction",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "mirna-reproduction",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "ozone-reproduction",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "reproduction-summary",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "new-results",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "hy-primary",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "aca-primary",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "mirna-primary",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "ozone-primary",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "interaction-results",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "interaction-animals",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "enrichment-results",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "go-patterns",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "gene-products",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "aca-sections",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "hy-sections",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "scenario-results",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "gaussian-rmse",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "gaussian-diagnostics",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "beta-performance",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "beta-aca",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "beta-hy",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "numerics",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "limits",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "conclusions",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "future",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "discussion",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "appendix",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-pm-protocols",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-ozone-protocol",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-normalization",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-limma",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-multiplicity",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-software-loo",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-genes-hy",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-genes-aca",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-gaussian-assumptions",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-beta-marginal",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-coverage",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-outstanding",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-primary-refs",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-method-refs",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-bayes-refs",
+      "images": true,
+      "overflow": []
+    },
+    {
+      "id": "a-rebuild",
+      "images": true,
+      "overflow": []
+    }
+  ]
+}

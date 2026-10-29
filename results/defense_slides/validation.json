@@ -1,0 +1,30 @@
+{
+  "scope": "Structure, embedded resources, paired IDs, result anchors and frozen-source hashes. Visual/browser review is separate; no model validity certificate.",
+  "checks": {
+    "en": {
+      "slides": 85,
+      "notes": 84,
+      "native_mathml_expressions": 54,
+      "embedded_figures": 19,
+      "embedded_runtime": true,
+      "published_evidence_links": 3,
+      "scholarly_citations": 148,
+      "bytes": 7665896,
+      "sha256": "46413205aba64de09c55a79d47f8a8e2400c9361195fe1e7a58918a59ec5d79b"
+    },
+    "es": {
+      "slides": 85,
+      "notes": 84,
+      "native_mathml_expressions": 54,
+      "embedded_figures": 19,
+      "embedded_runtime": true,
+      "published_evidence_links": 3,
+      "scholarly_citations": 148,
+      "bytes": 7786012,
+      "sha256": "9bc5446f37a921dce247a6ebb02827c4fea6e111b7f6919e931cccf266828ae4"
+    },
+    "portable_zip_bytes": 9517370
+  },
+  "errors": [],
+  "passed": true
+}

@@ -1,0 +1,922 @@
+{
+  "purpose": "Presentation-size restyling of frozen saved outputs; no statistical refits",
+  "script": "scripts/build_defense_replication_figures.py",
+  "script_sha256": "62c4d0d41a6df22f4dc0fa24696841969de4abce9f32222285f1ae160ce5a819",
+  "styles": {
+    "pixels": [
+      1600,
+      900
+    ],
+    "font": "DejaVu Sans",
+    "axis_labels_pt": 20,
+    "tick_labels_pt": 18,
+    "max_panels": 2,
+    "svg_text_editable": true
+  },
+  "figures": {
+    "rep_cortex_reproduction": {
+      "language": "en",
+      "caption_en": "Count-based reproduction of the original five-condition cortex analysis, using 20 animals (four per condition). A: author and refit BH q<0.05 counts are identical for all four contrasts, and each exact Ensembl-ID discovery set has Jaccard 1. B: all 21,388 finite PM-versus-PBS maximum-likelihood effects, with identity line and log-count hexagonal binning. No raw-read realignment or independent biological cohort is involved.",
+      "caption_es": "Reproducción basada en conteos del análisis cortical original de cinco condiciones, con 20 animales (cuatro por condición). A: los conteos BH q<0.05 de autores y reajuste coinciden en los cuatro contrastes y cada conjunto de IDs Ensembl exactos tiene Jaccard 1. B: los 21,388 efectos de máxima verosimilitud PM frente a PBS finitos, con línea de identidad y casillas hexagonales en escala log del número de genes. No incluye realineamiento de lecturas ni una cohorte biológica independiente.",
+      "caption": "Count-based reproduction of the original five-condition cortex analysis, using 20 animals (four per condition). A: author and refit BH q<0.05 counts are identical for all four contrasts, and each exact Ensembl-ID discovery set has Jaccard 1. B: all 21,388 finite PM-versus-PBS maximum-likelihood effects, with identity line and log-count hexagonal binning. No raw-read realignment or independent biological cohort is involved.",
+      "files": {
+        "png": "results/defense_slides/figures/rep_cortex_reproduction.png",
+        "svg": "results/defense_slides/figures/rep_cortex_reproduction.svg",
+        "pdf": "results/defense_slides/figures/rep_cortex_reproduction.pdf"
+      },
+      "exports": {
+        "png": {
+          "path": "results/defense_slides/figures/rep_cortex_reproduction.png",
+          "bytes": 110684,
+          "sha256": "be49e04254908206a418270e856b01b4782d799758846ec10892d8b8ce93ea2a"
+        },
+        "svg": {
+          "path": "results/defense_slides/figures/rep_cortex_reproduction.svg",
+          "bytes": 37588,
+          "sha256": "69938299f26c9c72de30f8ade3ba2671e57c2db2a5d9c65e481e62f9db5ca89c"
+        },
+        "pdf": {
+          "path": "results/defense_slides/figures/rep_cortex_reproduction.pdf",
+          "bytes": 29594,
+          "sha256": "ea9d7db948af95fbc9eff8d280ab8210741848685192f122676666fb6c373ff0"
+        }
+      },
+      "source_paths": [
+        "results/replication_pm/summary.json",
+        "results/replication_pm/cortex_author_refit_PM.csv.gz"
+      ],
+      "source_hashes": {
+        "results/replication_pm/summary.json": "e7a3ec9fba5ef292c6a294c9a42205f8388d5326e6986cf8c4cc4fbd57b268e6",
+        "results/replication_pm/cortex_author_refit_PM.csv.gz": "efcb9832c34585d05c60cb6012735be9ad7d83093f77ef1a511f89d754af801f"
+      },
+      "render_size_pixels": [
+        1600,
+        650
+      ],
+      "figure_size_inches": [
+        16,
+        6.5
+      ],
+      "PNG_dpi": 100,
+      "scope": "Presentation re-expression of frozen computational reproduction outputs",
+      "diagnostics": {
+        "finite_effects": 21388,
+        "excluded_nonfinite_effects": 0,
+        "rho": 1.0,
+        "all_four_FDR_sets_identical": true,
+        "text_outside_canvas": []
+      }
+    },
+    "rep_cortex_y_markers": {
+      "language": "en",
+      "caption_en": "Descriptive source-count diagnostic for all 20 cortex animals. A: log₂(1+sum of raw Ddx3y,Uty,Kdm5d counts), with fixed within-condition horizontal offsets solely to distinguish animals. B: raw Xist and the same Y-marker sum on log₂(1+count) axes. Shapes and colors distinguish conditions. PBS samples have zero raw counts for each Y marker. No sex classification, exposure-effect test, sample exclusion or covariate was inferred.",
+      "caption_es": "Diagnóstico descriptivo de conteos originales de los 20 animales corticales. A: log₂(1+suma de conteos originales Ddx3y,Uty,Kdm5d), con desplazamientos horizontales fijos dentro de cada condición solo para distinguir animales. B: Xist y la misma suma Y en ejes log₂(1+conteo). Formas y colores distinguen condiciones. PBS tiene cero conteos originales en cada marcador Y. No se infiere clasificación de sexo, prueba de exposición, exclusión ni covariable.",
+      "caption": "Descriptive source-count diagnostic for all 20 cortex animals. A: log₂(1+sum of raw Ddx3y,Uty,Kdm5d counts), with fixed within-condition horizontal offsets solely to distinguish animals. B: raw Xist and the same Y-marker sum on log₂(1+count) axes. Shapes and colors distinguish conditions. PBS samples have zero raw counts for each Y marker. No sex classification, exposure-effect test, sample exclusion or covariate was inferred.",
+      "files": {
+        "png": "results/defense_slides/figures/rep_cortex_y_markers.png",
+        "svg": "results/defense_slides/figures/rep_cortex_y_markers.svg",
+        "pdf": "results/defense_slides/figures/rep_cortex_y_markers.pdf"
+      },
+      "exports": {
+        "png": {
+          "path": "results/defense_slides/figures/rep_cortex_y_markers.png",
+          "bytes": 64766,
+          "sha256": "03ef1fb75444ec87399f28f4c57e476cec62eef671b7fa5efa9807d7f807df49"
+        },
+        "svg": {
+          "path": "results/defense_slides/figures/rep_cortex_y_markers.svg",
+          "bytes": 32114,
+          "sha256": "c3966d35ce9aaf3acbc25ab7569c63e98d87e10efe77d570c3652ff2605e1be4"
+        },
+        "pdf": {
+          "path": "results/defense_slides/figures/rep_cortex_y_markers.pdf",
+          "bytes": 18641,
+          "sha256": "dea00831c82f341c5f5669e10a5330915991545d630ac57ff90d57f4afaaef66"
+        }
+      },
+      "source_paths": [
+        "results/replication_pm/cortex_marker_expression_by_animal.csv",
+        "results/replication_pm/summary.json"
+      ],
+      "source_hashes": {
+        "results/replication_pm/cortex_marker_expression_by_animal.csv": "2bcc9c300c8baaad267e3cbef384c03117817bde1c6ab6aa4fef7315127e7c14",
+        "results/replication_pm/summary.json": "e7a3ec9fba5ef292c6a294c9a42205f8388d5326e6986cf8c4cc4fbd57b268e6"
+      },
+      "render_size_pixels": [
+        1600,
+        650
+      ],
+      "figure_size_inches": [
+        16,
+        6.5
+      ],
+      "PNG_dpi": 100,
+      "scope": "Descriptive original-count QC; log₂(1+count) transform and deterministic display-only offsets",
+      "diagnostics": {
+        "animals": 20,
+        "PBS_animals": 4,
+        "PBS_raw_Y_counts_all_zero": true,
+        "text_outside_canvas": []
+      }
+    },
+    "rep_hypothalamus_sensitivity": {
+      "language": "en",
+      "caption_en": "Methodological sensitivity of hypothalamus discovery counts. A contrasts the published17 PM-associated genes, primary7-animal PyDESeq2 result11, independent-software R DESeq2 result12, and explicitly unadjusted11-animal TMM/voom result0. B contrasts published761 HFD genes with declared sensitivity3600. Sample sets, models and gene universes differ. The original RUVg control genes and k were not recovered, so these are not matched replications of the original adjustment.",
+      "caption_es": "Sensibilidad metodológica de los conteos de hallazgos hipotalámicos. A contrasta17 genes PM publicados,11 del análisis principal PyDESeq2 de 7 animales,12 de DESeq2 en R y0 del TMM/voom explícitamente sin ajuste RUVg de 11 animales. B contrasta761 genes HFD publicados con3600 de la sensibilidad declarada. Difieren muestras, modelos y universos. No se recuperaron controles RUVg ni k, por lo que no son reproducciones equiparables del ajuste original.",
+      "caption": "Methodological sensitivity of hypothalamus discovery counts. A contrasts the published17 PM-associated genes, primary7-animal PyDESeq2 result11, independent-software R DESeq2 result12, and explicitly unadjusted11-animal TMM/voom result0. B contrasts published761 HFD genes with declared sensitivity3600. Sample sets, models and gene universes differ. The original RUVg control genes and k were not recovered, so these are not matched replications of the original adjustment.",
+      "files": {
+        "png": "results/defense_slides/figures/rep_hypothalamus_sensitivity.png",
+        "svg": "results/defense_slides/figures/rep_hypothalamus_sensitivity.svg",
+        "pdf": "results/defense_slides/figures/rep_hypothalamus_sensitivity.pdf"
+      },
+      "exports": {
+        "png": {
+          "path": "results/defense_slides/figures/rep_hypothalamus_sensitivity.png",
+          "bytes": 79453,
+          "sha256": "1b5bbc5ad317d9b272a846fdcebec7816d495b360fab2815d1121a5bc208f1f5"
+        },
+        "svg": {
+          "path": "results/defense_slides/figures/rep_hypothalamus_sensitivity.svg",
+          "bytes": 21106,
+          "sha256": "e6b321924fe5d24866552f8dfa5469fdc5a93527e80c7942729645316438c3d8"
+        },
+        "pdf": {
+          "path": "results/defense_slides/figures/rep_hypothalamus_sensitivity.pdf",
+          "bytes": 19723,
+          "sha256": "29227529dd527441591bfa31ce3c9670709b20c48a4945fcf802c8d0763673ee"
+        }
+      },
+      "source_paths": [
+        "results/replication_pm/summary.json",
+        "results/replication_pm/methods.json",
+        "results/hypothalamus/independent_deseq2_check/summary.json"
+      ],
+      "source_hashes": {
+        "results/replication_pm/summary.json": "e7a3ec9fba5ef292c6a294c9a42205f8388d5326e6986cf8c4cc4fbd57b268e6",
+        "results/replication_pm/methods.json": "7299f1de277a43bdb3acfac578298f7db13270ca972b26d5f8f15574bb090815",
+        "results/hypothalamus/independent_deseq2_check/summary.json": "15efb56d553c450eeab847c1f7e5abd00ff3c31f4dc678f896ac4d71d716883b"
+      },
+      "render_size_pixels": [
+        1600,
+        650
+      ],
+      "figure_size_inches": [
+        16,
+        6.5
+      ],
+      "PNG_dpi": 100,
+      "scope": "Method comparison across different declared analyses, not effect or causal comparison",
+      "diagnostics": {
+        "PM_counts": [
+          17,
+          11,
+          12,
+          0
+        ],
+        "HFD_counts": [
+          761,
+          3600
+        ],
+        "text_outside_canvas": []
+      }
+    },
+    "rep_mirna574": {
+      "language": "en",
+      "caption_en": "Prespecified author target mmu-miR-574-5p in all 9 source arrays, three per group. A shows every deposited normalized signal plus group mean±SE. No second log transformation is applied. B shows high-dose minus saline mean difference with limma and unmoderated LSD pointwise 95% intervals, nominal p and separate BH q across 1,245 features. Omnibus ANOVA p=.078773 fails the protected-LSD gate. Direction and nominal pairwise agreement do not establish array-wide FDR confirmation or reproduce independent qPCR/rescue assays.",
+      "caption_es": "Diana original preespecificada mmu-miR-574-5p en los 9 microarreglos, tres por grupo. A muestra todas las señales normalizadas depositadas y media±EE. No se aplica un segundo logaritmo. B muestra diferencia dosis alta menos salina con intervalos puntuales95% de limma y LSD no moderada, p nominal y BH q separado entre 1,245 características. ANOVA p=.078773 no cumple el requisito de LSD protegida. La concordancia direccional/nominal no establece confirmación FDR global ni reproduce qPCR/rescate independientes.",
+      "caption": "Prespecified author target mmu-miR-574-5p in all 9 source arrays, three per group. A shows every deposited normalized signal plus group mean±SE. No second log transformation is applied. B shows high-dose minus saline mean difference with limma and unmoderated LSD pointwise 95% intervals, nominal p and separate BH q across 1,245 features. Omnibus ANOVA p=.078773 fails the protected-LSD gate. Direction and nominal pairwise agreement do not establish array-wide FDR confirmation or reproduce independent qPCR/rescue assays.",
+      "files": {
+        "png": "results/defense_slides/figures/rep_mirna574.png",
+        "svg": "results/defense_slides/figures/rep_mirna574.svg",
+        "pdf": "results/defense_slides/figures/rep_mirna574.pdf"
+      },
+      "exports": {
+        "png": {
+          "path": "results/defense_slides/figures/rep_mirna574.png",
+          "bytes": 70776,
+          "sha256": "5bd32eb09a6781851b0164bad565f40e43eea6c90e0e7a3bedd589d49cd28667"
+        },
+        "svg": {
+          "path": "results/defense_slides/figures/rep_mirna574.svg",
+          "bytes": 19371,
+          "sha256": "ef993c38e6fa59d9e0fa88c3713fdd4d462402901119b655e780cdf9992095f8"
+        },
+        "pdf": {
+          "path": "results/defense_slides/figures/rep_mirna574.pdf",
+          "bytes": 16215,
+          "sha256": "9f6676887532bfff4e6ca5e9a1ee8ba6022a82cfcebb7b4fc46ab1b4f15542cd"
+        }
+      },
+      "source_paths": [
+        "results/mirna/analysis_signal.tsv",
+        "results/replication_mirna_ozone/mirna_author_targets.csv",
+        "results/replication_mirna_ozone/summary.json"
+      ],
+      "source_hashes": {
+        "results/mirna/analysis_signal.tsv": "a5b7e5258550d63b02eea6c177ff13b116a2b56a9befcc1d4cb87a93523d56f3",
+        "results/replication_mirna_ozone/mirna_author_targets.csv": "f1188a412d1172ed60f092a8a21af6beabdb04b47fec13aa0e34042f1b5fd9f4",
+        "results/replication_mirna_ozone/summary.json": "e868120240467c19222208578a226029365fcf385e5cd8d681827b80daabfc15"
+      },
+      "render_size_pixels": [
+        1600,
+        650
+      ],
+      "figure_size_inches": [
+        16,
+        6.5
+      ],
+      "PNG_dpi": 100,
+      "scope": "Display of measured normalized array signals and existing target statistics",
+      "diagnostics": {
+        "animals": 9,
+        "mean_difference": -0.2694488666666661,
+        "ANOVA_pvalue": 0.0787730325106783,
+        "limma_BH_FDR": 0.311937603865475,
+        "protected_LSD_nominal": false,
+        "text_outside_canvas": []
+      }
+    },
+    "rep_ozone_concordance": {
+      "language": "en",
+      "caption_en": "Ozone-study same-source effect concordance. A includes all 15,559 common finite exact-symbol effects from the 24-animal genotype-only candidate versus author genotype CSV; hexbin color encodes log gene count. B includes 858 of 959 author-selected 17-month ozone E4-versus-E3 S3 genes with finite exact-symbol effects. All points are retained, with shared full-range axes and identity lines. The 98.8% direction agreement andρ=.962 in B are conditional on source selection and do not constitute independent biological replication.",
+      "caption_es": "Concordancia de efectos en la misma fuente del estudio O₃. A incluye los 15,559 efectos finitos con símbolos exactos comunes entre candidato de genotipo de 24 animales y CSV original; el color hexagonal codifica log del número de genes. B incluye 858 de 959 genes S3 seleccionados por autores para E4 frente a E3 bajo O₃ a17 meses. Se retienen todos los puntos, con ejes completos compartidos y líneas de identidad. El98.8% de concordancia direccional yρ=.962 de B condicionan a la selección original y no constituyen replicación biológica independiente.",
+      "caption": "Ozone-study same-source effect concordance. A includes all 15,559 common finite exact-symbol effects from the 24-animal genotype-only candidate versus author genotype CSV; hexbin color encodes log gene count. B includes 858 of 959 author-selected 17-month ozone E4-versus-E3 S3 genes with finite exact-symbol effects. All points are retained, with shared full-range axes and identity lines. The 98.8% direction agreement andρ=.962 in B are conditional on source selection and do not constitute independent biological replication.",
+      "files": {
+        "png": "results/defense_slides/figures/rep_ozone_concordance.png",
+        "svg": "results/defense_slides/figures/rep_ozone_concordance.svg",
+        "pdf": "results/defense_slides/figures/rep_ozone_concordance.pdf"
+      },
+      "exports": {
+        "png": {
+          "path": "results/defense_slides/figures/rep_ozone_concordance.png",
+          "bytes": 132486,
+          "sha256": "65f45c86d37bcce4bc26e7e35ffa321c92bd1a83ebd7e691c62ad58d5b83ba10"
+        },
+        "svg": {
+          "path": "results/defense_slides/figures/rep_ozone_concordance.svg",
+          "bytes": 70943,
+          "sha256": "5ccffdc467311a30236e6c861ae0acaf5b4eb26cf8d24b3cab9d23f8a5208d1f"
+        },
+        "pdf": {
+          "path": "results/defense_slides/figures/rep_ozone_concordance.pdf",
+          "bytes": 45756,
+          "sha256": "7d85285fb2e773de9471cf071c184f0472831867f78f27274139a8b6cad9079b"
+        }
+      },
+      "source_paths": [
+        "results/replication_mirna_ozone/ozone_concordance_genotype_pooled.csv.gz",
+        "results/replication_mirna_ozone/ozone_concordance_old_ozone_genotype.csv.gz",
+        "results/replication_mirna_ozone/summary.json"
+      ],
+      "source_hashes": {
+        "results/replication_mirna_ozone/ozone_concordance_genotype_pooled.csv.gz": "a3eb78929fe2be2378cc848cf2060e8987e3319a995d83e8c055ab605dd9c7f1",
+        "results/replication_mirna_ozone/ozone_concordance_old_ozone_genotype.csv.gz": "b2c25dc1762630c8a546806786a1ad53c5529727f1c0c8138c0509697c56b27c",
+        "results/replication_mirna_ozone/summary.json": "e868120240467c19222208578a226029365fcf385e5cd8d681827b80daabfc15"
+      },
+      "render_size_pixels": [
+        1600,
+        650
+      ],
+      "figure_size_inches": [
+        16,
+        6.5
+      ],
+      "PNG_dpi": 100,
+      "scope": "Existing exact-symbol effect comparison; no refit, no selective cropping or omission",
+      "diagnostics": {
+        "whole_common_finite_effects": 15559,
+        "S3_common_finite_effects": 858,
+        "S3_source_selected": 959,
+        "text_outside_canvas": []
+      }
+    },
+    "rep_hypothalamus_primary": {
+      "language": "en",
+      "caption_en": "All 11 primary hypothalamic BH q<.05 discoveries from the 7-animal PM-versus-filtered-air count analysis, ordered by unshrunken log₂FC. Points are maximum-likelihood coefficients, bars are pointwise±1.96SE Wald intervals, and the separate q column reports BH inference. The displayed intervals do not adjust for selection or multiplicity. No refit, gene omission, or spatial/cell-specific exposure inference is performed.",
+      "caption_es": "Los 11 hallazgos hipotalámicos principales BH q<.05 del análisis de conteos de 7 animales PM frente a aire filtrado, ordenados por log₂FC sin regularizar. Los puntos son coeficientes de máxima verosimilitud, las barras intervalos Wald puntuales±1.96EE y la columna q informa BH por separado. Los intervalos no ajustan por selección ni multiplicidad. No se reajustan modelos, omiten genes ni infiere respuesta espacial/celular de exposición.",
+      "caption": "All 11 primary hypothalamic BH q<.05 discoveries from the 7-animal PM-versus-filtered-air count analysis, ordered by unshrunken log₂FC. Points are maximum-likelihood coefficients, bars are pointwise±1.96SE Wald intervals, and the separate q column reports BH inference. The displayed intervals do not adjust for selection or multiplicity. No refit, gene omission, or spatial/cell-specific exposure inference is performed.",
+      "files": {
+        "png": "results/defense_slides/figures/rep_hypothalamus_primary.png",
+        "svg": "results/defense_slides/figures/rep_hypothalamus_primary.svg",
+        "pdf": "results/defense_slides/figures/rep_hypothalamus_primary.pdf"
+      },
+      "exports": {
+        "png": {
+          "path": "results/defense_slides/figures/rep_hypothalamus_primary.png",
+          "bytes": 75127,
+          "sha256": "f813d6dce95cd84723d3f9a546d30b6f64288bbf0aa1cb9748286d92ad1ded3f"
+        },
+        "svg": {
+          "path": "results/defense_slides/figures/rep_hypothalamus_primary.svg",
+          "bytes": 22569,
+          "sha256": "61574c1747a85e81e6079ff465a0d80495e7f14aea79a164070e8f447123d3c3"
+        },
+        "pdf": {
+          "path": "results/defense_slides/figures/rep_hypothalamus_primary.pdf",
+          "bytes": 22369,
+          "sha256": "c0ae906cbd1cf916ba158e93362b00e98b7191b902e99bc2a8de9f20b576f4df"
+        }
+      },
+      "source_paths": [
+        "results/hypothalamus/differential_expression_mle.tsv",
+        "results/hypothalamus/summary.json"
+      ],
+      "source_hashes": {
+        "results/hypothalamus/differential_expression_mle.tsv": "f9af93e60834a1b740179ea1e495789a7c197e91f56de2b1d0680fc083906186",
+        "results/hypothalamus/summary.json": "b08e6f7acf761990ca69226ad7e6d753c2b62088b05d8dac4f53bbba6621e211"
+      },
+      "render_size_pixels": [
+        1600,
+        650
+      ],
+      "figure_size_inches": [
+        16,
+        6.5
+      ],
+      "PNG_dpi": 100,
+      "scope": "Presentation of all preexisting BH discoveries, with pointwise unadjusted Wald intervals",
+      "diagnostics": {
+        "discoveries": 11,
+        "source_effect": "MLE",
+        "interval": "pointwise MLE ±1.96SE",
+        "full_source_genes": 19611,
+        "text_outside_canvas": []
+      }
+    },
+    "rep_cortex_primary": {
+      "language": "en",
+      "caption_en": "Primary8-animal PM-versus-PBS cortical analysis. A displays all 19,225 finite maximum-likelihood effects and nominal Wald p values, with color indicating BH q<.05 status (658 higher,509 lower). Unavailable tests remain in source tables; no display percentile clipping is applied. B labels the 7 smallest-BH-q genes and shows their pointwise unshrunken MLE±1.96SE intervals, without selection/multiplicity adjustment. This primary contrast uses a different fitted sample set than the 20-animal author reproduction.",
+      "caption_es": "Análisis cortical principal PM frente a PBS de 8 animales. A muestra los 19,225 efectos de máxima verosimilitud y p Wald nominales finitos, con color para BH q<.05 (658 mayores,509 menores). Las pruebas no disponibles permanecen en las tablas y no se recorta por percentiles. B identifica los 7 genes con menor BH q y sus intervalos puntuales MLE±1.96EE sin ajuste por selección/multiplicidad. El contraste usa un conjunto de muestras distinto de la reproducción original de 20 animales.",
+      "caption": "Primary8-animal PM-versus-PBS cortical analysis. A displays all 19,225 finite maximum-likelihood effects and nominal Wald p values, with color indicating BH q<.05 status (658 higher,509 lower). Unavailable tests remain in source tables; no display percentile clipping is applied. B labels the 7 smallest-BH-q genes and shows their pointwise unshrunken MLE±1.96SE intervals, without selection/multiplicity adjustment. This primary contrast uses a different fitted sample set than the 20-animal author reproduction.",
+      "files": {
+        "png": "results/defense_slides/figures/rep_cortex_primary.png",
+        "svg": "results/defense_slides/figures/rep_cortex_primary.svg",
+        "pdf": "results/defense_slides/figures/rep_cortex_primary.pdf"
+      },
+      "exports": {
+        "png": {
+          "path": "results/defense_slides/figures/rep_cortex_primary.png",
+          "bytes": 111479,
+          "sha256": "08f78da53b543c7c1feefdef144d7e971af2ea42fd2c59ef1fabbe79829735a8"
+        },
+        "svg": {
+          "path": "results/defense_slides/figures/rep_cortex_primary.svg",
+          "bytes": 63845,
+          "sha256": "8242ae50cc9bdec634ebcdfd5b286625b172e338529d42f2ce078366a65b5e44"
+        },
+        "pdf": {
+          "path": "results/defense_slides/figures/rep_cortex_primary.pdf",
+          "bytes": 38592,
+          "sha256": "68202ac7b7e7260f76da9928d7b490e0f1a35819aeba270b09a215c28abd8ce8"
+        }
+      },
+      "source_paths": [
+        "results/cortex/DE_PM_vs_PBS_MLE.tsv",
+        "results/cortex/gene_annotation.tsv",
+        "results/cortex/summary.json"
+      ],
+      "source_hashes": {
+        "results/cortex/DE_PM_vs_PBS_MLE.tsv": "95103df01ef0c568e90fae9e0e2440a334f95e5c9f23ce3242147c6866bdda1a",
+        "results/cortex/gene_annotation.tsv": "8ebe7d79093c6b461f4cf2b411ffbf3d6e6b9750207d094cc2dd446b422ef17b",
+        "results/cortex/summary.json": "6a47f9951cafdf466d660ccae1b164a1f1ad52d5b3f1032b28c32bd8d7c901f8"
+      },
+      "render_size_pixels": [
+        1600,
+        650
+      ],
+      "figure_size_inches": [
+        16,
+        6.5
+      ],
+      "PNG_dpi": 100,
+      "scope": "Existing primary differential table, full finite p-value domain and transparent selected-gene display",
+      "diagnostics": {
+        "finite_Wald_tests": 19225,
+        "unavailable_Wald_tests": 10,
+        "BH05": 1167,
+        "top_genes": [
+          "Nr1d1",
+          "Homer1",
+          "Xbp1",
+          "Hspa5",
+          "Pdia4",
+          "Zbtb40",
+          "Fosb"
+        ],
+        "p_floor_for_display": 1e-300,
+        "number_pvalues_below_floor": 0,
+        "text_outside_canvas": []
+      }
+    },
+    "rep_ozone_primary": {
+      "language": "en",
+      "caption_en": "Primary ozone count-model results from all 24 original paired-end libraries. A shows within-age/APOE O3-versus-filtered-air BH q<.05 discovery counts 0,399,2,3, each contrast adjusted separately. B shows 24 global 4df exposure-associated likelihood-ratio-test discoveries among 18,511 valid tests, a separate BH family. Panels use different y-axis scales. Count differences between strata do not establish statistical interaction or relative susceptibility. No single signed effect is assigned to the global test.",
+      "caption_es": "Resultados principales del modelo de conteos O₃ de las 24 bibliotecas pareadas originales. A muestra 0,399,2,3 hallazgos BH q<.05 O₃ frente a aire filtrado por edad/APOE, con ajuste separado. B muestra 24 hallazgos de la prueba global de exposición de 4gl entre 18,511 pruebas válidas, familia BH distinta. Los paneles usan escalas verticales diferentes. Diferencias de conteos no establecen interacción ni susceptibilidad relativa. La prueba global no recibe un efecto único con signo.",
+      "caption": "Primary ozone count-model results from all 24 original paired-end libraries. A shows within-age/APOE O3-versus-filtered-air BH q<.05 discovery counts 0,399,2,3, each contrast adjusted separately. B shows 24 global 4df exposure-associated likelihood-ratio-test discoveries among 18,511 valid tests, a separate BH family. Panels use different y-axis scales. Count differences between strata do not establish statistical interaction or relative susceptibility. No single signed effect is assigned to the global test.",
+      "files": {
+        "png": "results/defense_slides/figures/rep_ozone_primary.png",
+        "svg": "results/defense_slides/figures/rep_ozone_primary.svg",
+        "pdf": "results/defense_slides/figures/rep_ozone_primary.pdf"
+      },
+      "exports": {
+        "png": {
+          "path": "results/defense_slides/figures/rep_ozone_primary.png",
+          "bytes": 67571,
+          "sha256": "c2cd5f1db7ddba7be9b4348a7f443ac7a218152631aca92daf66f589dc786444"
+        },
+        "svg": {
+          "path": "results/defense_slides/figures/rep_ozone_primary.svg",
+          "bytes": 15966,
+          "sha256": "a775723930b651164152e0f6022eeb7d6e0b80192cfefe72aec811eea32fc33c"
+        },
+        "pdf": {
+          "path": "results/defense_slides/figures/rep_ozone_primary.pdf",
+          "bytes": 20275,
+          "sha256": "f7539ec77f020b7e5c1d5872bbeb1e337ef1a77a070c690c860dac9593a340ce"
+        }
+      },
+      "source_paths": [
+        "results/ozone/summary.json",
+        "results/ozone/methods.json"
+      ],
+      "source_hashes": {
+        "results/ozone/summary.json": "4c0892ce4327ab2dfa1fed43457454715549dbd38739a73f707cadbfd7812888",
+        "results/ozone/methods.json": "9342736da89229ce19bcfc06e58596066493e789be424b66df1b76afe246466a"
+      },
+      "render_size_pixels": [
+        1600,
+        650
+      ],
+      "figure_size_inches": [
+        16,
+        6.5
+      ],
+      "PNG_dpi": 100,
+      "scope": "Existing primary BH discovery summaries, not a new interaction analysis",
+      "diagnostics": {
+        "within_stratum_BH05": [
+          0,
+          399,
+          2,
+          3
+        ],
+        "global_LRT_BH05": 24,
+        "global_df": 4,
+        "all_libraries": 24,
+        "text_outside_canvas": []
+      }
+    },
+    "rep_cortex_reproduction_es": {
+      "language": "es",
+      "caption_en": "Count-based reproduction of the original five-condition cortex analysis, using 20 animals (four per condition). A: author and refit BH q<0.05 counts are identical for all four contrasts, and each exact Ensembl-ID discovery set has Jaccard 1. B: all 21,388 finite PM-versus-PBS maximum-likelihood effects, with identity line and log-count hexagonal binning. No raw-read realignment or independent biological cohort is involved.",
+      "caption_es": "Reproducción basada en conteos del análisis cortical original de cinco condiciones, con 20 animales (cuatro por condición). A: los conteos BH q<0.05 de autores y reajuste coinciden en los cuatro contrastes y cada conjunto de IDs Ensembl exactos tiene Jaccard 1. B: los 21,388 efectos de máxima verosimilitud PM frente a PBS finitos, con línea de identidad y casillas hexagonales en escala log del número de genes. No incluye realineamiento de lecturas ni una cohorte biológica independiente.",
+      "caption": "Reproducción basada en conteos del análisis cortical original de cinco condiciones, con 20 animales (cuatro por condición). A: los conteos BH q<0.05 de autores y reajuste coinciden en los cuatro contrastes y cada conjunto de IDs Ensembl exactos tiene Jaccard 1. B: los 21,388 efectos de máxima verosimilitud PM frente a PBS finitos, con línea de identidad y casillas hexagonales en escala log del número de genes. No incluye realineamiento de lecturas ni una cohorte biológica independiente.",
+      "files": {
+        "png": "results/defense_slides/figures/rep_cortex_reproduction_es.png",
+        "svg": "results/defense_slides/figures/rep_cortex_reproduction_es.svg",
+        "pdf": "results/defense_slides/figures/rep_cortex_reproduction_es.pdf"
+      },
+      "exports": {
+        "png": {
+          "path": "results/defense_slides/figures/rep_cortex_reproduction_es.png",
+          "bytes": 115678,
+          "sha256": "df8e9c938c020b6c86a6d6167e6099c7d9b982dd02c8c01e2600663c573fc945"
+        },
+        "svg": {
+          "path": "results/defense_slides/figures/rep_cortex_reproduction_es.svg",
+          "bytes": 37602,
+          "sha256": "c7ab9104c68978589da09f6200b9237dcd22c13bf17326b67ccdbe1b34aed02f"
+        },
+        "pdf": {
+          "path": "results/defense_slides/figures/rep_cortex_reproduction_es.pdf",
+          "bytes": 29283,
+          "sha256": "fc81573ddb2e5c25cfd03e90c42660c131b60f7f5eaab1d5c6cb0514a6b35714"
+        }
+      },
+      "source_paths": [
+        "results/replication_pm/summary.json",
+        "results/replication_pm/cortex_author_refit_PM.csv.gz"
+      ],
+      "source_hashes": {
+        "results/replication_pm/summary.json": "e7a3ec9fba5ef292c6a294c9a42205f8388d5326e6986cf8c4cc4fbd57b268e6",
+        "results/replication_pm/cortex_author_refit_PM.csv.gz": "efcb9832c34585d05c60cb6012735be9ad7d83093f77ef1a511f89d754af801f"
+      },
+      "render_size_pixels": [
+        1600,
+        650
+      ],
+      "figure_size_inches": [
+        16,
+        6.5
+      ],
+      "PNG_dpi": 100,
+      "scope": "Presentation re-expression of frozen computational reproduction outputs",
+      "diagnostics": {
+        "finite_effects": 21388,
+        "excluded_nonfinite_effects": 0,
+        "rho": 1.0,
+        "all_four_FDR_sets_identical": true,
+        "text_outside_canvas": []
+      }
+    },
+    "rep_cortex_y_markers_es": {
+      "language": "es",
+      "caption_en": "Descriptive source-count diagnostic for all 20 cortex animals. A: log₂(1+sum of raw Ddx3y,Uty,Kdm5d counts), with fixed within-condition horizontal offsets solely to distinguish animals. B: raw Xist and the same Y-marker sum on log₂(1+count) axes. Shapes and colors distinguish conditions. PBS samples have zero raw counts for each Y marker. No sex classification, exposure-effect test, sample exclusion or covariate was inferred.",
+      "caption_es": "Diagnóstico descriptivo de conteos originales de los 20 animales corticales. A: log₂(1+suma de conteos originales Ddx3y,Uty,Kdm5d), con desplazamientos horizontales fijos dentro de cada condición solo para distinguir animales. B: Xist y la misma suma Y en ejes log₂(1+conteo). Formas y colores distinguen condiciones. PBS tiene cero conteos originales en cada marcador Y. No se infiere clasificación de sexo, prueba de exposición, exclusión ni covariable.",
+      "caption": "Diagnóstico descriptivo de conteos originales de los 20 animales corticales. A: log₂(1+suma de conteos originales Ddx3y,Uty,Kdm5d), con desplazamientos horizontales fijos dentro de cada condición solo para distinguir animales. B: Xist y la misma suma Y en ejes log₂(1+conteo). Formas y colores distinguen condiciones. PBS tiene cero conteos originales en cada marcador Y. No se infiere clasificación de sexo, prueba de exposición, exclusión ni covariable.",
+      "files": {
+        "png": "results/defense_slides/figures/rep_cortex_y_markers_es.png",
+        "svg": "results/defense_slides/figures/rep_cortex_y_markers_es.svg",
+        "pdf": "results/defense_slides/figures/rep_cortex_y_markers_es.pdf"
+      },
+      "exports": {
+        "png": {
+          "path": "results/defense_slides/figures/rep_cortex_y_markers_es.png",
+          "bytes": 66886,
+          "sha256": "1b24c01654dda9d87fa3577f6dfa87ca4c65214a2d2408fd9868a582c6f275f9"
+        },
+        "svg": {
+          "path": "results/defense_slides/figures/rep_cortex_y_markers_es.svg",
+          "bytes": 32119,
+          "sha256": "f4f0a4e5f701b4cf874bde881fa89ef13868517fe537ef6bb8cc5a8ed80cac47"
+        },
+        "pdf": {
+          "path": "results/defense_slides/figures/rep_cortex_y_markers_es.pdf",
+          "bytes": 17829,
+          "sha256": "1a98de00afbb88e049f0f2d47e24c8060f321222f25212804a747c703cb7e2b7"
+        }
+      },
+      "source_paths": [
+        "results/replication_pm/cortex_marker_expression_by_animal.csv",
+        "results/replication_pm/summary.json"
+      ],
+      "source_hashes": {
+        "results/replication_pm/cortex_marker_expression_by_animal.csv": "2bcc9c300c8baaad267e3cbef384c03117817bde1c6ab6aa4fef7315127e7c14",
+        "results/replication_pm/summary.json": "e7a3ec9fba5ef292c6a294c9a42205f8388d5326e6986cf8c4cc4fbd57b268e6"
+      },
+      "render_size_pixels": [
+        1600,
+        650
+      ],
+      "figure_size_inches": [
+        16,
+        6.5
+      ],
+      "PNG_dpi": 100,
+      "scope": "Descriptive original-count QC; log₂(1+count) transform and deterministic display-only offsets",
+      "diagnostics": {
+        "animals": 20,
+        "PBS_animals": 4,
+        "PBS_raw_Y_counts_all_zero": true,
+        "text_outside_canvas": []
+      }
+    },
+    "rep_hypothalamus_sensitivity_es": {
+      "language": "es",
+      "caption_en": "Methodological sensitivity of hypothalamus discovery counts. A contrasts the published17 PM-associated genes, primary7-animal PyDESeq2 result11, independent-software R DESeq2 result12, and explicitly unadjusted11-animal TMM/voom result0. B contrasts published761 HFD genes with declared sensitivity3600. Sample sets, models and gene universes differ. The original RUVg control genes and k were not recovered, so these are not matched replications of the original adjustment.",
+      "caption_es": "Sensibilidad metodológica de los conteos de hallazgos hipotalámicos. A contrasta17 genes PM publicados,11 del análisis principal PyDESeq2 de 7 animales,12 de DESeq2 en R y0 del TMM/voom explícitamente sin ajuste RUVg de 11 animales. B contrasta761 genes HFD publicados con3600 de la sensibilidad declarada. Difieren muestras, modelos y universos. No se recuperaron controles RUVg ni k, por lo que no son reproducciones equiparables del ajuste original.",
+      "caption": "Sensibilidad metodológica de los conteos de hallazgos hipotalámicos. A contrasta17 genes PM publicados,11 del análisis principal PyDESeq2 de 7 animales,12 de DESeq2 en R y0 del TMM/voom explícitamente sin ajuste RUVg de 11 animales. B contrasta761 genes HFD publicados con3600 de la sensibilidad declarada. Difieren muestras, modelos y universos. No se recuperaron controles RUVg ni k, por lo que no son reproducciones equiparables del ajuste original.",
+      "files": {
+        "png": "results/defense_slides/figures/rep_hypothalamus_sensitivity_es.png",
+        "svg": "results/defense_slides/figures/rep_hypothalamus_sensitivity_es.svg",
+        "pdf": "results/defense_slides/figures/rep_hypothalamus_sensitivity_es.pdf"
+      },
+      "exports": {
+        "png": {
+          "path": "results/defense_slides/figures/rep_hypothalamus_sensitivity_es.png",
+          "bytes": 78414,
+          "sha256": "558b31baf2fe2ab0883dd90d565e49e1e6e5377a538578dbaccd0d6219ea132e"
+        },
+        "svg": {
+          "path": "results/defense_slides/figures/rep_hypothalamus_sensitivity_es.svg",
+          "bytes": 21116,
+          "sha256": "32016b8793fbddc5e774c17a8231b63287620902b8c09bf34188e3615581bf61"
+        },
+        "pdf": {
+          "path": "results/defense_slides/figures/rep_hypothalamus_sensitivity_es.pdf",
+          "bytes": 19395,
+          "sha256": "ceb2ab28b9e54b82f639d59a4c69084e2de91f8f3c56da5f69037a71680c7736"
+        }
+      },
+      "source_paths": [
+        "results/replication_pm/summary.json",
+        "results/replication_pm/methods.json",
+        "results/hypothalamus/independent_deseq2_check/summary.json"
+      ],
+      "source_hashes": {
+        "results/replication_pm/summary.json": "e7a3ec9fba5ef292c6a294c9a42205f8388d5326e6986cf8c4cc4fbd57b268e6",
+        "results/replication_pm/methods.json": "7299f1de277a43bdb3acfac578298f7db13270ca972b26d5f8f15574bb090815",
+        "results/hypothalamus/independent_deseq2_check/summary.json": "15efb56d553c450eeab847c1f7e5abd00ff3c31f4dc678f896ac4d71d716883b"
+      },
+      "render_size_pixels": [
+        1600,
+        650
+      ],
+      "figure_size_inches": [
+        16,
+        6.5
+      ],
+      "PNG_dpi": 100,
+      "scope": "Method comparison across different declared analyses, not effect or causal comparison",
+      "diagnostics": {
+        "PM_counts": [
+          17,
+          11,
+          12,
+          0
+        ],
+        "HFD_counts": [
+          761,
+          3600
+        ],
+        "text_outside_canvas": []
+      }
+    },
+    "rep_mirna574_es": {
+      "language": "es",
+      "caption_en": "Prespecified author target mmu-miR-574-5p in all 9 source arrays, three per group. A shows every deposited normalized signal plus group mean±SE. No second log transformation is applied. B shows high-dose minus saline mean difference with limma and unmoderated LSD pointwise 95% intervals, nominal p and separate BH q across 1,245 features. Omnibus ANOVA p=.078773 fails the protected-LSD gate. Direction and nominal pairwise agreement do not establish array-wide FDR confirmation or reproduce independent qPCR/rescue assays.",
+      "caption_es": "Diana original preespecificada mmu-miR-574-5p en los 9 microarreglos, tres por grupo. A muestra todas las señales normalizadas depositadas y media±EE. No se aplica un segundo logaritmo. B muestra diferencia dosis alta menos salina con intervalos puntuales95% de limma y LSD no moderada, p nominal y BH q separado entre 1,245 características. ANOVA p=.078773 no cumple el requisito de LSD protegida. La concordancia direccional/nominal no establece confirmación FDR global ni reproduce qPCR/rescate independientes.",
+      "caption": "Diana original preespecificada mmu-miR-574-5p en los 9 microarreglos, tres por grupo. A muestra todas las señales normalizadas depositadas y media±EE. No se aplica un segundo logaritmo. B muestra diferencia dosis alta menos salina con intervalos puntuales95% de limma y LSD no moderada, p nominal y BH q separado entre 1,245 características. ANOVA p=.078773 no cumple el requisito de LSD protegida. La concordancia direccional/nominal no establece confirmación FDR global ni reproduce qPCR/rescate independientes.",
+      "files": {
+        "png": "results/defense_slides/figures/rep_mirna574_es.png",
+        "svg": "results/defense_slides/figures/rep_mirna574_es.svg",
+        "pdf": "results/defense_slides/figures/rep_mirna574_es.pdf"
+      },
+      "exports": {
+        "png": {
+          "path": "results/defense_slides/figures/rep_mirna574_es.png",
+          "bytes": 74056,
+          "sha256": "b3b38abbf77daf53cda77519396a19b3d97126d8f4d2d8948f396a7da3e02d76"
+        },
+        "svg": {
+          "path": "results/defense_slides/figures/rep_mirna574_es.svg",
+          "bytes": 19384,
+          "sha256": "3657f1418ce5235eb05baaadeef17132b8486cff8e774f1f7d6a530a3ed8e253"
+        },
+        "pdf": {
+          "path": "results/defense_slides/figures/rep_mirna574_es.pdf",
+          "bytes": 15698,
+          "sha256": "1152aa46255fed21321a1c06267ad716020f5b000997e9bfc554dc7b3e824658"
+        }
+      },
+      "source_paths": [
+        "results/mirna/analysis_signal.tsv",
+        "results/replication_mirna_ozone/mirna_author_targets.csv",
+        "results/replication_mirna_ozone/summary.json"
+      ],
+      "source_hashes": {
+        "results/mirna/analysis_signal.tsv": "a5b7e5258550d63b02eea6c177ff13b116a2b56a9befcc1d4cb87a93523d56f3",
+        "results/replication_mirna_ozone/mirna_author_targets.csv": "f1188a412d1172ed60f092a8a21af6beabdb04b47fec13aa0e34042f1b5fd9f4",
+        "results/replication_mirna_ozone/summary.json": "e868120240467c19222208578a226029365fcf385e5cd8d681827b80daabfc15"
+      },
+      "render_size_pixels": [
+        1600,
+        650
+      ],
+      "figure_size_inches": [
+        16,
+        6.5
+      ],
+      "PNG_dpi": 100,
+      "scope": "Display of measured normalized array signals and existing target statistics",
+      "diagnostics": {
+        "animals": 9,
+        "mean_difference": -0.2694488666666661,
+        "ANOVA_pvalue": 0.0787730325106783,
+        "limma_BH_FDR": 0.311937603865475,
+        "protected_LSD_nominal": false,
+        "text_outside_canvas": []
+      }
+    },
+    "rep_ozone_concordance_es": {
+      "language": "es",
+      "caption_en": "Ozone-study same-source effect concordance. A includes all 15,559 common finite exact-symbol effects from the 24-animal genotype-only candidate versus author genotype CSV; hexbin color encodes log gene count. B includes 858 of 959 author-selected 17-month ozone E4-versus-E3 S3 genes with finite exact-symbol effects. All points are retained, with shared full-range axes and identity lines. The 98.8% direction agreement andρ=.962 in B are conditional on source selection and do not constitute independent biological replication.",
+      "caption_es": "Concordancia de efectos en la misma fuente del estudio O₃. A incluye los 15,559 efectos finitos con símbolos exactos comunes entre candidato de genotipo de 24 animales y CSV original; el color hexagonal codifica log del número de genes. B incluye 858 de 959 genes S3 seleccionados por autores para E4 frente a E3 bajo O₃ a17 meses. Se retienen todos los puntos, con ejes completos compartidos y líneas de identidad. El98.8% de concordancia direccional yρ=.962 de B condicionan a la selección original y no constituyen replicación biológica independiente.",
+      "caption": "Concordancia de efectos en la misma fuente del estudio O₃. A incluye los 15,559 efectos finitos con símbolos exactos comunes entre candidato de genotipo de 24 animales y CSV original; el color hexagonal codifica log del número de genes. B incluye 858 de 959 genes S3 seleccionados por autores para E4 frente a E3 bajo O₃ a17 meses. Se retienen todos los puntos, con ejes completos compartidos y líneas de identidad. El98.8% de concordancia direccional yρ=.962 de B condicionan a la selección original y no constituyen replicación biológica independiente.",
+      "files": {
+        "png": "results/defense_slides/figures/rep_ozone_concordance_es.png",
+        "svg": "results/defense_slides/figures/rep_ozone_concordance_es.svg",
+        "pdf": "results/defense_slides/figures/rep_ozone_concordance_es.pdf"
+      },
+      "exports": {
+        "png": {
+          "path": "results/defense_slides/figures/rep_ozone_concordance_es.png",
+          "bytes": 135524,
+          "sha256": "658527e7312725e191015fd2100d2e7a8640d6765d7486c4e6f25f2c3dc18279"
+        },
+        "svg": {
+          "path": "results/defense_slides/figures/rep_ozone_concordance_es.svg",
+          "bytes": 70966,
+          "sha256": "2f063a347e27ef631a4ec5d0e0b867965ccb852d1c847c4702d9fb641c946861"
+        },
+        "pdf": {
+          "path": "results/defense_slides/figures/rep_ozone_concordance_es.pdf",
+          "bytes": 45431,
+          "sha256": "34f3e750a7f65af2750b13fd1b1ba0f3b845ff8ff63046087f984eb776c16c32"
+        }
+      },
+      "source_paths": [
+        "results/replication_mirna_ozone/ozone_concordance_genotype_pooled.csv.gz",
+        "results/replication_mirna_ozone/ozone_concordance_old_ozone_genotype.csv.gz",
+        "results/replication_mirna_ozone/summary.json"
+      ],
+      "source_hashes": {
+        "results/replication_mirna_ozone/ozone_concordance_genotype_pooled.csv.gz": "a3eb78929fe2be2378cc848cf2060e8987e3319a995d83e8c055ab605dd9c7f1",
+        "results/replication_mirna_ozone/ozone_concordance_old_ozone_genotype.csv.gz": "b2c25dc1762630c8a546806786a1ad53c5529727f1c0c8138c0509697c56b27c",
+        "results/replication_mirna_ozone/summary.json": "e868120240467c19222208578a226029365fcf385e5cd8d681827b80daabfc15"
+      },
+      "render_size_pixels": [
+        1600,
+        650
+      ],
+      "figure_size_inches": [
+        16,
+        6.5
+      ],
+      "PNG_dpi": 100,
+      "scope": "Existing exact-symbol effect comparison; no refit, no selective cropping or omission",
+      "diagnostics": {
+        "whole_common_finite_effects": 15559,
+        "S3_common_finite_effects": 858,
+        "S3_source_selected": 959,
+        "text_outside_canvas": []
+      }
+    },
+    "rep_hypothalamus_primary_es": {
+      "language": "es",
+      "caption_en": "All 11 primary hypothalamic BH q<.05 discoveries from the 7-animal PM-versus-filtered-air count analysis, ordered by unshrunken log₂FC. Points are maximum-likelihood coefficients, bars are pointwise±1.96SE Wald intervals, and the separate q column reports BH inference. The displayed intervals do not adjust for selection or multiplicity. No refit, gene omission, or spatial/cell-specific exposure inference is performed.",
+      "caption_es": "Los 11 hallazgos hipotalámicos principales BH q<.05 del análisis de conteos de 7 animales PM frente a aire filtrado, ordenados por log₂FC sin regularizar. Los puntos son coeficientes de máxima verosimilitud, las barras intervalos Wald puntuales±1.96EE y la columna q informa BH por separado. Los intervalos no ajustan por selección ni multiplicidad. No se reajustan modelos, omiten genes ni infiere respuesta espacial/celular de exposición.",
+      "caption": "Los 11 hallazgos hipotalámicos principales BH q<.05 del análisis de conteos de 7 animales PM frente a aire filtrado, ordenados por log₂FC sin regularizar. Los puntos son coeficientes de máxima verosimilitud, las barras intervalos Wald puntuales±1.96EE y la columna q informa BH por separado. Los intervalos no ajustan por selección ni multiplicidad. No se reajustan modelos, omiten genes ni infiere respuesta espacial/celular de exposición.",
+      "files": {
+        "png": "results/defense_slides/figures/rep_hypothalamus_primary_es.png",
+        "svg": "results/defense_slides/figures/rep_hypothalamus_primary_es.svg",
+        "pdf": "results/defense_slides/figures/rep_hypothalamus_primary_es.pdf"
+      },
+      "exports": {
+        "png": {
+          "path": "results/defense_slides/figures/rep_hypothalamus_primary_es.png",
+          "bytes": 75016,
+          "sha256": "22bb1c6b85b5f2a48a6bb6ac730c34efa44d7afc9b5d688b3356958a9c05ed4c"
+        },
+        "svg": {
+          "path": "results/defense_slides/figures/rep_hypothalamus_primary_es.svg",
+          "bytes": 22569,
+          "sha256": "cea58d3978bcdad84cfeb64ec120c446d1951eb3e539b217a084036aec9029ec"
+        },
+        "pdf": {
+          "path": "results/defense_slides/figures/rep_hypothalamus_primary_es.pdf",
+          "bytes": 22086,
+          "sha256": "a36d9f7708ce4d326bbf65651eed729e46fe62852793127e002fea49299473c4"
+        }
+      },
+      "source_paths": [
+        "results/hypothalamus/differential_expression_mle.tsv",
+        "results/hypothalamus/summary.json"
+      ],
+      "source_hashes": {
+        "results/hypothalamus/differential_expression_mle.tsv": "f9af93e60834a1b740179ea1e495789a7c197e91f56de2b1d0680fc083906186",
+        "results/hypothalamus/summary.json": "b08e6f7acf761990ca69226ad7e6d753c2b62088b05d8dac4f53bbba6621e211"
+      },
+      "render_size_pixels": [
+        1600,
+        650
+      ],
+      "figure_size_inches": [
+        16,
+        6.5
+      ],
+      "PNG_dpi": 100,
+      "scope": "Presentation of all preexisting BH discoveries, with pointwise unadjusted Wald intervals",
+      "diagnostics": {
+        "discoveries": 11,
+        "source_effect": "MLE",
+        "interval": "pointwise MLE ±1.96SE",
+        "full_source_genes": 19611,
+        "text_outside_canvas": []
+      }
+    },
+    "rep_cortex_primary_es": {
+      "language": "es",
+      "caption_en": "Primary8-animal PM-versus-PBS cortical analysis. A displays all 19,225 finite maximum-likelihood effects and nominal Wald p values, with color indicating BH q<.05 status (658 higher,509 lower). Unavailable tests remain in source tables; no display percentile clipping is applied. B labels the 7 smallest-BH-q genes and shows their pointwise unshrunken MLE±1.96SE intervals, without selection/multiplicity adjustment. This primary contrast uses a different fitted sample set than the 20-animal author reproduction.",
+      "caption_es": "Análisis cortical principal PM frente a PBS de 8 animales. A muestra los 19,225 efectos de máxima verosimilitud y p Wald nominales finitos, con color para BH q<.05 (658 mayores,509 menores). Las pruebas no disponibles permanecen en las tablas y no se recorta por percentiles. B identifica los 7 genes con menor BH q y sus intervalos puntuales MLE±1.96EE sin ajuste por selección/multiplicidad. El contraste usa un conjunto de muestras distinto de la reproducción original de 20 animales.",
+      "caption": "Análisis cortical principal PM frente a PBS de 8 animales. A muestra los 19,225 efectos de máxima verosimilitud y p Wald nominales finitos, con color para BH q<.05 (658 mayores,509 menores). Las pruebas no disponibles permanecen en las tablas y no se recorta por percentiles. B identifica los 7 genes con menor BH q y sus intervalos puntuales MLE±1.96EE sin ajuste por selección/multiplicidad. El contraste usa un conjunto de muestras distinto de la reproducción original de 20 animales.",
+      "files": {
+        "png": "results/defense_slides/figures/rep_cortex_primary_es.png",
+        "svg": "results/defense_slides/figures/rep_cortex_primary_es.svg",
+        "pdf": "results/defense_slides/figures/rep_cortex_primary_es.pdf"
+      },
+      "exports": {
+        "png": {
+          "path": "results/defense_slides/figures/rep_cortex_primary_es.png",
+          "bytes": 112803,
+          "sha256": "930b7bd2eefed5c3f41e92d39ffd1b86b08bbc3beabec66cd3b4fcc621173b35"
+        },
+        "svg": {
+          "path": "results/defense_slides/figures/rep_cortex_primary_es.svg",
+          "bytes": 63846,
+          "sha256": "9d095ae8d8c5c00a123d7e5002cc75304e3373f5fba9e00f8c5659bd0a20e346"
+        },
+        "pdf": {
+          "path": "results/defense_slides/figures/rep_cortex_primary_es.pdf",
+          "bytes": 38233,
+          "sha256": "7d18dc38f56d370ecf21b677529fc435015a8f7c1e791d8902b282a0d6eaf65f"
+        }
+      },
+      "source_paths": [
+        "results/cortex/DE_PM_vs_PBS_MLE.tsv",
+        "results/cortex/gene_annotation.tsv",
+        "results/cortex/summary.json"
+      ],
+      "source_hashes": {
+        "results/cortex/DE_PM_vs_PBS_MLE.tsv": "95103df01ef0c568e90fae9e0e2440a334f95e5c9f23ce3242147c6866bdda1a",
+        "results/cortex/gene_annotation.tsv": "8ebe7d79093c6b461f4cf2b411ffbf3d6e6b9750207d094cc2dd446b422ef17b",
+        "results/cortex/summary.json": "6a47f9951cafdf466d660ccae1b164a1f1ad52d5b3f1032b28c32bd8d7c901f8"
+      },
+      "render_size_pixels": [
+        1600,
+        650
+      ],
+      "figure_size_inches": [
+        16,
+        6.5
+      ],
+      "PNG_dpi": 100,
+      "scope": "Existing primary differential table, full finite p-value domain and transparent selected-gene display",
+      "diagnostics": {
+        "finite_Wald_tests": 19225,
+        "unavailable_Wald_tests": 10,
+        "BH05": 1167,
+        "top_genes": [
+          "Nr1d1",
+          "Homer1",
+          "Xbp1",
+          "Hspa5",
+          "Pdia4",
+          "Zbtb40",
+          "Fosb"
+        ],
+        "p_floor_for_display": 1e-300,
+        "number_pvalues_below_floor": 0,
+        "text_outside_canvas": []
+      }
+    },
+    "rep_ozone_primary_es": {
+      "language": "es",
+      "caption_en": "Primary ozone count-model results from all 24 original paired-end libraries. A shows within-age/APOE O3-versus-filtered-air BH q<.05 discovery counts 0,399,2,3, each contrast adjusted separately. B shows 24 global 4df exposure-associated likelihood-ratio-test discoveries among 18,511 valid tests, a separate BH family. Panels use different y-axis scales. Count differences between strata do not establish statistical interaction or relative susceptibility. No single signed effect is assigned to the global test.",
+      "caption_es": "Resultados principales del modelo de conteos O₃ de las 24 bibliotecas pareadas originales. A muestra 0,399,2,3 hallazgos BH q<.05 O₃ frente a aire filtrado por edad/APOE, con ajuste separado. B muestra 24 hallazgos de la prueba global de exposición de 4gl entre 18,511 pruebas válidas, familia BH distinta. Los paneles usan escalas verticales diferentes. Diferencias de conteos no establecen interacción ni susceptibilidad relativa. La prueba global no recibe un efecto único con signo.",
+      "caption": "Resultados principales del modelo de conteos O₃ de las 24 bibliotecas pareadas originales. A muestra 0,399,2,3 hallazgos BH q<.05 O₃ frente a aire filtrado por edad/APOE, con ajuste separado. B muestra 24 hallazgos de la prueba global de exposición de 4gl entre 18,511 pruebas válidas, familia BH distinta. Los paneles usan escalas verticales diferentes. Diferencias de conteos no establecen interacción ni susceptibilidad relativa. La prueba global no recibe un efecto único con signo.",
+      "files": {
+        "png": "results/defense_slides/figures/rep_ozone_primary_es.png",
+        "svg": "results/defense_slides/figures/rep_ozone_primary_es.svg",
+        "pdf": "results/defense_slides/figures/rep_ozone_primary_es.pdf"
+      },
+      "exports": {
+        "png": {
+          "path": "results/defense_slides/figures/rep_ozone_primary_es.png",
+          "bytes": 71507,
+          "sha256": "9440414c82ac331acdd94f1d8ed9ff437a87beb856b335a5a4f1be599b880703"
+        },
+        "svg": {
+          "path": "results/defense_slides/figures/rep_ozone_primary_es.svg",
+          "bytes": 15985,
+          "sha256": "a987fb440639a10496ce4acef6a72becab8dff5fbc19666c83c98d66efe6e339"
+        },
+        "pdf": {
+          "path": "results/defense_slides/figures/rep_ozone_primary_es.pdf",
+          "bytes": 19222,
+          "sha256": "bf4d37443dc4268759e51cb182113174d5bb9835d96d215cbe3ff7480186c2c1"
+        }
+      },
+      "source_paths": [
+        "results/ozone/summary.json",
+        "results/ozone/methods.json"
+      ],
+      "source_hashes": {
+        "results/ozone/summary.json": "4c0892ce4327ab2dfa1fed43457454715549dbd38739a73f707cadbfd7812888",
+        "results/ozone/methods.json": "9342736da89229ce19bcfc06e58596066493e789be424b66df1b76afe246466a"
+      },
+      "render_size_pixels": [
+        1600,
+        650
+      ],
+      "figure_size_inches": [
+        16,
+        6.5
+      ],
+      "PNG_dpi": 100,
+      "scope": "Existing primary BH discovery summaries, not a new interaction analysis",
+      "diagnostics": {
+        "within_stratum_BH05": [
+          0,
+          399,
+          2,
+          3
+        ],
+        "global_LRT_BH05": 24,
+        "global_df": 4,
+        "all_libraries": 24,
+        "text_outside_canvas": []
+      }
+    }
+  }
+}

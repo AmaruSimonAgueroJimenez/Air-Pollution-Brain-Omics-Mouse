@@ -1,0 +1,1233 @@
+{
+  "presentation_date": "2026-10-29",
+  "analysis_snapshot": "Completed project analyses, 18–20 October 2026",
+  "scientific_models_refitted": false,
+  "same_source_animals_not_independent_replication": true,
+  "slides_per_language": 85,
+  "explicit_ids": [
+    "scope",
+    "intro",
+    "studies-rna",
+    "studies-hippocampus",
+    "units",
+    "workflow",
+    "methods",
+    "reproduction-criteria",
+    "cortex-author-method",
+    "hypothalamus-author-method",
+    "mirna-author-method",
+    "ozone-author-method",
+    "count-model",
+    "filters",
+    "testing",
+    "qc",
+    "mirna-model",
+    "ozone-raw-qc",
+    "ozone-quant",
+    "ozone-factorial",
+    "ozone-contrasts",
+    "ozone-lrt",
+    "ora",
+    "gsea",
+    "atlas",
+    "coordinates",
+    "gene-selection",
+    "detection-method",
+    "scenario-method",
+    "gaussian-features",
+    "gaussian-priors",
+    "gaussian-intervals",
+    "guarded-cv",
+    "beta-model",
+    "beta-integration",
+    "beta-targets",
+    "metrics",
+    "replicated-results",
+    "cortex-reproduction",
+    "cortex-source-quality",
+    "hy-reproduction",
+    "mirna-reproduction",
+    "ozone-reproduction",
+    "reproduction-summary",
+    "new-results",
+    "hy-primary",
+    "aca-primary",
+    "mirna-primary",
+    "ozone-primary",
+    "interaction-results",
+    "interaction-animals",
+    "enrichment-results",
+    "go-patterns",
+    "gene-products",
+    "aca-sections",
+    "hy-sections",
+    "scenario-results",
+    "gaussian-rmse",
+    "gaussian-diagnostics",
+    "beta-performance",
+    "beta-aca",
+    "beta-hy",
+    "numerics",
+    "limits",
+    "conclusions",
+    "future",
+    "discussion",
+    "appendix",
+    "a-pm-protocols",
+    "a-ozone-protocol",
+    "a-normalization",
+    "a-limma",
+    "a-multiplicity",
+    "a-software-loo",
+    "a-genes-hy",
+    "a-genes-aca",
+    "a-gaussian-assumptions",
+    "a-beta-marginal",
+    "a-coverage",
+    "a-outstanding",
+    "a-primary-refs",
+    "a-method-refs",
+    "a-bayes-refs",
+    "a-rebuild"
+  ],
+  "title_slide_id": "title-slide",
+  "main_content_slides": 68,
+  "source_files": [
+    {
+      "path": "metadata/advanced_omics/methods.json",
+      "sha256": "861e6b4ca8e7743269f8ad9da8ff726c9216cde1826f6571779ebf484f96f2a6"
+    },
+    {
+      "path": "metadata/analysis_environment.json",
+      "sha256": "06b429334977745656d2cd710c49ff5755901db5c157e4ab813e4a70496a0b62"
+    },
+    {
+      "path": "metadata/gene_priorities/methods.json",
+      "sha256": "1d9cd6ec88dcb7e567738ff5ff757d4e07a8f8b370aecbe225643886649955bb"
+    },
+    {
+      "path": "metadata/papers/reuse_search_summary.json",
+      "sha256": "a148978a5cbd567b0c5a62d9e2fdb8e474a51a130842c6817a67a3da3613dd13"
+    },
+    {
+      "path": "metadata/spatial_bayes/methods.json",
+      "sha256": "bbc3fd5699a06bd2d02327f878d58ab56d2dac69ff97244c628835c0acb5d46a"
+    },
+    {
+      "path": "metadata/spatial_detection_bayes/methods.json",
+      "sha256": "0b9c41b549240b607fe5888078e3970ccdd601bce3c022d8097262c31afad704"
+    },
+    {
+      "path": "metadata/spatial_sections/methods.json",
+      "sha256": "3a3cfb46f70a483ec192af1d28b8a2cdbee4badaff49d771a3d6eee58c34ab81"
+    },
+    {
+      "path": "papers/bibliography.bib",
+      "sha256": "e538821db90ac73e3caf95858a8a23360df90a8b015e95e6bdf67f5037e5eab3"
+    },
+    {
+      "path": "results/advanced_omics/GO_multi_contrast_NES_source.tsv",
+      "sha256": "5f99a5a73e08e1b7ed59598f0c33c964f3f5821c1ddc27f37a42eeb81597410a"
+    },
+    {
+      "path": "results/advanced_omics/age_response_FDR_genes.tsv",
+      "sha256": "85d479f29d601e166eea464a865fa6df68b8bd5d44bfad4db3d8721608540718"
+    },
+    {
+      "path": "results/advanced_omics/ozone_interaction_animal_profiles.tsv",
+      "sha256": "3b3ea1ead2a721c43f27d066ad6484bf602383793e31845103999ade769051e6"
+    },
+    {
+      "path": "results/advanced_omics/summary.json",
+      "sha256": "0e82fe3ca922b3a12af4a562d9ec25dda27f4cfd19d31032f49d459466858623"
+    },
+    {
+      "path": "results/cortex/DE_PM_vs_PBS_MLE.tsv",
+      "sha256": "95103df01ef0c568e90fae9e0e2440a334f95e5c9f23ce3242147c6866bdda1a"
+    },
+    {
+      "path": "results/cortex/methods.json",
+      "sha256": "f8ec32c548dee5cbd174577b4138e417992b3e06553029040d0da63881ef2ba1"
+    },
+    {
+      "path": "results/cortex/summary.json",
+      "sha256": "6a47f9951cafdf466d660ccae1b164a1f1ad52d5b3f1032b28c32bd8d7c901f8"
+    },
+    {
+      "path": "results/enrichment/methods.json",
+      "sha256": "ee297bae65a7e68b58dd189a028f5fb63734d1fda4b233e8bdced134a9d5adcf"
+    },
+    {
+      "path": "results/enrichment/summary_counts.tsv",
+      "sha256": "0f1e5f0ec91d1c6c9a1bd5fa0631c20c843d90504f1a72d146d67b33d6001c70"
+    },
+    {
+      "path": "results/gene_priorities/annotations.tsv",
+      "sha256": "a936fca03e81510abb0cabdca1cfe737a79a39962864ab03cdd4b1c8f2017c7e"
+    },
+    {
+      "path": "results/gene_priorities/prioritized_genes.tsv",
+      "sha256": "e40c5c43105a9370fb0f4f83d8bf60222d03907b51a425cb45423c93f103b62d"
+    },
+    {
+      "path": "results/gene_priorities/summary.json",
+      "sha256": "fe6bb2ce85a589c140dd2cf5f7fb4e3bf824b1c95b7562ce047033bda9eb55b1"
+    },
+    {
+      "path": "results/hypothalamus/independent_deseq2_check/summary.json",
+      "sha256": "15efb56d553c450eeab847c1f7e5abd00ff3c31f4dc678f896ac4d71d716883b"
+    },
+    {
+      "path": "results/hypothalamus/leave_one_out_primary_hits.tsv",
+      "sha256": "4eeeb7cd532dea6bd59ae165bf35f30165d320f3ae2443552792c3243fb40c7b"
+    },
+    {
+      "path": "results/hypothalamus/leave_one_out_summary.tsv",
+      "sha256": "bf81f9acaa948f58e0ee7c4e63ce883c5a8942e6cf4fb9c05c47940d55e5c16d"
+    },
+    {
+      "path": "results/hypothalamus/methods.json",
+      "sha256": "5a75ca6162770d4fbdd1fb876e65d851f29a8dc07cf6307e7ac8391fe6eaa913"
+    },
+    {
+      "path": "results/hypothalamus/summary.json",
+      "sha256": "b08e6f7acf761990ca69226ad7e6d753c2b62088b05d8dac4f53bbba6621e211"
+    },
+    {
+      "path": "results/mirna/methods.json",
+      "sha256": "cb2e00d096952518c8398ee5ba82f5fa9e67fa6dc92ced7ee753de70ce2a07fe"
+    },
+    {
+      "path": "results/mirna/summary.json",
+      "sha256": "ab0668eae99bd11ab505a681e686243012a5e81c533641e0a1e3835207d328e8"
+    },
+    {
+      "path": "results/ozone/methods.json",
+      "sha256": "9342736da89229ce19bcfc06e58596066493e789be424b66df1b76afe246466a"
+    },
+    {
+      "path": "results/ozone/summary.json",
+      "sha256": "4c0892ce4327ab2dfa1fed43457454715549dbd38739a73f707cadbfd7812888"
+    },
+    {
+      "path": "results/replication_mirna_ozone/methods.json",
+      "sha256": "7d9a951b609692f2bc67cbd9f51ca508d3f4e2e012d34a81ecf915c64ac61396"
+    },
+    {
+      "path": "results/replication_mirna_ozone/mirna_author_targets.csv",
+      "sha256": "f1188a412d1172ed60f092a8a21af6beabdb04b47fec13aa0e34042f1b5fd9f4"
+    },
+    {
+      "path": "results/replication_mirna_ozone/paper_replication_audit.csv",
+      "sha256": "fbc7d84018a0d0f83ab2cb260751e7a00e0446dce79815754b6919124d6eb863"
+    },
+    {
+      "path": "results/replication_mirna_ozone/sample_mapping_validation.json",
+      "sha256": "15e48f473ee4c9106674a186766c8c41ddb000577c5989ce2a67af43d0ed5cd8"
+    },
+    {
+      "path": "results/replication_mirna_ozone/summary.json",
+      "sha256": "e868120240467c19222208578a226029365fcf385e5cd8d681827b80daabfc15"
+    },
+    {
+      "path": "results/replication_pm/cortex_gene_level_metrics.csv",
+      "sha256": "942a4f2596a30316d4620f30e7be953a264d3c086d3671e6b46cdc7c414315dd"
+    },
+    {
+      "path": "results/replication_pm/cortex_marker_expression_by_animal.csv",
+      "sha256": "2bcc9c300c8baaad267e3cbef384c03117817bde1c6ab6aa4fef7315127e7c14"
+    },
+    {
+      "path": "results/replication_pm/cortex_refit_summary.json",
+      "sha256": "5577bfb3118e3ca6d6ea76b028163968aafabea2db095ca89d1e77539e843789"
+    },
+    {
+      "path": "results/replication_pm/hypothalamus_refit_summary.json",
+      "sha256": "2637fdaa6197e2233cf9fa52ee23f9eae98d93ca98d5ebd4575e36494a1ba703"
+    },
+    {
+      "path": "results/replication_pm/methods.json",
+      "sha256": "7299f1de277a43bdb3acfac578298f7db13270ca972b26d5f8f15574bb090815"
+    },
+    {
+      "path": "results/replication_pm/paper_claim_audit.csv",
+      "sha256": "26afd58c6d8c9efce65b19f8b5e95093d9db0dc8c7856dc470f717efb777524a"
+    },
+    {
+      "path": "results/replication_pm/summary.json",
+      "sha256": "e7a3ec9fba5ef292c6a294c9a42205f8388d5326e6986cf8c4cc4fbd57b268e6"
+    },
+    {
+      "path": "results/report_validation/experimental_design_review.json",
+      "sha256": "09b748a4590dcf2f81dcaaeb97a9346e930006dc560619b2f3e4e67db5eb838a"
+    },
+    {
+      "path": "results/spatial_bayes/ACA/section_folds.tsv",
+      "sha256": "51c5b62d7209a9f28fcbc41dd363e5a0dbad1589835896a4c019df941eb1246a"
+    },
+    {
+      "path": "results/spatial_bayes/HY/section_folds.tsv",
+      "sha256": "d6a54edc68f673e3224a6408e61eb1a0b6adb9d90d5a9d1754891d8641c02ed2"
+    },
+    {
+      "path": "results/spatial_bayes/summary.json",
+      "sha256": "952c30daac2e0d9ea97c9e2c469d19d89f9c20ec85063e31d43ab62898790131"
+    },
+    {
+      "path": "results/spatial_bayes/validation.json",
+      "sha256": "8b72d9e1ce15eab07441955e832b9f92b8d9612c1149ac8fad67c1b55434a4a0"
+    },
+    {
+      "path": "results/spatial_cortex/summary.json",
+      "sha256": "05bbb34320bbcf1f75db93cae5b1d7b02a2a55498441d79db1a749d27a824581"
+    },
+    {
+      "path": "results/spatial_detection_bayes/ACA/anatomy_posterior.tsv.gz",
+      "sha256": "9b1010abf33520fd4937622e18a33603cf29c7ca6a8d19d9fd593cee26eb39a5"
+    },
+    {
+      "path": "results/spatial_detection_bayes/ACA/known_section_posterior.tsv.gz",
+      "sha256": "312c212fcd043c5047abf87987aaa80007cbe9317ee97df16727166b6982c25f"
+    },
+    {
+      "path": "results/spatial_detection_bayes/HY/gene_metrics.tsv",
+      "sha256": "6e1085280361c827ad73fe8c919d99ef8b4a86a659dfd07e3de608b701a91f48"
+    },
+    {
+      "path": "results/spatial_detection_bayes/HY/known_section_posterior.tsv.gz",
+      "sha256": "f9438dab5dd96dc92e4ff0ad2f127347c0258061ef12b9b0aabb3e1d63982cb0"
+    },
+    {
+      "path": "results/spatial_detection_bayes/scientific_diagnostics.json",
+      "sha256": "c1570aa2eec4b008cc5d3b8c6942d69b942e955e4ed5d70f5bb425c6f57ad083"
+    },
+    {
+      "path": "results/spatial_detection_bayes/summary.json",
+      "sha256": "c6ee2a9098c84e031388dd53fd5d7090c2b420df18703a269b848c5cc1ae2538"
+    },
+    {
+      "path": "results/spatial_reference/summary.json",
+      "sha256": "bffca597d99617bba3b6628c990b88ba5575f4a957acc437fb62b75a3fc49f0c"
+    },
+    {
+      "path": "results/spatial_sections/ACA/detection_by_bins.tsv.gz",
+      "sha256": "24a9fa98aa80d3621a2ff8d97f8a2e0a19f7da7ed50e1ac985e64954b118c1da"
+    },
+    {
+      "path": "results/spatial_sections/ACA/sections.tsv",
+      "sha256": "4168fdfde7ef25c64ecdb05abb4cea2d5a5da7532821d7a8d17a6a219a155d26"
+    },
+    {
+      "path": "results/spatial_sections/HY/sections.tsv",
+      "sha256": "6ffeb4773d5f2350cd0b7d9523ef1c64641f3d9215d366126f62053d36295d5d"
+    },
+    {
+      "path": "results/spatial_sections/summary.json",
+      "sha256": "e9ae205209f8a19c2e64c71d5852fc2dc4c768b615d9e4799889c90caad3ef9b"
+    },
+    {
+      "path": "results/spatial_viewer/summary.json",
+      "sha256": "b44a3825becb2e5a44f47554fc6cd9577142bebbd9c77368c9578e1f2cf252dd"
+    }
+  ],
+  "slides": [
+    {
+      "id": "scope",
+      "en_title": "Scientific scope and levels of evidence",
+      "es_title": "Alcance científico y niveles de evidencia",
+      "sources": [
+        "results/replication_pm/summary.json",
+        "results/spatial_bayes/summary.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "intro",
+      "en_title": "Brain regions and exposure designs define the question",
+      "es_title": "La región cerebral y el diseño de exposición definen la pregunta",
+      "sources": [
+        "HY",
+        "ACA",
+        "miRNA",
+        "O3",
+        "atlas"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "studies-rna",
+      "en_title": "Two PM₂.₅ RNA-seq studies",
+      "es_title": "Dos estudios RNA-seq de PM₂.₅",
+      "sources": [
+        "HY",
+        "ACA",
+        "results/hypothalamus/methods.json",
+        "results/cortex/methods.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "studies-hippocampus",
+      "en_title": "Hippocampal miRNA and ozone studies",
+      "es_title": "Estudios hipocampales de miRNA y ozono",
+      "sources": [
+        "miRNA",
+        "O3",
+        "results/mirna/methods.json",
+        "results/ozone/methods.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "units",
+      "en_title": "Experimental units and analytical populations",
+      "es_title": "Unidades experimentales y poblaciones analíticas",
+      "sources": [
+        "results/hypothalamus/summary.json",
+        "results/spatial_sections/summary.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "workflow",
+      "en_title": "Project workflow and provenance",
+      "es_title": "Flujo del proyecto y procedencia",
+      "sources": [
+        "results/ozone/methods.json",
+        "results/replication_pm/methods.json",
+        "metadata/spatial_sections/methods.json"
+      ],
+      "cls": "figure-slide",
+      "figure": "context_workflow",
+      "en_caption": "Four experimental studies and a separate spatial reference feed explicitly labeled analytical branches.",
+      "es_caption": "Cuatro estudios experimentales y una referencia espacial independiente alimentan ramas analíticas explícitas."
+    },
+    {
+      "id": "methods",
+      "en_title": "Methods",
+      "es_title": "Metodología",
+      "sources": [],
+      "cls": "section-slide"
+    },
+    {
+      "id": "reproduction-criteria",
+      "en_title": "Criteria for computational reproduction",
+      "es_title": "Criterios de reproducción computacional",
+      "sources": [
+        "results/replication_pm/paper_claim_audit.csv",
+        "results/replication_mirna_ozone/paper_replication_audit.csv"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "cortex-author-method",
+      "en_title": "Cortex author-aligned count analysis",
+      "es_title": "Análisis cortical de conteos alineado con los autores",
+      "sources": [
+        "ACA",
+        "https://doi.org/10.5281/zenodo.15374632",
+        "results/replication_pm/methods.json"
+      ],
+      "cls": "small"
+    },
+    {
+      "id": "hypothalamus-author-method",
+      "en_title": "Hypothalamic RUVg specification remains incomplete",
+      "es_title": "La especificación RUVg hipotalámica sigue incompleta",
+      "sources": [
+        "HY",
+        "results/replication_pm/methods.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "mirna-author-method",
+      "en_title": "miRNA target reconstruction and testing gates",
+      "es_title": "Reconstrucción del objetivo miRNA y criterios de prueba",
+      "sources": [
+        "miRNA",
+        "results/replication_mirna_ozone/methods.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "ozone-author-method",
+      "en_title": "Ozone table reconstruction and cross-pipeline comparison",
+      "es_title": "Reconstrucción de tablas de ozono y comparación entre flujos",
+      "sources": [
+        "O3",
+        "results/replication_mirna_ozone/methods.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "count-model",
+      "en_title": "Negative-binomial model for RNA counts",
+      "es_title": "Modelo binomial negativo para conteos de ARN",
+      "sources": [
+        "DESeq2",
+        "PyDESeq2",
+        "results/ozone/methods.json"
+      ],
+      "cls": "formula-slide"
+    },
+    {
+      "id": "filters",
+      "en_title": "Count filtering and normalization populations",
+      "es_title": "Filtrado de conteos y poblaciones de normalización",
+      "sources": [
+        "results/hypothalamus/methods.json",
+        "results/cortex/methods.json",
+        "results/replication_pm/methods.json",
+        "results/ozone/methods.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "testing",
+      "en_title": "Wald evidence, shrinkage and multiple testing",
+      "es_title": "Evidencia Wald, regularización y pruebas múltiples",
+      "sources": [
+        "DESeq2",
+        "apeglm",
+        "results/hypothalamus/methods.json"
+      ],
+      "cls": "formula-slide"
+    },
+    {
+      "id": "qc",
+      "en_title": "Quality control and animal sensitivity",
+      "es_title": "Control de calidad y sensibilidad a animales",
+      "sources": [
+        "results/hypothalamus/methods.json",
+        "results/hypothalamus/independent_deseq2_check/summary.json",
+        "results/cortex/methods.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "mirna-model",
+      "en_title": "Linear modeling of deposited miRNA signals",
+      "es_title": "Modelado lineal de señales miRNA depositadas",
+      "sources": [
+        "miRNA",
+        "limma",
+        "results/mirna/methods.json"
+      ],
+      "cls": "formula-slide small"
+    },
+    {
+      "id": "ozone-raw-qc",
+      "en_title": "Ozone processing begins with all original reads",
+      "es_title": "Ozono se procesa desde todas las lecturas originales",
+      "sources": [
+        "results/ozone/methods.json",
+        "results/ozone/summary.json",
+        "results/replication_mirna_ozone/sample_mapping_validation.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "ozone-quant",
+      "en_title": "Selective alignment and effective-length offsets",
+      "es_title": "Alineamiento selectivo y offsets de longitud efectiva",
+      "sources": [
+        "Salmon",
+        "tximport",
+        "results/ozone/methods.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "ozone-factorial",
+      "en_title": "Eight-parameter ozone factorial model",
+      "es_title": "Modelo factorial de ozono con ocho parámetros",
+      "sources": [
+        "O3",
+        "results/ozone/methods.json"
+      ],
+      "cls": "formula-slide"
+    },
+    {
+      "id": "ozone-contrasts",
+      "en_title": "Stratum effects and covariance-aware differences",
+      "es_title": "Efectos por estrato y diferencias con covarianza",
+      "sources": [
+        "results/ozone/methods.json",
+        "metadata/advanced_omics/methods.json"
+      ],
+      "cls": "formula-slide"
+    },
+    {
+      "id": "ozone-lrt",
+      "en_title": "Global exposure and response-heterogeneity tests",
+      "es_title": "Pruebas globales de exposición y heterogeneidad",
+      "sources": [
+        "results/ozone/methods.json",
+        "metadata/advanced_omics/methods.json"
+      ],
+      "cls": "formula-slide"
+    },
+    {
+      "id": "ora",
+      "en_title": "GO over-representation uses a testable universe",
+      "es_title": "La sobrerrepresentación GO utiliza un universo evaluable",
+      "sources": [
+        "results/enrichment/methods.json"
+      ],
+      "cls": "formula-slide"
+    },
+    {
+      "id": "gsea",
+      "en_title": "Ranked enrichment preserves weak coordinated signals",
+      "es_title": "El enriquecimiento por rango conserva señales coordinadas débiles",
+      "sources": [
+        "results/enrichment/methods.json"
+      ],
+      "cls": "formula-slide"
+    },
+    {
+      "id": "atlas",
+      "en_title": "A measured spatial reference from one donor",
+      "es_title": "Una referencia espacial medida de un donante",
+      "sources": [
+        "atlas",
+        "results/spatial_sections/summary.json",
+        "results/spatial_cortex/summary.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "coordinates",
+      "en_title": "Deposited section coordinates and registered anatomy",
+      "es_title": "Coordenadas depositadas del corte y anatomía registrada",
+      "sources": [
+        "metadata/spatial_sections/methods.json",
+        "results/spatial_viewer/summary.json",
+        "results/spatial_cortex/summary.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "gene-selection",
+      "en_title": "Gene priorities and measured-panel coverage",
+      "es_title": "Priorización génica y cobertura del panel medido",
+      "sources": [
+        "metadata/gene_priorities/methods.json",
+        "results/gene_priorities/summary.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "detection-method",
+      "en_title": "Detection fractions retain measured zeros",
+      "es_title": "Las fracciones de detección conservan ceros medidos",
+      "sources": [
+        "metadata/spatial_sections/methods.json"
+      ],
+      "cls": "formula-slide"
+    },
+    {
+      "id": "scenario-method",
+      "en_title": "Uniform regional PM₂.₅ scenario",
+      "es_title": "Escenario regional uniforme con PM₂.₅",
+      "sources": [
+        "results/spatial_viewer/summary.json",
+        "results/spatial_cortex/summary.json"
+      ],
+      "cls": "formula-slide"
+    },
+    {
+      "id": "gaussian-features",
+      "en_title": "Gaussian baseline with fixed spatial basis functions",
+      "es_title": "Referencia gaussiana con bases espaciales fijas",
+      "sources": [
+        "metadata/spatial_bayes/methods.json"
+      ],
+      "cls": "formula-slide"
+    },
+    {
+      "id": "gaussian-priors",
+      "en_title": "Proper priors and analytical posterior",
+      "es_title": "Priors propios y posterior analítica",
+      "sources": [
+        "metadata/spatial_bayes/methods.json",
+        "results/spatial_bayes/validation.json"
+      ],
+      "cls": "formula-slide"
+    },
+    {
+      "id": "gaussian-intervals",
+      "en_title": "Credible and new-section predictive intervals",
+      "es_title": "Intervalos creíbles y predictivos de un corte nuevo",
+      "sources": [
+        "metadata/spatial_bayes/methods.json"
+      ],
+      "cls": "formula-slide"
+    },
+    {
+      "id": "guarded-cv",
+      "en_title": "Whole-section validation with neighboring guards",
+      "es_title": "Validación por cortes completos con separación vecina",
+      "sources": [
+        "results/spatial_bayes/ACA/section_folds.tsv",
+        "results/spatial_bayes/HY/section_folds.tsv"
+      ],
+      "cls": "figure-slide",
+      "figure": "spatial_guarded_folds",
+      "en_caption": "Five contiguous test blocks. Adjacent represented sections are guards, and every measured cell is tested once.",
+      "es_caption": "Cinco bloques contiguos de prueba. Cortes representados vecinos actúan como separación y cada célula se evalúa una vez."
+    },
+    {
+      "id": "beta-model",
+      "en_title": "Hierarchical model of bounded detection probability",
+      "es_title": "Modelo jerárquico de probabilidad de detección acotada",
+      "sources": [
+        "metadata/spatial_detection_bayes/methods.json"
+      ],
+      "cls": "formula-slide"
+    },
+    {
+      "id": "beta-integration",
+      "en_title": "Finite-grid integration and uncertainty computation",
+      "es_title": "Integración por cuadrícula y cálculo de incertidumbre",
+      "sources": [
+        "metadata/spatial_detection_bayes/methods.json",
+        "results/spatial_detection_bayes/scientific_diagnostics.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "beta-targets",
+      "en_title": "Three distinct detection uncertainty targets",
+      "es_title": "Tres objetivos distintos de incertidumbre de detección",
+      "sources": [
+        "metadata/spatial_detection_bayes/methods.json"
+      ],
+      "cls": "formula-slide"
+    },
+    {
+      "id": "metrics",
+      "en_title": "Prediction metrics and baseline comparisons",
+      "es_title": "Métricas predictivas y comparación con referencias",
+      "sources": [
+        "metadata/spatial_bayes/methods.json",
+        "metadata/spatial_detection_bayes/methods.json"
+      ],
+      "cls": "formula-slide"
+    },
+    {
+      "id": "replicated-results",
+      "en_title": "Results reconstructed from the original studies",
+      "es_title": "Resultados reconstruidos de los estudios originales",
+      "sources": [],
+      "cls": "section-slide"
+    },
+    {
+      "id": "cortex-reproduction",
+      "en_title": "Exact cortex significant-gene sets are recovered",
+      "es_title": "Se recuperan exactamente los conjuntos corticales significativos",
+      "sources": [
+        "ACA",
+        "results/replication_pm/cortex_gene_level_metrics.csv",
+        "results/replication_pm/cortex_refit_summary.json"
+      ],
+      "cls": "figure-slide",
+      "figure": "rep_cortex_reproduction",
+      "en_caption": "Four author-aligned contrasts recover 109 / 1,205 / 1,222 / 639 genes. Every FDR-set Jaccard equals 1.",
+      "es_caption": "Cuatro contrastes alineados recuperan 109 / 1,205 / 1,222 / 639 genes. Todos los Jaccard de conjuntos FDR son 1."
+    },
+    {
+      "id": "cortex-source-quality",
+      "en_title": "Reproducible output retains a source-quality question",
+      "es_title": "La salida reproducible conserva una pregunta de calidad",
+      "sources": [
+        "results/replication_pm/cortex_marker_expression_by_animal.csv",
+        "results/replication_pm/paper_claim_audit.csv"
+      ],
+      "cls": "figure-slide",
+      "figure": "rep_cortex_y_markers",
+      "en_caption": "All four PBS controls have zero raw Ddx3y, Uty and Kdm5d counts. Other treatment groups are heterogeneous.",
+      "es_caption": "Los cuatro controles PBS tienen cero conteos Ddx3y, Uty y Kdm5d. Los otros grupos son heterogéneos."
+    },
+    {
+      "id": "hy-reproduction",
+      "en_title": "Hypothalamus comparison remains method-sensitive",
+      "es_title": "La comparación hipotalámica conserva sensibilidad metodológica",
+      "sources": [
+        "HY",
+        "results/replication_pm/hypothalamus_refit_summary.json"
+      ],
+      "cls": "figure-slide",
+      "figure": "rep_hypothalamus_sensitivity",
+      "en_caption": "Paper HY lists imply 17 PM and 761 HFD genes. The declared non-RUVg sensitivity yields 0 and 3,600 under its stated gates.",
+      "es_caption": "Las listas HY implican 17 genes PM y 761 HFD. La sensibilidad declarada sin RUVg produce 0 y 3,600 bajo sus criterios."
+    },
+    {
+      "id": "mirna-reproduction",
+      "en_title": "miR-574-5p direction agrees but BH confirmation does not",
+      "es_title": "La dirección de miR-574-5p coincide sin confirmación BH",
+      "sources": [
+        "miRNA",
+        "results/replication_mirna_ozone/mirna_author_targets.csv"
+      ],
+      "cls": "figure-slide",
+      "figure": "rep_mirna574",
+      "en_caption": "High-dose difference −0.26945 signal units. limma p = 0.0253, BH q = 0.312. ANOVA p = 0.0788 prevents protected LSD.",
+      "es_caption": "Diferencia a dosis alta −0.26945 unidades. limma p = 0.0253, BH q = 0.312. ANOVA p = 0.0788 impide LSD protegido."
+    },
+    {
+      "id": "ozone-reproduction",
+      "en_title": "Ozone genotype effects show conditional concordance",
+      "es_title": "Los efectos de genotipo en ozono muestran concordancia condicional",
+      "sources": [
+        "O3",
+        "results/replication_mirna_ozone/summary.json"
+      ],
+      "cls": "figure-slide",
+      "figure": "rep_ozone_concordance",
+      "en_caption": "Published genotype selection: 2,501 genes. Whole-effect comparison ρ = 0.865; selected S3 comparison ρ = 0.962 with 98.8% direction agreement.",
+      "es_caption": "Selección publicada de genotipo: 2,501 genes. Comparación global de efectos ρ = 0.865; lista S3 seleccionada ρ = 0.962 y 98.8% de dirección concordante."
+    },
+    {
+      "id": "reproduction-summary",
+      "en_title": "Reproduction conclusions differ across studies",
+      "es_title": "Las conclusiones de reproducción difieren entre estudios",
+      "sources": [
+        "results/replication_pm/paper_claim_audit.csv",
+        "results/replication_mirna_ozone/paper_replication_audit.csv"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "new-results",
+      "en_title": "New analyses within this project",
+      "es_title": "Análisis nuevos dentro del proyecto",
+      "sources": [],
+      "cls": "section-slide"
+    },
+    {
+      "id": "hy-primary",
+      "en_title": "Primary HY analysis identifies 11 BH discoveries",
+      "es_title": "El análisis HY principal identifica 11 hallazgos BH",
+      "sources": [
+        "results/hypothalamus/summary.json",
+        "results/hypothalamus/leave_one_out_primary_hits.tsv"
+      ],
+      "cls": "figure-slide",
+      "figure": "rep_hypothalamus_primary",
+      "en_caption": "4 FA versus 3 PM animals. Two higher and nine lower genes at BH q < 0.05. Intervals are pointwise MLE Wald intervals.",
+      "es_caption": "4 animales FA frente a 3 PM. Dos genes mayores y nueve menores con BH q < 0.05. Intervalos Wald MLE puntuales."
+    },
+    {
+      "id": "aca-primary",
+      "en_title": "Primary cortex analysis uses eight PM/PBS animals",
+      "es_title": "El análisis cortical principal usa ocho animales PM/PBS",
+      "sources": [
+        "results/cortex/summary.json",
+        "results/cortex/DE_PM_vs_PBS_MLE.tsv"
+      ],
+      "cls": "figure-slide",
+      "figure": "rep_cortex_primary",
+      "en_caption": "1,167 BH discoveries: 658 higher and 509 lower. This population and model differ from the 20-animal, 1,205-gene author reconstruction.",
+      "es_caption": "1,167 hallazgos BH: 658 mayores y 509 menores. La población y el modelo difieren de la reconstrucción de autores con 20 animales y 1,205 genes."
+    },
+    {
+      "id": "mirna-primary",
+      "en_title": "New miRNA analysis retains the full test family",
+      "es_title": "El análisis miRNA nuevo conserva toda la familia de pruebas",
+      "sources": [
+        "results/mirna/summary.json",
+        "results/mirna/methods.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "ozone-primary",
+      "en_title": "Ozone discovery counts depend on stratum and test",
+      "es_title": "Los hallazgos de ozono dependen del estrato y la prueba",
+      "sources": [
+        "results/ozone/summary.json"
+      ],
+      "cls": "figure-slide",
+      "figure": "rep_ozone_primary",
+      "en_caption": "Within-stratum BH discoveries: 0 / 399 / 2 / 3. The separate 4-df global exposure LRT identifies 24 genes.",
+      "es_caption": "Hallazgos BH por estrato: 0 / 399 / 2 / 3. El LRT global separado de exposición, con 4 gl, identifica 24 genes."
+    },
+    {
+      "id": "interaction-results",
+      "en_title": "Age-dependent exposure has the clearest joint signal",
+      "es_title": "La respuesta dependiente de edad tiene la señal conjunta más clara",
+      "sources": [
+        "results/advanced_omics/summary.json",
+        "results/advanced_omics/age_response_FDR_genes.tsv"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "interaction-animals",
+      "en_title": "Animal-level profiles contextualize response differences",
+      "es_title": "Los perfiles animales contextualizan diferencias de respuesta",
+      "sources": [
+        "results/advanced_omics/ozone_interaction_animal_profiles.tsv"
+      ],
+      "cls": "figure-slide",
+      "figure": "context_ozone_animals",
+      "en_caption": "All 24 animals remain visible for each gene. Points encode animals and short horizontal segments show descriptive means.",
+      "es_caption": "Se muestran los 24 animales por gen. Los puntos representan animales y los segmentos cortos muestran medias descriptivas."
+    },
+    {
+      "id": "enrichment-results",
+      "en_title": "ORA and ranked GSEA describe different evidence",
+      "es_title": "ORA y GSEA por rango describen evidencia diferente",
+      "sources": [
+        "results/enrichment/summary_counts.tsv",
+        "results/enrichment/methods.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "go-patterns",
+      "en_title": "Selected GO patterns across the six RNA contrasts",
+      "es_title": "Patrones GO seleccionados en seis contrastes de ARN",
+      "sources": [
+        "results/advanced_omics/GO_multi_contrast_NES_source.tsv",
+        "metadata/advanced_omics/methods.json"
+      ],
+      "cls": "figure-slide",
+      "figure": "context_go_patterns",
+      "en_caption": "Fixed display selection, shared NES scale. Dot: algorithmic GSEA FDR < 0.05. Gray: ineligible or unavailable.",
+      "es_caption": "Selección gráfica fija y escala NES común. Punto: FDR algorítmica de GSEA < 0.05. Gris: no elegible o no disponible."
+    },
+    {
+      "id": "gene-products",
+      "en_title": "Gene products add biological context without measuring protein",
+      "es_title": "Los productos génicos contextualizan sin medir proteínas",
+      "sources": [
+        "results/gene_priorities/annotations.tsv",
+        "metadata/gene_priorities/methods.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "aca-sections",
+      "en_title": "Measured cortical layers organize the reference cells",
+      "es_title": "Las capas corticales medidas organizan las células de referencia",
+      "sources": [
+        "results/spatial_sections/ACA/sections.tsv",
+        "results/spatial_sections/ACA/detection_by_bins.tsv.gz"
+      ],
+      "cls": "figure-slide",
+      "figure": "spatial_aca_measured",
+      "en_caption": "Largest ACA section selected by cell count: 1,940 cells. Anatomy colors and measured Fosb detection use the deposited experimental plane.",
+      "es_caption": "Corte ACA de mayor n: 1,940 células. Los colores anatómicos y la detección de Fosb usan el plano experimental depositado."
+    },
+    {
+      "id": "hy-sections",
+      "en_title": "Measured hypothalamic nuclei and Tll1 detection",
+      "es_title": "Núcleos hipotalámicos medidos y detección Tll1",
+      "sources": [
+        "results/spatial_sections/HY/sections.tsv",
+        "results/spatial_reference/summary.json"
+      ],
+      "cls": "figure-slide",
+      "figure": "spatial_hy_measured",
+      "en_caption": "Largest HY section: 3,565 cells. Tll1 is positive in 667 of 37,811 cells across the complete reference HY region.",
+      "es_caption": "Corte HY de mayor n: 3,565 células. Tll1 es positivo en 667 de las 37,811 células de la región HY completa."
+    },
+    {
+      "id": "scenario-results",
+      "en_title": "Illustrative regional scaling preserves the measured geometry",
+      "es_title": "El escalamiento ilustrativo preserva la geometría medida",
+      "sources": [
+        "results/spatial_cortex/summary.json",
+        "results/spatial_viewer/summary.json"
+      ],
+      "cls": "",
+      "demo_figure": "spatial_cortex/reference_vs_simulation"
+    },
+    {
+      "id": "gaussian-rmse",
+      "en_title": "Spatial Gaussian regression rarely improves the baseline",
+      "es_title": "La regresión gaussiana espacial mejora pocas veces la referencia",
+      "sources": [
+        "results/spatial_bayes/summary.json"
+      ],
+      "cls": "figure-slide",
+      "figure": "spatial_gaussian_rmse",
+      "en_caption": "RMSE improves over anatomy-only prediction for 4/10 ACA genes and 1/10 HY genes under the same guarded section folds.",
+      "es_caption": "El RMSE mejora respecto a solo anatomía en 4/10 genes ACA y 1/10 HY, con los mismos bloques de cortes."
+    },
+    {
+      "id": "gaussian-diagnostics",
+      "en_title": "Overall coverage hides important Gaussian limitations",
+      "es_title": "La cobertura global oculta limitaciones gaussianas importantes",
+      "sources": [
+        "results/spatial_bayes/summary.json"
+      ],
+      "cls": "figure-slide",
+      "figure": "spatial_gaussian_diagnostics",
+      "en_caption": "Overall coverage, positive-only inclusion and impossible negative predictive support are different diagnostics.",
+      "es_caption": "La cobertura global, la inclusión solo en positivos y el soporte predictivo negativo imposible son diagnósticos distintos."
+    },
+    {
+      "id": "beta-performance",
+      "en_title": "Bounded detection improves modestly in ACA but fails in HY",
+      "es_title": "La detección acotada mejora modestamente en ACA y falla en HY",
+      "sources": [
+        "results/spatial_detection_bayes/summary.json"
+      ],
+      "cls": "figure-slide",
+      "figure": "spatial_beta_performance",
+      "en_caption": "ACA Brier 0.13725 versus 0.14051 regional. HY Brier 0.09246 versus 0.03621. High count-interval coverage accompanies wide intervals.",
+      "es_caption": "Brier ACA de 0.13725 frente a 0.14051 regional. HY de 0.09246 frente a 0.03621. La cobertura alta de conteos acompaña intervalos amplios."
+    },
+    {
+      "id": "beta-aca",
+      "en_title": "ACA posterior detection separates uncertainty targets",
+      "es_title": "La detección posterior ACA separa objetivos de incertidumbre",
+      "sources": [
+        "results/spatial_detection_bayes/ACA/known_section_posterior.tsv.gz",
+        "results/spatial_detection_bayes/ACA/anatomy_posterior.tsv.gz"
+      ],
+      "cls": "figure-slide",
+      "figure": "spatial_beta_aca_posterior",
+      "en_caption": "Fosb: observed fractions, fitted known-section probabilities and anatomy/new-section uncertainty remain separately labeled.",
+      "es_caption": "Fosb: fracciones observadas, probabilidades del corte conocido e incertidumbre anatómica/de un corte nuevo, rotuladas por separado."
+    },
+    {
+      "id": "beta-hy",
+      "en_title": "HY fitted anatomy does not guarantee held-out prediction",
+      "es_title": "La anatomía HY ajustada no garantiza predicción reservada",
+      "sources": [
+        "results/spatial_detection_bayes/HY/known_section_posterior.tsv.gz",
+        "results/spatial_detection_bayes/HY/gene_metrics.tsv"
+      ],
+      "cls": "figure-slide",
+      "figure": "spatial_beta_hy_posterior",
+      "en_caption": "Tll1: fitted probabilities stay bounded, while unseen held-out anatomies expose dependence on the stated prior.",
+      "es_caption": "Tll1: probabilidades ajustadas acotadas. Las anatomías reservadas no vistas revelan dependencia del prior."
+    },
+    {
+      "id": "numerics",
+      "en_title": "Numerical stability and predictive usefulness are separate",
+      "es_title": "Estabilidad numérica y utilidad predictiva son distintas",
+      "sources": [
+        "results/spatial_detection_bayes/scientific_diagnostics.json",
+        "results/spatial_bayes/validation.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "limits",
+      "en_title": "Limits that change the scientific interpretation",
+      "es_title": "Límites que cambian la interpretación científica",
+      "sources": [
+        "results/replication_pm/summary.json",
+        "metadata/spatial_bayes/methods.json",
+        "metadata/spatial_detection_bayes/methods.json"
+      ],
+      "cls": "small"
+    },
+    {
+      "id": "conclusions",
+      "en_title": "Conclusions supported by the completed work",
+      "es_title": "Conclusiones respaldadas por el trabajo completado",
+      "sources": [
+        "results/replication_pm/summary.json",
+        "results/advanced_omics/summary.json",
+        "results/spatial_detection_bayes/summary.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "future",
+      "en_title": "Future work requires independent biological information",
+      "es_title": "El trabajo futuro requiere información biológica independiente",
+      "sources": [
+        "results/report_validation/experimental_design_review.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "discussion",
+      "en_title": "Reproducibility and discussion",
+      "es_title": "Reproducibilidad y discusión",
+      "sources": [
+        "metadata/analysis_environment.json"
+      ],
+      "cls": ""
+    },
+    {
+      "id": "appendix",
+      "en_title": "Technical appendix",
+      "es_title": "Apéndice técnico",
+      "sources": [],
+      "cls": "section-slide"
+    },
+    {
+      "id": "a-pm-protocols",
+      "en_title": "PM₂.₅ exposure protocols remain distinct",
+      "es_title": "Los protocolos de PM₂.₅ permanecen diferenciados",
+      "sources": [
+        "HY",
+        "ACA",
+        "miRNA",
+        "results/report_validation/experimental_design_review.json"
+      ],
+      "cls": "appendix small"
+    },
+    {
+      "id": "a-ozone-protocol",
+      "en_title": "Ozone protocol and sequenced sample size",
+      "es_title": "Protocolo de ozono y tamaño muestral secuenciado",
+      "sources": [
+        "O3",
+        "results/report_validation/experimental_design_review.json"
+      ],
+      "cls": "appendix"
+    },
+    {
+      "id": "a-normalization",
+      "en_title": "Median-of-ratios normalization and length offsets",
+      "es_title": "Mediana de cocientes y offsets de longitud",
+      "sources": [
+        "DESeq2",
+        "tximport",
+        "results/hypothalamus/methods.json"
+      ],
+      "cls": "appendix formula-slide"
+    },
+    {
+      "id": "a-limma",
+      "en_title": "Empirical-Bayes moderation in limma",
+      "es_title": "Moderación Bayes empírica en limma",
+      "sources": [
+        "limma",
+        "results/mirna/methods.json"
+      ],
+      "cls": "appendix formula-slide"
+    },
+    {
+      "id": "a-multiplicity",
+      "en_title": "Multiplicity families and non-nested discovery lists",
+      "es_title": "Familias de multiplicidad y listas no anidadas",
+      "sources": [
+        "results/ozone/summary.json",
+        "results/advanced_omics/summary.json"
+      ],
+      "cls": "appendix"
+    },
+    {
+      "id": "a-software-loo",
+      "en_title": "Software and leave-one-animal-out sensitivity",
+      "es_title": "Sensibilidad a software y omisión de animales",
+      "sources": [
+        "results/hypothalamus/independent_deseq2_check/summary.json",
+        "results/hypothalamus/leave_one_out_summary.tsv"
+      ],
+      "cls": "appendix"
+    },
+    {
+      "id": "a-genes-hy",
+      "en_title": "Hypothalamic measured candidates",
+      "es_title": "Candidatos hipotalámicos medidos",
+      "sources": [
+        "results/gene_priorities/prioritized_genes.tsv"
+      ],
+      "cls": "appendix tiny"
+    },
+    {
+      "id": "a-genes-aca",
+      "en_title": "Cortical measured candidates",
+      "es_title": "Candidatos corticales medidos",
+      "sources": [
+        "results/gene_priorities/prioritized_genes.tsv"
+      ],
+      "cls": "appendix tiny"
+    },
+    {
+      "id": "a-gaussian-assumptions",
+      "en_title": "Gaussian assumptions and prespecified sensitivity",
+      "es_title": "Supuestos gaussianos y sensibilidad preespecificada",
+      "sources": [
+        "metadata/spatial_bayes/methods.json",
+        "results/spatial_bayes/summary.json"
+      ],
+      "cls": "appendix"
+    },
+    {
+      "id": "a-beta-marginal",
+      "en_title": "Beta-binomial likelihood and new-section prediction",
+      "es_title": "Verosimilitud beta-binomial y predicción de corte nuevo",
+      "sources": [
+        "metadata/spatial_detection_bayes/methods.json"
+      ],
+      "cls": "appendix formula-slide"
+    },
+    {
+      "id": "a-coverage",
+      "en_title": "Marginal coverage and outcome-conditioned diagnostics",
+      "es_title": "Cobertura marginal y diagnósticos condicionados por resultado",
+      "sources": [
+        "metadata/spatial_bayes/methods.json",
+        "results/spatial_bayes/summary.json"
+      ],
+      "cls": "appendix formula-slide"
+    },
+    {
+      "id": "a-outstanding",
+      "en_title": "Data and analyses outside the completed scope",
+      "es_title": "Datos y análisis fuera del alcance completado",
+      "sources": [
+        "results/report_validation/experimental_design_review.json",
+        "metadata/papers/reuse_search_summary.json"
+      ],
+      "cls": "appendix"
+    },
+    {
+      "id": "a-primary-refs",
+      "en_title": "Primary studies and spatial reference",
+      "es_title": "Estudios originales y referencia espacial",
+      "sources": [
+        "papers/bibliography.bib"
+      ],
+      "cls": "appendix small"
+    },
+    {
+      "id": "a-method-refs",
+      "en_title": "Statistical software references",
+      "es_title": "Referencias de software estadístico",
+      "sources": [
+        "metadata/analysis_environment.json"
+      ],
+      "cls": "appendix small"
+    },
+    {
+      "id": "a-bayes-refs",
+      "en_title": "Bayesian derivation and implementation sources",
+      "es_title": "Fuentes de derivación e implementación bayesiana",
+      "sources": [
+        "metadata/spatial_bayes/methods.json",
+        "metadata/spatial_detection_bayes/methods.json"
+      ],
+      "cls": "appendix"
+    },
+    {
+      "id": "a-rebuild",
+      "en_title": "Rebuilding the presentation without refitting the science",
+      "es_title": "Reconstruir la presentación sin reajustar los análisis",
+      "sources": [
+        "metadata/analysis_environment.json"
+      ],
+      "cls": "appendix small"
+    }
+  ],
+  "presentation_code_sha256": {
+    "scripts/build_defense_slides.py": "d5e178c6de50d04180ab70c5b9a0a491252dcfe8073892b8e2312787d5b763af",
+    "scripts/build_defense_context_figures.py": "c0bb0d01372edc125bdf86791a86c04b3e755de153165e53d1ebc6195d59ac83",
+    "scripts/build_defense_replication_figures.py": "62c4d0d41a6df22f4dc0fa24696841969de4abce9f32222285f1ae160ce5a819",
+    "scripts/build_defense_spatial_figures.py": "4a318245dfeb2e30d88f30cc9083c8d050101223dae8822220dab0d8ef23d2b7"
+  },
+  "source_commit_before_presentation": "6194a0df9292d747d3c8434e66130f41a258fcc5"
+}

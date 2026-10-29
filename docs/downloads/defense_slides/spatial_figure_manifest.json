@@ -1,0 +1,614 @@
+{
+  "spatial_aca_measured": {
+    "stem": "spatial_aca_measured",
+    "language": "en",
+    "caption_en": "Anterior cingulate cortex, Fosb, deposited physical section Zhuang-ABCA-2.023, selected solely for the largest measured regional cell n (1,940). Left: every measured cell at its deposited experimental x/y coordinate, colored by deposited anatomy; these colors do not encode RNA. Right: positive raw count / all measured regional cells in each occupied 100 × 100 µm experimental-XY bin, including measured zeros in every denominator. 209/1,940 cells are positive in this section. Detection color scale is fixed 0–100%; gray occupied bins have zero positives and white gaps contain no observed bin. Neither interpolation, density estimation nor spatial imputation is applied. The displayed Y-axis is downward. Experimental slice coordinates are not CCF ML/DV. One unexposed donor, no per-cell tests or PM2.5 response inference.",
+    "caption_es": "Corteza cingulada anterior, Fosb, corte físico depositado Zhuang-ABCA-2.023, seleccionado solo por mayor n de células regionales medidas (1,940). Izquierda: todas las células medidas en sus x/y experimentales depositadas, coloreadas por anatomía depositada; estos colores no codifican RNA. Derecha: conteo bruto positivo / todas las células regionales medidas por casilla XY experimental ocupada de 100 × 100 µm, incluidos todos los ceros en el denominador. 209/1,940 células positivas en este corte. Escala de detección fija 0–100%; casillas grises ocupadas sin positivos y huecos blancos sin casilla observada. Sin interpolación, densidad ni imputación espacial. Y se muestra hacia abajo. Las coordenadas experimentales no son CCF ML/DV. Un donante sin exposición; sin pruebas celulares ni inferencia de respuesta PM2.5.",
+    "alt_en": "Two maps of measured ACA slice: anatomy at actual cell coordinates and Fosb detection fractions in occupied 100 µm bins.",
+    "alt_es": "Dos mapas del corte ACA: anatomía en coordenadas celulares reales y fracciones de detección de Fosb en casillas ocupadas de 100 µm.",
+    "source_paths": [
+      "results/spatial_sections/ACA/cells_with_sections.tsv.gz",
+      "results/spatial_sections/ACA/detection_by_bins.tsv.gz",
+      "results/spatial_sections/ACA/summary.json"
+    ],
+    "source_sha256": {
+      "results/spatial_sections/ACA/cells_with_sections.tsv.gz": "a7bbe306e2c1465cba0a1b493fcf1680cf216ef5507fab800729df111c665e18",
+      "results/spatial_sections/ACA/detection_by_bins.tsv.gz": "24a9fa98aa80d3621a2ff8d97f8a2e0a19f7da7ed50e1ac985e64954b118c1da",
+      "results/spatial_sections/ACA/summary.json": "aecb10d19abb3eb3e28fff90f7dcfb8e2851696d7a9c18ef22bf16035ab69e70"
+    },
+    "files": {
+      "png": "results/defense_slides/figures/spatial_aca_measured.png",
+      "svg": "results/defense_slides/figures/spatial_aca_measured.svg",
+      "pdf": "results/defense_slides/figures/spatial_aca_measured.pdf"
+    },
+    "sha256": {
+      "png": "d6d011d5c38b7e7e572b3f0ff7875622f97807baf1be5c3e6e393574243873e2",
+      "svg": "a8fc1319649ce8d995ca825c81e2b70fe4e2fc98dfa8e99ce991c99dfcc142a5",
+      "pdf": "251973e83881008fc49ae5bbf7e904019b4737f9d25f2bba3414f60b73a23b91"
+    },
+    "text_overflow": [],
+    "figure_size_inches": [
+      16,
+      7.2
+    ],
+    "png_dimensions": [
+      2240,
+      1008
+    ],
+    "analysis_scope": "Focused presentation of frozen outputs; no refit, sampling or new inference"
+  },
+  "spatial_hy_measured": {
+    "stem": "spatial_hy_measured",
+    "language": "en",
+    "caption_en": "Hypothalamus, Tll1, deposited physical section Zhuang-ABCA-2.034, selected solely for the largest measured regional cell n (3,565). Left: every measured cell at its deposited experimental x/y coordinate, colored by deposited anatomy; these colors do not encode RNA. Right: positive raw count / all measured regional cells in each occupied 100 × 100 µm experimental-XY bin, including measured zeros in every denominator. 96/3,565 cells are positive in this section. Detection color scale is fixed 0–100%; gray occupied bins have zero positives and white gaps contain no observed bin. Neither interpolation, density estimation nor spatial imputation is applied. The displayed Y-axis is downward. Experimental slice coordinates are not CCF ML/DV. One unexposed donor, no per-cell tests or PM2.5 response inference.",
+    "caption_es": "Hipotálamo, Tll1, corte físico depositado Zhuang-ABCA-2.034, seleccionado solo por mayor n de células regionales medidas (3,565). Izquierda: todas las células medidas en sus x/y experimentales depositadas, coloreadas por anatomía depositada; estos colores no codifican RNA. Derecha: conteo bruto positivo / todas las células regionales medidas por casilla XY experimental ocupada de 100 × 100 µm, incluidos todos los ceros en el denominador. 96/3,565 células positivas en este corte. Escala de detección fija 0–100%; casillas grises ocupadas sin positivos y huecos blancos sin casilla observada. Sin interpolación, densidad ni imputación espacial. Y se muestra hacia abajo. Las coordenadas experimentales no son CCF ML/DV. Un donante sin exposición; sin pruebas celulares ni inferencia de respuesta PM2.5.",
+    "alt_en": "Two maps of measured HY slice: anatomy at actual cell coordinates and Tll1 detection fractions in occupied 100 µm bins.",
+    "alt_es": "Dos mapas del corte HY: anatomía en coordenadas celulares reales y fracciones de detección de Tll1 en casillas ocupadas de 100 µm.",
+    "source_paths": [
+      "results/spatial_sections/HY/cells_with_sections.tsv.gz",
+      "results/spatial_sections/HY/detection_by_bins.tsv.gz",
+      "results/spatial_sections/HY/summary.json"
+    ],
+    "source_sha256": {
+      "results/spatial_sections/HY/cells_with_sections.tsv.gz": "4df20fd09adfe38a22d51d2d4526460356a6c19a3239a0a173823c4e4e284af2",
+      "results/spatial_sections/HY/detection_by_bins.tsv.gz": "78e660df78b8f1c93bdc3c425cdcd963e3be237cbce4fb7a79e4b33b3ab436e7",
+      "results/spatial_sections/HY/summary.json": "61bcaedad164b72d528d145abddd2850b3b7caf8afea408fe47eae85ba8c5c9a"
+    },
+    "files": {
+      "png": "results/defense_slides/figures/spatial_hy_measured.png",
+      "svg": "results/defense_slides/figures/spatial_hy_measured.svg",
+      "pdf": "results/defense_slides/figures/spatial_hy_measured.pdf"
+    },
+    "sha256": {
+      "png": "0b3cc399fd1b9b8f5b6b44a08a0fc893ddef5f0868c22ddf12a9c5a26eb86af9",
+      "svg": "1d4a0a16b0997a04a7e01c7f2771345b5428c415a163df7c65e65172bed61955",
+      "pdf": "f74d2cefb654b48f1bb1395cc540951adc5eed08957faf55618505f69cd63155"
+    },
+    "text_overflow": [],
+    "figure_size_inches": [
+      16,
+      7.2
+    ],
+    "png_dimensions": [
+      2240,
+      1008
+    ],
+    "analysis_scope": "Focused presentation of frozen outputs; no refit, sampling or new inference"
+  },
+  "spatial_guarded_folds": {
+    "stem": "spatial_guarded_folds",
+    "language": "en",
+    "caption_en": "Actual fixed five-fold assignments for all 18 ACA and 20 HY physical sections. Whole sections form contiguous test blocks ordered by estimated acquisition AP. The nearest represented section immediately before and after each test block is excluded as a guard. Section indices need not be consecutive because absent regional sections are not filled. Train-only anatomy vocabularies, coordinate scaling and RBF centers exclude test and guard cells. The same folds support Gaussian and detection models. This assesses within-donor transport, not independent animal replication.",
+    "caption_es": "Asignaciones reales de cinco bloques para los 18 cortes ACA y 20 HY. Los cortes completos forman bloques contiguos de prueba según AP estimada de adquisición. El corte regional representado más cercano antes y después se excluye como guarda. Los índices no tienen que ser consecutivos; no se rellenan cortes ausentes. Vocabulario anatómico, escalado y centros RBF se aprenden solo con entrenamiento. Ambos modelos comparten bloques. Evalúa transporte dentro de un donante, no replicación animal independiente.",
+    "alt_en": "Training, test and guard membership by actual physical section and fold in ACA and HY.",
+    "alt_es": "Pertenencia de entrenamiento, prueba y guarda por corte físico y bloque en ACA e HY.",
+    "source_paths": [
+      "results/spatial_bayes/ACA/section_folds.tsv",
+      "results/spatial_bayes/ACA/fold_audit.json",
+      "results/spatial_bayes/HY/section_folds.tsv",
+      "results/spatial_bayes/HY/fold_audit.json"
+    ],
+    "source_sha256": {
+      "results/spatial_bayes/ACA/section_folds.tsv": "51c5b62d7209a9f28fcbc41dd363e5a0dbad1589835896a4c019df941eb1246a",
+      "results/spatial_bayes/ACA/fold_audit.json": "3faea10af6547dfdd145446249ccff8e1f2e54cb780f8fc3e2af9b6775e437a2",
+      "results/spatial_bayes/HY/section_folds.tsv": "d6a54edc68f673e3224a6408e61eb1a0b6adb9d90d5a9d1754891d8641c02ed2",
+      "results/spatial_bayes/HY/fold_audit.json": "2b5748b0badfaf9a2b6074659272e8099fc7995320c10e56718c7dbf652b46d3"
+    },
+    "files": {
+      "png": "results/defense_slides/figures/spatial_guarded_folds.png",
+      "svg": "results/defense_slides/figures/spatial_guarded_folds.svg",
+      "pdf": "results/defense_slides/figures/spatial_guarded_folds.pdf"
+    },
+    "sha256": {
+      "png": "3d3f3b4ab756fe7f5ff9d086988942006e42cfe0406422bf7d8a81dd20249862",
+      "svg": "41bd37a9a82a57b64b3e838f6accb2d0a2911ce45df8ba50d50411e56651ab32",
+      "pdf": "bc1a05bcaf08e923136aedff49e50751e2f9e7a416d7303afa6463baa300515e"
+    },
+    "text_overflow": [],
+    "figure_size_inches": [
+      16,
+      7.2
+    ],
+    "png_dimensions": [
+      2240,
+      1008
+    ],
+    "analysis_scope": "Focused presentation of frozen outputs; no refit, sampling or new inference"
+  },
+  "spatial_gaussian_rmse": {
+    "stem": "spatial_gaussian_rmse",
+    "language": "en",
+    "caption_en": "Per-gene held-out RMSE ratio, primary spatial Gaussian baseline divided by anatomy-only Bayesian baseline, both using identical whole-section guard folds and section nuisance priors. Ratios below 1 improve prediction: 4/10 ACA genes and 1/10 HY genes. Point positions retain exact ratios; the nonzero axis range is explicit and the equality reference is shown. Genes remain in frozen source priority order. Error is measured on natural ln(1+raw imaging count), not raw molecule counts or fold change.",
+    "caption_es": "Razón de RMSE por gen: referencia gaussiana espacial principal / referencia bayesiana de solo anatomía, con los mismos bloques de cortes protegidos y priors de corte. Razones menores que 1 mejoran: 4/10 genes ACA y 1/10 HY. Los puntos conservan razones exactas; el rango distinto de cero es explícito y se muestra la igualdad. Orden génico fijado por prioridad de origen. Error en ln(1+conteo bruto), no en moléculas ni fold change.",
+    "alt_en": "Two dot plots compare spatial Gaussian held-out RMSE with anatomy-only prediction for ten genes per region.",
+    "alt_es": "Dos gráficos de puntos comparan RMSE gaussiano espacial con solo anatomía para diez genes por región.",
+    "source_paths": [
+      "results/spatial_bayes/summary.json",
+      "results/spatial_bayes/ACA/heldout_metrics.tsv",
+      "results/spatial_bayes/HY/heldout_metrics.tsv"
+    ],
+    "source_sha256": {
+      "results/spatial_bayes/summary.json": "952c30daac2e0d9ea97c9e2c469d19d89f9c20ec85063e31d43ab62898790131",
+      "results/spatial_bayes/ACA/heldout_metrics.tsv": "fdb6935ca28f5714c62dd9a0d96d46c03cbdcfdf8dfb1429b7263ff3514d34cb",
+      "results/spatial_bayes/HY/heldout_metrics.tsv": "a9a9d9354f33c1bff87d760b1ff85fb0d4b4fa8807960ebfc4f9a59600802c07"
+    },
+    "files": {
+      "png": "results/defense_slides/figures/spatial_gaussian_rmse.png",
+      "svg": "results/defense_slides/figures/spatial_gaussian_rmse.svg",
+      "pdf": "results/defense_slides/figures/spatial_gaussian_rmse.pdf"
+    },
+    "sha256": {
+      "png": "f54790df1370b2a4ed42cd6ae42b9216e94985d9a83d9001a398cc22cc83e0c4",
+      "svg": "a820799184193c6dd81d44a2ddb9bfd506eb86d6d04f63f8ad04f5a38f325892",
+      "pdf": "e35ef92aad469b981f697633cd2d3ffd169234f0090a9612cc9c9dfa4280adbc"
+    },
+    "text_overflow": [],
+    "figure_size_inches": [
+      16,
+      7.2
+    ],
+    "png_dimensions": [
+      2240,
+      1008
+    ],
+    "analysis_scope": "Focused presentation of frozen outputs; no refit, sampling or new inference"
+  },
+  "spatial_gaussian_diagnostics": {
+    "stem": "spatial_gaussian_diagnostics",
+    "language": "en",
+    "caption_en": "Every point is one of ten fixed genes in each region. Left compares empirical overall inclusion in nominal 95% new-cell/new-section predictive intervals with inclusion conditioned on a positive realized observation. The conditional positive-only diagnostic is not required to equal 95% even under marginal calibration; the nominal reference therefore appears only for overall inclusion. Right shows the mean model probability below zero against overall interval inclusion; negative support is incompatible with the nonnegative ln(1+count) response. Tll1 and Fosb are labeled examples. No intervals are clipped or recalibrated. Different plotted quantities retain different axis scales. Within-donor descriptive validation, not independent-cell or animal inference.",
+    "caption_es": "Cada punto es uno de diez genes fijos por región. Izquierda compara inclusión global observada en intervalos predictivos nominales de 95% para célula/corte nuevos con inclusión condicionada a una observación positiva. Este diagnóstico condicionado no tiene que igualar 95% bajo calibración marginal; la referencia nominal aparece solo para inclusión global. Derecha muestra probabilidad media modelada bajo cero frente a inclusión global; el soporte negativo es incompatible con ln(1+conteo), no negativo. Tll1 y Fosb son ejemplos rotulados. No se truncan ni recalibran intervalos. Las cantidades usan escalas de eje distintas. Validación descriptiva de un donante, sin inferencia de células o animales independientes.",
+    "alt_en": "Two diagnostic scatter plots distinguish overall from positive-only interval inclusion and quantify impossible negative predictive probability.",
+    "alt_es": "Dos gráficos distinguen inclusión global y condicionada a positivos, y cuantifican probabilidad predictiva negativa imposible.",
+    "source_paths": [
+      "results/spatial_bayes/summary.json",
+      "metadata/spatial_bayes/methods.json"
+    ],
+    "source_sha256": {
+      "results/spatial_bayes/summary.json": "952c30daac2e0d9ea97c9e2c469d19d89f9c20ec85063e31d43ab62898790131",
+      "metadata/spatial_bayes/methods.json": "bbc3fd5699a06bd2d02327f878d58ab56d2dac69ff97244c628835c0acb5d46a"
+    },
+    "files": {
+      "png": "results/defense_slides/figures/spatial_gaussian_diagnostics.png",
+      "svg": "results/defense_slides/figures/spatial_gaussian_diagnostics.svg",
+      "pdf": "results/defense_slides/figures/spatial_gaussian_diagnostics.pdf"
+    },
+    "sha256": {
+      "png": "8bdbf556daee1a810ee2f57af9cb0ec231f20382857bbf0150f6bf23f6c94a87",
+      "svg": "5bc1e7a3a630a2cc7916f60c8dcb833a8289cf7fd4d3e964cfbfef60cbd3174b",
+      "pdf": "e1494d154730ba08d2101695dfa99d778dc0788efb5b9510816c60fe5cb87bb0"
+    },
+    "text_overflow": [],
+    "figure_size_inches": [
+      16,
+      7.2
+    ],
+    "png_dimensions": [
+      2240,
+      1008
+    ],
+    "analysis_scope": "Focused presentation of frozen outputs; no refit, sampling or new inference"
+  },
+  "spatial_beta_performance": {
+    "stem": "spatial_beta_performance",
+    "language": "en",
+    "caption_en": "Primary 64×48 hierarchical Beta–Binomial held-out performance pooled across ten genes per region. Left is cell-weighted Brier loss, with zero baseline on the bar axis, compared with the nonanatomical regional model trained on identical allowed sections and fixed priors. ACA model .1372514 versus regional .1405089; HY .0924574 versus .0362057. Right compares mean predictive count-interval width divided by the observed group n (41.9/61.5 percentage points) with unweighted group coverage (97.89/99.35%). Intervals predict positive counts in a new physical section with its actual n. High coverage with wide intervals does not establish precise prediction. All groups are retained, including 79/186 unique HY section×anatomy groups per gene with prior-only prediction (10,416 of37,811 actual cells). Ten-gene aggregate evaluations are correlated and are not independent samples.",
+    "caption_es": "Rendimiento reservado principal 64×48 del modelo Beta–Binomial jerárquico, agregado en diez genes por región. Izquierda: Brier ponderado por células, barras desde cero, comparado con referencia regional no anatómica entrenada con los mismos cortes permitidos y priors. ACA .1372514 frente a .1405089; HY .0924574 frente a .0362057. Derecha: ancho medio del intervalo predictivo de conteos dividido por n observado (41.9/61.5 puntos porcentuales) frente a cobertura no ponderada por grupo (97.89/99.35%). Predicen conteos positivos de un corte nuevo con su n real. Cobertura alta e intervalos amplios no establecen predicción precisa. Se conservan todos los grupos, incluidos 79/186 grupos HY corte×anatomía por gen solo con prior (10,416 de37,811 células reales). Las evaluaciones agregadas en diez genes son correlacionadas, no muestras independientes.",
+    "alt_en": "Brier comparison for ACA and HY, and predictive count coverage plotted against interval width.",
+    "alt_es": "Comparación de Brier ACA/HY y cobertura predictiva de conteos frente al ancho del intervalo.",
+    "source_paths": [
+      "results/spatial_detection_bayes/summary.json",
+      "metadata/spatial_detection_bayes/methods.json"
+    ],
+    "source_sha256": {
+      "results/spatial_detection_bayes/summary.json": "c6ee2a9098c84e031388dd53fd5d7090c2b420df18703a269b848c5cc1ae2538",
+      "metadata/spatial_detection_bayes/methods.json": "0b9c41b549240b607fe5888078e3970ccdd601bce3c022d8097262c31afad704"
+    },
+    "files": {
+      "png": "results/defense_slides/figures/spatial_beta_performance.png",
+      "svg": "results/defense_slides/figures/spatial_beta_performance.svg",
+      "pdf": "results/defense_slides/figures/spatial_beta_performance.pdf"
+    },
+    "sha256": {
+      "png": "b50d93bdd579f3eacef745a3a26f41776a3faa73e8c08f049f0beb3e98200119",
+      "svg": "d1e7d81f82364daf12b1d0774f4e3e00690e3b422f14718f0f307ff767b2657d",
+      "pdf": "667a1ce62061ea565e6f4df5784a2dd606fabca537ad652e717a90f8fe13af69"
+    },
+    "text_overflow": [],
+    "figure_size_inches": [
+      16,
+      7.2
+    ],
+    "png_dimensions": [
+      2240,
+      1008
+    ],
+    "analysis_scope": "Focused presentation of frozen outputs; no refit, sampling or new inference"
+  },
+  "spatial_beta_aca_posterior": {
+    "stem": "spatial_beta_aca_posterior",
+    "language": "en",
+    "caption_en": "ACA/Fosb, the same largest-n physical slice Zhuang-ABCA-2.023 used in the measured figure. Left: observed positive fractions (diamonds), fitted known-section probability means and95% credible intervals under the full-reference hyperposterior. Labels give actual positive/n, including zeros. Right: the corresponding anatomy mean μ and95% credible intervals over all its measured sections, distinct from95% predictive intervals for a new section propensity p; S is the actual physical-section count. These are different posterior targets. Known-section p intervals use8192 seeded mixture draws, μ uses weighted grid quantiles, and full-data new-section p intervals invert the finite-grid Beta-mixture CDF. A new-section propensity interval does not include binomial count sampling and is not the held-out count interval. Both panels are full-reference fitted summaries, not held-out predictions or exposure effects. The same anatomical rows are retained in each panel. No model refit or re-selection performed for this presentation.",
+    "caption_es": "ACA/Fosb, mismo corte físico de mayor n Zhuang-ABCA-2.023 usado en la figura medida. Izquierda: fracciones positivas observadas (rombos), medias ajustadas de probabilidad del corte conocido e intervalos creíbles95% bajo la hiperposterior de referencia completa. Etiquetas con positivos/n reales, incluidos ceros. Derecha: media anatómica μ e intervalos creíbles95% con todos sus cortes medidos, distintos de los intervalos predictivos95% para propensión p de un corte nuevo; S cuenta cortes físicos. Son objetivos posteriores diferentes. Los intervalos p de corte conocido usan8192 sorteos con semilla, μ usa cuantiles ponderados de cuadrícula y p nuevo con datos completos invierte la CDF de mezcla Beta discreta. Un intervalo de propensión nueva no incluye muestreo binomial de conteos ni es el intervalo de conteos reservados. Ambos paneles son resúmenes ajustados con referencia completa, no predicciones reservadas ni efectos de exposición. Mismas filas anatómicas por panel. Sin reajuste ni selección nueva para esta presentación.",
+    "alt_en": "Two forests distinguish observed and fitted known-section detection from anatomy μ uncertainty and new-section p prediction for ACA/Fosb.",
+    "alt_es": "Dos gráficos distinguen detección observada y p ajustada del corte, incertidumbre de μ anatómica y predicción de p nuevo para ACA/Fosb.",
+    "source_paths": [
+      "results/spatial_detection_bayes/ACA/known_section_posterior.tsv.gz",
+      "results/spatial_detection_bayes/ACA/anatomy_posterior.tsv.gz",
+      "results/spatial_sections/ACA/summary.json",
+      "metadata/spatial_detection_bayes/methods.json"
+    ],
+    "source_sha256": {
+      "results/spatial_detection_bayes/ACA/known_section_posterior.tsv.gz": "312c212fcd043c5047abf87987aaa80007cbe9317ee97df16727166b6982c25f",
+      "results/spatial_detection_bayes/ACA/anatomy_posterior.tsv.gz": "9b1010abf33520fd4937622e18a33603cf29c7ca6a8d19d9fd593cee26eb39a5",
+      "results/spatial_sections/ACA/summary.json": "aecb10d19abb3eb3e28fff90f7dcfb8e2851696d7a9c18ef22bf16035ab69e70",
+      "metadata/spatial_detection_bayes/methods.json": "0b9c41b549240b607fe5888078e3970ccdd601bce3c022d8097262c31afad704"
+    },
+    "files": {
+      "png": "results/defense_slides/figures/spatial_beta_aca_posterior.png",
+      "svg": "results/defense_slides/figures/spatial_beta_aca_posterior.svg",
+      "pdf": "results/defense_slides/figures/spatial_beta_aca_posterior.pdf"
+    },
+    "sha256": {
+      "png": "7117a6fcb6435a516211ce1b61d93bcec790e01284d83f52782f9c345763da1c",
+      "svg": "4197785929730f8ed7000a76a749e53494d127a129f1b2e468643abf3d20c419",
+      "pdf": "81e5523dc79f8941f07fe6d2d0700fd6c106fc649d10f1b54edefa4f340d5b18"
+    },
+    "text_overflow": [],
+    "figure_size_inches": [
+      16,
+      7.2
+    ],
+    "png_dimensions": [
+      2240,
+      1008
+    ],
+    "analysis_scope": "Focused presentation of frozen outputs; no refit, sampling or new inference"
+  },
+  "spatial_beta_hy_posterior": {
+    "stem": "spatial_beta_hy_posterior",
+    "language": "en",
+    "caption_en": "HY/Tll1, the same largest-n physical slice Zhuang-ABCA-2.034 used in the measured figure. Left: observed positive fractions (diamonds), fitted known-section probability means and95% credible intervals under the full-reference hyperposterior. Labels give actual positive/n, including zeros. Right: the corresponding anatomy mean μ and95% credible intervals over all its measured sections, distinct from95% predictive intervals for a new section propensity p; S is the actual physical-section count. These are different posterior targets. Known-section p intervals use8192 seeded mixture draws, μ uses weighted grid quantiles, and full-data new-section p intervals invert the finite-grid Beta-mixture CDF. A new-section propensity interval does not include binomial count sampling and is not the held-out count interval. Both panels are full-reference fitted summaries, not held-out predictions or exposure effects. The same anatomical rows are retained in each panel. No model refit or re-selection performed for this presentation.",
+    "caption_es": "HY/Tll1, mismo corte físico de mayor n Zhuang-ABCA-2.034 usado en la figura medida. Izquierda: fracciones positivas observadas (rombos), medias ajustadas de probabilidad del corte conocido e intervalos creíbles95% bajo la hiperposterior de referencia completa. Etiquetas con positivos/n reales, incluidos ceros. Derecha: media anatómica μ e intervalos creíbles95% con todos sus cortes medidos, distintos de los intervalos predictivos95% para propensión p de un corte nuevo; S cuenta cortes físicos. Son objetivos posteriores diferentes. Los intervalos p de corte conocido usan8192 sorteos con semilla, μ usa cuantiles ponderados de cuadrícula y p nuevo con datos completos invierte la CDF de mezcla Beta discreta. Un intervalo de propensión nueva no incluye muestreo binomial de conteos ni es el intervalo de conteos reservados. Ambos paneles son resúmenes ajustados con referencia completa, no predicciones reservadas ni efectos de exposición. Mismas filas anatómicas por panel. Sin reajuste ni selección nueva para esta presentación.",
+    "alt_en": "Two forests distinguish observed and fitted known-section detection from anatomy μ uncertainty and new-section p prediction for HY/Tll1.",
+    "alt_es": "Dos gráficos distinguen detección observada y p ajustada del corte, incertidumbre de μ anatómica y predicción de p nuevo para HY/Tll1.",
+    "source_paths": [
+      "results/spatial_detection_bayes/HY/known_section_posterior.tsv.gz",
+      "results/spatial_detection_bayes/HY/anatomy_posterior.tsv.gz",
+      "results/spatial_sections/HY/summary.json",
+      "metadata/spatial_detection_bayes/methods.json"
+    ],
+    "source_sha256": {
+      "results/spatial_detection_bayes/HY/known_section_posterior.tsv.gz": "f9438dab5dd96dc92e4ff0ad2f127347c0258061ef12b9b0aabb3e1d63982cb0",
+      "results/spatial_detection_bayes/HY/anatomy_posterior.tsv.gz": "197104701f350092c89cf51bece3b0d48afe61c156a7ceb187d6ddb8efb5db7f",
+      "results/spatial_sections/HY/summary.json": "61bcaedad164b72d528d145abddd2850b3b7caf8afea408fe47eae85ba8c5c9a",
+      "metadata/spatial_detection_bayes/methods.json": "0b9c41b549240b607fe5888078e3970ccdd601bce3c022d8097262c31afad704"
+    },
+    "files": {
+      "png": "results/defense_slides/figures/spatial_beta_hy_posterior.png",
+      "svg": "results/defense_slides/figures/spatial_beta_hy_posterior.svg",
+      "pdf": "results/defense_slides/figures/spatial_beta_hy_posterior.pdf"
+    },
+    "sha256": {
+      "png": "d852e77daa647f2cb287972afc38c03b948c12a537619786e1fc2ef1deba3724",
+      "svg": "88a5e27ad73e9ea4bf6cf5d2ba52924af904471fa14c9e991d16338790d537ed",
+      "pdf": "dc21cd09e133bc1b0dbdfe4c770774b747105e2e59a4764c5fef1599fc4795fd"
+    },
+    "text_overflow": [],
+    "figure_size_inches": [
+      16,
+      7.2
+    ],
+    "png_dimensions": [
+      2240,
+      1008
+    ],
+    "analysis_scope": "Focused presentation of frozen outputs; no refit, sampling or new inference"
+  },
+  "spatial_aca_measured_es": {
+    "stem": "spatial_aca_measured_es",
+    "language": "es",
+    "caption_en": "Anterior cingulate cortex, Fosb, deposited physical section Zhuang-ABCA-2.023, selected solely for the largest measured regional cell n (1,940). Left: every measured cell at its deposited experimental x/y coordinate, colored by deposited anatomy; these colors do not encode RNA. Right: positive raw count / all measured regional cells in each occupied 100 × 100 µm experimental-XY bin, including measured zeros in every denominator. 209/1,940 cells are positive in this section. Detection color scale is fixed 0–100%; gray occupied bins have zero positives and white gaps contain no observed bin. Neither interpolation, density estimation nor spatial imputation is applied. The displayed Y-axis is downward. Experimental slice coordinates are not CCF ML/DV. One unexposed donor, no per-cell tests or PM2.5 response inference.",
+    "caption_es": "Corteza cingulada anterior, Fosb, corte físico depositado Zhuang-ABCA-2.023, seleccionado solo por mayor n de células regionales medidas (1,940). Izquierda: todas las células medidas en sus x/y experimentales depositadas, coloreadas por anatomía depositada; estos colores no codifican RNA. Derecha: conteo bruto positivo / todas las células regionales medidas por casilla XY experimental ocupada de 100 × 100 µm, incluidos todos los ceros en el denominador. 209/1,940 células positivas en este corte. Escala de detección fija 0–100%; casillas grises ocupadas sin positivos y huecos blancos sin casilla observada. Sin interpolación, densidad ni imputación espacial. Y se muestra hacia abajo. Las coordenadas experimentales no son CCF ML/DV. Un donante sin exposición; sin pruebas celulares ni inferencia de respuesta PM2.5.",
+    "alt_en": "Two maps of measured ACA slice: anatomy at actual cell coordinates and Fosb detection fractions in occupied 100 µm bins.",
+    "alt_es": "Dos mapas del corte ACA: anatomía en coordenadas celulares reales y fracciones de detección de Fosb en casillas ocupadas de 100 µm.",
+    "source_paths": [
+      "results/spatial_sections/ACA/cells_with_sections.tsv.gz",
+      "results/spatial_sections/ACA/detection_by_bins.tsv.gz",
+      "results/spatial_sections/ACA/summary.json"
+    ],
+    "source_sha256": {
+      "results/spatial_sections/ACA/cells_with_sections.tsv.gz": "a7bbe306e2c1465cba0a1b493fcf1680cf216ef5507fab800729df111c665e18",
+      "results/spatial_sections/ACA/detection_by_bins.tsv.gz": "24a9fa98aa80d3621a2ff8d97f8a2e0a19f7da7ed50e1ac985e64954b118c1da",
+      "results/spatial_sections/ACA/summary.json": "aecb10d19abb3eb3e28fff90f7dcfb8e2851696d7a9c18ef22bf16035ab69e70"
+    },
+    "files": {
+      "png": "results/defense_slides/figures/spatial_aca_measured_es.png",
+      "svg": "results/defense_slides/figures/spatial_aca_measured_es.svg",
+      "pdf": "results/defense_slides/figures/spatial_aca_measured_es.pdf"
+    },
+    "sha256": {
+      "png": "a9261cb8c13ea850d69c124e6db98f4778e4780326d7519b18fe49fecb6c5b97",
+      "svg": "76091456bd8122d51f63274af42c39f26d82719333c629b310ebe835a3fe4861",
+      "pdf": "810c4035f88da37bbbfea2c56b5f932e65d2692562307cd54814850278c4a979"
+    },
+    "text_overflow": [],
+    "figure_size_inches": [
+      16,
+      7.2
+    ],
+    "png_dimensions": [
+      2240,
+      1008
+    ],
+    "analysis_scope": "Focused presentation of frozen outputs; no refit, sampling or new inference"
+  },
+  "spatial_hy_measured_es": {
+    "stem": "spatial_hy_measured_es",
+    "language": "es",
+    "caption_en": "Hypothalamus, Tll1, deposited physical section Zhuang-ABCA-2.034, selected solely for the largest measured regional cell n (3,565). Left: every measured cell at its deposited experimental x/y coordinate, colored by deposited anatomy; these colors do not encode RNA. Right: positive raw count / all measured regional cells in each occupied 100 × 100 µm experimental-XY bin, including measured zeros in every denominator. 96/3,565 cells are positive in this section. Detection color scale is fixed 0–100%; gray occupied bins have zero positives and white gaps contain no observed bin. Neither interpolation, density estimation nor spatial imputation is applied. The displayed Y-axis is downward. Experimental slice coordinates are not CCF ML/DV. One unexposed donor, no per-cell tests or PM2.5 response inference.",
+    "caption_es": "Hipotálamo, Tll1, corte físico depositado Zhuang-ABCA-2.034, seleccionado solo por mayor n de células regionales medidas (3,565). Izquierda: todas las células medidas en sus x/y experimentales depositadas, coloreadas por anatomía depositada; estos colores no codifican RNA. Derecha: conteo bruto positivo / todas las células regionales medidas por casilla XY experimental ocupada de 100 × 100 µm, incluidos todos los ceros en el denominador. 96/3,565 células positivas en este corte. Escala de detección fija 0–100%; casillas grises ocupadas sin positivos y huecos blancos sin casilla observada. Sin interpolación, densidad ni imputación espacial. Y se muestra hacia abajo. Las coordenadas experimentales no son CCF ML/DV. Un donante sin exposición; sin pruebas celulares ni inferencia de respuesta PM2.5.",
+    "alt_en": "Two maps of measured HY slice: anatomy at actual cell coordinates and Tll1 detection fractions in occupied 100 µm bins.",
+    "alt_es": "Dos mapas del corte HY: anatomía en coordenadas celulares reales y fracciones de detección de Tll1 en casillas ocupadas de 100 µm.",
+    "source_paths": [
+      "results/spatial_sections/HY/cells_with_sections.tsv.gz",
+      "results/spatial_sections/HY/detection_by_bins.tsv.gz",
+      "results/spatial_sections/HY/summary.json"
+    ],
+    "source_sha256": {
+      "results/spatial_sections/HY/cells_with_sections.tsv.gz": "4df20fd09adfe38a22d51d2d4526460356a6c19a3239a0a173823c4e4e284af2",
+      "results/spatial_sections/HY/detection_by_bins.tsv.gz": "78e660df78b8f1c93bdc3c425cdcd963e3be237cbce4fb7a79e4b33b3ab436e7",
+      "results/spatial_sections/HY/summary.json": "61bcaedad164b72d528d145abddd2850b3b7caf8afea408fe47eae85ba8c5c9a"
+    },
+    "files": {
+      "png": "results/defense_slides/figures/spatial_hy_measured_es.png",
+      "svg": "results/defense_slides/figures/spatial_hy_measured_es.svg",
+      "pdf": "results/defense_slides/figures/spatial_hy_measured_es.pdf"
+    },
+    "sha256": {
+      "png": "728955ffd6e8e1d3735f1a5bcb84074fc40f205eac14d618c0919afe34f6ceb8",
+      "svg": "9916fffbd1316914944999fda5737966f4a07b27fc86954a9afe609998391ca2",
+      "pdf": "69c5bbb362e46cd8d49b01a11c872785d1930cb22616a4ccec85beadf1a1df35"
+    },
+    "text_overflow": [],
+    "figure_size_inches": [
+      16,
+      7.2
+    ],
+    "png_dimensions": [
+      2240,
+      1008
+    ],
+    "analysis_scope": "Focused presentation of frozen outputs; no refit, sampling or new inference"
+  },
+  "spatial_guarded_folds_es": {
+    "stem": "spatial_guarded_folds_es",
+    "language": "es",
+    "caption_en": "Actual fixed five-fold assignments for all 18 ACA and 20 HY physical sections. Whole sections form contiguous test blocks ordered by estimated acquisition AP. The nearest represented section immediately before and after each test block is excluded as a guard. Section indices need not be consecutive because absent regional sections are not filled. Train-only anatomy vocabularies, coordinate scaling and RBF centers exclude test and guard cells. The same folds support Gaussian and detection models. This assesses within-donor transport, not independent animal replication.",
+    "caption_es": "Asignaciones reales de cinco bloques para los 18 cortes ACA y 20 HY. Los cortes completos forman bloques contiguos de prueba según AP estimada de adquisición. El corte regional representado más cercano antes y después se excluye como guarda. Los índices no tienen que ser consecutivos; no se rellenan cortes ausentes. Vocabulario anatómico, escalado y centros RBF se aprenden solo con entrenamiento. Ambos modelos comparten bloques. Evalúa transporte dentro de un donante, no replicación animal independiente.",
+    "alt_en": "Training, test and guard membership by actual physical section and fold in ACA and HY.",
+    "alt_es": "Pertenencia de entrenamiento, prueba y guarda por corte físico y bloque en ACA e HY.",
+    "source_paths": [
+      "results/spatial_bayes/ACA/section_folds.tsv",
+      "results/spatial_bayes/ACA/fold_audit.json",
+      "results/spatial_bayes/HY/section_folds.tsv",
+      "results/spatial_bayes/HY/fold_audit.json"
+    ],
+    "source_sha256": {
+      "results/spatial_bayes/ACA/section_folds.tsv": "51c5b62d7209a9f28fcbc41dd363e5a0dbad1589835896a4c019df941eb1246a",
+      "results/spatial_bayes/ACA/fold_audit.json": "3faea10af6547dfdd145446249ccff8e1f2e54cb780f8fc3e2af9b6775e437a2",
+      "results/spatial_bayes/HY/section_folds.tsv": "d6a54edc68f673e3224a6408e61eb1a0b6adb9d90d5a9d1754891d8641c02ed2",
+      "results/spatial_bayes/HY/fold_audit.json": "2b5748b0badfaf9a2b6074659272e8099fc7995320c10e56718c7dbf652b46d3"
+    },
+    "files": {
+      "png": "results/defense_slides/figures/spatial_guarded_folds_es.png",
+      "svg": "results/defense_slides/figures/spatial_guarded_folds_es.svg",
+      "pdf": "results/defense_slides/figures/spatial_guarded_folds_es.pdf"
+    },
+    "sha256": {
+      "png": "ca6e669b285d7bb80dcba6a56498068979e48028cf02e0d2607d4c132803da42",
+      "svg": "20f41d8911eafef66ee32b41062fe6dcd6429d920dae3b7ebc91c79fcb4f6c49",
+      "pdf": "d9ed4a2821f8ac561dcea7e001a6b57ad3982f274dfc25b68e9bb6fafaa9de85"
+    },
+    "text_overflow": [],
+    "figure_size_inches": [
+      16,
+      7.2
+    ],
+    "png_dimensions": [
+      2240,
+      1008
+    ],
+    "analysis_scope": "Focused presentation of frozen outputs; no refit, sampling or new inference"
+  },
+  "spatial_gaussian_rmse_es": {
+    "stem": "spatial_gaussian_rmse_es",
+    "language": "es",
+    "caption_en": "Per-gene held-out RMSE ratio, primary spatial Gaussian baseline divided by anatomy-only Bayesian baseline, both using identical whole-section guard folds and section nuisance priors. Ratios below 1 improve prediction: 4/10 ACA genes and 1/10 HY genes. Point positions retain exact ratios; the nonzero axis range is explicit and the equality reference is shown. Genes remain in frozen source priority order. Error is measured on natural ln(1+raw imaging count), not raw molecule counts or fold change.",
+    "caption_es": "Razón de RMSE por gen: referencia gaussiana espacial principal / referencia bayesiana de solo anatomía, con los mismos bloques de cortes protegidos y priors de corte. Razones menores que 1 mejoran: 4/10 genes ACA y 1/10 HY. Los puntos conservan razones exactas; el rango distinto de cero es explícito y se muestra la igualdad. Orden génico fijado por prioridad de origen. Error en ln(1+conteo bruto), no en moléculas ni fold change.",
+    "alt_en": "Two dot plots compare spatial Gaussian held-out RMSE with anatomy-only prediction for ten genes per region.",
+    "alt_es": "Dos gráficos de puntos comparan RMSE gaussiano espacial con solo anatomía para diez genes por región.",
+    "source_paths": [
+      "results/spatial_bayes/summary.json",
+      "results/spatial_bayes/ACA/heldout_metrics.tsv",
+      "results/spatial_bayes/HY/heldout_metrics.tsv"
+    ],
+    "source_sha256": {
+      "results/spatial_bayes/summary.json": "952c30daac2e0d9ea97c9e2c469d19d89f9c20ec85063e31d43ab62898790131",
+      "results/spatial_bayes/ACA/heldout_metrics.tsv": "fdb6935ca28f5714c62dd9a0d96d46c03cbdcfdf8dfb1429b7263ff3514d34cb",
+      "results/spatial_bayes/HY/heldout_metrics.tsv": "a9a9d9354f33c1bff87d760b1ff85fb0d4b4fa8807960ebfc4f9a59600802c07"
+    },
+    "files": {
+      "png": "results/defense_slides/figures/spatial_gaussian_rmse_es.png",
+      "svg": "results/defense_slides/figures/spatial_gaussian_rmse_es.svg",
+      "pdf": "results/defense_slides/figures/spatial_gaussian_rmse_es.pdf"
+    },
+    "sha256": {
+      "png": "7fa1444f7b6cdf01273a51822184ceeffe1815865d600baa84bc8d74817cd4b4",
+      "svg": "ff008b609e749621e1e8f0f935c51310e63d1275406163ced6c4a6321ca26fff",
+      "pdf": "463226afdc7793b2af58b77af8c0e93ba4051c442bf6fabafe6777c065606285"
+    },
+    "text_overflow": [],
+    "figure_size_inches": [
+      16,
+      7.2
+    ],
+    "png_dimensions": [
+      2240,
+      1008
+    ],
+    "analysis_scope": "Focused presentation of frozen outputs; no refit, sampling or new inference"
+  },
+  "spatial_gaussian_diagnostics_es": {
+    "stem": "spatial_gaussian_diagnostics_es",
+    "language": "es",
+    "caption_en": "Every point is one of ten fixed genes in each region. Left compares empirical overall inclusion in nominal 95% new-cell/new-section predictive intervals with inclusion conditioned on a positive realized observation. The conditional positive-only diagnostic is not required to equal 95% even under marginal calibration; the nominal reference therefore appears only for overall inclusion. Right shows the mean model probability below zero against overall interval inclusion; negative support is incompatible with the nonnegative ln(1+count) response. Tll1 and Fosb are labeled examples. No intervals are clipped or recalibrated. Different plotted quantities retain different axis scales. Within-donor descriptive validation, not independent-cell or animal inference.",
+    "caption_es": "Cada punto es uno de diez genes fijos por región. Izquierda compara inclusión global observada en intervalos predictivos nominales de 95% para célula/corte nuevos con inclusión condicionada a una observación positiva. Este diagnóstico condicionado no tiene que igualar 95% bajo calibración marginal; la referencia nominal aparece solo para inclusión global. Derecha muestra probabilidad media modelada bajo cero frente a inclusión global; el soporte negativo es incompatible con ln(1+conteo), no negativo. Tll1 y Fosb son ejemplos rotulados. No se truncan ni recalibran intervalos. Las cantidades usan escalas de eje distintas. Validación descriptiva de un donante, sin inferencia de células o animales independientes.",
+    "alt_en": "Two diagnostic scatter plots distinguish overall from positive-only interval inclusion and quantify impossible negative predictive probability.",
+    "alt_es": "Dos gráficos distinguen inclusión global y condicionada a positivos, y cuantifican probabilidad predictiva negativa imposible.",
+    "source_paths": [
+      "results/spatial_bayes/summary.json",
+      "metadata/spatial_bayes/methods.json"
+    ],
+    "source_sha256": {
+      "results/spatial_bayes/summary.json": "952c30daac2e0d9ea97c9e2c469d19d89f9c20ec85063e31d43ab62898790131",
+      "metadata/spatial_bayes/methods.json": "bbc3fd5699a06bd2d02327f878d58ab56d2dac69ff97244c628835c0acb5d46a"
+    },
+    "files": {
+      "png": "results/defense_slides/figures/spatial_gaussian_diagnostics_es.png",
+      "svg": "results/defense_slides/figures/spatial_gaussian_diagnostics_es.svg",
+      "pdf": "results/defense_slides/figures/spatial_gaussian_diagnostics_es.pdf"
+    },
+    "sha256": {
+      "png": "fec2266c2edf8e49b5646938046aee0a40eed18ef88a90b00bab488ee251b92b",
+      "svg": "1c08879e7145f6bf158e9a52efb79977104086c4d5fb55a6a5d5c24a74ad4195",
+      "pdf": "97cc32d76e6ef29a94096de726d9012d1f71e92a92eb054f25916f7338d8c5c7"
+    },
+    "text_overflow": [],
+    "figure_size_inches": [
+      16,
+      7.2
+    ],
+    "png_dimensions": [
+      2240,
+      1008
+    ],
+    "analysis_scope": "Focused presentation of frozen outputs; no refit, sampling or new inference"
+  },
+  "spatial_beta_performance_es": {
+    "stem": "spatial_beta_performance_es",
+    "language": "es",
+    "caption_en": "Primary 64×48 hierarchical Beta–Binomial held-out performance pooled across ten genes per region. Left is cell-weighted Brier loss, with zero baseline on the bar axis, compared with the nonanatomical regional model trained on identical allowed sections and fixed priors. ACA model .1372514 versus regional .1405089; HY .0924574 versus .0362057. Right compares mean predictive count-interval width divided by the observed group n (41.9/61.5 percentage points) with unweighted group coverage (97.89/99.35%). Intervals predict positive counts in a new physical section with its actual n. High coverage with wide intervals does not establish precise prediction. All groups are retained, including 79/186 unique HY section×anatomy groups per gene with prior-only prediction (10,416 of37,811 actual cells). Ten-gene aggregate evaluations are correlated and are not independent samples.",
+    "caption_es": "Rendimiento reservado principal 64×48 del modelo Beta–Binomial jerárquico, agregado en diez genes por región. Izquierda: Brier ponderado por células, barras desde cero, comparado con referencia regional no anatómica entrenada con los mismos cortes permitidos y priors. ACA .1372514 frente a .1405089; HY .0924574 frente a .0362057. Derecha: ancho medio del intervalo predictivo de conteos dividido por n observado (41.9/61.5 puntos porcentuales) frente a cobertura no ponderada por grupo (97.89/99.35%). Predicen conteos positivos de un corte nuevo con su n real. Cobertura alta e intervalos amplios no establecen predicción precisa. Se conservan todos los grupos, incluidos 79/186 grupos HY corte×anatomía por gen solo con prior (10,416 de37,811 células reales). Las evaluaciones agregadas en diez genes son correlacionadas, no muestras independientes.",
+    "alt_en": "Brier comparison for ACA and HY, and predictive count coverage plotted against interval width.",
+    "alt_es": "Comparación de Brier ACA/HY y cobertura predictiva de conteos frente al ancho del intervalo.",
+    "source_paths": [
+      "results/spatial_detection_bayes/summary.json",
+      "metadata/spatial_detection_bayes/methods.json"
+    ],
+    "source_sha256": {
+      "results/spatial_detection_bayes/summary.json": "c6ee2a9098c84e031388dd53fd5d7090c2b420df18703a269b848c5cc1ae2538",
+      "metadata/spatial_detection_bayes/methods.json": "0b9c41b549240b607fe5888078e3970ccdd601bce3c022d8097262c31afad704"
+    },
+    "files": {
+      "png": "results/defense_slides/figures/spatial_beta_performance_es.png",
+      "svg": "results/defense_slides/figures/spatial_beta_performance_es.svg",
+      "pdf": "results/defense_slides/figures/spatial_beta_performance_es.pdf"
+    },
+    "sha256": {
+      "png": "0c0ad244568d9442b93a38f5dd03b3e9c202ddf79339d87bf91b51c94c87b5dd",
+      "svg": "ad00cc71b348ae627d3f9e35bc887a14447c66c0184bbff0d4b72c05efbb52f5",
+      "pdf": "ec0ca79a38f6c1bcaad5782c4dbcd4e4bd266c6122a2ff8770cbc7099ce3fd2c"
+    },
+    "text_overflow": [],
+    "figure_size_inches": [
+      16,
+      7.2
+    ],
+    "png_dimensions": [
+      2240,
+      1008
+    ],
+    "analysis_scope": "Focused presentation of frozen outputs; no refit, sampling or new inference"
+  },
+  "spatial_beta_aca_posterior_es": {
+    "stem": "spatial_beta_aca_posterior_es",
+    "language": "es",
+    "caption_en": "ACA/Fosb, the same largest-n physical slice Zhuang-ABCA-2.023 used in the measured figure. Left: observed positive fractions (diamonds), fitted known-section probability means and95% credible intervals under the full-reference hyperposterior. Labels give actual positive/n, including zeros. Right: the corresponding anatomy mean μ and95% credible intervals over all its measured sections, distinct from95% predictive intervals for a new section propensity p; S is the actual physical-section count. These are different posterior targets. Known-section p intervals use8192 seeded mixture draws, μ uses weighted grid quantiles, and full-data new-section p intervals invert the finite-grid Beta-mixture CDF. A new-section propensity interval does not include binomial count sampling and is not the held-out count interval. Both panels are full-reference fitted summaries, not held-out predictions or exposure effects. The same anatomical rows are retained in each panel. No model refit or re-selection performed for this presentation.",
+    "caption_es": "ACA/Fosb, mismo corte físico de mayor n Zhuang-ABCA-2.023 usado en la figura medida. Izquierda: fracciones positivas observadas (rombos), medias ajustadas de probabilidad del corte conocido e intervalos creíbles95% bajo la hiperposterior de referencia completa. Etiquetas con positivos/n reales, incluidos ceros. Derecha: media anatómica μ e intervalos creíbles95% con todos sus cortes medidos, distintos de los intervalos predictivos95% para propensión p de un corte nuevo; S cuenta cortes físicos. Son objetivos posteriores diferentes. Los intervalos p de corte conocido usan8192 sorteos con semilla, μ usa cuantiles ponderados de cuadrícula y p nuevo con datos completos invierte la CDF de mezcla Beta discreta. Un intervalo de propensión nueva no incluye muestreo binomial de conteos ni es el intervalo de conteos reservados. Ambos paneles son resúmenes ajustados con referencia completa, no predicciones reservadas ni efectos de exposición. Mismas filas anatómicas por panel. Sin reajuste ni selección nueva para esta presentación.",
+    "alt_en": "Two forests distinguish observed and fitted known-section detection from anatomy μ uncertainty and new-section p prediction for ACA/Fosb.",
+    "alt_es": "Dos gráficos distinguen detección observada y p ajustada del corte, incertidumbre de μ anatómica y predicción de p nuevo para ACA/Fosb.",
+    "source_paths": [
+      "results/spatial_detection_bayes/ACA/known_section_posterior.tsv.gz",
+      "results/spatial_detection_bayes/ACA/anatomy_posterior.tsv.gz",
+      "results/spatial_sections/ACA/summary.json",
+      "metadata/spatial_detection_bayes/methods.json"
+    ],
+    "source_sha256": {
+      "results/spatial_detection_bayes/ACA/known_section_posterior.tsv.gz": "312c212fcd043c5047abf87987aaa80007cbe9317ee97df16727166b6982c25f",
+      "results/spatial_detection_bayes/ACA/anatomy_posterior.tsv.gz": "9b1010abf33520fd4937622e18a33603cf29c7ca6a8d19d9fd593cee26eb39a5",
+      "results/spatial_sections/ACA/summary.json": "aecb10d19abb3eb3e28fff90f7dcfb8e2851696d7a9c18ef22bf16035ab69e70",
+      "metadata/spatial_detection_bayes/methods.json": "0b9c41b549240b607fe5888078e3970ccdd601bce3c022d8097262c31afad704"
+    },
+    "files": {
+      "png": "results/defense_slides/figures/spatial_beta_aca_posterior_es.png",
+      "svg": "results/defense_slides/figures/spatial_beta_aca_posterior_es.svg",
+      "pdf": "results/defense_slides/figures/spatial_beta_aca_posterior_es.pdf"
+    },
+    "sha256": {
+      "png": "dc57a9cafb491abe19ee0bee6d3dab88c4eeb29e0d2d813d86a2b6ba7e59d16d",
+      "svg": "87912c83deeaf64936231eea580d517a70bfd05f7f4982503f82a64b648fce5d",
+      "pdf": "70f51e2444ddb9ece905dd9b50e71df477a6968f8d11d04eef7fd8fabd7982f1"
+    },
+    "text_overflow": [],
+    "figure_size_inches": [
+      16,
+      7.2
+    ],
+    "png_dimensions": [
+      2240,
+      1008
+    ],
+    "analysis_scope": "Focused presentation of frozen outputs; no refit, sampling or new inference"
+  },
+  "spatial_beta_hy_posterior_es": {
+    "stem": "spatial_beta_hy_posterior_es",
+    "language": "es",
+    "caption_en": "HY/Tll1, the same largest-n physical slice Zhuang-ABCA-2.034 used in the measured figure. Left: observed positive fractions (diamonds), fitted known-section probability means and95% credible intervals under the full-reference hyperposterior. Labels give actual positive/n, including zeros. Right: the corresponding anatomy mean μ and95% credible intervals over all its measured sections, distinct from95% predictive intervals for a new section propensity p; S is the actual physical-section count. These are different posterior targets. Known-section p intervals use8192 seeded mixture draws, μ uses weighted grid quantiles, and full-data new-section p intervals invert the finite-grid Beta-mixture CDF. A new-section propensity interval does not include binomial count sampling and is not the held-out count interval. Both panels are full-reference fitted summaries, not held-out predictions or exposure effects. The same anatomical rows are retained in each panel. No model refit or re-selection performed for this presentation.",
+    "caption_es": "HY/Tll1, mismo corte físico de mayor n Zhuang-ABCA-2.034 usado en la figura medida. Izquierda: fracciones positivas observadas (rombos), medias ajustadas de probabilidad del corte conocido e intervalos creíbles95% bajo la hiperposterior de referencia completa. Etiquetas con positivos/n reales, incluidos ceros. Derecha: media anatómica μ e intervalos creíbles95% con todos sus cortes medidos, distintos de los intervalos predictivos95% para propensión p de un corte nuevo; S cuenta cortes físicos. Son objetivos posteriores diferentes. Los intervalos p de corte conocido usan8192 sorteos con semilla, μ usa cuantiles ponderados de cuadrícula y p nuevo con datos completos invierte la CDF de mezcla Beta discreta. Un intervalo de propensión nueva no incluye muestreo binomial de conteos ni es el intervalo de conteos reservados. Ambos paneles son resúmenes ajustados con referencia completa, no predicciones reservadas ni efectos de exposición. Mismas filas anatómicas por panel. Sin reajuste ni selección nueva para esta presentación.",
+    "alt_en": "Two forests distinguish observed and fitted known-section detection from anatomy μ uncertainty and new-section p prediction for HY/Tll1.",
+    "alt_es": "Dos gráficos distinguen detección observada y p ajustada del corte, incertidumbre de μ anatómica y predicción de p nuevo para HY/Tll1.",
+    "source_paths": [
+      "results/spatial_detection_bayes/HY/known_section_posterior.tsv.gz",
+      "results/spatial_detection_bayes/HY/anatomy_posterior.tsv.gz",
+      "results/spatial_sections/HY/summary.json",
+      "metadata/spatial_detection_bayes/methods.json"
+    ],
+    "source_sha256": {
+      "results/spatial_detection_bayes/HY/known_section_posterior.tsv.gz": "f9438dab5dd96dc92e4ff0ad2f127347c0258061ef12b9b0aabb3e1d63982cb0",
+      "results/spatial_detection_bayes/HY/anatomy_posterior.tsv.gz": "197104701f350092c89cf51bece3b0d48afe61c156a7ceb187d6ddb8efb5db7f",
+      "results/spatial_sections/HY/summary.json": "61bcaedad164b72d528d145abddd2850b3b7caf8afea408fe47eae85ba8c5c9a",
+      "metadata/spatial_detection_bayes/methods.json": "0b9c41b549240b607fe5888078e3970ccdd601bce3c022d8097262c31afad704"
+    },
+    "files": {
+      "png": "results/defense_slides/figures/spatial_beta_hy_posterior_es.png",
+      "svg": "results/defense_slides/figures/spatial_beta_hy_posterior_es.svg",
+      "pdf": "results/defense_slides/figures/spatial_beta_hy_posterior_es.pdf"
+    },
+    "sha256": {
+      "png": "35298e7bc9b2bb4c325f06c2463591c7cf88b7f8d22e43d484562e630be59d5b",
+      "svg": "7367dc4d6422bb10468b5fb9eefd5427e8edb588085084c71fd58066ecf3b716",
+      "pdf": "da90365f5f3e0e66598daf0119d2704096ce3745b32b6d6dfce6a0e06991025a"
+    },
+    "text_overflow": [],
+    "figure_size_inches": [
+      16,
+      7.2
+    ],
+    "png_dimensions": [
+      2240,
+      1008
+    ],
+    "analysis_scope": "Focused presentation of frozen outputs; no refit, sampling or new inference"
+  }
+}

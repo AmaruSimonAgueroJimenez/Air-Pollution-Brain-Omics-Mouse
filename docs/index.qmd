@@ -40,6 +40,14 @@ if not ozone_ready:
                      "no ozone differential result is inferred from the deposited genotype-only table."))
 ```
 
+## Defense presentation
+
+The detailed HTML presentation covers study designs, original-result reconstruction, model equations, validation and new project results. It includes 85 slides in each language, detailed presenter notes and a technical appendix.
+
+[Open the English slides](defense.qmd){.btn .btn-primary}
+[Abrir en español](es/defense.html){.btn .btn-outline-primary}
+[Download both HTML versions](downloads/defense-slides-bilingual.zip){.btn .btn-outline-primary}
+
 ## Spatial anatomy and prediction
 
 Explore **physical sections, ACA layers and hypothalamic nuclei**, together with measured detection maps whose denominators include zeros. The new Bayesian baseline chapter evaluates spatial predictions on reserved whole sections and displays latent-mean and new-cell/new-section uncertainty separately. The reference remains one unexposed donor.

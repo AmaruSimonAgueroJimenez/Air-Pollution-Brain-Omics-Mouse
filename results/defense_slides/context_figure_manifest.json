@@ -1,0 +1,200 @@
+{
+  "context_workflow": {
+    "language": "en",
+    "caption": "Two distinct evidence branches. Four experimental studies feed original-study reproduction and new study-specific analyses. A separate unexposed MERFISH donor feeds measured anatomy/detection and guarded Bayesian validation. A dashed assumption-based regional bulk-effect transfer enters only the illustrative scenario. Solid arrows denote computational flow, not a demonstrated biological causal pathway. O₃ input comprises 24 paired-end libraries.",
+    "source_files": [
+      {
+        "path": "results/ozone/methods.json",
+        "sha256": "9342736da89229ce19bcfc06e58596066493e789be424b66df1b76afe246466a"
+      },
+      {
+        "path": "results/hypothalamus/methods.json",
+        "sha256": "5a75ca6162770d4fbdd1fb876e65d851f29a8dc07cf6307e7ac8391fe6eaa913"
+      },
+      {
+        "path": "metadata/spatial_sections/methods.json",
+        "sha256": "3a3cfb46f70a483ec192af1d28b8a2cdbee4badaff49d771a3d6eee58c34ab81"
+      },
+      {
+        "path": "metadata/spatial_bayes/methods.json",
+        "sha256": "bbc3fd5699a06bd2d02327f878d58ab56d2dac69ff97244c628835c0acb5d46a"
+      },
+      {
+        "path": "metadata/spatial_detection_bayes/methods.json",
+        "sha256": "0b9c41b549240b607fe5888078e3970ccdd601bce3c022d8097262c31afad704"
+      }
+    ],
+    "files": [
+      {
+        "path": "results/defense_slides/figures/context_workflow.png",
+        "sha256": "d01fadef0d646ed37411ad167e5ad9aeb699e172daec32caa8b945b9fc2d1316"
+      },
+      {
+        "path": "results/defense_slides/figures/context_workflow.svg",
+        "sha256": "6cb8821e74d958902f839a02b48a8c17ca9a1cc862712c517acc28c9aed1ff8d"
+      },
+      {
+        "path": "results/defense_slides/figures/context_workflow.pdf",
+        "sha256": "1eed0f5abed276c054e18ad9731c75cfd80112417cced120312ef321982ade59"
+      }
+    ],
+    "no_model_refit": true
+  },
+  "context_go_patterns": {
+    "language": "en",
+    "caption": "First 8 terms in the project's fixed 22-term display selection. Dot: algorithmic GSEA FDR<0.05. Gray: ineligible/missing. Shared color limits, no new enrichment test; correlated terms do not represent independent mechanisms.",
+    "source_files": [
+      {
+        "path": "results/advanced_omics/GO_multi_contrast_NES_source.tsv",
+        "sha256": "5f99a5a73e08e1b7ed59598f0c33c964f3f5821c1ddc27f37a42eeb81597410a"
+      },
+      {
+        "path": "metadata/advanced_omics/methods.json",
+        "sha256": "861e6b4ca8e7743269f8ad9da8ff726c9216cde1826f6571779ebf484f96f2a6"
+      }
+    ],
+    "files": [
+      {
+        "path": "results/defense_slides/figures/context_go_patterns.png",
+        "sha256": "fce95f18c5971031c9c2590da6e541ab529aec79869578c8a38506f8dc2aeb91"
+      },
+      {
+        "path": "results/defense_slides/figures/context_go_patterns.svg",
+        "sha256": "6ed8d1ef23447b633b9623b596fe5f02845e9db6e5a8a2910b27265141f3572c"
+      },
+      {
+        "path": "results/defense_slides/figures/context_go_patterns.pdf",
+        "sha256": "c99a1fafdf1601054b282c9b28c657912ac6ecb97ef120bdd97b4a2c7dd3e93f"
+      }
+    ],
+    "no_model_refit": true
+  },
+  "context_ozone_animals": {
+    "language": "en",
+    "caption": "All 24 sequenced animals per gene. Small fixed horizontal offsets separate overlapping symbols; they do not encode another variable. Horizontal segments are descriptive means of plotted transformed values, without pairing or inferential error bars. These genes belong to the eight age-dependent exposure LRT discoveries.",
+    "source_files": [
+      {
+        "path": "results/advanced_omics/ozone_interaction_animal_profiles.tsv",
+        "sha256": "3b3ea1ead2a721c43f27d066ad6484bf602383793e31845103999ade769051e6"
+      },
+      {
+        "path": "results/advanced_omics/age_response_FDR_genes.tsv",
+        "sha256": "85d479f29d601e166eea464a865fa6df68b8bd5d44bfad4db3d8721608540718"
+      }
+    ],
+    "files": [
+      {
+        "path": "results/defense_slides/figures/context_ozone_animals.png",
+        "sha256": "94f49edfa0cb2216f85345f20b0590eccd4d56faf4f0eb33d122cb93e7be91ae"
+      },
+      {
+        "path": "results/defense_slides/figures/context_ozone_animals.svg",
+        "sha256": "9819bd2da21e82f1a71a9dd7ee3e68cfa215ead80cdc71a8047e786724b804e4"
+      },
+      {
+        "path": "results/defense_slides/figures/context_ozone_animals.pdf",
+        "sha256": "b98232b66ad2bf18cc5da679c7a1d71cc1813fae76693454bd3c4e153269195e"
+      }
+    ],
+    "no_model_refit": true
+  },
+  "context_workflow_es": {
+    "language": "es",
+    "caption": "Dos ramas de evidencia diferenciadas. Cuatro estudios experimentales alimentan la reproducción y los análisis nuevos por estudio. Un donante MERFISH independiente sin exposición alimenta la anatomía/detección medidas y la validación bayesiana con separación. Una transferencia supuesta y discontinua del efecto bulk regional entra solo al escenario ilustrativo. Las flechas continuas representan flujo computacional, no una vía causal biológica demostrada. La entrada O₃ incluye 24 bibliotecas paired-end.",
+    "source_files": [
+      {
+        "path": "results/ozone/methods.json",
+        "sha256": "9342736da89229ce19bcfc06e58596066493e789be424b66df1b76afe246466a"
+      },
+      {
+        "path": "results/hypothalamus/methods.json",
+        "sha256": "5a75ca6162770d4fbdd1fb876e65d851f29a8dc07cf6307e7ac8391fe6eaa913"
+      },
+      {
+        "path": "metadata/spatial_sections/methods.json",
+        "sha256": "3a3cfb46f70a483ec192af1d28b8a2cdbee4badaff49d771a3d6eee58c34ab81"
+      },
+      {
+        "path": "metadata/spatial_bayes/methods.json",
+        "sha256": "bbc3fd5699a06bd2d02327f878d58ab56d2dac69ff97244c628835c0acb5d46a"
+      },
+      {
+        "path": "metadata/spatial_detection_bayes/methods.json",
+        "sha256": "0b9c41b549240b607fe5888078e3970ccdd601bce3c022d8097262c31afad704"
+      }
+    ],
+    "files": [
+      {
+        "path": "results/defense_slides/figures/context_workflow_es.png",
+        "sha256": "21806dd798bd668df0695f39a86062cb682e194500b8cadf6a42a95fead97a14"
+      },
+      {
+        "path": "results/defense_slides/figures/context_workflow_es.svg",
+        "sha256": "d922b4aa1709e3a7e07aa958bbac1e8803c1133253a13c07a99b91669dc3cf8f"
+      },
+      {
+        "path": "results/defense_slides/figures/context_workflow_es.pdf",
+        "sha256": "96ef99274bc0013d96cb01841472a6eedf9220367fb0ab652034515b52377494"
+      }
+    ],
+    "no_model_refit": true
+  },
+  "context_go_patterns_es": {
+    "language": "es",
+    "caption": "Primeros 8 términos de la selección gráfica fija de 22 términos del proyecto. Punto: FDR algorítmica GSEA<0.05. Gris: no elegible/ausente. Escala común, sin repetir enriquecimiento; los términos correlacionados no representan mecanismos independientes.",
+    "source_files": [
+      {
+        "path": "results/advanced_omics/GO_multi_contrast_NES_source.tsv",
+        "sha256": "5f99a5a73e08e1b7ed59598f0c33c964f3f5821c1ddc27f37a42eeb81597410a"
+      },
+      {
+        "path": "metadata/advanced_omics/methods.json",
+        "sha256": "861e6b4ca8e7743269f8ad9da8ff726c9216cde1826f6571779ebf484f96f2a6"
+      }
+    ],
+    "files": [
+      {
+        "path": "results/defense_slides/figures/context_go_patterns_es.png",
+        "sha256": "8e663b80601c9caf9b4dcaee716c4909d0431ac0055db793242eae526ff300d6"
+      },
+      {
+        "path": "results/defense_slides/figures/context_go_patterns_es.svg",
+        "sha256": "9c5c0b44dbac5e820b865949f43817ec20ce4b0f7369e3d2f1dcdb8707fffefa"
+      },
+      {
+        "path": "results/defense_slides/figures/context_go_patterns_es.pdf",
+        "sha256": "da90cb40d4c9a625e9393ac95da12584b16b0619f988c01e60c8794346aab06b"
+      }
+    ],
+    "no_model_refit": true
+  },
+  "context_ozone_animals_es": {
+    "language": "es",
+    "caption": "Los 24 animales secuenciados por gen. Los pequeños desplazamientos horizontales fijos separan símbolos superpuestos; no codifican otra variable. Los segmentos son medias descriptivas de los valores transformados, sin pareamiento ni barras inferenciales. Estos genes pertenecen a los ocho hallazgos LRT de respuesta a exposición dependiente de edad.",
+    "source_files": [
+      {
+        "path": "results/advanced_omics/ozone_interaction_animal_profiles.tsv",
+        "sha256": "3b3ea1ead2a721c43f27d066ad6484bf602383793e31845103999ade769051e6"
+      },
+      {
+        "path": "results/advanced_omics/age_response_FDR_genes.tsv",
+        "sha256": "85d479f29d601e166eea464a865fa6df68b8bd5d44bfad4db3d8721608540718"
+      }
+    ],
+    "files": [
+      {
+        "path": "results/defense_slides/figures/context_ozone_animals_es.png",
+        "sha256": "42373ca98203b457fec22a51bdbbe1800f96d302c6a9b7d1c84791ae0c516190"
+      },
+      {
+        "path": "results/defense_slides/figures/context_ozone_animals_es.svg",
+        "sha256": "ffe938b5aff6f2d57ca116fe6baebbf5dd347a88f5d3fc08e6fa2f2be62b41c5"
+      },
+      {
+        "path": "results/defense_slides/figures/context_ozone_animals_es.pdf",
+        "sha256": "6da496fe3405784293d0daac9dadd83f2dfa8714320f790ef372ac0dae07b09e"
+      }
+    ],
+    "no_model_refit": true
+  }
+}

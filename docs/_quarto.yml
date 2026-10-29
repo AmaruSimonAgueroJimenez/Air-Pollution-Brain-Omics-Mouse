@@ -20,6 +20,7 @@ project:
   - spatial_explorer.qmd
   - spatial_bayes.qmd
   - reproducibility.qmd
+  - defense.qmd
   resources:
   - assets/**
   - downloads/**
@@ -72,6 +73,8 @@ website:
         text: Anterior cingulate cortex
     - href: reproducibility.qmd
       text: Data & code
+    - href: defense.qmd
+      text: Defense slides
     right:
     - href: es/index.html
       text: Español

@@ -232,6 +232,10 @@ div.csl-indent {
     <a class="nav-link" href="./reproducibility.html"> 
 <span class="menu-text">Data &amp; code</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./defense.html"> 
+<span class="menu-text">Defense slides</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
@@ -326,7 +330,7 @@ p_{sag}\mid\mu_{ag},\kappa_{ag}\sim\operatorname{Beta}(\mu_{ag}\kappa_{ag},(1-\m
 <p><a href="./spatial_explorer.html" class="btn btn-outline-primary">Explore observed and Bayesian detection together</a></p>
 <section id="detection-results" class="level3">
 <h3 class="anchored" data-anchor-id="detection-results">Detection results</h3>
-<div id="d880dcd1" class="cell" data-execution_count="2">
+<div id="ca87254c" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><strong>ACA:</strong> empirical positive-count predictive coverage is <strong>97.9%</strong> over <strong>1,280 gene × section × anatomy evaluations</strong>. The average predictive interval spans <strong>41.9 percentage points</strong> of the group denominator. Cell-weighted Brier loss is <strong>0.1373</strong>, compared with <strong>0.1405</strong> for the regional nonanatomical model (lower is better); anatomy improves Brier loss for <strong>9/10 genes</strong>.</p>
 </div>
@@ -892,7 +896,7 @@ Crym
 </div>
 <p><strong>Cortex and hypothalamus have different support.</strong> In ACA the modest Brier improvement accompanies broad intervals; coverage above 95% does not establish high-resolution recovery. In HY, 79 of 186 held-out section–anatomy groups per gene have no matching training anatomy, representing 10,416 of 37,811 cells. Their prior mean is 0.5 under the stated symmetric prior. The model is substantially worse than the regional baseline overall. These cases remain reported rather than silently dropped. Among trained-anatomy groups only, the pooled HY Brier loss is 0.03256 versus the regional baseline 0.03288; this restricted diagnostic does not replace the all-group result. Both subsets are available in the explorer and source summary.</p>
 <p>Pooled gene evaluations reuse the same cells and physical sections; their counts are not additional independent observations. There are 14,582 ACA and 37,811 HY reference cells, one animal, and ten target genes per region.</p>
-<div id="9465c1fe" class="cell" data-execution_count="3">
+<div id="2b14d330" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display cell-output-markdown">
 <figure class="research-figure figure">
 <a href="assets/figures/spatial_detection_bayes/ACA_detection_posterior.svg"><img loading="lazy" width="3360" height="2268" src="assets/figures/spatial_detection_bayes/ACA_detection_posterior.png" alt="Hierarchical Beta-Binomial baseline detection in ACA, not RNA magnitude or PM2.5 exposure effects. For each deposited anatomy, physical-section positive-cell counts y_s among n_s measured cells follow Beta-Binomial(μκ,(1−μ)κ). Priors fixed before fitting: μ~Beta(0.5,0.5), κ~LogNormal(log20,1.5); equal prior-quantile64×48 quadrature approximates the continuous posterior. Panels A–C distinguish anatomy mean μ95% credible intervals (dark) from new-section detection propensity p95% predictive intervals (pale); orange dots are pooled measured fractions, not μ estimates. All10 ACA layer/subdivisions shown. n=measured cells, S=physical sections. Panels D–E use the same five contiguous held-out-section folds and neighboring guards as the earlier model; no test/guard counts enter training. Count95% predictive intervals are conditioned on actual test n and include both section heterogeneity and binomial sampling; coverage is unweighted across observed section×anatomy groups. Prior-only test anatomies are retained and explicitly counted. Regional nonanatomical baseline uses the identical fixed priors, pooling training-only cells within each physical section. Fraction MAE is unweighted across observed section×anatomy groups; cell-weighted Brier loss is separately tabulated. No independent-animal or cell-type exposure inference. Panel F compares fixed grids without selecting on held-out performance. Known-section p and held-out count intervals use8192 fixed-seed mixture draws; full-data new-section p intervals invert the finite-grid Beta-mixture CDF numerically; μ intervals are discrete weighted-grid quantiles. Observed zero cells remain in n. Uncertainty is conditional on this detection model and single-donor sampling; it does not calibrate tissue-wide biological uncertainty." class="figure-img"></a>
@@ -947,7 +951,7 @@ y_{ig}=\phi(\mathbf r_i,a_i)^\top\boldsymbol\beta_g+\delta_{s(i),g}+\epsilon_{ig
 <h2 class="anchored" data-anchor-id="spatial-expression-baseline-results">Spatial-expression baseline: results</h2>
 <p>The following results report prediction accuracy and calibration, including failures. A successful implementation/data check does not establish scientific calibration or superiority over a baseline.</p>
 <p>The spatial Gaussian model did <strong>not establish a validated reconstruction of cellular RNA</strong>. Its negative predictive support is physically incompatible with transformed counts, and anatomy/spatial position alone recover positive observations poorly. A zero-heavy target can give apparently high overall coverage while missing the positive tail. Positive-only coverage below is a descriptive tail diagnostic; a marginal 95% interval does not guarantee 95% coverage conditional on the realized observation being positive.</p>
-<div id="9b7b061e" class="cell" data-execution_count="4">
+<div id="cf2e55f2" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p><strong>HY:</strong> spatial RMSE improves on the anatomy-only baseline for <strong>1/10 genes</strong>. Median empirical overall 95% predictive coverage is <strong>97.3%</strong>, compared with <strong>0.0%</strong> among positive observations. Median predictive probability assigned below zero is <strong>41.1%</strong>.</p>
 </div>
@@ -1527,7 +1531,7 @@ window.addEventListener("message", function(event) {
 });
 </script>
 <p><a href="assets/spatial-explorer/index.html?region=ACA&amp;mode=bayes" class="btn btn-outline-primary" target="_blank">Open the Bayesian tab directly</a></p>
-<div id="83dc3b0e" class="cell" data-execution_count="5">
+<div id="0e92ed84" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display cell-output-markdown">
 <figure class="research-figure figure">
 <a href="assets/figures/spatial_bayes/spatial_bayes_performance.svg"><img loading="lazy" width="4800" height="3240" src="assets/figures/spatial_bayes/spatial_bayes_performance.png" alt="Five contiguous physical-section blocks are held out with one neighboring represented section guarded on each side. All ten fixed measured candidates per region are scored on every original cell exactly once; no held-out outcome tunes a model. Left: RMSE for spatial Bayes, anatomy-only Bayesian mean and 30-neighbor interpolation; center: empirical coverage of nominal 95% NEW-CELL predictive intervals; right: mean width of those intervals. Units are natural ln(1+raw imaging count). kNN has no invented intervals. Differences are predictive comparisons within one donor, not independent-animal evidence; poor calibration and wide intervals are retained." class="figure-img"></a>

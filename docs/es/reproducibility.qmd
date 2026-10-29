@@ -234,3 +234,15 @@ Estos pasos usan el atlas ya descargado y las matrices regionales medidas locale
 ```
 
 Las [comprobaciones de cortes medidos](../downloads/spatial_sections/validation.json) y las [comprobaciones de implementación bayesiana](../downloads/spatial_bayes/validation.json) evalúan datos y cálculos. Los [resultados de validación científica](spatial_bayes.qmd) presentan por separado error predictivo, cobertura de intervalos y dependencia de priors. Se conservan los veinte pares región–gen con independencia de su rendimiento.
+
+## Presentación para defensa
+
+Las [diapositivas en español](defense.qmd) y [en inglés](../defense.html) comparten 85 diapositivas, notas del presentador y apéndice técnico. Cada HTML incluye figuras, estilos, fórmulas y runtime. El [ZIP bilingüe](../downloads/defense-slides-bilingual.zip) permite cambiar idioma sin conexión; los enlaces de evidencia necesitan internet.
+
+    .venv-analysis/bin/python scripts/build_defense_slides.py --figures
+    .venv-analysis/bin/python scripts/render_docs.py
+    .venv-analysis/bin/python scripts/build_defense_slides.py --package
+    .venv-analysis/bin/python scripts/validate_defense_slides.py
+    .venv-analysis/bin/python scripts/render_docs.py --refresh-static
+
+Los constructores leen tablas congeladas y no reajustan modelos biológicos. Los hashes y la auditoría de presentación están en downloads/defense_slides/.

@@ -1,71 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/reproducibility.html</loc>
-    <lastmod>2026-10-20T16:21:30.162Z</lastmod>
+    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/defense.html</loc>
+    <lastmod>2026-10-29T10:52:08.779Z</lastmod>
   </url>
   <url>
-    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/spatial_explorer.html</loc>
-    <lastmod>2026-10-20T16:12:37.668Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/viewer.html</loc>
-    <lastmod>2026-10-20T16:08:37.417Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/spatial_reference.html</loc>
-    <lastmod>2026-10-19T00:43:33.396Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/advanced_results.html</loc>
-    <lastmod>2026-10-19T14:33:49.495Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/ozone.html</loc>
-    <lastmod>2026-10-19T01:23:19.185Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/cortex.html</loc>
-    <lastmod>2026-10-20T01:48:24.340Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/methods.html</loc>
-    <lastmod>2026-10-20T16:13:54.698Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/index.html</loc>
-    <lastmod>2026-10-20T16:13:54.698Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/introduction.html</loc>
-    <lastmod>2026-10-19T14:31:47.697Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/results.html</loc>
-    <lastmod>2026-10-20T01:48:24.339Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/mirna.html</loc>
-    <lastmod>2026-10-19T00:21:47.140Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/enrichment.html</loc>
-    <lastmod>2026-10-19T01:25:26.965Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/replication.html</loc>
-    <lastmod>2026-10-19T14:34:28.568Z</lastmod>
-  </url>
-  <url>
-    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/gene_profiles.html</loc>
-    <lastmod>2026-10-20T01:51:30.187Z</lastmod>
+    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/spatial_bayes.html</loc>
+    <lastmod>2026-10-20T16:35:42.156Z</lastmod>
   </url>
   <url>
     <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/cortex_viewer.html</loc>
     <lastmod>2026-10-20T16:08:37.418Z</lastmod>
   </url>
   <url>
-    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/spatial_bayes.html</loc>
-    <lastmod>2026-10-20T16:35:42.156Z</lastmod>
+    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/gene_profiles.html</loc>
+    <lastmod>2026-10-20T01:51:30.187Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/replication.html</loc>
+    <lastmod>2026-10-19T14:34:28.568Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/enrichment.html</loc>
+    <lastmod>2026-10-19T01:25:26.965Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/mirna.html</loc>
+    <lastmod>2026-10-19T00:21:47.140Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/results.html</loc>
+    <lastmod>2026-10-20T01:48:24.339Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/introduction.html</loc>
+    <lastmod>2026-10-19T14:31:47.697Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/index.html</loc>
+    <lastmod>2026-10-29T02:16:39.874Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/methods.html</loc>
+    <lastmod>2026-10-20T16:13:54.698Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/cortex.html</loc>
+    <lastmod>2026-10-20T01:48:24.340Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/ozone.html</loc>
+    <lastmod>2026-10-19T01:23:19.185Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/advanced_results.html</loc>
+    <lastmod>2026-10-19T14:33:49.495Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/spatial_reference.html</loc>
+    <lastmod>2026-10-19T00:43:33.396Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/viewer.html</loc>
+    <lastmod>2026-10-20T16:08:37.417Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/spatial_explorer.html</loc>
+    <lastmod>2026-10-20T16:12:37.668Z</lastmod>
+  </url>
+  <url>
+    <loc>https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/reproducibility.html</loc>
+    <lastmod>2026-10-29T02:18:37.717Z</lastmod>
   </url>
 </urlset>

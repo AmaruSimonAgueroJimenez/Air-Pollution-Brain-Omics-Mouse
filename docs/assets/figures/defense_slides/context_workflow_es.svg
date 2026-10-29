@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1080pt" height="489.6pt" viewBox="0 0 1080 489.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-29T07:51:47.152618</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 489.6 
+L 1080 489.6 
+L 1080 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 337.719016 113.8932 
+Q 364.527801 113.8932 389.435928 113.8932 
+" clip-path="url(#pdcb6759bd8)" style="fill: none; stroke: #376e75; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 383.435928 110.8932 
+L 389.435928 113.8932 
+L 383.435928 116.8932 
+z
+" clip-path="url(#pdcb6759bd8)" style="fill: #376e75; stroke: #376e75; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 395.335098 67.626 
+Q 427.384106 67.626 457.532456 67.626 
+" clip-path="url(#pdcb6759bd8)" style="fill: none; stroke: #376e75; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 451.532456 64.626 
+L 457.532456 67.626 
+L 451.532456 70.626 
+z
+" clip-path="url(#pdcb6759bd8)" style="fill: #376e75; stroke: #376e75; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 395.335098 160.1604 
+Q 427.384106 160.1604 457.532456 160.1604 
+" clip-path="url(#pdcb6759bd8)" style="fill: none; stroke: #376e75; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 451.532456 157.1604 
+L 457.532456 160.1604 
+L 451.532456 163.1604 
+z
+" clip-path="url(#pdcb6759bd8)" style="fill: #376e75; stroke: #376e75; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 337.715499 338.28912 
+Q 356.667677 338.28912 373.719197 338.28912 
+" clip-path="url(#pdcb6759bd8)" style="fill: none; stroke: #376e75; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 367.719197 335.28912 
+L 373.719197 338.28912 
+L 367.719197 341.28912 
+z
+" clip-path="url(#pdcb6759bd8)" style="fill: #376e75; stroke: #376e75; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 651.998696 340.60248 
+Q 668.330574 340.60248 682.761793 340.60248 
+" clip-path="url(#pdcb6759bd8)" style="fill: none; stroke: #376e75; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 676.761793 337.60248 
+L 682.761793 340.60248 
+L 676.761793 343.60248 
+z
+" clip-path="url(#pdcb6759bd8)" style="fill: #376e75; stroke: #376e75; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 688.662778 292.02192 
+Q 702.376896 292.02192 714.190356 292.02192 
+" clip-path="url(#pdcb6759bd8)" style="fill: none; stroke: #376e75; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 708.190356 289.02192 
+L 714.190356 292.02192 
+L 708.190356 295.02192 
+z
+" clip-path="url(#pdcb6759bd8)" style="fill: #376e75; stroke: #376e75; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 688.662778 412.31664 
+Q 702.376896 412.31664 714.190356 412.31664 
+" clip-path="url(#pdcb6759bd8)" style="fill: none; stroke: #376e75; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 708.190356 409.31664 
+L 714.190356 412.31664 
+L 708.190356 415.31664 
+z
+" clip-path="url(#pdcb6759bd8)" style="fill: #376e75; stroke: #376e75; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 896.184 199.48752 
+L 1042.848 199.48752 
+L 1042.848 412.31664 
+" clip-path="url(#pdcb6759bd8)" style="fill: none; stroke-dasharray: 6.8,5.1; stroke-dashoffset: 0; stroke: #b65e3c; stroke-width: 1.7"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 1040.849222 412.31664 
+Q 1027.135104 412.31664 1015.321644 412.31664 
+" clip-path="url(#pdcb6759bd8)" style="fill: none; stroke-dasharray: 6.8,5.1; stroke-dashoffset: 0; stroke: #b65e3c; stroke-width: 1.7; stroke-linecap: round"/>
+    <path d="M 1021.321644 415.31664 
+L 1015.321644 412.31664 
+L 1021.321644 409.31664 
+z
+" clip-path="url(#pdcb6759bd8)" style="fill: #b65e3c; stroke-dasharray: 6.8,5.1; stroke-dashoffset: 0; stroke: #b65e3c; stroke-width: 1.7; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 37.152 224.93448 
+L 1048.086 224.93448 
+" clip-path="url(#pdcb6759bd8)" style="fill: none; stroke: #cfdcdd; stroke-width: 1.1; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 40.2948 190.23408 
+L 40.2948 44.4924 
+" clip-path="url(#pdcb6759bd8)" style="fill: none; stroke: #376e75; stroke-width: 3; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 393.336 160.1604 
+L 393.336 67.626 
+" clip-path="url(#pdcb6759bd8)" style="fill: none; stroke: #376e75; stroke-width: 1.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <defs>
+     <path id="m1bb442eac3" d="M 0 2 
+C 0.530406 2 1.03916 1.789267 1.414214 1.414214 
+C 1.789267 1.03916 2 0.530406 2 0 
+C 2 -0.530406 1.789267 -1.03916 1.414214 -1.414214 
+C 1.03916 -1.789267 0.530406 -2 0 -2 
+C -0.530406 -2 -1.03916 -1.789267 -1.414214 -1.414214 
+C -1.789267 -1.03916 -2 -0.530406 -2 0 
+C -2 0.530406 -1.789267 1.03916 -1.414214 1.414214 
+C -1.03916 1.789267 -0.530406 2 0 2 
+z
+" style="stroke: #376e75"/>
+    </defs>
+    <g clip-path="url(#pdcb6759bd8)">
+     <use xlink:href="#m1bb442eac3" x="393.336" y="113.8932" style="fill: #376e75; stroke: #376e75"/>
+    </g>
+   </g>
+   <g id="line2d_6">
+    <path d="M 40.2948 405.37656 
+L 40.2948 271.20168 
+" clip-path="url(#pdcb6759bd8)" style="fill: none; stroke: #376e75; stroke-width: 3; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 686.664 412.31664 
+L 686.664 292.02192 
+" clip-path="url(#pdcb6759bd8)" style="fill: none; stroke: #376e75; stroke-width: 1.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_8">
+    <g clip-path="url(#pdcb6759bd8)">
+     <use xlink:href="#m1bb442eac3" x="686.664" y="340.60248" style="fill: #376e75; stroke: #376e75"/>
+    </g>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #376e75" x="37.152" y="31.996613" transform="rotate(-0 37.152 31.996613)">ESTUDIOS EXPERIMENTALES DE CEREBRO</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #376e75" x="37.152" y="251.765812" transform="rotate(-0 37.152 251.765812)">REFERENCIA INDEPENDIENTE SIN EXPOSICIÓN</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #123d46" x="58.104" y="66.629355" transform="rotate(-0 58.104 66.629355)">Cuatro estudios fuente</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 16.5px; font-family: 'DejaVu Sans'; fill: #123d46" transform="translate(58.104 98.670302)">RNA-seq bulk de HY y ACA</text>
+    <text style="font-size: 16.5px; font-family: 'DejaVu Sans'; fill: #123d46" transform="translate(58.104 116.895944)">Array miRNA de hipocampo</text>
+    <text style="font-size: 16.5px; font-family: 'DejaVu Sans'; fill: #123d46" transform="translate(58.104 135.121586)">RNA-seq hipocampal de O₃</text>
+    <text style="font-size: 16.5px; font-family: 'DejaVu Sans'; fill: #123d46" transform="translate(58.104 153.347228)">24 bibliotecas O₃ paired-end</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #123d46" x="477.144" y="65.115995" transform="rotate(-0 477.144 65.115995)">Reproducción de los estudios</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 17px; font-family: 'DejaVu Sans'; fill: #123d46" transform="translate(477.144 95.103504)">Código, umbrales y animales de los autores</text>
+    <text style="font-size: 17px; font-family: 'DejaVu Sans'; fill: #123d46" transform="translate(477.144 114.683838)">Recuperación exacta o diferencias documentadas</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #123d46" x="477.144" y="162.277115" transform="rotate(-0 477.144 162.277115)">Análisis nuevos por estudio</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 17px; font-family: 'DejaVu Sans'; fill: #123d46" transform="translate(477.144 191.584624)">Modelos RNA/miRNA, GO e interacciones</text>
+    <text style="font-size: 17px; font-family: 'DejaVu Sans'; fill: #123d46" transform="translate(477.144 211.164958)">Control de calidad y omisión de animales</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #123d46" x="58.104" y="291.025275" transform="rotate(-0 58.104 291.025275)">Atlas MERFISH medido</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 16.5px; font-family: 'DejaVu Sans'; fill: #123d46" transform="translate(58.104 323.726222)">Un macho sin exposición</text>
+    <text style="font-size: 16.5px; font-family: 'DejaVu Sans'; fill: #123d46" transform="translate(58.104 342.730664)">Células ACA + HY originales</text>
+    <text style="font-size: 16.5px; font-family: 'DejaVu Sans'; fill: #123d46" transform="translate(58.104 360.956306)">Coordenadas depositadas</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; fill: #123d46" transform="translate(398.574 309.532155)">Anatomía medida</text>
+    <text style="font-weight: 700; font-size: 20px; font-family: 'DejaVu Sans'; fill: #123d46" transform="translate(398.574 332.567842)">y detección</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 16.5px; font-family: 'DejaVu Sans'; fill: #123d46" transform="translate(398.574 372.306782)">Cortes físicos y capas/núcleos</text>
+    <text style="font-size: 16.5px; font-family: 'DejaVu Sans'; fill: #123d46" transform="translate(398.574 390.532424)">Positivas / células medidas</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 19px; font-family: 'DejaVu Sans'; fill: #123d46" transform="translate(733.806 288.712071)">Validación bayesiana</text>
+    <text style="font-weight: 700; font-size: 19px; font-family: 'DejaVu Sans'; fill: #123d46" transform="translate(733.806 310.744412)">con separación</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 15.8px; font-family: 'DejaVu Sans'; fill: #123d46" transform="translate(733.806 349.369307)">Cortes completos + vecinos</text>
+    <text style="font-size: 15.8px; font-family: 'DejaVu Sans'; fill: #123d46" transform="translate(733.806 366.82174)">Intervalos y referencias simples</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 18px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #b65e3c" x="733.806" y="407.486947" transform="rotate(-0 733.806 407.486947)">Escenario regional ilustrativo</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 15.8px; font-family: 'DejaVu Sans'; fill: #123d46" transform="translate(733.806 435.888971)">Multiplicador bulk uniforme</text>
+    <text style="font-size: 15.8px; font-family: 'DejaVu Sans'; fill: #123d46" transform="translate(733.806 453.341404)">Posiciones y ceros conservados</text>
+   </g>
+   <g id="text_17">
+    <g id="patch_10">
+     <path d="M 1054.236762 354.458861 
+L 1054.236762 246.11808 
+L 1037.7552 246.11808 
+L 1037.7552 354.458861 
+z
+" style="fill: #ffffff"/>
+    </g>
+    <text style="font-size: 13px; font-family: 'DejaVu Sans'; fill: #b65e3c" transform="translate(1049.583169 352.508861) rotate(-90)">Solo efecto bulk</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #526d73" x="37.152" y="466.268527" transform="rotate(-0 37.152 466.268527)">Continua: flujo analítico     Discontinua: transferencia regional supuesta, no respuesta celular observada</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pdcb6759bd8">
+   <rect x="16.2" y="9.792" width="1047.6" height="462.672"/>
+  </clipPath>
+ </defs>
+</svg>
