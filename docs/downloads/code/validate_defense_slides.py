@@ -5,7 +5,7 @@ import base64
 import hashlib
 import json
 import re
-from urllib.parse import unquote, urlsplit
+from urllib.parse import unquote, urlsplit, parse_qs
 import zipfile
 
 from bs4 import BeautifulSoup
@@ -51,13 +51,22 @@ def main():
             visible=" ".join(p.get_text(" ",strip=True) for p in slide.find_all("p",recursive=False))
             if len(visible.split())<45:
                 errors.append(f"{lang}: explanation lacks visible detail: {slide['id']}")
-        for sid,page in (("hy-3d","viewer.html"),("aca-3d","cortex_viewer.html")):
+        for sid,region in (("hy-3d","HY"),("aca-3d","ACA")):
             slide=soup.find("section",id=sid)
-            target=BASE+("es/" if lang=="es" else "")+page
-            image_link=slide.select_one("a:has(img)") if slide else None
-            text_links=slide.select(".viewer-links a") if slide else []
-            if image_link is None or image_link.get("href")!=target or not any(a.get("href")==target for a in text_links):
-                errors.append(f"{lang}: missing linked 3D image or viewer text link: {sid}")
+            frame=slide.select_one("iframe[data-map-src]") if slide else None
+            if frame is None:
+                errors.append(f"{lang}: missing in-slide interactive map: {sid}")
+                continue
+            component=urlsplit(frame["data-map-src"])
+            query=parse_qs(component.query)
+            local_component=(p.parent/unquote(component.path)).resolve()
+            if local_component!=ROOT/"docs/assets/defense-slides/inline-map.html" or query.get("region")!=[region] or query.get("lang")!=[lang] or frame.get("src"):
+                errors.append(f"{lang}: invalid lazy map source or language/region: {sid}")
+            if not slide.select_one(".map-poster img") or not slide.select_one(".live-map-caption") or not slide.select_one(".map-enlarge"):
+                errors.append(f"{lang}: map fallback, explanation or enlargement absent: {sid}")
+        for anchor in soup.select("a[data-map-slide]"):
+            if anchor["data-map-slide"] not in ids:
+                errors.append(f"{lang}: broken map slide jump")
         resources=[s.get("src","") for s in soup.find_all("script",src=True)]
         resources += [s.get("href","") for s in soup.select("link[rel=stylesheet]")]
         external=[u for u in resources if not u.startswith("data:")]
@@ -93,7 +102,7 @@ def main():
             if not all(t in found for t in tokens): errors.append(f"{lang}: missing result anchors in {sid}")
         checks[lang]={"slides":len(slides),"notes":len(notes),"native_mathml_expressions":len(math),
                       "embedded_figures":len(images),"embedded_runtime":not external,
-                      "visible_explanation_slides":len(explanations),"linked_gene_3d_maps":2,
+                      "visible_explanation_slides":len(explanations),"in_slide_interactive_gene_maps":2,
                       "published_evidence_links":source_links,"scholarly_citations":len(scholarly),"bytes":p.stat().st_size,
                       "sha256":hashlib.sha256(p.read_bytes()).hexdigest()}
     for item in manifest["source_files"]:
@@ -108,6 +117,15 @@ def main():
             for relative in ("defense.html","es/defense.html"):
                 if z.read(relative)!=(ROOT/"docs"/relative).read_bytes():
                     errors.append("Stale portable archive: "+relative)
+            required_assets=["assets/defense-slides/"+n for n in ("inline-map.html","inline-map.js","inline-map.css")]
+            required_assets += ["assets/viewer/"+n for n in ("plotly.min.js","annotations.js","data.js")]
+            required_assets += ["assets/viewer-cortex/data.js"]
+            for directory in ("viewer","viewer-cortex"):
+                required_assets += [str(p.relative_to(ROOT/"docs")) for p in sorted((ROOT/"docs/assets"/directory/"genes").glob("*.js"))]
+            for relative in required_assets:
+                if relative not in z.namelist() or z.read(relative)!=(ROOT/"docs"/relative).read_bytes():
+                    errors.append("Missing/stale portable map asset: "+relative)
+            checks["portable_interactive_map_assets"]=len(required_assets)
         checks["portable_zip_bytes"]=archive.stat().st_size
     else:
         errors.append("Missing portable bilingual archive")

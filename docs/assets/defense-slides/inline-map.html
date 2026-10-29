@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Interactive brain reference and PM2.5 scenario</title>
+  <link rel="stylesheet" href="inline-map.css">
+  <script defer src="inline-map.js"></script>
+</head>
+<body>
+<main id="map-app" aria-label="Interactive brain map">
+  <form id="controls" autocomplete="off">
+    <label id="gene-label" for="gene">Measured gene</label>
+    <input id="gene" type="text" list="gene-list" spellcheck="false" aria-describedby="panel-help">
+    <datalist id="gene-list"></datalist>
+    <button id="apply" type="submit">Apply gene</button>
+    <button id="reset" type="button">Reset cameras</button>
+    <label class="check"><input id="brain-context" type="checkbox"><span id="context-label">Whole-brain context</span></label>
+    <label class="check"><input id="hide-zero" type="checkbox"><span id="zero-label">Hide zeros</span></label>
+    <label class="check"><input id="clip" type="checkbox"><span id="clip-label">99% color cap</span></label>
+  </form>
+  <div id="gene-shortcuts" aria-label="Prioritized measured genes"><span id="priority-label">Priority genes</span></div>
+  <div id="summary" role="status" aria-live="polite">
+    <strong id="current-gene">Loading…</strong><span id="product"></span><span id="evidence"></span><span id="effect"></span><span id="cell-summary"></span>
+  </div>
+  <div id="plot-grid">
+    <section class="plot-panel" aria-labelledby="reference-title"><h2 id="reference-title">Measured MERFISH reference</h2><div id="reference" class="plot" aria-label="Measured reference in three dimensions"></div></section>
+    <section class="plot-panel" aria-labelledby="scenario-title"><h2 id="scenario-title">Uniform PM2.5 scenario</h2><div id="simulation" class="plot" aria-label="Illustrative regional PM2.5 scenario in three dimensions"></div></section>
+  </div>
+  <p id="scale-note" class="note">Loading the measured reference…</p>
+  <p id="panel-help" class="note caution">One unexposed donor. Drag either map to rotate both. The scenario preserves positions and zeros and does not identify cellular exposure responses.</p>
+  <p id="error" role="alert" hidden></p>
+</main>
+</body>
+</html>

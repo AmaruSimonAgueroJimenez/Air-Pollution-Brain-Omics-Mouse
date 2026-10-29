@@ -228,7 +228,7 @@ These commands use the existing downloaded atlas and measured regional count cac
 
 ## Defense presentation
 
-The [English slides](defense.qmd) and [Spanish slides](es/defense.html) use the same 100-slide structure, with presenter notes and a technical appendix. Each HTML embeds its figures, styles, formulas and presentation runtime. The [portable bilingual ZIP](downloads/defense-slides-bilingual.zip) preserves language switching offline; evidence links require internet.
+The [English slides](defense.qmd) and [Spanish slides](es/defense.html) use the same 100-slide structure, with presenter notes and a technical appendix. Each HTML embeds its static figures, styles, formulas and presentation runtime. The [portable bilingual ZIP](downloads/defense-slides-bilingual.zip) also includes the local interactive-map component, both regional coordinate exports, shared Plotly/annotations and all 1,122 gene payloads per region. Unzip the full folder structure to rotate maps and change genes offline in a compatible modern browser. Scientific-reference links require internet.
 
     .venv-analysis/bin/python scripts/build_defense_slides.py --figures
     .venv-analysis/bin/python scripts/render_docs.py
@@ -239,3 +239,5 @@ The [English slides](defense.qmd) and [Spanish slides](es/defense.html) use the 
 The figure builders read frozen result tables and do not refit biological models. Source hashes and the presentation audit are in downloads/defense_slides/.
 
 The 3D previews retain all measured cells and use shared reference/scenario cameras and color scales. Their source counts, coordinates and visual-display settings are recorded with the presentation; no biological model is refitted.
+
+The map frames load only for the active slide and release WebGL resources on leaving. Enlarge opens a dialog within the same HTML and preserves the selected gene. Static image returns to the documented original-gene example; current live-gene captions remain separate. If the browser restricts local file frames, serve the extracted folder locally; the data remain on the machine.

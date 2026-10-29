@@ -524,7 +524,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="defense-presentation" class="level2">
 <h2 class="anchored" data-anchor-id="defense-presentation">Defense presentation</h2>
-<p>The <a href="./defense.html">English slides</a> and <a href="es/defense.html">Spanish slides</a> use the same 100-slide structure, with presenter notes and a technical appendix. Each HTML embeds its figures, styles, formulas and presentation runtime. The <a href="downloads/defense-slides-bilingual.zip">portable bilingual ZIP</a> preserves language switching offline; evidence links require internet.</p>
+<p>The <a href="./defense.html">English slides</a> and <a href="es/defense.html">Spanish slides</a> use the same 100-slide structure, with presenter notes and a technical appendix. Each HTML embeds its static figures, styles, formulas and presentation runtime. The <a href="downloads/defense-slides-bilingual.zip">portable bilingual ZIP</a> also includes the local interactive-map component, both regional coordinate exports, shared Plotly/annotations and all 1,122 gene payloads per region. Unzip the full folder structure to rotate maps and change genes offline in a compatible modern browser. Scientific-reference links require internet.</p>
 <pre><code>.venv-analysis/bin/python scripts/build_defense_slides.py --figures
 .venv-analysis/bin/python scripts/render_docs.py
 .venv-analysis/bin/python scripts/build_defense_slides.py --package
@@ -532,6 +532,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 .venv-analysis/bin/python scripts/render_docs.py --refresh-static</code></pre>
 <p>The figure builders read frozen result tables and do not refit biological models. Source hashes and the presentation audit are in downloads/defense_slides/.</p>
 <p>The 3D previews retain all measured cells and use shared reference/scenario cameras and color scales. Their source counts, coordinates and visual-display settings are recorded with the presentation; no biological model is refitted.</p>
+<p>The map frames load only for the active slide and release WebGL resources on leaving. Enlarge opens a dialog within the same HTML and preserves the selected gene. Static image returns to the documented original-gene example; current live-gene captions remain separate. If the browser restricts local file frames, serve the extracted folder locally; the data remain on the machine.</p>
 
 
 <!-- -->
@@ -1225,7 +1226,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-228"><a href="#cb13-228" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-229"><a href="#cb13-229" aria-hidden="true" tabindex="-1"></a><span class="fu">## Defense presentation</span></span>
 <span id="cb13-230"><a href="#cb13-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-231"><a href="#cb13-231" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">English slides</span><span class="co">](defense.qmd)</span> and <span class="co">[</span><span class="ot">Spanish slides</span><span class="co">](es/defense.html)</span> use the same 100-slide structure, with presenter notes and a technical appendix. Each HTML embeds its figures, styles, formulas and presentation runtime. The <span class="co">[</span><span class="ot">portable bilingual ZIP</span><span class="co">](downloads/defense-slides-bilingual.zip)</span> preserves language switching offline; evidence links require internet.</span>
+<span id="cb13-231"><a href="#cb13-231" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">English slides</span><span class="co">](defense.qmd)</span> and <span class="co">[</span><span class="ot">Spanish slides</span><span class="co">](es/defense.html)</span> use the same 100-slide structure, with presenter notes and a technical appendix. Each HTML embeds its static figures, styles, formulas and presentation runtime. The <span class="co">[</span><span class="ot">portable bilingual ZIP</span><span class="co">](downloads/defense-slides-bilingual.zip)</span> also includes the local interactive-map component, both regional coordinate exports, shared Plotly/annotations and all 1,122 gene payloads per region. Unzip the full folder structure to rotate maps and change genes offline in a compatible modern browser. Scientific-reference links require internet.</span>
 <span id="cb13-232"><a href="#cb13-232" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-233"><a href="#cb13-233" aria-hidden="true" tabindex="-1"></a><span class="in">    .venv-analysis/bin/python scripts/build_defense_slides.py --figures</span></span>
 <span id="cb13-234"><a href="#cb13-234" aria-hidden="true" tabindex="-1"></a><span class="in">    .venv-analysis/bin/python scripts/render_docs.py</span></span>
@@ -1235,7 +1236,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-238"><a href="#cb13-238" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-239"><a href="#cb13-239" aria-hidden="true" tabindex="-1"></a>The figure builders read frozen result tables and do not refit biological models. Source hashes and the presentation audit are in downloads/defense_slides/.</span>
 <span id="cb13-240"><a href="#cb13-240" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-241"><a href="#cb13-241" aria-hidden="true" tabindex="-1"></a>The 3D previews retain all measured cells and use shared reference/scenario cameras and color scales. Their source counts, coordinates and visual-display settings are recorded with the presentation; no biological model is refitted.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb13-241"><a href="#cb13-241" aria-hidden="true" tabindex="-1"></a>The 3D previews retain all measured cells and use shared reference/scenario cameras and color scales. Their source counts, coordinates and visual-display settings are recorded with the presentation; no biological model is refitted.</span>
+<span id="cb13-242"><a href="#cb13-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-243"><a href="#cb13-243" aria-hidden="true" tabindex="-1"></a>The map frames load only for the active slide and release WebGL resources on leaving. Enlarge opens a dialog within the same HTML and preserves the selected gene. Static image returns to the documented original-gene example; current live-gene captions remain separate. If the browser restricts local file frames, serve the extracted folder locally; the data remain on the machine.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

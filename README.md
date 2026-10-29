@@ -199,13 +199,13 @@ A separate hierarchical beta-binomial detection model uses section–anatomy pos
 
 ## Bilingual defense presentation
 
-The detailed HTML deck contains 100 slides per language, including a technical appendix, 54 native MathML expressions, 22 projected figures and detailed presenter notes. Replicated author results and new project analyses form separate blocks. Twelve additional explanation slides unpack the workflow, models, uncertainty and interpretation. Three measured-coordinate 3D views show anatomical context and HY/Tll1 and ACA/Fosb reference–scenario comparisons, with active links to the same-language interactive viewers. The static previews work offline; interactive viewer links require internet.
+The detailed HTML deck contains 100 slides per language, including a technical appendix, 54 native MathML expressions, 22 projected figures and detailed presenter notes. Replicated author results and new project analyses form separate blocks. Twelve additional explanation slides unpack the workflow, models, uncertainty and interpretation. Three registered-coordinate 3D views show anatomical context and the initial HY/Tll1 and ACA/Fosb reference–scenario examples. The hypothalamus and cortex slides contain interactive maps with all 1,122 measured genes, linked rotation, camera reset and an in-page enlargement. The current gene, regional evidence and scenario update together. Static examples remain available. The full ZIP includes both regional data exports and every gene payload for offline interaction in a compatible browser.
 
 - [English presentation](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/defense.html)
 - [Presentación en español](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/defense.html)
 - [Portable bilingual HTML download](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/downloads/defense-slides-bilingual.zip)
 
-Arrow keys navigate, Esc opens overview, and Notes/Notas opens the current slide explanation. Each HTML embeds its presentation runtime, figures, styling and formulas. Online evidence links require internet. Keep the ZIP folder structure for the language switch.
+Arrow keys navigate, Esc opens overview, and Notes/Notas opens the current slide explanation. Each HTML embeds its presentation runtime, static figures, styling and formulas. Unzip the whole archive, including assets/, for the interactive maps and language switch. Online scientific-reference links require internet. After interacting with a map, use Slide navigation to return keyboard focus to the deck.
 
 To redraw the presentation figures and regenerate its QMD sources without refitting the scientific models:
 

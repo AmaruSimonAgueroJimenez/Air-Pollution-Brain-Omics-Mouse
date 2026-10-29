@@ -35,6 +35,7 @@ format:
     include-after-body:
       text: |
         <script src="../assets/defense-slides/defense.js"></script>
+        <script src="../assets/defense-slides/inline-maps.js"></script>
 execute:
   echo: false
   eval: false
@@ -240,7 +241,7 @@ La rama superior sigue los datos de exposición hasta la reproducción y los an�
 
 
 ::: {.viewer-links}
-[Explorar el hipotálamo en 3D](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/viewer.html){target="_blank"} · [Explorar la corteza en 3D](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/cortex_viewer.html){target="_blank"}
+[Diapositiva interactiva de hipotálamo](#hy-3d){.inline-slide-link data-map-slide="hy-3d" target="_self"} · [Diapositiva interactiva de corteza](#aca-3d){.inline-slide-link data-map-slide="aca-3d" target="_self"}
 :::
 
 
@@ -1033,7 +1034,7 @@ El contorno gris del cerebro completo aporta contexto anatómico. El rojizo ubic
 
 
 ::: {.viewer-links}
-[Explorar el hipotálamo en 3D](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/viewer.html){target="_blank"} · [Explorar la corteza en 3D](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/cortex_viewer.html){target="_blank"}
+[Diapositiva interactiva de hipotálamo](#hy-3d){.inline-slide-link data-map-slide="hy-3d" target="_self"} · [Diapositiva interactiva de corteza](#aca-3d){.inline-slide-link data-map-slide="aca-3d" target="_self"}
 :::
 
 
@@ -1043,7 +1044,7 @@ El contorno gris del cerebro completo aporta contexto anatómico. El rojizo ubic
 
 
 ::: {.notes}
-Posiciones registradas de todas las 14,582 células ACA y 37,811 células HY del mismo donante Zhuang-ABCA-2. Las coordenadas CCF proceden del registro de los cortes, no de una adquisición 3D isotrópica directa. El gris es una malla anatómica de cerebro completo previamente exportada de la anotación CCF, con paso superficial de 0.15 mm. Esa superficie no representa cobertura de expresión. Los puntos coloreados son células realmente medidas del hemisferio registrado. No se rellenan huecos, no se reflejan células al hemisferio opuesto y no se añaden valores de expresión ni donantes. Los colores solo distinguen regiones, sin codificar una respuesta a PM₂.₅. Los dos enlaces de texto abren los visores completos de hipotálamo y corteza con conexión. La anatomía estática permanece disponible sin conexión. La malla gris de cerebro completo aporta contexto, mientras las células medidas ocupan solo el hemisferio registrado de la fuente. No se reflejan células de referencia al otro hemisferio.
+Posiciones registradas de todas las 14,582 células ACA y 37,811 células HY del mismo donante Zhuang-ABCA-2. Las coordenadas CCF proceden del registro de los cortes, no de una adquisición 3D isotrópica directa. El gris es una malla anatómica de cerebro completo previamente exportada de la anotación CCF, con paso superficial de 0.15 mm. Esa superficie no representa cobertura de expresión. Los puntos coloreados son células realmente medidas del hemisferio registrado. No se rellenan huecos, no se reflejan células al hemisferio opuesto y no se añaden valores de expresión ni donantes. Los colores solo distinguen regiones, sin codificar una respuesta a PM₂.₅. Los dos enlaces de texto llevan a las diapositivas interactivas de hipotálamo y corteza dentro de esta presentación. La anatomía estática permanece disponible sin conexión. La malla gris de cerebro completo aporta contexto, mientras las células medidas ocupan solo el hemisferio registrado de la fuente. No se reflejan células de referencia al otro hemisferio.
 :::
 
 ## Priorización génica y cobertura del panel medido {#gene-selection}
@@ -2047,7 +2048,7 @@ El visor lado a lado es un aporte del proyecto, sin validar de manera independie
 [Figura completa referencia/escenario](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/assets/figures/spatial_cortex/reference_vs_simulation_es.png).
 :::
 
-## Hipotálamo / Tll1: referencia medida y escenario PM₂.₅ {#hy-3d .figure-slide .figure-interpretation .map3d-slide}
+## Hipotálamo: referencia interactiva y escenario PM₂.₅ {#hy-3d .figure-slide .figure-interpretation .map3d-slide .interactive-map-slide}
 
 
 
@@ -2055,16 +2056,27 @@ El visor lado a lado es un aporte del proyecto, sin validar de manera independie
 04  /  Resultados del proyecto
 :::
 
-[![](../assets/figures/defense_slides/spatial_3d_hy_tll1_es.png){fig-alt="La izquierda muestra conteos Tll1 medidos. La derecha multiplica cada valor por 0.42808 e ilustra el efecto regional regularizado. Ambos paneles conservan 37,811 posiciones y las mismas 667 células positivas. La escala común muestra el cambio de magnitud. El gráfico no identifica respuestas celulares específicas a la exposición ni infiere pérdida celular." width=100%}](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/viewer.html){target="_blank"}
 
+::: {.inline-atlas data-region="HY" data-default-gene="Tll1"}
+<div class="map-toolbar"><button type="button" class="map-static-toggle" aria-pressed="false">Imagen estática</button><button type="button" class="map-enlarge">Ampliar mapa</button><button type="button" class="map-focus-slides">Navegación de diapositivas</button><span class="map-load-status" role="status">Cargando mapa interactivo…</span></div>
 
-::: {.figure-caption}
+::: {.map-stage}
+
+::: {.map-poster}
+![](../assets/figures/defense_slides/spatial_3d_hy_tll1_es.png){fig-alt="La izquierda muestra conteos Tll1 medidos. La derecha multiplica cada valor por 0.42808 e ilustra el efecto regional regularizado. Ambos paneles conservan 37,811 posiciones y las mismas 667 células positivas. La escala común muestra el cambio de magnitud. El gráfico no identifica respuestas celulares específicas a la exposición ni infiere pérdida celular." width=100%}
+
+::: {.static-map-caption}
 La izquierda muestra conteos Tll1 medidos. La derecha multiplica cada valor por 0.42808 e ilustra el efecto regional regularizado. Ambos paneles conservan 37,811 posiciones y las mismas 667 células positivas. La escala común muestra el cambio de magnitud. El gráfico no identifica respuestas celulares específicas a la exposición ni infiere pérdida celular.
 :::
 
+:::
+<iframe class="map-frame" data-map-src="../assets/defense-slides/inline-map.html?region=HY&amp;lang=es&amp;defaultgene=Tll1" title="Mapa interactivo de hipotálamo" referrerpolicy="same-origin"></iframe>
+:::
 
-::: {.viewer-links}
-[Abrir el mapa interactivo de Tll1](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/viewer.html){target="_blank"}
+::: {.live-map-caption}
+Arrastre un mapa para rotar ambas escenas. Seleccione un gen medido y aplíquelo. Los paneles conservan las mismas células registradas. PM₂.₅ aplica un multiplicador regional, sin identificar respuestas celulares específicas a la exposición.
+:::
+
 :::
 
 
@@ -2074,10 +2086,10 @@ La izquierda muestra conteos Tll1 medidos. La derecha multiplica cada valor por 
 
 
 ::: {.notes}
-Hipotálamo, gen Tll1. Izquierda: conteos de imagen MERFISH realmente medidos del macho Zhuang-ABCA-2 sin exposición. Derecha: esos mismos conteos multiplicados uniformemente por 2^(-1.224053)=0.42807853, usando el efecto bulk regional regularizado. Se muestran las 37,811 células en ambos paneles, sin remuestreo, desplazamiento, interpolación ni espejo. Hay 667 células con conteo medido positivo; el escalamiento conserva la detección y los ceros. Las cámaras, los límites de ejes y la escala de color log₂(1+conteo) son iguales; se usa el máximo conjunto completo y no se recortan valores. Las posiciones corresponden al hemisferio registrado y se grafican ML, AP, −DV en mm CCF. Estas coordenadas derivan del registro de los cortes, no de una adquisición 3D isotrópica directa. El panel derecho es una ilustración, no una medición de células expuestas ni una predicción bayesiana. La imagen y el enlace abren el visor interactivo completo con conexión. Arrastre la escena para rotarla y use el selector génico para explorar otros candidatos medidos. La vista estática usa el rango de color completo y permanece disponible sin conexión. El visor interactivo también ofrece un límite opcional y rotulado de color al percentil 99, que solo cambia la visualización.
+Ejemplo estático inicial: Hipotálamo, gen Tll1. Izquierda: conteos de imagen MERFISH realmente medidos del macho Zhuang-ABCA-2 sin exposición. Derecha: esos mismos conteos multiplicados uniformemente por 2^(-1.224053)=0.42807853, usando el efecto bulk regional regularizado. Se muestran las 37,811 células en ambos paneles, sin remuestreo, desplazamiento, interpolación ni espejo. Hay 667 células con conteo medido positivo; el escalamiento conserva la detección y los ceros. Las cámaras, los límites de ejes y la escala de color log₂(1+conteo) son iguales; se usa el máximo conjunto completo y no se recortan valores. Las posiciones corresponden al hemisferio registrado y se grafican ML, AP, −DV en mm CCF. Estas coordenadas derivan del registro de los cortes, no de una adquisición 3D isotrópica directa. El panel derecho es una ilustración, no una medición de células expuestas ni una predicción bayesiana. El visor interactivo está dentro de la diapositiva. El gen y su etiqueta de evidencia se actualizan juntos; la imagen estática conserva el ejemplo original de Tll1. Ampliar abre un diálogo dentro de la presentación. Navegación de diapositivas devuelve el foco del teclado a la presentación. Se conservan los 1,122 genes medidos y las reglas regionales originales de estimación. El ZIP completo incluye recursos locales para interacción sin conexión en un navegador compatible.
 :::
 
-## Corteza / Fosb: referencia medida y escenario PM₂.₅ {#aca-3d .figure-slide .figure-interpretation .map3d-slide}
+## Corteza: referencia interactiva y escenario PM₂.₅ {#aca-3d .figure-slide .figure-interpretation .map3d-slide .interactive-map-slide}
 
 
 
@@ -2085,16 +2097,27 @@ Hipotálamo, gen Tll1. Izquierda: conteos de imagen MERFISH realmente medidos de
 04  /  Resultados del proyecto
 :::
 
-[![](../assets/figures/defense_slides/spatial_3d_aca_fosb_es.png){fig-alt="La izquierda muestra conteos Fosb medidos. La derecha aplica el multiplicador regional de 1.996 a esa referencia. Se mantienen 14,582 posiciones y 1,418 células positivas, con escala de color común completa. El escenario más intenso ilustra un efecto bulk, sin establecer qué capas o tipos celulares corticales responden a PM₂.₅." width=100%}](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/cortex_viewer.html){target="_blank"}
 
+::: {.inline-atlas data-region="ACA" data-default-gene="Fosb"}
+<div class="map-toolbar"><button type="button" class="map-static-toggle" aria-pressed="false">Imagen estática</button><button type="button" class="map-enlarge">Ampliar mapa</button><button type="button" class="map-focus-slides">Navegación de diapositivas</button><span class="map-load-status" role="status">Cargando mapa interactivo…</span></div>
 
-::: {.figure-caption}
+::: {.map-stage}
+
+::: {.map-poster}
+![](../assets/figures/defense_slides/spatial_3d_aca_fosb_es.png){fig-alt="La izquierda muestra conteos Fosb medidos. La derecha aplica el multiplicador regional de 1.996 a esa referencia. Se mantienen 14,582 posiciones y 1,418 células positivas, con escala de color común completa. El escenario más intenso ilustra un efecto bulk, sin establecer qué capas o tipos celulares corticales responden a PM₂.₅." width=100%}
+
+::: {.static-map-caption}
 La izquierda muestra conteos Fosb medidos. La derecha aplica el multiplicador regional de 1.996 a esa referencia. Se mantienen 14,582 posiciones y 1,418 células positivas, con escala de color común completa. El escenario más intenso ilustra un efecto bulk, sin establecer qué capas o tipos celulares corticales responden a PM₂.₅.
 :::
 
+:::
+<iframe class="map-frame" data-map-src="../assets/defense-slides/inline-map.html?region=ACA&amp;lang=es&amp;defaultgene=Fosb" title="Mapa interactivo de corteza" referrerpolicy="same-origin"></iframe>
+:::
 
-::: {.viewer-links}
-[Abrir el mapa interactivo de Fosb](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/cortex_viewer.html){target="_blank"}
+::: {.live-map-caption}
+Arrastre un mapa para rotar ambas escenas. Seleccione un gen medido y aplíquelo. Los paneles conservan las mismas células registradas. PM₂.₅ aplica un multiplicador regional, sin identificar respuestas celulares específicas a la exposición.
+:::
+
 :::
 
 
@@ -2104,7 +2127,7 @@ La izquierda muestra conteos Fosb medidos. La derecha aplica el multiplicador re
 
 
 ::: {.notes}
-Corteza cingulada anterior, gen Fosb. Izquierda: conteos de imagen MERFISH realmente medidos del macho Zhuang-ABCA-2 sin exposición. Derecha: esos mismos conteos multiplicados uniformemente por 2^(0.997109)=1.99599627, usando el efecto bulk regional regularizado. Se muestran las 14,582 células en ambos paneles, sin remuestreo, desplazamiento, interpolación ni espejo. Hay 1,418 células con conteo medido positivo; el escalamiento conserva la detección y los ceros. Las cámaras, los límites de ejes y la escala de color log₂(1+conteo) son iguales; se usa el máximo conjunto completo y no se recortan valores. Las posiciones corresponden al hemisferio registrado y se grafican ML, AP, −DV en mm CCF. Estas coordenadas derivan del registro de los cortes, no de una adquisición 3D isotrópica directa. El panel derecho es una ilustración, no una medición de células expuestas ni una predicción bayesiana. La imagen y el enlace abren el visor interactivo completo con conexión. Arrastre la escena para rotarla y use el selector génico para explorar otros candidatos medidos. La vista estática usa el rango de color completo y permanece disponible sin conexión. El visor interactivo también ofrece un límite opcional y rotulado de color al percentil 99, que solo cambia la visualización.
+Ejemplo estático inicial: Corteza cingulada anterior, gen Fosb. Izquierda: conteos de imagen MERFISH realmente medidos del macho Zhuang-ABCA-2 sin exposición. Derecha: esos mismos conteos multiplicados uniformemente por 2^(0.997109)=1.99599627, usando el efecto bulk regional regularizado. Se muestran las 14,582 células en ambos paneles, sin remuestreo, desplazamiento, interpolación ni espejo. Hay 1,418 células con conteo medido positivo; el escalamiento conserva la detección y los ceros. Las cámaras, los límites de ejes y la escala de color log₂(1+conteo) son iguales; se usa el máximo conjunto completo y no se recortan valores. Las posiciones corresponden al hemisferio registrado y se grafican ML, AP, −DV en mm CCF. Estas coordenadas derivan del registro de los cortes, no de una adquisición 3D isotrópica directa. El panel derecho es una ilustración, no una medición de células expuestas ni una predicción bayesiana. El visor interactivo está dentro de la diapositiva. El gen y su etiqueta de evidencia se actualizan juntos; la imagen estática conserva el ejemplo original de Fosb. Ampliar abre un diálogo dentro de la presentación. Navegación de diapositivas devuelve el foco del teclado a la presentación. Se conservan los 1,122 genes medidos y las reglas regionales originales de estimación. El ZIP completo incluye recursos locales para interacción sin conexión en un navegador compatible.
 :::
 
 ## La regresión gaussiana espacial mejora pocas veces la referencia {#gaussian-rmse .figure-slide .figure-interpretation}

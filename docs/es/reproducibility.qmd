@@ -237,7 +237,7 @@ Las [comprobaciones de cortes medidos](../downloads/spatial_sections/validation.
 
 ## Presentación para defensa
 
-Las [diapositivas en español](defense.qmd) y [en inglés](../defense.html) comparten 100 diapositivas, notas del presentador y apéndice técnico. Cada HTML incluye figuras, estilos, fórmulas y runtime. El [ZIP bilingüe](../downloads/defense-slides-bilingual.zip) permite cambiar idioma sin conexión; los enlaces de evidencia necesitan internet.
+Las [diapositivas en español](defense.qmd) y [en inglés](../defense.html) comparten 100 diapositivas, notas del presentador y apéndice técnico. Cada HTML incluye figuras estáticas, estilos, fórmulas y el motor de presentación. El [ZIP bilingüe](../downloads/defense-slides-bilingual.zip) incluye además el visor integrado, coordenadas de ambas regiones, Plotly/anotaciones y los 1,122 archivos génicos por región. Descomprima toda la estructura para rotar mapas y cambiar de gen sin conexión en un navegador moderno compatible. Los enlaces a referencias científicas requieren internet.
 
     .venv-analysis/bin/python scripts/build_defense_slides.py --figures
     .venv-analysis/bin/python scripts/render_docs.py
@@ -248,3 +248,5 @@ Las [diapositivas en español](defense.qmd) y [en inglés](../defense.html) comp
 Los constructores leen tablas congeladas y no reajustan modelos biológicos. Los hashes y la auditoría de presentación están en downloads/defense_slides/.
 
 Las vistas 3D conservan todas las células medidas y comparten cámara y escala entre referencia y escenario. Se registran los conteos, las coordenadas y los ajustes gráficos; no se reajusta ningún modelo biológico.
+
+Los visores se cargan solo en la diapositiva activa y liberan recursos WebGL al salir. Ampliar abre un diálogo dentro del mismo HTML y conserva el gen seleccionado. Imagen estática vuelve al ejemplo génico original documentado; la explicación del gen interactivo se mantiene separada. Si el navegador restringe los marcos de archivos locales, sirva la carpeta extraída localmente; los datos permanecen en el equipo.

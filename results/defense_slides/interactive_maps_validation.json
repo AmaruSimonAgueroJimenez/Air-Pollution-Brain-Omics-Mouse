@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-29",
+  "scope": "Independent source-payload numeric checks and observed in-browser behavior of the in-slide component. No refitting or biological-model validation.",
+  "source_atlas_assets_unchanged_from_previous_commit": true,
+  "gene_cases": [
+    {
+      "region": "HY",
+      "gene": "Tll1",
+      "cells": 37811,
+      "positive_cells": 667,
+      "scenario_multiplier": 0.4280785302874267,
+      "estimable": true,
+      "significant": true,
+      "full_shared_log2_scale_max": 3.0
+    },
+    {
+      "region": "HY",
+      "gene": "Fosb",
+      "cells": 37811,
+      "positive_cells": 705,
+      "scenario_multiplier": 0.3044800437215967,
+      "estimable": true,
+      "significant": false,
+      "full_shared_log2_scale_max": 3.321928024291992
+    },
+    {
+      "region": "HY",
+      "gene": "Chat",
+      "cells": 37811,
+      "positive_cells": 619,
+      "scenario_multiplier": null,
+      "estimable": false,
+      "significant": false,
+      "full_shared_log2_scale_max": 5.614709854125977
+    },
+    {
+      "region": "ACA",
+      "gene": "Fosb",
+      "cells": 14582,
+      "positive_cells": 1418,
+      "scenario_multiplier": 1.995996271356271,
+      "estimable": true,
+      "significant": true,
+      "full_shared_log2_scale_max": 5.4890265464782715
+    },
+    {
+      "region": "ACA",
+      "gene": "Egr3",
+      "cells": 14582,
+      "positive_cells": 5699,
+      "scenario_multiplier": 1.5275778466740428,
+      "estimable": true,
+      "significant": true,
+      "full_shared_log2_scale_max": 6.059309005737305
+    },
+    {
+      "region": "ACA",
+      "gene": "Tll1",
+      "cells": 14582,
+      "positive_cells": 483,
+      "scenario_multiplier": 0.9994780248883864,
+      "estimable": true,
+      "significant": false,
+      "full_shared_log2_scale_max": 3.8073549270629883
+    },
+    {
+      "region": "ACA",
+      "gene": "Gzmk",
+      "cells": 14582,
+      "positive_cells": 122,
+      "scenario_multiplier": null,
+      "estimable": false,
+      "significant": false,
+      "full_shared_log2_scale_max": 2.0
+    }
+  ],
+  "browser_checks": {
+    "native_mouse_rotation_synchronizes_both_scenes": true,
+    "camera_reset_restores_both_scenes": true,
+    "ACA_gene_changes_Fosb_Egr3_Tll1_Gzmk_correct": true,
+    "HY_gene_changes_Tll1_Fosb_Chat_correct": true,
+    "zero_filter_preserves_full_detection_denominator": true,
+    "same_page_gene_switching": true,
+    "enlarged_dialog_retains_gene_on_return": true,
+    "static_fallback_and_reactivation": true,
+    "keyboard_navigation_focus_return": true,
+    "inactive_iframe_released": true,
+    "internal_map_links_stay_in_same_deck": true,
+    "EN_ES_UI": true,
+    "complete_zip_served_locally_both_languages_and_gene_switching": true
+  },
+  "portable_archive_bytes": 26940498,
+  "source_sha256": {
+    "docs/assets/defense-slides/inline-map.css": "e60470b33f834d745ed89e8daa2d4f82c2552838e1eca4e3d87ee830ce88b745",
+    "docs/assets/defense-slides/inline-map.html": "ad64baba6e9aa2b034c91cf6be50fe6733cb2d2d7992e5e7df613ee4c3ab4add",
+    "docs/assets/defense-slides/inline-map.js": "66deab686d90a6e56fbd9bc76e2e04d02a5d86ea38efd05dfd952e351a08c383",
+    "docs/assets/defense-slides/inline-maps.js": "f9fcd82e375aac60f12a44ea52b0ec0b6e2edf69681cc9a44a94370ced8eefab",
+    "docs/assets/viewer/annotations.js": "b375aea35f8a6c61fec1b5a075103b4c68709fcf92bf8eeb418b7f6bce5f0ab5",
+    "docs/assets/viewer/data.js": "0512df48fb54d2995aad96fe70383690e5912f7150ce3f50bbe74ff17d7dfa42",
+    "docs/assets/viewer/genes/ENSMUSG00000003545.js": "96466900afdf36b51e058c9f259b11a642bdef3b1a4a71e1dbaf647c30bd5874",
+    "docs/assets/viewer/genes/ENSMUSG00000021919.js": "a1674c0cc133770bbb0b840f0529001e0e3a2cd7ca678041b0a1df8870c61b3e",
+    "docs/assets/viewer/genes/ENSMUSG00000053626.js": "0b2acd0ad233146054fc161c2493c35a5e9371a2ba0dd1424a124ff8762f503c",
+    "docs/assets/viewer/plotly.min.js": "28498fa2ea4ba45c8633218088eb223436ca0ca02fc57027fd6fa841ad1901f9",
+    "docs/assets/viewer-cortex/data.js": "e90efdb7a69cd695ff16251784640b8fef9d886dd0b9231848048a2434fd76fa",
+    "docs/assets/viewer-cortex/genes/ENSMUSG00000003545.js": "05fd071ee4aec7c065870d134a93b5d16cc92ef7bdaa0ed668fda7eac0f806d2",
+    "docs/assets/viewer-cortex/genes/ENSMUSG00000033730.js": "4898d3bae39378d3aefa91feb0bd061507b00526fc669f5f7faf94221f7eafe3",
+    "docs/assets/viewer-cortex/genes/ENSMUSG00000042385.js": "db443c0637d6c6ab9d05a85eb3107f620b0d97fda17e69029af2964863f00375",
+    "docs/assets/viewer-cortex/genes/ENSMUSG00000053626.js": "a75206526e8177ffcb0aa64f71c468a28e0157b2d172f2ee6709bc64c91a75f5"
+  },
+  "passed": true
+}

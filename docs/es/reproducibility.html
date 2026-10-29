@@ -531,7 +531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="presentación-para-defensa" class="level2">
 <h2 class="anchored" data-anchor-id="presentación-para-defensa">Presentación para defensa</h2>
-<p>Las <a href="./defense.html">diapositivas en español</a> y <a href="../defense.html">en inglés</a> comparten 100 diapositivas, notas del presentador y apéndice técnico. Cada HTML incluye figuras, estilos, fórmulas y runtime. El <a href="../downloads/defense-slides-bilingual.zip">ZIP bilingüe</a> permite cambiar idioma sin conexión; los enlaces de evidencia necesitan internet.</p>
+<p>Las <a href="./defense.html">diapositivas en español</a> y <a href="../defense.html">en inglés</a> comparten 100 diapositivas, notas del presentador y apéndice técnico. Cada HTML incluye figuras estáticas, estilos, fórmulas y el motor de presentación. El <a href="../downloads/defense-slides-bilingual.zip">ZIP bilingüe</a> incluye además el visor integrado, coordenadas de ambas regiones, Plotly/anotaciones y los 1,122 archivos génicos por región. Descomprima toda la estructura para rotar mapas y cambiar de gen sin conexión en un navegador moderno compatible. Los enlaces a referencias científicas requieren internet.</p>
 <pre><code>.venv-analysis/bin/python scripts/build_defense_slides.py --figures
 .venv-analysis/bin/python scripts/render_docs.py
 .venv-analysis/bin/python scripts/build_defense_slides.py --package
@@ -539,6 +539,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 .venv-analysis/bin/python scripts/render_docs.py --refresh-static</code></pre>
 <p>Los constructores leen tablas congeladas y no reajustan modelos biológicos. Los hashes y la auditoría de presentación están en downloads/defense_slides/.</p>
 <p>Las vistas 3D conservan todas las células medidas y comparten cámara y escala entre referencia y escenario. Se registran los conteos, las coordenadas y los ajustes gráficos; no se reajusta ningún modelo biológico.</p>
+<p>Los visores se cargan solo en la diapositiva activa y liberan recursos WebGL al salir. Ampliar abre un diálogo dentro del mismo HTML y conserva el gen seleccionado. Imagen estática vuelve al ejemplo génico original documentado; la explicación del gen interactivo se mantiene separada. Si el navegador restringe los marcos de archivos locales, sirva la carpeta extraída localmente; los datos permanecen en el equipo.</p>
 
 
 <!-- -->
@@ -1241,7 +1242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-237"><a href="#cb13-237" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-238"><a href="#cb13-238" aria-hidden="true" tabindex="-1"></a><span class="fu">## Presentación para defensa</span></span>
 <span id="cb13-239"><a href="#cb13-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-240"><a href="#cb13-240" aria-hidden="true" tabindex="-1"></a>Las <span class="co">[</span><span class="ot">diapositivas en español</span><span class="co">](defense.qmd)</span> y <span class="co">[</span><span class="ot">en inglés</span><span class="co">](../defense.html)</span> comparten 100 diapositivas, notas del presentador y apéndice técnico. Cada HTML incluye figuras, estilos, fórmulas y runtime. El <span class="co">[</span><span class="ot">ZIP bilingüe</span><span class="co">](../downloads/defense-slides-bilingual.zip)</span> permite cambiar idioma sin conexión; los enlaces de evidencia necesitan internet.</span>
+<span id="cb13-240"><a href="#cb13-240" aria-hidden="true" tabindex="-1"></a>Las <span class="co">[</span><span class="ot">diapositivas en español</span><span class="co">](defense.qmd)</span> y <span class="co">[</span><span class="ot">en inglés</span><span class="co">](../defense.html)</span> comparten 100 diapositivas, notas del presentador y apéndice técnico. Cada HTML incluye figuras estáticas, estilos, fórmulas y el motor de presentación. El <span class="co">[</span><span class="ot">ZIP bilingüe</span><span class="co">](../downloads/defense-slides-bilingual.zip)</span> incluye además el visor integrado, coordenadas de ambas regiones, Plotly/anotaciones y los 1,122 archivos génicos por región. Descomprima toda la estructura para rotar mapas y cambiar de gen sin conexión en un navegador moderno compatible. Los enlaces a referencias científicas requieren internet.</span>
 <span id="cb13-241"><a href="#cb13-241" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-242"><a href="#cb13-242" aria-hidden="true" tabindex="-1"></a><span class="in">    .venv-analysis/bin/python scripts/build_defense_slides.py --figures</span></span>
 <span id="cb13-243"><a href="#cb13-243" aria-hidden="true" tabindex="-1"></a><span class="in">    .venv-analysis/bin/python scripts/render_docs.py</span></span>
@@ -1251,7 +1252,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-247"><a href="#cb13-247" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-248"><a href="#cb13-248" aria-hidden="true" tabindex="-1"></a>Los constructores leen tablas congeladas y no reajustan modelos biológicos. Los hashes y la auditoría de presentación están en downloads/defense_slides/.</span>
 <span id="cb13-249"><a href="#cb13-249" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-250"><a href="#cb13-250" aria-hidden="true" tabindex="-1"></a>Las vistas 3D conservan todas las células medidas y comparten cámara y escala entre referencia y escenario. Se registran los conteos, las coordenadas y los ajustes gráficos; no se reajusta ningún modelo biológico.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb13-250"><a href="#cb13-250" aria-hidden="true" tabindex="-1"></a>Las vistas 3D conservan todas las células medidas y comparten cámara y escala entre referencia y escenario. Se registran los conteos, las coordenadas y los ajustes gráficos; no se reajusta ningún modelo biológico.</span>
+<span id="cb13-251"><a href="#cb13-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-252"><a href="#cb13-252" aria-hidden="true" tabindex="-1"></a>Los visores se cargan solo en la diapositiva activa y liberan recursos WebGL al salir. Ampliar abre un diálogo dentro del mismo HTML y conserva el gen seleccionado. Imagen estática vuelve al ejemplo génico original documentado; la explicación del gen interactivo se mantiene separada. Si el navegador restringe los marcos de archivos locales, sirva la carpeta extraída localmente; los datos permanecen en el equipo.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

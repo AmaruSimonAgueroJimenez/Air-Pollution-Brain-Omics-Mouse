@@ -35,6 +35,7 @@ format:
     include-after-body:
       text: |
         <script src="assets/defense-slides/defense.js"></script>
+        <script src="assets/defense-slides/inline-maps.js"></script>
 execute:
   echo: false
   eval: false
@@ -240,7 +241,7 @@ Follow the upper branch from exposure data to author reproduction and new study-
 
 
 ::: {.viewer-links}
-[Explore the hypothalamus in 3D](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/viewer.html){target="_blank"} · [Explore the cortex in 3D](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/cortex_viewer.html){target="_blank"}
+[Interactive hypothalamus slide](#hy-3d){.inline-slide-link data-map-slide="hy-3d" target="_self"} · [Interactive cortex slide](#aca-3d){.inline-slide-link data-map-slide="aca-3d" target="_self"}
 :::
 
 
@@ -1033,7 +1034,7 @@ The gray whole-brain surface supplies anatomical context. Rust marks 14,582 ACA 
 
 
 ::: {.viewer-links}
-[Explore the hypothalamus in 3D](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/viewer.html){target="_blank"} · [Explore the cortex in 3D](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/cortex_viewer.html){target="_blank"}
+[Interactive hypothalamus slide](#hy-3d){.inline-slide-link data-map-slide="hy-3d" target="_self"} · [Interactive cortex slide](#aca-3d){.inline-slide-link data-map-slide="aca-3d" target="_self"}
 :::
 
 
@@ -1043,7 +1044,7 @@ The gray whole-brain surface supplies anatomical context. Rust marks 14,582 ACA 
 
 
 ::: {.notes}
-Registered positions of all 14,582 ACA and 37,811 HY cells from the same Zhuang-ABCA-2 donor. CCF coordinates come from registered sections rather than direct isotropic 3D acquisition. Gray is the previously exported whole-brain anatomical mesh from the CCF annotation, with 0.15-mm surface step. That surface does not represent expression coverage. Colored points are actually measured cells from the registered hemisphere. Gaps are not filled, cells are not reflected to the opposite hemisphere, and no expression values or donors are added. Colors identify regions only and do not encode a PM₂.₅ response. The two text links open the full hypothalamus and cortex viewers online. The static anatomy preview remains available offline. The gray full-brain mesh supplies anatomical context, while measured cells occupy the source's registered hemisphere only. No reference cells are mirrored into the other hemisphere.
+Registered positions of all 14,582 ACA and 37,811 HY cells from the same Zhuang-ABCA-2 donor. CCF coordinates come from registered sections rather than direct isotropic 3D acquisition. Gray is the previously exported whole-brain anatomical mesh from the CCF annotation, with 0.15-mm surface step. That surface does not represent expression coverage. Colored points are actually measured cells from the registered hemisphere. Gaps are not filled, cells are not reflected to the opposite hemisphere, and no expression values or donors are added. Colors identify regions only and do not encode a PM₂.₅ response. The two text links jump to the interactive hypothalamus and cortex slides inside this presentation. The static anatomy preview remains available offline. The gray full-brain mesh supplies anatomical context, while measured cells occupy the source's registered hemisphere only. No reference cells are mirrored into the other hemisphere.
 :::
 
 ## Gene priorities and measured-panel coverage {#gene-selection}
@@ -2047,7 +2048,7 @@ The interactive side-by-side display is a project deliverable, without independe
 [Full reference/scenario figure](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/assets/figures/spatial_cortex/reference_vs_simulation.png).
 :::
 
-## Hypothalamus / Tll1: measured reference and PM₂.₅ scenario {#hy-3d .figure-slide .figure-interpretation .map3d-slide}
+## Hypothalamus: interactive reference and PM₂.₅ scenario {#hy-3d .figure-slide .figure-interpretation .map3d-slide .interactive-map-slide}
 
 
 
@@ -2055,16 +2056,27 @@ The interactive side-by-side display is a project deliverable, without independe
 04  /  Project results
 :::
 
-[![](assets/figures/defense_slides/spatial_3d_hy_tll1.png){fig-alt="Left shows measured Tll1 counts. Right multiplies every value by 0.42808, carrying the regional shrunken effect into an illustrative scenario. Both panels retain 37,811 positions and the same 667 positive cells. A common color scale reveals the magnitude change. The display does not identify cell-specific exposure responses or infer cell loss." width=100%}](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/viewer.html){target="_blank"}
 
+::: {.inline-atlas data-region="HY" data-default-gene="Tll1"}
+<div class="map-toolbar"><button type="button" class="map-static-toggle" aria-pressed="false">Static image</button><button type="button" class="map-enlarge">Enlarge map</button><button type="button" class="map-focus-slides">Slide navigation</button><span class="map-load-status" role="status">Loading interactive map…</span></div>
 
-::: {.figure-caption}
+::: {.map-stage}
+
+::: {.map-poster}
+![](assets/figures/defense_slides/spatial_3d_hy_tll1.png){fig-alt="Left shows measured Tll1 counts. Right multiplies every value by 0.42808, carrying the regional shrunken effect into an illustrative scenario. Both panels retain 37,811 positions and the same 667 positive cells. A common color scale reveals the magnitude change. The display does not identify cell-specific exposure responses or infer cell loss." width=100%}
+
+::: {.static-map-caption}
 Left shows measured Tll1 counts. Right multiplies every value by 0.42808, carrying the regional shrunken effect into an illustrative scenario. Both panels retain 37,811 positions and the same 667 positive cells. A common color scale reveals the magnitude change. The display does not identify cell-specific exposure responses or infer cell loss.
 :::
 
+:::
+<iframe class="map-frame" data-map-src="assets/defense-slides/inline-map.html?region=HY&amp;lang=en&amp;defaultgene=Tll1" title="Interactive hypothalamus map" referrerpolicy="same-origin"></iframe>
+:::
 
-::: {.viewer-links}
-[Open the interactive Tll1 map](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/viewer.html){target="_blank"}
+::: {.live-map-caption}
+Drag either map to rotate both scenes. Choose a measured gene and apply it. The panels retain the same registered cells. PM₂.₅ applies one regional multiplier, without identifying cell-specific exposure responses.
+:::
+
 :::
 
 
@@ -2074,10 +2086,10 @@ Left shows measured Tll1 counts. Right multiplies every value by 0.42808, carryi
 
 
 ::: {.notes}
-Hypothalamus, Tll1. Left: actually measured MERFISH imaging counts from the unexposed male Zhuang-ABCA-2 donor. Right: those same counts uniformly multiplied by 2^(-1.224053)=0.42807853, using the regional shrunken bulk effect. All 37,811 cells appear in each panel, without resampling, jitter, interpolation or mirroring. There are 667 measured positive cells; scaling preserves detection and measured zeros. Cameras, axis limits and the log₂(1+count) color scale are identical, with the full joint maximum and no value clipping. Positions belong to the registered hemisphere and are plotted ML, AP, −DV in CCF mm. These coordinates derive from registered sections rather than direct isotropic 3D acquisition. The right panel is an illustration, not a measurement of exposed cells or a Bayesian prediction. The preview and text link open the full interactive viewer online. Drag the 3D scene to rotate it, and use the gene selector to inspect other measured candidates. The static preview uses the full color range and remains available offline. The interactive viewer also offers a clearly labeled optional 99th-percentile color cap, which changes the display only.
+Static starting example: Hypothalamus, Tll1. Left: actually measured MERFISH imaging counts from the unexposed male Zhuang-ABCA-2 donor. Right: those same counts uniformly multiplied by 2^(-1.224053)=0.42807853, using the regional shrunken bulk effect. All 37,811 cells appear in each panel, without resampling, jitter, interpolation or mirroring. There are 667 measured positive cells; scaling preserves detection and measured zeros. Cameras, axis limits and the log₂(1+count) color scale are identical, with the full joint maximum and no value clipping. Positions belong to the registered hemisphere and are plotted ML, AP, −DV in CCF mm. These coordinates derive from registered sections rather than direct isotropic 3D acquisition. The right panel is an illustration, not a measurement of exposed cells or a Bayesian prediction. The interactive frame is inside the slide. Its current gene and evidence label update together; the static image remains the original Tll1 example. Enlarge opens a dialog inside this presentation. Click Slide navigation to return keyboard focus to the deck. All 1,122 measured genes and their original regional eligibility rules are retained. The complete ZIP includes local viewer assets for offline interaction in a compatible browser.
 :::
 
-## Cortex / Fosb: measured reference and PM₂.₅ scenario {#aca-3d .figure-slide .figure-interpretation .map3d-slide}
+## Cortex: interactive reference and PM₂.₅ scenario {#aca-3d .figure-slide .figure-interpretation .map3d-slide .interactive-map-slide}
 
 
 
@@ -2085,16 +2097,27 @@ Hypothalamus, Tll1. Left: actually measured MERFISH imaging counts from the unex
 04  /  Project results
 :::
 
-[![](assets/figures/defense_slides/spatial_3d_aca_fosb.png){fig-alt="Left shows measured Fosb counts. Right applies the regional 1.996-fold multiplier to the same reference. The 14,582 positions and 1,418 positive cells remain fixed, with a shared full color scale. The brighter scenario illustrates a bulk effect. It does not establish which cortical layers or cell types respond to PM₂.₅." width=100%}](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/cortex_viewer.html){target="_blank"}
 
+::: {.inline-atlas data-region="ACA" data-default-gene="Fosb"}
+<div class="map-toolbar"><button type="button" class="map-static-toggle" aria-pressed="false">Static image</button><button type="button" class="map-enlarge">Enlarge map</button><button type="button" class="map-focus-slides">Slide navigation</button><span class="map-load-status" role="status">Loading interactive map…</span></div>
 
-::: {.figure-caption}
+::: {.map-stage}
+
+::: {.map-poster}
+![](assets/figures/defense_slides/spatial_3d_aca_fosb.png){fig-alt="Left shows measured Fosb counts. Right applies the regional 1.996-fold multiplier to the same reference. The 14,582 positions and 1,418 positive cells remain fixed, with a shared full color scale. The brighter scenario illustrates a bulk effect. It does not establish which cortical layers or cell types respond to PM₂.₅." width=100%}
+
+::: {.static-map-caption}
 Left shows measured Fosb counts. Right applies the regional 1.996-fold multiplier to the same reference. The 14,582 positions and 1,418 positive cells remain fixed, with a shared full color scale. The brighter scenario illustrates a bulk effect. It does not establish which cortical layers or cell types respond to PM₂.₅.
 :::
 
+:::
+<iframe class="map-frame" data-map-src="assets/defense-slides/inline-map.html?region=ACA&amp;lang=en&amp;defaultgene=Fosb" title="Interactive cortex map" referrerpolicy="same-origin"></iframe>
+:::
 
-::: {.viewer-links}
-[Open the interactive Fosb map](https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/cortex_viewer.html){target="_blank"}
+::: {.live-map-caption}
+Drag either map to rotate both scenes. Choose a measured gene and apply it. The panels retain the same registered cells. PM₂.₅ applies one regional multiplier, without identifying cell-specific exposure responses.
+:::
+
 :::
 
 
@@ -2104,7 +2127,7 @@ Left shows measured Fosb counts. Right applies the regional 1.996-fold multiplie
 
 
 ::: {.notes}
-Anterior cingulate cortex, Fosb. Left: actually measured MERFISH imaging counts from the unexposed male Zhuang-ABCA-2 donor. Right: those same counts uniformly multiplied by 2^(0.997109)=1.99599627, using the regional shrunken bulk effect. All 14,582 cells appear in each panel, without resampling, jitter, interpolation or mirroring. There are 1,418 measured positive cells; scaling preserves detection and measured zeros. Cameras, axis limits and the log₂(1+count) color scale are identical, with the full joint maximum and no value clipping. Positions belong to the registered hemisphere and are plotted ML, AP, −DV in CCF mm. These coordinates derive from registered sections rather than direct isotropic 3D acquisition. The right panel is an illustration, not a measurement of exposed cells or a Bayesian prediction. The preview and text link open the full interactive viewer online. Drag the 3D scene to rotate it, and use the gene selector to inspect other measured candidates. The static preview uses the full color range and remains available offline. The interactive viewer also offers a clearly labeled optional 99th-percentile color cap, which changes the display only.
+Static starting example: Anterior cingulate cortex, Fosb. Left: actually measured MERFISH imaging counts from the unexposed male Zhuang-ABCA-2 donor. Right: those same counts uniformly multiplied by 2^(0.997109)=1.99599627, using the regional shrunken bulk effect. All 14,582 cells appear in each panel, without resampling, jitter, interpolation or mirroring. There are 1,418 measured positive cells; scaling preserves detection and measured zeros. Cameras, axis limits and the log₂(1+count) color scale are identical, with the full joint maximum and no value clipping. Positions belong to the registered hemisphere and are plotted ML, AP, −DV in CCF mm. These coordinates derive from registered sections rather than direct isotropic 3D acquisition. The right panel is an illustration, not a measurement of exposed cells or a Bayesian prediction. The interactive frame is inside the slide. Its current gene and evidence label update together; the static image remains the original Fosb example. Enlarge opens a dialog inside this presentation. Click Slide navigation to return keyboard focus to the deck. All 1,122 measured genes and their original regional eligibility rules are retained. The complete ZIP includes local viewer assets for offline interaction in a compatible browser.
 :::
 
 ## Spatial Gaussian regression rarely improves the baseline {#gaussian-rmse .figure-slide .figure-interpretation}

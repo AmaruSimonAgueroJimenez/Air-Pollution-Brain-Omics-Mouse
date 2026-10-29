@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-29",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "scope": "Observed native browser interactions inside the presentation, plus complete portable ZIP served from its extracted local folder. No physical network-disconnection or universal file-URL compatibility claim.",
+  "linked_mouse_rotation": true,
+  "camera_reset": true,
+  "modal_same_URL_and_selected_gene_preservation": true,
+  "static_toggle_and_reactivation": true,
+  "keyboard_focus_return_and_next_slide": true,
+  "HY_inactive_frame_about_blank": true,
+  "internal_map_navigation_same_page": true,
+  "language_switch_same_slide_and_local_origin": true,
+  "all_1122_gene_options": true,
+  "reference_only_and_exploratory_labels": true,
+  "extracted_zip_local_map_paths": true,
+  "layout": [
+    {
+      "issues": [],
+      "slide": "hy-3d"
+    },
+    {
+      "issues": [],
+      "slide": "aca-3d"
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 {
-  "checked_at": "2026-10-29T12:50:07.049562+00:00",
+  "checked_at": "2026-10-29T13:46:54.063920+00:00",
   "scope": "Compiled local targets, source syntax and required artifacts; visual review is separate",
   "site_root": "docs",
   "allows_incomplete_ozone": false,
   "checks": {
     "qmd_pages": 36,
-    "html_documents": 44,
-    "local_links_checked": 8173,
+    "html_documents": 45,
+    "local_links_checked": 8187,
     "bayesian_mathml_equations": {
       "spatial_bayes.html": 16,
       "es/spatial_bayes.html": 16

@@ -11,17 +11,37 @@
     {
       "path": "advanced_results.html",
       "bytes": 73730,
-      "sha256": "caf5d0dbb97767820bc48971e5e162d6d34bbc27e6654d7a2dc96e40c0d83e50"
+      "sha256": "4fb9276af2a76077726dbf2b7c690de1686812f366edfa22ddd55c01a6acb601"
     },
     {
       "path": "assets/defense-slides/defense.css",
-      "bytes": 19354,
-      "sha256": "3e3dc31c552f54f9cf31dc6a45d8426dfa4e2597f9889ccb39ca583f3b72bdb3"
+      "bytes": 21917,
+      "sha256": "3358d1df944b4ae0ff44365da08f153a57406f131108df394165e4fe61b4d4a1"
     },
     {
       "path": "assets/defense-slides/defense.js",
       "bytes": 4848,
       "sha256": "ef6787cf440116e765d0f2d88b84dea011c5acd7dcdbfd8f861f6138d6ebea14"
+    },
+    {
+      "path": "assets/defense-slides/inline-map.css",
+      "bytes": 3195,
+      "sha256": "e60470b33f834d745ed89e8daa2d4f82c2552838e1eca4e3d87ee830ce88b745"
+    },
+    {
+      "path": "assets/defense-slides/inline-map.html",
+      "bytes": 2246,
+      "sha256": "ad64baba6e9aa2b034c91cf6be50fe6733cb2d2d7992e5e7df613ee4c3ab4add"
+    },
+    {
+      "path": "assets/defense-slides/inline-map.js",
+      "bytes": 20882,
+      "sha256": "66deab686d90a6e56fbd9bc76e2e04d02a5d86ea38efd05dfd952e351a08c383"
+    },
+    {
+      "path": "assets/defense-slides/inline-maps.js",
+      "bytes": 7684,
+      "sha256": "f9fcd82e375aac60f12a44ea52b0ec0b6e2edf69681cc9a44a94370ced8eefab"
     },
     {
       "path": "assets/figures/advanced_omics/GO_multi_contrast_heatmap.pdf",
@@ -13726,12 +13746,12 @@
     {
       "path": "cortex_viewer.html",
       "bytes": 57073,
-      "sha256": "eb8adac496c704e65ddb51f7a49163a0ae1ebf91d9e0f91524839cb39404fe53"
+      "sha256": "bfa26f47572f62bcdeb8104f3f5e23f17276c659e3d78d27f060f3d0e9a14d18"
     },
     {
       "path": "defense.html",
-      "bytes": 9985331,
-      "sha256": "49265268f011640a87c5af9abac8a3d3dede0e88321b0994759743d15fd5d079"
+      "bytes": 9996931,
+      "sha256": "6c22eedafa7fcf804ba359b289794ed53a74489fd7c040f2d6e46e23f31b08dd"
     },
     {
       "path": "downloads/advanced_omics/GO_heatmap_term_selection.tsv",
@@ -13960,8 +13980,8 @@
     },
     {
       "path": "downloads/code/build_defense_slides.py",
-      "bytes": 195654,
-      "sha256": "97fb06e51ac90ec853d57be7e32beff909c3509bc0a469b3479d027901c93491"
+      "bytes": 201198,
+      "sha256": "b83021939dfa0760dbc0fd84f700ac2b69883e581808721b5b822139b3a95e81"
     },
     {
       "path": "downloads/code/build_defense_spatial_figures.py",
@@ -14025,8 +14045,8 @@
     },
     {
       "path": "downloads/code/render_docs.py",
-      "bytes": 9466,
-      "sha256": "e0529d662ad6d0925c784ca5e0fb071d321f3adea5afb037188545ef3c762269"
+      "bytes": 9642,
+      "sha256": "1a9724765a5c4382a9c41fbb908ae999c5aa367b52f21990ad2a46491f5fc9c2"
     },
     {
       "path": "downloads/code/replicate_mirna_ozone.R",
@@ -14065,8 +14085,8 @@
     },
     {
       "path": "downloads/code/validate_defense_slides.py",
-      "bytes": 7359,
-      "sha256": "90efad5cb54046bf9a392bfeeedb3e346edbec34369c2d76e87415c104d2b1b9"
+      "bytes": 8782,
+      "sha256": "9a3e4c6bf18de7c086f36e50635a84cd7f14c81650b9d1fc92b1961723cafef8"
     },
     {
       "path": "downloads/code/validate_hypothalamus_deseq2.R",
@@ -14080,8 +14100,8 @@
     },
     {
       "path": "downloads/code/validate_report.py",
-      "bytes": 9990,
-      "sha256": "1be9015b9d4dcdc6e39afb4128c7b1a0914fe9058c6c397a9deeb3721601a4a7"
+      "bytes": 10172,
+      "sha256": "af0f312686e4479023eab487272e9380dac541c1d81cb7d633aec6a8cd1f1ebb"
     },
     {
       "path": "downloads/code/verify_repository.py",
@@ -14175,8 +14195,8 @@
     },
     {
       "path": "downloads/defense-slides-bilingual.zip",
-      "bytes": 12941470,
-      "sha256": "f53ceab13b3bd8c0bb232e456898002423c9467e1ae78d41c8e114acf636791c"
+      "bytes": 26940498,
+      "sha256": "77691bcff60ff9f1e86d3457dfc45f2b8b0d3d4a0ba701fea05ba28d928f984f"
     },
     {
       "path": "downloads/defense_slides/context_figure_manifest.json",
@@ -14184,9 +14204,14 @@
       "sha256": "1e908178bd3a8298060849da9e0cf157472b34b5db8a40e32a52e37f91a77cad"
     },
     {
+      "path": "downloads/defense_slides/interactive_maps_validation.json",
+      "bytes": 4601,
+      "sha256": "e7c9b884edd9b3aa4a8645f739886ae888c0de70477ec78b7a34e2e4d692b75a"
+    },
+    {
       "path": "downloads/defense_slides/presentation_manifest.json",
-      "bytes": 67586,
-      "sha256": "f0dd6728c5705bec6b4b9cb86398e85b56595e8a516e68665c2c93c40c798add"
+      "bytes": 68388,
+      "sha256": "6a92504f2b2638dd5290cbc364b97567cc266a62c348b485c3dd1f62e9a85d18"
     },
     {
       "path": "downloads/defense_slides/replication_figure_manifest.json",
@@ -14205,8 +14230,8 @@
     },
     {
       "path": "downloads/defense_slides/validation.json",
-      "bytes": 1078,
-      "sha256": "29e5f8c1af6905e2bb0f391e572d5f440e6cfccd0fe38a7af032d3c1d2338c50"
+      "bytes": 1143,
+      "sha256": "ded181da8dff2005a04d9b319964855b0d7cc58819a4a621ea74422483c07702"
     },
     {
       "path": "downloads/enrichment/cortex/GSEA_all_terms.tsv",
@@ -16220,8 +16245,8 @@
     },
     {
       "path": "downloads/report-source.zip",
-      "bytes": 355934,
-      "sha256": "d66c5e3dc93c86c984cdfff58bbbaacc2c88a0dccadb6ca5c769f7b21e8581aa"
+      "bytes": 370422,
+      "sha256": "1f44649d5df88151220afe014924acb2946d0509ff4b1e65050b27a7feef4b3e"
     },
     {
       "path": "downloads/report_validation/browser_checks.json",
@@ -16236,7 +16261,7 @@
     {
       "path": "downloads/report_validation/compiled_report_checks.json",
       "bytes": 614,
-      "sha256": "285721c3b7901a094a52e37cd5175af454c8074ec463ab5884b71f3085d97588"
+      "sha256": "c7df4c256f86f9cfbacf501f070ae788ec61fef921cedc054b95d36b70f61835"
     },
     {
       "path": "downloads/report_validation/experimental_design_review.json",
@@ -16276,7 +16301,7 @@
     {
       "path": "downloads/report_validation/published_report_checks.json",
       "bytes": 608,
-      "sha256": "6c58b04d4aa06036d75ea3db4dd326f8b6250ee36e498ec6782bd49f1215da72"
+      "sha256": "8a7425183af2d585fea203d5b3106faeff1a198d6b757f47ff42b1ca41643ae2"
     },
     {
       "path": "downloads/report_validation/significant_gene_panel_match.json",
@@ -16796,7 +16821,7 @@
     {
       "path": "es/advanced_results.html",
       "bytes": 75800,
-      "sha256": "d48043b41fa8da4742d2e1f024c2f7cb4533fc6cf9360c821628f9a35e4e6e2e"
+      "sha256": "ae5634330ee335b3aa3e500bd1434c07f7e8d0bae3e478c407bd983a3d0f982d"
     },
     {
       "path": "es/cortex.html",
@@ -16806,12 +16831,12 @@
     {
       "path": "es/cortex_viewer.html",
       "bytes": 57872,
-      "sha256": "06c089ac52094b7dad9fceb5d1ff7d4c9963e0d0ef235fef3e855950378298bd"
+      "sha256": "0e867778a4bc5f96dd99d60dd8a0ac6efc7036feee44d3330a20792b387b52df"
     },
     {
       "path": "es/defense.html",
-      "bytes": 10118079,
-      "sha256": "7d3d406fa22c1961755b7ad70438b32b74a6df034803013b9ccf7d6b976348d4"
+      "bytes": 10129842,
+      "sha256": "53749e3cc74752a4185afc36a9154fb47eb14eb70a937fe568899d90b8ae0edf"
     },
     {
       "path": "es/enrichment.html",
@@ -16821,12 +16846,12 @@
     {
       "path": "es/gene_profiles.html",
       "bytes": 99673,
-      "sha256": "1f88810217b6c7d5d5202e04746f1550c6f9cbe72dd5dc40491223ad372f3573"
+      "sha256": "d54d9fd8b2037dcc95205da27fdf6c31a975f5b6bb79f180e9ee0ed60bf0d2e0"
     },
     {
       "path": "es/index.html",
-      "bytes": 73299,
-      "sha256": "8326f30a0457ce8701d3d12ce46fb6545e7b0e4ca668a084aafd6ff2c9bade2e"
+      "bytes": 73531,
+      "sha256": "c2c5f1bfd71922b7672ce30a05830a2ca971767878e5c8b1c5f7af0f08143616"
     },
     {
       "path": "es/introduction.html",
@@ -16836,7 +16861,7 @@
     {
       "path": "es/methods.html",
       "bytes": 108942,
-      "sha256": "e0789018c27fbf36504bcb7e7fd587667a0ba4ab740bf838a5a5743a778c4103"
+      "sha256": "a06b6ff86bf97e5dde3db5987adecbb1456ccefe28f31f1dad13406a37582ea7"
     },
     {
       "path": "es/mirna.html",
@@ -16851,17 +16876,17 @@
     {
       "path": "es/replication.html",
       "bytes": 85994,
-      "sha256": "4131408009ca21b1fa081ac3477ec7fcca9cb6136085e3916dda47b040fbba4c"
+      "sha256": "2c62a9f98901483bb6dd57619c21385e5edd4f777a2ffc4d06362a2c99e7e736"
     },
     {
       "path": "es/reproducibility.html",
-      "bytes": 138536,
-      "sha256": "a8c51e085ec1912df1a6c2ba510e9c697739e417434c9d2649e8ac9922bba7d7"
+      "bytes": 140052,
+      "sha256": "dc48ae1f7859f3a759daba68eb603848b7e2f9f39e8f4b20d8b902d5f7b1a2c7"
     },
     {
       "path": "es/results.html",
       "bytes": 86379,
-      "sha256": "a63435d44937d632e1f6dc1206d61ff65d7b9864dea803cd57e42288255a01ce"
+      "sha256": "3802ad1d7506806624c02f4c7876763da402a372ebd7f09f014704b3ef220f4a"
     },
     {
       "path": "es/robots.txt",
@@ -16870,8 +16895,8 @@
     },
     {
       "path": "es/search.json",
-      "bytes": 457922,
-      "sha256": "c5570a9c6f78e6b48539fc79d19ece5328dc5a5d714d7047f9266399c2055aba"
+      "bytes": 459689,
+      "sha256": "54b15abebcac670bd6f4fff350a4771ec632354104dbbbedaa07616fc8ea061e"
     },
     {
       "path": "es/site_libs/bootstrap/bootstrap-5dd942ac47374bdb5320a9bbd29a7aa4.min.css",
@@ -17286,17 +17311,17 @@
     {
       "path": "es/sitemap.xml",
       "bytes": 3228,
-      "sha256": "241177d7bf47f60a3431ab8e3c3f50f6d008200e761a197e99529b41bd9c4e3c"
+      "sha256": "e76c71ef876793fe0a2b1f1433e5cf9a61862f85efc3ecdc00080c0238e33a65"
     },
     {
       "path": "es/spatial_bayes.html",
       "bytes": 123034,
-      "sha256": "519a314f5c11f2b9a8433b1f7ed1d2a89ae2bbaec6dc24c1d6935398dda8b186"
+      "sha256": "bce5c5bb7a32ae94878863097f63e842281371aa19844c9ef1678129ade96d11"
     },
     {
       "path": "es/spatial_explorer.html",
       "bytes": 67536,
-      "sha256": "56042f81d00f28556dd2cac9195671030f9a3227b98b7c76a7d84425ff72ea93"
+      "sha256": "7113d56bd011ba162d12b5e1b2527a7aeb2124ec7e67b70f3c3372a3ba49b873"
     },
     {
       "path": "es/spatial_reference.html",
@@ -17306,17 +17331,17 @@
     {
       "path": "es/viewer.html",
       "bytes": 54996,
-      "sha256": "693ecd877a577f1aaa855c0103185e52a3cb536e51a4ab70b69ce6bcda8ef2fc"
+      "sha256": "2bda516ee23403377f77efdbcebb56143b9332b2f4caa4a601990082e25a4dbf"
     },
     {
       "path": "gene_profiles.html",
       "bytes": 98194,
-      "sha256": "02134dfb674686dd21129562b5a6e284ae521802721c348895ee5d598e98ebe8"
+      "sha256": "f5903ff78d4845809a5f0c384dc6aea260058733a30564ad3fc6c7a8507a1fe2"
     },
     {
       "path": "index.html",
-      "bytes": 70929,
-      "sha256": "bd07648b37d0e49771c1c0b16c9eb17ae9b2e8b4b57e50ca89b1df22362205ba"
+      "bytes": 71167,
+      "sha256": "104df270aefbc7b46065e390499d798ee3f9fcd1c2bc53fde6497c1b87e4ef87"
     },
     {
       "path": "introduction.html",
@@ -17326,7 +17351,7 @@
     {
       "path": "methods.html",
       "bytes": 102092,
-      "sha256": "cf7866feb9e6550686c11397f10babcb40f1c52d691c80820cf0927ebda59765"
+      "sha256": "b102204c6c9cdfcc7d32628435697e156cbee7c387ec3254e98e99c386ce6ebc"
     },
     {
       "path": "mirna.html",
@@ -17341,17 +17366,17 @@
     {
       "path": "replication.html",
       "bytes": 84759,
-      "sha256": "0c6782efc488099ff434a18d14717aba3ea6e174fc690e2d423a737348b702c6"
+      "sha256": "809823204d9a832ed9a7adb05cb525abd23f3d091477f0d802b99e9b2d4367db"
     },
     {
       "path": "reproducibility.html",
-      "bytes": 126677,
-      "sha256": "d1cffd33a4e19e86ee708a7f9bcba109979ce53a54f6b17f7c67a0d616bcdc21"
+      "bytes": 128087,
+      "sha256": "8b333c530ca27f1c8eb84e6b7e7595172d6e537493d7333ba81b2a45fc564e30"
     },
     {
       "path": "results.html",
       "bytes": 83337,
-      "sha256": "3fbccc2e7bdb19ec8d67489db6bd25af3367a97f6ca5fe03753f0814c4e93e39"
+      "sha256": "dddee887aa655532184204d548462135067e00124852a2cd70ff75bede3b54d2"
     },
     {
       "path": "robots.txt",
@@ -17360,8 +17385,8 @@
     },
     {
       "path": "search.json",
-      "bytes": 422274,
-      "sha256": "7606bee226cf90c25cb64d0cad7fddafc6f23f1ac9169d782f4dd7871c3f4bee"
+      "bytes": 423814,
+      "sha256": "c4314bbb72899990dfd439583f56f1bbc2a27d5f2646e28758c97d2a7416ec3f"
     },
     {
       "path": "site_libs/bootstrap/bootstrap-5dd942ac47374bdb5320a9bbd29a7aa4.min.css",
@@ -17776,17 +17801,17 @@
     {
       "path": "sitemap.xml",
       "bytes": 3174,
-      "sha256": "8231575218e34f3436e6becfd5f8f4f251a82f60d63e8d56f8df83182a23baf1"
+      "sha256": "0d0c59e19811f3f9613241d40b1d8ed26d2162a1e457e4501853316e0405783b"
     },
     {
       "path": "spatial_bayes.html",
       "bytes": 119326,
-      "sha256": "6dccf268c607c32d90117dd5533bfa3fe60cec6f2a50fcac5fd5e3cf84470526"
+      "sha256": "b5062b700ed8f7118e78828876ab717f1ec0382527a49e0c52e9688527b2552f"
     },
     {
       "path": "spatial_explorer.html",
       "bytes": 66194,
-      "sha256": "d29deff2495c242974b69956e898cbd490537d9c82e14cd86d4f86f7562ecafb"
+      "sha256": "53e66d10b5f9299f3f705e734a8e4cadcbe44d7a0e331dfa20497d793d727ca5"
     },
     {
       "path": "spatial_reference.html",
@@ -17796,10 +17821,10 @@
     {
       "path": "viewer.html",
       "bytes": 53476,
-      "sha256": "2c9bd520f6ad28f3a139f03d153d9508e4afab554d9c4782204fda8181fbbf41"
+      "sha256": "7e5033bdde11140184e347e2f9c9bcccda0cc1b8d0b8d2b8e3072cf28c76decd"
     }
   ],
-  "total_bytes": 537865865,
+  "total_bytes": 551958810,
   "excludes": [
     "original FASTQ/H5AD",
     "reference genomes",

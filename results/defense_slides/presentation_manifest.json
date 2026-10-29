@@ -462,16 +462,16 @@
       "es_caption": "La rama superior sigue los datos de exposición hasta la reproducción y los análisis nuevos por estudio. La inferior parte de un donante MERFISH independiente sin exposición. Su anatomía medida sustenta modelos de referencia. La transferencia bulk discontinua entra solo al escenario ilustrativo, sin implicar respuestas celulares medidas a la exposición.",
       "viewer_links": [
         {
-          "en_label": "Explore the hypothalamus in 3D",
-          "es_label": "Explorar el hipotálamo en 3D",
-          "en_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/viewer.html",
-          "es_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/viewer.html"
+          "en_label": "Interactive hypothalamus slide",
+          "es_label": "Diapositiva interactiva de hipotálamo",
+          "en_url": "#hy-3d",
+          "es_url": "#hy-3d"
         },
         {
-          "en_label": "Explore the cortex in 3D",
-          "es_label": "Explorar la corteza en 3D",
-          "en_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/cortex_viewer.html",
-          "es_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/cortex_viewer.html"
+          "en_label": "Interactive cortex slide",
+          "es_label": "Diapositiva interactiva de corteza",
+          "en_url": "#aca-3d",
+          "es_url": "#aca-3d"
         }
       ]
     },
@@ -793,16 +793,16 @@
       ],
       "viewer_links": [
         {
-          "en_label": "Explore the hypothalamus in 3D",
-          "es_label": "Explorar el hipotálamo en 3D",
-          "en_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/viewer.html",
-          "es_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/viewer.html"
+          "en_label": "Interactive hypothalamus slide",
+          "es_label": "Diapositiva interactiva de hipotálamo",
+          "en_url": "#hy-3d",
+          "es_url": "#hy-3d"
         },
         {
-          "en_label": "Explore the cortex in 3D",
-          "es_label": "Explorar la corteza en 3D",
-          "en_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/cortex_viewer.html",
-          "es_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/cortex_viewer.html"
+          "en_label": "Interactive cortex slide",
+          "es_label": "Diapositiva interactiva de corteza",
+          "en_url": "#aca-3d",
+          "es_url": "#aca-3d"
         }
       ]
     },
@@ -1208,12 +1208,12 @@
     },
     {
       "id": "hy-3d",
-      "en_title": "Hypothalamus / Tll1: measured reference and PM₂.₅ scenario",
-      "es_title": "Hipotálamo / Tll1: referencia medida y escenario PM₂.₅",
+      "en_title": "Hypothalamus: interactive reference and PM₂.₅ scenario",
+      "es_title": "Hipotálamo: referencia interactiva y escenario PM₂.₅",
       "en_caption": "Left shows measured Tll1 counts. Right multiplies every value by 0.42808, carrying the regional shrunken effect into an illustrative scenario. Both panels retain 37,811 positions and the same 667 positive cells. A common color scale reveals the magnitude change. The display does not identify cell-specific exposure responses or infer cell loss.",
       "es_caption": "La izquierda muestra conteos Tll1 medidos. La derecha multiplica cada valor por 0.42808 e ilustra el efecto regional regularizado. Ambos paneles conservan 37,811 posiciones y las mismas 667 células positivas. La escala común muestra el cambio de magnitud. El gráfico no identifica respuestas celulares específicas a la exposición ni infiere pérdida celular.",
       "figure": "spatial_3d_hy_tll1",
-      "cls": "figure-slide figure-interpretation map3d-slide",
+      "cls": "figure-slide figure-interpretation map3d-slide interactive-map-slide",
       "sources": [
         "results/spatial_viewer/registered_hypothalamus_cells.tsv.gz",
         "results/spatial_viewer/reference_counts.npz",
@@ -1232,17 +1232,19 @@
           "es_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/viewer.html"
         }
       ],
-      "viewer_url_en": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/viewer.html",
-      "viewer_url_es": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/viewer.html"
+      "interactive_region": "HY",
+      "default_gene": "Tll1",
+      "en_live_caption": "Drag either map to rotate both scenes. Choose a measured gene and apply it. The panels retain the same registered cells. PM₂.₅ applies one regional multiplier, without identifying cell-specific exposure responses.",
+      "es_live_caption": "Arrastre un mapa para rotar ambas escenas. Seleccione un gen medido y aplíquelo. Los paneles conservan las mismas células registradas. PM₂.₅ aplica un multiplicador regional, sin identificar respuestas celulares específicas a la exposición."
     },
     {
       "id": "aca-3d",
-      "en_title": "Cortex / Fosb: measured reference and PM₂.₅ scenario",
-      "es_title": "Corteza / Fosb: referencia medida y escenario PM₂.₅",
+      "en_title": "Cortex: interactive reference and PM₂.₅ scenario",
+      "es_title": "Corteza: referencia interactiva y escenario PM₂.₅",
       "en_caption": "Left shows measured Fosb counts. Right applies the regional 1.996-fold multiplier to the same reference. The 14,582 positions and 1,418 positive cells remain fixed, with a shared full color scale. The brighter scenario illustrates a bulk effect. It does not establish which cortical layers or cell types respond to PM₂.₅.",
       "es_caption": "La izquierda muestra conteos Fosb medidos. La derecha aplica el multiplicador regional de 1.996 a esa referencia. Se mantienen 14,582 posiciones y 1,418 células positivas, con escala de color común completa. El escenario más intenso ilustra un efecto bulk, sin establecer qué capas o tipos celulares corticales responden a PM₂.₅.",
       "figure": "spatial_3d_aca_fosb",
-      "cls": "figure-slide figure-interpretation map3d-slide",
+      "cls": "figure-slide figure-interpretation map3d-slide interactive-map-slide",
       "sources": [
         "results/spatial_cortex/registered_cortex_cells.tsv.gz",
         "results/spatial_cortex/reference_counts.npz",
@@ -1261,8 +1263,10 @@
           "es_url": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/cortex_viewer.html"
         }
       ],
-      "viewer_url_en": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/cortex_viewer.html",
-      "viewer_url_es": "https://amarusimonaguerojimenez.github.io/Air-Pollution-Brain-Omics-Mouse/es/cortex_viewer.html"
+      "interactive_region": "ACA",
+      "default_gene": "Fosb",
+      "en_live_caption": "Drag either map to rotate both scenes. Choose a measured gene and apply it. The panels retain the same registered cells. PM₂.₅ applies one regional multiplier, without identifying cell-specific exposure responses.",
+      "es_live_caption": "Arrastre un mapa para rotar ambas escenas. Seleccione un gen medido y aplíquelo. Los paneles conservan las mismas células registradas. PM₂.₅ aplica un multiplicador regional, sin identificar respuestas celulares específicas a la exposición."
     },
     {
       "id": "gaussian-rmse",
@@ -1558,12 +1562,18 @@
     }
   ],
   "presentation_code_sha256": {
-    "scripts/build_defense_slides.py": "97fb06e51ac90ec853d57be7e32beff909c3509bc0a469b3479d027901c93491",
+    "scripts/build_defense_slides.py": "b83021939dfa0760dbc0fd84f700ac2b69883e581808721b5b822139b3a95e81",
     "scripts/build_defense_context_figures.py": "c0bb0d01372edc125bdf86791a86c04b3e755de153165e53d1ebc6195d59ac83",
     "scripts/build_defense_replication_figures.py": "62c4d0d41a6df22f4dc0fa24696841969de4abce9f32222285f1ae160ce5a819",
     "scripts/build_defense_spatial_figures.py": "4a318245dfeb2e30d88f30cc9083c8d050101223dae8822220dab0d8ef23d2b7",
     "scripts/build_defense_3d_figures.py": "6db06e5b7c5c9f3442ae72b1cd2ef70509eeedabeabb6f83339205684efc2b2d",
-    "scripts/defense_explanatory_content.py": "6a5c82b2a3280ee59fb20edd6ce7a68003a0005ce229c49d40d35cb01893628d"
+    "scripts/defense_explanatory_content.py": "6a5c82b2a3280ee59fb20edd6ce7a68003a0005ce229c49d40d35cb01893628d",
+    "docs/assets/defense-slides/defense.css": "3358d1df944b4ae0ff44365da08f153a57406f131108df394165e4fe61b4d4a1",
+    "docs/assets/defense-slides/defense.js": "ef6787cf440116e765d0f2d88b84dea011c5acd7dcdbfd8f861f6138d6ebea14",
+    "docs/assets/defense-slides/inline-maps.js": "f9fcd82e375aac60f12a44ea52b0ec0b6e2edf69681cc9a44a94370ced8eefab",
+    "docs/assets/defense-slides/inline-map.html": "ad64baba6e9aa2b034c91cf6be50fe6733cb2d2d7992e5e7df613ee4c3ab4add",
+    "docs/assets/defense-slides/inline-map.js": "66deab686d90a6e56fbd9bc76e2e04d02a5d86ea38efd05dfd952e351a08c383",
+    "docs/assets/defense-slides/inline-map.css": "e60470b33f834d745ed89e8daa2d4f82c2552838e1eca4e3d87ee830ce88b745"
   },
-  "source_commit_before_presentation": "c879437eb5c92cc1a31edbf00c93a9293fac4c26"
+  "source_commit_before_presentation": "e1ca4d70ca5e346d0db9e5f087d6a5b475ab417a"
 }

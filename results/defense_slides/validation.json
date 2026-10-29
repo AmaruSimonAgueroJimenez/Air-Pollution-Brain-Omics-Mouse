@@ -8,11 +8,11 @@
       "embedded_figures": 22,
       "embedded_runtime": true,
       "visible_explanation_slides": 12,
-      "linked_gene_3d_maps": 2,
-      "published_evidence_links": 11,
+      "in_slide_interactive_gene_maps": 2,
+      "published_evidence_links": 3,
       "scholarly_citations": 185,
-      "bytes": 9985331,
-      "sha256": "49265268f011640a87c5af9abac8a3d3dede0e88321b0994759743d15fd5d079"
+      "bytes": 9996931,
+      "sha256": "6c22eedafa7fcf804ba359b289794ed53a74489fd7c040f2d6e46e23f31b08dd"
     },
     "es": {
       "slides": 100,
@@ -21,13 +21,14 @@
       "embedded_figures": 22,
       "embedded_runtime": true,
       "visible_explanation_slides": 12,
-      "linked_gene_3d_maps": 2,
-      "published_evidence_links": 11,
+      "in_slide_interactive_gene_maps": 2,
+      "published_evidence_links": 3,
       "scholarly_citations": 185,
-      "bytes": 10118079,
-      "sha256": "7d3d406fa22c1961755b7ad70438b32b74a6df034803013b9ccf7d6b976348d4"
+      "bytes": 10129842,
+      "sha256": "53749e3cc74752a4185afc36a9154fb47eb14eb70a937fe568899d90b8ae0edf"
     },
-    "portable_zip_bytes": 12941470
+    "portable_interactive_map_assets": 2251,
+    "portable_zip_bytes": 26940498
   },
   "errors": [],
   "passed": true

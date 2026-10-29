@@ -22,9 +22,12 @@ class Links(HTMLParser):
         super().__init__()
         self.links = []
         self.ids = set()
+        self.is_reveal = False
 
     def handle_starttag(self, tag, attrs):
         attributes = dict(attrs)
+        if "reveal" in attributes.get("class", "").split():
+            self.is_reveal = True
         if "id" in attributes:
             self.ids.add(attributes["id"])
         for name in ("href", "src"):
@@ -78,7 +81,7 @@ def main():
             link_count += 1
             if not target.exists():
                 errors.append(f"Missing target in {path.relative_to(SITE)}: {link}")
-            elif parts.fragment and target in documents and unquote(parts.fragment) not in documents[target].ids:
+            elif parts.fragment and target in documents and unquote(parts.fragment).removeprefix("/" if documents[target].is_reveal else "") not in documents[target].ids:
                 # Empty href="#" is a legitimate toggle; nonempty anchors must resolve.
                 errors.append(f"Missing anchor in {path.relative_to(SITE)}: {link}")
     checks.update(html_documents=len(documents), local_links_checked=link_count)

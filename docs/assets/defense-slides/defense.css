@@ -449,6 +449,32 @@ body[data-defense-dark=true] .defense-language-switch,body[data-defense-dark=tru
 .reveal .map3d-slide img {max-height:490px;}
 .reveal .map3d-slide .figure-caption {font-size:25px;}
 
+/* The interactive atlas lives in the slide; its controls keep keyboard focus. */
+.reveal .interactive-map-slide h2 {font-size:46px;margin-bottom:18px;}
+.reveal .map-toolbar {display:flex;align-items:center;flex-wrap:wrap;gap:9px 16px;margin:0 0 10px;font:20px/1.2 Arial,Helvetica,sans-serif;}
+.reveal .map-toolbar button {font:20px/1.2 Arial,Helvetica,sans-serif;padding:7px 12px;background:#fff;color:var(--def-teal);border:1px solid #91a7a8;border-radius:2px;cursor:pointer;}
+.reveal .map-toolbar button:hover,.reveal .map-toolbar button:focus-visible {outline:2px solid var(--def-accent);outline-offset:2px;}
+.reveal .map-toolbar .map-load-status {font-size:20px;color:var(--def-muted);}
+.reveal .map-stage {position:relative;height:550px;width:100%;overflow:hidden;border:1px solid #cbd3d1;background:var(--def-paper);}
+.reveal .map-frame {position:absolute;inset:0;border:0;width:100%;height:100%;visibility:hidden;}
+.reveal .map-poster {position:absolute;inset:0;text-align:center;padding:4px 12px;overflow:auto;}
+.reveal .map-poster img {max-height:422px;max-width:100%;width:auto;}
+.reveal .map-poster .static-map-caption {text-align:left;font-size:24px;line-height:1.26;margin:8px 0 0;}
+.reveal .map-poster .static-map-caption p {margin:0;}
+.reveal .inline-atlas.map-live .map-frame {visibility:visible;}
+.reveal .inline-atlas.map-live .map-poster {display:none;}
+.reveal .live-map-caption {font-size:25px;line-height:1.3;margin:13px 0 0;display:none;}
+.reveal .live-map-caption p {margin:0;}
+.reveal .inline-atlas.map-live .live-map-caption {display:block;}
+.inline-map-dialog {width:96vw;max-width:1800px;height:94vh;max-height:1100px;padding:10px;border:1px solid #739496;background:#f6f4ee;color:#142c35;box-sizing:border-box;}
+.inline-map-dialog[open] {display:flex;flex-direction:column;}
+.inline-map-dialog::backdrop {background:#103d49bd;}
+.inline-map-dialog-bar {display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 5px 10px;flex:none;}
+.inline-map-dialog-bar h2 {font:700 24px/1.2 Arial,Helvetica,sans-serif;margin:0;}
+.inline-map-dialog-bar button {font:18px/1.2 Arial,Helvetica,sans-serif;padding:8px 12px;cursor:pointer;background:#fff;border:1px solid #91a7a8;color:#103d49;}
+.inline-map-dialog-frame {border:0;flex:1;width:100%;min-height:0;background:#f6f4ee;}
+@media print {.reveal .map-toolbar,.reveal .map-frame,.reveal .live-map-caption,.inline-map-dialog {display:none!important;}.reveal .map-poster {position:static;display:block!important;}.reveal .map-stage {height:auto;overflow:visible;border:0;}}
+
 /* Keep stage controls quiet and away from the evidence canvas. */
 .reveal .controls {inset:auto 14px 12px auto;width:90px;height:45px;font-size:10px;}
 .reveal .controls button.navigate-right {right:0;top:0;}

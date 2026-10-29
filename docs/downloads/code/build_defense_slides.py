@@ -1515,8 +1515,8 @@ def prepare_content():
         "El contorno gris del cerebro completo aporta contexto anatómico. El rojizo ubica 14,582 células ACA y el verdeazulado, 37,811 HY en posiciones CCF registradas. Son 52,393 células de un donante sin exposición y un hemisferio registrado. Se localizan células sin rellenar regiones no muestreadas ni reflejar células al hemisferio opuesto.",
         ["atlas","Allen"],[viewer_link("Explore the hypothalamus in 3D","Explorar el hipotálamo en 3D","viewer.html"),
                    viewer_link("Explore the cortex in 3D","Explorar la corteza en 3D","cortex_viewer.html")])
-    anatomy["en_notes"]=manifest["spatial_3d_anatomy"]["caption"]+" The two text links open the full hypothalamus and cortex viewers online. The static anatomy preview remains available offline. The gray full-brain mesh supplies anatomical context, while measured cells occupy the source's registered hemisphere only. No reference cells are mirrored into the other hemisphere."
-    anatomy["es_notes"]=manifest["spatial_3d_anatomy_es"]["caption"]+" Los dos enlaces de texto abren los visores completos de hipotálamo y corteza con conexión. La anatomía estática permanece disponible sin conexión. La malla gris de cerebro completo aporta contexto, mientras las células medidas ocupan solo el hemisferio registrado de la fuente. No se reflejan células de referencia al otro hemisferio."
+    anatomy["en_notes"]=manifest["spatial_3d_anatomy"]["caption"]+" The two text links jump to the interactive hypothalamus and cortex slides inside this presentation. The static anatomy preview remains available offline. The gray full-brain mesh supplies anatomical context, while measured cells occupy the source's registered hemisphere only. No reference cells are mirrored into the other hemisphere."
+    anatomy["es_notes"]=manifest["spatial_3d_anatomy_es"]["caption"]+" Los dos enlaces de texto llevan a las diapositivas interactivas de hipotálamo y corteza dentro de esta presentación. La anatomía estática permanece disponible sin conexión. La malla gris de cerebro completo aporta contexto, mientras las células medidas ocupan solo el hemisferio registrado de la fuente. No se reflejan células de referencia al otro hemisferio."
     hy=map_slide("hy-3d","Hypothalamus / Tll1: measured reference and PM₂.₅ scenario",
         "Hipotálamo / Tll1: referencia medida y escenario PM₂.₅","spatial_3d_hy_tll1",
         "Left shows measured Tll1 counts. Right multiplies every value by 0.42808, carrying the regional shrunken effect into an illustrative scenario. Both panels retain 37,811 positions and the same 667 positive cells. A common color scale reveals the magnitude change. The display does not identify cell-specific exposure responses or infer cell loss.",
@@ -1530,7 +1530,22 @@ def prepare_content():
     for anchor,items in (("coordinates",[anatomy]),("scenario-results",[hy,aca])):
         index=next(i for i,s in enumerate(SLIDES) if s["id"]==anchor)+1
         SLIDES[index:index]=items
-    next(s for s in SLIDES if s["id"]=="workflow")["viewer_links"]=anatomy["viewer_links"]
+    local_links=[dict(en_label="Interactive hypothalamus slide",es_label="Diapositiva interactiva de hipotálamo",en_url="#hy-3d",es_url="#hy-3d"),
+                 dict(en_label="Interactive cortex slide",es_label="Diapositiva interactiva de corteza",en_url="#aca-3d",es_url="#aca-3d")]
+    anatomy["viewer_links"]=local_links
+    next(s for s in SLIDES if s["id"]=="workflow")["viewer_links"]=local_links
+    for s,region,gene in ((hy,"HY","Tll1"),(aca,"ACA","Fosb")):
+        s["interactive_region"]=region
+        s["default_gene"]=gene
+        s["cls"]+=" interactive-map-slide"
+        s["en_title"]=("Hypothalamus" if region=="HY" else "Cortex")+": interactive reference and PM₂.₅ scenario"
+        s["es_title"]=("Hipotálamo" if region=="HY" else "Corteza")+": referencia interactiva y escenario PM₂.₅"
+        s["en_live_caption"]="Drag either map to rotate both scenes. Choose a measured gene and apply it. The panels retain the same registered cells. PM₂.₅ applies one regional multiplier, without identifying cell-specific exposure responses."
+        s["es_live_caption"]="Arrastre un mapa para rotar ambas escenas. Seleccione un gen medido y aplíquelo. Los paneles conservan las mismas células registradas. PM₂.₅ aplica un multiplicador regional, sin identificar respuestas celulares específicas a la exposición."
+        s["en_notes"]="Static starting example: "+manifest[s["figure"]]["caption"]+" The interactive frame is inside the slide. Its current gene and evidence label update together; the static image remains the original "+gene+" example. Enlarge opens a dialog inside this presentation. Click Slide navigation to return keyboard focus to the deck. All 1,122 measured genes and their original regional eligibility rules are retained. The complete ZIP includes local viewer assets for offline interaction in a compatible browser."
+        s["es_notes"]="Ejemplo estático inicial: "+manifest[s["figure"]+"_es"]["caption"]+" El visor interactivo está dentro de la diapositiva. El gen y su etiqueta de evidencia se actualizan juntos; la imagen estática conserva el ejemplo original de "+gene+". Ampliar abre un diálogo dentro de la presentación. Navegación de diapositivas devuelve el foco del teclado a la presentación. Se conservan los 1,122 genes medidos y las reglas regionales originales de estimación. El ZIP completo incluye recursos locales para interacción sin conexión en un navegador compatible."
+        s.pop("viewer_url_en",None)
+        s.pop("viewer_url_es",None)
     for s in SLIDES:
         if s["id"].startswith("explain-"):
             s["citation_keys"]=[key for key in s["sources"] if key in PAPERS]
@@ -1665,6 +1680,7 @@ format:
     include-after-body:
       text: |
         <script src="{prefix}assets/defense-slides/defense.js"></script>
+        <script src="{prefix}assets/defense-slides/inline-maps.js"></script>
 execute:
   echo: false
   eval: false
@@ -1684,15 +1700,29 @@ execute:
             stem=s["figure"]+("_es" if lang=="es" else "")
             image_path=f"{prefix}assets/figures/defense_slides/{stem}.png"
             image=f'![]({image_path}){{fig-alt="{html.escape(s[lang+"_caption"],quote=True)}" width=100%}}'
-            viewer=s.get("viewer_url_"+lang)
-            chunks.append((f'[{image}]({viewer}){{target="_blank"}}' if viewer else image)+"\n")
-            chunks.append(block(s[lang+"_caption"],"figure-caption"))
+            if s.get("interactive_region"):
+                region=s["interactive_region"]
+                source=f'{prefix}assets/defense-slides/inline-map.html?region={region}&lang={lang}&defaultgene={s["default_gene"]}'
+                title=("Interactive hypothalamus map" if region=="HY" else "Interactive cortex map") if lang=="en" else ("Mapa interactivo de hipotálamo" if region=="HY" else "Mapa interactivo de corteza")
+                labels=("Static image","Enlarge map","Slide navigation","Loading interactive map…") if lang=="en" else ("Imagen estática","Ampliar mapa","Navegación de diapositivas","Cargando mapa interactivo…")
+                toolbar=f'<div class="map-toolbar"><button type="button" class="map-static-toggle" aria-pressed="false">{labels[0]}</button><button type="button" class="map-enlarge">{labels[1]}</button><button type="button" class="map-focus-slides">{labels[2]}</button><span class="map-load-status" role="status">{labels[3]}</span></div>'
+                poster=block(image+"\n"+block(s[lang+"_caption"],"static-map-caption"),"map-poster")
+                frame=f'<iframe class="map-frame" data-map-src="{html.escape(source,quote=True)}" title="{title}" referrerpolicy="same-origin"></iframe>'
+                stage=block(poster+frame,"map-stage")
+                wrapper='\n::: {.inline-atlas data-region="'+region+'" data-default-gene="'+s["default_gene"]+'"}\n'+toolbar+'\n'+stage+block(s[lang+"_live_caption"],"live-map-caption")+'\n:::\n'
+                chunks.append(wrapper)
+            else:
+                viewer=s.get("viewer_url_"+lang)
+                chunks.append((f'[{image}]({viewer}){{target="_blank"}}' if viewer else image)+"\n")
+                chunks.append(block(s[lang+"_caption"],"figure-caption"))
         else:
             chunks.append(body+"\n\n")
-        if s.get("viewer_links"):
+        if s.get("viewer_links") and not s.get("interactive_region"):
             labels=[]
             for item in s["viewer_links"]:
-                labels.append(f'[{item[lang+"_label"]}]({item[lang+"_url"]}){{target="_blank"}}')
+                url=item[lang+"_url"]
+                target=('{.inline-slide-link data-map-slide="'+url.lstrip('#/')+'" target="_self"}') if url.startswith('#') else '{target="_blank"}'
+                labels.append(f'[{item[lang+"_label"]}]({url}){target}')
             chunks.append(block(" · ".join(labels),"viewer-links"))
         links=[]
         for src in scholarly_references(s):
@@ -1720,11 +1750,23 @@ def package():
     with zipfile.ZipFile(target,"w",zipfile.ZIP_DEFLATED) as z:
         for p in files:
             z.write(p,p.relative_to(ROOT/"docs"))
+        assets=[ROOT/"docs/assets/defense-slides"/name for name in ("inline-map.html","inline-map.js","inline-map.css")]
+        assets += [ROOT/"docs/assets/viewer"/name for name in ("plotly.min.js","annotations.js","data.js")]
+        assets += [ROOT/"docs/assets/viewer-cortex/data.js"]
+        for directory in ("viewer","viewer-cortex"):
+            assets += sorted((ROOT/"docs/assets"/directory/"genes").glob("*.js"))
+        for asset in assets:
+            z.write(asset,asset.relative_to(ROOT/"docs"))
         z.writestr("READ-ME.txt",
             "Open defense.html for English or es/defense.html for Spanish.\n"
-            "Each HTML embeds its figures, styling, formulas and presentation runtime.\n"
-            "Keep the folder structure for the language switch. Online evidence links require internet.\n"
-            "Arrow keys: navigate. Esc: overview. Notes/Notas: detailed explanation.\n")
+            "Each HTML embeds its static figures, styling, formulas and presentation runtime.\n"
+            "Unzip the whole archive and keep the assets/ folder for interactive maps and all 1122 genes.\n"
+            "The atlas uses local scripts and gzip decompression in a compatible modern browser.\n"
+            "If file URLs are restricted by your browser, serve this folder with python -m http.server and open its localhost URL.\n"
+            "Online scientific-reference links require internet; the packaged map data do not.\n"
+            "Arrow keys: navigate. Esc: overview. Notes/Notas: detailed explanation.\n"
+            "Map: rotate by dragging; enter a measured gene and Apply. Enlarge stays inside the slides.\n"
+            "Use Slide navigation outside the map to return keyboard focus to the presentation.\n")
     print("Portable bilingual package:",target.relative_to(ROOT),target.stat().st_size)
 
 def main():
@@ -1752,7 +1794,7 @@ def main():
              "slides_per_language":len(SLIDES)+1,"explicit_ids":ids,"title_slide_id":"title-slide",
              "main_content_slides":next(i+1 for i,s in enumerate(SLIDES) if s["id"]=="appendix"),
              "source_files":source_files,"slides":[{k:v for k,v in s.items() if k not in {"en","es","en_notes","es_notes"}} for s in SLIDES],
-             "presentation_code_sha256":{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [ROOT/"scripts"/name for name in ("build_defense_slides.py","build_defense_context_figures.py","build_defense_replication_figures.py","build_defense_spatial_figures.py","build_defense_3d_figures.py","defense_explanatory_content.py")]},
+             "presentation_code_sha256":{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [*[ROOT/"scripts"/name for name in ("build_defense_slides.py","build_defense_context_figures.py","build_defense_replication_figures.py","build_defense_spatial_figures.py","build_defense_3d_figures.py","defense_explanatory_content.py")],*[ROOT/"docs/assets/defense-slides"/name for name in ("defense.css","defense.js","inline-maps.js","inline-map.html","inline-map.js","inline-map.css")]]},
              "source_commit_before_presentation":subprocess.check_output(["git","rev-parse","HEAD"],cwd=ROOT,text=True).strip()}
     (OUT/"presentation_manifest.json").write_text(json.dumps(receipt,indent=2,ensure_ascii=False)+"\n")
     print(f"{len(SLIDES)+1} slides per language, including cover and technical appendix")

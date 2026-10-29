@@ -127,6 +127,8 @@ def prepare_assets():
         "assets/spatial-explorer/index.html", "assets/spatial-explorer/index-es.html",
         "assets/spatial-explorer/explorer.js", "assets/spatial-explorer/explorer.css",
         "assets/defense-slides/defense.css", "assets/defense-slides/defense.js",
+        "assets/defense-slides/inline-maps.js", "assets/defense-slides/inline-map.html",
+        "assets/defense-slides/inline-map.js", "assets/defense-slides/inline-map.css",
         "es/_quarto.yml", "es/_report_utils.py")]
     with zipfile.ZipFile(DOCS / "downloads/report-source.zip", "w", zipfile.ZIP_DEFLATED) as archive:
         for source in sources:
